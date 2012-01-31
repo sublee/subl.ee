@@ -1,0 +1,74 @@
+@import url(http://fonts.googleapis.com/css?family=Lusitana);
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 60px 30px;
+  padding-left: 150px;
+  font-family: Lusitana, serif;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #999;
+}
+
+a:link, a:visited {
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  color: #48d;
+  text-decoration: underline;
+}
+
+h1, h2, h3 {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1;
+  color: #000;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h1 .nickname {
+  position: absolute;
+  padding-left: 5px;
+  font-size: 18px;
+  line-height: 48px;
+}
+
+h2 {
+  margin-bottom: 24px;
+}
+
+section {
+  margin-top: 24px;
+  padding-left: 30px;
+}
+
+section h3 {
+  margin-left: -30px;
+}
+
+section p, section ul {
+  font-size: 18px;
+  list-style: none;
+}
+
+section li {
+  padding-left: 30px;
+  text-indent: -30px;
+}
+
+.flame {
+  position: absolute;
+  left: 11px;
+  margin-top: -5px;
+  width: 128px;
+  height: 130px;
+  background: url(flame.gif) no-repeat left top;
+}

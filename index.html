@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>sublee</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="shortcut icon" type="image/icon" href="favicon.ico" />
+</head>
+<body>
+  <script> document.write('<div class="flame"></div>'); </script>
+  <h1>
+    <span class="name">{{ profile.name }}</span>
+    <span class="nickname">{ {{ profile.nickname }} }</span>
+  </h1>
+  <h2>
+    <span class="job">{{ profile.job|title }}</span>,
+    <a href="{{ profile.employer.url }}">{{ profile.employer.name }}</a>
+  </h2>
+  <p class="email">
+    <a href="mailto:{{ profile.email }}">{{ profile.email }}</a> 
+    (Email, Gtalk, MSN)
+  </p>
+  <p class="sns">
+    {% for name in sns %}
+      <a href="{{ sns[name].url }}">{{ name }}</a>
+      {%- if not loop.last %},{% endif %}
+    {% endfor %}
+  </p>
+  <section class="projects">
+    <h3>Projects</h3>
+    <ul>
+      {% for name in projects %}
+        <li><a href="{{ projects[name].url }}">{{ name }}</a>,
+        {{ projects[name].desc }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  <section class="contributed">
+    <h3>Contributed</h3>
+    <p>
+      {%- for name in contributed -%}
+        <a href="{{ contributed[name].url }}">{{ name }}</a>
+        {%- if not loop.last %},{% endif %}
+      {% endfor %}
+    </p>
+  </section>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+    var flame = $('.flame'), x = 0;
+    function step() {
+      flame.css('background-position', '0 -' + (x * flame.height()) + 'px');
+      setTimeout(arguments.callee, x ? 80 : 1000);
+      x = (x + 1) % 7;
+    }
+    step();
+  </script>
+</body>
+</html>
