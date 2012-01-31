@@ -53,7 +53,7 @@ class Builder(object):
         return True
 
     @build_all
-    def build_icon(self, sharpness=0.25):
+    def build_icon(self, sharpness=0.5):
         ico = Image.open('favicon.ico')
         w, h = ico.size
         css = defaultdict(list)

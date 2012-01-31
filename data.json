@@ -1,86 +1,73 @@
 {
+  "meta": {
+    "title": "sublee",
+    "google_analytics": "UA-1078484-1"
+  },
   "profile": {
-
     "name": "Heungsub Lee",
     "nickname": "sublee",
     "email": "h@subl.ee",
     "job": "a game server programmer",
-
     "employer": {
       "name": "NEXON",
       "url": "http://company.nexon.com/Eng"
     }
   },
   "sns": {
-
     "GitHub": {
       "url": "https://github.com/sublee"
     },
-
     "LinkedIn": {
       "url": "http://linkedin.com/in/sublee"
     }
   },
   "projects": {
-
     "KartRider Rush": {
       "desc": "a mobile racing game based on KartRider Online.",
       "url": "http://facebook.com/KartRiderRush"
     },
-
     "Hangulize": {
       "desc": "a Korean alphabet transcription tool.",
       "url": "http://www.hangulize.org/"
     },
-
     "TrueSkill": {
       "desc": "an implementation of the TrueSkill rating system for Python.",
       "url": "http://packages.python.org/trueskill"
     },
-
     "Gardrip": {
       "desc": "a collection of Korean humors.",
       "url": "http://gaedrip.kr/"
     },
-
     "jDoctest": {
       "desc": "an interactive JavaScript test framework.",
       "url": "http://jdoctest.lunant.org/"
     },
-
     "fontface.kr": {
       "desc": "an API which serves Korean alphabet web fonts.",
       "url": "http://fontface.kr/"
     },
-
     "me2Virus": {
       "desc": "a social virus in me2DAY.",
       "url": "http://me2.subl.ee/me2virus"
     },
-
     "VLAAH": {
       "desc": "a social network service focuses on favorites of people.",
       "url": "http://vlaah.com/"
     }
   },
   "contributed": {
-
     "jQuery": {
       "url": "http://jquery.com/"
     },
-
     "Flask": {
       "url": "http://flask.pocoo.org/"
     },
-
     "node-irc": {
       "url": "https://github.com/martynsmith/node-irc"
     },
-
     "Classy": {
       "url": "http://classy.pocoo.org/"
     },
-
     "LangDev": {
       "url": "http://langdev.org/"
     }
