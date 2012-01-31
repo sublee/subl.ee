@@ -7,7 +7,6 @@
 <link rel="shortcut icon" type="image/icon" href="favicon.ico" />
 </head>
 <body>
-  <script> document.write('<div class="flame"></div>'); </script>
   <h1>
     <span class="name">{{ profile.name }}</span>
     <span class="nickname">{ {{ profile.nickname }} }</span>
@@ -46,13 +45,15 @@
   </section>
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script>
-    var flame = $('.flame'), x = 0;
-    function step() {
-      flame.css('background-position', '0 -' + (x * flame.height()) + 'px');
-      setTimeout(arguments.callee, x ? 80 : 1000);
-      x = (x + 1) % 7;
+    var faviconTable = $('<table>').addClass('flame');
+    for (var i = 0; i < 16; ++i) {
+      var tr = $('<tr>').addClass('row-' + i);
+      faviconTable.append(tr);
+      for (var j = 0; j < 16; ++j) {
+        tr.append($('<td>').addClass('col-' + j).append('<div>'));
+      }
     }
-    step();
+    $(document.body).prepend(faviconTable);
   </script>
 </body>
 </html>

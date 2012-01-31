@@ -68,7 +68,39 @@ section li {
   position: absolute;
   left: 11px;
   margin-top: -5px;
-  width: 128px;
-  height: 130px;
-  background: url(flame.gif) no-repeat left top;
+  border-collapse: collapse;
+}
+
+.flame td {
+  width: 8px;
+  height: 8px;
+}
+
+.flame td div {
+  border: 0 solid;
+  width: 6px;
+  height: 6px;
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    padding: 30px 20px;
+  }
+  h1 {
+    font-size: 36px;
+  }
+  h1 .nickname {
+    font-size: 12px;
+    line-height: 36px;
+  }
+  h3 {
+    font-size: 11px;
+  }
+  section li {
+    padding: 0;
+  }
+  .flame {
+    position: static;
+    margin: 0 auto 30px;
+  }
 }
