@@ -78,11 +78,14 @@
     "Flask": {
       "url": "http://flask.pocoo.org/"
     },
+    "Classy": {
+      "url": "http://classy.pocoo.org/"
+    },
     "node-irc": {
       "url": "https://github.com/martynsmith/node-irc"
     },
-    "Classy": {
-      "url": "http://classy.pocoo.org/"
+    "mockcache": {
+      "url": "http://pypi.python.org/pypi/mockcache"
     },
     "LangDev": {
       "url": "http://langdev.org/"
