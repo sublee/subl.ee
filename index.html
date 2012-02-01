@@ -48,12 +48,12 @@
   </section>
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script>
-    var faviconTable = $('<table>').addClass('flame');
+    var faviconTable = $('<table>').addClass('logo');
     for (var i = 0; i < 16; ++i) {
-      var tr = $('<tr>').addClass('row-' + i);
+      var tr = $('<tr>');
       faviconTable.append(tr);
       for (var j = 0; j < 16; ++j) {
-        tr.append($('<td>').addClass('col-' + j).append('<div>'));
+        tr.append($('<td>').addClass('c' + j + 'r' + i).append('<i>'));
       }
     }
     $(document.body).prepend(faviconTable);

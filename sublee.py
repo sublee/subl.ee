@@ -58,42 +58,49 @@ class Builder(object):
         w, h = ico.size
         css = defaultdict(list)
         empty = (0, 0, 0)
-        for x in xrange(w):
-            for y in xrange(h):
-                color = ico.getpixel((x, y))
-                if color == empty:
+        white = (255, 255, 255)
+        def color_hex(color):
+            limit = lambda x: max(0, min(255, x))
+            return '#%02x%02x%02x' % tuple(map(limit, color))
+        for x, y in ((x, y) for x in xrange(w) for y in xrange(h)):
+            color = ico.getpixel((x, y))
+            if color == empty:
+                continue
+            selector = '.c%dr%d' % (x, y)
+            style = 'background: %s;' % color_hex(color)
+            css[style].append(selector)
+            # sharpen
+            i_size = (8, 8)
+            selector += ' i'
+            for direction, xd, yd in [('top', 0, -1), ('right', 1, 0),
+                                      ('bottom', 0, 1), ('left', -1, 0)]:
+                try:
+                    sample = ico.getpixel((x + xd, y + yd))
+                    if sample == empty:
+                        raise IndexError
+                except IndexError:
+                    sample = white
+                if sample == color:
                     continue
-                selector = '.row-%d .col-%d' % (y, x)
-                style = 'background: rgb%r;' % (color,)
-                css[selector].append(style)
-                sharp_size = (8, 8)
-                for direction, xd, yd in [('top', 0, -1), ('right', 1, 0),
-                                          ('bottom', 0, 1), ('left', -1, 0)]:
-                    try:
-                        sample = ico.getpixel((x + xd, y + yd))
-                        if sample == empty:
-                            raise IndexError
-                    except IndexError:
-                        sample = (255, 255, 255)
-                    if sample == color:
-                        continue
-                    sharp = self.sharpen(color, sample, sharpness)
-                    style = '''
-                        border-{direction}-color: rgb{sharp!r};
-                        border-{direction}-width: 1px;
-                    '''.format(direction=direction, sharp=sharp)
-                    css[selector + ' div'].append(style)
-                    sharp_size = (sharp_size[0] - abs(xd),
-                                  sharp_size[1] - abs(yd))
-                if sharp_size != (8, 8):
-                    style = 'width: %dpx; height: %dpx;' % sharp_size
-                    css[selector + ' div'].append(style)
-        with open(os.path.join(self.output, 'style.css'), 'a') as f:
-            print>>f; print>>f, '/* favicon */'
-            for selector, styles in css.iteritems():
-                line = '%s { %s }' % (selector, ' '.join(styles))
-                line = re.sub('\s+', ' ', line)
-                print>>f, line,
+                sharp = self.sharpen(color, sample, sharpness)
+                style = '''
+                    border-{direction}-color: {sharp};
+                    border-{direction}-width: 1px;
+                '''.format(direction=direction, sharp=color_hex(sharp))
+                css[style].append(selector)
+                i_size = (i_size[0] - abs(xd), i_size[1] - abs(yd))
+            if i_size != (8, 8):
+                style = 'width: %dpx; height: %dpx;' % i_size
+                css[style].append(selector)
+        css_path = os.path.join(self.output, 'style.css')
+        with open(css_path, 'a') as f:
+            for style, selectors in css.iteritems():
+                f.write('%s { %s }' % (', '.join(selectors), style))
+        # minify
+        with open(css_path) as f:
+            css = f.read()
+        with open(css_path, 'w') as f:
+            f.write(re.sub('\s*([{:;,}])\s*', '\\1', re.sub('\s+', ' ', css)))
         return True
 
     def sharpen(self, color, sample, sharpness):
