@@ -46,9 +46,25 @@
       "desc": "an API which serves Korean alphabet web fonts.",
       "url": "http://fontface.kr/"
     },
+    "Flask-AutoIndex": {
+      "desc": "mod_autoindex for Flask.",
+      "url": "http://packages.python.org/Flask-AutoIndex"
+    },
+    "Subleerunker": {
+      "desc": "a SUBERUNKER parody game.",
+      "url": "http://subl.ee/runker/"
+    },
+    "Cra-ezCounter": {
+      "desc": "an API which counts unique visitors on any web page.",
+      "url": "http://craezcounter.appspot.com/"
+    },
     "me2Virus": {
       "desc": "a social virus in me2DAY.",
       "url": "http://me2.subl.ee/me2virus"
+    },
+    "caselib": {
+      "desc": "a string converter between different naming convention.",
+      "url": "https://github.com/sublee/caselib"
     },
     "VLAAH": {
       "desc": "a social network service focuses on favorites of people.",
