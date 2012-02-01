@@ -23,8 +23,8 @@
     <h3>Projects</h3>
     <ul>
       {% for name in projects %}
-        <li><a href="{{ projects[name].url }}">{{ name }}</a>,
-        {{ projects[name].desc }}</li>
+        <li><a href="{{ projects[name].url }}">{{ name }}</a><span>,
+          {{ projects[name].desc }}</span></li>
       {% endfor %}
     </ul>
   </section>

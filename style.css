@@ -27,7 +27,7 @@ a:hover {
 h1, h2, h3 {
   font-weight: normal;
   font-size: 14px;
-  line-height: 1;
+  line-height: 1.1;
   color: #000;
 }
 
@@ -63,6 +63,7 @@ section p, section ul {
 section li {
   padding-left: 30px;
   text-indent: -30px;
+  color: #666;
 }
 
 .logo {
@@ -96,19 +97,51 @@ section li {
   body {
     padding: 30px 20px;
   }
+
   h1 {
     font-size: 36px;
   }
+
   h1 .nickname {
-    font-size: 12px;
+    font-size: 9px;
     line-height: 36px;
   }
+
+  h1, h2 {
+    text-align: center;
+  }
+
+  h2 {
+    margin: 0 -20px 24px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+  }
+
   h3 {
     font-size: 11px;
   }
-  section li {
-    padding: 0;
+
+  section {
+    padding-left: 15px;
   }
+
+  section h3 {
+    margin-left: -15px;
+  }
+
+  section ul {
+    padding-left: 15px;
+    list-style: square;
+  }
+
+  section li {
+    color: #000;
+  }
+
+  section span, .error p {
+    display: none;
+  }
+
   .logo {
     position: static;
     margin: 0 auto 30px;
