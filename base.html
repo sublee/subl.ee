@@ -20,7 +20,7 @@
       var tr = $('<tr>');
       faviconTable.append(tr);
       for (var j = 0; j < 16; ++j) {
-        tr.append($('<td>').addClass('c' + j + 'r' + i).append('<i>'));
+        tr.append($('<td>').addClass('c' + j + 'r' + i).append('<i></i>'));
       }
     }
     $(document.body).prepend(faviconTable);
