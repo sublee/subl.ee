@@ -16,10 +16,10 @@ def chain():
             deco.funcs.append(f)
             return f
         else:
-            rv = []
-            for g in deco.funcs:
-                rv.append(g(f))
-            return rv
+            def gen(self):
+                for f in deco.funcs:
+                    yield f, f(self)
+            return gen(f)
     deco.funcs = []
     return deco
 
@@ -33,12 +33,13 @@ class Builder(object):
     build_all = chain()
 
     @build_all
-    def build_index(self):
+    def build_html(self):
         jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader('.'))
-        template = jinja_env.get_template('index.html')
-        rendered = template.render(**self.data).encode('utf-8')
-        with open(os.path.join(self.output, 'index.html'), 'w') as f:
-            f.write(rendered)
+        for filename in ['index.html', '404.html']:
+            template = jinja_env.get_template(filename)
+            rendered = template.render(**self.data).encode('utf-8')
+            with open(os.path.join(self.output, filename), 'w') as f:
+                f.write(rendered)
         return True
 
     @build_all
@@ -57,14 +58,19 @@ class Builder(object):
         ico = Image.open('favicon.ico')
         w, h = ico.size
         css = defaultdict(list)
-        empty = (0, 0, 0)
+        black = (0, 0, 0)
         white = (255, 255, 255)
         def color_hex(color):
             limit = lambda x: max(0, min(255, x))
             return '#%02x%02x%02x' % tuple(map(limit, color))
+        def sharp_style(direction, color, sample, sharpness):
+            sharp = self.sharpen(color, sample, sharpness)
+            form = '''border-{direction}-color: {color};
+                      border-{direction}-width: 1px;'''
+            return form.format(direction=direction, color=color_hex(sharp))
         for x, y in ((x, y) for x in xrange(w) for y in xrange(h)):
             color = ico.getpixel((x, y))
-            if color == empty:
+            if color == black:
                 continue
             selector = '.c%dr%d' % (x, y)
             style = 'background: %s;' % color_hex(color)
@@ -76,18 +82,17 @@ class Builder(object):
                                       ('bottom', 0, 1), ('left', -1, 0)]:
                 try:
                     sample = ico.getpixel((x + xd, y + yd))
-                    if sample == empty:
+                    if sample == black:
                         raise IndexError
                 except IndexError:
                     sample = white
                 if sample == color:
                     continue
-                sharp = self.sharpen(color, sample, sharpness)
-                style = '''
-                    border-{direction}-color: {sharp};
-                    border-{direction}-width: 1px;
-                '''.format(direction=direction, sharp=color_hex(sharp))
+                style = sharp_style(direction, color, sample, sharpness)
                 css[style].append(selector)
+                if sample == white:
+                    style = sharp_style(direction, color, black, sharpness)
+                    css[style].append('.error ' + selector)
                 i_size = (i_size[0] - abs(xd), i_size[1] - abs(yd))
             if i_size != (8, 8):
                 style = 'width: %dpx; height: %dpx;' % i_size
@@ -118,10 +123,8 @@ def build(output, data='data.json'):
     with open(data) as f:
         data = json.load(f, object_pairs_hook=OrderedDict)
     builder = Builder(output, data)
-    if all(builder.build_all()):
-        print 'ok'
-    else:
-        print 'error'
+    for meth, success in builder.build_all():
+        print meth.__name__, '...', 'ok' if success else 'error'
 
 
 if __name__ == '__main__':

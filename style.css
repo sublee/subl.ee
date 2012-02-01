@@ -12,6 +12,7 @@ body {
   font-size: 14px;
   line-height: 1.4;
   color: #999;
+  background: #fff;
 }
 
 a:link, a:visited {
@@ -81,6 +82,14 @@ section li {
   border: 0 solid;
   width: 6px;
   height: 6px;
+}
+
+.error {
+  background: #000;
+}
+
+.error h1 {
+  color: #fff;
 }
 
 @media screen and (max-width: 480px) {
