@@ -38,8 +38,10 @@ h1 {
 h1 .nickname {
   position: absolute;
   padding-left: 5px;
+  width: 80px;
   font-size: 18px;
   line-height: 48px;
+  text-align: left;
 }
 
 h2 {
@@ -103,6 +105,7 @@ section li {
   }
 
   h1 .nickname {
+    width: 50px;
     font-size: 9px;
     line-height: 36px;
   }

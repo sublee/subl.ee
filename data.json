@@ -1,7 +1,8 @@
 {
   "meta": {
     "title": "sublee",
-    "google_analytics": "UA-1078484-1"
+    "google_analytics": "UA-1078484-1",
+    "root_url": "http://subl.ee/"
   },
   "profile": {
     "name": "Heungsub Lee",
