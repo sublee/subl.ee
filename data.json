@@ -23,6 +23,10 @@
     }
   },
   "projects": {
+    "KartRider Dash (Beta)": {
+      "desc": "a social racing game in Facebook based on KartRider Online.",
+      "url": "http://facebook.com/kartriderdash"
+    },
     "KartRider Rush": {
       "desc": "a mobile racing game based on KartRider Online.",
       "url": "http://facebook.com/KartRiderRush"
