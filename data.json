@@ -39,6 +39,10 @@
       "desc": "an implementation of the TrueSkill rating system for Python.",
       "url": "http://packages.python.org/trueskill"
     },
+    "Korean": {
+      "desc": "a Python library for Korean morphology.",
+      "url": "http://packages.python.org/korean"
+    },
     "Gaedrip": {
       "desc": "a collection of Korean humors.",
       "url": "http://gaedrip.kr/"
@@ -70,10 +74,6 @@
     "caselib": {
       "desc": "a string converter between different naming convention.",
       "url": "https://github.com/sublee/caselib"
-    },
-    "VLAAH": {
-      "desc": "a social network service focuses on favorites of people.",
-      "url": "http://vlaah.com/"
     }
   },
   "contributed": {
