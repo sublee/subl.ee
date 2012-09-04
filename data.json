@@ -32,12 +32,16 @@
       "url": "http://www.hangulize.org/"
     },
     "TrueSkill": {
-      "desc": "an implementation of the TrueSkill rating system for Python.",
+      "desc": "a Python implementation of the TrueSkill rating system.",
       "url": "http://packages.python.org/trueskill"
     },
     "Korean": {
-      "desc": "a Python library for Korean morphology.",
+      "desc": "a library for Korean morphology.",
       "url": "http://packages.python.org/korean"
+    },
+    "Energy": {
+      "desc": "the energy system for social games.",
+      "url": "http://packages.python.org/energy"
     },
     "Gaedrip": {
       "desc": "a collection of Korean humors.",
