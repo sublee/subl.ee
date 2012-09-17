@@ -55,6 +55,9 @@ class Builder(object):
     @build_all
     def build_html(self):
         jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader('.'))
+        def entity(value):
+            return ''.join('&#%d;' % ord(c) for c in value)
+        jinja_env.filters['entity'] = entity
         for filename in ['index.html', '404.html']:
             template = jinja_env.get_template(filename)
             rendered = template.render(**self.data).encode('utf-8')

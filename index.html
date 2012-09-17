@@ -20,8 +20,8 @@
     <a href="{{ profile.employer.url }}">{{ profile.employer.name }}</a>
   </h2>
   <p class="email">
-    <a href="mailto:{{ profile.email }}">{{ profile.email }}</a> 
-    (Email, Gtalk, MSN)
+    <a href="mailto:{{ profile.email|entity }}">{{ profile.email|entity }}</a> 
+    (Email, Google Talk)
   </p>
   <p class="sns">
     {% for name in sns %}
