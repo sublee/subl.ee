@@ -16,6 +16,14 @@
   {% endblock %}
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script>
+    // fix CSS location on a development environment
+    if (!document.styleSheets[0].cssRules.length) {
+      var css = $('link[rel=stylesheet]');
+      css.attr('href', /\/([^\/]+)$/.exec(document.styleSheets[0].href)[1]);
+      $(document.head).append(css);
+    }
+  </script>
+  <script>
     var faviconTable = $('<table>').addClass('logo');
     for (var i = 0; i < 16; ++i) {
       var tr = $('<tr>');

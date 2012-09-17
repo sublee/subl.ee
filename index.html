@@ -29,12 +29,30 @@
       {%- if not loop.last %},{% endif %}
     {% endfor %}
   </p>
-  <section class="projects">
-    <h3>Projects</h3>
+  <section class="enterprise">
+    <h3>Enterprise</h3>
     <ul>
-      {% for name in projects %}
-        <li><a href="{{ projects[name].url }}">{{ name }}</a><span>,
-          {{ projects[name].desc }}</span></li>
+      {% for name in enterprise %}
+        <li><a href="{{ enterprise[name].url }}">{{ name }}</a><span>,
+          {{ enterprise[name].desc }}</span></li>
+      {% endfor %}
+    </ul>
+  </section>
+  <section class="opensource">
+    <h3>Open Source</h3>
+    <ul>
+      {% for name in opensource %}
+        <li><a href="{{ opensource[name].url }}">{{ name }}</a><span>,
+          {{ opensource[name].desc }}</span></li>
+      {% endfor %}
+    </ul>
+  </section>
+  <section class="justforfun">
+    <h3>Just for Fun</h3>
+    <ul>
+      {% for name in justforfun %}
+        <li><a href="{{ justforfun[name].url }}">{{ name }}</a><span>,
+          {{ justforfun[name].desc }}</span></li>
       {% endfor %}
     </ul>
   </section>

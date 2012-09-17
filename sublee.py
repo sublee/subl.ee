@@ -23,6 +23,7 @@ import json
 import os
 import re
 import shutil
+import types
 
 import baker
 import jinja2
@@ -31,7 +32,6 @@ from PIL import Image
 
 def chain():
     def deco(f):
-        import types
         if isinstance(f, types.FunctionType):
             deco.funcs.append(f)
             return f
