@@ -78,6 +78,10 @@
     "Cra-ezCounter": {
       "desc": "an API which counts unique visitors on any web page.",
       "url": "http://craezcounter.appspot.com/"
+    },
+    "fingerbinary.py": {
+      "desc": "a short code that generates Finger binary from given number.",
+      "url": "https://gist.github.com/600592"
     }
   },
   "contributed": {
