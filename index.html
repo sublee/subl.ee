@@ -8,6 +8,8 @@
   <meta property="og:description" content="{{ profile.name }}'s Homepage" />
   <meta property="og:image" content="{{ meta.root_url }}opengraph.gif" />
   <meta property="og:url" content="{{ meta.root_url }}" />
+  <meta name="author" content="{{ profile.name }}" />
+  <meta name="keywords" content="{{ meta.keywords|join(',') }}" />
 {% endblock %}
 
 {% block body %}
