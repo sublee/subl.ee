@@ -38,6 +38,10 @@
       "desc": "the energy system for social games.",
       "url": "http://packages.python.org/energy"
     },
+    "Ranking": {
+      "desc": "a library to assign suitable ranks.",
+      "url": "http://packages.python.org/ranking"
+    },
     "Hangulize": {
       "desc": "a Korean alphabet transcription tool.",
       "url": "http://www.hangulize.org/"
