@@ -24,6 +24,10 @@
     }
   },
   "enterprise": {
+    "KartRider Coin Rush": {
+      "desc": "a synchronous multiplayer racing game for Kakao.",
+      "url": "https://play.google.com/store/apps/details?id=com.nexon.krr4kakao"
+    },
     "KartRider Dash": {
       "desc": "a synchronous multiplayer racing game in Facebook.",
       "url": "http://www.facebook.com/kartriderdash"
@@ -39,7 +43,7 @@
       "url": "http://packages.python.org/energy"
     },
     "Ranking": {
-      "desc": "a library to assign suitable ranks.",
+      "desc": "strategies for assigning ranks.",
       "url": "http://packages.python.org/ranking"
     },
     "Hangulize": {
