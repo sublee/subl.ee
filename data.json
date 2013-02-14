@@ -36,15 +36,15 @@
   "opensource": {
     "TrueSkill": {
       "desc": "a Python implementation of the TrueSkill rating system.",
-      "url": "http://packages.python.org/trueskill"
+      "url": "http://pythonhosted.org/trueskill"
     },
     "Energy": {
       "desc": "the energy system for social games.",
-      "url": "http://packages.python.org/energy"
+      "url": "http://pythonhosted.org/energy"
     },
     "Ranking": {
       "desc": "strategies for assigning ranks.",
-      "url": "http://packages.python.org/ranking"
+      "url": "http://pythonhosted.org/ranking"
     },
     "Hangulize": {
       "desc": "a Korean alphabet transcription tool.",
@@ -52,15 +52,15 @@
     },
     "Korean": {
       "desc": "a library for Korean morphology.",
-      "url": "http://packages.python.org/korean"
+      "url": "http://pythonhosted.org/korean"
     },
     "Flask-AutoIndex": {
       "desc": "mod_autoindex for Flask.",
-      "url": "http://packages.python.org/Flask-AutoIndex"
+      "url": "http://pythonhosted.org/Flask-AutoIndex"
     },
     "Flask-Silk": {
       "desc": "a Flask extension that provides shared Silk icons.",
-      "url": "http://packages.python.org/Flask-Silk"
+      "url": "http://pythonhosted.org/Flask-Silk"
     },
     "caselib": {
       "desc": "a string converter between different naming convention.",
