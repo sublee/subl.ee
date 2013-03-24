@@ -35,8 +35,8 @@
   },
   "opensource": {
     "TrueSkill": {
-      "desc": "a Python implementation of the TrueSkill rating system.",
-      "url": "http://pythonhosted.org/trueskill"
+      "desc": "the video game rating system.",
+      "url": "http://trueskill.org/"
     },
     "Energy": {
       "desc": "the energy system for social games.",
