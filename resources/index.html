@@ -6,11 +6,14 @@
 {% block meta %}
   <meta property="og:type" content="website" /> 
   <meta property="og:title" content="{{ profile_title }}" /> 
-  <meta property="og:description" content="{{ author }}'s Homepage" />
-  <meta property="og:image" content="{{ url }}opengraph.png" />
+  <meta property="og:description" content="{{ author }}'s homepage" />
+  <meta property="og:image" content="{{ url }}og.png" />
   <meta property="og:url" content="{{ url }}" />
   <meta name="author" content="{{ author }}" />
   <meta name="keywords" content="{{ keywords|join(',') }}" />
+  <!-- freeze og.png together -->
+  <script type="image/png" src="{{ url_for('static', filename='og.png') }}">
+  </script>
 {% endblock %}
 
 {% block body %}

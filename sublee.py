@@ -15,6 +15,7 @@ import os
 from flask import Flask, render_template, send_from_directory
 from lxml import html
 from markdown import markdown
+from werkzeug.exceptions import NotFound
 import yaml
 
 
@@ -34,10 +35,10 @@ app = Flask(__name__, **paths)
 
 
 def load_meta(func):
-    with open(os.path.join(app.static_folder, META)) as f:
-        meta = yaml.load(f)
     @functools.wraps(func)
     def wrapped(*args, **kwargs):
+        with open(os.path.join(app.static_folder, META)) as f:
+            meta = yaml.load(f)
         return func(meta, *args, **kwargs)
     return wrapped
 
@@ -54,8 +55,9 @@ def index(meta):
 
 
 @app.errorhandler(404)
+@app.route('/404.html')
 @load_meta
-def error_404(meta, error):
+def error_404(meta, error=NotFound()):
     context = {'error': error}
     context.update(meta)
-    return render_template('404.html', **context)
+    return render_template('error.html', **context)
