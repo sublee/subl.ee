@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ profile_title }}{% endblock %}
+{% block class %}index{% endblock %}
+
+{% block meta %}
+  <meta property="og:type" content="website" /> 
+  <meta property="og:title" content="{{ profile_title }}" /> 
+  <meta property="og:description" content="{{ author }}'s Homepage" />
+  <meta property="og:image" content="{{ url }}opengraph.png" />
+  <meta property="og:url" content="{{ url }}" />
+  <meta name="author" content="{{ author }}" />
+  <meta name="keywords" content="{{ keywords|join(',') }}" />
+{% endblock %}
+
+{% block body %}
+  {{ profile_html|safe }}
+{% endblock %}

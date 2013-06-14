@@ -1,0 +1,50 @@
+<!doctype html>
+<html prefix="og: http://ogp.me/ns#">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=500" />
+  <title>{% block title %}{% endblock %}</title>
+  {% for key, val in opengraph %}
+    <meta property="og:{{ key }}" content="{{ val }}" />
+  {% endfor %}
+  {% block meta %}{% endblock %}
+  <link rel="stylesheet" type="text/css"
+    href="{{ url_for('static', filename='style.css') }}" />
+  <link rel="shortcut icon" type="image/icon"
+    href="{{ url_for('static', filename='favicon.ico') }}" />
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body class="{% block class %}{% endblock %}">
+  {% block header %}
+    <header>
+      <img src="{{ url_for('static', filename='logo.png') }}" />
+    </header>
+  {% endblock %}
+  {% block body %}
+  {% endblock %}
+  {% block footer %}
+    <footer>
+      <p>{{ author }} &copy; {{ copyright }}</p>
+    </footer>
+  {% endblock %}
+  {% if google_analytics %}
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', '{{ google_analytics }}']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var isHTTPS = 'https:' == document.location.protocol;
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = (isHTTPS ? 'https://ssl' : 'http://www')
+               + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  {% endif %}
+</body>
+</html>
