@@ -3,7 +3,7 @@
     sublee
     ~~~~~~
 
-    A Flask application for the homepage of Heungsub Lee.
+    http://subl.ee/
 
     :copyright: (c) 2013 by Heungsub Lee
     :license: Public Domain.
@@ -15,7 +15,7 @@ import os
 from flask import Flask, render_template, send_from_directory
 from lxml import html
 from markdown import markdown
-from werkzeug.exceptions import NotFound
+from werkzeug.exceptions import HTTPException
 import yaml
 
 
@@ -54,10 +54,13 @@ def index(meta):
     return render_template('index.html', **context)
 
 
-@app.errorhandler(404)
-@app.route('/404.html')
 @load_meta
-def error_404(meta, error=NotFound()):
+def error(meta, error):
     context = {'error': error}
     context.update(meta)
     return render_template('error.html', **context)
+
+
+for status in range(400, 420) + range(500, 506):
+    register_error_handler = app.errorhandler(status)
+    register_error_handler(error)

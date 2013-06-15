@@ -16,14 +16,18 @@
 <body class="{% block class %}{% endblock %}">
   {% block header %}
     <header>
-      <img src="{{ url_for('static', filename='logo.png') }}" />
+      {% block inner_header %}
+        <img class="logo" src="{{ url_for('static', filename='logo.png') }}" />
+      {% endblock %}
     </header>
   {% endblock %}
   {% block body %}
   {% endblock %}
   {% block footer %}
     <footer>
-      <p>{{ author }} &copy; {{ copyright }}</p>
+      {% block inner_footer %}
+        <p>{{ author }} &copy; {{ copyright }}</p>
+      {% endblock %}
     </footer>
   {% endblock %}
   {% if google_analytics %}

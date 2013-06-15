@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 
 {% block title %}{{ error }}{% endblock %}
+{% block class %}error{% endblock %}
 
-{% block header %}{% endblock %}
-{% block footer %}{% endblock %}
+{% block inner_header %}
+  <a href="{{ url_for('index') }}">{{ super() }}</a>
+{% endblock %}
 
 {% block body %}
   <h1>{{ error }}</h1>
