@@ -3,6 +3,7 @@
 * {
   margin: 0;
   padding: 0;
+  border: none;
   font-size: 1em;
   line-height: 1.5;
   clear: left;
@@ -24,6 +25,8 @@ body {
 }
 
 a:active .logo {
+  margin-top: 1px;
+  margin-bottom: -1px;
   background: none;
 }
 
