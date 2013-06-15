@@ -14,5 +14,10 @@ def not_found():
 freezer = Freezer(app, with_static_files=False)
 
 
+@freezer.register_generator
+def static():
+    yield {'filename': 'logo-shadow.png'}
+
+
 if __name__ == '__main__':
     freezer.freeze()
