@@ -23,18 +23,28 @@ __version__ = '2.0.1'
 __all__ = ['app']
 
 
-RESOURCES = 'resources'
+ASSETS = 'assets'
 PROFILE = 'profile.md'
 META = 'meta.yml'
 
 
-paths = {'static_url_path': '',
-         'static_folder': RESOURCES,
-         'template_folder': RESOURCES}
+paths = {
+    'static_url_path': '', 'static_folder': ASSETS, 'template_folder': ASSETS}
 app = Flask(__name__, **paths)
 
 
 def load_meta(func):
+    """A decorator which gives the current meta data as the first argument of
+    the function.
+
+       @load_meta
+       def some_func(meta):
+           # work with meta
+           pass
+
+       some_func()
+
+    """
     @functools.wraps(func)
     def wrapped(*args, **kwargs):
         with open(os.path.join(app.static_folder, META)) as f:
@@ -46,6 +56,7 @@ def load_meta(func):
 @app.route('/')
 @load_meta
 def index(meta):
+    """The homepage."""
     with open(os.path.join(app.static_folder, PROFILE)) as f:
         profile_html = markdown(f.read())
     h1 = html.fromstring(profile_html).xpath('//h1')[0].text
@@ -56,6 +67,7 @@ def index(meta):
 
 @load_meta
 def error(meta, error):
+    """The HTTP error page."""
     context = {'error': error}
     context.update(meta)
     return render_template('error.html', **context)
