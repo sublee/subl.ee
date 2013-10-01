@@ -23,13 +23,14 @@ __version__ = '2.0.1'
 __all__ = ['app']
 
 
-ASSETS = 'assets'
-PROFILE = 'profile.md'
-META = 'meta.yml'
+ASSETS = os.path.join(os.path.dirname(__file__), 'assets')
+PROFILE = os.path.join(os.path.dirname(__file__), 'profile.md')
+META = os.path.join(os.path.dirname(__file__), 'meta.yml')
 
 
-paths = {
-    'static_url_path': '', 'static_folder': ASSETS, 'template_folder': ASSETS}
+paths = {'static_url_path': '',
+         'static_folder': ASSETS,
+         'template_folder': ASSETS}
 app = Flask(__name__, **paths)
 
 
@@ -47,7 +48,7 @@ def load_meta(func):
     """
     @functools.wraps(func)
     def wrapped(*args, **kwargs):
-        with open(os.path.join(app.static_folder, META)) as f:
+        with open(META) as f:
             meta = yaml.load(f)
         return func(meta, *args, **kwargs)
     return wrapped
@@ -57,7 +58,7 @@ def load_meta(func):
 @load_meta
 def index(meta):
     """The homepage."""
-    with open(os.path.join(app.static_folder, PROFILE)) as f:
+    with open(PROFILE) as f:
         profile_html = markdown(f.read())
     h1 = html.fromstring(profile_html).xpath('//h1')[0].text
     context = {'profile_title': h1, 'profile_html': profile_html}
