@@ -5,12 +5,11 @@ I am
 ----
 
 - Heungsub Lee <[sub@subl.ee][]>,
-- a Game Development Engineer at [Nexon][]/[devCAT][]
+- a Game Development Engineer at [Nexon][]/Project K
 - and also an [Open Source][] contributor.
 
 [sub@subl.ee]: mailto:sub@subl.ee
 [Nexon]: http://nexon.com/
-[devCAT]: http://devcat.nexon.com/
 [Open Source]: https://github.com/sublee
 
 I made
