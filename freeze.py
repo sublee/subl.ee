@@ -19,5 +19,10 @@ if os.path.exists('../gh-pages'):
 freezer = Freezer(app, with_static_files=False)
 
 
+@freezer.register_generator
+def static():
+    yield {'filename': 'logo@4x.png'}
+
+
 if __name__ == '__main__':
     freezer.freeze()
