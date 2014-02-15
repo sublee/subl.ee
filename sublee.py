@@ -5,7 +5,7 @@
 
     http://subl.ee/
 
-    :copyright: (c) 2013 by Heungsub Lee
+    :copyright: (c) 2013-2014 by Heungsub Lee
     :license: Public Domain.
 """
 from __future__ import with_statement
@@ -19,7 +19,7 @@ from werkzeug.exceptions import HTTPException
 import yaml
 
 
-__version__ = '2.0.1'
+__version__ = '2.1.0'
 __all__ = ['app']
 
 
@@ -77,3 +77,7 @@ def error(meta, error):
 for status in range(400, 420) + range(500, 506):
     register_error_handler = app.errorhandler(status)
     register_error_handler(error)
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8080)

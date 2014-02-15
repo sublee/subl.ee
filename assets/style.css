@@ -14,14 +14,14 @@ body {
   font-family: 'Roboto Slab', sans-serif;
   font-weight: 400;
   font-size: 18px;
-  color: #667;
-  background: #f4f3ea;
+  color: #788;
+  background: #192222;
   white-space: nowrap;
 }
 
 .logo {
-  margin-left: -30px;
-  background: url(logo-shadow.png) no-repeat;
+  margin-left: -18px;
+  margin-bottom: -8px;
 }
 
 a:active .logo {
@@ -38,11 +38,11 @@ footer {
 
 footer p {
   font-size: 0.75em;
-  color: #ccb;
+  color: #455;
 }
 
 h1 {
-  color: #d34;
+  color: #e34;
   font-weight: 700;
   font-size: 2em;
 }
@@ -51,9 +51,14 @@ h1 {
   display: none;
 }
 
+.error h1 {
+  display: block;
+  color: #ca4;
+}
+
 h2 {
-  color: #d34;
-  font-weight: 700;
+  color: #e34;
+  font-weight: 400;
   padding-top: 1em;
 }
 
@@ -62,11 +67,11 @@ a:link, a:visited {
 }
 
 a:link {
-  color: #2aa;
+  color: #ca4;
 }
 
 a:visited {
-  color: #99a;
+  color: #876;
 }
 
 a:hover {
@@ -84,19 +89,10 @@ ul {
   }
 
   .logo {
-    margin: 0;
-  }
-
-  header, footer, h1 {
-    text-align: center;
+    zoom: 1.5;
   }
 
   li {
     display: inline;
   }
-}
-
-.error h1 {
-  display: block;
-  color: #d34;
 }
