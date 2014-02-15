@@ -20,7 +20,7 @@
         <img class="logo" width="120" height="128"
           src="{{ url_for('static', filename='logo.png') }}" />
         <script>
-          if (window.devicePixelRatio > 1) {
+          if (window.devicePixelRatio > 1 || document.body.clientWidth <= 600) {
             var logo = document.getElementsByTagName('img')[0];
             logo.src = logo.src.replace(/(\.[^.]+)$/, '@4x$1');
           }
