@@ -17,14 +17,16 @@
   {% block header %}
     <header>
       {% block inner_header %}
-        <img class="logo" width="120" height="128"
-          src="{{ url_for('static', filename='logo.png') }}" />
-        <script>
-          if (window.devicePixelRatio > 1 || document.body.clientWidth <= 600) {
-            var logo = document.getElementsByTagName('img')[0];
-            logo.src = logo.src.replace(/(\.[^.]+)$/, '@4x$1');
-          }
-        </script>
+        <table class="logo">
+          <tr class="logo-color-1">
+            <td rowspan="2"></td>
+            <td></td>
+            <td rowspan="2"></td>
+          </tr>
+          <tr class="logo-color-2">
+            <td></td>
+          </tr>
+        </table>
       {% endblock %}
     </header>
   {% endblock %}
