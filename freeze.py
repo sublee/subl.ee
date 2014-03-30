@@ -21,7 +21,7 @@ freezer = Freezer(app, with_static_files=False)
 
 @freezer.register_generator
 def static():
-    yield {'filename': 'logo@4x.png'}
+    yield {'filename': 'logo.css'}
 
 
 if __name__ == '__main__':
