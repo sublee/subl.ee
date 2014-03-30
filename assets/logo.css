@@ -2,7 +2,11 @@ table.logo {
   margin: -6px;
   width: 96px;
   height: 96px;
+  border-collapse: separate;
   border-spacing: 6px;
+  /* The IE border-spacing workaround: http://vacskamati.blogspot.kr/2007/03/
+     eliminating-cellspacing-and-cellpadding.html */
+  *border-collapse: expression('separate', cellSpacing = '6px');
 }
 
 table.logo td {
