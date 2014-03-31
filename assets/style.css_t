@@ -102,27 +102,35 @@ table.logo {
 
 table.logo td {
   width: 24px;
-  transition: all 1s;
 }
 
-table.logo .logo-color-1 td {
-  background: {{ logo_color_1 }};
-  box-shadow: 0 0 1px {{ logo_color_1 }};
-}
+{% set compat = ['', '-webkit-', '-moz-', '-o-'] %}
 
-table.logo .logo-color-2 td {
-  background: {{ logo_color_2 }};
-  box-shadow: 0 0 1px {{ logo_color_2 }};
-}
+{% macro logo_keyframes(name, color) %}
+  {% for hack in compat %}
+    @{{ hack }}keyframes {{ name }} {
+      from { box-shadow: 0 0 1px {{ color }}, 0 0 0 {{ background_color }}; }
+      to { box-shadow: 0 0 32px {{ color }}, 0 0 2px {{ background_color }}; }
+    }
+  {% endfor %}
+{% endmacro %}
 
-table.logo:hover td {
-  border-width: 0;
-}
+{% set logo_colors = [logo_color_1, logo_color_2] %}
 
-table.logo:hover .logo-color-1 td {
-  box-shadow: 0 0 32px {{ logo_color_1 }}, 0 0 2px {{ background_color }};
-}
-
-table.logo:hover .logo-color-2 td {
-  box-shadow: 0 0 32px {{ logo_color_2 }}, 0 0 2px {{ background_color }};
-}
+{% for logo_color, blink in {
+  logo_color_1: blink_logo_color_1,
+  logo_color_2: blink_logo_color_2,
+}.viewitems() %}
+  {% set i = loop.index %}
+  table.logo .logo-color-{{ i }} td {
+    background: {{ logo_color }};
+  }
+  {% if blink %}
+    {{ logo_keyframes('logo-' ~ i, logo_color) }}
+    table.logo .logo-color-{{ i }} td {
+      {% for hack in compat %}
+        {{ hack }}animation: logo-{{ i }} 4s ease-in-out infinite alternate;
+      {% endfor %}
+    }
+  {% endif %}
+{% endfor %}
