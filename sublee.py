@@ -63,13 +63,9 @@ def index(meta):
         profile_html = markdown(f.read())
     h1 = html.fromstring(profile_html).xpath('//h1')[0].text
     context = {'profile_title': h1, 'profile_html': profile_html}
+    context['theme'] = DEFAULT_THEME
     context.update(meta)
     return render_template('index.html', **context)
-
-
-@app.route('/style.css')
-def default_css():
-    return css(DEFAULT_THEME)
 
 
 @app.route('/style-<theme>.css')
@@ -86,6 +82,7 @@ def css(theme):
 def error(meta, error):
     """The HTTP error page."""
     context = {'error': error}
+    context['theme'] = DEFAULT_THEME
     context.update(meta)
     return render_template('error.html', **context)
 

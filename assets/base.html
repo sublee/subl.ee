@@ -6,7 +6,7 @@
   <title>{% block title %}{% endblock %}</title>
   {% block meta %}{% endblock %}
   <link rel="stylesheet" type="text/css"
-    href="{{ url_for('static', filename='style.css') }}" />
+    href="{{ url_for('static', filename='style-' ~ theme ~ '.css') }}" />
   <script>
     var theme = null;
     function isToday(month, day) {
