@@ -4,7 +4,7 @@ import os
 from flask_frozen import Freezer
 import yaml
 
-from sublee import app, THEMES
+from sublee import app, DEFAULT_THEME, THEMES
 
 
 @app.route('/404.html')
@@ -25,6 +25,8 @@ def css():
     with open(THEMES) as f:
         themes = yaml.load(f)
     for theme in themes.viewkeys():
+        if theme == DEFAULT_THEME:
+            continue
         yield {'theme': theme}
 
 

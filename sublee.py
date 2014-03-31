@@ -26,6 +26,7 @@ ASSETS = os.path.join(os.path.dirname(__file__), 'assets')
 PROFILE = os.path.join(os.path.dirname(__file__), 'profile.md')
 META = os.path.join(os.path.dirname(__file__), 'meta.yml')
 THEMES = os.path.join(os.path.dirname(__file__), 'themes.yml')
+DEFAULT_THEME = 'sublee'
 
 
 paths = {'static_url_path': '',
@@ -68,7 +69,7 @@ def index(meta):
 
 @app.route('/style.css')
 def default_css():
-    return css('sublee')
+    return css(DEFAULT_THEME)
 
 
 @app.route('/style-<theme>.css')
