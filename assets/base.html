@@ -7,6 +7,13 @@
   {% block meta %}{% endblock %}
   <link rel="stylesheet" type="text/css"
     href="{{ url_for('static', filename='style.css') }}" />
+  <script>
+    if (location.hash) {
+      var theme = location.hash.replace(/^#/, '');
+      var links = document.getElementsByTagName('link');
+      links[links.length - 1].setAttribute('href', theme + '.css');
+    }
+  </script>
   <link rel="shortcut icon" type="image/icon"
     href="{{ url_for('static', filename='favicon.ico') }}" />
   <!--[if lt IE 9]>

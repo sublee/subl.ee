@@ -12,20 +12,20 @@ from __future__ import with_statement
 import functools
 import os
 
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, make_response, render_template
 from lxml import html
 from markdown import markdown
-from werkzeug.exceptions import HTTPException
 import yaml
 
 
-__version__ = '2.1.0'
+__version__ = '2.2.0'
 __all__ = ['app']
 
 
 ASSETS = os.path.join(os.path.dirname(__file__), 'assets')
 PROFILE = os.path.join(os.path.dirname(__file__), 'profile.md')
 META = os.path.join(os.path.dirname(__file__), 'meta.yml')
+THEMES = os.path.join(os.path.dirname(__file__), 'themes.yml')
 
 
 paths = {'static_url_path': '',
@@ -64,6 +64,16 @@ def index(meta):
     context = {'profile_title': h1, 'profile_html': profile_html}
     context.update(meta)
     return render_template('index.html', **context)
+
+
+@app.route('/<theme>.css')
+def css(theme):
+    with open(THEMES) as f:
+        themes = yaml.load(f)
+    colors = themes[theme]
+    response = make_response(render_template('style.css_t', **colors))
+    response.headers['Content-Type'] = 'text/css'
+    return response
 
 
 @load_meta

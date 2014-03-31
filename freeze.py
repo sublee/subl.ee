@@ -2,8 +2,9 @@
 import os
 
 from flask_frozen import Freezer
+import yaml
 
-from sublee import app
+from sublee import app, THEMES
 
 
 @app.route('/404.html')
@@ -20,8 +21,11 @@ freezer = Freezer(app, with_static_files=False)
 
 
 @freezer.register_generator
-def static():
-    yield {'filename': 'logo.css'}
+def css():
+    with open(THEMES) as f:
+        themes = yaml.load(f)
+    for theme in themes.viewkeys():
+        yield {'theme': theme}
 
 
 if __name__ == '__main__':

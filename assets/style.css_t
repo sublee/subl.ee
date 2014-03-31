@@ -1,0 +1,128 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 1em;
+  line-height: 1.5;
+  clear: left;
+}
+
+body {
+  padding: 0 10%;
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: {{ text_color }};
+  background: {{ background_color }};
+  white-space: nowrap;
+  transition: padding 0.2s;
+}
+
+header {
+  margin-top: 4em;
+  margin-bottom: 1em;
+  line-height: 1;
+}
+
+footer {
+  margin-top: 2em;
+  margin-bottom: 4em;
+}
+
+footer p {
+  font-size: 0.75em;
+  color: {{ copyright_color }};
+}
+
+h1 {
+  color: {{ logo_color_1 }};
+  font-weight: 700;
+  font-size: 2em;
+}
+
+h1 {
+  display: none;
+}
+
+.error h1 {
+  display: block;
+  color: {{ link_color }};
+}
+
+h2 {
+  color: {{ logo_color_1 }};
+  font-weight: 400;
+  padding-top: 1em;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+}
+
+a:link {
+  color: {{ link_color }};
+}
+
+a:visited {
+  color: {{ vlink_color }};
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    padding-left: 5%;
+    padding-right: 5%;
+    white-space: normal;
+  }
+
+  li {
+    display: inline;
+  }
+}
+
+table.logo {
+  margin: -6px;
+  width: 96px;
+  height: 96px;
+  border-collapse: separate;
+  border-spacing: 6px;
+  /* The IE border-spacing workaround: http://vacskamati.blogspot.kr/2007/03/
+     eliminating-cellspacing-and-cellpadding.html */
+  *border-collapse: expression('separate', cellSpacing = '6px');
+}
+
+table.logo td {
+  width: 24px;
+  transition: all 1s;
+}
+
+table.logo .logo-color-1 td {
+  background: {{ logo_color_1 }};
+  box-shadow: 0 0 1px {{ logo_color_1 }};
+}
+
+table.logo .logo-color-2 td {
+  background: {{ logo_color_2 }};
+  box-shadow: 0 0 1px {{ logo_color_2 }};
+}
+
+table.logo:hover td {
+  border-width: 0;
+}
+
+table.logo:hover .logo-color-1 td {
+  box-shadow: 0 0 32px {{ logo_color_1 }}, 0 0 2px {{ background_color }};
+}
+
+table.logo:hover .logo-color-2 td {
+  box-shadow: 0 0 32px {{ logo_color_2 }}, 0 0 2px {{ background_color }};
+}
