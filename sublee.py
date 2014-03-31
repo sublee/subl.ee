@@ -66,7 +66,12 @@ def index(meta):
     return render_template('index.html', **context)
 
 
-@app.route('/<theme>.css')
+@app.route('/style.css')
+def default_css():
+    return css('sublee')
+
+
+@app.route('/style-<theme>.css')
 def css(theme):
     with open(THEMES) as f:
         themes = yaml.load(f)

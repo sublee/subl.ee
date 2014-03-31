@@ -87,6 +87,10 @@ ul {
   li {
     display: inline;
   }
+
+  table {
+    zoom: 6;
+  }
 }
 
 table.logo {

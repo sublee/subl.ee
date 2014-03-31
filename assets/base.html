@@ -8,10 +8,20 @@
   <link rel="stylesheet" type="text/css"
     href="{{ url_for('static', filename='style.css') }}" />
   <script>
+    var theme = null;
+    function isToday(month, day) {
+      var date = new Date();
+      return date.getMonth() == month - 1 && date.getDate() == day;
+    }
     if (location.hash) {
-      var theme = location.hash.replace(/^#/, '');
+      theme = location.hash.replace(/^#/, '');
+    } else if (isToday(4, 1)) {
+      // April Fools' Day
+      theme = 'silly';
+    }
+    if (theme) {
       var links = document.getElementsByTagName('link');
-      links[links.length - 1].setAttribute('href', theme + '.css');
+      links[links.length - 1].setAttribute('href', '/style-' + theme + '.css');
     }
   </script>
   <link rel="shortcut icon" type="image/icon"
