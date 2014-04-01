@@ -8,16 +8,16 @@ sublee:
   link_color: '#ca4'
   vlink_color: '#986'
   copyright_color: '#455'
-silly:
+90s:
   logo_color_1: '#f00'
   logo_color_2: '#ff0'
   blink_logo_color_1: true
   blink_logo_color_2: true
-  background_color: '#000'
-  text_color: '#999'
-  link_color: '#33f'
-  vlink_color: '#90c'
-  copyright_color: '#666'
+  background_color: '#009'
+  text_color: '#ff0'
+  link_color: '#0ff'
+  vlink_color: '#f0f'
+  copyright_color: '#0f0'
 #solarized:
 #  logo_color_1: '#dc322f'
 #  logo_color_2: '#b58900'
