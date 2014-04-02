@@ -31,7 +31,7 @@ solarized:
   logo_color_2: '#586e75'  # base01
   background_color: '#fdf6e3'  # base3
   title_color: '#d33682'  # magenta
-  text_color: '#93a1a1'  # base1
+  text_color: '#839496'  # base1
   link_color: '#268bd2'  # blue
   vlink_color: '#859900'  # green
   copyright_color: '#2aa198'  # cyan
