@@ -18,14 +18,23 @@ sublee:
   link_color: '#0ff'
   vlink_color: '#f0f'
   copyright_color: '#0f0'
-#solarized:
-#  logo_color_1: '#dc322f'
-#  logo_color_2: '#b58900'
-#  background_color: '#002b36'
-#  text_color: '#839496'
-#  link_color: '#268bd2'
-#  vlink_color: '#6c71c4'
-#  copyright_color: '#586e75'
+mogef:
+  logo_color_1: '#ac1f8d'
+  logo_color_2: '#bcbe50'
+  background_color: '#fff'
+  text_color: '#666'
+  link_color: '#4e9fd7'
+  vlink_color: '#989ccb'
+  copyright_color: '#bcbe50'
+solarized:
+  logo_color_1: '#2aa198'  # cyan
+  logo_color_2: '#586e75'  # base01
+  background_color: '#fdf6e3'  # base3
+  title_color: '#d33682'  # magenta
+  text_color: '#93a1a1'  # base1
+  link_color: '#268bd2'  # blue
+  vlink_color: '#859900'  # green
+  copyright_color: '#2aa198'  # cyan
 mono:
   logo_color_1: '#eee'
   logo_color_2: '#e34'
@@ -52,11 +61,3 @@ twilight:
   link_color: '#a2a96f'
   vlink_color: '#a999ac'
   copyright_color: '#64686c'
-mogef:
-  logo_color_1: '#ac1f8d'
-  logo_color_2: '#bcbe50'
-  background_color: '#fff'
-  text_color: '#666'
-  link_color: '#4e9fd7'
-  vlink_color: '#989ccb'
-  copyright_color: '#bcbe50'

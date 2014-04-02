@@ -1,3 +1,5 @@
+{% set title_color = title_color or logo_color_1 %}
+
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
 
 * {
@@ -37,7 +39,7 @@ footer p {
 }
 
 h1 {
-  color: {{ logo_color_1 }};
+  color: {{ title_color }};
   font-weight: 700;
   font-size: 2em;
 }
@@ -52,7 +54,7 @@ h1 {
 }
 
 h2 {
-  color: {{ logo_color_1 }};
+  color: {{ title_color }};
   font-weight: 400;
   padding-top: 1em;
 }
@@ -117,10 +119,8 @@ table.logo td {
 
 {% set logo_colors = [logo_color_1, logo_color_2] %}
 
-{% for logo_color, blink in {
-  logo_color_1: blink_logo_color_1,
-  logo_color_2: blink_logo_color_2,
-}.viewitems() %}
+{% for logo_color, blink in [(logo_color_1, blink_logo_color_1),
+                             (logo_color_2, blink_logo_color_2)] %}
   {% set i = loop.index %}
   table.logo .logo-color-{{ i }} td {
     background: {{ logo_color }};
