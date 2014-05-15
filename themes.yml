@@ -61,3 +61,12 @@ twilight:
   link_color: '#a2a96f'
   vlink_color: '#a999ac'
   copyright_color: '#64686c'
+milky:
+  logo_color_1: '#f4f4f4'
+  logo_color_2: '#fafafa'
+  background_color: '#fff'
+  title_color: '#eee'
+  text_color: '#eee'
+  link_color: '#def'
+  vlink_color: '#edf'
+  copyright_color: '#eee'
