@@ -22,6 +22,11 @@ I made (or am making)
 - Small Flask extensions: [Flask-AutoIndex][] and [Flask-Silk][];
 - [Subleerunker][], [MOGEF.XXX][], [Cra-ezCounter][] just for fun.
 
+I spoke about
+-------------
+
+- [Durango Server Architecture][] (Korean), in NDC14.
+
 [Durango]: http://durango.nexon.com/
 [KartRider Dash]: http://www.facebook.com/kartriderdash
 [Coin Rush]: https://play.google.com/store/apps/details?id=com.nexon.krr4kakao
@@ -34,3 +39,4 @@ I made (or am making)
 [Subleerunker]: http://subl.ee/runker
 [MOGEF.XXX]: http://mogef.xxx/
 [Cra-ezCounter]: http://craezcounter.appspot.com/
+[Durango Server Architecture]: http://www.slideshare.net/sublee/spof-mmorpg
