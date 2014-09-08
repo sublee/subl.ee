@@ -97,6 +97,19 @@ ul.sentences li:before {
   display: none;
 }
 
+/* IE7 can't handle :before pseudo-element */
+
+*:first-child+html ul li {
+  list-style: disc;
+  margin-left: 0.75em;
+  padding-left: 0;
+}
+
+*:first-child+html ul.sentences li {
+  list-style: none !important;
+  margin-left: 0;
+}
+
 @media screen and (max-width: 600px) {
   body {
     padding-left: 5%;
