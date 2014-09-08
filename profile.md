@@ -15,16 +15,18 @@ I am
 I made (or am making)
 ---------------------
 
-- An MMORPG: [Durango][] and racing games: [KartRider Dash][], [Coin Rush][]
-  at Nexon;
-- [Hangulize][] which is a Korean alphabet transcriptor;
-- Python game libraries: [TrueSkill][], [Energy][], [Ranking][];
+- [Durango][] at What! Studio in Nexon;
+- Kartrider Dash and Coin Rush series at Team Lupin in Nexon;
+- An interactive Python profiler: [Profiling][];
+- Game development libraries: [TrueSkill][], [Energy][], [Ranking][];
+- [Hangulize][] which is a Korean alphabet transcriber;
 - Small Flask extensions: [Flask-AutoIndex][] and [Flask-Silk][];
 - [Subleerunker][], [MOGEF.XXX][], [Cra-ezCounter][] just for fun.
 
 [Durango]: http://durango.nexon.com/
 [KartRider Dash]: http://www.facebook.com/kartriderdash
 [Coin Rush]: https://play.google.com/store/apps/details?id=com.nexon.krr4kakao
+[Profiling]: https://github.com/what-studio/profiling
 [Hangulize]: http://hangulize.org/
 [TrueSkill]: http://trueskill.org/
 [Energy]: http://pythonhosted.org/energy
