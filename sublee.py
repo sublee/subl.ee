@@ -18,7 +18,7 @@ from markdown import markdown
 import yaml
 
 
-__version__ = '2.2.0'
+__version__ = '2.2.1'
 __all__ = ['app']
 
 
@@ -55,14 +55,21 @@ def load_meta(func):
     return wrapped
 
 
+def decorate_profile_doc(doc):
+    doc.xpath('//ul')[0].attrib['class'] = 'sentences'
+    return doc
+
+
 @app.route('/')
 @load_meta
 def index(meta):
     """The homepage."""
     with open(PROFILE) as f:
         profile_html = markdown(f.read())
-    h1 = html.fromstring(profile_html).xpath('//h1')[0].text
-    context = {'profile_title': h1, 'profile_html': profile_html}
+    profile_doc = html.fromstring(profile_html)
+    profile_doc = decorate_profile_doc(profile_doc)
+    h1 = profile_doc.xpath('//h1')[0].text
+    context = {'profile_title': h1, 'profile_html': html.tostring(profile_doc)}
     context['theme'] = DEFAULT_THEME
     context.update(meta)
     return render_template('index.html', **context)

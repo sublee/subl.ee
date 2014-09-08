@@ -75,8 +75,26 @@ a:hover {
   text-decoration: underline;
 }
 
-ul {
+ul li {
+  position: relative;
+  padding-left: 0.75em;
   list-style: none;
+}
+
+ul li:before {
+  position: absolute;
+  left: 0;
+  content: '•';
+  color: {{ copyright_color }};
+}
+
+ul.sentences li {
+  position: static;
+  padding-left: 0;
+}
+
+ul.sentences li:before {
+  display: none;
 }
 
 @media screen and (max-width: 600px) {
@@ -86,7 +104,7 @@ ul {
     white-space: normal;
   }
 
-  li {
+  ul.sentences li {
     display: inline;
   }
 }

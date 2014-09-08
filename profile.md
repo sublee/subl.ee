@@ -15,12 +15,12 @@ I am
 I made (or am making)
 ---------------------
 
-- [Durango][] at What! Studio in Nexon;
-- Kartrider Dash and Coin Rush series at Team Lupin in Nexon;
-- An interactive Python profiler: [Profiling][];
-- Game development libraries: [TrueSkill][], [Energy][], [Ranking][];
-- [Hangulize][] which is a Korean alphabet transcriber;
-- Small Flask extensions: [Flask-AutoIndex][] and [Flask-Silk][];
+- [Durango][] at What! Studio in Nexon.
+- Kartrider Dash and Coin Rush series at Team Lupin in Nexon.
+- An interactive Python profiler: [Profiling][]
+- Game development libraries: [TrueSkill][], [Energy][], [Ranking][]
+- [Hangulize][] which is a Korean alphabet transcriber.
+- Small Flask extensions: [Flask-AutoIndex][] and [Flask-Silk][]
 - [Subleerunker][], [MOGEF.XXX][], [Cra-ezCounter][] just for fun.
 
 [Durango]: http://durango.nexon.com/
