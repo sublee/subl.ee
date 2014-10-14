@@ -6,7 +6,7 @@ I am
 
 - Heungsub Lee <[sub@subl.ee][]>,
 - a Game Development Engineer at What! Studio in [Nexon][]
-- and also an [Open Source][] contributor.
+- and also an [Open Source][] enthusiast.
 
 [sub@subl.ee]: mailto:sub@subl.ee
 [Nexon]: http://nexon.com/
