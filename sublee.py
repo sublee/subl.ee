@@ -65,7 +65,7 @@ def decorate_profile_doc(doc):
 def index(meta):
     """The homepage."""
     with open(PROFILE) as f:
-        profile_html = markdown(f.read())
+        profile_html = markdown(f.read().decode('utf-8'))
     profile_doc = html.fromstring(profile_html)
     profile_doc = decorate_profile_doc(profile_doc)
     h1 = profile_doc.xpath('//h1')[0].text
