@@ -70,3 +70,12 @@ milky:
   link_color: '#def'
   vlink_color: '#edf'
   copyright_color: '#eee'
+hangulize:
+  logo_color_1: '#765'
+  logo_color_2: '#333'
+  background_color: '#f6f6eb'
+  title_color: '#765'
+  text_color: '#333'
+  link_color: '#765'
+  vlink_color: '#ba9'
+  copyright_color: '#765'
