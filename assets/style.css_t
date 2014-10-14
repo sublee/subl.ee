@@ -143,7 +143,7 @@ table.logo td {
   {% for hack in compat %}
     @{{ hack }}keyframes {{ name }} {
       from { box-shadow: 0 0 1px {{ color }}, 0 0 0 {{ background_color }}; }
-      to { box-shadow: 0 0 32px {{ color }}, 0 0 2px {{ background_color }}; }
+      to { box-shadow: 0 0 16px {{ color }}, 0 0 2px {{ background_color }}; }
     }
   {% endfor %}
 {% endmacro %}
@@ -160,7 +160,7 @@ table.logo td {
     {{ logo_keyframes('logo-' ~ i, logo_color) }}
     table.logo .logo-color-{{ i }} td {
       {% for hack in compat %}
-        {{ hack }}animation: logo-{{ i }} 4s ease-in-out infinite alternate;
+        {{ hack }}animation: logo-{{ i }} 5s ease-in-out infinite alternate;
       {% endfor %}
     }
   {% endif %}
