@@ -29,6 +29,7 @@ PROFILE = os.path.join(os.path.dirname(__file__), 'profile.md')
 META = os.path.join(os.path.dirname(__file__), 'meta.yml')
 THEMES = os.path.join(os.path.dirname(__file__), 'themes.yml')
 DEFAULT_THEME = 'sublee'
+MARKDOWN_EXTENSIONS = ['markdown.extensions.def_list']
 
 
 paths = {'static_url_path': '',
@@ -67,7 +68,8 @@ def decorate_profile_doc(doc):
 def index(meta):
     """The homepage."""
     with open(PROFILE) as f:
-        profile_html = markdown(f.read().decode('utf-8'))
+        profile_md = f.read().decode('utf-8')
+    profile_html = markdown(profile_md, extensions=MARKDOWN_EXTENSIONS)
     profile_doc = html.fromstring(profile_html)
     profile_doc = decorate_profile_doc(profile_doc)
     h1 = profile_doc.xpath('//h1')[0].text
