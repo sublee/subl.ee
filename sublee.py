@@ -11,6 +11,8 @@
 from __future__ import with_statement
 import functools
 import os
+import re
+import sys
 
 from flask import Flask, make_response, render_template
 from lxml import html
@@ -75,12 +77,25 @@ def index(meta):
     return render_template('index.html', **context)
 
 
+def rgba(rgb_hex, alpha=1):
+    """Converts RGB hex string to CSS RGBA expression."""
+    rgb_hex = re.sub('^#', '', rgb_hex)
+    if len(rgb_hex) == 3:
+        rgb_hex = '{0}{0}{1}{1}{2}{2}'.format(*rgb_hex)
+    r = int(rgb_hex[0:2], 16)
+    g = int(rgb_hex[2:4], 16)
+    b = int(rgb_hex[4:6], 16)
+    return 'rgba({0}, {1}, {2}, {3})'.format(r, g, b, alpha)
+
+
 @app.route('/style-<theme>.css')
 def css(theme):
+    """Generates a CSS file from the given theme."""
     with open(THEMES) as f:
         themes = yaml.load(f)
     colors = themes[theme]
-    response = make_response(render_template('style.css_t', **colors))
+    css = render_template('style.css_t', rgba=rgba, **colors)
+    response = make_response(css)
     response.headers['Content-Type'] = 'text/css'
     return response
 
@@ -100,4 +115,8 @@ for status in range(400, 420) + range(500, 506):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+    try:
+        port = int(sys.argv[1])
+    except (IndexError, ValueError):
+        port = 8080
+    app.run(host='0.0.0.0', port=port)
