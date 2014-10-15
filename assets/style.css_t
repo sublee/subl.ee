@@ -146,11 +146,13 @@ table.logo td {
         box-shadow:
           0 0 1px {{ color }},
           0 0 0 {{ background_color }};
+        outline-color: {{ rgba(background_color, 0) }};
       }
       to {
         box-shadow:
           0 0 24px {{ rgba(color, 0.5) }},
           0 0 2px {{ background_color }};
+        outline-color: {{ rgba(background_color, 0.25) }};
       }
     }
   {% endfor %}
@@ -167,6 +169,7 @@ table.logo td {
   {% if blink %}
     {{ logo_keyframes('logo-' ~ i, logo_color) }}
     table.logo .logo-color-{{ i }} td {
+      outline: 1px solid;
       {% for hack in compat %}
         {{ hack }}animation: logo-{{ i }} 5s ease-in-out infinite alternate;
       {% endfor %}
