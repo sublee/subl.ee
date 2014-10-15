@@ -144,13 +144,15 @@ table.logo td {
     @{{ hack }}keyframes {{ name }} {
       from {
         box-shadow:
-          0 0 1px {{ color }},
+          0 0 0 {{ color }},
+          0 0 0 {{ rgba(color, 0) }},
           0 0 0 {{ background_color }};
         outline-color: {{ rgba(background_color, 0) }};
       }
       to {
         box-shadow:
-          0 0 24px {{ rgba(color, 0.5) }},
+          0 0 32px {{ rgba(color, 0.25) }},
+          0 0 12px {{ rgba(color, 0.5) }},
           0 0 2px {{ background_color }};
         outline-color: {{ rgba(background_color, 0.25) }};
       }
