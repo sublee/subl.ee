@@ -1,6 +1,6 @@
 {% set title_color = title_color or logo_color_1 %}
 
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:300,400);
 
 * {
   margin: 0;
@@ -33,14 +33,19 @@ footer {
   margin-bottom: 4em;
 }
 
+.error footer {
+  margin-top: 1em;
+}
+
 footer p {
+  font-weight: 300;
   font-size: 0.75em;
   color: {{ copyright_color }};
 }
 
 h1 {
   color: {{ title_color }};
-  font-weight: 700;
+  font-weight: 300;
   font-size: 2em;
 }
 
@@ -55,7 +60,7 @@ h1 {
 
 h2 {
   color: {{ title_color }};
-  font-weight: 400;
+  font-weight: 300;
   padding-top: 1em;
 }
 
