@@ -53,7 +53,25 @@
   {% block footer %}
     <footer>
       {% block inner_footer %}
-        <p>{{ author }} &copy; {{ copyright }}</p>
+        <p class="copyright">
+          {{ author }} &copy; <span class="year">{{ copyright_year }}</span>
+        </p>
+        <script>
+          // auto-renew the year range of the copyright.
+          var $spans = document.getElementsByTagName('span');
+          var $year = $spans[$spans.length - 1];
+          if ($year.getAttribute('class') == 'year') {
+            var since = Number(/^[0-9]+/.exec($year.innerText)[0]);
+            var until = Number(/[0-9]+$/.exec($year.innerText)[0]);
+            var thisYear = (new Date()).getFullYear();
+            until = Math.max(until, thisYear);
+            if (since < until) {
+              $year.innerHTML = since + '&ndash;' + until;
+            } else {
+              $year.innerHTML = until;
+            }
+          }
+        </script>
       {% endblock %}
     </footer>
   {% endblock %}

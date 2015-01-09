@@ -8,7 +8,8 @@
     :copyright: (c) 2013-2014 by Heungsub Lee
     :license: Public Domain.
 """
-from __future__ import with_statement
+from __future__ import unicode_literals, with_statement
+from datetime import date
 import functools
 import os
 import re
@@ -30,6 +31,7 @@ META = os.path.join(os.path.dirname(__file__), 'meta.yml')
 THEMES = os.path.join(os.path.dirname(__file__), 'themes.yml')
 DEFAULT_THEME = 'sublee'
 MARKDOWN_EXTENSIONS = ['markdown.extensions.def_list']
+EN_DASH = '\u2013'
 
 
 paths = {'static_url_path': '',
@@ -54,8 +56,19 @@ def load_meta(func):
     def wrapped(*args, **kwargs):
         with open(META) as f:
             meta = yaml.load(f)
+        meta['copyright_year'] = \
+            copyright_year(meta.get('copyright_year_since'))
         return func(meta, *args, **kwargs)
     return wrapped
+
+
+def copyright_year(year_since=None, dash=EN_DASH):
+    """Generates an auto-renewed year range of the copyright.
+    """
+    this_year = date.today().year
+    if year_since is None or year_since == this_year:
+        return str(this_year)
+    return '{0}{1}{2}'.format(year_since, dash, this_year)
 
 
 def decorate_profile_doc(doc):
