@@ -180,6 +180,8 @@ table.logo td {
       {% for hack in compat %}
         {{ hack }}animation: logo-{{ i }} 5s ease-in-out infinite alternate;
       {% endfor %}
+      /* Disable on IE6, IE7, IE8, IE9. */
+      outline-style: none\9;
     }
   {% endif %}
 {% endfor %}
