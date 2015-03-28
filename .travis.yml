@@ -7,14 +7,17 @@ install:
 - pip install flask frozen-flask lxml markdown pyyaml
 script:
 - export REPO="https://$GITHUB_TOKEN@github.com/sublee/subl.ee"
-- rm -rf .gh-pages
-- git clone -b gh-pages $REPO .gh-pages > /dev/null 2>&1
-- git -C .gh-pages rm -r --ignore-unmatch *
-- python freeze.py .gh-pages
-- cd .gh-pages
-- echo subl.ee > CNAME
-- git add --all
-- git config user.name "Heungsub Lee"
-- git config user.email "sub@subl.ee"
-- git commit -m "deploy subl.ee ($TRAVIS_COMMIT)"
-- git push origin gh-pages
+- | # checkout gh-pages.
+  rm -rf .gh-pages
+  git clone -b gh-pages $REPO .gh-pages > /dev/null 2>&1
+  git -C .gh-pages rm -r --ignore-unmatch *
+- | # freeze the homepage.
+  python freeze.py .gh-pages
+- | # push to gh-pages.
+  cd .gh-pages
+  echo subl.ee > CNAME
+  git add --all
+  git config user.name "Heungsub Lee"
+  git config user.email "sub@subl.ee"
+  git commit -m "deploy subl.ee ($TRAVIS_COMMIT)"
+  git push origin gh-pages
