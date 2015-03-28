@@ -6,14 +6,13 @@ env:
 install:
 - pip install flask frozen-flask lxml markdown pyyaml
 script:
-- |
-  rm -rf .frozen
-  mkdir .frozen
-  python freeze.py .frozen
+- rm -rf .frozen && mkdir .frozen
+- python freeze.py .frozen
 after_success:
 - |
   export REPO="https://$GITHUB_TOKEN@github.com/sublee/subl.ee"
   cd .frozen
+  echo subl.ee > CNAME
   git init
   git config user.name "Heungsub Lee"
   git config user.email "sub@subl.ee"
