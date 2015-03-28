@@ -115,6 +115,12 @@ def css(theme):
     return response
 
 
+@app.route('/runker')
+def subleerunker():
+    """Frame wrapper of <Subleerunker>."""
+    return render_template('subleerunker.html')
+
+
 @load_meta
 def error(meta, error):
     """The HTTP error page."""
