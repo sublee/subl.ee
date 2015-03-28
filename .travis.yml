@@ -13,9 +13,7 @@ script:
 - python freeze.py .gh-pages
 - cd .gh-pages
 - echo subl.ee > CNAME
-- ls
 - git add --all
-- git status
 - git config user.name "Heungsub Lee"
 - git config user.email "sub@subl.ee"
 - git commit -m "deploy subl.ee ($TRAVIS_COMMIT)"
