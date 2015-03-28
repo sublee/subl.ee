@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import os
 import sys
 
 from flask_frozen import Freezer
@@ -16,7 +15,7 @@ def not_found():
 
 
 app.config['FREEZER_DESTINATION'] = sys.argv[1]
-app.config['FREEZER_DESTINATION_IGNORE'] = ['.git*', 'runker', 'CNAME']
+app.config['FREEZER_DESTINATION_IGNORE'] = ['.git*', 'CNAME']
 freezer = Freezer(app, with_static_files=False)
 
 

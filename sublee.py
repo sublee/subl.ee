@@ -115,7 +115,7 @@ def css(theme):
     return response
 
 
-@app.route('/runker')
+@app.route('/runker/')
 def subleerunker():
     """Frame wrapper of <Subleerunker>."""
     return render_template('subleerunker.html')
