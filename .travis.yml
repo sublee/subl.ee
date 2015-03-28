@@ -11,11 +11,11 @@ script:
 after_success:
 - |
   export REPO="https://$GITHUB_TOKEN@github.com/sublee/subl.ee"
-  cd .frozen
+  rm -rf .gh-pages && git clone -b gh-pages $REPO .gh-pages && cd .gh-pages
+  git rm -r --ignore-unmatch *
+  mv ../.frozen/* .
   echo subl.ee > CNAME
-  git init
-  git config user.name "Heungsub Lee"
-  git config user.email "sub@subl.ee"
-  git add .
+  git add --all
+  git config user.name "Heungsub Lee" && git config user.email "sub@subl.ee"
   git commit -m "deploy subl.ee ($TRAVIS_COMMIT)"
-  git push -qf $REPO master:gh-pages > /dev/null 2>&1
+  git push origin gh-pages > /dev/null 2>&1
