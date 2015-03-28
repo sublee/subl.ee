@@ -6,12 +6,14 @@ env:
 install:
 - pip install flask frozen-flask lxml markdown pyyaml
 script:
-- export REPO="https://$GITHUB_TOKEN@github.com/sublee/subl.ee"
-- rm -rf .gh-pages
-- git clone -b gh-pages $REPO .gh-pages > /dev/null 2>&1
-- git -C .gh-pages rm -r --ignore-unmatch *
-- python freeze.py .gh-pages
-- cd .gh-pages
+- |
+  export REMOTE_REPO="https://$GITHUB_TOKEN@github.com/sublee/subl.ee"
+  export LOCAL_REPO="~/gh-pages"
+- rm -rf $LOCAL_REPO
+- git clone -b gh-pages $REPO $LOCAL_REPO > /dev/null 2>&1
+- git -C $LOCAL_REPO rm -r --ignore-unmatch *
+- python freeze.py $LOCAL_REPO
+- cd $LOCAL_REPO
 - echo subl.ee > CNAME
 - ls
 - git add --all
