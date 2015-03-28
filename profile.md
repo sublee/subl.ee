@@ -9,7 +9,7 @@ I am
 - and also an [Open Source][] enthusiast.
 
 [sub@subl.ee]: mailto:sub@subl.ee
-[What! Studio]: https://github.com/what-studio
+[What! Studio]: https://github.com/what-studio#
 [Nexon]: http://nexon.com/
 [Open Source]: https://github.com/sublee
 
