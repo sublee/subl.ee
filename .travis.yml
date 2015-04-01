@@ -32,6 +32,7 @@ after_success:
         -ms-filter: "FlipH";
       }' >> $css
   done
+  echo eelb.us > CNAME
   git remote add eelbus "https://$GITHUB_TOKEN@github.com/sublee/eelb.us"
   git commit -am "reverse for eelb.us ($TRAVIS_COMMIT)"
   git push -f eelbus gh-pages > /dev/null 2>&1
