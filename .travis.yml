@@ -10,7 +10,7 @@ script:
 - rm -rf .frozen && mkdir .frozen
 - python freeze.py .frozen
 after_success:
-- |
+- | # deploy subl.ee
   export REPO="https://$GITHUB_TOKEN@github.com/sublee/subl.ee"
   rm -rf .gh-pages && git clone -b gh-pages $REPO .gh-pages && cd .gh-pages
   git rm -r --ignore-unmatch *
@@ -20,3 +20,18 @@ after_success:
   git config user.name "Heungsub Lee" && git config user.email "sub@subl.ee"
   git commit -m "deploy subl.ee ($TRAVIS_COMMIT)"
   git push origin gh-pages > /dev/null 2>&1
+- | # deploy eelb.us
+  for css in *.css
+  do
+      echo 'body {
+        transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+      }' >> $css
+  done
+  git remote add eelbus "https://$GITHUB_TOKEN@github.com/sublee/eelb.us"
+  git commit -am "reverse for eelb.us ($TRAVIS_COMMIT)"
+  git push -f eelbus gh-pages > /dev/null 2>&1
