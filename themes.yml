@@ -1,6 +1,6 @@
 sublee:
   logo_colors: ['#e34', '#e34', '#fc3', '#e34']
-  logo_blinks: [1, 1, 1, 1]
+  logo_blinks: [1, 0.5, 1, 0.5]
   background_color: '#192222'
   text_color: '#788'
   link_color: '#ca4'
@@ -84,3 +84,11 @@ bluescreen:
   text_color: '#ccc'
   link_color: '#fff'
   copyright_color: '#fff'
+vlaah:
+  logo_colors: ['#6c0', '#f45', '#f45', '#6c0']
+  background_color: '#fff'
+  title_color: '#f45'
+  text_color: '#555'
+  link_color: '#6c0'
+  vlink_color: '#8a6'
+  copyright_color: '#999'
