@@ -70,3 +70,10 @@ nexon:
   link_color: 'rgb(10, 160, 210)'
   vlink_color: 'rgb(0, 110, 160)'
   copyright_color: '#000'
+facebook:
+  logo_colors: ['#3b5999', '#3b5999', '#3b5999', '#3b5999']
+  background_color: '#e9eaed'
+  title_color: '#1e2d4c'
+  text_color: '#141823'
+  link_color: '#3b5998'
+  copyright_color: '#1e2d4c'

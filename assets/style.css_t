@@ -77,7 +77,7 @@ a:link {
 }
 
 a:visited {
-  color: {{ vlink_color }};
+  color: {{ vlink_color or link_color }};
 }
 
 a:hover {
