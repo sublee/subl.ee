@@ -1,4 +1,4 @@
-{% set title_color = title_color or logo_color_1 %}
+{% set title_color = title_color or logo_colors[0] %}
 
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:300,400);
 
@@ -148,7 +148,7 @@ table.logo td {
 
 {% set compat = ['', '-webkit-', '-moz-', '-o-'] %}
 
-{% macro logo_keyframes(name, color) %}
+{% macro logo_keyframes(name, color, blink) %}
   {% for hack in compat %}
     @{{ hack }}keyframes {{ name }} {
       from {
@@ -160,29 +160,27 @@ table.logo td {
       }
       to {
         box-shadow:
-          0 0 32px {{ rgba(color, 0.25) }},
-          0 0 12px {{ rgba(color, 0.5) }},
-          0 0 2px {{ background_color }};
+          0 0 {{ 32 * blink }}px {{ rgba(color, 0.25) }},
+          0 0 {{ 12 * blink }}px {{ rgba(color, 0.5) }},
+          0 0 {{ 2 * blink }}px {{ background_color }};
         outline-color: {{ rgba(background_color, 0.25) }};
       }
     }
   {% endfor %}
 {% endmacro %}
 
-{% set logo_colors = [logo_color_1, logo_color_2] %}
-
-{% for logo_color, blink in [(logo_color_1, blink_logo_color_1),
-                             (logo_color_2, blink_logo_color_2)] %}
-  {% set i = loop.index %}
-  table.logo .logo-color-{{ i }} td {
-    background: {{ logo_color }};
+{% set logo_blinks = logo_blinks or [0, 0, 0, 0] %}
+{% for suffix, color, blink in zip('trbl', logo_colors, logo_blinks) %}
+  table.logo td.logo-{{ suffix }} {
+    background: {{ color }};
   }
   {% if blink %}
-    {{ logo_keyframes('logo-' ~ i, logo_color) }}
-    table.logo .logo-color-{{ i }} td {
+    {{ logo_keyframes('logo-' ~ suffix, color, blink) }}
+    table.logo td.logo-{{ suffix }} {
       outline: 1px solid;
       {% for hack in compat %}
-        {{ hack }}animation: logo-{{ i }} 5s ease-in-out infinite alternate;
+        {{ hack }}animation:
+          logo-{{ suffix }} 5s ease-in-out infinite alternate;
       {% endfor %}
       /* Disable on IE6, IE7, IE8, IE9. */
       outline-style: none\9;

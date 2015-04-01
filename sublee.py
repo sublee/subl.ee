@@ -11,6 +11,7 @@
 from __future__ import unicode_literals, with_statement
 from datetime import date
 import functools
+import itertools
 import os
 import re
 import sys
@@ -38,6 +39,7 @@ paths = {'static_url_path': '',
          'static_folder': ASSETS,
          'template_folder': ASSETS}
 app = Flask(__name__, **paths)
+app.jinja_env.globals['zip'] = itertools.izip
 
 
 def load_meta(func):
@@ -92,14 +94,19 @@ def index(meta):
     return render_template('index.html', **context)
 
 
-def rgba(rgb_hex, alpha=1):
+def rgba(color, alpha=1):
     """Converts RGB hex string to CSS RGBA expression."""
-    rgb_hex = re.sub('^#', '', rgb_hex)
-    if len(rgb_hex) == 3:
-        rgb_hex = '{0}{0}{1}{1}{2}{2}'.format(*rgb_hex)
-    r = int(rgb_hex[0:2], 16)
-    g = int(rgb_hex[2:4], 16)
-    b = int(rgb_hex[4:6], 16)
+    if color.startswith('#'):
+        rgb_hex = color[1:]
+        if len(rgb_hex) == 3:
+            rgb_hex = '{0}{0}{1}{1}{2}{2}'.format(*rgb_hex)
+        r = int(rgb_hex[0:2], 16)
+        g = int(rgb_hex[2:4], 16)
+        b = int(rgb_hex[4:6], 16)
+    elif color.startswith('rgb('):
+        r, g, b = re.findall('\d+', color)
+    elif color.startswith('rgba('):
+        return color
     return 'rgba({0}, {1}, {2}, {3})'.format(r, g, b, alpha)
 
 

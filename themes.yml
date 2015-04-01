@@ -1,34 +1,29 @@
 sublee:
-  logo_color_1: '#e34'
-  logo_color_2: '#fc3'
-  blink_logo_color_1: true
-  blink_logo_color_2: true
+  logo_colors: ['#e34', '#e34', '#fc3', '#e34']
+  logo_blinks: [1, 1, 1, 1]
   background_color: '#192222'
   text_color: '#788'
   link_color: '#ca4'
   vlink_color: '#986'
   copyright_color: '#455'
 90s:
-  logo_color_1: '#f00'
-  logo_color_2: '#ff0'
-  blink_logo_color_1: true
-  blink_logo_color_2: true
+  logo_colors: ['#f00', '#f00', '#ff0', '#f00']
+  logo_blinks: [1, 1, 1, 1]
   background_color: '#009'
   text_color: '#ff0'
   link_color: '#0ff'
   vlink_color: '#f0f'
   copyright_color: '#0f0'
 mogef:
-  logo_color_1: '#ac1f8d'
-  logo_color_2: '#bcbe50'
+  logo_colors: ['#4e9fd7', '#bcbe50', '#ac1f8d', '#4e9fd7']
   background_color: '#fff'
+  title_color: '#ac1f8d'
   text_color: '#666'
   link_color: '#4e9fd7'
   vlink_color: '#989ccb'
   copyright_color: '#bcbe50'
 solarized:
-  logo_color_1: '#2aa198'  # cyan
-  logo_color_2: '#586e75'  # base01
+  logo_colors: ['#cb4b16', '#859900', '#b58900', '#dc322f']
   background_color: '#fdf6e3'  # base3
   title_color: '#d33682'  # magenta
   text_color: '#839496'  # base1
@@ -36,34 +31,22 @@ solarized:
   vlink_color: '#859900'  # green
   copyright_color: '#2aa198'  # cyan
 mono:
-  logo_color_1: '#eee'
-  logo_color_2: '#e34'
-  blink_logo_color_2: true
+  logo_colors: ['#eee', '#eee', '#e34', '#eee']
+  logo_blinks: [0, 0, 1, 0]
   background_color: '#222'
   text_color: '#777'
   link_color: '#ccc'
   vlink_color: '#aaa'
   copyright_color: '#555'
-pure:
-  # http://purecss.io/
-  logo_color_1: '#dd514c'
-  logo_color_2: '#fad232'
-  background_color: '#191818'
-  text_color: '#999'
-  link_color: '#3b8bba'
-  vlink_color: '#265778'
-  copyright_color: '#777'
 twilight:
-  logo_color_1: '#d08356'
-  logo_color_2: '#ebc471'
+  logo_colors: ['#d08356', '#d08356', '#ebc471', '#d08356']
   background_color: '#1a1a1a'
   text_color: '#8a9597'
   link_color: '#a2a96f'
   vlink_color: '#a999ac'
   copyright_color: '#64686c'
 milky:
-  logo_color_1: '#f4f4f4'
-  logo_color_2: '#fafafa'
+  logo_colors: ['#f4f4f4', '#f4f4f4', '#fafafa', '#f4f4f4']
   background_color: '#fff'
   title_color: '#eee'
   text_color: '#eee'
@@ -71,11 +54,19 @@ milky:
   vlink_color: '#edf'
   copyright_color: '#eee'
 hangulize:
-  logo_color_1: '#765'
-  logo_color_2: '#333'
+  logo_colors: ['#765', '#765', '#765', '#333']
   background_color: '#f6f6eb'
   title_color: '#765'
   text_color: '#333'
   link_color: '#765'
   vlink_color: '#ba9'
   copyright_color: '#765'
+nexon:
+  logo_colors: ['#02203A', '#B6D805', '#129AD8', '#02203A']
+  logo_blinks: [0, 1, 0.5, 0]
+  background_color: '#fff'
+  title_color: '#000'
+  text_color: '#000'
+  link_color: 'rgb(10, 160, 210)'
+  vlink_color: 'rgb(0, 110, 160)'
+  copyright_color: '#000'
