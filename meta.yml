@@ -1,11 +1,10 @@
 url: http://subl.ee/
 author: Heungsub Lee
-keywords:
-  - Heungsub Lee
-  - Heungsub
-  - sublee
-  - 이흥섭
-  - 흥섭
+keywords: [Heungsub Lee, Heungsub, sublee, 이흥섭, 흥섭]
 copyright_year_since: 2013
 google_analytics: UA-1078484-1
 naver_analytics: 1275da0d21793e8
+events:
+  3/8: mogef       # International Women's Day
+  4/1: 90s         # April Fools' Day
+  10/9: hangulize  # Hangul Day

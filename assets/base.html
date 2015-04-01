@@ -16,9 +16,11 @@
     }
     if (location.hash) {
       theme = location.hash.replace(/^#/, '');
-    } else if (isToday(4, 1)) {
-      // April Fools' Day
-      theme = '90s';
+    } else {
+      var date = new Date();
+      var eventKey = (date.getMonth() + 1) + '/' + date.getDate();
+      var events = {{ events|tojson }};
+      theme = events[eventKey];
     }
     if (theme) {
       var links = document.getElementsByTagName('link');
