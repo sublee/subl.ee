@@ -77,3 +77,10 @@ facebook:
   text_color: '#141823'
   link_color: '#3b5998'
   copyright_color: '#1e2d4c'
+bluescreen:
+  logo_colors: ['#fff', '#fff', '#fff', '#fff']
+  background_color: '#00a'
+  title_color: '#fff'
+  text_color: '#ccc'
+  link_color: '#fff'
+  copyright_color: '#fff'
