@@ -4,7 +4,7 @@ python:
 env:
 - secure: "QGo/0YV+WvtJ4Xm5guOc08pMcI1SwsBlASi9rK+MLfSnC6cLS+Mp9zyAC0SAKD4jBQFLRzVhwtGwkUnD7kP/+KGptcc3fap/w1O+w9GZt9Pa9v36CNG7a3m2+47dgJpbLoUF8rh9tt5xuf34GGECjKXxf6BDKt6KB5xtuOgh+Es="
 install:
-- pip install flask frozen-flask lxml markdown pyyaml
+- pip install -r requirements.txt
 script:
 - rm -rf .frozen && mkdir .frozen
 - python freeze.py .frozen
