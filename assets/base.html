@@ -9,7 +9,23 @@
   <link rel="stylesheet" type="text/css"
     href="{{ url_for('static', filename='style-' ~ theme ~ '.css') }}" />
   <script>
-    function getTheme() {
+    function selectStylesheet() {
+      var links = document.getElementsByTagName('link');
+      for (var i = 0; i < links.length; ++i) {
+        var link = links[i];
+        if (link.getAttribute('rel') == 'stylesheet') {
+          return link;
+        }
+      }
+    }
+    function selectTheme(theme) {
+      if (!theme) {
+        return;
+      }
+      var link = selectStylesheet();
+      link.setAttribute('href', '/style-' + theme + '.css');
+    }
+    function guessTheme() {
       if (location.hash) {
         return location.hash.replace(/^#/, '');
       } else {
@@ -19,20 +35,10 @@
         return events[eventKey];
       }
     }
-    function selectTheme(theme) {
-      if (!theme) {
-        return;
-      }
-      var links = document.getElementsByTagName('link');
-      for (var i = 0; i < links.length; ++i) {
-        var link = links[i];
-        if (link.getAttribute('rel') == 'stylesheet') {
-          link.setAttribute('href', '/style-' + theme + '.css');
-          break;
-        }
-      }
+    function getTheme() {
+      return guessTheme() || {{ theme|tojson }};
     }
-    selectTheme(getTheme());
+    selectTheme(guessTheme());
   </script>
   <link rel="shortcut icon" type="image/icon"
     href="{{ url_for('static', filename='favicon.ico') }}" />
