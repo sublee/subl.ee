@@ -88,6 +88,21 @@ def themes():
     return render_template('themes.html', **ctx)
 
 
+def error(error):
+    """The HTTP error page."""
+    ctx = make_context(error=error)
+    return render_template('error.html', **ctx)
+for status in range(400, 420) + range(500, 506):
+    register_error_handler = app.errorhandler(status)
+    register_error_handler(error)
+
+
+@app.route('/runker/')
+def subleerunker():
+    """Frame wrapper of <Subleerunker>."""
+    return render_template('subleerunker.html')
+
+
 def rgba(color, alpha=1):
     """Converts RGB hex string to CSS RGBA expression."""
     if color.startswith('#'):
@@ -114,23 +129,6 @@ def css(theme):
     response = make_response(css)
     response.headers['Content-Type'] = 'text/css'
     return response
-
-
-@app.route('/runker/')
-def subleerunker():
-    """Frame wrapper of <Subleerunker>."""
-    return render_template('subleerunker.html')
-
-
-def error(error):
-    """The HTTP error page."""
-    ctx = make_context(error=error)
-    return render_template('error.html', **ctx)
-
-
-for status in range(400, 420) + range(500, 506):
-    register_error_handler = app.errorhandler(status)
-    register_error_handler(error)
 
 
 if __name__ == '__main__':
