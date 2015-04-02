@@ -37,10 +37,6 @@ footer {
   margin-bottom: 4em;
 }
 
-.error footer {
-  margin-top: 1em;
-}
-
 footer p {
   font-weight: 300;
   font-size: 0.75em;
@@ -51,15 +47,6 @@ h1 {
   color: {{ title_color }};
   font-weight: 300;
   font-size: 2em;
-}
-
-h1 {
-  display: none;
-}
-
-.error h1 {
-  display: block;
-  color: {{ link_color }};
 }
 
 h2 {
@@ -106,7 +93,7 @@ ul.sentences li:before {
   display: none;
 }
 
-/* IE7 can't handle :before pseudo-element */
+/* ie7 can't handle :before pseudo-element */
 
 *:first-child+html ul li {
   list-style: disc;
@@ -130,6 +117,8 @@ ul.sentences li:before {
     display: inline;
   }
 }
+
+/* logo */
 
 table.logo {
   margin: -6px;
@@ -187,3 +176,24 @@ table.logo td {
     }
   {% endif %}
 {% endfor %}
+
+/* page specializations */
+
+.index h1 {
+  display: none;
+}
+
+.error h1 {
+  display: block;
+  color: {{ link_color }};
+}
+
+.error footer {
+  margin-top: 1em;
+}
+
+.themes a.selected {
+  color: {{ background_color }};
+  background: {{ link_color }};
+  padding: 0 0.5em;
+}

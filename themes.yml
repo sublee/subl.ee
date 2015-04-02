@@ -23,12 +23,13 @@ mogef:
   vlink_color: '#989ccb'
   copyright_color: '#bcbe50'
 solarized:
+  # orange, green, yellow, red
   logo_colors: ['#cb4b16', '#859900', '#b58900', '#dc322f']
   background_color: '#fdf6e3'  # base3
   title_color: '#d33682'  # magenta
   text_color: '#839496'  # base1
   link_color: '#268bd2'  # blue
-  vlink_color: '#859900'  # green
+  vlink_color: '#6c71c4'  # violet
   copyright_color: '#2aa198'  # cyan
 mono:
   logo_colors: ['#eee', '#eee', '#e34', '#eee']

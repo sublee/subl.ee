@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Themes{% endblock %}
+{% block class %}themes{% endblock %}
+
+{% block body %}
+  <section class="themes">
+    <h1>Themes</h1>
+    <ul>
+      {% for theme in themes|sort %}
+        <li><a onclick="return reload(this)" href="#{{ theme }}">
+          {{- theme }}</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+  <script>
+    function reload(anchor) {
+      location.href = anchor.getAttribute('href');
+      location.reload();
+      return false;
+    }
+    var anchors = document.getElementsByTagName('a');
+    var theme = getTheme();
+    for (var i = 0; i < anchors.length; ++i) {
+      var anchor = anchors[i];
+      if (anchor.innerText == theme) {
+        var indexUrl = '{{ url_for('index') }}' + anchor.getAttribute('href');
+        anchor.setAttribute('href', indexUrl);
+        anchor.setAttribute('class', 'selected');
+        anchor.onclick = null;
+        break;
+      }
+    }
+  </script>
+{% endblock %}

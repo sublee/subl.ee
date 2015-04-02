@@ -5,27 +5,34 @@
   <meta name="viewport" content="width=500" />
   <title>{% block title %}{% endblock %}</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-  {% block meta %}{% endblock %}
+  {% block head %}{% endblock %}
   <link rel="stylesheet" type="text/css"
     href="{{ url_for('static', filename='style-' ~ theme ~ '.css') }}" />
   <script>
-    var theme = null;
-    function isToday(month, day) {
-      var date = new Date();
-      return date.getMonth() == month - 1 && date.getDate() == day;
+    function getTheme() {
+      if (location.hash) {
+        return location.hash.replace(/^#/, '');
+      } else {
+        var date = new Date();
+        var eventKey = (date.getMonth() + 1) + '/' + date.getDate();
+        var events = {{ events|tojson }};
+        return events[eventKey];
+      }
     }
-    if (location.hash) {
-      theme = location.hash.replace(/^#/, '');
-    } else {
-      var date = new Date();
-      var eventKey = (date.getMonth() + 1) + '/' + date.getDate();
-      var events = {{ events|tojson }};
-      theme = events[eventKey];
-    }
-    if (theme) {
+    function selectTheme(theme) {
+      if (!theme) {
+        return;
+      }
       var links = document.getElementsByTagName('link');
-      links[links.length - 1].setAttribute('href', '/style-' + theme + '.css');
+      for (var i = 0; i < links.length; ++i) {
+        var link = links[i];
+        if (link.getAttribute('rel') == 'stylesheet') {
+          link.setAttribute('href', '/style-' + theme + '.css');
+          break;
+        }
+      }
     }
+    selectTheme(getTheme());
   </script>
   <link rel="shortcut icon" type="image/icon"
     href="{{ url_for('static', filename='favicon.ico') }}" />

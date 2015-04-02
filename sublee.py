@@ -10,7 +10,6 @@
 """
 from __future__ import unicode_literals, with_statement
 from datetime import date
-import functools
 import itertools
 import os
 import re
@@ -42,28 +41,6 @@ app = Flask(__name__, **paths)
 app.jinja_env.globals['zip'] = itertools.izip
 
 
-def load_meta(func):
-    """A decorator which gives the current meta data as the first argument of
-    the function.
-
-       @load_meta
-       def some_func(meta):
-           # work with meta
-           pass
-
-       some_func()
-
-    """
-    @functools.wraps(func)
-    def wrapped(*args, **kwargs):
-        with open(META) as f:
-            meta = yaml.load(f)
-        meta['copyright_year'] = \
-            copyright_year(meta.get('copyright_year_since'))
-        return func(meta, *args, **kwargs)
-    return wrapped
-
-
 def copyright_year(year_since=None, dash=EN_DASH):
     """Generates an auto-renewed year range of the copyright.
     """
@@ -78,20 +55,37 @@ def decorate_profile_doc(doc):
     return doc
 
 
+def make_context(*args, **kwargs):
+    with open(META) as f:
+        meta = yaml.load(f)
+    copyright_year_since = meta.get('copyright_year_since')
+    c = dict(meta, theme=DEFAULT_THEME,
+             copyright_year=copyright_year(copyright_year_since))
+    c.update(*args, **kwargs)
+    return c
+
+
 @app.route('/')
-@load_meta
-def index(meta):
+def index():
     """The homepage."""
     with open(PROFILE) as f:
         profile_md = f.read().decode('utf-8')
     profile_html = markdown(profile_md, extensions=MARKDOWN_EXTENSIONS)
     profile_doc = html.fromstring(profile_html)
     profile_doc = decorate_profile_doc(profile_doc)
-    h1 = profile_doc.xpath('//h1')[0].text
-    context = {'profile_title': h1, 'profile_html': html.tostring(profile_doc)}
-    context['theme'] = DEFAULT_THEME
-    context.update(meta)
-    return render_template('index.html', **context)
+    profile_html = html.tostring(profile_doc)
+    profile_title = profile_doc.xpath('//h1')[0].text
+    ctx = make_context(profile_title=profile_title, profile_html=profile_html)
+    return render_template('index.html', **ctx)
+
+
+@app.route('/themes/')
+def themes():
+    """Theme selector."""
+    with open(THEMES) as f:
+        themes = yaml.load(f)
+    ctx = make_context(themes=themes)
+    return render_template('themes.html', **ctx)
 
 
 def rgba(color, alpha=1):
@@ -128,13 +122,10 @@ def subleerunker():
     return render_template('subleerunker.html')
 
 
-@load_meta
-def error(meta, error):
+def error(error):
     """The HTTP error page."""
-    context = {'error': error}
-    context['theme'] = DEFAULT_THEME
-    context.update(meta)
-    return render_template('error.html', **context)
+    ctx = make_context(error=error)
+    return render_template('error.html', **ctx)
 
 
 for status in range(400, 420) + range(500, 506):
