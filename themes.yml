@@ -92,3 +92,12 @@ vlaah:
   link_color: '#6c0'
   vlink_color: '#8a6'
   copyright_color: '#999'
+mearie:
+  logo_colors: ['#397b9c', '#397b9c', '#397b9c', '#397b9c']
+  logo_blinks: [1, 1, 1, 1]
+  background_color: '#eee'
+  title_color: '#444'
+  text_color: '#444'
+  link_color: '#379'
+  vlink_color: '#973'
+  copyright_color: '#379'
