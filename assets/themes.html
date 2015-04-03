@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
-{% block title %}Themes{% endblock %}
+{% set title = 'Themes' %}
+{% block title %}{{ title }}{% endblock %}
 {% block class %}themes{% endblock %}
 
 {% block body %}
@@ -39,7 +40,7 @@
       selectTheme(theme);
       document.styleSheets[cssIndex].disabled = false;
       // update title.
-      document.title = 'Themes: ' + theme;
+      document.title = {{ title|tojson }} + ': ' + theme;
       // unmark selected anchor.
       var $prevA = arguments.callee.anchor;
       if ($prevA) {

@@ -15,7 +15,9 @@ import os
 import re
 import sys
 
+import cssmin
 from flask import Flask, render_template
+import htmlmin
 from lxml import html
 from markdown import markdown
 import yaml
@@ -25,13 +27,16 @@ __version__ = '2.2.1'
 __all__ = ['app']
 
 
-ASSETS = os.path.join(os.path.dirname(__file__), 'assets')
-PROFILE = os.path.join(os.path.dirname(__file__), 'profile.md')
-META = os.path.join(os.path.dirname(__file__), 'meta.yml')
-THEMES = os.path.join(os.path.dirname(__file__), 'themes.yml')
+ROOT = os.path.dirname(__file__)
+ASSETS = os.path.join(ROOT, 'assets')
+PROFILE = os.path.join(ROOT, 'profile.md')
+META = os.path.join(ROOT, 'meta.yml')
+THEMES = os.path.join(ROOT, 'themes.yml')
+
+EN_DASH = '\u2013'
 DEFAULT_THEME = 'sublee'
 MARKDOWN_EXTENSIONS = ['markdown.extensions.def_list']
-EN_DASH = '\u2013'
+MINIFIERS = {'text/html': htmlmin.minify, 'text/css': cssmin.cssmin}
 
 
 paths = {'static_url_path': '',
@@ -41,6 +46,16 @@ app = Flask(__name__, **paths)
 app.jinja_env.globals.update(
     zip=itertools.izip,
     cdnjs=(lambda path: '//cdnjs.cloudflare.com/ajax/libs/' + path))
+
+
+@app.after_request
+def minify_response(response):
+    for content_type, minify in MINIFIERS.items():
+        if response.content_type.startswith(content_type):
+            data = response.get_data(as_text=True)
+            response.set_data(minify(data))
+            break
+    return response
 
 
 def copyright_year(year_since=None, dash=EN_DASH):
