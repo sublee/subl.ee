@@ -36,9 +36,9 @@
       if (/selected/.exec($a.getAttribute('class'))) {
         return;
       }
-      document.title = {{ title|tojson }} + ': ' + theme;
       var theme = $a.getAttribute('data-theme');
       var cssUrl = selectTheme(theme);
+      document.title = {{ title|tojson }} + ': ' + theme;
       // unmark selected anchor.
       var $prevA = arguments.callee.anchor;
       if ($prevA) {
