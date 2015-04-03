@@ -86,7 +86,7 @@ bluescreen:
   link_color: '#fff'
   copyright_color: '#fff'
 vlaah:
-  logo_colors: ['#6c0', '#f45', '#f45', '#6c0']
+  logo_colors: ['#6c0', '#f45', '#6c0', '#6c0']
   background_color: '#fff'
   title_color: '#f45'
   text_color: '#555'

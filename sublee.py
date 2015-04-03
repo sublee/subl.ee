@@ -81,6 +81,17 @@ def index():
     return render_template('index.html', **ctx)
 
 
+@app.route('/resume/')
+def resume():
+    with open('resume.md') as f:
+        profile_md = f.read().decode('utf-8')
+    profile_html = markdown(profile_md, extensions=MARKDOWN_EXTENSIONS)
+    profile_doc = html.fromstring(profile_html)
+    profile_title = profile_doc.xpath('//h1')[0].text
+    ctx = make_context(profile_title=profile_title, profile_html=profile_html)
+    return render_template('index.html', **ctx)
+
+
 @app.route('/themes/')
 def themes():
     """Theme selector."""

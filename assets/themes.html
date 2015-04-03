@@ -16,9 +16,9 @@
   <script>
     // build the hash to anchor map.
     var anchors = {}
-    _.each($$('.themes a'), function(anchor) {
-      var theme = anchor.getAttribute('data-theme');
-      anchors[theme] = anchor;
+    _.each($$('.themes a'), function($a) {
+      var theme = $a.getAttribute('data-theme');
+      anchors[theme] = $a;
     });
     // find stylesheet index of the theme css.
     var cssIndex;
@@ -29,26 +29,27 @@
       }
     });
     // a callback function for theme selectors.
-    function themeSelected(anchor) {
-      if (/selected/.exec(anchor.getAttribute('class'))) {
+    function themeSelected($a) {
+      if (/selected/.exec($a.getAttribute('class'))) {
         return;
       }
       // change css.
-      var theme = anchor.getAttribute('data-theme');
+      var theme = $a.getAttribute('data-theme');
       document.styleSheets[cssIndex].disabled = true;
       selectTheme(theme);
       document.styleSheets[cssIndex].disabled = false;
+      // update title.
+      document.title = 'Themes: ' + theme;
       // unmark selected anchor.
-      var prevAnchor = arguments.callee.anchor;
-      if (prevAnchor) {
-        var prevTheme = prevAnchor.getAttribute('data-theme');
-        prevAnchor.setAttribute('href', '#' + prevTheme);
-        prevAnchor.setAttribute('class', '');
+      var $prevA = arguments.callee.anchor;
+      if ($prevA) {
+        $prevA.setAttribute('href', '#' + $prevA.getAttribute('data-theme'));
+        $prevA.setAttribute('class', '');
       }
       // mark as selected.
-      anchor.setAttribute('href', {{ url_for('index')|tojson }} + '#' + theme);
-      anchor.setAttribute('class', 'selected');
-      arguments.callee.anchor = anchor;
+      $a.setAttribute('href', {{ url_for('index')|tojson }} + '#' + theme);
+      $a.setAttribute('class', 'selected');
+      arguments.callee.anchor = $a;
     }
     // register event handlers.
     if ('onhashchange' in window) {
@@ -62,8 +63,8 @@
         themeSelected(this);
         return false;
       }
-      _.each(anchors, function(anchor) {
-        anchor.onclick = anchorClicked;
+      _.each(anchors, function($a) {
+        $a.onclick = anchorClicked;
       });
     }
     // select the initial theme.

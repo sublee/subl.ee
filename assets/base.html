@@ -29,9 +29,9 @@
       }
       return theme || {{ theme|tojson }};
     }
-    var cssLink = $$('link[rel=stylesheet]:eq(0)')[0];
+    var $cssLink = $$('link[rel=stylesheet]:eq(0)')[0];
     function selectTheme(theme) {
-      cssLink.setAttribute('href', '/style-' + theme + '.css');
+      $cssLink.setAttribute('href', '/style-' + theme + '.css');
       __theme__ = theme;
     }
     var theme = guessTheme();
@@ -68,18 +68,15 @@
         </p>
         <script>
           // auto-renew the year range of the copyright.
-          var $spans = document.getElementsByTagName('span');
-          var $year = $spans[$spans.length - 1];
-          if ($year.getAttribute('class') == 'year') {
-            var since = Number(/^[0-9]+/.exec($year.innerText)[0]);
-            var until = Number(/[0-9]+$/.exec($year.innerText)[0]);
-            var thisYear = (new Date()).getFullYear();
-            until = Math.max(until, thisYear);
-            if (since < until) {
-              $year.innerHTML = since + '&ndash;' + until;
-            } else {
-              $year.innerHTML = until;
-            }
+          var $year = $$('span.year:eq(0)')[0];
+          var since = Number(/^[0-9]+/.exec($year.innerText)[0]);
+          var until = Number(/[0-9]+$/.exec($year.innerText)[0]);
+          var thisYear = (new Date()).getFullYear();
+          until = Math.max(until, thisYear);
+          if (since < until) {
+            $year.innerHTML = since + '&ndash;' + until;
+          } else {
+            $year.innerHTML = until;
           }
         </script>
       {% endblock %}
