@@ -8,28 +8,65 @@
     <h1>Themes</h1>
     <ul>
       {% for theme in themes|sort %}
-        <li><a onclick="return reload(this)" href="#{{ theme }}">
-          {{- theme }}</a></li>
+        <li><a href="#{{ theme }}" data-theme="{{ theme }}">{{ theme }}</a></li>
       {% endfor %}
     </ul>
   </section>
+  <script src="{{ cdnjs('underscore.js/1.8.3/underscore-min.js') }}"></script>
   <script>
-    function reload(anchor) {
-      location.href = anchor.getAttribute('href');
-      location.reload();
-      return false;
-    }
-    var anchors = document.getElementsByTagName('a');
-    var theme = getTheme();
-    for (var i = 0; i < anchors.length; ++i) {
-      var anchor = anchors[i];
-      if (anchor.innerText == theme) {
-        var indexUrl = '{{ url_for('index') }}' + anchor.getAttribute('href');
-        anchor.setAttribute('href', indexUrl);
-        anchor.setAttribute('class', 'selected');
-        anchor.onclick = null;
-        break;
+    // build the hash to anchor map.
+    var anchors = {}
+    _.each($$('.themes a'), function(anchor) {
+      var theme = anchor.getAttribute('data-theme');
+      anchors[theme] = anchor;
+    });
+    // find stylesheet index of the theme css.
+    var cssIndex;
+    _.each(document.styleSheets, function(stylesheet, i) {
+      if (stylesheet.href) {
+        cssIndex = i;
+        return false;
       }
+    });
+    // a callback function for theme selectors.
+    function themeSelected(anchor) {
+      if (/selected/.exec(anchor.getAttribute('class'))) {
+        return;
+      }
+      // change css.
+      var theme = anchor.getAttribute('data-theme');
+      document.styleSheets[cssIndex].disabled = true;
+      selectTheme(theme);
+      document.styleSheets[cssIndex].disabled = false;
+      // unmark selected anchor.
+      var prevAnchor = arguments.callee.anchor;
+      if (prevAnchor) {
+        var prevTheme = prevAnchor.getAttribute('data-theme');
+        prevAnchor.setAttribute('href', '#' + prevTheme);
+        prevAnchor.setAttribute('class', '');
+      }
+      // mark as selected.
+      anchor.setAttribute('href', {{ url_for('index')|tojson }} + '#' + theme);
+      anchor.setAttribute('class', 'selected');
+      arguments.callee.anchor = anchor;
     }
+    // register event handlers.
+    if ('onhashchange' in window) {
+      window.onhashchange = function() {
+        var theme = guessTheme();
+        themeSelected(anchors[theme]);
+      };
+    } else {
+      function anchorClicked() {
+        location.href = this.getAttribute('href');
+        themeSelected(this);
+        return false;
+      }
+      _.each(anchors, function(anchor) {
+        anchor.onclick = anchorClicked;
+      });
+    }
+    // select the initial theme.
+    themeSelected(anchors[__theme__]);
   </script>
 {% endblock %}

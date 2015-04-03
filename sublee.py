@@ -15,7 +15,7 @@ import os
 import re
 import sys
 
-from flask import Flask, make_response, render_template
+from flask import Flask, render_template
 from lxml import html
 from markdown import markdown
 import yaml
@@ -38,7 +38,9 @@ paths = {'static_url_path': '',
          'static_folder': ASSETS,
          'template_folder': ASSETS}
 app = Flask(__name__, **paths)
-app.jinja_env.globals['zip'] = itertools.izip
+app.jinja_env.globals.update(
+    zip=itertools.izip,
+    cdnjs=(lambda path: '//cdnjs.cloudflare.com/ajax/libs/' + path))
 
 
 def copyright_year(year_since=None, dash=EN_DASH):
@@ -126,9 +128,7 @@ def css(theme):
         themes = yaml.load(f)
     colors = themes[theme]
     css = render_template('style.css_t', rgba=rgba, **colors)
-    response = make_response(css)
-    response.headers['Content-Type'] = 'text/css'
-    return response
+    return css, 200, {'Content-Type': 'text/css'}
 
 
 if __name__ == '__main__':

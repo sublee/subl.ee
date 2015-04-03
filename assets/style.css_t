@@ -12,6 +12,7 @@
 }
 
 body {
+  visibility: visible;
   padding: 0 10%;
   font-family: 'Roboto Slab', sans-serif;
   font-weight: 400;
