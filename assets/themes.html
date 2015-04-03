@@ -21,31 +21,30 @@
       var theme = $a.getAttribute('data-theme');
       anchors[theme] = $a;
     });
-    // find stylesheet index of the theme css.
-    var cssIndex;
-    _.each(document.styleSheets, function(stylesheet, i) {
-      if (stylesheet.href) {
-        cssIndex = i;
-        return false;
-      }
-    });
+    // re-draw the logo when a css is loaded.
+    var $logoBody = $$('table.logo > tbody:eq(0)')[0];
+    var $logoRefresher = document.createElement('img');
+    $logoRefresher.onerror = function() {
+      $logoBody.style.display = null;
+    };
+    function redrawLogo(cssUrl) {
+      $logoBody.style.display = 'none';
+      $logoRefresher.src = cssUrl;
+    }
     // a callback function for theme selectors.
     function themeSelected($a) {
       if (/selected/.exec($a.getAttribute('class'))) {
         return;
       }
-      // change css.
-      var theme = $a.getAttribute('data-theme');
-      document.styleSheets[cssIndex].disabled = true;
-      selectTheme(theme);
-      document.styleSheets[cssIndex].disabled = false;
-      // update title.
       document.title = {{ title|tojson }} + ': ' + theme;
+      var theme = $a.getAttribute('data-theme');
+      var cssUrl = selectTheme(theme);
       // unmark selected anchor.
       var $prevA = arguments.callee.anchor;
       if ($prevA) {
         $prevA.setAttribute('href', '#' + $prevA.getAttribute('data-theme'));
         $prevA.setAttribute('class', '');
+        redrawLogo(cssUrl);
       }
       // mark as selected.
       $a.setAttribute('href', {{ url_for('index')|tojson }} + '#' + theme);

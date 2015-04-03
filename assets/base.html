@@ -31,8 +31,10 @@
     }
     var $cssLink = $$('link[rel=stylesheet]:eq(0)')[0];
     function selectTheme(theme) {
-      $cssLink.setAttribute('href', '/style-' + theme + '.css');
+      var cssUrl = '/style-' + theme + '.css';
+      $cssLink.setAttribute('href', cssUrl);
       __theme__ = theme;
+      return cssUrl;
     }
     var theme = guessTheme();
     if (theme != __theme__) {
@@ -46,14 +48,16 @@
     <header>
       {% block inner_header %}
         <table class="logo">
-          <tr>
-            <td class="logo-l" rowspan="2"></td>
-            <td class="logo-t"></td>
-            <td class="logo-r" rowspan="2"></td>
-          </tr>
-          <tr>
-            <td class="logo-b"></td>
-          </tr>
+          <tbody>
+            <tr>
+              <td class="logo-l" rowspan="2"></td>
+              <td class="logo-t"></td>
+              <td class="logo-r" rowspan="2"></td>
+            </tr>
+            <tr>
+              <td class="logo-b"></td>
+            </tr>
+          </tbody>
         </table>
       {% endblock %}
     </header>
