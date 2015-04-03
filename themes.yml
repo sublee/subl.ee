@@ -102,3 +102,21 @@ mearie:
   link_color: '#379'
   vlink_color: '#973'
   copyright_color: '#379'
+travis:
+  # failed, started, passed, passed
+  logo_colors: ['#db423c', '#d2c93b', '#3fa75f', '#3fa75f']
+  logo_blinks: [0, 1, 0, 0]
+  background_color: '#eff0ec'
+  title_color: '#a6adad'
+  text_color: '#777'
+  link_color: '#63a4a3'
+  vlink_color: '#83a3a5'
+  copyright_color: '#a6adad'
+google:
+  logo_colors: ['#d50f25', '#009925', '#eeb211', '#3369e8']
+  background_color: '#fff'
+  title_color: '#dd4b39'
+  text_color: '#545454'
+  link_color: '#1a0dab'
+  vlink_color: '#609'
+  copyright_color: '#aaa'
