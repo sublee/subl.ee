@@ -22,14 +22,14 @@
       anchors[theme] = $a;
     });
     // re-draw the logo when a css is loaded.
-    var $logoBody = $$('table.logo > tbody:eq(0)')[0];
-    var $logoRefresher = document.createElement('img');
-    $logoRefresher.onerror = function() {
-      $logoBody.style.display = null;
+    var $redrawer = document.createElement('img');
+    $redrawer.onerror = function() {
+      // on css loaded.
+      document.body.style.display = '';
     };
-    function redrawLogo(cssUrl) {
-      $logoBody.style.display = 'none';
-      $logoRefresher.src = cssUrl;
+    function redraw(cssUrl) {
+      document.body.style.display = 'none';
+      $redrawer.src = cssUrl;
     }
     // a callback function for theme selectors.
     function themeSelected($a) {
@@ -44,7 +44,7 @@
       if ($prevA) {
         $prevA.setAttribute('href', '#' + $prevA.getAttribute('data-theme'));
         $prevA.setAttribute('class', '');
-        redrawLogo(cssUrl);
+        redraw(cssUrl);
       }
       // mark as selected.
       $a.setAttribute('href', {{ url_for('index')|tojson }} + '#' + theme);
