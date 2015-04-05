@@ -25,7 +25,9 @@
     var $redrawer = document.createElement('img');
     $redrawer.onerror = function() {
       // on css loaded.
-      document.body.style.display = '';
+      setTimeout(function() {
+        document.body.style.display = '';
+      }, 100);
     };
     function redraw(cssUrl) {
       document.body.style.display = 'none';
