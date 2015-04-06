@@ -55,6 +55,7 @@ def minify_response(response):
             data = response.get_data(as_text=True)
             response.set_data(minify(data))
             break
+    # response.headers['Cache-Control'] = 'max-age=600'
     return response
 
 

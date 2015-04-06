@@ -4,6 +4,11 @@
 {% block title %}{{ title }}{% endblock %}
 {% block class %}themes{% endblock %}
 
+{% block head %}
+  <style type="text/css" class="theme"></style>
+  <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+{% endblock %}
+
 {% block body %}
   <section class="themes">
     <h1>Themes</h1>
@@ -13,45 +18,50 @@
       {% endfor %}
     </ul>
   </section>
-  <script src="{{ cdnjs('underscore.js/1.8.3/underscore-min.js') }}"></script>
   <script>
     // build the hash to anchor map.
     var anchors = {}
-    _.each($$('.themes a'), function($a) {
-      var theme = $a.getAttribute('data-theme');
+    $('.themes a').each(function() {
+      var $a = $(this);
+      var theme = $a.data('theme');
       anchors[theme] = $a;
     });
-    // re-draw the logo when a css is loaded.
-    var $redrawer = document.createElement('img');
-    $redrawer.onerror = function() {
-      // on css loaded.
-      setTimeout(function() {
-        document.body.style.display = '';
-      }, 10);
-    };
-    function redraw(cssUrl) {
-      document.body.style.display = 'none';
-      $redrawer.src = cssUrl;
+    // load CSS through Ajax then apply.
+    var $body = $(document.body);
+    var $themeStyle = $('style.theme');
+    function selectTheme(theme) {
+      __theme__ = theme;
+      $body.hide();
+      $.get(getThemeURL(theme), function(css) {
+        $themeStyle.text(css);
+        setTimeout(function() {
+          // re-draw the page.
+          $body.fadeIn();
+        }, 10);
+      });
+      // <link> for theme is not required.
+      $(themeLink).remove();
     }
     // a callback function for theme selectors.
     function themeSelected($a) {
-      if (/selected/.exec($a.getAttribute('class'))) {
+      if (/selected/.exec($a.attr('class'))) {
         return;
       }
-      var theme = $a.getAttribute('data-theme');
-      var cssUrl = selectTheme(theme);
+      var theme = $a.data('theme');
       document.title = {{ title|tojson }} + ': ' + theme;
+      if (theme != __theme__) {
+        selectTheme(theme);
+      }
       // unmark selected anchor.
-      var $prevA = arguments.callee.anchor;
+      var $prevA = arguments.callee.$a;
       if ($prevA) {
-        $prevA.setAttribute('href', '#' + $prevA.getAttribute('data-theme'));
-        $prevA.setAttribute('class', '');
-        redraw(cssUrl);
+        $prevA.attr('href', '#' + $prevA.data('theme'));
+        $prevA.attr('class', '');
       }
       // mark as selected.
-      $a.setAttribute('href', {{ url_for('index')|tojson }} + '#' + theme);
-      $a.setAttribute('class', 'selected');
-      arguments.callee.anchor = $a;
+      $a.attr('href', {{ url_for('index')|tojson }} + '#' + theme);
+      $a.attr('class', 'selected');
+      arguments.callee.$a = $a;
     }
     // register event handlers.
     if ('onhashchange' in window) {
@@ -61,12 +71,13 @@
       };
     } else {
       function anchorClicked() {
-        location.href = this.getAttribute('href');
-        themeSelected(this);
+        var $a = $(this);
+        themeSelected($a);
+        location.href = $a.attr('href');
         return false;
       }
-      _.each(anchors, function($a) {
-        $a.onclick = anchorClicked;
+      $.each(anchors, function(i, $a) {
+        $a.on('click', anchorClicked);
       });
     }
     // select the initial theme.
