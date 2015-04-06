@@ -11,11 +11,17 @@
     href="{{ url_for('static', filename='favicon.ico') }}" />
   <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
   <script src="{{ cdnjs('sizzle/2.1.1/sizzle.min.js') }}"></script>
   <script>
-    var $$ = Sizzle;
+    document.querySelector = function(query) { return Sizzle(query)[0]; };
+    document.querySelectorAll = function(query) { return Sizzle(query); };
+  </script>
+  <![endif]-->
+  <script>
     var __theme__ = {{ theme|tojson }};
+    function getThemeURL(theme) {
+      return '/style-' + theme + '.css';
+    }
     function guessTheme() {
       var theme;
       if (location.hash) {
@@ -28,15 +34,10 @@
       }
       return theme || {{ theme|tojson }};
     }
-    var themeLink = $$('link.theme:eq(0)')[0];
-    function getThemeURL(theme) {
-      return '/style-' + theme + '.css';
-    }
+    var themeLink = document.querySelector('.theme');
     function selectTheme(theme) {
-      var cssUrl = getThemeURL(theme);
-      themeLink.setAttribute('href', cssUrl);
+      themeLink.setAttribute('href', getThemeURL(theme));
       __theme__ = theme;
-      return cssUrl;
     }
     var theme = guessTheme();
     if (theme != __theme__) {
@@ -72,15 +73,15 @@
         </p>
         <script>
           // auto-renew the year range of the copyright.
-          var year = $$('span.year:eq(0)')[0];
-          var since = Number(/^[0-9]+/.exec(year.innerText)[0]);
-          var until = Number(/[0-9]+$/.exec(year.innerText)[0]);
+          var yearSpan = document.querySelector('.year');
+          var since = Number(/^[0-9]+/.exec(yearSpan.innerText)[0]);
+          var until = Number(/[0-9]+$/.exec(yearSpan.innerText)[0]);
           var thisYear = (new Date()).getFullYear();
           until = Math.max(until, thisYear);
           if (since < until) {
-            year.innerHTML = since + '&ndash;' + until;
+            yearSpan.innerHTML = since + '&ndash;' + until;
           } else {
-            year.innerHTML = until;
+            yearSpan.innerHTML = until;
           }
         </script>
       {% endblock %}
