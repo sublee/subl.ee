@@ -20,6 +20,7 @@ from flask import Flask, render_template
 import htmlmin
 from lxml import html
 from markdown import markdown
+from werkzeug.exceptions import Forbidden
 import yaml
 
 
@@ -99,8 +100,11 @@ def index():
 
 @app.route('/resume/')
 def resume():
-    with open('resume.md') as f:
-        profile_md = f.read().decode('utf-8')
+    try:
+        with open('resume.md') as f:
+            profile_md = f.read().decode('utf-8')
+    except IOError:
+        raise Forbidden
     profile_html = markdown(profile_md, extensions=MARKDOWN_EXTENSIONS)
     profile_doc = html.fromstring(profile_html)
     profile_title = profile_doc.xpath('//h1')[0].text
