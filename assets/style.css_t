@@ -2,7 +2,7 @@
 
 {% set title_color = title_color or logo_colors[0] %}
 
-@import url(http://fonts.googleapis.com/css?family=Roboto:300,400);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:300,400);
 
 * {
   margin: 0;
@@ -15,13 +15,14 @@
 
 body {
   margin: 0 10%;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Slab', serif;
   font-weight: 400;
   font-size: 18px;
   color: {{ text_color }};
   background: {{ background_color }};
   white-space: nowrap;
   transition: margin 0.2s;
+  -webkit-font-smoothing: antialiased;
 }
 
 header {
