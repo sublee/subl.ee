@@ -2,7 +2,7 @@
 
 {% set title_color = title_color or logo_colors[0] %}
 
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:300);
+@import url(http://fonts.googleapis.com/css?family=Roboto:300,400);
 
 * {
   margin: 0;
@@ -15,8 +15,8 @@
 
 body {
   margin: 0 10%;
-  font-family: 'Roboto Slab', sans-serif;
-  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   font-size: 18px;
   color: {{ text_color }};
   background: {{ background_color }};
@@ -40,18 +40,21 @@ footer {
 }
 
 footer p {
+  font-weight: 300;
   font-size: 0.75em;
   color: {{ copyright_color }};
 }
 
 h1 {
-  color: {{ title_color }};
+  font-weight: 400;
   font-size: 2em;
+  color: {{ title_color }};
 }
 
 h2 {
-  color: {{ title_color }};
   padding-top: 1em;
+  font-weight: 300;
+  color: {{ title_color }};
 }
 
 a:link, a:visited {
@@ -218,9 +221,9 @@ table.logo td {
 }
 
 .resume dt {
-  color: {{ copyright_color }};
-  font-size: 0.75em;
   padding-top: 0.5em;
+  font-size: 0.75em;
+  color: {{ copyright_color }};
 }
 
 .resume dd dt {
