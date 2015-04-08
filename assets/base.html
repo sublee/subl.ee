@@ -18,31 +18,33 @@
   </script>
   <![endif]-->
   <script>
-    var __theme__ = {{ theme|tojson }};
-    function getThemeURL(theme) {
-      return '/style-' + theme + '.css';
-    }
-    function guessTheme() {
-      var theme;
-      if (location.hash) {
-        theme = location.hash.replace(/^#/, '');
-      } else {
-        var date = new Date();
-        var eventKey = (date.getMonth() + 1) + '/' + date.getDate();
-        var events = {{ events|tojson }};
-        theme = events[eventKey];
+    {%- call minify_js() %}
+      var __theme__ = {{ theme|tojson }};
+      function getThemeURL(theme) {
+        return '/style-' + theme + '.css';
       }
-      return theme || {{ theme|tojson }};
-    }
-    var themeLink = document.querySelector('.theme');
-    function selectTheme(theme) {
-      themeLink.setAttribute('href', getThemeURL(theme));
-      __theme__ = theme;
-    }
-    var theme = guessTheme();
-    if (theme != __theme__) {
-      selectTheme(theme);
-    }
+      function guessTheme() {
+        var theme;
+        if (location.hash) {
+          theme = location.hash.replace(/^#/, '');
+        } else {
+          var date = new Date();
+          var eventKey = (date.getMonth() + 1) + '/' + date.getDate();
+          var events = {{ events|tojson }};
+          theme = events[eventKey];
+        }
+        return theme || {{ theme|tojson }};
+      }
+      var themeLink = document.querySelector('.theme');
+      function selectTheme(theme) {
+        themeLink.setAttribute('href', getThemeURL(theme));
+        __theme__ = theme;
+      }
+      var theme = guessTheme();
+      if (theme != __theme__) {
+        selectTheme(theme);
+      }
+    {% endcall -%}
   </script>
   {% block head %}{% endblock %}
 </head>
@@ -72,43 +74,49 @@
           {{ author }} &copy; <span class="year">{{ copyright_year }}</span>
         </p>
         <script>
-          // auto-renew the year range of the copyright.
-          var yearSpan = document.querySelector('.year');
-          var since = Number(/^[0-9]+/.exec(yearSpan.innerText)[0]);
-          var until = Number(/[0-9]+$/.exec(yearSpan.innerText)[0]);
-          var thisYear = (new Date()).getFullYear();
-          until = Math.max(until, thisYear);
-          if (since < until) {
-            yearSpan.innerHTML = since + '&ndash;' + until;
-          } else {
-            yearSpan.innerHTML = until;
-          }
+          {%- call minify_js(mangle_toplevel=True) %}
+            // auto-renew the year range of the copyright.
+            var yearSpan = document.querySelector('.year');
+            var since = Number(/^[0-9]+/.exec(yearSpan.innerText)[0]);
+            var until = Number(/[0-9]+$/.exec(yearSpan.innerText)[0]);
+            var thisYear = (new Date()).getFullYear();
+            until = Math.max(until, thisYear);
+            if (since < until) {
+              yearSpan.innerHTML = since + '&ndash;' + until;
+            } else {
+              yearSpan.innerHTML = until;
+            }
+          {% endcall -%}
         </script>
       {% endblock %}
     </footer>
   {% endblock %}
   {% if google_analytics %}
     <script>
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', '{{ google_analytics }}']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var isHTTPS = 'https:' == document.location.protocol;
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript';
-        ga.async = true;
-        ga.src = (isHTTPS ? 'https://ssl' : 'http://www')
-               + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ga, s);
-      })();
+      {%- call minify_js() %}
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{{ google_analytics }}']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+          var isHTTPS = 'https:' == document.location.protocol;
+          var ga = document.createElement('script');
+          ga.type = 'text/javascript';
+          ga.async = true;
+          ga.src = (isHTTPS ? 'https://ssl' : 'http://www')
+                 + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(ga, s);
+        })();
+      {% endcall -%}
     </script>
   {% endif %}
   {% if naver_analytics %}
     <script src="//wcs.naver.net/wcslog.js"></script>
     <script>
-      var wcs_add = {wa: '{{ naver_analytics }}'};
-      wcs_do();
+      {%- call minify_js() %}
+        var wcs_add = {wa: '{{ naver_analytics }}'};
+        wcs_do();
+      {% endcall -%}
     </script>
   {% endif %}
 </body>

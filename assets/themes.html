@@ -19,68 +19,70 @@
     </ul>
   </section>
   <script>
-    // build the hash to anchor map.
-    var anchors = {}
-    $('.themes a').each(function() {
-      var $a = $(this);
-      var theme = $a.data('theme');
-      anchors[theme] = $a;
-    });
-    // load CSS through Ajax then apply.
-    var $body = $(document.body);
-    var $themeStyle = $('style.theme');
-    function selectTheme(theme) {
-      __theme__ = theme;
-      $body.hide();
-      $.get(getThemeURL(theme), function(css) {
-        $themeStyle.text(css);
-        setTimeout(function() {
-          // re-draw the page.
-          $body.fadeIn();
-        }, 10);
-      });
-      // <link> for theme is not required.
-      $(themeLink).remove();
-    }
-    // a callback function for theme selectors.
-    function themeSelected($a) {
-      if (/selected/.exec($a.attr('class'))) {
-        return;
-      }
-      var theme = $a.data('theme');
-      document.title = {{ title|tojson }} + ': ' + theme;
-      if (theme != __theme__) {
-        selectTheme(theme);
-      }
-      // unmark selected anchor.
-      var $prevA = arguments.callee.$a;
-      if ($prevA) {
-        $prevA.attr('href', '#' + $prevA.data('theme'));
-        $prevA.attr('class', '');
-      }
-      // mark as selected.
-      $a.attr('href', {{ url_for('index')|tojson }} + '#' + theme);
-      $a.attr('class', 'selected');
-      arguments.callee.$a = $a;
-    }
-    // register event handlers.
-    if ('onhashchange' in window) {
-      window.onhashchange = function() {
-        var theme = guessTheme();
-        themeSelected(anchors[theme]);
-      };
-    } else {
-      function anchorClicked() {
+    {%- call minify_js() %}
+      // build the hash to anchor map.
+      var anchors = {}
+      $('.themes a').each(function() {
         var $a = $(this);
-        themeSelected($a);
-        location.href = $a.attr('href');
-        return false;
-      }
-      $.each(anchors, function(i, $a) {
-        $a.on('click', anchorClicked);
+        var theme = $a.data('theme');
+        anchors[theme] = $a;
       });
-    }
-    // select the initial theme.
-    themeSelected(anchors[__theme__]);
+      // load CSS through Ajax then apply.
+      var $body = $(document.body);
+      var $themeStyle = $('style.theme');
+      function selectTheme(theme) {
+        __theme__ = theme;
+        $body.hide();
+        $.get(getThemeURL(theme), function(css) {
+          $themeStyle.text(css);
+          setTimeout(function() {
+            // re-draw the page.
+            $body.fadeIn();
+          }, 10);
+        });
+        // <link> for theme is not required.
+        $(themeLink).remove();
+      }
+      // a callback function for theme selectors.
+      function themeSelected($a) {
+        if (/selected/.exec($a.attr('class'))) {
+          return;
+        }
+        var theme = $a.data('theme');
+        document.title = {{ title|tojson }} + ': ' + theme;
+        if (theme != __theme__) {
+          selectTheme(theme);
+        }
+        // unmark selected anchor.
+        var $prevA = arguments.callee.$a;
+        if ($prevA) {
+          $prevA.attr('href', '#' + $prevA.data('theme'));
+          $prevA.attr('class', '');
+        }
+        // mark as selected.
+        $a.attr('href', {{ url_for('index')|tojson }} + '#' + theme);
+        $a.attr('class', 'selected');
+        arguments.callee.$a = $a;
+      }
+      // register event handlers.
+      if ('onhashchange' in window) {
+        window.onhashchange = function() {
+          var theme = guessTheme();
+          themeSelected(anchors[theme]);
+        };
+      } else {
+        function anchorClicked() {
+          var $a = $(this);
+          themeSelected($a);
+          location.href = $a.attr('href');
+          return false;
+        }
+        $.each(anchors, function(i, $a) {
+          $a.on('click', anchorClicked);
+        });
+      }
+      // select the initial theme.
+      themeSelected(anchors[__theme__]);
+    {% endcall -%}
   </script>
 {% endblock %}

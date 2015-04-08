@@ -15,11 +15,12 @@ import os
 import re
 import sys
 
-import cssmin
+from cssmin import cssmin as minify_css
 from flask import Flask, render_template
-import htmlmin
+from htmlmin import minify as minify_html
 from lxml import html
 from markdown import markdown
+from slimit import minify as minify_js
 from werkzeug.exceptions import Forbidden
 import yaml
 
@@ -37,15 +38,20 @@ THEMES = os.path.join(ROOT, 'themes.yml')
 EN_DASH = '\u2013'
 DEFAULT_THEME = 'sublee'
 MARKDOWN_EXTENSIONS = ['markdown.extensions.def_list']
-MINIFIERS = {'text/html': htmlmin.minify, 'text/css': cssmin.cssmin}
+MINIFIERS = {'text/html': minify_html,
+             'text/css': minify_css,
+             'text/javascript': minify_js}
 
 
-paths = {'static_url_path': '',
-         'static_folder': ASSETS,
-         'template_folder': ASSETS}
-app = Flask(__name__, **paths)
+#: The Flask application.
+app = Flask(__name__, static_url_path='',
+            static_folder=ASSETS, template_folder=ASSETS)
+
+
+def minify_js_macro(caller, mangle_toplevel=False):
+    return minify_js(caller(), mangle=True, mangle_toplevel=mangle_toplevel)
 app.jinja_env.globals.update(
-    zip=itertools.izip,
+    zip=itertools.izip, minify_js=minify_js_macro,
     cdnjs=(lambda path: '//cdnjs.cloudflare.com/ajax/libs/' + path))
 
 
