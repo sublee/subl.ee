@@ -108,14 +108,14 @@ def index():
 def resume():
     try:
         with open('resume.md') as f:
-            profile_md = f.read().decode('utf-8')
+            resume_md = f.read().decode('utf-8')
     except IOError:
         raise Forbidden
-    profile_html = markdown(profile_md, extensions=MARKDOWN_EXTENSIONS)
-    profile_doc = html.fromstring(profile_html)
-    profile_title = profile_doc.xpath('//h1')[0].text
-    ctx = make_context(profile_title=profile_title, profile_html=profile_html)
-    return render_template('index.html', **ctx)
+    resume_html = markdown(resume_md, extensions=MARKDOWN_EXTENSIONS)
+    resume_doc = html.fromstring(resume_html)
+    resume_title = resume_doc.xpath('//h1')[0].text
+    ctx = make_context(resume_title=resume_title, resume_html=resume_html)
+    return render_template('resume.html', **ctx)
 
 
 @app.route('/themes/')

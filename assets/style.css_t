@@ -1,6 +1,8 @@
+{# vim: set ft=css: #}
+
 {% set title_color = title_color or logo_colors[0] %}
 
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:300,400);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:300);
 
 * {
   margin: 0;
@@ -12,14 +14,14 @@
 }
 
 body {
-  padding: 0 10%;
+  margin: 0 10%;
   font-family: 'Roboto Slab', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 18px;
   color: {{ text_color }};
   background: {{ background_color }};
   white-space: nowrap;
-  transition: padding 0.2s;
+  transition: margin 0.2s;
 }
 
 header {
@@ -38,20 +40,17 @@ footer {
 }
 
 footer p {
-  font-weight: 300;
   font-size: 0.75em;
   color: {{ copyright_color }};
 }
 
 h1 {
   color: {{ title_color }};
-  font-weight: 300;
   font-size: 2em;
 }
 
 h2 {
   color: {{ title_color }};
-  font-weight: 300;
   padding-top: 1em;
 }
 
@@ -108,8 +107,7 @@ ul.sentences li:before {
 
 @media screen and (max-width: 600px) {
   body {
-    padding-left: 5%;
-    padding-right: 5%;
+    margin: 0 5%;
     white-space: normal;
   }
 
@@ -196,4 +194,40 @@ table.logo td {
   color: {{ background_color }};
   background: {{ link_color }};
   padding: 0 0.5em;
+}
+
+.resume {
+  position: relative;
+  margin: 0 auto;
+  width: 40em;
+  white-space: normal;
+}
+
+.resume table.logo {
+  position: absolute;
+  right: 0;
+  margin: 0.25em;
+}
+
+.resume h1 {
+  font-size: 2em;
+}
+
+.resume h2 {
+  font-size: 1.25em;
+}
+
+.resume dt {
+  color: {{ copyright_color }};
+  font-size: 0.75em;
+  padding-top: 0.5em;
+}
+
+.resume dd dt {
+  padding-top: 0.2em;
+}
+
+.resume dd dd {
+  padding-left: 0.75em;  /* same with <li> */
+  line-height: 1.25;
 }

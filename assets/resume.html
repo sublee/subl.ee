@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ resume_title }}{% endblock %}
+{% block class %}resume{% endblock %}
+
+{% block head %}
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{ resume_title }}" />
+  <meta property="og:description" content="Resume of {{ author }}" />
+  <meta property="og:image" content="{{ url }}og.png" />
+  <meta property="og:url" content="{{ url }}" />
+  <meta name="author" content="{{ author }}" />
+  <meta name="keywords" content="{{ keywords|join(',') }}" />
+  <!-- freeze og.png together -->
+  <script type="image/png" src="{{ url_for('static', filename='og.png') }}">
+  </script>
+{% endblock %}
+
+{% block body %}
+  <section class="markdown-body">
+    {{ resume_html|safe }}
+  </section>
+{% endblock %}
+
