@@ -120,3 +120,10 @@ google:
   link_color: '#1a0dab'
   vlink_color: '#609'
   copyright_color: '#aaa'
+github:
+  logo_colors: ['#333', '#333', '#333', '#333']
+  background_color: '#fff'
+  title_color: '#333'
+  text_color: '#333'
+  link_color: '#4183C4'
+  copyright_color: '#777'
