@@ -30,7 +30,6 @@ __all__ = ['app']
 
 
 ROOT = os.path.dirname(__file__)
-ASSETS = os.path.join(ROOT, 'assets')
 PROFILE = os.path.join(ROOT, 'profile.md')
 META = os.path.join(ROOT, 'meta.yml')
 THEMES = os.path.join(ROOT, 'themes.yml')
@@ -44,8 +43,7 @@ MINIFIERS = {'text/html': minify_html,
 
 
 #: The Flask application.
-app = Flask(__name__, static_url_path='',
-            static_folder=ASSETS, template_folder=ASSETS)
+app = Flask(__name__, static_url_path='')
 
 
 def minify_js_macro(caller, mangle_toplevel=False):
