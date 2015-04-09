@@ -40,9 +40,50 @@
         themeLink.setAttribute('href', getThemeURL(theme));
         __theme__ = theme;
       }
-      var theme = guessTheme();
-      if (theme != __theme__) {
-        selectTheme(theme);
+      function selectGuessedTheme() {
+        var theme = guessTheme();
+        if (theme != __theme__) {
+          selectTheme(theme);
+        }
+        return theme;
+      }
+      // select the initial theme.
+      selectGuessedTheme();
+
+      // load jQuery and init instant theme selection when the hash changed.
+      window.onhashchange = function() {
+        var done = false;
+        var jQueryScript = document.createElement('script');
+        jQueryScript.src = '//code.jquery.com/jquery-1.11.2.min.js';
+        jQueryScript.onload = jQueryScript.onreadystatechange = function() {
+          var state = this.readyState;
+          if (!done && (!state || /loaded|complete/.exec(state))) {
+            this.onload = this.onreadystatechange = null;
+            done = true;
+            initThemeSelection();
+            selectGuessedTheme();
+          }
+        };
+        document.head.appendChild(jQueryScript);
+      };
+      function initThemeSelection() {
+        var $body = $(document.body);
+        var $themeStyle = $('<style type="text/css">').appendTo(document.head);
+        // override selectTheme() to re-draw the page.
+        selectTheme = function (theme) {
+          __theme__ = theme;
+          $body.hide();
+          $.get(getThemeURL(theme), function(css) {
+            $themeStyle.text(css);
+            setTimeout(function() {
+              // re-draw the page.
+              $body.fadeIn();
+            }, 10);
+          });
+          // <link> for theme is not required.
+          $(themeLink).remove();
+        }
+        window.onhashchange = selectGuessedTheme;
       }
     {% endcall -%}
   </script>

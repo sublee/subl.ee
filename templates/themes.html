@@ -4,11 +4,6 @@
 {% block title %}{{ title }}{% endblock %}
 {% block class %}themes{% endblock %}
 
-{% block head %}
-  <style type="text/css" class="theme"></style>
-  <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-{% endblock %}
-
 {% block body %}
   <h1>Themes</h1>
   <ul>
@@ -20,67 +15,49 @@
     {%- call minify_js() %}
       // build the hash to anchor map.
       var anchors = {}
-      $('.themes a').each(function() {
-        var $a = $(this);
-        var theme = $a.data('theme');
-        anchors[theme] = $a;
-      });
-      // load CSS through Ajax then apply.
-      var $body = $(document.body);
-      var $themeStyle = $('style.theme');
-      function selectTheme(theme) {
-        __theme__ = theme;
-        $body.hide();
-        $.get(getThemeURL(theme), function(css) {
-          $themeStyle.text(css);
-          setTimeout(function() {
-            // re-draw the page.
-            $body.fadeIn();
-          }, 10);
-        });
-        // <link> for theme is not required.
-        $(themeLink).remove();
+      var as = document.querySelectorAll('.themes a');
+      for (var i = 0; i < as.length; ++i) {
+        var a = as[i];
+        var theme = a.getAttribute('data-theme');
+        anchors[theme] = a;
       }
       // a callback function for theme selectors.
-      function themeSelected($a) {
-        if (/selected/.exec($a.attr('class'))) {
+      function themeSelected(a, theme) {
+        if (/selected/.exec(a.getAttribute('class'))) {
           return;
         }
-        var theme = $a.data('theme');
+        theme = theme || a.getAttribute('data-theme');
         document.title = {{ title|tojson }} + ': ' + theme;
-        if (theme != __theme__) {
-          selectTheme(theme);
+        var prevA = arguments.callee.a;
+        if (prevA) {
+          prevA.setAttribute('href', '#' + prevA.getAttribute('data-theme'));
+          prevA.setAttribute('class', '');
         }
-        // unmark selected anchor.
-        var $prevA = arguments.callee.$a;
-        if ($prevA) {
-          $prevA.attr('href', '#' + $prevA.data('theme'));
-          $prevA.attr('class', '');
-        }
-        // mark as selected.
-        $a.attr('href', {{ url_for('index')|tojson }} + '#' + theme);
-        $a.attr('class', 'selected');
-        arguments.callee.$a = $a;
+        a.setAttribute('href', {{ url_for('index')|tojson }} + '#' + theme);
+        a.setAttribute('class', 'selected');
+        arguments.callee.a = a;
       }
-      // register event handlers.
-      if ('onhashchange' in window) {
-        window.onhashchange = function() {
-          var theme = guessTheme();
-          themeSelected(anchors[theme]);
-        };
-      } else {
+      // selectGuessedTheme() is called at onhashchange.  it should call
+      // themeSelected() also.
+      var _selectGuessedTheme = selectGuessedTheme;
+      selectGuessedTheme = function() {
+        var theme = _selectGuessedTheme();
+        themeSelected(anchors[theme], theme);
+      };
+      // if onhashchange event isn't supported, fallback to anchor click event.
+      if (!('onhashchange' in window)) {
         function anchorClicked() {
-          var $a = $(this);
-          themeSelected($a);
-          location.href = $a.attr('href');
+          location.href = a.attr('href');
+          themeSelected(a);
           return false;
         }
-        $.each(anchors, function(i, $a) {
-          $a.on('click', anchorClicked);
-        });
+        for (var i = 0; i < as.length; ++i) {
+          var a = as[i];
+          a.onclick = anchorClicked;
+        }
       }
-      // select the initial theme.
-      themeSelected(anchors[__theme__]);
+      // callback of the initial theme.
+      themeSelected(anchors[__theme__], __theme__);
     {% endcall -%}
   </script>
 {% endblock %}
