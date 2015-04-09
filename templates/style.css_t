@@ -48,7 +48,7 @@ h1 {
 }
 
 h2 {
-  padding-top: 1.25em;
+  padding-top: 1em;
   font-weight: 400;
   font-size: 1.25em;
   color: {{ title_color }};
@@ -190,7 +190,6 @@ table.logo td {
 }
 
 .index h2 {
-  padding-top: 1em;
   font-size: 1em;
 }
 
@@ -234,5 +233,6 @@ table.logo td {
 
   .doc table.logo {
     zoom: 0.5;
+    margin: 0.5em;
   }
 }
