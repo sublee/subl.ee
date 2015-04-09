@@ -5,8 +5,9 @@
 
     http://subl.ee/
 
-    :copyright: (c) 2013-2014 by Heungsub Lee
+    :copyright: (c) 2013-2015 by Heungsub Lee
     :license: Public Domain.
+
 """
 from __future__ import unicode_literals, with_statement
 from datetime import date
