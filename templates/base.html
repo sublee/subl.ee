@@ -13,6 +13,7 @@
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <script src="{{ cdnjs('sizzle/2.1.1/sizzle.min.js') }}"></script>
   <script>
+    document.head = document.getElementsByTagName('head')[0];
     document.querySelector = function(query) { return Sizzle(query)[0]; };
     document.querySelectorAll = function(query) { return Sizzle(query); };
   </script>
@@ -74,7 +75,14 @@
           __theme__ = theme;
           $body.hide();
           $.get(getThemeURL(theme), function(css) {
-            $themeStyle.text(css);
+            try {
+              $themeStyle.text(css);
+            } catch (e) {
+              // IE8 throws SCRIPT65535.
+              location.href = location.href;
+              location.reload();
+              return;
+            }
             setTimeout(function() {
               // re-draw the page.
               $body.fadeIn();
