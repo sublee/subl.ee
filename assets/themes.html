@@ -10,14 +10,12 @@
 {% endblock %}
 
 {% block body %}
-  <section class="themes">
-    <h1>Themes</h1>
-    <ul>
-      {% for theme in themes|sort %}
-        <li><a href="#{{ theme }}" data-theme="{{ theme }}">{{ theme }}</a></li>
-      {% endfor %}
-    </ul>
-  </section>
+  <h1>Themes</h1>
+  <ul>
+    {% for theme in themes|sort %}
+      <li><a href="#{{ theme }}" data-theme="{{ theme }}">{{ theme }}</a></li>
+    {% endfor %}
+  </ul>
   <script>
     {%- call minify_js() %}
       // build the hash to anchor map.

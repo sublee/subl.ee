@@ -32,12 +32,8 @@ header {
   line-height: 1;
 }
 
-section {
-  padding-bottom: 1em;
-}
-
 footer {
-  margin-top: 1em;
+  margin-top: 2em;
 }
 
 footer p {
