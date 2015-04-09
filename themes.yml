@@ -127,3 +127,18 @@ github:
   text_color: '#333'
   link_color: '#4183C4'
   copyright_color: '#777'
+material:
+  logo_colors: ['#03A9F4', '#E91E63', '#FFC107', '#8BC34A']
+  background_color: '#f9f9f9'
+  title_color: '#673AB7'
+  text_color: 'rgba(0,0,0,.87)'
+  link_color: '#2196F3'
+  vlink_color: '#3F51B5'
+  copyright_color: 'rgba(0,0,0,.54)'
+samsung:
+  logo_colors: ['#1428a0', '#1428a0', '#1428a0', '#1428a0']
+  background_color: '#fff'
+  title_color: '#151515'
+  text_color: '#666'
+  link_color: '#1428a0'
+  copyright_color: '#535353'
