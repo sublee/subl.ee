@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}{{ resume_title }} - Résumé{% endblock %}
-{% block class %}resume{% endblock %}
+{% block class %}resume doc{% endblock %}
 
 {% block head %}
   <meta property="og:type" content="website" />
@@ -17,7 +17,7 @@
 {% endblock %}
 
 {% block body %}
-  <section class="markdown-body">
+  <section>
     {{ resume_html|safe }}
   </section>
 {% endblock %}

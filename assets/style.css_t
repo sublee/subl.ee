@@ -14,19 +14,20 @@
 }
 
 body {
-  margin: 0 10%;
+  position: relative;
+  margin: 4em 10%;
+  max-width: 40em;
   font-family: 'Roboto Slab', serif;
   font-weight: 400;
   font-size: 18px;
   color: {{ text_color }};
   background: {{ background_color }};
-  white-space: nowrap;
+  white-space: normal;
   transition: margin 0.2s;
   -webkit-font-smoothing: antialiased;
 }
 
 header {
-  margin-top: 4em;
   margin-bottom: 1em;
   line-height: 1;
 }
@@ -37,7 +38,6 @@ section {
 
 footer {
   margin-top: 1em;
-  margin-bottom: 4em;
 }
 
 footer p {
@@ -52,8 +52,9 @@ h1 {
 }
 
 h2 {
-  padding-top: 1em;
+  padding-top: 1.25em;
   font-weight: 400;
+  font-size: 1.25em;
   color: {{ title_color }};
 }
 
@@ -71,6 +72,21 @@ a:visited {
 
 a:hover {
   text-decoration: underline;
+}
+
+dt {
+  padding-top: 1em;
+  font-size: 0.75em;
+  color: {{ copyright_color }};
+}
+
+dd dl {
+  padding-left: 0.75em;  /* same with <li> */
+  line-height: 1.25;
+}
+
+dd dt {
+  padding-top: 0.25em;
 }
 
 ul li {
@@ -106,17 +122,6 @@ ul.sentences li:before {
 *:first-child+html ul.sentences li {
   list-style: none !important;
   margin-left: 0;
-}
-
-@media screen and (max-width: 600px) {
-  body {
-    margin: 0 5%;
-    white-space: normal;
-  }
-
-  ul.sentences li {
-    display: inline;
-  }
 }
 
 /* logo */
@@ -178,20 +183,28 @@ table.logo td {
   {% endif %}
 {% endfor %}
 
-/* page specializations */
+/* index */
+
+.index {
+  white-space: nowrap;
+}
 
 .index h1 {
   display: none;
 }
 
+.index h2 {
+  padding-top: 1em;
+  font-size: 1em;
+}
+
+/* error */
+
 .error h1 {
-  display: block;
   color: {{ link_color }};
 }
 
-.error footer {
-  margin-top: 1em;
-}
+/* themes */
 
 .themes a.selected {
   color: {{ background_color }};
@@ -199,37 +212,31 @@ table.logo td {
   padding: 0 0.5em;
 }
 
-.resume {
-  position: relative;
-  width: 40em;
-  white-space: normal;
-}
+/* doc */
 
-.resume table.logo {
+.doc table.logo {
   position: absolute;
   right: 0;
   margin: 0.25em;
 }
 
-.resume h1 {
-  font-size: 2em;
-}
+/* responsive layout */
 
-.resume h2 {
-  font-size: 1.25em;
-}
+@media screen and (max-width: 600px) {
+  body {
+    margin: 2em 5%;
+    width: auto;
+  }
 
-.resume dt {
-  padding-top: 0.5em;
-  font-size: 0.75em;
-  color: {{ copyright_color }};
-}
+  .index {
+    white-space: normal;
+  }
 
-.resume dd dt {
-  padding-top: 0.2em;
-}
+  .index ul.sentences li {
+    display: inline;
+  }
 
-.resume dd dd {
-  padding-left: 0.75em;  /* same with <li> */
-  line-height: 1.25;
+  .doc table.logo {
+    zoom: 0.5;
+  }
 }
