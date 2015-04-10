@@ -13,9 +13,11 @@
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <script src="{{ cdnjs('sizzle/2.1.1/sizzle.min.js') }}"></script>
   <script>
-    document.head = document.getElementsByTagName('head')[0];
-    document.querySelector = function(query) { return Sizzle(query)[0]; };
-    document.querySelectorAll = function(query) { return Sizzle(query); };
+    {%- call minify_js() %}
+      document.head = document.getElementsByTagName('head')[0];
+      document.querySelector = function(query) { return Sizzle(query)[0]; };
+      document.querySelectorAll = function(query) { return Sizzle(query); };
+    {% endcall -%}
   </script>
   <![endif]-->
   <script>

@@ -11,9 +11,6 @@
   <meta property="og:url" content="{{ url }}" />
   <meta name="author" content="{{ author }}" />
   <meta name="keywords" content="{{ keywords|join(',') }}" />
-  <!-- freeze og.png together -->
-  <script type="image/png" src="{{ url_for('static', filename='og.png') }}">
-  </script>
 {% endblock %}
 
 {% block body %}
