@@ -98,26 +98,12 @@ ul li:before {
   color: {{ copyright_color }};
 }
 
-ul.sentences li {
-  position: static;
-  padding-left: 0;
-}
-
-ul.sentences li:before {
-  display: none;
-}
-
 /* ie7 can't handle :before pseudo-element */
 
 *:first-child+html ul li {
   list-style: disc;
   margin-left: 0.75em;
   padding-left: 0;
-}
-
-*:first-child+html ul.sentences li {
-  list-style: none !important;
-  margin-left: 0;
 }
 
 /* logo */
@@ -227,8 +213,8 @@ table.logo td {
     white-space: normal;
   }
 
-  .index ul.sentences li {
-    display: inline;
+  .hard-returns br {
+    display: none;
   }
 
   .doc table.logo {

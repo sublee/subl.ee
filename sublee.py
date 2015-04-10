@@ -37,10 +37,15 @@ THEMES = os.path.join(ROOT, 'themes.yml')
 
 EN_DASH = '\u2013'
 DEFAULT_THEME = 'sublee'
-MARKDOWN_EXTENSIONS = ['markdown.extensions.def_list']
-MINIFIERS = {'text/html': minify_html,
-             'text/css': minify_css,
-             'text/javascript': minify_js}
+MARKDOWN_EXTENSIONS = [
+    'markdown.extensions.attr_list',
+    'markdown.extensions.def_list',
+]
+MINIFIERS = {
+    'text/html': minify_html,
+    'text/css': minify_css,
+    'text/javascript': minify_js,
+}
 
 
 #: The Flask application.
@@ -74,11 +79,6 @@ def copyright_year(year_since=None, dash=EN_DASH):
     return '{0}{1}{2}'.format(year_since, dash, this_year)
 
 
-def decorate_profile_doc(doc):
-    doc.xpath('//ul')[0].attrib['class'] = 'sentences'
-    return doc
-
-
 def make_context(*args, **kwargs):
     with open(META) as f:
         meta = yaml.load(f)
@@ -96,8 +96,6 @@ def index():
         profile_md = f.read().decode('utf-8')
     profile_html = markdown(profile_md, extensions=MARKDOWN_EXTENSIONS)
     profile_doc = html.fromstring(profile_html)
-    profile_doc = decorate_profile_doc(profile_doc)
-    profile_html = html.tostring(profile_doc)
     profile_title = profile_doc.xpath('//h1')[0].text
     ctx = make_context(profile_title=profile_title, profile_html=profile_html)
     return render_template('index.html', **ctx)
