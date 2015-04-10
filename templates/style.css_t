@@ -203,7 +203,7 @@ table.logo td {
 
 /* responsive layout */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 40em) {
   body {
     margin: 2em 5%;
     width: auto;
