@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block class %}{{ doc_name }}{% endblock %}
+
+{% block body %}
+  {{ doc_html|safe }}
+{% endblock %}

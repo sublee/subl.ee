@@ -33,7 +33,7 @@
           prevA.setAttribute('href', '#' + prevA.getAttribute('data-theme'));
           prevA.setAttribute('class', '');
         }
-        a.setAttribute('href', {{ url_for('index')|tojson }} + '#' + theme);
+        a.setAttribute('href', {{ url_for('doc')|tojson }} + '#' + theme);
         a.setAttribute('class', 'selected');
         arguments.callee.a = a;
       }

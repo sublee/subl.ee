@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=480" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-  <title>{% block title %}{% endblock %}</title>
+  <title>{% block title %}{{ title }}{% endblock %}</title>
   <link rel="stylesheet" type="text/css" class="theme"
     href="{{ url_for('css', theme=theme) }}" />
   <link rel="shortcut icon" type="image/icon"
@@ -97,6 +97,18 @@
       }
     {% endcall -%}
   </script>
+  {% macro meta(prop, val, key_attr='property', optional=False) %}
+    {% if not optional or val %}
+      <meta {{ key_attr }}="{{ prop }}" content="{{ val }}" />
+    {% endif %}
+  {% endmacro %}
+  {{ meta('og:type', type or 'website') }}
+  {{ meta('og:title', title) }}
+  {{ meta('og:description', description, optional=True) }}
+  {{ meta('og:image', url_root ~ url_for('static', filename='og.png')) }}
+  {{ meta('og:url', url_root ~ url_path) }}
+  {{ meta('author', author, key_attr='name') }}
+  {{ meta('keywords', keywords, key_attr='name') }}
   {% block head %}{% endblock %}
 </head>
 <body class="{% block class %}{% endblock %}">

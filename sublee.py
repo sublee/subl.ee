@@ -19,10 +19,10 @@ import sys
 from cssmin import cssmin as minify_css
 from flask import Flask, render_template
 from htmlmin import minify as minify_html
-from lxml import html
-from markdown import markdown
+import inflection
+from markdown import Markdown
 from slimit import minify as minify_js
-from werkzeug.exceptions import Forbidden
+from werkzeug.exceptions import NotFound
 import yaml
 
 
@@ -31,15 +31,17 @@ __all__ = ['app']
 
 
 ROOT = os.path.dirname(__file__)
-PROFILE = os.path.join(ROOT, 'profile.md')
+DOCS = os.path.join(ROOT, 'docs')
 META = os.path.join(ROOT, 'meta.yml')
 THEMES = os.path.join(ROOT, 'themes.yml')
 
-EN_DASH = '\u2013'
+
 DEFAULT_THEME = 'sublee'
 MARKDOWN_EXTENSIONS = [
     'markdown.extensions.attr_list',
     'markdown.extensions.def_list',
+    'markdown.extensions.meta',
+    'markdown.extensions.smarty',
 ]
 MINIFIERS = {
     'text/html': minify_html,
@@ -70,9 +72,8 @@ def minify_response(response):
     return response
 
 
-def copyright_year(year_since=None, dash=EN_DASH):
-    """Generates an auto-renewed year range of the copyright.
-    """
+def copyright_year(year_since=None, dash='\u2013'):
+    """Generates an auto-renewed year range of the copyright."""
     this_year = date.today().year
     if year_since is None or year_since == this_year:
         return str(this_year)
@@ -89,30 +90,29 @@ def make_context(*args, **kwargs):
     return c
 
 
-@app.route('/')
-def index():
-    """The homepage."""
-    with open(PROFILE) as f:
-        profile_md = f.read().decode('utf-8')
-    profile_html = markdown(profile_md, extensions=MARKDOWN_EXTENSIONS)
-    profile_doc = html.fromstring(profile_html)
-    profile_title = profile_doc.xpath('//h1')[0].text
-    ctx = make_context(profile_title=profile_title, profile_html=profile_html)
-    return render_template('index.html', **ctx)
+def normalize_doc_meta(raw_meta):
+    normal_meta = {}
+    for key, values in raw_meta.items():
+        key = inflection.underscore(key)
+        value = '\n'.join(values)
+        normal_meta[key] = value
+    return normal_meta
 
 
-@app.route('/resume/')
-def resume():
+@app.route('/', defaults={'doc_name': 'profile'})
+@app.route('/<doc_name>/')
+def doc(doc_name):
+    filename = os.path.join(DOCS, os.path.extsep.join([doc_name, 'md']))
     try:
-        with open('resume.md') as f:
-            resume_md = f.read().decode('utf-8')
+        with open(filename) as f:
+            doc_text = f.read().decode('utf-8')
     except IOError:
-        raise Forbidden
-    resume_html = markdown(resume_md, extensions=MARKDOWN_EXTENSIONS)
-    resume_doc = html.fromstring(resume_html)
-    resume_title = resume_doc.xpath('//h1')[0].text
-    ctx = make_context(resume_title=resume_title, resume_html=resume_html)
-    return render_template('resume.html', **ctx)
+        raise NotFound
+    markdown = Markdown(extensions=MARKDOWN_EXTENSIONS)
+    doc_html = markdown.convert(doc_text)
+    doc_meta = normalize_doc_meta(markdown.Meta)
+    ctx = make_context(doc_html=doc_html, doc_name=doc_name, **doc_meta)
+    return render_template('doc.html', **ctx)
 
 
 @app.route('/themes/')
