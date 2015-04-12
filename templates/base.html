@@ -10,7 +10,7 @@
   <link rel="shortcut icon" type="image/icon"
     href="{{ url_for('static', filename='favicon.ico') }}" />
   <!--[if lt IE 9]>
-  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <script src="{{ cdnjs('html5shiv/3.7.2/html5shiv.min.js') }}"></script>
   <script src="{{ cdnjs('sizzle/2.1.1/sizzle.min.js') }}"></script>
   <script>
     {%- call minify_js() %}
