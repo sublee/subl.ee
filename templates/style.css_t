@@ -14,17 +14,22 @@
   padding: 0;
   border: none;
   font-size: 1em;
-  line-height: 1.5;
+  line-height: 1.6;
   clear: left;
+}
+
+html {
+  font-size: {{ base_font_size }}px;
 }
 
 body {
   position: relative;
-  margin: 4em 10%;
-  max-width: 40em;
+  margin: 10%;
+  {{ rem('margin-top', 4) }}
+  {{ rem('margin-bottom', 4) }}
+  {{ rem('max-width', 40) }}
   font-family: 'Roboto Slab', serif;
   font-weight: 400;
-  font-size: 18px;
   color: {{ text_color }};
   background: {{ background_color }};
   white-space: normal;
@@ -38,7 +43,7 @@ header {
 }
 
 footer {
-  {{ rem('margin-top', 1) }};
+  {{ rem('padding-top', 1) }};
 }
 
 footer p {
@@ -186,24 +191,23 @@ table.logo td {
   {{ rem('margin-bottom', 2) }};
 }
 
-.profile footer {
-  {{ rem('margin-top', 2) }};
-}
-
 .profile h1 {
   display: none;
 }
 
 .profile h2 {
-  margin-bottom: 0;
+  {{ rem('margin-bottom', 0.5) }}
   font-size: 1em;
 }
 
 /* error */
 
 .error h1 {
-  margin-bottom: 0;
   color: {{ link_color }};
+}
+
+.error footer {
+  padding-top: 0;
 }
 
 /* themes */
@@ -224,9 +228,11 @@ table.logo td {
 
 /* responsive layout */
 
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 40rem) {
   body {
-    margin: 2em 5%;
+    margin: 5%;
+    {{ rem('margin-top', 2) }}
+    {{ rem('margin-bottom', 2) }}
     width: auto;
   }
 
