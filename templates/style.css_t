@@ -196,7 +196,7 @@ table.logo td {
 }
 
 .profile h2 {
-  {{ rem('margin-bottom', 0.5) }}
+  margin-bottom: 0;
   font-size: 1em;
 }
 
