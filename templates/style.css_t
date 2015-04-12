@@ -1,6 +1,11 @@
 {# vim: set ft=css: #}
 
 {% set title_color = title_color or logo_colors[0] %}
+{% set base_font_size = 18 %}
+{% macro rem(prop, rem) %}
+  {{ prop }}: {{ (base_font_size * rem)|round|int }}px;
+  {{ prop }}: {{ rem }}rem;
+{% endmacro %}
 
 @import url(//fonts.googleapis.com/css?family=Roboto+Slab:400,700);
 
@@ -28,17 +33,21 @@ body {
 }
 
 header {
-  margin-bottom: 1em;
+  {{ rem('margin-bottom', 1) }};
   line-height: 1;
 }
 
 footer {
-  margin-top: 2em;
+  {{ rem('margin-top', 1) }};
 }
 
 footer p {
   font-size: 0.75em;
   color: {{ copyright_color }};
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl {
+  {{ rem('margin-bottom', 1) }};
 }
 
 h1 {
@@ -48,7 +57,6 @@ h1 {
 }
 
 h2 {
-  padding-top: 1em;
   font-weight: 400;
   font-size: 1.25em;
   color: {{ title_color }};
@@ -71,18 +79,21 @@ a:hover {
 }
 
 dt {
-  padding-top: 1em;
-  color: {{ copyright_color }};
+  margin: 0.5em 0;
+  font-weight: 700;
+  /* color: {{ copyright_color }}; */
 }
 
 dd dl {
-  padding-left: 0.75em;  /* same with <li> */
+  margin-left: 0.75em;  /* same with <li> */
   line-height: 1.25;
 }
 
 dd dt {
-  padding-top: 0.25em;
+  margin: 0;
   font-size: 0.75em;
+  font-weight: 400;
+  color: {{ copyright_color }};
 }
 
 ul li {
@@ -171,22 +182,28 @@ table.logo td {
   white-space: nowrap;
 }
 
+.profile header {
+  {{ rem('margin-bottom', 2) }};
+}
+
+.profile footer {
+  {{ rem('margin-top', 2) }};
+}
+
 .profile h1 {
   display: none;
 }
 
 .profile h2 {
+  margin-bottom: 0;
   font-size: 1em;
 }
 
 /* error */
 
 .error h1 {
+  margin-bottom: 0;
   color: {{ link_color }};
-}
-
-.error footer {
-  margin-top: 1em;
 }
 
 /* themes */

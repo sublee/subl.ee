@@ -25,8 +25,8 @@ I made (or am making)
 
 - [Durango][] at What! Studio in Nexon.
 - Kartrider Dash and Coin Rush series at Team Lupin in Nexon.
-- [Profiling][] -- an interactive Python profiler.
-- [Hangulize][] -- a Korean alphabet transcriber.
+- [Profiling][] which is an interactive Python profiler.
+- [Hangulize][] which is a Korean alphabet transcriber.
 - Game development libraries: [TrueSkill][], [Energy][], [Ranking][]
 - Small Flask extensions: [Flask-AutoIndex][] and [Flask-Silk][]
 - [Subleerunker][], [MOGEF.XXX][], [Cra-ezCounter][] just for fun.
