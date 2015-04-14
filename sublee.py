@@ -38,10 +38,10 @@ THEMES = os.path.join(ROOT, 'themes.yml')
 
 DEFAULT_THEME = 'sublee'
 MARKDOWN_EXTENSIONS = [
-    'markdown.extensions.attr_list',
     'markdown.extensions.def_list',
     'markdown.extensions.meta',
     'markdown.extensions.smarty',
+    'markdown_attr_plus',
 ]
 MINIFIERS = {
     'text/html': minify_html,

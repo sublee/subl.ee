@@ -83,24 +83,6 @@ a:hover {
   text-decoration: underline;
 }
 
-dt {
-  margin: 0.5em 0;
-  font-weight: 700;
-  /* color: {{ copyright_color }}; */
-}
-
-dd dl {
-  margin-left: 0.75em;  /* same with <li> */
-  line-height: 1.25;
-}
-
-dd dt {
-  margin: 0;
-  font-size: 0.75em;
-  font-weight: 400;
-  color: {{ copyright_color }};
-}
-
 ul li {
   position: relative;
   padding-left: 0.75em;
@@ -115,11 +97,30 @@ ul li:before {
 }
 
 /* ie7 can't handle :before pseudo-element */
-
 *:first-child+html ul li {
   list-style: disc;
   margin-left: 0.75em;
   padding-left: 0;
+}
+
+dt {
+  {{ rem('margin-top', 1) }}
+  font-weight: 700;
+}
+
+dl.descriptions dt {
+  {{ rem('margin-top', 0.5) }}
+  {{ rem('font-size', 0.75) }}
+  font-weight: 400;
+  color: {{ copyright_color }};
+  line-height: 1;
+}
+
+dl dd.annotation {
+  {{ rem('margin-bottom', 0.5) }}
+  {{ rem('font-size', 0.75) }}
+  color: {{ copyright_color }};
+  line-height: 1;
 }
 
 /* logo */
