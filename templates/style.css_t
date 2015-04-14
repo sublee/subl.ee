@@ -117,9 +117,8 @@ dl.descriptions dt {
 }
 
 dl dd.annotation {
-  {{ rem('margin-bottom', 0.5) }}
+  {{ rem('margin-bottom', 1) }}
   {{ rem('font-size', 0.75) }}
-  color: {{ copyright_color }};
   line-height: 1;
 }
 
