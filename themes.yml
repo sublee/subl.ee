@@ -1,21 +1,29 @@
 sublee:
-  logo_colors: ['#e34', '#e34', '#fc3', '#e34']
-  logo_blinks: [1, 0.5, 1, 0.5]
+  emblem_colors: ['#e34', '#e34', '#fc3', '#e34']
+  emblem_blinks: [1, 0.5, 1, 0.5]
   background_color: '#192222'
   text_color: '#788'
   link_color: '#ca4'
   vlink_color: '#986'
   copyright_color: '#455'
+none:
+  emblem_colors: ['#000', '#000', '#000', '#000']
+  background_color: '#fff'
+  title_color: '#000'
+  text_color: '#000'
+  link_color: '#00e'
+  vlink_color: '#50a'
+  copyright_color: '#000'
 90s:
-  logo_colors: ['#f00', '#f00', '#ff0', '#f00']
-  logo_blinks: [1, 1, 1, 1]
+  emblem_colors: ['#f00', '#f00', '#ff0', '#f00']
+  emblem_blinks: [1, 1, 1, 1]
   background_color: '#009'
   text_color: '#ff0'
   link_color: '#0ff'
   vlink_color: '#f0f'
   copyright_color: '#0f0'
 mogef:
-  logo_colors: ['#4e9fd7', '#bcbe50', '#ac1f8d', '#4e9fd7']
+  emblem_colors: ['#4e9fd7', '#bcbe50', '#ac1f8d', '#4e9fd7']
   background_color: '#fff'
   title_color: '#ac1f8d'
   text_color: '#666'
@@ -24,7 +32,7 @@ mogef:
   copyright_color: '#bcbe50'
 solarized:
   # orange, green, yellow, red
-  logo_colors: ['#cb4b16', '#859900', '#b58900', '#dc322f']
+  emblem_colors: ['#cb4b16', '#859900', '#b58900', '#dc322f']
   background_color: '#fdf6e3'  # base3
   title_color: '#d33682'  # magenta
   text_color: '#839496'  # base1
@@ -32,22 +40,22 @@ solarized:
   vlink_color: '#6c71c4'  # violet
   copyright_color: '#2aa198'  # cyan
 mono:
-  logo_colors: ['#eee', '#eee', '#e34', '#eee']
-  logo_blinks: [0, 0, 1, 0]
+  emblem_colors: ['#eee', '#eee', '#e34', '#eee']
+  emblem_blinks: [0, 0, 1, 0]
   background_color: '#222'
   text_color: '#777'
   link_color: '#ccc'
   vlink_color: '#aaa'
   copyright_color: '#555'
 twilight:
-  logo_colors: ['#d08356', '#d08356', '#ebc471', '#d08356']
+  emblem_colors: ['#d08356', '#d08356', '#ebc471', '#d08356']
   background_color: '#1a1a1a'
   text_color: '#8a9597'
   link_color: '#a2a96f'
   vlink_color: '#a999ac'
   copyright_color: '#64686c'
 milky:
-  logo_colors: ['#f4f4f4', '#f4f4f4', '#fafafa', '#f4f4f4']
+  emblem_colors: ['#f4f4f4', '#f4f4f4', '#fafafa', '#f4f4f4']
   background_color: '#fff'
   title_color: '#eee'
   text_color: '#eee'
@@ -55,7 +63,7 @@ milky:
   vlink_color: '#edf'
   copyright_color: '#eee'
 hangulize:
-  logo_colors: ['#765', '#765', '#765', '#333']
+  emblem_colors: ['#765', '#765', '#765', '#333']
   background_color: '#f6f6eb'
   title_color: '#765'
   text_color: '#333'
@@ -63,8 +71,8 @@ hangulize:
   vlink_color: '#ba9'
   copyright_color: '#765'
 nexon:
-  logo_colors: ['#02203A', '#B6D805', '#129AD8', '#02203A']
-  logo_blinks: [0, 1, 0.5, 0]
+  emblem_colors: ['#02203A', '#B6D805', '#129AD8', '#02203A']
+  emblem_blinks: [0, 1, 0.5, 0]
   background_color: '#fff'
   title_color: '#000'
   text_color: '#000'
@@ -72,21 +80,21 @@ nexon:
   vlink_color: 'rgb(0, 110, 160)'
   copyright_color: '#000'
 facebook:
-  logo_colors: ['#3b5999', '#3b5999', '#3b5999', '#3b5999']
+  emblem_colors: ['#3b5999', '#3b5999', '#3b5999', '#3b5999']
   background_color: '#e9eaed'
   title_color: '#1e2d4c'
   text_color: '#141823'
   link_color: '#3b5998'
   copyright_color: '#1e2d4c'
 bluescreen:
-  logo_colors: ['#fff', '#fff', '#fff', '#fff']
+  emblem_colors: ['#fff', '#fff', '#fff', '#fff']
   background_color: '#00a'
   title_color: '#fff'
   text_color: '#ccc'
   link_color: '#fff'
   copyright_color: '#fff'
 vlaah:
-  logo_colors: ['#6c0', '#f45', '#6c0', '#6c0']
+  emblem_colors: ['#6c0', '#f45', '#6c0', '#6c0']
   background_color: '#fff'
   title_color: '#f45'
   text_color: '#555'
@@ -94,8 +102,8 @@ vlaah:
   vlink_color: '#8a6'
   copyright_color: '#999'
 mearie:
-  logo_colors: ['#397b9c', '#397b9c', '#397b9c', '#397b9c']
-  logo_blinks: [1, 1, 1, 1]
+  emblem_colors: ['#397b9c', '#397b9c', '#397b9c', '#397b9c']
+  emblem_blinks: [1, 1, 1, 1]
   background_color: '#eee'
   title_color: '#444'
   text_color: '#444'
@@ -104,8 +112,8 @@ mearie:
   copyright_color: '#379'
 travis:
   # failed, started, passed, passed
-  logo_colors: ['#db423c', '#d2c93b', '#3fa75f', '#3fa75f']
-  logo_blinks: [0, 1, 0, 0]
+  emblem_colors: ['#db423c', '#d2c93b', '#3fa75f', '#3fa75f']
+  emblem_blinks: [0, 1, 0, 0]
   background_color: '#eff0ec'
   title_color: '#a6adad'
   text_color: '#777'
@@ -113,7 +121,7 @@ travis:
   vlink_color: '#83a3a5'
   copyright_color: '#a6adad'
 google:
-  logo_colors: ['#d50f25', '#009925', '#eeb211', '#3369e8']
+  emblem_colors: ['#d50f25', '#009925', '#eeb211', '#3369e8']
   background_color: '#fff'
   title_color: '#dd4b39'
   text_color: '#545454'
@@ -121,14 +129,14 @@ google:
   vlink_color: '#609'
   copyright_color: '#aaa'
 github:
-  logo_colors: ['#333', '#333', '#333', '#333']
+  emblem_colors: ['#333', '#333', '#333', '#333']
   background_color: '#fff'
   title_color: '#333'
   text_color: '#333'
   link_color: '#4183C4'
   copyright_color: '#777'
 material:
-  logo_colors: ['#03A9F4', '#E91E63', '#FFC107', '#8BC34A']
+  emblem_colors: ['#03A9F4', '#E91E63', '#FFC107', '#8BC34A']
   background_color: '#f9f9f9'
   title_color: '#673AB7'
   text_color: 'rgba(0,0,0,.87)'
@@ -136,7 +144,7 @@ material:
   vlink_color: '#3F51B5'
   copyright_color: 'rgba(0,0,0,.54)'
 samsung:
-  logo_colors: ['#1428a0', '#1428a0', '#1428a0', '#1428a0']
+  emblem_colors: ['#1428a0', '#1428a0', '#1428a0', '#1428a0']
   background_color: '#fff'
   title_color: '#151515'
   text_color: '#666'

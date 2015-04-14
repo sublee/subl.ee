@@ -1,6 +1,6 @@
 {# vim: set ft=css: #}
 
-{% set title_color = title_color or logo_colors[0] %}
+{% set title_color = title_color or emblem_colors[0] %}
 {% set base_font_size = 18 %}
 {% macro rem(prop, rem) %}
   {{ prop }}: {{ (base_font_size * rem)|round|int }}px;
@@ -122,9 +122,9 @@ dl dd.annotation {
   line-height: 1;
 }
 
-/* logo */
+/* emblem */
 
-table.logo {
+table.emblem {
   margin: -6px;
   width: 96px;
   height: 96px;
@@ -135,13 +135,13 @@ table.logo {
   *border-collapse: expression('separate', cellSpacing = '6px');
 }
 
-table.logo td {
+table.emblem td {
   width: 24px;
 }
 
 {% set compat = ['', '-webkit-', '-moz-', '-o-'] %}
 
-{% macro logo_keyframes(name, color, blink) %}
+{% macro emblem_keyframes(name, color, blink) %}
   {% for hack in compat %}
     @{{ hack }}keyframes {{ name }} {
       from {
@@ -162,18 +162,18 @@ table.logo td {
   {% endfor %}
 {% endmacro %}
 
-{% set logo_blinks = logo_blinks or [0, 0, 0, 0] %}
-{% for suffix, color, blink in zip('trbl', logo_colors, logo_blinks) %}
-  table.logo td.logo-{{ suffix }} {
+{% set emblem_blinks = emblem_blinks or [0, 0, 0, 0] %}
+{% for suffix, color, blink in zip('trbl', emblem_colors, emblem_blinks) %}
+  table.emblem td.emblem-{{ suffix }} {
     background: {{ color }};
   }
   {% if blink %}
-    {{ logo_keyframes('logo-' ~ suffix, color, blink) }}
-    table.logo td.logo-{{ suffix }} {
+    {{ emblem_keyframes('emblem-' ~ suffix, color, blink) }}
+    table.emblem td.emblem-{{ suffix }} {
       outline: 1px solid;
       {% for hack in compat %}
         {{ hack }}animation:
-          logo-{{ suffix }} 5s ease-in-out infinite alternate;
+          emblem-{{ suffix }} 5s ease-in-out infinite alternate;
       {% endfor %}
       /* Disable on IE6, IE7, IE8, IE9. */
       outline-style: none\9;
@@ -220,7 +220,7 @@ table.logo td {
 
 /* resume */
 
-.resume table.logo {
+.resume table.emblem {
   position: absolute;
   right: 0;
   margin: 0.25em;
@@ -244,7 +244,7 @@ table.logo td {
     display: none;
   }
 
-  .resume table.logo {
+  .resume table.emblem {
     margin: 0.5em;
     width: 48px;
     height: 48px;
