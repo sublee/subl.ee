@@ -112,7 +112,7 @@ dd {
   {{ rem('margin-top', 1) }}
 }
 
-dl dt.label {
+dt.label {
   {{ rem('margin-top', 0.5) }}
   {{ rem('margin-bottom', -1) }}
   {{ rem('font-size', 0.75) }}
@@ -121,7 +121,7 @@ dl dt.label {
   line-height: 1;
 }
 
-dl dt.annotation {
+dt.explain {
   margin-top: 0;
   {{ rem('margin-bottom', 1) }}
   {{ rem('font-size', 0.75) }}
