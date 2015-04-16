@@ -121,7 +121,7 @@ dt.label {
   line-height: 1;
 }
 
-dt.explain {
+dt.note {
   margin-top: 0;
   {{ rem('margin-bottom', 1) }}
   {{ rem('font-size', 0.75) }}
