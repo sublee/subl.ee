@@ -108,17 +108,24 @@ dt {
   font-weight: 700;
 }
 
-dl.descriptions dt {
+dd {
+  {{ rem('margin-top', 1) }}
+}
+
+dl dt.label {
   {{ rem('margin-top', 0.5) }}
+  {{ rem('margin-bottom', -1) }}
   {{ rem('font-size', 0.75) }}
   font-weight: 400;
   color: {{ copyright_color }};
   line-height: 1;
 }
 
-dl dd.annotation {
+dl dt.annotation {
+  margin-top: 0;
   {{ rem('margin-bottom', 1) }}
   {{ rem('font-size', 0.75) }}
+  font-weight: 400;
   line-height: 1;
 }
 
