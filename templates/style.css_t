@@ -51,7 +51,7 @@ footer p {
   color: {{ copyright_color }};
 }
 
-h1, h2, h3, h4, h5, h6, p, ul, ol, dl {
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl, hr {
   {{ rem('margin-bottom', 1) }};
 }
 
@@ -115,17 +115,27 @@ dt.label {
   {{ rem('margin-top', 0.5) }}
   {{ rem('margin-bottom', -1) }}
   {{ rem('font-size', 0.75) }}
-  font-weight: 400;
   color: {{ copyright_color }};
   line-height: 1;
 }
 
-dt.note {
+dl .note {
   margin-top: 0;
-  {{ rem('margin-bottom', 1) }}
   {{ rem('font-size', 0.75) }}
-  font-weight: 400;
+}
+
+dt.note {
+  {{ rem('margin-bottom', 1) }}
   line-height: 1;
+}
+
+dd.note {
+  font-style: italic;
+}
+
+hr {
+  {{ rem('height', 0.1) }}
+  background-color: {{ rgba(copyright_color, 0.1) }};
 }
 
 /* emblem */
