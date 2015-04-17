@@ -51,7 +51,7 @@ MINIFIERS = {
 
 
 #: The Flask application.
-app = Flask(__name__, static_url_path='')
+app = Flask(__name__, static_url_path='/-')
 
 
 def minify_js_macro(caller, mangle_toplevel=False):
