@@ -9,11 +9,11 @@ sublee:
 sublee-light:
   emblem_colors: ['#f45', '#f45', '#fd3', '#f45']
   background_color: '#fafaf8'
-  title_color: '#122'
+  title_color: '#e56'
   text_color: '#344'
   link_color: '#4ac'
   vlink_color: '#589'
-  copyright_color: '#577'
+  copyright_color: '#677'
 none:
   emblem_colors: ['#000', '#000', '#000', '#000']
   background_color: '#fff'
