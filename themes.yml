@@ -7,7 +7,7 @@ sublee:
   vlink_color: '#986'
   copyright_color: '#455'
 sublee-light:
-  emblem_colors: ['#f45', '#f45', '#fd3', '#f45']
+  emblem_colors: ['#e56', '#e56', '#fd6', '#e56']
   background_color: '#fafaf8'
   title_color: '#e56'
   text_color: '#344'
