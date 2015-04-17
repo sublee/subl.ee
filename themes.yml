@@ -6,6 +6,14 @@ sublee:
   link_color: '#ca4'
   vlink_color: '#986'
   copyright_color: '#455'
+sublee-light:
+  emblem_colors: ['#f45', '#f45', '#fd3', '#f45']
+  background_color: '#fafaf8'
+  title_color: '#122'
+  text_color: '#344'
+  link_color: '#4ac'
+  vlink_color: '#589'
+  copyright_color: '#577'
 none:
   emblem_colors: ['#000', '#000', '#000', '#000']
   background_color: '#fff'
