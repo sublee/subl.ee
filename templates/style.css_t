@@ -24,7 +24,7 @@ html {
 
 body {
   position: relative;
-  margin: 4em 10%;
+  margin: 3em 10%;
   {{ rem('max-width', 40) }}
   font-family: 'Roboto Slab', serif;
   font-weight: 400;
@@ -261,9 +261,7 @@ table.emblem td {
 
 @media screen and (max-width: 40rem) {
   body {
-    margin: 5%;
-    {{ rem('margin-top', 2) }}
-    {{ rem('margin-bottom', 2) }}
+    margin: 2em 5%;
     width: auto;
   }
 
@@ -273,6 +271,10 @@ table.emblem td {
 
   .hard-returns br {
     display: none;
+  }
+
+  .resume {
+    margin-top: 1em;
   }
 
   .resume table.emblem {
