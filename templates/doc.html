@@ -3,10 +3,7 @@
 {% block class %}{{ doc_name }}{% endblock %}
 
 {% block head %}
-  {% set http_date = '{at:%a}, {at.day} {at:%b %Y %H:%M:%S} UTC' %}
-  {{ meta(http_date.format(at=doc_modified_at), http_equiv='last-modified')
-   ~(meta(keywords, name='keywords') if keywords)
-  }}
+  {{ meta(keywords, name='keywords') if keywords }}
 {% endblock %}
 
 {% block body %}
