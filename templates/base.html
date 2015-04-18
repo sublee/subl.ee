@@ -150,19 +150,17 @@
 <body class="{% block class %}{% endblock %}">
   {% block header %}
     <header>
-      {% block inner_header %}
-        <table class="emblem">
-          <tr>
-            <td class="emblem-l" rowspan="2"></td>
-            <td class="emblem-t"></td>
-            <td class="emblem-r" rowspan="2"></td>
-          </tr>
-          <tr>
-            <td class="emblem-b"></td>
-          </tr>
-        </table>
-        <script> updateFavicon(); </script>
-      {% endblock %}
+      <table class="emblem">
+        <tr>
+          <td class="emblem-l" rowspan="2"></td>
+          <td class="emblem-t"></td>
+          <td class="emblem-r" rowspan="2"></td>
+        </tr>
+        <tr>
+          <td class="emblem-b"></td>
+        </tr>
+      </table>
+      <script> updateFavicon(); </script>
     </header>
   {% endblock %}
   {% block body %}

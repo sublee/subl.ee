@@ -38,7 +38,7 @@ META = os.path.join(ROOT, 'meta.yml')
 THEMES = os.path.join(ROOT, 'themes.yml')
 
 
-DEFAULT_THEME = 'sublee'
+DEFAULT_THEME = 'sublee-light'
 MARKDOWN_EXTENSIONS = [
     'markdown.extensions.def_list',
     'markdown.extensions.meta',
