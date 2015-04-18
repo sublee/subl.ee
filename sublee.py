@@ -10,7 +10,8 @@
 
 """
 from __future__ import unicode_literals, with_statement
-from datetime import date
+from datetime import date, datetime
+import io
 import itertools
 import os
 import re
@@ -20,6 +21,7 @@ from cssmin import cssmin as minify_css
 from flask import Flask, render_template
 from htmlmin import minify as minify_html
 import inflection
+import jinja2
 from markdown import Markdown
 from slimit import minify as minify_js
 from werkzeug.exceptions import NotFound
@@ -54,10 +56,24 @@ MINIFIERS = {
 app = Flask(__name__, static_url_path='/-')
 
 
-def minify_js_macro(caller, mangle_toplevel=False):
+def jinja_minify_js(caller, mangle_toplevel=False):
     return minify_js(caller(), mangle=True, mangle_toplevel=mangle_toplevel)
+
+
+def jinja_meta(content, **attrs):
+    buf = io.StringIO()
+    buf.write('<meta ')
+    for key, attr in attrs.items():
+        key = key.replace('_', '-')
+        attr = jinja2.escape(attr)
+        buf.write('{key}="{attr}" '.format(key=key, attr=attr))
+    content = jinja2.escape(content)
+    buf.write('content="{content}" />'.format(content=content))
+    return jinja2.Markup(buf.getvalue())
+
+
 app.jinja_env.globals.update(
-    zip=itertools.izip, minify_js=minify_js_macro,
+    zip=itertools.izip, minify_js=jinja_minify_js, meta=jinja_meta,
     cdnjs=(lambda path: '//cdnjs.cloudflare.com/ajax/libs/' + path))
 
 
@@ -111,7 +127,10 @@ def doc(doc_name):
     markdown = Markdown(extensions=MARKDOWN_EXTENSIONS)
     doc_html = markdown.convert(doc_text)
     doc_meta = normalize_doc_meta(markdown.Meta)
-    ctx = make_context(doc_html=doc_html, doc_name=doc_name, **doc_meta)
+    stat = os.stat(filename)
+    doc_modified_at = datetime.utcfromtimestamp(stat.st_mtime)
+    ctx = make_context(doc_html=doc_html, doc_name=doc_name,
+                       doc_modified_at=doc_modified_at, **doc_meta)
     return render_template('doc.html', **ctx)
 
 

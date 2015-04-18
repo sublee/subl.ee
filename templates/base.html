@@ -136,18 +136,15 @@
       }
     {% endcall -%}
   </script>
-  {% macro meta(prop, val, key_attr='property', optional=False) %}
-    {% if not optional or val %}
-      <meta {{ key_attr }}="{{ prop }}" content="{{ val }}" />
-    {% endif %}
-  {% endmacro %}
-  {{ meta('og:type', type or 'website') }}
-  {{ meta('og:title', title) }}
-  {{ meta('og:description', description, optional=True) }}
-  {{ meta('og:image', url_root ~ url_for('static', filename='og.png')) }}
-  {{ meta('og:url', url_root ~ url_path) }}
-  {{ meta('author', author, key_attr='name') }}
-  {{ meta('keywords', keywords, key_attr='name') }}
+  {{ meta(type or 'website', property='og:type')
+   ~ meta(title, property='og:title')
+   ~(meta(description, property='og:description') if description)
+   ~ meta(url_root ~ url_path, property='og:url')
+   ~ meta(url_root ~ url_for('static', filename='og.png'), property='og:image')
+   ~ meta(author, name='author')
+   ~ meta(email, name='contact')
+   ~ meta(author ~ ' &copy; ' ~ copyright_year, name='copyright')
+  }}
   {% block head %}{% endblock %}
 </head>
 <body class="{% block class %}{% endblock %}">
