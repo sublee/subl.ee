@@ -23,8 +23,16 @@
   <script>
     {%- call minify_js() %}
       var __theme__ = {{ theme|tojson }};
+      var themeLink = document.querySelector('.theme');
+      var faviconLink = document.querySelector('link[rel="shortcut icon"]');
       function getThemeURL(theme) {
         return '/style-' + theme + '.css';
+      }
+      function parseThemeURL(url) {
+        return /style-([^.]+)\.css$/.exec(url)[1];
+      }
+      function isThemeLoaded() {
+        return __theme__ == parseThemeURL(document.styleSheets[0].href);
       }
       function guessTheme() {
         var theme;
@@ -38,10 +46,38 @@
         }
         return theme || {{ theme|tojson }};
       }
-      var themeLink = document.querySelector('.theme');
+      var faviconRects = {
+        '.emblem-t': [6, 1, 4, 7],
+        '.emblem-r': [11, 1, 4, 14],
+        '.emblem-b': [6, 9, 4, 6],
+        '.emblem-l': [1, 1, 4, 14]
+      };
+      function updateFavicon() {
+        function getColor(query) {
+          var emblemCell = document.querySelector(query);
+          if (emblemCell) {
+            var style = getComputedStyle(emblemCell);
+            return style.backgroundColor;
+          }
+        }
+        if (!isThemeLoaded()) {
+          setTimeout(arguments.callee, 100);
+          return;
+        }
+        var favicon = document.createElement('canvas');
+        favicon.width = 16;
+        favicon.height = 16;
+        var ctx = favicon.getContext('2d');
+        for (var query in faviconRects) {
+          ctx.fillStyle = getColor(query);
+          ctx.fillRect.apply(ctx, faviconRects[query]);
+        }
+        faviconLink.href = favicon.toDataURL('image/icon');
+      }
       function selectTheme(theme) {
-        themeLink.setAttribute('href', getThemeURL(theme));
         __theme__ = theme;
+        themeLink.setAttribute('href', getThemeURL(theme));
+        updateFavicon();
       }
       function selectGuessedTheme() {
         var theme = guessTheme();
@@ -75,6 +111,7 @@
         // override selectTheme() to re-draw the page.
         selectTheme = function (theme) {
           __theme__ = theme;
+          isThemeLoaded = function() { return false; };
           $body.hide();
           $.get(getThemeURL(theme), function(css) {
             try {
@@ -87,7 +124,9 @@
             }
             setTimeout(function() {
               // re-draw the page.
+              isThemeLoaded = function() { return true; };
               $body.fadeIn();
+              updateFavicon();
             }, 10);
           });
           // <link> for theme is not required.
