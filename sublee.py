@@ -143,13 +143,15 @@ def themes():
     return render_template('themes.html', **ctx)
 
 
-def error(error):
+def render_error(error):
     """The HTTP error page."""
     ctx = make_context(error=error)
     return render_template('error.html', **ctx)
 for status in range(400, 420) + range(500, 506):
-    register_error_handler = app.errorhandler(status)
-    register_error_handler(error)
+    @app.errorhandler(status)
+    def _error(error, status=status):
+        return render_error(error), status
+    del _error
 
 
 @app.route('/runker/')
