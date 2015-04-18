@@ -32,7 +32,7 @@ after_success:
       -ms-filter: "FlipH";
     }' >> $css
   done
-  for html in *.html
+  for html in $(find . -name '*.html')
   do
     echo '<script>
       var _tmp = faviconRects.l;
