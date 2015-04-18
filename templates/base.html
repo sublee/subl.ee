@@ -47,10 +47,10 @@
         return theme || {{ theme|tojson }};
       }
       var faviconRects = {
-        '.emblem-t': [6, 1, 4, 7],
-        '.emblem-r': [11, 1, 4, 14],
-        '.emblem-b': [6, 9, 4, 6],
-        '.emblem-l': [1, 1, 4, 14]
+        t: [6, 1, 4, 7],
+        r: [11, 1, 4, 14],
+        b: [6, 9, 4, 6],
+        l: [1, 1, 4, 14]
       };
       function updateFavicon() {
         function getColor(query) {
@@ -68,9 +68,9 @@
         favicon.width = 16;
         favicon.height = 16;
         var ctx = favicon.getContext('2d');
-        for (var query in faviconRects) {
-          ctx.fillStyle = getColor(query);
-          ctx.fillRect.apply(ctx, faviconRects[query]);
+        for (var d in faviconRects) {
+          ctx.fillStyle = getColor('.emblem-' + d);
+          ctx.fillRect.apply(ctx, faviconRects[d]);
         }
         faviconLink.href = favicon.toDataURL('image/icon');
       }
