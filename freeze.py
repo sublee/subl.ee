@@ -11,6 +11,7 @@ from sublee import app, DOCS, THEMES
 
 app.config['FREEZER_DESTINATION'] = sys.argv[1]
 app.config['FREEZER_DESTINATION_IGNORE'] = ['.git*', 'CNAME']
+app.config['FREEZER_IGNORE_MIMETYPE_WARNINGS'] = True
 freezer = Freezer(app, with_static_files=False)
 
 
