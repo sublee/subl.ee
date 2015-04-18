@@ -19,7 +19,7 @@ import sys
 
 from cssmin import cssmin as minify_css
 from flask import Flask, render_template
-from htmlmin import minify as minify_html
+# from htmlmin import minify as minify_html
 import inflection
 import jinja2
 from markdown import Markdown
@@ -47,7 +47,7 @@ MARKDOWN_EXTENSIONS = [
     'markdown.extensions.smarty',
 ]
 MINIFIERS = {
-    'text/html': minify_html,
+    # 'text/html': minify_html,
     'text/css': minify_css,
     'text/javascript': minify_js,
 }
