@@ -22,22 +22,6 @@ sublee-legacy:
   link_color: '#48d'
   vlink_color: '#238'
   copyright_color: '#666'
-none:
-  emblem_colors: ['#000', '#000', '#000', '#000']
-  background_color: '#fff'
-  title_color: '#000'
-  text_color: '#000'
-  link_color: '#00e'
-  vlink_color: '#50a'
-  copyright_color: '#000'
-mogef:
-  emblem_colors: ['#4e9fd7', '#bcbe50', '#ac1f8d', '#4e9fd7']
-  background_color: '#fff'
-  title_color: '#ac1f8d'
-  text_color: '#666'
-  link_color: '#4e9fd7'
-  vlink_color: '#989ccb'
-  copyright_color: '#bcbe50'
 solarized:
   emblem_colors:
   - '#d33682'  # magenta
@@ -50,6 +34,14 @@ solarized:
   link_color: '#268bd2'  # blue
   vlink_color: '#6c71c4'  # violet
   copyright_color: '#586e75'  # base01
+mogef:
+  emblem_colors: ['#4e9fd7', '#bcbe50', '#ac1f8d', '#4e9fd7']
+  background_color: '#fff'
+  title_color: '#ac1f8d'
+  text_color: '#666'
+  link_color: '#4e9fd7'
+  vlink_color: '#989ccb'
+  copyright_color: '#bcbe50'
 nexon:
   emblem_colors: ['#02203A', '#B6D805', '#129AD8', '#02203A']
   emblem_blinks: [0, 1, 0.5, 0]
