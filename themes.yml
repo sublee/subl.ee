@@ -30,14 +30,6 @@ none:
   link_color: '#00e'
   vlink_color: '#50a'
   copyright_color: '#000'
-90s:
-  emblem_colors: ['#f00', '#f00', '#ff0', '#f00']
-  emblem_blinks: [1, 1, 1, 1]
-  background_color: '#009'
-  text_color: '#ff0'
-  link_color: '#0ff'
-  vlink_color: '#f0f'
-  copyright_color: '#0f0'
 mogef:
   emblem_colors: ['#4e9fd7', '#bcbe50', '#ac1f8d', '#4e9fd7']
   background_color: '#fff'
@@ -47,45 +39,17 @@ mogef:
   vlink_color: '#989ccb'
   copyright_color: '#bcbe50'
 solarized:
-  # orange, green, yellow, red
-  emblem_colors: ['#cb4b16', '#859900', '#b58900', '#dc322f']
-  background_color: '#fdf6e3'  # base3
-  title_color: '#d33682'  # magenta
-  text_color: '#839496'  # base1
+  emblem_colors:
+  - '#d33682'  # magenta
+  - '#2aa198'  # cyan
+  - '#b58900'  # yellow
+  - '#859900'  # green
+  background_color: '#002b36'  # base03
+  title_color: '#2aa198'  # cyan
+  text_color: '#657b83'  # base00
   link_color: '#268bd2'  # blue
   vlink_color: '#6c71c4'  # violet
-  copyright_color: '#2aa198'  # cyan
-mono:
-  emblem_colors: ['#eee', '#eee', '#e34', '#eee']
-  emblem_blinks: [0, 0, 1, 0]
-  background_color: '#222'
-  text_color: '#777'
-  link_color: '#ccc'
-  vlink_color: '#aaa'
-  copyright_color: '#555'
-twilight:
-  emblem_colors: ['#d08356', '#d08356', '#ebc471', '#d08356']
-  background_color: '#1a1a1a'
-  text_color: '#8a9597'
-  link_color: '#a2a96f'
-  vlink_color: '#a999ac'
-  copyright_color: '#64686c'
-milky:
-  emblem_colors: ['#f4f4f4', '#f4f4f4', '#fafafa', '#f4f4f4']
-  background_color: '#fff'
-  title_color: '#eee'
-  text_color: '#eee'
-  link_color: '#def'
-  vlink_color: '#edf'
-  copyright_color: '#eee'
-hangulize:
-  emblem_colors: ['#765', '#765', '#765', '#333']
-  background_color: '#f6f6eb'
-  title_color: '#765'
-  text_color: '#333'
-  link_color: '#765'
-  vlink_color: '#ba9'
-  copyright_color: '#765'
+  copyright_color: '#586e75'  # base01
 nexon:
   emblem_colors: ['#02203A', '#B6D805', '#129AD8', '#02203A']
   emblem_blinks: [0, 1, 0.5, 0]
@@ -102,13 +66,6 @@ facebook:
   text_color: '#141823'
   link_color: '#3b5998'
   copyright_color: '#1e2d4c'
-bluescreen:
-  emblem_colors: ['#fff', '#fff', '#fff', '#fff']
-  background_color: '#00a'
-  title_color: '#fff'
-  text_color: '#ccc'
-  link_color: '#fff'
-  copyright_color: '#fff'
 vlaah:
   emblem_colors: ['#6c0', '#f45', '#6c0', '#6c0']
   background_color: '#fff'
@@ -159,10 +116,3 @@ material:
   link_color: '#2196F3'
   vlink_color: '#3F51B5'
   copyright_color: 'rgba(0,0,0,.54)'
-samsung:
-  emblem_colors: ['#1428a0', '#1428a0', '#1428a0', '#1428a0']
-  background_color: '#fff'
-  title_color: '#151515'
-  text_color: '#666'
-  link_color: '#1428a0'
-  copyright_color: '#535353'
