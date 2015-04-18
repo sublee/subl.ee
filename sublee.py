@@ -11,6 +11,7 @@
 """
 from __future__ import unicode_literals, with_statement
 from datetime import date, datetime
+from functools import partial
 import io
 import itertools
 import os
@@ -19,7 +20,7 @@ import sys
 
 from cssmin import cssmin as minify_css
 from flask import Flask, render_template
-# from htmlmin import minify as minify_html
+from htmlmin import minify as minify_html
 import inflection
 import jinja2
 from markdown import Markdown
@@ -47,7 +48,7 @@ MARKDOWN_EXTENSIONS = [
     'markdown.extensions.smarty',
 ]
 MINIFIERS = {
-    # 'text/html': minify_html,
+    'text/html': partial(minify_html, remove_optional_attribute_quotes=False),
     'text/css': minify_css,
     'text/javascript': minify_js,
 }
