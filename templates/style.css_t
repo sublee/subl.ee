@@ -24,9 +24,7 @@ html {
 
 body {
   position: relative;
-  margin: 10%;
-  {{ rem('margin-top', 4) }}
-  {{ rem('margin-bottom', 4) }}
+  margin: 4em 10%;
   {{ rem('max-width', 40) }}
   font-family: 'Roboto Slab', serif;
   font-weight: 400;
@@ -108,12 +106,21 @@ dt {
 }
 
 dd {
-  {{ rem('margin-top', 1) }}
+  {{ rem('margin-left', 0.75) }}
+}
+
+dd.attr, dd.note {
+  margin-left: 0;
+}
+
+dd, dd p, dd ul, dd ol, dd dl, dd hr {
+  {{ rem('margin-top', 0.5) }}
+  margin-bottom: 0;
 }
 
 dt.label {
   {{ rem('margin-top', 0.5) }}
-  {{ rem('margin-bottom', -1) }}
+  {{ rem('margin-bottom', -0.5) }}
   {{ rem('font-size', 0.75) }}
   color: {{ copyright_color }};
   line-height: 1;
@@ -136,6 +143,10 @@ dd.note {
 hr {
   {{ rem('height', 0.1) }}
   background-color: {{ rgba(copyright_color, 0.1) }};
+}
+
+sup, sub {
+  {{ rem('font-size', 0.5) }}
 }
 
 /* emblem */
