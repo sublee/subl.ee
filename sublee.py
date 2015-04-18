@@ -155,7 +155,8 @@ for status in range(400, 420) + range(500, 506):
 @app.route('/runker/')
 def subleerunker():
     """Frame wrapper of <Subleerunker>."""
-    return render_template('subleerunker.html')
+    res = render_template('subleerunker.html')
+    return res, 200, {'Content-Type': 'application/xhtml+xml'}
 
 
 def rgba(color, alpha=1):
@@ -180,8 +181,8 @@ def css(theme):
     with open(THEMES) as f:
         themes = yaml.load(f)
     colors = themes[theme]
-    css = render_template('style.css_t', rgba=rgba, **colors)
-    return css, 200, {'Content-Type': 'text/css'}
+    res = render_template('style.css_t', rgba=rgba, **colors)
+    return res, 200, {'Content-Type': 'text/css'}
 
 
 if __name__ == '__main__':
