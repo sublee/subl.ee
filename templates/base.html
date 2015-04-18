@@ -136,12 +136,16 @@
       }
     {% endcall -%}
   </script>
+  {# open graph #}
   {{ meta(type or 'website', property='og:type')
    ~ meta(title, property='og:title')
    ~(meta(description, property='og:description') if description)
    ~ meta(url_root ~ url_path, property='og:url')
    ~ meta(url_root ~ url_for('static', filename='og.gif'), property='og:image')
-   ~ meta(author, name='author')
+   ~ meta('image/gif', property='og:image:type')
+  }}
+  {# html meta #}
+  {{ meta(author, name='author')
    ~ meta(email, name='contact')
    ~ meta('&copy; '|safe ~ copyright_year ~ ' ' ~ author, name='copyright')
   }}
