@@ -32,7 +32,8 @@
         return /style-([^.]+)\.css$/.exec(url)[1];
       }
       function isThemeLoaded() {
-        return __theme__ == parseThemeURL(document.styleSheets[0].href);
+        var css = document.styleSheets[0];
+        return (__theme__ == parseThemeURL(css.href)) && css.cssRules;
       }
       function guessTheme() {
         var theme;
@@ -77,7 +78,6 @@
       function selectTheme(theme) {
         __theme__ = theme;
         themeLink.setAttribute('href', getThemeURL(theme));
-        updateFavicon();
       }
       function selectGuessedTheme() {
         var theme = guessTheme();
@@ -164,6 +164,7 @@
             <td class="emblem-b"></td>
           </tr>
         </table>
+        <script> updateFavicon(); </script>
       {% endblock %}
     </header>
   {% endblock %}
