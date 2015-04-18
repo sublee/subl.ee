@@ -3,6 +3,5 @@ frozen-flask>=0.11,<0.12
 htmlmin>=0.1.5,<0.2
 inflection>=0.3,<0.4
 markdown>=2.6.1,<2.7
-markdown-attr-plus>=0.3,<0.4
 slimit>=0.8.1,<0.9
 pyyaml>=3.11,<3.12
