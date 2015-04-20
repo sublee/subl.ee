@@ -108,3 +108,25 @@ material:
   link_color: '#2196F3'
   vlink_color: '#3F51B5'
   copyright_color: 'rgba(0,0,0,.54)'
+mit:
+  emblem_colors: ['#000', '#000', '#a31f34', '#000']
+  background_color: '#fff'
+  title_color: '#a31f34'
+  text_color: '#222'
+  link_color: '#a31f34'
+  copyright_color: '#333'
+dodo:
+  emblem_colors: ['#f9e588', '#8ab0e6', '#8ab0e6', '#8ab0e6']
+  background_color: '#fff'
+  title_color: '#f29d61'
+  text_color: '#4f5259'
+  link_color: '#8ab0e6'
+  vlink_color: '#6585c1'
+  copyright_color: '#b0b6c2'
+twitter:
+  emblem_colors: ['#00b0ed', '#00b0ed', '#00b0ed', '#00b0ed']
+  background_color: '#fff'
+  title_color: '#292f33'
+  text_color: '#66767f'
+  link_color: '#55acee'
+  copyright_color: '#99aab5'
