@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=400" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>{% block title %}{{ title }}{% endblock %}</title>
-  <link rel="stylesheet" type="text/css" class="theme"
+  <link rel="stylesheet" class="theme"
     href="{{ url_for('css', theme=theme) }}" />
   <link rel="shortcut icon" type="image/icon"
     href="{{ url_for('static', filename='favicon.ico') }}" />
@@ -107,7 +107,7 @@
       };
       function initThemeSelection() {
         var $body = $(document.body);
-        var $themeStyle = $('<style type="text/css">').appendTo(document.head);
+        var $themeStyle = $('<style>').appendTo(document.head);
         // override selectTheme() to re-draw the page.
         selectTheme = function (theme) {
           __theme__ = theme;
