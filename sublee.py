@@ -81,11 +81,12 @@ app.jinja_env.globals.update(
 
 @app.after_request
 def minify_response(response):
-    for content_type, minify in MINIFIERS.items():
-        if response.content_type.startswith(content_type):
-            data = response.get_data(as_text=True)
-            response.set_data(minify(data))
-            break
+    if not response.direct_passthrough:
+        for content_type, minify in MINIFIERS.items():
+            if response.content_type.startswith(content_type):
+                data = response.get_data(as_text=True)
+                response.set_data(minify(data))
+                break
     # response.headers['Cache-Control'] = 'max-age=600'
     return response
 
