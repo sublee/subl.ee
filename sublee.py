@@ -236,7 +236,7 @@ def run(host, port, debug):
 @cli.command()
 @click.argument('dest', type=click.Path(file_okay=False, writable=True))
 def freeze(dest):
-    """Freeze the website into the destination directory."""
+    """Freeze the website as static files."""
     app.config['FREEZER_DESTINATION'] = dest
     freezer = prepare_freezing(app)
     freezer.freeze()
