@@ -272,7 +272,8 @@ def verify_links(ctx, timeout, fail_on_warning):
     with click.progressbar(length=len(linked_urls),
                            label='Verifying', show_pos=True) as bar:
         lock = Lock()
-        # linkedin denies if User-Agent not in the header.
+        # some websites such as LinkedIn denies HTTP requests if User-Agent not
+        # in a header.
         def verify_link(url, src_urls, headers={'User-Agent': 'subl.ee'}):
             try:
                 res = requests.get(url, headers=headers, timeout=timeout)
