@@ -16,8 +16,8 @@ import io
 import itertools
 import os
 import re
-import sys
 
+import click
 from cssmin import cssmin as minify_css
 from flask import Flask, render_template
 from htmlmin import minify as minify_html
@@ -29,7 +29,7 @@ from werkzeug.exceptions import NotFound
 import yaml
 
 
-__version__ = '2.3.0'
+__version__ = '2.3.1'
 __all__ = ['app']
 
 
@@ -146,24 +146,6 @@ def themes():
     return render_template('themes.html', **ctx)
 
 
-def render_error(error):
-    """The HTTP error page."""
-    ctx = make_context(error=error)
-    return render_template('error.html', **ctx)
-for status in range(400, 420) + range(500, 506):
-    @app.errorhandler(status)
-    def _error(error, status=status):
-        return render_error(error), status
-    del _error
-
-
-@app.route('/runker/')
-def subleerunker():
-    """Frame wrapper of <Subleerunker>."""
-    res = render_template('subleerunker.html')
-    return res, 200, {'Content-Type': 'application/xhtml+xml'}
-
-
 def rgba(color, alpha=1):
     """Converts RGB hex string to CSS RGBA expression."""
     if color.startswith('#'):
@@ -190,9 +172,144 @@ def css(theme):
     return res, 200, {'Content-Type': 'text/css'}
 
 
+@app.route('/runker/')
+def subleerunker():
+    """Frame wrapper of <Subleerunker>."""
+    res = render_template('subleerunker.html')
+    return res, 200, {'Content-Type': 'application/xhtml+xml'}
+
+
+def render_error(error):
+    """The HTTP error page."""
+    ctx = make_context(error=error)
+    return render_template('error.html', **ctx)
+for status in range(400, 420) + range(500, 506):
+    @app.errorhandler(status)
+    def _error(error, status=status):
+        return render_error(error), status
+    del _error
+
+
+def prepare_freezing(app):
+    from glob import glob
+    from flask_frozen import Freezer
+    freezer = Freezer(app, with_static_files=False)
+    app.config.update({
+        'FREEZER_DESTINATION_IGNORE': ['.git*', 'CNAME'],
+        'FREEZER_IGNORE_MIMETYPE_WARNINGS': True,
+    })
+    @app.route('/404.html')
+    def not_found():
+        return render_error(NotFound())
+    @freezer.register_generator
+    def doc():
+        for filename in glob(os.path.join(DOCS, '*.md')):
+            filename = os.path.basename(filename)
+            doc_name, __ = filename.rsplit(os.path.extsep, 1)
+            yield {'doc_name': doc_name}
+    @freezer.register_generator
+    def css():
+        with open(THEMES) as f:
+            themes = yaml.load(f)
+        for theme in themes.viewkeys():
+            yield {'theme': theme}
+    return freezer
+
+
+# Command-line Interface
+
+
+@click.group()
+def cli():
+    pass
+
+
+@cli.command()
+@click.option('--host', '-h', default='0.0.0.0')
+@click.option('--port', '-p', type=click.IntRange(1, 65536), default=8080)
+@click.option('--debug', is_flag=True)
+def run(host, port, debug):
+    """Run a web server for the website."""
+    app.run(host=host, port=port, debug=debug)
+
+
+@cli.command()
+@click.argument('dest', type=click.Path(file_okay=False, writable=True))
+def freeze(dest):
+    """Freeze the website into the destination directory."""
+    app.config['FREEZER_DESTINATION'] = dest
+    freezer = prepare_freezing(app)
+    freezer.freeze()
+
+
+@cli.command('verify-links')
+@click.option('--timeout', type=float, default=3)
+@click.option('--fail-on-warning', is_flag=True)
+@click.pass_context
+def verify_links(ctx, timeout, fail_on_warning):
+    """Verify all hyper-links to be alive."""
+    from collections import defaultdict
+    from threading import Lock, Thread
+    import lxml.html
+    import requests
+    client = app.test_client()
+    # collect hyper-links.
+    freezer = prepare_freezing(app)
+    src_urls = list(freezer.all_urls())
+    linked_urls = defaultdict(set)
+    with click.progressbar(src_urls, label='Collecting', show_pos=True) as bar:
+        for src_url in bar:
+            res = client.get(src_url)
+            if res.mimetype not in ['text/html', 'application/xhtml+xml']:
+                continue
+            html = lxml.html.fromstring(res.data)
+            for linked_url in html.xpath('//a/@href'):
+                if linked_url.split('://', 1)[0] in ['http', 'https']:
+                    linked_urls[linked_url].add(src_url)
+    # verify collected hyper-links.
+    WARNING, ERROR = True, False
+    broken_urls = []
+    with click.progressbar(length=len(linked_urls),
+                           label='Verifying', show_pos=True) as bar:
+        lock = Lock()
+        # linkedin denies if User-Agent not in the header.
+        def verify_link(url, src_urls, headers={'User-Agent': 'subl.ee'}):
+            try:
+                res = requests.get(url, headers=headers, timeout=timeout)
+            except requests.exceptions.Timeout as exc:
+                broken_urls.append((url, src_urls, exc, WARNING))
+            except requests.RequestException as exc:
+                broken_urls.append((url, src_urls, exc, ERROR))
+            else:
+                if res.status_code != 200:
+                    broken_urls.append((url, src_urls, res, ERROR))
+            finally:
+                lock.acquire()
+                bar.update(1)
+                lock.release()
+        threads = []
+        for linked_url, src_urls in linked_urls.items():
+            thread = Thread(target=verify_link, args=(linked_url, src_urls))
+            threads.append(thread)
+            thread.daemon = True
+            thread.start()
+        # join all threads.
+        for thread in threads:
+            thread.join()
+    # report.
+    if not broken_urls:
+        ctx.exit()
+    erred = False
+    for url, src_urls, reason, is_warning in broken_urls:
+        args = (', '.join(sorted(src_urls)), url, reason)
+        if is_warning:
+            click.secho('W %s -> %s: %r' % args, fg='yellow')
+        else:
+            click.secho('E %s -> %s: %r' % args, fg='red')
+            erred = True
+    if erred or fail_on_warning:
+        ctx.exit(1)
+
+
 if __name__ == '__main__':
-    try:
-        port = int(sys.argv[1])
-    except (IndexError, ValueError):
-        port = 8080
-    app.run(host='0.0.0.0', port=port)
+    cli()

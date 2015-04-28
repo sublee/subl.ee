@@ -7,8 +7,9 @@ env:
 install:
 - pip install -r requirements.txt
 script:
+- python sublee.py verify-links --fail-on-warning
 - rm -rf .frozen && mkdir .frozen
-- python freeze.py .frozen
+- python sublee.py freeze .frozen
 after_success:
 - | # deploy subl.ee
   export REPO="https://$GITHUB_TOKEN@github.com/sublee/subl.ee"
