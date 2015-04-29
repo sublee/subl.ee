@@ -8,7 +8,9 @@
   <h1>Themes</h1>
   <ul>
     {% for theme in themes|sort %}
-      <li><a href="#{{ theme }}" data-theme="{{ theme }}">{{ theme }}</a></li>
+      <li>
+        <a href="#theme={{ theme }}" data-theme="{{ theme }}">{{ theme }}</a>
+      </li>
     {% endfor %}
   </ul>
   <script>
@@ -30,10 +32,12 @@
         document.title = {{ title|tojson }} + ': ' + theme;
         var prevA = arguments.callee.a;
         if (prevA) {
-          prevA.setAttribute('href', '#' + prevA.getAttribute('data-theme'));
+          var href = '#theme=' + prevA.getAttribute('data-theme');
+          prevA.setAttribute('href', href);
           prevA.setAttribute('class', '');
         }
-        a.setAttribute('href', {{ url_for('doc')|tojson }} + '#' + theme);
+        var url_root = {{ url_for('doc')|tojson }};
+        a.setAttribute('href', url_root + '?theme=' + theme);
         a.setAttribute('class', 'selected');
         arguments.callee.a = a;
       }

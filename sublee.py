@@ -44,6 +44,7 @@ MARKDOWN_EXTENSIONS = [
     'markdown.extensions.abbr',
     'markdown.extensions.attr_list',
     'markdown.extensions.def_list',
+    'markdown.extensions.headerid',
     'markdown.extensions.meta',
     'markdown.extensions.smarty',
 ]

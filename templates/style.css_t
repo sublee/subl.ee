@@ -141,6 +141,7 @@ dd.note {
 }
 
 hr {
+  {{ rem('margin-top', 1.5) }};
   {{ rem('height', 0.1) }}
   background-color: {{ rgba(copyright_color, 0.1) }};
 }

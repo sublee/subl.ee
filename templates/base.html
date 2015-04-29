@@ -36,15 +36,15 @@
         return (__theme__ == parseThemeURL(css.href)) && css.cssRules;
       }
       function guessTheme() {
-        var theme;
-        if (location.hash) {
-          theme = location.hash.replace(/^#/, '');
-        } else {
-          var date = new Date();
-          var eventKey = (date.getMonth() + 1) + '/' + date.getDate();
-          var events = {{ events|tojson }};
-          theme = events[eventKey];
+        var regex = /[?&#]theme=([^&]+)/;
+        var theme = (regex.exec(location.hash || location.href) || [])[1];
+        if (theme) {
+          return theme;
         }
+        var date = new Date();
+        var eventKey = (date.getMonth() + 1) + '/' + date.getDate();
+        var events = {{ events|tojson }};
+        theme = events[eventKey];
         return theme || {{ theme|tojson }};
       }
       var faviconRects = {

@@ -6,5 +6,5 @@ google_analytics: UA-1078484-1
 naver_analytics: 1275da0d21793e8
 events:
   3/8: mogef       # International Women's Day
-  4/1: 90s         # April Fools' Day
-  10/9: hangulize  # Hangul Day
+  # 4/1: 90s         # April Fools' Day
+  # 10/9: hangulize  # Hangul Day
