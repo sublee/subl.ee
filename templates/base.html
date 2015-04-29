@@ -36,8 +36,10 @@
         return (__theme__ == parseThemeURL(css.href)) && css.cssRules;
       }
       function guessTheme() {
-        var regex = /[?&#]theme=([^&]+)/;
-        var theme = (regex.exec(location.hash || location.href) || [])[1];
+        var regex = /[?&#]theme=([^&#]+)/;
+        var hash = location.hash;
+        var href = location.href;
+        var theme = (regex.exec(hash) || regex.exec(href) || [])[1];
         if (theme) {
           return theme;
         }
