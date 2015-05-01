@@ -90,7 +90,8 @@ ul li {
 ul li:before {
   position: absolute;
   left: 0;
-  content: '•';
+  /* bullet: http://www.fileformat.info/info/unicode/char/2022/index.htm */
+  content: '\2022';
   color: {{ copyright_color }};
 }
 
@@ -118,26 +119,25 @@ dd, dd p, dd ul, dd ol, dd dl, dd hr {
   margin-bottom: 0;
 }
 
+dd.note {
+  margin-top: 0;
+  {{ rem('font-size', 0.75) }}
+  font-style: italic;
+}
+
 dt.label {
-  {{ rem('margin-top', 0.5) }}
   {{ rem('margin-bottom', -0.5) }}
   {{ rem('font-size', 0.75) }}
   color: {{ copyright_color }};
   line-height: 1;
 }
 
-dl .note {
-  margin-top: 0;
-  {{ rem('font-size', 0.75) }}
+dt.label + dt {
+  {{ rem('margin-top', 0.5) }}
 }
 
-dt.note {
-  {{ rem('margin-bottom', 1) }}
-  line-height: 1;
-}
-
-dd.note {
-  font-style: italic;
+dl.attrs dt.label {
+  {{ rem('margin-top', 0.5) }}
 }
 
 hr {
