@@ -6,8 +6,6 @@
   {{ meta(keywords, name='keywords') if keywords }}
 {% endblock %}
 
-{% block body %}
-  <article>
-    {{ doc_html|safe }}
-  </article>
+{% block main %}
+  {{ doc_html|safe }}
 {% endblock %}
