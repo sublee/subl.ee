@@ -258,6 +258,11 @@ table.emblem td {
   margin: 0.25em;
 }
 
+.resume h1 {
+  {{ rem('margin-right', 1.5) }}
+  padding-right: 96px;
+}
+
 /* responsive layout */
 
 @media screen and (max-width: 40rem) {
@@ -283,5 +288,9 @@ table.emblem td {
     width: 48px;
     height: 48px;
     border-spacing: 3px;
+  }
+
+  .resume h1 {
+    padding-right: 48px;
   }
 }
