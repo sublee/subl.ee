@@ -130,3 +130,11 @@ twitter:
   text_color: '#66767f'
   link_color: '#55acee'
   copyright_color: '#99aab5'
+microsoft:
+  emblem_colors: ['#7fba00', '#ffb900', '#00a4ef', '#f25022']
+  background_color: '#fff'
+  title_color: '#505050'
+  text_color: '#505050'
+  link_color: '#0072c6'
+  vlink_color: '#9b4f96'
+  copyright_color: '#969696'
