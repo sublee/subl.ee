@@ -16,6 +16,7 @@ import io
 import itertools
 import os
 import re
+import socket
 
 import click
 from cssmin import cssmin as minify_css
@@ -281,6 +282,8 @@ def verify_links(ctx, timeout, fail_on_warning):
             except requests.exceptions.Timeout as exc:
                 broken_urls.append((url, src_urls, exc, WARNING))
             except requests.RequestException as exc:
+                broken_urls.append((url, src_urls, exc, ERROR))
+            except socket.error as exc:
                 broken_urls.append((url, src_urls, exc, ERROR))
             else:
                 if res.status_code != 200:
