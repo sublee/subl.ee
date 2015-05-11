@@ -9,7 +9,7 @@ Email {: .label }
 
 Web Sites {: .label }
 : [Homepage](http://subl.ee/), [GitHub Profile](https://github.com/sublee),
-  [LinkedIn Profile](https://linkedin.com/in/sublee)
+  [LinkedIn Profile](https://www.linkedin.com/in/sublee)
   {: .attr }
 {^ .attrs }
 
