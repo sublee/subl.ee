@@ -175,7 +175,7 @@ Interests
 [gae]: https://cloud.google.com/appengine
 [nexon]: http://company.nexon.com/eng
 [durango]: http://durango.nexon.com/
-[vindictus]: http://vindictus.nexon.net/
+[vindictus]: http://en.wikipedia.org/wiki/Vindictus
 [kartrider]: http://kart.nexon.com/
 [elo]: http://en.wikipedia.org/wiki/Elo_rating_system
 [glicko]: http://en.wikipedia.org/wiki/Glicko_rating_system
