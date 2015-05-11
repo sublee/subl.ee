@@ -11,12 +11,13 @@
 """
 from __future__ import unicode_literals, with_statement
 from datetime import date, datetime
-from functools import partial
+from functools import partial, wraps
 import io
 import itertools
 import os
 import re
 import socket
+from urlparse import urlparse
 
 import click
 from cssmin import cssmin as minify_css
@@ -269,29 +270,40 @@ def verify_links(ctx, timeout, fail_on_warning):
                 if linked_url.split('://', 1)[0] in ['http', 'https']:
                     linked_urls[linked_url].add(src_url)
     # verify collected hyper-links.
-    WARNING, ERROR = True, False
+    ERROR, WARNING, NOTICE = 0, 1, 2
     broken_urls = []
     with click.progressbar(length=len(linked_urls),
                            label='Verifying', show_pos=True) as bar:
         lock = Lock()
+        def bar_updater(f):
+            @wraps(f)
+            def wrapped(*args, **kwargs):
+                try:
+                    return f(*args, **kwargs)
+                finally:
+                    lock.acquire()
+                    bar.update(1)
+                    lock.release()
+            return wrapped
         # some websites such as LinkedIn denies HTTP requests if User-Agent not
         # in a header.
+        @bar_updater
         def verify_link(url, src_urls, headers={'User-Agent': 'subl.ee'}):
+            if urlparse(url).hostname.endswith('linkedin.com'):
+                broken_urls.append((NOTICE, url, src_urls,
+                                    'LinkedIn denies non-browser request'))
+                return
             try:
                 res = requests.get(url, headers=headers, timeout=timeout)
             except requests.exceptions.Timeout as exc:
-                broken_urls.append((url, src_urls, exc, WARNING))
+                broken_urls.append((WARNING, url, src_urls, exc))
             except requests.RequestException as exc:
-                broken_urls.append((url, src_urls, exc, ERROR))
+                broken_urls.append((ERROR, url, src_urls, exc))
             except socket.error as exc:
-                broken_urls.append((url, src_urls, exc, ERROR))
+                broken_urls.append((ERROR, url, src_urls, exc))
             else:
                 if res.status_code != 200:
-                    broken_urls.append((url, src_urls, res, ERROR))
-            finally:
-                lock.acquire()
-                bar.update(1)
-                lock.release()
+                    broken_urls.append((ERROR, url, src_urls, res))
         threads = []
         for linked_url, src_urls in linked_urls.items():
             thread = Thread(target=verify_link, args=(linked_url, src_urls))
@@ -305,14 +317,18 @@ def verify_links(ctx, timeout, fail_on_warning):
     if not broken_urls:
         ctx.exit()
     erred = False
-    for url, src_urls, reason, is_warning in broken_urls:
+    for level, url, src_urls, reason in broken_urls:
         args = (', '.join(sorted(src_urls)), url, reason)
-        if is_warning:
-            click.secho('W %s -> %s: %r' % args, fg='yellow')
-        else:
-            click.secho('E %s -> %s: %r' % args, fg='red')
+        if level == ERROR:
+            click.secho('E %s -> %s: %s' % args, fg='red')
             erred = True
-    if erred or fail_on_warning:
+        elif level == WARNING:
+            click.secho('W %s -> %s: %s' % args, fg='yellow')
+            if fail_on_warning:
+                erred = True
+        elif level == NOTICE:
+            click.secho('N %s -> %s: %s' % args, fg='green')
+    if erred:
         ctx.exit(1)
 
 
