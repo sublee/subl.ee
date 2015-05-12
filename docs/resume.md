@@ -4,7 +4,7 @@ Heungsub Lee
 ============
 
 Email {: .label }
-: [heungsub.lee@subl.ee](mailto:sub@subl.ee)
+: [heungsub.lee@subl.ee](mailto:heungsub.lee@subl.ee)
   {: .attr }
 
 Web Sites {: .label }
