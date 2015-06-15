@@ -267,7 +267,7 @@ table.emblem td {
 
 @media screen and (max-width: 40rem) {
   body {
-    margin: 2em 5%;
+    margin: 2em 2%;
     width: auto;
   }
 
