@@ -1,5 +1,6 @@
 sublee-light:
-  emblem_colors: ['#e56', '#e56', '#fd6', '#e56']
+  emblem_shape: IiI
+  emblem_colors: {1: '#e56', 2: '#e56', 3: '#e56', 5: '#fd6'}
   background_color: '#fafaf8'
   title_color: '#e56'
   text_color: '#344'
@@ -7,27 +8,40 @@ sublee-light:
   vlink_color: '#589'
   copyright_color: '#677'
 sublee-dark:
-  emblem_colors: ['#e34', '#e34', '#fc3', '#e34']
-  emblem_blinks: [1, 0.5, 1, 0.5]
+  emblem_shape: IiI
+  emblem_colors: {1: '#e34', 2: '#e34', 3: '#e34', 5: '#fc3'}
+  emblem_blinks: {1: 0.5, 2: 1, 3: 0.5, 5: 1}
   background_color: '#192222'
   text_color: '#788'
   link_color: '#ca4'
   vlink_color: '#986'
   copyright_color: '#455'
 sublee-legacy:
-  emblem_colors: ['#e50', '#b20', '#fd4', '#fa2']
+  emblem_shape: IiI
+  emblem_colors: {1: '#fa2', 2: '#e50', 3: '#b20', 5: '#fd4'}
   background_color: '#fff'
   title_color: '#000'
   text_color: '#333'
   link_color: '#48d'
   vlink_color: '#238'
   copyright_color: '#666'
+love-wins:
+  emblem_shape: iii
+  emblem_colors: {1: '#e45', 2: '#f95', 3: '#fe6',
+                  4: '#6d5', 5: '#5bf', 6: '#c7e'}
+  background_color: '#fff'
+  title_color: '#f6a'
+  text_color: '#333'
+  link_color: '#34d'
+  vlink_color: '#74c'
+  copyright_color: '#888'
 solarized:
+  emblem_shape: IiI
   emblem_colors:
-  - '#d33682'  # magenta
-  - '#2aa198'  # cyan
-  - '#b58900'  # yellow
-  - '#859900'  # green
+    1: '#859900'  # green
+    2: '#d33682'  # magenta
+    3: '#2aa198'  # cyan
+    5: '#b58900'  # yellow
   background_color: '#002b36'  # base03
   title_color: '#2aa198'  # cyan
   text_color: '#657b83'  # base00
@@ -35,7 +49,8 @@ solarized:
   vlink_color: '#6c71c4'  # violet
   copyright_color: '#586e75'  # base01
 mogef:
-  emblem_colors: ['#4e9fd7', '#bcbe50', '#ac1f8d', '#4e9fd7']
+  emblem_shape: IiI
+  emblem_colors: {1: '#4e9fd7', 2: '#4e9fd7', 3: '#bcbe50', 5: '#ac1f8d'}
   background_color: '#fff'
   title_color: '#ac1f8d'
   text_color: '#666'
@@ -43,8 +58,9 @@ mogef:
   vlink_color: '#989ccb'
   copyright_color: '#bcbe50'
 nexon:
-  emblem_colors: ['#02203A', '#B6D805', '#129AD8', '#02203A']
-  emblem_blinks: [0, 1, 0.5, 0]
+  emblem_shape: IiI
+  emblem_colors: {1: '#02203A', 2: '#02203A', 3: '#B6D805', 5: '#129AD8'}
+  emblem_blinks: {1: 0, 2: 0, 3: 1, 5: 0.5}
   background_color: '#fff'
   title_color: '#000'
   text_color: '#000'
@@ -52,14 +68,16 @@ nexon:
   vlink_color: 'rgb(0, 110, 160)'
   copyright_color: '#000'
 facebook:
-  emblem_colors: ['#3b5999', '#3b5999', '#3b5999', '#3b5999']
+  emblem_shape: IiI
+  emblem_colors: {1: '#3b5999', 2: '#3b5999', 3: '#3b5999', 5: '#3b5999'}
   background_color: '#e9eaed'
   title_color: '#1e2d4c'
   text_color: '#141823'
   link_color: '#3b5998'
   copyright_color: '#1e2d4c'
 vlaah:
-  emblem_colors: ['#6c0', '#f45', '#6c0', '#6c0']
+  emblem_shape: IiI
+  emblem_colors: {1: '#6c0', 2: '#6c0', 3: '#f45', 5: '#6c0'}
   background_color: '#fff'
   title_color: '#f45'
   text_color: '#555'
@@ -67,8 +85,9 @@ vlaah:
   vlink_color: '#8a6'
   copyright_color: '#999'
 mearie:
-  emblem_colors: ['#397b9c', '#397b9c', '#397b9c', '#397b9c']
-  emblem_blinks: [1, 1, 1, 1]
+  emblem_shape: IiI
+  emblem_colors: {1: '#397b9c', 2: '#397b9c', 3: '#397b9c', 5: '#397b9c'}
+  emblem_blinks: {1: 1, 2: 1, 3: 1, 5: 1}
   background_color: '#eee'
   title_color: '#444'
   text_color: '#444'
@@ -76,9 +95,10 @@ mearie:
   vlink_color: '#973'
   copyright_color: '#379'
 travis:
+  emblem_shape: IiI
   # failed, started, passed, passed
-  emblem_colors: ['#db423c', '#d2c93b', '#3fa75f', '#3fa75f']
-  emblem_blinks: [0, 1, 0, 0]
+  emblem_colors: {1: '#3fa75f', 2: '#db423c', 3: '#d2c93b', 5: '#3fa75f'}
+  emblem_blinks: {1: 0, 2: 0, 3: 1, 5: 0}
   background_color: '#eff0ec'
   title_color: '#a6adad'
   text_color: '#777'
@@ -86,7 +106,8 @@ travis:
   vlink_color: '#83a3a5'
   copyright_color: '#a6adad'
 google:
-  emblem_colors: ['#d50f25', '#009925', '#eeb211', '#3369e8']
+  emblem_shape: IiI
+  emblem_colors: {1: '#3369e8', 2: '#d50f25', 3: '#009925', 5: '#eeb211'}
   background_color: '#fff'
   title_color: '#dd4b39'
   text_color: '#545454'
@@ -94,14 +115,16 @@ google:
   vlink_color: '#609'
   copyright_color: '#aaa'
 github:
-  emblem_colors: ['#333', '#333', '#333', '#333']
+  emblem_shape: IiI
+  emblem_colors: {1: '#333', 2: '#333', 3: '#333', 5: '#333'}
   background_color: '#fff'
   title_color: '#333'
   text_color: '#333'
   link_color: '#4183C4'
   copyright_color: '#777'
 material:
-  emblem_colors: ['#03A9F4', '#E91E63', '#FFC107', '#8BC34A']
+  emblem_shape: IiI
+  emblem_colors: {1: '#8BC34A', 2: '#03A9F4', 3: '#E91E63', 5: '#FFC107'}
   background_color: '#f9f9f9'
   title_color: '#673AB7'
   text_color: 'rgba(0,0,0,.87)'
@@ -109,14 +132,16 @@ material:
   vlink_color: '#3F51B5'
   copyright_color: 'rgba(0,0,0,.54)'
 mit:
-  emblem_colors: ['#000', '#000', '#a31f34', '#000']
+  emblem_shape: IiI
+  emblem_colors: {1: '#000', 2: '#000', 3: '#000', 5: '#a31f34'}
   background_color: '#fff'
   title_color: '#a31f34'
   text_color: '#222'
   link_color: '#a31f34'
   copyright_color: '#333'
 dodo:
-  emblem_colors: ['#f9e588', '#8ab0e6', '#8ab0e6', '#8ab0e6']
+  emblem_shape: IiI
+  emblem_colors: {1: '#8ab0e6', 2: '#f9e588', 3: '#8ab0e6', 5: '#8ab0e6'}
   background_color: '#fff'
   title_color: '#f29d61'
   text_color: '#4f5259'
@@ -124,14 +149,16 @@ dodo:
   vlink_color: '#6585c1'
   copyright_color: '#b0b6c2'
 twitter:
-  emblem_colors: ['#00b0ed', '#00b0ed', '#00b0ed', '#00b0ed']
+  emblem_shape: III
+  emblem_colors: {1: '#00b0ed', 2: '#00b0ed', 3: '#00b0ed'}
   background_color: '#fff'
   title_color: '#292f33'
   text_color: '#66767f'
   link_color: '#55acee'
   copyright_color: '#99aab5'
 microsoft:
-  emblem_colors: ['#7fba00', '#ffb900', '#00a4ef', '#f25022']
+  emblem_shape: IiI
+  emblem_colors: {1: '#f25022', 2: '#7fba00', 3: '#ffb900', 5: '#00a4ef'}
   background_color: '#fff'
   title_color: '#505050'
   text_color: '#505050'

@@ -157,6 +157,7 @@ abbr, acronym {
 /* emblem */
 
 table.emblem {
+  position: relative;
   margin: -6px;
   width: 96px;
   height: 96px;
@@ -194,14 +195,26 @@ table.emblem td {
   {% endfor %}
 {% endmacro %}
 
+{% for x in range(3) %}
+  {% if emblem_shape[x] == 'I' %}
+    table.emblem td.emblem-{{ x + 1 }} {
+      position: absolute;
+      top: 6px;
+      bottom: 6px;
+    }
+  {% endif %}
+{% endfor %}
+
 {% set emblem_blinks = emblem_blinks or [0, 0, 0, 0] %}
-{% for suffix, color, blink in zip('trbl', emblem_colors, emblem_blinks) %}
-  table.emblem td.emblem-{{ suffix }} {
+{% for x in range(1, 1 + 6) %}
+  {% set color = emblem_colors[x] %}
+  {% set blink = emblem_blinks[x] if emblem_blinks else 0 %}
+  table.emblem td.emblem-{{ x }} {
     background: {{ color }};
   }
   {% if blink %}
     {{ emblem_keyframes('emblem-' ~ suffix, color, blink) }}
-    table.emblem td.emblem-{{ suffix }} {
+    table.emblem td.emblem-{{ x }} {
       outline: 1px solid;
       {% for hack in compat %}
         {{ hack }}animation:
