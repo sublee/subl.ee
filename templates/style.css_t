@@ -156,20 +156,19 @@ abbr, acronym {
 
 /* emblem */
 
-table.emblem {
+.emblem {
   position: relative;
-  margin: -6px;
   width: 96px;
   height: 96px;
-  border-collapse: separate;
-  border-spacing: 6px;
-  /* The IE border-spacing workaround: http://vacskamati.blogspot.kr/2007/03/
-     eliminating-cellspacing-and-cellpadding.html */
-  *border-collapse: expression('separate', cellSpacing = '6px');
+  margin: -6px;
 }
 
-table.emblem td {
-  width: 24px;
+.emblem i {
+  position: absolute;
+  display: block;
+  float: left;
+  width: 25%;
+  height: {{ 39 / 0.96 }}%;
 }
 
 {% set compat = ['', '-webkit-', '-moz-', '-o-'] %}
@@ -197,10 +196,8 @@ table.emblem td {
 
 {% for x in range(3) %}
   {% if emblem_shape[x] == 'I' %}
-    table.emblem td.emblem-{{ x + 1 }} {
-      position: absolute;
-      top: 6px;
-      bottom: 6px;
+    i.emblem-{{ x + 1 }} {
+      height: {{ (39 + 6 + 39) / 0.96 }}%;
     }
   {% endif %}
 {% endfor %}
@@ -209,12 +206,24 @@ table.emblem td {
 {% for x in range(1, 1 + 6) %}
   {% set color = emblem_colors[x] %}
   {% set blink = emblem_blinks[x] if emblem_blinks else 0 %}
-  table.emblem td.emblem-{{ x }} {
+  i.emblem-{{ x }} {
+    {% if x < 4 %}
+      top: {{ 6 / 0.96 }}%;
+    {% else %}
+      top: {{ (6 + 39 + 6) / 0.96 }}%;
+    {% endif %}
+    {% if x % 3 == 1 %}
+      left: {{ 6 / 0.96 }}%;
+    {% elif x % 3 == 2 %}
+      left: {{ (6 + 24 + 6) / 0.96 }}%;
+    {% elif x % 3 == 0 %}
+      left: {{ (6 + 24 + 6 + 24 + 6) / 0.96 }}%;
+    {% endif %}
     background: {{ color }};
   }
   {% if blink %}
     {{ emblem_keyframes('emblem-' ~ suffix, color, blink) }}
-    table.emblem td.emblem-{{ x }} {
+    i.emblem-{{ x }} {
       outline: 1px solid;
       {% for hack in compat %}
         {{ hack }}animation:
@@ -265,7 +274,7 @@ table.emblem td {
 
 /* resume */
 
-.resume table.emblem {
+.resume .emblem {
   position: absolute;
   right: 0;
   margin: 0.25em;
@@ -296,7 +305,7 @@ table.emblem td {
     margin-top: 1em;
   }
 
-  .resume table.emblem {
+  .resume .emblem {
     margin: 0.5em;
     width: 48px;
     height: 48px;
