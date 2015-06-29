@@ -49,20 +49,7 @@
         theme = events[eventKey];
         return theme || {{ theme|tojson }};
       }
-      var faviconRects = {
-        t: [6, 1, 4, 7],
-        r: [11, 1, 4, 14],
-        b: [6, 9, 4, 6],
-        l: [1, 1, 4, 14]
-      };
       function updateFavicon() {
-        function getColor(query) {
-          var emblemCell = document.querySelector(query);
-          if (emblemCell) {
-            var style = getComputedStyle(emblemCell);
-            return style.backgroundColor;
-          }
-        }
         if (!isThemeLoaded()) {
           setTimeout(arguments.callee, 100);
           return;
@@ -71,9 +58,22 @@
         favicon.width = 16;
         favicon.height = 16;
         var ctx = favicon.getContext('2d');
-        for (var d in faviconRects) {
-          ctx.fillStyle = getColor('.emblem-' + d);
-          ctx.fillRect.apply(ctx, faviconRects[d]);
+        for (var i = 0; i < 3; ++i) {
+          var topCell = document.querySelector('i.emblem-' + (i + 1));
+          var bottomCell = document.querySelector('i.emblem-' + (i + 4));
+          var topStyle = getComputedStyle(topCell);
+          var bottomStyle = getComputedStyle(bottomCell);
+          var left = 1 + i * 5;
+          ctx.fillStyle = topStyle.backgroundColor;
+          if (/none/i.exec(bottomStyle.display)) {
+            // shape: i
+            ctx.fillRect(left, 1, 4, 14);
+          } else {
+            // shape: I
+            ctx.fillRect(left, 1, 4, 7);
+            ctx.fillStyle = bottomStyle.backgroundColor;
+            ctx.fillRect(left, 9, 4, 6);
+          }
         }
         faviconLink.href = favicon.toDataURL('image/icon');
       }

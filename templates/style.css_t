@@ -199,6 +199,9 @@ abbr, acronym {
     i.emblem-{{ x + 1 }} {
       height: {{ (39 + 6 + 39) / 0.96 }}%;
     }
+    i.emblem-{{ x + 4 }} {
+      display: none;
+    }
   {% endif %}
 {% endfor %}
 
