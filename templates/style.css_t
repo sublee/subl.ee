@@ -159,6 +159,7 @@ abbr, acronym {
   position: relative;
   width: 90px;
   height: 90px;
+  margin: -3px;
 }
 
 .emblem div {
