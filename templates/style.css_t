@@ -1,6 +1,5 @@
 {# vim: set ft=css: #}
 
-{% set title_color = title_color or emblem_colors[0] %}
 {% set base_font_size = 18 %}
 {% macro rem(prop, rem) %}
   {{ prop }}: {{ (base_font_size * rem)|round|int }}px;
@@ -158,82 +157,40 @@ abbr, acronym {
 
 .emblem {
   position: relative;
-  width: 96px;
-  height: 96px;
-  margin: -6px;
+  width: 90px;
+  height: 90px;
+}
+
+.emblem div {
+  width: 24px;
+  height: 84px;
+  margin: 3px;
+  float: left;
+  clear: none;
 }
 
 .emblem i {
-  position: absolute;
   display: block;
-  float: left;
-  width: 25%;
-  height: {{ 39 / 0.96 }}%;
+  height: 39px;
 }
 
-{% set compat = ['', '-webkit-', '-moz-', '-o-'] %}
+.emblem .emblem-bottom {
+  margin-top: 6px;
+}
 
-{% macro emblem_keyframes(name, color, blink) %}
-  {% for hack in compat %}
-    @{{ hack }}keyframes {{ name }} {
-      from {
-        box-shadow:
-          0 0 0 {{ color }},
-          0 0 0 {{ rgba(color, 0) }},
-          0 0 0 {{ background_color }};
-        outline-color: {{ rgba(background_color, 0) }};
-      }
-      to {
-        box-shadow:
-          0 0 {{ 32 * blink }}px {{ rgba(color, 0.25) }},
-          0 0 {{ 12 * blink }}px {{ rgba(color, 0.5) }},
-          0 0 {{ 2 * blink }}px {{ background_color }};
-        outline-color: {{ rgba(background_color, 0.25) }};
-      }
-    }
-  {% endfor %}
-{% endmacro %}
-
-{% for x in range(3) %}
-  {% if emblem_shape[x] == 'I' %}
-    i.emblem-{{ x + 1 }} {
-      height: {{ (39 + 6 + 39) / 0.96 }}%;
-    }
-    i.emblem-{{ x + 4 }} {
-      display: none;
-    }
-  {% endif %}
-{% endfor %}
-
-{% set emblem_blinks = emblem_blinks or [0, 0, 0, 0] %}
-{% for x in range(1, 1 + 6) %}
-  {% set color = emblem_colors[x] %}
-  {% set blink = emblem_blinks[x] if emblem_blinks else 0 %}
-  i.emblem-{{ x }} {
-    {% if x < 4 %}
-      top: {{ 6 / 0.96 }}%;
-    {% else %}
-      top: {{ (6 + 39 + 6) / 0.96 }}%;
-    {% endif %}
-    {% if x % 3 == 1 %}
-      left: {{ 6 / 0.96 }}%;
-    {% elif x % 3 == 2 %}
-      left: {{ (6 + 24 + 6) / 0.96 }}%;
-    {% elif x % 3 == 0 %}
-      left: {{ (6 + 24 + 6 + 24 + 6) / 0.96 }}%;
-    {% endif %}
-    background: {{ color }};
+{% for h in ['left', 'middle', 'right'] %}
+  .emblem-{{ h }} .emblem-top {
+    background: {{ emblem_colors[loop.index] }};
   }
-  {% if blink %}
-    {{ emblem_keyframes('emblem-' ~ suffix, color, blink) }}
-    i.emblem-{{ x }} {
-      outline: 1px solid;
-      {% for hack in compat %}
-        {{ hack }}animation:
-          emblem-{{ suffix }} 5s ease-in-out infinite alternate;
-      {% endfor %}
-      /* Disable on IE6, IE7, IE8, IE9. */
-      outline-style: none\9;
+  .emblem-{{ h }} .emblem-bottom {
+    background: {{ emblem_colors[loop.index + 3] }};
+  }
+  {% if emblem_shape[loop.index0] == 'I' %}
+    .emblem-{{ h }} .emblem-top {
+      height: 84px;
+    }
+    .emblem-{{ h }} .emblem-bottom {
+      display: none;
     }
   {% endif %}
 {% endfor %}
@@ -310,9 +267,7 @@ abbr, acronym {
 
   .resume .emblem {
     margin: 0.5em;
-    width: 48px;
-    height: 48px;
-    border-spacing: 3px;
+    zoom: 0.5;
   }
 
   .resume h1 {

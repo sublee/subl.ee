@@ -58,21 +58,22 @@
         favicon.width = 16;
         favicon.height = 16;
         var ctx = favicon.getContext('2d');
-        for (var i = 0; i < 3; ++i) {
-          var topCell = document.querySelector('i.emblem-' + (i + 1));
-          var bottomCell = document.querySelector('i.emblem-' + (i + 4));
-          var topStyle = getComputedStyle(topCell);
-          var bottomStyle = getComputedStyle(bottomCell);
+        var horizontalDirections = ['left', 'middle', 'right'];
+        for (var i = 0; i < horizontalDirections.length; ++i) {
+          var h = horizontalDirections[i];
+          var col = document.querySelector('.emblem-' + h);
+          var topCell = col.querySelector('.emblem-top');
+          var bottomCell = col.querySelector('.emblem-bottom');
           var left = 1 + i * 5;
-          ctx.fillStyle = topStyle.backgroundColor;
-          if (/none/i.exec(bottomStyle.display)) {
+          ctx.fillStyle = getComputedStyle(topCell).backgroundColor;
+          if (bottomCell.offsetParent) {
             // shape: i
-            ctx.fillRect(left, 1, 4, 14);
+            ctx.fillRect(left, 1, 4, 7);
+            ctx.fillStyle = getComputedStyle(bottomCell).backgroundColor;
+            ctx.fillRect(left, 9, 4, 6);
           } else {
             // shape: I
-            ctx.fillRect(left, 1, 4, 7);
-            ctx.fillStyle = bottomStyle.backgroundColor;
-            ctx.fillRect(left, 9, 4, 6);
+            ctx.fillRect(left, 1, 4, 14);
           }
         }
         faviconLink.href = favicon.toDataURL('image/icon');
@@ -90,7 +91,6 @@
       }
       // select the initial theme.
       selectGuessedTheme();
-
       // load jQuery and init instant theme selection when the hash changed.
       window.onhashchange = function() {
         var done = false;
@@ -157,12 +157,18 @@
   {% block header %}
     <header>
       <div class="emblem">
-        <i class="emblem-1"></i>
-        <i class="emblem-2"></i>
-        <i class="emblem-3"></i>
-        <i class="emblem-4"></i>
-        <i class="emblem-5"></i>
-        <i class="emblem-6"></i>
+        <div class="emblem-left">
+          <i class="emblem-top"></i>
+          <i class="emblem-bottom"></i>
+        </div>
+        <div class="emblem-middle">
+          <i class="emblem-top"></i>
+          <i class="emblem-bottom"></i>
+        </div>
+        <div class="emblem-right">
+          <i class="emblem-top"></i>
+          <i class="emblem-bottom"></i>
+        </div>
       </div>
       <script> updateFavicon(); </script>
     </header>
