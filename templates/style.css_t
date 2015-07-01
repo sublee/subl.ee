@@ -186,7 +186,7 @@ abbr, acronym {
   .emblem-{{ h }} .emblem-bottom {
     background: {{ emblem_colors[loop.index + 3] }};
   }
-  {% if emblem_shape[loop.index0] == 'I' %}
+  {% if emblem_shape is not splitted_trigram_bar loop.index0  %}
     .emblem-{{ h }} .emblem-top {
       height: 84px;
     }

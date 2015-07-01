@@ -77,9 +77,18 @@ def jinja_meta(content, **attrs):
     return jinja2.Markup(buf.getvalue())
 
 
+def is_splitted_trigram_bar(trigram, offset):
+    # 9776 is unicode number of ☰ (u'\u2630', TRIGRAM_FOR_HEAVEN).
+    # The unicode distance of a trigram from the trigram for heaven is a 3-bit
+    # digit.  Splitted bars are at non-negative bits.
+    return (ord(trigram) - 9776) & (1 << offset)
+
+
 app.jinja_env.globals.update(
     zip=itertools.izip, minify_js=jinja_minify_js, meta=jinja_meta,
     cdnjs=(lambda path: '//cdnjs.cloudflare.com/ajax/libs/' + path))
+app.jinja_env.tests.update(
+    splitted_trigram_bar=is_splitted_trigram_bar)
 
 
 @app.after_request
@@ -90,7 +99,6 @@ def minify_response(response):
                 data = response.get_data(as_text=True)
                 response.set_data(minify(data))
                 break
-    # response.headers['Cache-Control'] = 'max-age=600'
     return response
 
 
