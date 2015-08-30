@@ -48,6 +48,7 @@ I made (or am making)
 I spoke about
 -------------
 
+- Profiling, an interactive continuous Python profiler at PyCon KR 2015.
 - [The server architecture of Durango][ndc14-slide] (Korean) at NDC14.
 
 [ndc14-slide]: http://www.slideshare.net/sublee/spof-mmorpg
