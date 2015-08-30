@@ -29,7 +29,6 @@ I made (or am making)
 - [Hangulize][] which is a Korean alphabet transcriber.
 - Game development libraries: [TrueSkill][], [Energy][], [Ranking][]
 - Small Flask extensions: [Flask-AutoIndex][] and [Flask-Silk][]
-- [Subleerunker][], [MOGEF.XXX][], [Cra-ezCounter][] just for fun.
 
 [Durango]: http://durango.nexon.com/
 [KartRider Dash]: http://www.facebook.com/kartriderdash
@@ -41,9 +40,6 @@ I made (or am making)
 [Ranking]: http://pythonhosted.org/ranking
 [Flask-AutoIndex]: http://pythonhosted.org/Flask-AutoIndex
 [Flask-Silk]: http://pythonhosted.org/Flask-Silk
-[Subleerunker]: http://subl.ee/runker
-[MOGEF.XXX]: http://mogef.xxx/
-[Cra-ezCounter]: http://craezcounter.appspot.com/
 
 I spoke about
 -------------
