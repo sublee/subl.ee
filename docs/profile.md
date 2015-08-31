@@ -25,7 +25,7 @@ I made (or am making)
 
 - [Durango][] at What! Studio in Nexon.
 - Kartrider Dash and Coin Rush series at Team Lupin in Nexon.
-- [Profiling][] which is an interactive Python profiler.
+- [Profiling][] which is an interactive continuous Python profiler.
 - [Hangulize][] which is a Korean alphabet transcriber.
 - Game development libraries: [TrueSkill][], [Energy][], [Ranking][]
 - Small Flask extensions: [Flask-AutoIndex][] and [Flask-Silk][]
@@ -44,7 +44,7 @@ I made (or am making)
 I spoke about
 -------------
 
-- [Profiling, an interactive continuous Python profiler][pyconkr2015-slide] at PyCon KR 2015.
+- [Profiling][pyconkr2015-slide] at PyCon KR 2015.
 - [The server architecture of Durango][ndc14-slide] (Korean) at NDC14.
 
 [pyconkr2015-slide]: http://www.slideshare.net/sublee/profiling-52226374
