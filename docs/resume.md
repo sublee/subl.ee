@@ -115,7 +115,8 @@ Others
 Invited Talks
 -------------
 
-- [The server architecture of Durango][ndc14-slide], NDC14
+- [Profiling, an interactive continuous Python profiler][pyconkr2015-slide] at PyCon KR 2015.
+- [The server architecture of Durango][ndc14-slide] at NDC14
 
 Education
 ---------
@@ -182,6 +183,7 @@ Interests
 [npine]: http://en.npine.com/
 [iclickart]: http://iclickart.co.kr/
 [lunant]: http://lunant.net/
+[pyconkr2015-slide]: http://www.slideshare.net/sublee/profiling-52226374
 [ndc14-slide]: http://www.slideshare.net/sublee/spof-mmorpg
 [kw]: http://www.kw.ac.kr/
 
