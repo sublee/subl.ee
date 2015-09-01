@@ -44,8 +44,8 @@ I made (or am making)
 I spoke about
 -------------
 
-- [Profiling][pyconkr2015-slide] at PyCon KR 2015.
-- [The server architecture of Durango][ndc14-slide] (Korean) at NDC14.
+- [Profiling][pyconkr2015-slide] at PyCon KR 2015 (Korean)
+- [The server architecture of Durango][ndc14-slide] at NDC14 (Korean)
 
 [pyconkr2015-slide]: http://www.slideshare.net/sublee/profiling-52226374
 [ndc14-slide]: http://www.slideshare.net/sublee/spof-mmorpg
