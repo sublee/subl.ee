@@ -18,7 +18,7 @@ Web Sites {: .label }
 Work Experience
 ---------------
 
-Game Development Engineer {: .label }
+Server Architect {: .label }
 What! Studio in [Nexon][], 2013--
 :   Developing <cite>[Durango][]</cite>, a high-quality mobile MMORPG which is
     directed by Eunseok Yi, the former director of <cite>[Vindictus][]</cite>.
