@@ -59,7 +59,7 @@ h1 {
 }
 
 h2 {
-  font-weight: 400;
+  font-weight: {{ 700 if title_color == text_color else 400 }};
   font-size: 1.25em;
   color: {{ title_color }};
 }
