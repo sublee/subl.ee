@@ -36,16 +36,6 @@ sublee-legacy:
   link_color: '#48d'
   vlink_color: '#238'
   copyright_color: '#666'
-love-wins:
-  emblem_shape: ☷
-  emblem_colors: {1: '#e45', 2: '#f95', 3: '#fe6',
-                  4: '#6d5', 5: '#5bf', 6: '#c7e'}
-  background_color: '#fff'
-  title_color: '#f6a'
-  text_color: '#333'
-  link_color: '#34d'
-  vlink_color: '#74c'
-  copyright_color: '#888'
 solarized:
   emblem_shape: ☲
   emblem_colors:
