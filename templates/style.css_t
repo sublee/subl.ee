@@ -40,7 +40,7 @@ header {
 }
 
 footer {
-  {{ rem('padding-top', 1) }};
+  {{ rem('margin-top', 2) }};
 }
 
 footer p {
@@ -256,7 +256,13 @@ abbr, acronym {
 
 /* responsive layout */
 
-@media screen and (max-width: 40rem) {
+@media screen and (max-width: 50rem) {
+  body {
+    margin: 3em 5%;
+  }
+}
+
+@media screen and (max-width: 480px) {
   body {
     margin: 2em 2%;
     width: auto;
@@ -264,6 +270,10 @@ abbr, acronym {
 
   .profile {
     white-space: normal;
+  }
+
+  .profile main {
+    font-size: 1em;
   }
 
   .hard-returns br {
