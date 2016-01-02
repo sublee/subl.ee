@@ -1,6 +1,6 @@
 {# vim: set ft=css: #}
 
-{% set base_font_size = 18 %}
+{% set base_font_size = 16 %}
 {% macro rem(prop, rem) %}
   {{ prop }}: {{ (base_font_size * rem)|round|int }}px;
   {{ prop }}: {{ rem }}rem;
@@ -24,7 +24,7 @@ html {
 body {
   position: relative;
   margin: 3em 10%;
-  {{ rem('max-width', 40) }}
+  {{ rem('max-width', 50) }}
   font-family: 'Roboto Slab', serif;
   font-weight: 400;
   color: {{ text_color }};
@@ -44,7 +44,7 @@ footer {
 }
 
 footer p {
-  font-size: 0.75em;
+  font-size: 0.8em;
   color: {{ copyright_color }};
 }
 
@@ -87,7 +87,7 @@ a:hover {
 ul li {
   position: relative;
   list-style: none;
-  {{ rem('padding-left', 0.75) }}
+  {{ rem('padding-left', 0.8) }}
 }
 
 ul li:before {
@@ -101,7 +101,7 @@ ul li:before {
 /* ie7 can't handle :before pseudo-element */
 *:first-child+html ul li {
   list-style: disc;
-  margin-left: 0.75em;
+  margin-left: 0.8em;
   padding-left: 0;
 }
 
@@ -110,7 +110,7 @@ dt {
 }
 
 dd {
-  {{ rem('margin-left', 0.75) }}
+  {{ rem('margin-left', 0.8) }}
 }
 
 dd.attr, dd.note {
@@ -118,29 +118,29 @@ dd.attr, dd.note {
 }
 
 dd, dd p, dd ul, dd ol, dd dl, dd hr {
-  {{ rem('margin-top', 0.5) }}
+  {{ rem('margin-top', 1) }}
   margin-bottom: 0;
 }
 
 dd.note {
   margin-top: 0;
-  {{ rem('font-size', 0.75) }}
+  {{ rem('font-size', 0.8) }}
   font-style: italic;
 }
 
 dt.label {
-  {{ rem('margin-bottom', -0.5) }}
-  {{ rem('font-size', 0.75) }}
+  {{ rem('margin-bottom', -1) }}
+  {{ rem('font-size', 0.8) }}
   color: {{ copyright_color }};
   line-height: 1;
 }
 
 dt.label + dt {
-  {{ rem('margin-top', 0.5) }}
+  {{ rem('margin-top', 1) }}
 }
 
 dl.attrs dt.label {
-  {{ rem('margin-top', 0.5) }}
+  {{ rem('margin-top', 1) }}
 }
 
 hr {
@@ -204,6 +204,10 @@ abbr, acronym {
 
 .profile {
   white-space: nowrap;
+}
+
+.profile main {
+  font-size: 1.1em;
 }
 
 .profile header {
