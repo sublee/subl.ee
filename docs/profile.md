@@ -8,11 +8,11 @@ Heungsub Lee
 I am
 ----
 
-Heungsub Lee <[sub@subl.ee][]\>,
+Heungsub Lee <[sub@subl.ee][]\>, a game development engineer
 <br />
-a game development engineer at [What! Studio][] in [Nexon][]
+at [What! Studio][] in [Nexon][] and also an [open source][] enthusiast.
 <br />
-and also an [open source][] enthusiast.
+More details are in my [résumé](/resume).
 {: .hard-returns }
 
 [sub@subl.ee]: mailto:sub@subl.ee

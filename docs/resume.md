@@ -8,7 +8,7 @@ Email {: .label }
   {: .attr }
 
 Web Sites {: .label }
-: [Homepage](http://subl.ee/), [GitHub Profile](https://github.com/sublee),
+: [Homepage](/), [GitHub Profile](https://github.com/sublee),
   [LinkedIn Profile](https://linkedin.com/in/sublee)
   {: .attr }
 {^ .attrs }
@@ -46,7 +46,7 @@ Team Lupin in [Nexon][], 2011--2013
     Used Python, Redis as a message queue, Couchbase, MongoDB, Unity3D,
     Mercurial, Ubuntu, and AWS.
 
-Software Engineer {: .label }
+Full Stack Web Developer {: .label }
 [Npine][], 2008--2011
 :   Providing stock images on <cite>[Iclickart][]</cite>.
     {: .note }
@@ -78,7 +78,7 @@ Open Source Experience
 :   Developed to find bottlenecks of the <cite>[Durango][]</cite> server by
     Python and C.  Designed a handy interactive TUI like [htop][] by [Urwid][].
 
-    On GitHub, 1000+ people stared this project.  Also it was the 3rd daily
+    On GitHub, 2300+ people stared this project.  Also it was the 3rd daily
     trending repository at Sep 22, 2014.
 
 [TrueSkill][trueskill-py], 2012--
@@ -102,6 +102,7 @@ Open Source Experience
 
 Others
 :   - [Zeronimo][] -- A distributed RPC system based on ØMQ.
+    - [Lets][] -- Several utilities for gevent.
     - [zmqproxy][] -- A command-line tool which runs a ØMQ broker
                       written in Go.
     - [Unity-Cosocket][] -- Sockets for Unity3D coroutine.
@@ -167,6 +168,7 @@ Interests
 [ranking]: http://pythonhosted.org/ranking
 [flask-autoindex]: http://pythonhosted.org/Flask-AutoIndex
 [zeronimo]: https://github.com/sublee/zeronimo
+[lets]: https://github.com/sublee/lets
 [unity-cosocket]: https://github.com/sublee/unity-cosocket
 [zmqproxy]: https://github.com/sublee/zmqproxy
 [jdoctest]: http://lunant.net/jdoctest
