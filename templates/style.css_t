@@ -243,10 +243,11 @@ abbr, acronym {
 
 /* resume */
 
-.resume .emblem {
+.resume .emblem-wrap {
   position: absolute;
   right: 0;
   margin: 0.25em;
+  overflow: hidden;
 }
 
 .resume h1 {
@@ -284,9 +285,13 @@ abbr, acronym {
     margin-top: 1em;
   }
 
+  .resume .emblem-wrap {
+    width: 45px;
+  }
+
   .resume .emblem {
-    margin: 0.5em;
     zoom: 0.5;
+    margin: 0;
   }
 
   .resume h1 {
