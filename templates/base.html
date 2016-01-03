@@ -23,6 +23,7 @@
   <script>
     {%- call minify_js() %}
       var __theme__ = {{ theme|tojson }};
+      var __themeSelected__ = false;
       var themeLink = document.querySelector('.theme');
       var faviconLink = document.querySelector('link[rel="shortcut icon"]');
       function getThemeURL(theme) {
@@ -80,6 +81,7 @@
       }
       function selectTheme(theme) {
         __theme__ = theme;
+        __themeSelected__ = true;
         themeLink.setAttribute('href', getThemeURL(theme));
       }
       function selectGuessedTheme() {
@@ -89,9 +91,9 @@
         }
         return theme;
       }
-      // select the initial theme.
+      // Select the initial theme.
       selectGuessedTheme();
-      // load jQuery and init instant theme selection when the hash changed.
+      // Load jQuery and init instant theme selection when the hash changed.
       window.onhashchange = function() {
         var done = false;
         var jQueryScript = document.createElement('script');
@@ -110,7 +112,7 @@
       function initThemeSelection() {
         var $body = $(document.body);
         var $themeStyle = $('<style>').appendTo(document.head);
-        // override selectTheme() to re-draw the page.
+        // Override selectTheme() to re-draw the page.
         selectTheme = function (theme) {
           __theme__ = theme;
           isThemeLoaded = function() { return false; };
@@ -125,7 +127,7 @@
               return;
             }
             setTimeout(function() {
-              // re-draw the page.
+              // Re-draw the page.
               isThemeLoaded = function() { return true; };
               $body.fadeIn();
               updateFavicon();
@@ -203,6 +205,28 @@
       {% endblock %}
     </footer>
   {% endblock %}
+  <script>
+    {%- call minify_js() %}
+      function keepTheme() {
+        var $anchors = document.querySelectorAll('a[href]');
+        for (var i = 0; i < $anchors.length; ++i) {
+          var $a = $anchors[i];
+          var href = $a.getAttribute('href');
+          if (/^(#|https?:\/\/|mailto:)/.exec(href)) {
+            continue;
+          }
+          if (!/([?&])theme=[^&]+/.exec(href)) {
+            var sep = /\?/.exec(href) ? '&' : '?';
+            href += sep + 'theme=' + __theme__;
+          }
+          $a.setAttribute('href', href);
+        }
+      }
+      if (__themeSelected__) {
+        keepTheme();
+      }
+    {% endcall -%}
+  </script>
   {% if google_analytics %}
     <script>
       {%- call minify_js() %}
