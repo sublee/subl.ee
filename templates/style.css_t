@@ -6,11 +6,16 @@
   {{ prop }}: {{ rem }}rem;
 {% endmacro %}
 
-@import url(//fonts.googleapis.com/css?family=
-  {{- font_family|default('Roboto Slab')|replace(' ', '+') -}}
-  :
-  {{- font_weights|default([400, 700])|join(',') -}}
-);
+{% set title_color = title_color|d(text_color) %}
+{% set font = {
+  'family': 'Roboto Slab',
+  'default': 400,
+  'title': 700,
+}|update(font) %}
+
+@import url(//fonts.googleapis.com/css?family={{
+  font.family|replace(' ', '+') ~ ':' ~ [font.default, font.title]|join(',')
+}});
 
 * {
   margin: 0;
@@ -29,8 +34,8 @@ body {
   position: relative;
   margin: 3em 10%;
   {{ rem('max-width', 50) }}
-  font-family: "{{ font_family|default('Roboto Slab') }}", serif;
-  font-weight: 400;
+  font-family: '{{ font.family }}', serif;
+  font-weight: {{ font.default }};
   color: {{ text_color }};
   background: {{ background_color }};
   white-space: normal;
@@ -57,13 +62,13 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, dl, hr {
 }
 
 h1 {
-  font-weight: 700;
+  font-weight: {{ font.title }};
   font-size: 2em;
-  color: {{ title_color or text_color }};
+  color: {{ title_color }};
 }
 
 h2 {
-  font-weight: {{ 700 if title_color == text_color else 400 }};
+  font-weight: {{ font.title if title_color == text_color else font.default }};
   font-size: 1.25em;
   color: {{ title_color }};
 }

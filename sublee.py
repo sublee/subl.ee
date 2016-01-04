@@ -1,15 +1,16 @@
 # -*- coding: utf-8 -*-
 """
-    sublee
-    ~~~~~~
+   sublee
+   ~~~~~~
 
-    http://subl.ee/
+   http://subl.ee/
 
-    :copyright: (c) 2013-2015 by Heungsub Lee
-    :license: Public Domain
+   :copyright: (c) 2013-2016 by Heungsub Lee
+   :license: Public Domain
 
 """
 from __future__ import unicode_literals, with_statement
+
 from datetime import date, datetime
 from functools import partial, wraps
 import io
@@ -77,6 +78,11 @@ def jinja_meta(content, **attrs):
     return jinja2.Markup(buf.getvalue())
 
 
+def update_dict(d1, d2):
+    d1.update(d2)
+    return d1
+
+
 def is_splitted_trigram_bar(trigram, offset):
     # 9776 is unicode number of ☰ (u'\u2630', TRIGRAM_FOR_HEAVEN).
     # The unicode distance of a trigram from the trigram for heaven is a 3-bit
@@ -87,8 +93,8 @@ def is_splitted_trigram_bar(trigram, offset):
 app.jinja_env.globals.update(
     zip=itertools.izip, minify_js=jinja_minify_js, meta=jinja_meta,
     cdnjs=(lambda path: '//cdnjs.cloudflare.com/ajax/libs/' + path))
-app.jinja_env.tests.update(
-    splitted_trigram_bar=is_splitted_trigram_bar)
+app.jinja_env.filters.update(update=update_dict)
+app.jinja_env.tests.update(splitted_trigram_bar=is_splitted_trigram_bar)
 
 
 @app.after_request

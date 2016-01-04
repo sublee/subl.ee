@@ -125,6 +125,7 @@ github:
   text_color: '#333'
   link_color: '#4183C4'
   copyright_color: '#777'
+  font: {family: Roboto Mono}
 mit:
   emblem_shape: ☶
   emblem_colors: {1: '#000', 2: '#000', 3: '#000', 5: '#a31f34', 6: '#000'}
@@ -141,20 +142,11 @@ spoqa:
   link_color: '#4c80f1'
   vlink_color: '#2c5ae9'
   copyright_color: '#a9afb3'
-  font_weights: [300, 400]
+  font: {default: 400, title: 300}
   css: |
-    h1, h2 {
-      font-weight: 300;
-    }
-    h1 {
-      font-size: 2.5em;
-    }
-    h2 {
-      font-size: 1.5em;
-    }
-    .profile h2 {
-      font-size: 1.25em;
-    }
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 1.5em; }
+    .profile h2 { font-size: 1.25em; }
 dodo:
   emblem_shape: ☲
   emblem_colors: {1: '#8ab0e6', 2: '#f9e588', 3: '#8ab0e6', 5: '#8ab0e6'}
