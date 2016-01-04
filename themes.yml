@@ -36,19 +36,6 @@ sublee-legacy:
   link_color: '#48d'
   vlink_color: '#238'
   copyright_color: '#666'
-solarized:
-  emblem_shape: ☲
-  emblem_colors:
-    1: '#859900'  # green
-    2: '#d33682'  # magenta
-    3: '#2aa198'  # cyan
-    5: '#b58900'  # yellow
-  background_color: '#002b36'  # base03
-  title_color: '#2aa198'  # cyan
-  text_color: '#657b83'  # base00
-  link_color: '#268bd2'  # blue
-  vlink_color: '#6c71c4'  # violet
-  copyright_color: '#586e75'  # base01
 mogef:
   emblem_shape: ☰
   emblem_colors: {1: '#4e9fd7', 2: '#ac1f8d', 3: '#bcbe50'}
@@ -58,15 +45,6 @@ mogef:
   link_color: '#4e9fd7'
   vlink_color: '#989ccb'
   copyright_color: '#bcbe50'
-nexon:
-  emblem_shape: ☲
-  emblem_colors: {1: '#02203A', 2: '#02203A', 3: '#B6D805', 5: '#129AD8'}
-  background_color: '#fff'
-  title_color: '#000'
-  text_color: '#000'
-  link_color: 'rgb(10, 160, 210)'
-  vlink_color: 'rgb(0, 110, 160)'
-  copyright_color: '#000'
 facebook:
   emblem_shape: ☲
   emblem_colors: {1: '#3b5999', 2: '#3b5999', 3: '#3b5999', 5: '#3b5999'}
@@ -147,15 +125,6 @@ github:
   text_color: '#333'
   link_color: '#4183C4'
   copyright_color: '#777'
-material:
-  emblem_shape: ☲
-  emblem_colors: {1: '#8BC34A', 2: '#03A9F4', 3: '#E91E63', 5: '#FFC107'}
-  background_color: '#f9f9f9'
-  title_color: '#673AB7'
-  text_color: 'rgba(0,0,0,.87)'
-  link_color: '#2196F3'
-  vlink_color: '#3F51B5'
-  copyright_color: 'rgba(0,0,0,.54)'
 mit:
   emblem_shape: ☶
   emblem_colors: {1: '#000', 2: '#000', 3: '#000', 5: '#a31f34', 6: '#000'}
