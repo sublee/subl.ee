@@ -133,6 +133,28 @@ mit:
   text_color: '#222'
   link_color: '#a31f34'
   copyright_color: '#333'
+spoqa:
+  emblem_shape: ☲
+  emblem_colors: {1: '#4c80f1', 2: '#4c80f1', 3: '#4c80f1', 5: '#4c80f1'}
+  background_color: '#fff'
+  text_color: '#4d5256'
+  link_color: '#4c80f1'
+  vlink_color: '#2c5ae9'
+  copyright_color: '#a9afb3'
+  font_weights: [300, 400]
+  css: |
+    h1, h2 {
+      font-weight: 300;
+    }
+    h1 {
+      font-size: 2.5em;
+    }
+    h2 {
+      font-size: 1.5em;
+    }
+    .profile h2 {
+      font-size: 1.25em;
+    }
 dodo:
   emblem_shape: ☲
   emblem_colors: {1: '#8ab0e6', 2: '#f9e588', 3: '#8ab0e6', 5: '#8ab0e6'}
