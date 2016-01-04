@@ -74,16 +74,43 @@ facebook:
   title_color: '#1e2d4c'
   text_color: '#141823'
   link_color: '#3b5998'
-  copyright_color: '#1e2d4c'
-vlaah:
-  emblem_shape: ☱
-  emblem_colors: {1: '#6c0', 2: '#6c0', 3: '#f45', 4: '#f45'}
-  background_color: '#fff'
-  title_color: '#f45'
-  text_color: '#555'
-  link_color: '#6c0'
-  vlink_color: '#8a6'
-  copyright_color: '#999'
+  copyright_color: '#9197a3'
+  css: |
+    main > p, main > ul, main > dl {
+      margin-left: -.8rem;
+      margin-right: -.8rem;
+      padding: .8rem;
+      border: 1px solid;
+      border-radius: 3px;
+      border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+      background: #fff;
+    }
+    main > dl > dt:first-child {
+      margin-top: 0 !important;
+    }
+    hr {
+      display: none;
+    }
+    .profile main > p, .profile main > ul, .profile main > dl {
+      padding-top: .5rem;
+      padding-bottom: .5rem;
+    }
+    .resume .emblem {
+      border: 1px solid rgba(0, 0, 0, .2);
+      border-radius: 2px;
+      margin: 0;
+      padding: 4px;
+      background:
+        url(//gravatar.com/avatar/c55dd7c0a68acd97963da84a3175cc66?s=90)
+        no-repeat center;
+      background-color: #fff;
+    }
+    .resume .emblem div {
+      display: none;
+    }
+    .resume .emblem-wrap {
+      padding-right: 6px;
+    }
 mearie:
   emblem_shape: ☰
   emblem_colors: {1: '#397b9c', 2: '#397b9c', 3: '#397b9c'}

@@ -204,6 +204,7 @@ abbr, acronym {
 
 .profile {
   white-space: nowrap;
+  {{ rem('max-width', 35) }}
 }
 
 .profile main {
@@ -298,3 +299,5 @@ abbr, acronym {
     padding-right: 48px;
   }
 }
+
+{{ css }}
