@@ -235,10 +235,6 @@ abbr, acronym {
 
 /* error */
 
-.error h1 {
-  color: {{ link_color }};
-}
-
 .error footer {
   margin-top: 0;
 }
@@ -251,20 +247,26 @@ abbr, acronym {
   padding: 0 0.5em;
 }
 
-/* resume */
+/* doc */
 
-.resume .emblem-wrap {
+.doc .emblem-wrap {
   position: absolute;
   right: 0;
   margin: 0.25em;
   overflow: hidden;
 }
 
-.resume h1 {
+.doc h1 {
   {{ rem('margin-right', 1.5) }}
   padding-right: 96px;
   white-space: nowrap;
 }
+
+{% if calm %}
+  .doc h1, .doc h2 {
+    color: inherit;
+  }
+{% endif %}
 
 /* responsive layout */
 
@@ -276,8 +278,12 @@ abbr, acronym {
 
 @media screen and (max-width: 480px) {
   body {
-    margin: 2em 2%;
+    margin: 1em 2% 2em;
     width: auto;
+  }
+
+  .profile, .error {
+    margin-top: 2em;
   }
 
   .profile {
@@ -292,20 +298,16 @@ abbr, acronym {
     display: none;
   }
 
-  .resume {
-    margin-top: 1em;
-  }
-
-  .resume .emblem-wrap {
+  .emblem-wrap {
     width: 45px;
   }
 
-  .resume .emblem {
+  .emblem {
     zoom: 0.5;
     margin: 0;
   }
 
-  .resume h1 {
+  h1 {
     padding-right: 48px;
   }
 }

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block class %}{{ doc_name }}{% endblock %}
+{% block class %}{{ doc_name }} {{ classes }}{% endblock %}
 
 {% block head %}
   {{ meta(keywords, name='keywords') if keywords }}

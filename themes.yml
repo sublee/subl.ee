@@ -18,6 +18,7 @@ sublee-light:
   link_color: '#4ac'
   vlink_color: '#589'
   copyright_color: '#677'
+  calm: true
 sublee-dark:
   emblem_shape: ☲
   emblem_colors: {1: '#e34', 2: '#e34', 3: '#e34', 5: '#fc3'}
@@ -63,17 +64,13 @@ facebook:
       border-color: #e5e6e9 #dfe0e4 #d0d1d5;
       background: #fff;
     }
-    main > dl > dt:first-child {
-      margin-top: 0 !important;
-    }
-    hr {
-      display: none;
-    }
+    main > dl > dt:first-child { margin-top: 0 !important; }
+    hr { display: none; }
     .profile main > p, .profile main > ul, .profile main > dl {
       padding-top: .5rem;
       padding-bottom: .5rem;
     }
-    .resume .emblem {
+    .doc .emblem {
       border: 1px solid rgba(0, 0, 0, .2);
       border-radius: 2px;
       margin: 0;
@@ -83,12 +80,8 @@ facebook:
         no-repeat center;
       background-color: #fff;
     }
-    .resume .emblem div {
-      display: none;
-    }
-    .resume .emblem-wrap {
-      padding-right: 6px;
-    }
+    .doc .emblem div { display: none; }
+    .doc .emblem-wrap { padding-right: 6px; }
 mearie:
   emblem_shape: ☰
   emblem_colors: {1: '#397b9c', 2: '#397b9c', 3: '#397b9c'}
