@@ -10,7 +10,7 @@
 {% set font = {
   'family': 'Roboto Slab',
   'default': 400,
-  'title': 700,
+  'title': 700 if title_color == text_color else 400,
 }|update(font) %}
 
 @import url(//fonts.googleapis.com/css?family={{
@@ -61,16 +61,17 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, dl, hr {
   {{ rem('margin-bottom', 1) }};
 }
 
-h1 {
+h1, h2 {
   font-weight: {{ font.title }};
-  font-size: 2em;
   color: {{ title_color }};
 }
 
+h1 {
+  font-size: 2em;
+}
+
 h2 {
-  font-weight: {{ font.title if title_color == text_color else font.default }};
   font-size: 1.25em;
-  color: {{ title_color }};
 }
 
 h1:target, h2:target, h3:target, h4:target, h5:target, h6:target {
