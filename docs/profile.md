@@ -8,7 +8,7 @@ Heungsub Lee
 I am
 ----
 
-Heungsub Lee <[sub@subl.ee][]\>, a game development engineer
+Heungsub Lee <[sub@subl.ee][]\>, a game server architect
 <br />
 at [What! Studio][] in [Nexon][] and also an [open source][] enthusiast.
 <br />
