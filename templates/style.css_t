@@ -6,11 +6,11 @@
   {{ prop }}: {{ rem }}rem;
 {% endmacro %}
 
-{% set title_color = title_color|d(text_color) %}
+{% set epic_color = epic_color|d(text_color) %}
 {% set font = {
   'family': 'Roboto Slab',
   'default': 400,
-  'title': 700 if title_color == text_color else 400,
+  'title': 400,
 }|update(font) %}
 
 @import url(//fonts.googleapis.com/css?family={{
@@ -63,10 +63,15 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, dl, hr {
 
 h1, h2 {
   font-weight: {{ font.title }};
-  color: {{ title_color }};
+  {% if not epic_doc %}
+    color: {{ epic_color }};
+  {% endif %}
 }
 
 h1 {
+  {{ rem('margin-right', 1.5) }}
+  padding-right: 96px;
+  white-space: nowrap;
   font-size: 2em;
 }
 
@@ -214,6 +219,31 @@ abbr, acronym {
   {% endif %}
 {% endfor %}
 
+/* epic layout */
+
+.-epic main {
+  font-size: 1.1em;
+}
+
+.-epic header {
+  {{ rem('margin-bottom', 2) }};
+}
+
+.-epic h2 {
+  margin-bottom: 0;
+  font-size: 1em;
+  color: {{ epic_color }};
+}
+
+/* doc layout */
+
+.-doc .emblem-wrap {
+  position: absolute;
+  right: 0;
+  margin: 0.25em;
+  overflow: hidden;
+}
+
 /* profile */
 
 .profile {
@@ -221,21 +251,8 @@ abbr, acronym {
   {{ rem('max-width', 35) }}
 }
 
-.profile main {
-  font-size: 1.1em;
-}
-
-.profile header {
-  {{ rem('margin-bottom', 2) }};
-}
-
 .profile h1 {
   display: none;
-}
-
-.profile h2 {
-  margin-bottom: 0;
-  font-size: 1em;
 }
 
 /* error */
@@ -252,27 +269,6 @@ abbr, acronym {
   padding: 0 0.5em;
 }
 
-/* doc */
-
-.doc .emblem-wrap {
-  position: absolute;
-  right: 0;
-  margin: 0.25em;
-  overflow: hidden;
-}
-
-.doc h1 {
-  {{ rem('margin-right', 1.5) }}
-  padding-right: 96px;
-  white-space: nowrap;
-}
-
-{% if calm %}
-  .doc h1, .doc h2 {
-    color: inherit;
-  }
-{% endif %}
-
 /* responsive layout */
 
 @media screen and (max-width: 50rem) {
@@ -287,29 +283,29 @@ abbr, acronym {
     width: auto;
   }
 
-  .profile, .error {
+  .-epic {
     margin-top: 2em;
+  }
+
+  .-epic main {
+    font-size: 1em;
+  }
+
+  .-doc .emblem-wrap {
+    width: 45px;
+  }
+
+  .-doc .emblem {
+    zoom: 0.5;
+    margin: 0;
   }
 
   .profile {
     white-space: normal;
   }
 
-  .profile main {
-    font-size: 1em;
-  }
-
   .hard-returns br {
     display: none;
-  }
-
-  .emblem-wrap {
-    width: 45px;
-  }
-
-  .emblem {
-    zoom: 0.5;
-    margin: 0;
   }
 
   h1 {

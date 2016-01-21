@@ -1,5 +1,4 @@
 Title: Résumé: Heungsub Lee
-Classes: doc
 
 Heungsub Lee
 ============
