@@ -18,7 +18,7 @@ sublee-light:
   link_color: '#4ac'
   vlink_color: '#589'
   copyright_color: '#677'
-  epic_doc: true
+  plain_doc: true
 sublee-dark:
   emblem_shape: ☲
   emblem_colors: {1: '#e34', 2: '#e34', 3: '#e34', 5: '#fc3'}

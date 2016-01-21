@@ -63,7 +63,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, dl, hr {
 
 h1, h2 {
   font-weight: {{ font.title }};
-  {% if not epic_doc %}
+  {% if not plain_doc %}
     color: {{ epic_color }};
   {% endif %}
 }
