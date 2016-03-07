@@ -108,12 +108,12 @@ ul li {
 ul li:before {
   position: absolute;
   left: 0;
-  /* bullet: http://www.fileformat.info/info/unicode/char/2022/index.htm */
+  /* Bullet: http://www.fileformat.info/info/unicode/char/2022/index.htm */
   content: '\2022';
   color: {{ copyright_color }};
 }
 
-/* ie7 can't handle :before pseudo-element */
+/* IE7 can't handle :before pseudo-element */
 *:first-child+html ul li {
   list-style: disc;
   margin-left: 0.8em;
@@ -176,7 +176,11 @@ abbr, acronym {
   cursor: help;
 }
 
-/* emblem */
+i {
+  color: {{ epic_color }};
+}
+
+/* Emblem */
 
 .emblem {
   position: relative;
@@ -219,7 +223,7 @@ abbr, acronym {
   {% endif %}
 {% endfor %}
 
-/* epic layout */
+/* Epic layout */
 
 .-epic main {
   font-size: 1.1em;
@@ -235,7 +239,7 @@ abbr, acronym {
   color: {{ epic_color }};
 }
 
-/* doc layout */
+/* Doc layout */
 
 .-doc .emblem-wrap {
   position: absolute;
@@ -244,7 +248,7 @@ abbr, acronym {
   overflow: hidden;
 }
 
-/* profile */
+/* Profile */
 
 .profile {
   white-space: nowrap;
@@ -255,13 +259,13 @@ abbr, acronym {
   display: none;
 }
 
-/* error */
+/* Error */
 
 .error footer {
   margin-top: 0;
 }
 
-/* themes */
+/* Themes */
 
 .themes a.selected {
   color: {{ background_color }};
@@ -269,7 +273,7 @@ abbr, acronym {
   padding: 0 0.5em;
 }
 
-/* responsive layout */
+/* Responsive layout */
 
 @media screen and (max-width: 50rem) {
   body {
