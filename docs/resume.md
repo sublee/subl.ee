@@ -15,20 +15,57 @@ Web Sites {: .label }
 
 ---
 
+Interests
+---------
+
+- Distributed game server architecture on a cloud infrastructure.
+- Efficient development process.
+- Free and open source software.
+
+Skills
+------
+
+Programming Languages {: .label }
+: Python (expert), Bash, C#, Go, Node.js, C
+  {: .attr }
+
+Back-end Technologies {: .label }
+: ØMQ, AWS, Docker, etcd, gevent, Google App Engine, Upstart, Fabric, Linux
+  {: .attr }
+
+Databases or Cache Storages {: .label }
+: Couchbase, Redis, PostgreSQL, SQLite, MongoDB
+  {: .attr }
+
+Test Engineering {: .label }
+: py.test, GitLab CI, Travis CI
+  {: .attr }
+
+Web Development {: .label }
+: Flask, Requests, jQuery, socket.io, HTML5/CSS3, Nginx, Gunicorn
+  {: .attr }
+
+Tools {: .label }
+: Vim, Visual Studio, Git, Plastic SCM, Mercurial, Visio, VirtualBox
+  {: .attr }
+{^ .attrs }
+
+---
+
 Work Experience
 ---------------
 
 Game Server Architect {: .label }
 What! Studio in [Nexon][], 2013--
-:   Developing <cite>[Durango][]</cite>, a high-quality mobile MMORPG which is
-    directed by Eunseok Yi, the former director of <cite>[Vindictus][]</cite>.
+:   Developing <cite>[Durango][]</cite>, a high-quality mobile MMORPG.
     {: .note }
-:   Developing a flexible distributed MMORPG server to achieve
-    high-availability of <cite>[Durango][]</cite>.  Leading the game server
+:   Designing and implementing the architecture of a flexible distributed
+    MMORPG server to achieve high-availability of the game service.  Building a
+    development process and pipelines for the studio.  Leading the game server
     engineers.
 
-    Using Python, C#, C, Cython, ØMQ, MsgPack, Couchbase, Redis, PostgreSQL,
-    Unity3D, Git, PlasticSCM, Ubuntu, and AWS.
+    Using Python, C#, C, Cython, ØMQ, MsgPack, Couchbase, etcd, Redis,
+    PostgreSQL, Unity3D, Git, PlasticSCM, Fabric, Docker, Ubuntu, and AWS.
 
 Game Development Engineer {: .label }
 Team Lupin in [Nexon][], 2011--2013
@@ -43,19 +80,19 @@ Team Lupin in [Nexon][], 2011--2013
     [TrueSkill][].  Implemented a matchmaker for 4v4 or free-for-all racing
     games.
 
-    Used Python, Redis as a message queue, Couchbase, MongoDB, Unity3D,
+    Used Python, Redis as a message broker, Couchbase, MongoDB, Unity3D,
     Mercurial, Ubuntu, and AWS.
 
 Full Stack Web Developer {: .label }
 [Npine][], 2008--2011
-:   Providing stock images on <cite>[Iclickart][]</cite>.
+:   Supplies stock images for business on <cite>[Iclickart][]</cite>.
     {: .note }
 :   Developed a web server framework adapts the MVC pattern by PHP5.  Made and
     maintained web sites where provide stock images including
     <cite>[Iclickart][]</cite> by the own framework.  Maintained physical Linux
     machines in a data center.
 
-    Supervised the software engineering team.
+    Led the software engineering team.
 
 Front-end Web Developer {: .label }
 [Lunant][], 2008--2011
@@ -130,39 +167,6 @@ Education
 ---------
 
 Computer Software, [Kwangwoon University][kw], 2008
-
----
-
-Skills
-------
-
-Programming Languages {: .label }
-: Python (expert), C#, Node.js, Bash, Go, C
-  {: .attr }
-
-Back-end Technologies {: .label }
-: ØMQ, gevent, AWS, Google App Engine, Upstart, Fabric, Linux
-  {: .attr }
-
-Databases {: .label }
-: Couchbase, Redis, PostgreSQL, SQLite, MongoDB
-  {: .attr }
-
-Web Development {: .label }
-: Flask, Requests, jQuery, socket.io, HTML5/CSS3, Nginx, Gunicorn
-  {: .attr }
-
-Tools {: .label }
-: Vim, Visual Studio, Git, Plastic SCM, Mercurial, Visio, VirtualBox
-  {: .attr }
-{^ .attrs }
-
-Interests
----------
-
-- Free and open source software.
-- Synchronous or asynchronous multiplayer games.
-- Distributed system architecture on a cloud infrastructure.
 
 [profiling]: https://github.com/what-studio/profiling
 [htop]: http://hisham.hm/htop
