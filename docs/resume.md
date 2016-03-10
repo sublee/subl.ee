@@ -8,7 +8,8 @@ Email {: .label }
   {: .attr }
 
 Web Sites {: .label }
-: [Homepage](/), [GitHub Profile](https://github.com/sublee),
+: [Homepage](http://subl.ee/),
+  [GitHub Profile](https://github.com/sublee),
   [LinkedIn Profile](https://linkedin.com/in/sublee)
   {: .attr }
 {^ .attrs }
@@ -167,6 +168,7 @@ Education
 ---------
 
 Computer Software, [Kwangwoon University][kw], 2008
+-- Completed the first year and left in mid course.
 
 [profiling]: https://github.com/what-studio/profiling
 [htop]: http://hisham.hm/htop
