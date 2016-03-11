@@ -137,7 +137,7 @@ dt {
 }
 
 dd, dd p, dd ul, dd ol, dd dl, dd hr {
-  {{ rem('margin-top', 0.4) }}
+  {{ rem('margin-top', 0.6) }}
 }
 
 dt.label {
@@ -150,6 +150,10 @@ dt.label {
 dl.attrs dt.label {
   {{ rem('margin-top', 0.6) }}
   margin-bottom: 0;
+}
+
+dl.attrs dd {
+  margin-top: 0;
 }
 
 dt.label + dt {
