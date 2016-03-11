@@ -128,19 +128,16 @@ dd.attr, dd.note {
   margin-left: 0;
 }
 
-dt, dd, dd p, dd ul, dd ol, dd dl, dd hr {
-  {{ rem('margin-top', 1) }}
+dt, dd p, dd ul, dd ol, dd dl, dd hr {
   margin-bottom: 0;
 }
 
-dd p {
-  {{ rem('margin-top', 0.6) }}
+dt {
+  {{ rem('margin-top', 1) }}
 }
 
-dd.note {
-  margin-top: 0;
-  {{ rem('font-size', 0.8) }}
-  font-style: italic;
+dd, dd p, dd ul, dd ol, dd dl, dd hr {
+  {{ rem('margin-top', 0.4) }}
 }
 
 dt.label {
@@ -150,8 +147,19 @@ dt.label {
   line-height: 1;
 }
 
+dl.attrs dt.label {
+  {{ rem('margin-top', 0.6) }}
+  margin-bottom: 0;
+}
+
 dt.label + dt {
   {{ rem('margin-top', 1) }}
+}
+
+dd.note {
+  margin-top: 0;
+  {{ rem('font-size', 0.8) }}
+  font-style: italic;
 }
 
 hr {
@@ -319,6 +327,7 @@ i {
     font-size: 9pt;
   }
   body {
+    size: auto;
     margin: 0;
     max-width: none;
     color: black;
@@ -343,12 +352,12 @@ i {
   a:link, a:visited {
     color: black;
   }
-  a[href^=http]:after {
-    content: '(' attr(href) ')';
-    font-size: 0.8em;
-    font-weight:normal;
-    color: gray;
-  }
+  /* a[href^=http]:after { */
+  /*   content: '(' attr(href) ')'; */
+  /*   font-size: 0.8em; */
+  /*   font-weight:normal; */
+  /*   color: gray; */
+  /* } */
 }
 
 {{ css }}
