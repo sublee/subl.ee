@@ -136,7 +136,7 @@ dt {
   {{ rem('margin-top', 1) }}
 }
 
-dd, dd p, dd ul, dd ol, dd dl, dd hr {
+dd, dd p, dd ul, dd ol, dd dl, dd hr, dl.attrs dt.label {
   {{ rem('margin-top', 0.6) }}
 }
 
@@ -148,7 +148,6 @@ dt.label {
 }
 
 dl.attrs dt.label {
-  {{ rem('margin-top', 0.6) }}
   margin-bottom: 0;
 }
 
@@ -324,6 +323,9 @@ i {
 /* Print Layout */
 
 @media print {
+  @page {
+    margin: 5mm;
+  }
   * {
     line-height: 1.6;
   }
@@ -331,7 +333,6 @@ i {
     font-size: 9pt;
   }
   body {
-    size: auto;
     margin: 0;
     max-width: none;
     color: black;
@@ -340,12 +341,12 @@ i {
   h1, h2, .-epic h2 {
     color: black;
   }
+  h1 {
+    font-size: 1.5em;
+  }
   hr {
     height: 0;
     border-bottom: solid 1pt black;
-  }
-  dt, dd, dd p, dd ul, dd ol, dd dl, dd hr {
-    margin-top: 0.7em;
   }
   dt.label {
     color: gray;

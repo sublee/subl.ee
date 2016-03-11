@@ -174,12 +174,9 @@ Computer Software, [Kwangwoon University][kw], 2008
 [hangulize]: http://hangulize.org/
 [hangulize-idea]: http://iceager.egloos.com/2610028
 [energy]: http://pythonhosted.org/energy
-[ranking]: http://pythonhosted.org/ranking
 [flask-autoindex]: http://pythonhosted.org/Flask-AutoIndex
 [zeronimo]: https://github.com/sublee/zeronimo
 [lets]: https://github.com/sublee/lets
-[unity-cosocket]: https://github.com/sublee/unity-cosocket
-[zmqproxy]: https://github.com/sublee/zmqproxy
 [jdoctest]: http://lunant.net/jdoctest
 [me2virus]: https://github.com/sublee/me2virus
 [me2day]: http://en.wikipedia.org/wiki/Me2day
