@@ -141,15 +141,11 @@ Open Source Experience
 Others
 :   - [Zeronimo][] -- A distributed RPC system based on ØMQ.
     - [Lets][] -- Several utilities for gevent.
-    - [zmqproxy][] -- A command-line tool which runs a ØMQ broker
-                      written in Go.
-    - [Unity-Cosocket][] -- Sockets for Unity3D coroutine.
     - [Energy][] -- Energy system for social games.
-    - [Ranking][] -- A library for ranking collection.
     - [Flask-AutoIndex][] -- mod_autoindex for Flask.
-    - [Me2virus][] -- An XSS attack on [Me2day][].  When a user looks an
-                      infected post, a new infected post will be written on the
-                      user's wall.
+    - [Me2virus][] -- An XSS attack on [Me2day][], a social network service.
+                      When a user looks an infected post, a new infected post
+                      was written on the user's wall.
 
 Contributed
 :   [etcd#4320](https://github.com/coreos/etcd/pull/4320),
