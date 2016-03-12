@@ -136,12 +136,15 @@ dt {
   {{ rem('margin-top', 1) }}
 }
 
+dt + dt {
+  margin-top: 0;
+}
+
 dd, dd p, dd ul, dd ol, dd dl, dd hr, dl.attrs dt.label {
   {{ rem('margin-top', 0.6) }}
 }
 
 dt.label {
-  {{ rem('margin-bottom', -1) }}
   {{ rem('font-size', 0.8) }}
   color: {{ copyright_color }};
   line-height: 1;
@@ -153,10 +156,6 @@ dl.attrs dt.label {
 
 dl.attrs dd {
   margin-top: 0;
-}
-
-dt.label + dt {
-  {{ rem('margin-top', 1) }}
 }
 
 dd.note {
