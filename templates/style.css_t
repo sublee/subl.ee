@@ -128,11 +128,12 @@ dd.attr, dd.note {
   margin-left: 0;
 }
 
-dt, dd p, dd ul, dd ol, dd dl, dd hr {
+dt, dd p, dd ul, dd ol, dd dl, dd hr, dl.attrs dt.label {
+  {{ rem('margin-top', 0.6) }}
   margin-bottom: 0;
 }
 
-dt {
+dl, dt, dd {
   {{ rem('margin-top', 1) }}
 }
 
@@ -140,9 +141,11 @@ dt + dt {
   margin-top: 0;
 }
 
+/*
 dd, dd p, dd ul, dd ol, dd dl, dd hr, dl.attrs dt.label {
-  {{ rem('margin-top', 0.6) }}
+  {{ rem('margin-top', 0.8) }}
 }
+*/
 
 dt.label {
   {{ rem('font-size', 0.8) }}
@@ -329,13 +332,14 @@ i {
     line-height: 1.6;
   }
   html {
-    font-size: 9pt;
+    font-size: 12pt;
   }
   body {
     margin: 0;
     max-width: none;
     color: black;
-    background: transparent;
+    background: white;
+    /* font-family: serif; */
   }
   h1, h2, .-epic h2 {
     color: black;
