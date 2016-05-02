@@ -206,4 +206,5 @@ Computer Software, [Kwangwoon University][kw], 2008
 *[API]: Application Program Interface
 *[RPC]: Remote Procedure Call
 *[XSS]: Cross-site Scripting
-*[NDC]: Nexon Developers Conference
+*[NDC16]: Nexon Developers Conference 2016
+*[NDC14]: Nexon Developers Conference 2014
