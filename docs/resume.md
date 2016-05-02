@@ -157,7 +157,7 @@ Contributed
 Invited Talks
 -------------
 
-- [The server architecture of Durango Vol. 2][ndc16-session] at NDC16 (Korean)
+- [The server architecture of Durango Vol. 2][ndc16-slide] at NDC16 (Korean)
 - [Profiling][pyconkr2015-slide] at PyCon KR 2015 (Korean)
 - [The server architecture of Durango][ndc14-slide] at NDC14 (Korean)
 
@@ -192,7 +192,7 @@ Computer Software, [Kwangwoon University][kw], 2008
 [npine]: http://en.npine.com/
 [iclickart]: http://iclickart.co.kr/
 [lunant]: http://lunant.net/
-[ndc16-session]: http://j.mp/sub-ndc16
+[ndc16-slide]: http://www.slideshare.net/sublee/lt-vol-2
 [pyconkr2015-slide]: http://www.slideshare.net/sublee/profiling-52226374
 [ndc14-slide]: http://www.slideshare.net/sublee/spof-mmorpg
 [kw]: http://www.kw.ac.kr/
@@ -206,4 +206,4 @@ Computer Software, [Kwangwoon University][kw], 2008
 *[API]: Application Program Interface
 *[RPC]: Remote Procedure Call
 *[XSS]: Cross-site Scripting
-*[NDC14]: Nexon Developers Conference 2014
+*[NDC]: Nexon Developers Conference
