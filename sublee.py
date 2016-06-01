@@ -206,9 +206,14 @@ def render_error(error):
     ctx = make_context(error=error)
     return render_template('error.html', **ctx)
 for status in range(400, 420) + range(500, 506):
-    @app.errorhandler(status)
     def _error(error, status=status):
         return render_error(error), status
+    try:
+        app.errorhandler(status)(_error)
+    except:
+        # Ignore errors during registering an error handler.  KeyError occurs
+        # when handling 402 status code on Flask-0.11.
+        pass
     del _error
 
 
