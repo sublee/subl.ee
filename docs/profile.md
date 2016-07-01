@@ -21,8 +21,8 @@ More details are in my [résumé](/resume/).
 [Nexon]: http://nexon.com/
 [Open Source]: https://github.com/sublee
 
-I made (or am making)
----------------------
+I made or am making
+-------------------
 
 - [Durango][] at What! Studio in Nexon.
 - Kartrider Dash and Coin Rush series at Team Lupin in Nexon.
