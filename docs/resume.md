@@ -148,7 +148,8 @@ Others
                       was written on the user's wall.
 
 Contributed
-:   [couchbase-python-client#32](https://github.com/couchbase/couchbase-python-client/pull/32),
+:   [Babel#427](https://github.com/python-babel/babel/pull/427),
+    [couchbase-python-client#32](https://github.com/couchbase/couchbase-python-client/pull/32),
     [#33](https://github.com/couchbase/couchbase-python-client/pull/33),
     [etcd#4320](https://github.com/coreos/etcd/pull/4320),
     [Flask-0.10.1](https://github.com/mitsuhiko/flask/commit/6fca662),
