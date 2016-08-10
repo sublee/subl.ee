@@ -25,7 +25,7 @@
       var __theme__ = {{ theme|tojson }};
       var __themeSelected__ = false;
       var themeLink = document.querySelector('.theme');
-      var faviconLink = document.querySelector('link[rel="shortcut icon"]');
+      var faviconLink = document.querySelector('link[rel="icon"]');
       function getThemeURL(theme) {
         return '/style-' + theme + '.css';
       }
@@ -34,7 +34,7 @@
       }
       function isThemeLoaded() {
         var css = document.styleSheets[0];
-        return (__theme__ == parseThemeURL(css.href)) && css.cssRules;
+        return css && (__theme__ == parseThemeURL(css.href)) && css.cssRules;
       }
       function guessTheme() {
         var regex = /[?&#]theme=([^&#]+)/;
