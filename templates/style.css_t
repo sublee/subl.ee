@@ -1,6 +1,6 @@
 {# vim: set ft=css: #}
 
-{% set base_font_size = 16 %}
+{% set base_font_size = 17 %}
 {% macro rem(prop, rem) %}
   {{ prop }}: {{ (base_font_size * rem)|round|int }}px;
   {{ prop }}: {{ rem }}rem;
@@ -231,7 +231,7 @@ i {
 /* Epic Layout */
 
 .-epic main {
-  font-size: 1.1em;
+  font-size: 1.05em;
 }
 
 .-epic header {
