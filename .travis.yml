@@ -12,7 +12,7 @@ script:
 after_success:
 - | # deploy subl.ee
   export REPO="https://$GITHUB_TOKEN@github.com/sublee/subl.ee"
-  rm -rf .gh-pages && git clone -b gh-pages $REPO .gh-pages && cd .gh-pages
+  rm -rf .gh-pages && git clone -b gh-pages "$REPO" .gh-pages && cd .gh-pages
   git rm -r --ignore-unmatch *
   mv ../.frozen/* .
   echo subl.ee > CNAME
@@ -21,25 +21,9 @@ after_success:
   git commit -m "deploy subl.ee ($TRAVIS_COMMIT)"
   git push origin gh-pages > /dev/null 2>&1
 - | # deploy eelb.us
-  for css in *.css
-  do
-    echo 'html {
-      transform: scaleX(-1);
-      -webkit-transform: scaleX(-1);
-      -moz-transform: scaleX(-1);
-      -o-transform: scaleX(-1);
-      filter: FlipH;
-      -ms-filter: "FlipH";
-    }' >> $css
-  done
   for html in $(find . -name '*.html')
   do
-    echo '<script>
-      var _tmp = faviconRects.l;
-      faviconRects.l = faviconRects.r;
-      faviconRects.r = _tmp;
-      delete _tmp;
-    </script>' >> $html
+    sed -i '0,/<html/s/<html/\0 class="reversed"/' "$html"
   done
   echo eelb.us > CNAME
   git rm -r runker
