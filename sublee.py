@@ -5,7 +5,7 @@
 
    http://subl.ee/
 
-   :copyright: (c) 2013-2016 by Heungsub Lee
+   :copyright: (c) 2013-2017 by Heungsub Lee
    :license: Public Domain
 
 """
@@ -95,11 +95,14 @@ def is_splitted_trigram_bar(trigram, offset):
     return (ord(trigram) - 9776) & (1 << offset)
 
 
-app.jinja_env.globals.update(
-    zip=itertools.izip, minify_js=jinja_minify_js, meta=jinja_meta,
-    cdnjs=(lambda path: '//cdnjs.cloudflare.com/ajax/libs/' + path))
-app.jinja_env.filters.update(update=update_dict)
-app.jinja_env.tests.update(splitted_trigram_bar=is_splitted_trigram_bar)
+app.jinja_env.globals.update({
+    'zip': itertools.izip,
+    'minify_js': jinja_minify_js,
+    'meta': jinja_meta,
+    'cdnjs': (lambda path: '//cdnjs.cloudflare.com/ajax/libs/' + path),
+})
+app.jinja_env.filters.update({'update': update_dict})
+app.jinja_env.tests.update({'splitted_trigram_bar': is_splitted_trigram_bar})
 
 
 @app.after_request
