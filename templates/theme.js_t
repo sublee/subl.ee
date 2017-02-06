@@ -124,7 +124,7 @@ function initThemeSelection() {
       setTimeout(function() {
         // Re-draw the page.
         isThemeLoaded = function() {
-          return $body.css('opacity') == 1;
+          return $body.css('opacity') != 0;
         };
         $body.fadeIn();
         updateFavicon();
