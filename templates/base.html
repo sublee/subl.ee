@@ -128,7 +128,9 @@
             }
             setTimeout(function() {
               // Re-draw the page.
-              isThemeLoaded = function() { return true; };
+              isThemeLoaded = function() {
+                return $body.css('opacity') == 1;
+              };
               $body.fadeIn();
               updateFavicon();
             }, 10);
