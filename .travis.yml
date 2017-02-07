@@ -22,7 +22,7 @@ after_success:
   git add "$SHORT_COMMIT"
   python archives.py index .. > index.html
   git add index.html
-  git commit -m "Archive for archives.subl.ee ($TRAVIS_COMMIT)"
+  git commit -m "Archive https://archives.subl.ee/$SHORT_COMMIT"
   git push origin gh-pages > /dev/null 2>&1
   popd
   rm -rf subl.ee-archives
