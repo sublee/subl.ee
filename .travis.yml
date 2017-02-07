@@ -18,12 +18,9 @@ after_success:
   git clone "https://$GITHUB_TOKEN@github.com/sublee/subl.ee-archives"
   cp -r .frozen subl.ee-archives/"$SHORT_COMMIT"
   pushd subl.ee-archives
-  python preserve.py "$SHORT_COMMIT"
+  python archives.py preserve "$SHORT_COMMIT"
   git add "$SHORT_COMMIT"
-  echo '<ul>' > index.html
-  git -C .. --no-pager log --date=short \
-    --pretty=format:'<li><a href="%h">%h</a> (%ad)</li>' >> index.html
-  echo '</ul>' >> index.html
+  python archives.py index .. > index.html
   git add index.html
   git commit -m "Archive for archives.subl.ee ($TRAVIS_COMMIT)"
   git push origin gh-pages > /dev/null 2>&1
