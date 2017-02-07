@@ -18,7 +18,7 @@ after_success:
   echo subl.ee > CNAME
   git add --all
   git config user.name "Heungsub Lee" && git config user.email "sub@subl.ee"
-  git commit -m "deploy subl.ee ($TRAVIS_COMMIT)"
+  git commit -m "Deploy subl.ee ($TRAVIS_COMMIT)"
   git push origin gh-pages > /dev/null 2>&1
 - | # deploy eelb.us
   for html in $(find . -name '*.html')
@@ -26,7 +26,15 @@ after_success:
     sed -i '0,/<html/s/<html/\0 class="reversed"/' "$html"
   done
   echo eelb.us > CNAME
-  git rm -r runker
   git remote add eelbus "https://$GITHUB_TOKEN@github.com/sublee/eelb.us"
-  git commit -am "reverse for eelb.us ($TRAVIS_COMMIT)"
+  git commit -am "Reverse for eelb.us ($TRAVIS_COMMIT)"
   git push -f eelbus gh-pages > /dev/null 2>&1
+- | # archive at archives.subl.ee
+  SHORT_COMMIT="$(git rev-parse --short "$TRAVIS_COMMIT")"
+  git clone "https://$GITHUB_TOKEN@github.com/sublee/subl.ee-archives"
+  cp -r .frozen subl.ee-archives/"$SHORT_COMMIT"
+  pushd subl.ee-archives
+  python preserve.py "$SHORT_COMMIT"
+  git commit -am "Archive for archives.subl.ee ($TRAVIS_COMMIT)"
+  git push origin gh-pages > /dev/null 2>&1
+  popd
