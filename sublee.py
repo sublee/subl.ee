@@ -197,13 +197,6 @@ def css(theme):
     return res, 200, {'Content-Type': 'text/css'}
 
 
-@app.route('/runker/')
-def subleerunker():
-    """Frame wrapper of <Subleerunker>."""
-    res = render_template('subleerunker.html')
-    return res, 200, {'Content-Type': 'application/xhtml+xml'}
-
-
 def render_error(error):
     """The HTTP error page."""
     ctx = make_context(error=error)
