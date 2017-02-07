@@ -19,6 +19,10 @@ after_success:
   cp -r .frozen subl.ee-archives/"$SHORT_COMMIT"
   pushd subl.ee-archives
   python preserve.py "$SHORT_COMMIT"
+  echo '<ul>' > index.html
+  git -C .. log --date=short \
+    --pretty=format:'<li><a href="%h">%h</a> (%ad)</li>' >> index.html
+  echo '</ul>' >> index.html
   git commit -am "Archive for archives.subl.ee ($TRAVIS_COMMIT)"
   git push origin gh-pages > /dev/null 2>&1
   popd
