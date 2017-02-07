@@ -21,7 +21,7 @@ after_success:
   python preserve.py "$SHORT_COMMIT"
   git add "$SHORT_COMMIT"
   echo '<ul>' > index.html
-  git -C .. log --date=short \
+  git -C .. --no-pager log --date=short \
     --pretty=format:'<li><a href="%h">%h</a> (%ad)</li>' >> index.html
   echo '</ul>' >> index.html
   git add index.html
