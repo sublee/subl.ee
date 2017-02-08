@@ -34,8 +34,8 @@ sublee-legacy:
   background_color: '#fff'
   epic_color: '#000'
   text_color: '#333'
-  link_color: '#46a'
-  vlink_color: '#78a'
+  link_color: '#48d'
+  vlink_color: '#78b'
   copyright_color: '#999'
   font: {family: Lusitana, generic: serif}
 mogef:
