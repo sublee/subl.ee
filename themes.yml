@@ -170,4 +170,5 @@ naver:
   epic_color: '#00c73c'
   text_color: '#333'
   link_color: '#15b'
+  vlink_color: '#86a'
   copyright_color: '#999'
