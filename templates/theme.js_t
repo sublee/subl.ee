@@ -39,35 +39,49 @@ function guessTheme() {
 }
 
 function updateFavicon() {
-  if (!isThemeLoaded()) {
-    setTimeout(arguments.callee, 100);
-    return;
-  }
-  var favicon = document.createElement('canvas');
-  favicon.width = 16;
-  favicon.height = 16;
-  var ctx = favicon.getContext('2d');
-  var horizontalDirections = ['left', 'middle', 'right'];
-  for (var i = 0; i < horizontalDirections.length; ++i) {
-    var h = horizontalDirections[
-      reversed() ? horizontalDirections.length - i - 1 : i
-    ];
-    var col = document.querySelector('.emblem-' + h);
-    var topCell = col.querySelector('.emblem-top');
-    var bottomCell = col.querySelector('.emblem-bottom');
-    var left = 1 + i * 5;
-    ctx.fillStyle = getComputedStyle(topCell).backgroundColor;
-    if (bottomCell.offsetParent) {
-      // shape: i
-      ctx.fillRect(left, 1, 4, 7);
-      ctx.fillStyle = getComputedStyle(bottomCell).backgroundColor;
-      ctx.fillRect(left, 9, 4, 6);
+  try {
+    if (!isThemeLoaded()) {
+      throw 'retry';
+    }
+    var favicon = document.createElement('canvas');
+    favicon.width = 16;
+    favicon.height = 16;
+    var ctx = favicon.getContext('2d');
+    var horizontalDirections = ['left', 'middle', 'right'];
+    function rgbOnly(color) {
+      if (/^rgba/i.exec(color)) {
+        throw 'retry';
+      } else {
+        return color;
+      }
+    }
+    for (var i = 0; i < horizontalDirections.length; ++i) {
+      var h = horizontalDirections[
+        reversed() ? horizontalDirections.length - i - 1 : i
+      ];
+      var col = document.querySelector('.emblem-' + h);
+      var topCell = col.querySelector('.emblem-top');
+      var bottomCell = col.querySelector('.emblem-bottom');
+      var left = 1 + i * 5;
+      ctx.fillStyle = rgbOnly(getComputedStyle(topCell).backgroundColor);
+      if (bottomCell.offsetParent) {
+        // shape: i
+        ctx.fillRect(left, 1, 4, 7);
+        ctx.fillStyle = rgbOnly(getComputedStyle(bottomCell).backgroundColor);
+        ctx.fillRect(left, 9, 4, 6);
+      } else {
+        // shape: I
+        ctx.fillRect(left, 1, 4, 14);
+      }
+    }
+    faviconLink.href = favicon.toDataURL('image/icon');
+  } catch (err) {
+    if (err == 'retry') {
+      setTimeout(arguments.callee, 100);
     } else {
-      // shape: I
-      ctx.fillRect(left, 1, 4, 14);
+      throw err;
     }
   }
-  faviconLink.href = favicon.toDataURL('image/icon');
 }
 
 function selectTheme(theme) {
@@ -123,9 +137,7 @@ function initThemeSelection() {
       }
       setTimeout(function() {
         // Re-draw the page.
-        isThemeLoaded = function() {
-          return $body.css('opacity') != 0;
-        };
+        isThemeLoaded = function() {return true; };
         $body.fadeIn();
         updateFavicon();
       }, 10);
