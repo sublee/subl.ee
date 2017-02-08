@@ -145,15 +145,6 @@ spoqa:
     h1 { font-size: 2.5em; }
     h2 { font-size: 1.5em; }
     .profile h2 { font-size: 1.25em; }
-dodo:
-  emblem_shape: ☲
-  emblem_colors: {1: '#8ab0e6', 2: '#f9e588', 3: '#8ab0e6', 5: '#8ab0e6'}
-  background_color: '#fff'
-  epic_color: '#f29d61'
-  text_color: '#4f5259'
-  link_color: '#8ab0e6'
-  vlink_color: '#6585c1'
-  copyright_color: '#b0b6c2'
 twitter:
   emblem_shape: ☷
   emblem_colors: {1: '#1da1f2', 2: '#1da1f2', 3: '#1da1f2',
