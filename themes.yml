@@ -162,3 +162,12 @@ microsoft:
   link_color: '#0072c6'
   vlink_color: '#405fb5'
   copyright_color: '#969696'
+naver:
+  emblem_shape: ☷
+  emblem_shape: ☲
+  emblem_colors: {-1: '#00c73c'}
+  background_color: '#fff'
+  epic_color: '#00c73c'
+  text_color: '#333'
+  link_color: '#15b'
+  copyright_color: '#999'
