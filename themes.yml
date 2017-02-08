@@ -155,14 +155,14 @@ dodo:
   vlink_color: '#6585c1'
   copyright_color: '#b0b6c2'
 twitter:
-  emblem_shape: ☵
-  emblem_colors: {1: '#00b0ed', 2: '#00b0ed', 3: '#00b0ed',
-                  4: '#00b0ed', 5: '#00b0ed', 6: '#00b0ed'}
+  emblem_shape: ☷
+  emblem_colors: {1: '#1da1f2', 2: '#1da1f2', 3: '#1da1f2',
+                  4: '#1da1f2', 5: '#1da1f2', 6: '#1da1f2'}
   background_color: '#fff'
-  epic_color: '#292f33'
-  text_color: '#66767f'
-  link_color: '#55acee'
-  copyright_color: '#99aab5'
+  epic_color: '#14171a'
+  text_color: '#657786'
+  link_color: '#3b94d9'
+  copyright_color: '#657786'
 microsoft:
   emblem_shape: ☲
   emblem_colors: {1: '#f25022', 2: '#7fba00', 3: '#ffb900', 5: '#00a4ef'}
