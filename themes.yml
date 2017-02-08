@@ -49,7 +49,7 @@ mogef:
   copyright_color: '#bcbe50'
 facebook:
   emblem_shape: ☲
-  emblem_colors: {1: '#3b5999', 2: '#3b5999', 3: '#3b5999', 5: '#3b5999'}
+  emblem_colors: {-1: '#3b5999'}
   background_color: '#e9eaed'
   epic_color: '#1e2d4c'
   text_color: '#141823'
@@ -89,7 +89,7 @@ facebook:
     }
 mearie:
   emblem_shape: ☰
-  emblem_colors: {1: '#397b9c', 2: '#397b9c', 3: '#397b9c'}
+  emblem_colors: {-1: '#397b9c'}
   background_color: '#eee'
   epic_color: '#444'
   text_color: '#444'
@@ -117,7 +117,7 @@ google:
   copyright_color: '#aaa'
 github:
   emblem_shape: ☲
-  emblem_colors: {1: '#333', 2: '#333', 3: '#333', 5: '#333'}
+  emblem_colors: {-1: '#333'}
   background_color: '#fff'
   epic_color: '#333'
   text_color: '#333'
@@ -134,7 +134,7 @@ mit:
   copyright_color: '#333'
 spoqa:
   emblem_shape: ☲
-  emblem_colors: {1: '#4c80f1', 2: '#4c80f1', 3: '#4c80f1', 5: '#4c80f1'}
+  emblem_colors: {-1: '#4c80f1'}
   background_color: '#fff'
   text_color: '#4d5256'
   link_color: '#4c80f1'
@@ -147,8 +147,7 @@ spoqa:
     .profile h2 { font-size: 1.25em; }
 twitter:
   emblem_shape: ☷
-  emblem_colors: {1: '#1da1f2', 2: '#1da1f2', 3: '#1da1f2',
-                  4: '#1da1f2', 5: '#1da1f2', 6: '#1da1f2'}
+  emblem_colors: {-1: '#1da1f2'}
   background_color: '#fff'
   epic_color: '#14171a'
   text_color: '#657786'
