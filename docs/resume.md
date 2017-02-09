@@ -39,7 +39,7 @@ Databases or Cache Storages {: .label }
   {: .attr }
 
 Test Engineering {: .label }
-: py.test, GitLab CI, Travis CI
+: pytest, GitLab CI, Travis CI
   {: .attr }
 
 Web Development {: .label }
