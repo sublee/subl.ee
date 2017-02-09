@@ -54,7 +54,7 @@ body {
 }
 
 header {
-  {{ rem('margin-bottom', 1) }};
+  {{ rem('margin-bottom', 1.5) }};
   line-height: 1;
 }
 
