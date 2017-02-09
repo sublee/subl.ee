@@ -156,7 +156,6 @@ spoqa:
   css: |
     h1 { font-size: 2.5em; }
     h2 { font-size: 1.5em; }
-    .profile h2 { font-size: 1.25em; }
 twitter:
   emblem_shape: ☷
   emblem_colors: {0: '#1da1f2'}
