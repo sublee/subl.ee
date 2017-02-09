@@ -203,3 +203,19 @@ naver:
   link_color: '#15b'
   vlink_color: '#86a'
   copyright_color: '#999'
+lcd:
+  emblem_shape: ☲
+  emblem_colors: {0: '#332', 5: '#661'}
+  background_color: '#9a8'
+  text_color: '#332'
+  link_color: '#461'
+  vlink_color: '#661'
+  copyright_color: '#664'
+  font: {family: Share Tech Mono, generic: monospace}
+  css: |
+    .emblem i {
+      box-shadow: 2px 3px 1px rgba(0, 0, 0, 0.2);
+    }
+    body {
+      text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.2);
+    }
