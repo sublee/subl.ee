@@ -1,4 +1,4 @@
-# Emblem Shapes:
+# Emblem shapes:
 #
 # - ☰ 0 000 \u2630
 # - ☱ 1 100 \u2631
@@ -9,9 +9,22 @@
 # - ☶ 6 011 \u2636
 # - ☷ 7 111 \u2637
 #
+# Emblem plate numbers:
+#
+#   +---+ +---+ +---+   +---+ +---+ +---+   +---+ +---+ +---+
+#   |   | |   | |   |   |   | |   | |   |   |   | |   | |   |
+#   | 1 | | 2 | | 3 |   | 1 | | 2 | | 3 |   | 0 | | 0 | | 0 |
+#   |   | |   | |   |   |   | |   | |   |   |   | |   | |   |
+#   |   | +---+ |   |   +---+ +---+ +---+   +---+ +---+ +---+
+#   |   | +---+ |   |   +---+ +---+ +---+   +---+ +---+ +---+
+#   |   | |   | |   |   |   | |   | |   |   |   | |   | |   |
+#   |   | | 5 | |   |   | 4 | | 5 | | 6 |   | 0 | | 0 | | 0 |
+#   |   | |   | |   |   |   | |   | |   |   |   | |   | |   |
+#   +---+ +---+ +---+   +---+ +---+ +---+   +---+ +---+ +---+
+#
 sublee-light:
   emblem_shape: ☲
-  emblem_colors: {1: '#e56', 2: '#e56', 3: '#e56', 5: '#fd6'}
+  emblem_colors: {0: '#e56', 5: '#fd6'}
   background_color: '#fafaf8'
   epic_color: '#e56'
   text_color: '#344'
@@ -21,7 +34,7 @@ sublee-light:
   plain_doc: true
 sublee-dark:
   emblem_shape: ☲
-  emblem_colors: {1: '#e34', 2: '#e34', 3: '#e34', 5: '#fc3'}
+  emblem_colors: {0: '#e34', 5: '#fc3'}
   background_color: '#192222'
   epic_color: '#e34'
   text_color: '#788'
@@ -49,7 +62,7 @@ mogef:
   copyright_color: '#bcbe50'
 facebook:
   emblem_shape: ☲
-  emblem_colors: {-1: '#3b5999'}
+  emblem_colors: {0: '#3b5999'}
   background_color: '#e9eaed'
   epic_color: '#1e2d4c'
   text_color: '#141823'
@@ -89,7 +102,7 @@ facebook:
     }
 mearie:
   emblem_shape: ☰
-  emblem_colors: {-1: '#397b9c'}
+  emblem_colors: {0: '#397b9c'}
   background_color: '#eee'
   epic_color: '#444'
   text_color: '#444'
@@ -117,7 +130,7 @@ google:
   copyright_color: '#aaa'
 github:
   emblem_shape: ☲
-  emblem_colors: {-1: '#333'}
+  emblem_colors: {0: '#333'}
   background_color: '#fff'
   epic_color: '#333'
   text_color: '#333'
@@ -126,7 +139,7 @@ github:
   font: {family: Roboto Mono, generic: monospace}
 mit:
   emblem_shape: ☶
-  emblem_colors: {1: '#000', 2: '#000', 3: '#000', 5: '#a31f34', 6: '#000'}
+  emblem_colors: {0: '#000', 5: '#a31f34'}
   background_color: '#fff'
   epic_color: '#a31f34'
   text_color: '#222'
@@ -134,7 +147,7 @@ mit:
   copyright_color: '#333'
 spoqa:
   emblem_shape: ☲
-  emblem_colors: {-1: '#4c80f1'}
+  emblem_colors: {0: '#4c80f1'}
   background_color: '#fff'
   text_color: '#4d5256'
   link_color: '#4c80f1'
@@ -147,7 +160,7 @@ spoqa:
     .profile h2 { font-size: 1.25em; }
 twitter:
   emblem_shape: ☷
-  emblem_colors: {-1: '#1da1f2'}
+  emblem_colors: {0: '#1da1f2'}
   background_color: '#fff'
   epic_color: '#14171a'
   text_color: '#657786'
@@ -163,9 +176,8 @@ microsoft:
   vlink_color: '#405fb5'
   copyright_color: '#969696'
 naver:
-  emblem_shape: ☷
   emblem_shape: ☲
-  emblem_colors: {-1: '#00c73c'}
+  emblem_colors: {0: '#00c73c'}
   background_color: '#fff'
   epic_color: '#00c73c'
   text_color: '#333'
