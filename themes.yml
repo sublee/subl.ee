@@ -203,6 +203,19 @@ naver:
   link_color: '#15b'
   vlink_color: '#86a'
   copyright_color: '#999'
+blizzard:
+  emblem_shape: ☲
+  emblem_colors: {0: '#00adef'}
+  background_color: '#010e16'
+  epic_color: '#fff'
+  text_color: '#99cee0'
+  link_color: '#01b2f1'
+  copyright_color: '#366a80'
+  css: |
+    body {
+      background-image: linear-gradient(#002434, #010e16 40rem);
+      background-repeat: no-repeat;
+    }
 lcd:
   emblem_shape: ☲
   emblem_colors: {0: '#332', 5: '#661'}
@@ -213,9 +226,5 @@ lcd:
   copyright_color: '#664'
   font: {family: Share Tech Mono, generic: monospace}
   css: |
-    .emblem i {
-      box-shadow: 2px 3px 1px rgba(0, 0, 0, 0.2);
-    }
-    body {
-      text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.2);
-    }
+    body { text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.2); }
+    .emblem i { box-shadow: 2px 3px 1px rgba(0, 0, 0, 0.2); }

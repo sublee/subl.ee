@@ -53,6 +53,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+html, body {
+  min-height: 100%;
+}
+
 header {
   {{ rem('margin-bottom', 1.5) }};
   line-height: 1;
