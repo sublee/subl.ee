@@ -253,7 +253,7 @@ i {
 
 .-epic h2 {
   margin-bottom: 0;
-  font-size: 1em;
+  font-size: 1.2em;
   color: {{ epic_color }};
 }
 
