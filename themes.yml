@@ -206,6 +206,14 @@ blizzard:
       background-image: linear-gradient(#002434, #010e16 40rem);
       background-repeat: no-repeat;
     }
+couchbase:
+  emblem_shape: ☲
+  emblem_colors: {0: '#ec1e2c'}
+  background_color: '#fff'
+  text_color: '#000'
+  link_color: '#ec1e2c'
+  vlink_color: '#cc2a2e'
+  copyright_color: '#252525'
 lcd:
   emblem_shape: ☲
   emblem_colors: {0: '#332', 5: '#661'}
