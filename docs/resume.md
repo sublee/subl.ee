@@ -8,7 +8,7 @@ Email {: .label }
   {: .attr }
 
 Web Sites {: .label }
-: [Homepage](http://subl.ee/),
+: [Homepage](https://subl.ee/),
   [GitHub Profile](https://github.com/sublee),
   [LinkedIn Profile](https://linkedin.com/in/sublee)
   {: .attr }
