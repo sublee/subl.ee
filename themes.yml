@@ -22,6 +22,25 @@
 #   |   | |   | |   |   |   | |   | |   |   |   | |   | |   |
 #   +---+ +---+ +---+   +---+ +---+ +---+   +---+ +---+ +---+
 #
+# Spec:
+#
+# - emblem_shape - a bagua (팔괘) character which describes the layout of the
+#                  emblem plates.
+# - emblem_colors - a dict containing colors by their plate numbers.
+# - background_color
+# - epic_color - to be used for titles. (default: text_color)
+# - text_color
+# - link_color
+# - vlink_color (default: link_color)
+# - copyright_color
+# - plain_doc - set it to true to use text_color for titles in non-epic pages.
+# - font
+#   - family: the font name which can be downloaded from Google Fonts.
+#   - generic: serif|sans-serif|monospace
+#   - default - font weight for normal text.
+#   - title - font weight for title text.
+# - css - additional css code.
+#
 sublee-light:
   emblem_shape: ☲
   emblem_colors: {0: '#e56', 5: '#fd6'}
