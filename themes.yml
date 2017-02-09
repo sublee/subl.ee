@@ -60,16 +60,6 @@ sublee-dark:
   link_color: '#ca4'
   vlink_color: '#986'
   copyright_color: '#455'
-sublee-legacy:
-  emblem_shape: ☲
-  emblem_colors: {1: '#fa2', 2: '#e50', 3: '#b20', 5: '#fd4'}
-  background_color: '#fff'
-  epic_color: '#000'
-  text_color: '#333'
-  link_color: '#48d'
-  vlink_color: '#78b'
-  copyright_color: '#999'
-  font: {family: Lusitana, generic: serif}
 mogef:
   emblem_shape: ☰
   emblem_colors: {1: '#4e9fd7', 2: '#ac1f8d', 3: '#bcbe50'}
