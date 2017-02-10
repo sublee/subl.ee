@@ -19,9 +19,9 @@ Web Sites {: .label }
 Interests
 ---------
 
-- Distributed game server architecture on a cloud infrastructure.
-- Efficient development process.
-- Free and open source software.
+- Distributed game server architecture on a cloud infrastructure
+- Efficient development process
+- Free and open source software
 
 Skills
 ------
