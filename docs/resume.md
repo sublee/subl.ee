@@ -20,7 +20,7 @@ Interests
 ---------
 
 - Distributed game server architecture on a cloud infrastructure
-- Efficient development process
+- Efficient and happy development process
 - Free and open source software
 
 Skills
@@ -58,12 +58,12 @@ Work Experience
 
 Game Server Architect {: .label }
 What! Studio in [Nexon][], 2013--
-:   Developing <cite>[Durango][]</cite>, a high-quality mobile MMORPG.
+:   Developing <cite>[Durango][]</cite>, a seamless open world MMORPG.
     {: .note }
 :   Designing and implementing the architecture of a flexible distributed
     MMORPG server to achieve high-availability of the game service.  Building a
-    development process and pipelines for the studio.  Leading the game server
-    engineers.
+    development process and pipelines for the studio.  Leading game server
+    engineers and DevOps engineers.
 
     Using Python, C#, C, Cython, ØMQ, MsgPack, Couchbase, etcd, Redis,
     PostgreSQL, Unity3D, Git, PlasticSCM, Fabric, Docker, Ubuntu, and AWS.
@@ -74,12 +74,12 @@ Team Lupin in [Nexon][], 2011--2013
     <cite>[KartRider][]</cite>, a synchronous multiplayer casual racing game.
     {: .note }
 :   Designed and implemented a distributed game server architecture for
-    synchronous multiplayer games in <cite>KartRider Dash</cite> and
-    <cite>KartRider Coin Rush</cite>.
+    synchronous multiplayer games for the <cite>KartRider Dash</cite> and
+    <cite>KartRider Coin Rush</cite> series.
 
     Researched various rating systems such as [Elo][], [Glicko][], and
-    [TrueSkill][].  Implemented a matchmaker for 4v4 or free-for-all racing
-    games.
+    [TrueSkill][].  Implemented a simple matchmaker for 4v4 or free-for-all
+    racing games.
 
     Used Python, Redis as a message broker, Couchbase, MongoDB, Unity3D,
     Mercurial, Ubuntu, and AWS.
@@ -88,8 +88,8 @@ Full Stack Web Developer {: .label }
 [Npine][], 2008--2011
 :   Supplies stock images for business on <cite>[Iclickart][]</cite>.
     {: .note }
-:   Developed a web server framework adapts the MVC pattern by PHP5.  Made and
-    maintained web sites where provide stock images including
+:   Developed a web server framework adapting the MVC pattern by PHP5.  Made
+    and maintained web sites where provide stock images including
     <cite>[Iclickart][]</cite> by the own framework.  Maintained physical Linux
     machines in a data center.
 
@@ -113,10 +113,10 @@ Open Source Experience
 :   An interactive profiler for Python inspired by the Unity3D profiler.
     {: .note }
 
-:   Developed to find bottlenecks of the <cite>[Durango][]</cite> server by
+:   Developed to find bottlenecks in the <cite>[Durango][]</cite> server by
     Python and C.  Designed a handy interactive TUI like [htop][] by [Urwid][].
 
-    On GitHub, 2300+ people stared this project.  Also it was the 3rd daily
+    On GitHub, 2400+ people stared this project.  Also it was the 3rd daily
     trending repository at Sep 22, 2014.
 
 [TrueSkill][trueskill-py], 2012--
@@ -131,7 +131,7 @@ Open Source Experience
 :   Automatically transcribes a non-Korean word into Hangul.
     {: .note }
 
-:   Implemented the library which realizes [Brian Jongseong Park's idea]
+:   Implemented the library to realize [Brian Jongseong Park's idea]
     [hangulize-idea] by Python and complex regular expressions.
 
     Designed and implemented the Web service and RESTful API by [Flask][] on
@@ -139,17 +139,18 @@ Open Source Experience
     to translate undocumented proper nouns.
 
 Others
-:   - [Zeronimo][] -- A distributed RPC system based on ØMQ.
-    - [Lets][] -- Several utilities for gevent.
-    - [Energy][] -- Energy system for social games.
-    - [Flask-AutoIndex][] -- mod_autoindex for Flask.
+:   - [Zeronimo][] -- A distributed RPC system based on ØMQ
+    - [Lets][] -- Several utilities for gevent
+    - [Energy][] -- Energy system for social games
+    - [Flask-AutoIndex][] -- mod_autoindex for Flask
     - [Me2virus][] -- An XSS attack on [Me2day][], a social network service.
                       When a user looks an infected post, a new infected post
                       was written on the user's wall.
 
 Contributed
 :   [Babel#427](https://github.com/python-babel/babel/pull/427),
-    [couchbase-python-client#32](https://github.com/couchbase/couchbase-python-client/pull/32),
+    [couchbase-python-client#32](
+      https://github.com/couchbase/couchbase-python-client/pull/32) and
     [#33](https://github.com/couchbase/couchbase-python-client/pull/33),
     [etcd#4320](https://github.com/coreos/etcd/pull/4320),
     [Flask-0.10.1](https://github.com/mitsuhiko/flask/commit/6fca662),
@@ -183,7 +184,7 @@ Computer Software, [Kwangwoon University][kw], 2008
 [flask-autoindex]: http://pythonhosted.org/Flask-AutoIndex
 [zeronimo]: https://github.com/sublee/zeronimo
 [lets]: https://github.com/sublee/lets
-[jdoctest]: http://lunant.net/jdoctest
+[jdoctest]: https://lunant.github.com/jdoctest
 [me2virus]: https://github.com/sublee/me2virus
 [me2day]: http://en.wikipedia.org/wiki/Me2day
 [flask]: http://flask.pocoo.org/
