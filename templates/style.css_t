@@ -6,6 +6,7 @@
   {{ prop }}: {{ rem }}rem;
 {% endmacro %}
 
+{% set background_color = background_color|d('#fff') %}
 {% set epic_color = epic_color|d(text_color) %}
 {% set font = {
   'family': 'Hind',

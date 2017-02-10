@@ -63,7 +63,6 @@ sublee-dark:
 mogef:
   emblem_shape: ☰
   emblem_colors: {1: '#4e9fd7', 2: '#ac1f8d', 3: '#bcbe50'}
-  background_color: '#fff'
   epic_color: '#ac1f8d'
   text_color: '#666'
   link_color: '#4e9fd7'
@@ -131,7 +130,6 @@ travis:
 google:
   emblem_shape: ☲
   emblem_colors: {1: '#4285f4', 2: '#ea4335', 3: '#34a853', 5: '#fbbc05'}
-  background_color: '#fff'
   text_color: '#4d4d4d'
   link_color: '#4285f4'
   vlink_color: '#3f51b5'
@@ -139,7 +137,6 @@ google:
 mit:
   emblem_shape: ☶
   emblem_colors: {0: '#000', 5: '#a31f34'}
-  background_color: '#fff'
   epic_color: '#a31f34'
   text_color: '#222'
   link_color: '#a31f34'
@@ -147,7 +144,6 @@ mit:
 spoqa:
   emblem_shape: ☲
   emblem_colors: {0: '#4c80f1'}
-  background_color: '#fff'
   text_color: '#4d5256'
   link_color: '#4c80f1'
   vlink_color: '#2c5ae9'
@@ -159,7 +155,6 @@ spoqa:
 twitter:
   emblem_shape: ☷
   emblem_colors: {0: '#1da1f2'}
-  background_color: '#fff'
   epic_color: '#14171a'
   text_color: '#657786'
   link_color: '#3b94d9'
@@ -167,7 +162,6 @@ twitter:
 microsoft:
   emblem_shape: ☲
   emblem_colors: {1: '#f25022', 2: '#7fba00', 3: '#ffb900', 5: '#00a4ef'}
-  background_color: '#fff'
   epic_color: '#505050'
   text_color: '#505050'
   link_color: '#0072c6'
@@ -176,7 +170,6 @@ microsoft:
 naver:
   emblem_shape: ☲
   emblem_colors: {0: '#00c73c'}
-  background_color: '#fff'
   epic_color: '#00c73c'
   text_color: '#333'
   link_color: '#15b'
@@ -198,7 +191,6 @@ blizzard:
 couchbase:
   emblem_shape: ☲
   emblem_colors: {0: '#ec1e2c'}
-  background_color: '#fff'
   text_color: '#000'
   link_color: '#ec1e2c'
   vlink_color: '#cc2a2e'
