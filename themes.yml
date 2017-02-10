@@ -202,6 +202,15 @@ nexon:
   link_color: '#00a1e1'
   vlink_color: '#8bafd6'
   copyright_color: '#8aa'
+ycombinator:
+  emblem_shape: ☲
+  emblem_colors: {0: '#f26522'}
+  background_color: '#f6f6ef'
+  epic_color: '#f26522'
+  text_color: '#000'
+  link_color: '#268bd2'
+  copyright_color: '#999'
+  plain_doc: true
 lcd:
   emblem_shape: ☲
   emblem_colors: {0: '#332', 5: '#661'}
