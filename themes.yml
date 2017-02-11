@@ -211,6 +211,14 @@ ycombinator:
   link_color: '#268bd2'
   copyright_color: '#999'
   plain_doc: true
+gitlab:
+  emblem_shape: ☲
+  emblem_colors: {0: '#e24329', 2: '#fc6d26', 5: '#fca326'}
+  background_color: '#539'
+  epic_color: '#fff'
+  text_color: '#bad'
+  link_color: '#fca326'
+  copyright_color: '#e24329'
 lcd:
   emblem_shape: ☲
   emblem_colors: {0: '#332', 5: '#661'}
