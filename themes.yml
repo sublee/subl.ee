@@ -196,8 +196,8 @@ couchbase:
   vlink_color: '#cc2a2e'
   copyright_color: '#252525'
 nexon:
-  emblem_shape: ☷
-  emblem_colors: {0: '#0b2a4a', 4: '#00a1e1', 5: '#00a1e1', 6: '#c3d600'}
+  emblem_shape: ☳
+  emblem_colors: {0: '#0b2a4a', 3: '#c3d600', 4: '#00a1e1', 5: '#00a1e1'}
   text_color: '#231f20'
   link_color: '#00a1e1'
   vlink_color: '#8bafd6'
