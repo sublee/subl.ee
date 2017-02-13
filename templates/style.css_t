@@ -294,6 +294,7 @@ i {
 .themes li {
   width: 20%;
   padding-left: 0;
+  white-space: nowrap;
 }
 
 .themes li:before {
