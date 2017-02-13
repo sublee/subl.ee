@@ -239,3 +239,9 @@ heumtax:
   link_color: '#0076da'
   copyright_color: '#686868'
   font: {title: 600}
+python:
+  emblem_shape: ☲
+  emblem_colors: {0: '#3776ab', 3: '#ffd343', 5: '#ffd343'}
+  text_color: '#444'
+  link_color: '#3776ab'
+  copyright_color: '#999'
