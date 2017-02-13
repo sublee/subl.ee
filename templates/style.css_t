@@ -320,7 +320,7 @@ i {
 
 @media screen and (max-width: 480px) {
   body {
-    margin: 1em 2% 2em;
+    margin: 2em 2%;
     width: auto;
   }
 
@@ -338,6 +338,10 @@ i {
 
   .-epic main {
     font-size: 1em;
+  }
+
+  .-doc {
+    margin-top: 1em;
   }
 
   .-doc .emblem-wrap {
