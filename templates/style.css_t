@@ -286,24 +286,49 @@ i {
 
 /* Themes */
 
+.themes ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.themes li {
+  width: 20%;
+  padding-left: 0;
+}
+
+.themes li:before {
+  display: none;
+}
+
 .themes a.selected {
   color: {{ background_color }};
   background: {{ link_color }};
-  padding: 0 0.5em;
+  padding: 0 0.5em 0 0.2em;
+}
+
+.themes .favicon {
+  vertical-align: middle;
 }
 
 /* Responsive Layout */
 
 @media screen and (max-width: 50rem) {
-  body {
-    margin: 3em 5%;
-  }
+  body { margin: 3em 5%; }
+  .themes li { width: 25%; }
 }
 
 @media screen and (max-width: 480px) {
   body {
     margin: 1em 2% 2em;
     width: auto;
+  }
+
+  h1 {
+    padding-right: 48px;
+  }
+
+  .hard-returns br {
+    display: none;
   }
 
   .-epic {
@@ -327,12 +352,8 @@ i {
     white-space: normal;
   }
 
-  .hard-returns br {
-    display: none;
-  }
-
-  h1 {
-    padding-right: 48px;
+  .themes li {
+    width: 33%;
   }
 }
 
