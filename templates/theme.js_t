@@ -38,16 +38,34 @@ function guessTheme() {
   return theme || {{ theme|tojson }};
 }
 
+function generateFavicon(shape, colors) {
+  var favicon = document.createElement('canvas');
+  favicon.width = 16;
+  favicon.height = 16;
+  var ctx = favicon.getContext('2d');
+  var partitioned, left;
+  for (var i = 0; i < 3; ++i) {
+    partitioned = !!shape[i];
+    left = 1 + i * 5;
+    ctx.fillStyle = colors[i + 1] || colors[0];
+    if (partitioned) {
+      // shape: i
+      ctx.fillRect(left, 1, 4, 7);
+      ctx.fillStyle = colors[i + 4] || colors[0];
+      ctx.fillRect(left, 9, 4, 6);
+    } else {
+      // shape: I
+      ctx.fillRect(left, 1, 4, 14);
+    }
+  }
+  return favicon;
+}
+
 function updateFavicon() {
   try {
     if (!isThemeLoaded()) {
       throw 'retry';
     }
-    var favicon = document.createElement('canvas');
-    favicon.width = 16;
-    favicon.height = 16;
-    var ctx = favicon.getContext('2d');
-    var horizontalDirections = ['left', 'middle', 'right'];
     function rgbOnly(color) {
       if (/^rgba/i.exec(color)) {
         throw 'retry';
@@ -55,25 +73,23 @@ function updateFavicon() {
         return color;
       }
     }
-    for (var i = 0; i < horizontalDirections.length; ++i) {
-      var h = horizontalDirections[
-        reversed() ? horizontalDirections.length - i - 1 : i
-      ];
+    var shape = [];
+    var colors = {};
+    var horizontalDirections = ['left', 'middle', 'right'];
+    for (var i = 0; i < 3; ++i) {
+      var h = horizontalDirections[reversed() ? 2 - i : i];
       var col = document.querySelector('.emblem-' + h);
       var topCell = col.querySelector('.emblem-top');
       var bottomCell = col.querySelector('.emblem-bottom');
-      var left = 1 + i * 5;
-      ctx.fillStyle = rgbOnly(getComputedStyle(topCell).backgroundColor);
+      colors[i + 1] = rgbOnly(getComputedStyle(topCell).backgroundColor);
       if (bottomCell.offsetParent) {
-        // shape: i
-        ctx.fillRect(left, 1, 4, 7);
-        ctx.fillStyle = rgbOnly(getComputedStyle(bottomCell).backgroundColor);
-        ctx.fillRect(left, 9, 4, 6);
+        shape[i] = true;
+        colors[i + 4] = rgbOnly(getComputedStyle(bottomCell).backgroundColor);
       } else {
-        // shape: I
-        ctx.fillRect(left, 1, 4, 14);
+        shape[i] = false;
       }
     }
+    var favicon = generateFavicon(shape, colors);
     faviconLink.href = favicon.toDataURL('image/icon');
   } catch (err) {
     if (err == 'retry') {
