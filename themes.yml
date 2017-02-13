@@ -231,3 +231,11 @@ lcd:
   css: |
     body { text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.2); }
     .emblem i { box-shadow: 2px 3px 1px rgba(0, 0, 0, 0.2); }
+heumtax:
+  emblem_shape: ☲
+  emblem_colors: {0: '#1f274b'}
+  epic_color: '#1f274b'
+  text_color: '#363a3c'
+  link_color: '#0076da'
+  copyright_color: '#686868'
+  font: {title: 600}
