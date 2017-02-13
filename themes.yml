@@ -245,3 +245,10 @@ python:
   text_color: '#444'
   link_color: '#3776ab'
   copyright_color: '#999'
+slack:
+  emblem_shape: ☲
+  emblem_colors: {1: '#39ae85', 2: '#71c3ca', 3: '#e1a83e', 5: '#ce215b'}
+  text_color: '#555459'
+  link_color: '#007ab8'
+  copyright_color: '#9e9ea6'
+  font: {family: Lato, title: 600}
