@@ -238,8 +238,6 @@ heumtax:
   link_color: '#0076da'
   copyright_color: '#686868'
   font: {title: 600}
-  css: |
-    .emblem i { outline: 1px solid #1f274b; }
 python:
   emblem_shape: ☲
   emblem_colors: {0: '#3776ab', 3: '#ffd343', 5: '#ffd343'}

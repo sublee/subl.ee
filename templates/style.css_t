@@ -208,29 +208,33 @@ i {
 
 /* Emblem */
 
+{% set emblem_boundary = 90 %}
+{% set emblem_plate_margin = 2 %}
+{% set emblem_width = emblem_boundary - 2 * emblem_plate_margin %}
+
 .emblem {
   position: relative;
-  width: 90px;
-  height: 90px;
+  width: {{ emblem_boundary }}px;
+  height: {{ emblem_boundary }}px;
   margin: -3px;
 }
 
 .emblem div {
-  width: 24px;
-  height: 84px;
-  margin: 3px;
+  width: {{ (emblem_width - 4 * emblem_plate_margin) / 3 }}px;
+  height: {{ emblem_width }}px;
+  margin: {{ emblem_plate_margin }}px;
   float: left;
   clear: none;
 }
 
 .emblem i {
   display: block;
-  height: 39px;
+  height: {{ emblem_width / 2 - emblem_plate_margin }}px;
   background-repeat: no-repeat;
 }
 
 .emblem .emblem-bottom {
-  margin-top: 6px;
+  margin-top: {{ emblem_plate_margin * 2 }}px;
 }
 
 {% for h in ['left', 'middle', 'right'] %}
@@ -242,7 +246,7 @@ i {
   }
   {% if emblem_shape is not splitted_trigram_bar(loop.index0) %}
     .emblem-{{ h }} .emblem-top {
-      height: 84px;
+      height: {{ emblem_width }}px;
     }
     .emblem-{{ h }} .emblem-bottom {
       display: none;
