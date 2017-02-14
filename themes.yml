@@ -27,10 +27,10 @@
 # - emblem_shape - a bagua (팔괘) character which describes the layout of the
 #                  emblem plates.
 # - emblem_colors - a dict containing colors by their plate numbers.
-# - background_color
+# - background_color (default: #fff)
 # - epic_color - to be used for titles. (default: text_color)
-# - text_color
-# - link_color
+# - text_color (default: #000)
+# - link_color (default: #00f)
 # - vlink_color (default: link_color)
 # - copyright_color (default: text_color)
 # - plain_doc - set it to true to use text_color for titles in non-epic pages.

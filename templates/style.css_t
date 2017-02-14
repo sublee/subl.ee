@@ -6,9 +6,14 @@
   {{ prop }}: {{ rem }}rem;
 {% endmacro %}
 
+{# defaults #}
 {% set background_color = background_color|d('#fff') %}
+{% set text_color = text_color|d('#000') %}
 {% set epic_color = epic_color|d(text_color) %}
 {% set copyright_color = copyright_color|d(text_color) %}
+{% set link_color = link_color|d('#00f') %}
+{% set vlink_color = vlink_color|d(link_color) %}
+
 {% set font = {
   'family': 'Hind',
   'generic': 'sans-serif',
@@ -108,7 +113,7 @@ a:link {
 }
 
 a:visited {
-  color: {{ vlink_color|d(link_color) }};
+  color: {{ vlink_color }};
 }
 
 a:hover {
