@@ -32,7 +32,7 @@
 # - text_color
 # - link_color
 # - vlink_color (default: link_color)
-# - copyright_color
+# - copyright_color (default: text_color)
 # - plain_doc - set it to true to use text_color for titles in non-epic pages.
 # - font
 #   - family: the font name which can be downloaded from Google Fonts.
@@ -185,7 +185,7 @@ blizzard:
   copyright_color: '#366a80'
   css: |
     body {
-      background-image: linear-gradient(#002434, #010e16 40rem);
+      background-image: linear-gradient(#002434, transparent 40rem);
       background-repeat: no-repeat;
     }
 couchbase:

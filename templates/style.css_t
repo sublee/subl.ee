@@ -8,6 +8,7 @@
 
 {% set background_color = background_color|d('#fff') %}
 {% set epic_color = epic_color|d(text_color) %}
+{% set copyright_color = copyright_color|d(text_color) %}
 {% set font = {
   'family': 'Hind',
   'generic': 'sans-serif',
@@ -264,7 +265,6 @@ i {
   position: absolute;
   right: 0;
   margin: 0 0.3em;
-  overflow: hidden;
 }
 
 /* Profile */
