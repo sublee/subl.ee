@@ -246,7 +246,7 @@ python:
   vlink_color: '#6363bb'
   copyright_color: '#555'
   css: |
-    .-epic main p, .-epic main ul {
+    .-epic main > p, .-epic main > ul {
       background: #eeffcc;
       border: 1px solid #ac9;
       padding: 0.2em 0.5em;
