@@ -259,18 +259,19 @@ ribbon:
   vlink_color: '#89a'
   copyright_color: '#a97'
   css: |
-    h1:before {
-      position: absolute;
-      left: -1em;
-      content: '\1f397';
-      color: #fc0;
-    }
     .emblem-left i, .emblem-middle .emblem-bottom {
       background-image: linear-gradient(#e90, transparent);
     }
     .emblem-middle .emblem-top, .emblem-right i {
       background-image: linear-gradient(transparent, #fb0);
     }
+    h1:before {
+      position: absolute;
+      left: -1em;
+      content: '\1f397';
+      color: #fc0;
+    }
+    @media screen and (max-width: 50rem) { h1:before { display: none; } }
 turret:
   emblem_shape: ☲
   emblem_colors: {0: '#eee', 5: '#e34'}
