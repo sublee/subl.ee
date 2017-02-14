@@ -255,9 +255,16 @@ ribbon:
   emblem_shape: ☲
   emblem_colors: {0: '#fc0'}
   text_color: '#220'
-  link_color: '#b84'
+  link_color: '#57c'
+  vlink_color: '#89a'
   copyright_color: '#a97'
   css: |
+    h1:before {
+      position: absolute;
+      left: -1em;
+      content: '\1f397';
+      color: #fc0;
+    }
     .emblem-left i, .emblem-middle .emblem-bottom {
       background-image: linear-gradient(#e90, transparent);
     }
