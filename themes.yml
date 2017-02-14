@@ -264,3 +264,12 @@ ribbon:
     .emblem-middle .emblem-top, .emblem-right i {
       background-image: linear-gradient(transparent, #fb0);
     }
+turret:
+  emblem_shape: ☲
+  emblem_colors: {0: '#eee', 5: '#e34'}
+  background_color: '#222'
+  epic_color: '#e34'
+  text_color: '#888'
+  link_color: '#ccc'
+  vlink_color: '#aaa'
+  copyright_color: '#666'
