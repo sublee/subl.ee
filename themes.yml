@@ -41,7 +41,7 @@
 #   - title - font weight for title text.
 # - css - additional css code.
 #
-sublee-light:
+sublee:
   emblem_shape: ☲
   emblem_colors: {0: '#e56', 5: '#fd6'}
   background_color: '#fafaf8'
