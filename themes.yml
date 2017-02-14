@@ -186,7 +186,6 @@ blizzard:
   css: |
     body {
       background-image: linear-gradient(#002434, transparent 40rem);
-      background-repeat: no-repeat;
     }
 couchbase:
   emblem_shape: ☲
@@ -252,3 +251,16 @@ slack:
   link_color: '#007ab8'
   copyright_color: '#9e9ea6'
   font: {family: Lato, title: 600}
+ribbon:
+  emblem_shape: ☲
+  emblem_colors: {0: '#fc0'}
+  text_color: '#220'
+  link_color: '#b84'
+  copyright_color: '#a97'
+  css: |
+    .emblem-left i, .emblem-middle .emblem-bottom {
+      background-image: linear-gradient(#e90, transparent);
+    }
+    .emblem-middle .emblem-top, .emblem-right i {
+      background-image: linear-gradient(transparent, #fb0);
+    }

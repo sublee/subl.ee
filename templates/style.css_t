@@ -54,7 +54,8 @@ body {
   font-family: '{{ font.family }}', {{ font.generic }};
   font-weight: {{ font.default }};
   color: {{ text_color }};
-  background: {{ background_color }};
+  background-color: {{ background_color }};
+  background-repeat: no-repeat;
   white-space: normal;
   transition: margin 0.2s;
   -webkit-font-smoothing: antialiased;
@@ -225,6 +226,7 @@ i {
 .emblem i {
   display: block;
   height: 39px;
+  background-repeat: no-repeat;
 }
 
 .emblem .emblem-bottom {
@@ -233,10 +235,10 @@ i {
 
 {% for h in ['left', 'middle', 'right'] %}
   .emblem-{{ h }} .emblem-top {
-    background: {{ emblem_colors[loop.index]|d(emblem_colors[0]) }};
+    background-color: {{ emblem_colors[loop.index]|d(emblem_colors[0]) }};
   }
   .emblem-{{ h }} .emblem-bottom {
-    background: {{ emblem_colors[loop.index + 3]|d(emblem_colors[0]) }};
+    background-color: {{ emblem_colors[loop.index + 3]|d(emblem_colors[0]) }};
   }
   {% if emblem_shape is not splitted_trigram_bar(loop.index0) %}
     .emblem-{{ h }} .emblem-top {
