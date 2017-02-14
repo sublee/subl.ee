@@ -241,9 +241,16 @@ heumtax:
 python:
   emblem_shape: ☲
   emblem_colors: {0: '#3776ab', 3: '#ffd343', 5: '#ffd343'}
-  text_color: '#444'
-  link_color: '#3776ab'
-  copyright_color: '#999'
+  text_color: '#222'
+  link_color: '#0072aa'
+  vlink_color: '#6363bb'
+  copyright_color: '#555'
+  css: |
+    .-epic main p, .-epic main ul {
+      background: #eeffcc;
+      border: 1px solid #ac9;
+      padding: 0.2em 0.5em;
+    }
 slack:
   emblem_shape: ☲
   emblem_colors: {1: '#39ae85', 2: '#71c3ca', 3: '#e1a83e', 5: '#ce215b'}
