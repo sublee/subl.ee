@@ -1,4 +1,4 @@
-# Emblem shapes:
+# Emblem shapes: (top becomes left)
 #
 # - ☰ 0 000 \u2630
 # - ☱ 1 100 \u2631
@@ -35,10 +35,13 @@
 # - copyright_color (default: text_color)
 # - plain_doc - set it to true to use text_color for titles in non-epic pages.
 # - font
-#   - family: the font name which can be downloaded from Google Fonts.
-#   - generic: serif|sans-serif|monospace
-#   - default - font weight for normal text.
-#   - title - font weight for title text.
+#   - family - the font name which can be downloaded from Google Fonts.
+#              (default: [Hind])
+#   - generic - serif|sans-serif|monospace (default: sans-serif)
+#   - weight - font weight for normal text. (default: 400)
+#   - title_family (default: family)
+#   - title_generic (default: generic)
+#   - title_weight (default: weight)
 # - css - additional css code.
 #
 sublee:
@@ -148,7 +151,7 @@ spoqa:
   link_color: '#4c80f1'
   vlink_color: '#2c5ae9'
   copyright_color: '#a9afb3'
-  font: {default: 400, title: 300}
+  font: {weight: 400, title_weight: 300}
   css: |
     h1 { font-size: 2.5em; }
     h2 { font-size: 1.5em; }
@@ -240,7 +243,7 @@ heumtax:
   text_color: '#363a3c'
   link_color: '#0076da'
   copyright_color: '#686868'
-  font: {title: 600}
+  font: {title_weight: 600}
 python:
   emblem_shape: ☲
   emblem_colors: {0: '#3776ab', 3: '#ffd343', 5: '#ffd343'}
@@ -260,7 +263,7 @@ slack:
   text_color: '#555459'
   link_color: '#007ab8'
   copyright_color: '#9e9ea6'
-  font: {family: Lato, title: 600}
+  font: {family: Lato, title_weight: 600}
 ribbon:
   emblem_shape: ☲
   emblem_colors: {0: '#fc0'}

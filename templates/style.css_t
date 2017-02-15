@@ -17,13 +17,22 @@
 {% set font = {
   'family': 'Hind',
   'generic': 'sans-serif',
-  'default': 400,
-  'title': 400,
+  'weight': 400,
 }|update(font) %}
+{# NOTE: the below if-block is workaround for calling #}
+{# Python functions without the caller parameter. #}
+{% if font.setdefault('title_family', font.family) %}{% endif %}
+{% if font.setdefault('title_generic', font.generic) %}{% endif %}
+{% if font.setdefault('title_weight', font.weight) %}{% endif %}
 
 @import url(//fonts.googleapis.com/css?family={{
-  font.family|replace(' ', '+') ~ ':' ~ [font.default, font.title]|join(',')
+  font.family|replace(' ', '+') ~ ':' ~ font.weight
 }});
+{% if (font.family, font.weight) != (font.title_family, font.title_weight) %}
+  @import url(//fonts.googleapis.com/css?family={{
+    font.title_family|replace(' ', '+') ~ ':' ~ font.title_weight
+  }});
+{% endif %}
 
 * {
   margin: 0;
@@ -52,7 +61,7 @@ body {
   margin: 3em 10%;
   {{ rem('max-width', 50) }}
   font-family: '{{ font.family }}', {{ font.generic }};
-  font-weight: {{ font.default }};
+  font-weight: {{ font.weight }};
   color: {{ text_color }};
   background-color: {{ background_color }};
   background-repeat: no-repeat;
@@ -84,7 +93,8 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, dl, hr, pre {
 }
 
 h1, h2 {
-  font-weight: {{ font.title }};
+  font-family: '{{ font.title_family }}', {{ font.title_generic }};
+  font-weight: {{ font.title_weight }};
   {% if not plain_doc %}
     color: {{ epic_color }};
   {% endif %}
