@@ -308,4 +308,5 @@ doodle:
   vlink_color: '#b0e'
   font: {family: Rock Salt}
   css: |
+    * { line-height: 1.8; }
     .emblem { transform: rotate(-2deg); }
