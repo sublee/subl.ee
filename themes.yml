@@ -294,3 +294,10 @@ turret:
   link_color: '#ccc'
   vlink_color: '#aaa'
   copyright_color: '#666'
+netmarble:
+  emblem_shape: ☵
+  emblem_colors: {0: '#ffde00', 4: '#fe605f', 3: '#5d3824', 6: '#5d3824'}
+  text_color: '#5d3824'
+  link_color: '#2890d8'
+  copyright_color: '#999'
+  font: {title_family: Baloo}
