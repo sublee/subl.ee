@@ -310,3 +310,4 @@ doodle:
   css: |
     * { line-height: 1.8; }
     .emblem { transform: rotate(-2deg); }
+    .-epic main { font-size: 1em; }
