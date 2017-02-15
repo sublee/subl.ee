@@ -185,7 +185,7 @@ blizzard:
   copyright_color: '#366a80'
   css: |
     body {
-      background-image: linear-gradient(#002434, transparent 40rem);
+      background-image: linear-gradient(#002434, #010e16 40rem);
     }
 couchbase:
   emblem_shape: ☲
@@ -267,10 +267,10 @@ ribbon:
   copyright_color: '#a97'
   css: |
     .emblem-left i, .emblem-middle .emblem-bottom {
-      background-image: linear-gradient(#e90, transparent);
+      background-image: linear-gradient(#e90, #fc0);
     }
     .emblem-middle .emblem-top, .emblem-right i {
-      background-image: linear-gradient(transparent, #fb0);
+      background-image: linear-gradient(#fc0, #fb0);
     }
     h1:before {
       position: absolute;
