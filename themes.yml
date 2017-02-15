@@ -215,11 +215,12 @@ gitlab:
   emblem_colors: {0: '#e24329',
                   1: '#fc6d26', 3: '#fc6d26',
                   4: '#fca326', 6: '#fca326'}
-  background_color: '#539'
-  epic_color: '#fff'
-  text_color: '#bad'
-  link_color: '#fca326'
-  copyright_color: '#e24329'
+  background_color: '#f9f9f9'
+  epic_color: '#e14329'
+  text_color: '#333'
+  link_color: '#6b4fbb'
+  vlink_color: '#548'
+  copyright_color: '#8c929d'
 lcd:
   emblem_shape: ☲
   emblem_colors: {0: '#332', 5: '#661'}
