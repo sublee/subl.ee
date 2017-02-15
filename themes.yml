@@ -211,8 +211,10 @@ ycombinator:
   copyright_color: '#999'
   plain_doc: true
 gitlab:
-  emblem_shape: ☲
-  emblem_colors: {0: '#e24329', 2: '#fc6d26', 5: '#fca326'}
+  emblem_shape: ☵
+  emblem_colors: {0: '#e24329',
+                  1: '#fc6d26', 3: '#fc6d26',
+                  4: '#fca326', 6: '#fca326'}
   background_color: '#539'
   epic_color: '#fff'
   text_color: '#bad'
