@@ -301,3 +301,11 @@ netmarble:
   link_color: '#2890d8'
   copyright_color: '#999'
   font: {title_family: Capriola}
+doodle:
+  emblem_shape: ☲
+  emblem_colors: {0: '#f3b', 5: '#cf3'}
+  link_color: '#04f'
+  vlink_color: '#b0e'
+  font: {family: Rock Salt}
+  css: |
+    .emblem { transform: rotate(-2deg); }
