@@ -311,3 +311,4 @@ doodle:
     * { line-height: 1.8; }
     .emblem { transform: rotate(-2deg); }
     .-epic main { font-size: 1em; }
+    abbr { display: inline-block; line-height: 1; background: #ef3; }
