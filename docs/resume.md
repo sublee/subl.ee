@@ -98,7 +98,7 @@ Full Stack Web Developer {: .label }
 Front-end Web Developer {: .label }
 [Lunant][], 2008--2011
 :   Served <cite>VLAAH</cite>, a social network service for discovering,
-    sharing and utilizing opinions.
+    sharing, and utilizing opinions.
     {: .note }
 :   Designed and implemented the UI/UX for <cite>VLAAH</cite> by PHP5,
     JavaScript with MooTools, and Python.
