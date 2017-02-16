@@ -149,7 +149,10 @@ spoqa:
   link_color: '#4c80f1'
   vlink_color: '#2c5ae9'
   copyright_color: '#a9afb3'
-  text: {weight: 400}
+  text:
+    font: 'Spoqa Han Sans'
+    css: '//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css'
+    weight: 400
   title: {weight: 300}
   css: |
     h1 { font-size: 2.5em; }
