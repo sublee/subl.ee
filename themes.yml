@@ -357,6 +357,8 @@ netmarble:
     blur: '#999'
     link: '#2890d8'
   title: {font: Capriola}
+  css: |
+    h1, h2 { letter-spacing: -0.025em; }
 doodle:
   emblem:
     shape: ☲
