@@ -253,12 +253,12 @@ i {
 
 {% for h in ['left', 'middle', 'right'] %}
   .emblem-{{ h }} .emblem-top {
-    background-color: {{ emblem_colors[loop.index]|d(emblem_colors[0]) }};
+    background-color: {{ emblem.colors[loop.index]|d(emblem.colors[0]) }};
   }
   .emblem-{{ h }} .emblem-bottom {
-    background-color: {{ emblem_colors[loop.index + 3]|d(emblem_colors[0]) }};
+    background-color: {{ emblem.colors[loop.index + 3]|d(emblem.colors[0]) }};
   }
-  {% if emblem_shape is not splitted_trigram_bar(loop.index0) %}
+  {% if emblem.shape is not splitted_trigram_bar(loop.index0) %}
     .emblem-{{ h }} .emblem-top {
       height: {{ emblem_width }}px;
     }

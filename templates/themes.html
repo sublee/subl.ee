@@ -13,10 +13,10 @@
         <script>
           {%- call minify_js() %}
             var favicon = generateFavicon([
-              {{ info.emblem_shape is splitted_trigram_bar(0)|tojson }},
-              {{ info.emblem_shape is splitted_trigram_bar(1)|tojson }},
-              {{ info.emblem_shape is splitted_trigram_bar(2)|tojson }}
-            ], {{ info.emblem_colors|tojson }});
+              {{ info.emblem.shape is splitted_trigram_bar(0)|tojson }},
+              {{ info.emblem.shape is splitted_trigram_bar(1)|tojson }},
+              {{ info.emblem.shape is splitted_trigram_bar(2)|tojson }}
+            ], {{ info.emblem.colors|tojson }});
             document.getElementById({{ theme|tojson }})
                     .querySelector('img.favicon')
                     .setAttribute('src', favicon.toDataURL('image/icon'));

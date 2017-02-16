@@ -1,3 +1,26 @@
+# Spec:
+#
+# - emblem:
+#   - shape - a bagua (팔괘) character which describes the layout of the emblem
+#             plates.  See the "Emblem shapes" section.
+#   - colors - a dict containing colors by their plate numbers like
+#              {0: '#f00', 5: '#ff0'}.  See the "Emblem plate numbers" section.
+# - colors
+#   - background (default: #fff)
+#   - text (default: #000)
+#   - epic - to be used for titles. (default: colors.text)
+#   - blur (default: colors.text)
+#   - link (default: #00f)
+#   - vlink (default: colors.link)
+# - plain_doc - set it to true to use colors.text for titles in non-epic pages.
+# - text
+#   - font - the font name. (default: [Hind])
+#   - generic - serif|sans-serif|monospace (default: sans-serif)
+#   - css - the web font CSS URL. (default: Google Fonts)
+#   - weight - font weight for normal text. (default: 400)
+# - title - same with text, but applied to titles. (default: text.*)
+# - css - additional css code.
+#
 # Emblem shapes: (top becomes left)
 #
 # - ☰ 0 000 \u2630
@@ -22,30 +45,10 @@
 #   |   | |   | |   |   |   | |   | |   |   |   | |   | |   |
 #   +---+ +---+ +---+   +---+ +---+ +---+   +---+ +---+ +---+
 #
-# Spec:
-#
-# - emblem_shape - a bagua (팔괘) character which describes the layout of the
-#                  emblem plates.
-# - emblem_colors - a dict containing colors by their plate numbers.
-# - colors
-#   - background (default: #fff)
-#   - text (default: #000)
-#   - epic - to be used for titles. (default: colors.text)
-#   - blur (default: colors.text)
-#   - link (default: #00f)
-#   - vlink (default: colors.link)
-# - plain_doc - set it to true to use colors.text for titles in non-epic pages.
-# - text
-#   - font - the font name. (default: [Hind])
-#   - generic - serif|sans-serif|monospace (default: sans-serif)
-#   - css - the web font CSS URL. (default: Google Fonts)
-#   - weight - font weight for normal text. (default: 400)
-# - title - same with text, but applied to titles. (default: text.*)
-# - css - additional css code.
-#
 sublee:
-  emblem_shape: ☲
-  emblem_colors: {0: '#e56', 5: '#fd6'}
+  emblem:
+    shape: ☲
+    colors: {0: '#e56', 5: '#fd6'}
   colors:
     background: '#fafaf8'
     text: '#344'
@@ -55,8 +58,9 @@ sublee:
     vlink: '#589'
   plain_doc: true
 sublee-dark:
-  emblem_shape: ☲
-  emblem_colors: {0: '#e34', 5: '#fc3'}
+  emblem:
+    shape: ☲
+    colors: {0: '#e34', 5: '#fc3'}
   colors:
     background: '#192222'
     text: '#788'
@@ -65,8 +69,9 @@ sublee-dark:
     link: '#ca4'
     vlink: '#986'
 mogef:
-  emblem_shape: ☰
-  emblem_colors: {1: '#4e9fd7', 2: '#ac1f8d', 3: '#bcbe50'}
+  emblem:
+    shape: ☰
+    colors: {1: '#4e9fd7', 2: '#ac1f8d', 3: '#bcbe50'}
   colors:
     text: '#666'
     epic: '#ac1f8d'
@@ -74,8 +79,9 @@ mogef:
     link: '#4e9fd7'
     vlink: '#989ccb'
 facebook:
-  emblem_shape: ☲
-  emblem_colors: {0: '#3b5999'}
+  emblem:
+    shape: ☲
+    colors: {0: '#3b5999'}
   colors:
     background: '#e9eaed'
     text: '#141823'
@@ -115,8 +121,9 @@ facebook:
       .-doc .emblem { zoom: 1; margin: auto; }
     }
 mearie:
-  emblem_shape: ☰
-  emblem_colors: {0: '#397b9c'}
+  emblem:
+    shape: ☰
+    colors: {0: '#397b9c'}
   colors:
     background: '#eee'
     text: '#444'
@@ -125,9 +132,12 @@ mearie:
     link: '#379'
     vlink: '#973'
 travis:
-  emblem_shape: ☲
-  # failed, started, passed, passed
-  emblem_colors: {1: '#3fa75f', 2: '#db423c', 3: '#d2c93b', 5: '#3fa75f'}
+  emblem:
+    shape: ☲
+    colors:
+      0: '#3fa75f'  # passed
+      2: '#db423c'  # failed
+      3: '#d2c93b'  # started
   colors:
     background: '#eff0ec'
     text: '#777'
@@ -136,24 +146,27 @@ travis:
     link: '#63a4a3'
     vlink: '#83a3a5'
 google:
-  emblem_shape: ☲
-  emblem_colors: {1: '#4285f4', 2: '#ea4335', 3: '#34a853', 5: '#fbbc05'}
+  emblem:
+    shape: ☲
+    colors: {1: '#4285f4', 2: '#ea4335', 3: '#34a853', 5: '#fbbc05'}
   colors:
     text: '#4d4d4d'
     blur: '#9e9e9e'
     link: '#4285f4'
     vlink: '#3f51b5'
 mit:
-  emblem_shape: ☶
-  emblem_colors: {0: '#000', 5: '#a31f34'}
+  emblem:
+    shape: ☶
+    colors: {0: '#000', 5: '#a31f34'}
   colors:
     text: '#222'
     epic: '#a31f34'
     blur: '#333'
     link: '#a31f34'
 spoqa:
-  emblem_shape: ☲
-  emblem_colors: {0: '#4c80f1'}
+  emblem:
+    shape: ☲
+    colors: {0: '#4c80f1'}
   colors:
     text: '#4d5256'
     blur: '#a9afb3'
@@ -168,16 +181,18 @@ spoqa:
     h1 { font-size: 2.5em; }
     h2 { font-size: 1.5em; }
 twitter:
-  emblem_shape: ☷
-  emblem_colors: {0: '#1da1f2'}
+  emblem:
+    shape: ☷
+    colors: {0: '#1da1f2'}
   colors:
     text: '#657786'
     epic: '#14171a'
     blur: '#657786'
     link: '#3b94d9'
 microsoft:
-  emblem_shape: ☲
-  emblem_colors: {1: '#f25022', 2: '#7fba00', 3: '#ffb900', 5: '#00a4ef'}
+  emblem:
+    shape: ☲
+    colors: {1: '#f25022', 2: '#7fba00', 3: '#ffb900', 5: '#00a4ef'}
   colors:
     text: '#505050'
     epic: '#505050'
@@ -185,8 +200,9 @@ microsoft:
     link: '#0072c6'
     vlink: '#405fb5'
 naver:
-  emblem_shape: ☲
-  emblem_colors: {0: '#00c73c'}
+  emblem:
+    shape: ☲
+    colors: {0: '#00c73c'}
   colors:
     text: '#333'
     epic: '#00c73c'
@@ -194,8 +210,9 @@ naver:
     link: '#15b'
     vlink: '#86a'
 blizzard:
-  emblem_shape: ☲
-  emblem_colors: {0: '#00adef'}
+  emblem:
+    shape: ☲
+    colors: {0: '#00adef'}
   colors:
     background: '#010e16'
     text: '#99cee0'
@@ -207,24 +224,27 @@ blizzard:
       background-image: linear-gradient(#002434, #010e16 40rem);
     }
 couchbase:
-  emblem_shape: ☲
-  emblem_colors: {0: '#ec1e2c'}
+  emblem:
+    shape: ☲
+    colors: {0: '#ec1e2c'}
   colors:
     text: '#000'
     blur: '#252525'
     link: '#ec1e2c'
     vlink: '#cc2a2e'
 nexon:
-  emblem_shape: ☳
-  emblem_colors: {0: '#0b2a4a', 3: '#c3d600', 4: '#00a1e1', 5: '#00a1e1'}
+  emblem:
+    shape: ☳
+    colors: {0: '#0b2a4a', 3: '#c3d600', 4: '#00a1e1', 5: '#00a1e1'}
   colors:
     text: '#231f20'
     blur: '#8aa'
     link: '#00a1e1'
     vlink: '#8bafd6'
 ycombinator:
-  emblem_shape: ☲
-  emblem_colors: {0: '#f26522'}
+  emblem:
+    shape: ☲
+    colors: {0: '#f26522'}
   colors:
     background: '#f6f6ef'
     text: '#000'
@@ -233,10 +253,11 @@ ycombinator:
     link: '#268bd2'
   plain_doc: true
 gitlab:
-  emblem_shape: ☵
-  emblem_colors: {0: '#e24329',
-                  1: '#fc6d26', 3: '#fc6d26',
-                  4: '#fca326', 6: '#fca326'}
+  emblem:
+    shape: ☵
+    colors: {0: '#e24329',
+             1: '#fc6d26', 3: '#fc6d26',
+             4: '#fca326', 6: '#fca326'}
   colors:
     background: '#f9f9f9'
     text: '#333'
@@ -245,8 +266,9 @@ gitlab:
     link: '#6b4fbb'
     vlink: '#548'
 lcd:
-  emblem_shape: ☲
-  emblem_colors: {0: '#332', 5: '#661'}
+  emblem:
+    shape: ☲
+    colors: {0: '#332', 5: '#661'}
   colors:
     background: '#9a8'
     text: '#332'
@@ -258,8 +280,9 @@ lcd:
     body { text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.2); }
     .emblem i { box-shadow: 2px 3px 1px rgba(0, 0, 0, 0.2); }
 heumtax:
-  emblem_shape: ☲
-  emblem_colors: {0: '#1f274b'}
+  emblem:
+    shape: ☲
+    colors: {0: '#1f274b'}
   colors:
     text: '#363a3c'
     epic: '#1f274b'
@@ -267,8 +290,9 @@ heumtax:
     link: '#0076da'
   title: {weight: 600}
 python:
-  emblem_shape: ☲
-  emblem_colors: {0: '#3776ab', 3: '#ffd343', 5: '#ffd343'}
+  emblem:
+    shape: ☲
+    colors: {0: '#3776ab', 3: '#ffd343', 5: '#ffd343'}
   colors:
     text: '#222'
     blur: '#555'
@@ -281,8 +305,9 @@ python:
       padding: 0.2em 0.5em;
     }
 slack:
-  emblem_shape: ☲
-  emblem_colors: {1: '#39ae85', 2: '#71c3ca', 3: '#e1a83e', 5: '#ce215b'}
+  emblem:
+    shape: ☲
+    colors: {1: '#39ae85', 2: '#71c3ca', 3: '#e1a83e', 5: '#ce215b'}
   colors:
     text: '#555459'
     blur: '#9e9ea6'
@@ -290,8 +315,9 @@ slack:
   text: {font: Lato}
   title: {weight: 600}
 ribbon:
-  emblem_shape: ☲
-  emblem_colors: {0: '#fc0'}
+  emblem:
+    shape: ☲
+    colors: {0: '#fc0'}
   colors:
     text: '#220'
     blur: '#a97'
@@ -312,8 +338,9 @@ ribbon:
     }
     @media screen and (max-width: 50rem) { h1:before { display: none; } }
 turret:
-  emblem_shape: ☲
-  emblem_colors: {0: '#eee', 5: '#e34'}
+  emblem:
+    shape: ☲
+    colors: {0: '#eee', 5: '#e34'}
   colors:
     background: '#222'
     text: '#888'
@@ -322,17 +349,18 @@ turret:
     link: '#ccc'
     vlink: '#aaa'
 netmarble:
-  emblem_shape: ☵
-  emblem_colors: {0: '#ffde00', 4: '#fe605f', 3: '#5d3824', 6: '#5d3824'}
+  emblem:
+    shape: ☵
+    colors: {0: '#ffde00', 4: '#fe605f', 3: '#5d3824', 6: '#5d3824'}
   colors:
     text: '#5d3824'
     blur: '#999'
     link: '#2890d8'
   title: {font: Capriola}
 doodle:
-  emblem_shape: ☲
-  emblem_colors: {0: '#f49', 5: '#ef3'}
-  colors:
+  emblem:
+    shape: ☲
+    colors: {0: '#f49', 5: '#ef3'}
   colors:
     link: '#04f'
     vlink: '#b0e'
