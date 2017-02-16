@@ -5,14 +5,20 @@
   {{ prop }}: {{ (base_font_size * rem)|round|int }}px;
   {{ prop }}: {{ rem }}rem;
 {% endmacro %}
+{% macro setdefault(dict, key, value) %}
+  {# NOTE: the below if-block is workaround for calling #}
+  {# Python functions without the caller parameter. #}
+  {% if dict.setdefault(key, value) %}{% endif %}
+{% endmacro %}
 
-{# defaults #}
-{% set background_color = background_color|d('#fff') %}
-{% set text_color = text_color|d('#000') %}
-{% set epic_color = epic_color|d(text_color) %}
-{% set copyright_color = copyright_color|d(text_color) %}
-{% set link_color = link_color|d('#00f') %}
-{% set vlink_color = vlink_color|d(link_color) %}
+{% set colors = {
+  'background': '#fff',
+  'text': '#000',
+  'link': '#00f',
+}|update(colors) %}
+{{ setdefault(colors, 'epic', colors.text) }}
+{{ setdefault(colors, 'blur', colors.text) }}
+{{ setdefault(colors, 'vlink', colors.link) }}
 
 {% set text = {
   'font': 'Hind',
@@ -20,14 +26,9 @@
   'weight': 400,
 }|update(text) %}
 {% set title = {}|update(text)|update(title) %}
-
-{# NOTE: the below if-block is workaround for calling #}
-{# Python functions without the caller parameter. #}
 {% for _text in [text, title] %}
-  {% if _text.setdefault(
-    'css', '//fonts.googleapis.com/css?family=' ~
-    _text.font|replace(' ', '+') ~ ':' ~ _text.weight
-  ) %}{% endif %}
+  {{ setdefault(_text, 'css', '//fonts.googleapis.com/css?family=' ~
+                _text.font|replace(' ', '+') ~ ':' ~ _text.weight) }}
 {% endfor %}
 
 @import url({{ text.css }});
@@ -63,8 +64,8 @@ body {
   {{ rem('max-width', 50) }}
   font-family: '{{ text.font }}', {{ text.generic }};
   font-weight: {{ text.weight }};
-  color: {{ text_color }};
-  background-color: {{ background_color }};
+  color: {{ colors.text }};
+  background-color: {{ colors.background }};
   background-repeat: no-repeat;
   white-space: normal;
   transition: margin 0.2s;
@@ -86,7 +87,7 @@ footer {
 
 footer p {
   font-size: 0.8em;
-  color: {{ copyright_color }};
+  color: {{ colors.blur }};
 }
 
 h1, h2, h3, h4, h5, h6, p, ul, ol, dl, hr, pre {
@@ -99,7 +100,7 @@ h1, h2 {
   {% endif %}
   font-weight: {{ title.weight }};
   {% if not plain_doc %}
-    color: {{ epic_color }};
+    color: {{ colors.epic }};
   {% endif %}
 }
 
@@ -123,11 +124,11 @@ a:link, a:visited {
 }
 
 a:link {
-  color: {{ link_color }};
+  color: {{ colors.link }};
 }
 
 a:visited {
-  color: {{ vlink_color }};
+  color: {{ colors.vlink }};
 }
 
 a:hover {
@@ -144,7 +145,7 @@ ul li:before {
   position: absolute;
   left: 0;
   content: '-';
-  color: {{ copyright_color }};
+  color: {{ colors.blur }};
 }
 
 /* IE7 can't handle :before pseudo-element */
@@ -183,7 +184,7 @@ dd, dd p, dd ul, dd ol, dd dl, dd hr, dl.attrs dt.label {
 
 dt.label {
   {{ rem('font-size', 0.8) }}
-  color: {{ copyright_color }};
+  color: {{ colors.blur }};
   line-height: 1;
 }
 
@@ -204,7 +205,7 @@ dd.note {
 hr {
   {{ rem('margin-top', 1.5) }};
   {{ rem('height', 0.1) }}
-  background-color: {{ rgba(copyright_color, 0.1) }};
+  background-color: {{ rgba(colors.blur, 0.1) }};
 }
 
 sup, sub {
@@ -216,7 +217,7 @@ abbr, acronym {
 }
 
 i {
-  color: {{ epic_color }};
+  color: {{ colors.epic }};
 }
 
 /* Emblem */
@@ -280,7 +281,7 @@ i {
 .-epic h2 {
   margin-bottom: 0;
   font-size: 1.2em;
-  color: {{ epic_color }};
+  color: {{ colors.epic }};
 }
 
 /* Doc Layout */
@@ -326,8 +327,8 @@ i {
 }
 
 .themes a.selected {
-  color: {{ background_color }};
-  background: {{ link_color }};
+  color: {{ colors.background }};
+  background: {{ colors.link }};
   padding: 0 0.5em 0 0.2em;
 }
 

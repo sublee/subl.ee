@@ -27,13 +27,14 @@
 # - emblem_shape - a bagua (팔괘) character which describes the layout of the
 #                  emblem plates.
 # - emblem_colors - a dict containing colors by their plate numbers.
-# - background_color (default: #fff)
-# - epic_color - to be used for titles. (default: text_color)
-# - text_color (default: #000)
-# - link_color (default: #00f)
-# - vlink_color (default: link_color)
-# - copyright_color (default: text_color)
-# - plain_doc - set it to true to use text_color for titles in non-epic pages.
+# - colors
+#   - background (default: #fff)
+#   - text (default: #000)
+#   - epic - to be used for titles. (default: colors.text)
+#   - blur (default: colors.text)
+#   - link (default: #00f)
+#   - vlink (default: colors.link)
+# - plain_doc - set it to true to use colors.text for titles in non-epic pages.
 # - text
 #   - font - the font name. (default: [Hind])
 #   - generic - serif|sans-serif|monospace (default: sans-serif)
@@ -45,38 +46,42 @@
 sublee:
   emblem_shape: ☲
   emblem_colors: {0: '#e56', 5: '#fd6'}
-  background_color: '#fafaf8'
-  epic_color: '#e56'
-  text_color: '#344'
-  link_color: '#4ac'
-  vlink_color: '#589'
-  copyright_color: '#677'
+  colors:
+    background: '#fafaf8'
+    text: '#344'
+    epic: '#e56'
+    blur: '#677'
+    link: '#4ac'
+    vlink: '#589'
   plain_doc: true
 sublee-dark:
   emblem_shape: ☲
   emblem_colors: {0: '#e34', 5: '#fc3'}
-  background_color: '#192222'
-  epic_color: '#e34'
-  text_color: '#788'
-  link_color: '#ca4'
-  vlink_color: '#986'
-  copyright_color: '#455'
+  colors:
+    background: '#192222'
+    text: '#788'
+    epic: '#e34'
+    blur: '#455'
+    link: '#ca4'
+    vlink: '#986'
 mogef:
   emblem_shape: ☰
   emblem_colors: {1: '#4e9fd7', 2: '#ac1f8d', 3: '#bcbe50'}
-  epic_color: '#ac1f8d'
-  text_color: '#666'
-  link_color: '#4e9fd7'
-  vlink_color: '#989ccb'
-  copyright_color: '#bcbe50'
+  colors:
+    text: '#666'
+    epic: '#ac1f8d'
+    blur: '#bcbe50'
+    link: '#4e9fd7'
+    vlink: '#989ccb'
 facebook:
   emblem_shape: ☲
   emblem_colors: {0: '#3b5999'}
-  background_color: '#e9eaed'
-  epic_color: '#1e2d4c'
-  text_color: '#141823'
-  link_color: '#3b5998'
-  copyright_color: '#9197a3'
+  colors:
+    background: '#e9eaed'
+    text: '#141823'
+    epic: '#1e2d4c'
+    blur: '#9197a3'
+    link: '#3b5998'
   css: |
     main > p, main > ul, main > dl {
       margin-left: -.8rem;
@@ -112,43 +117,48 @@ facebook:
 mearie:
   emblem_shape: ☰
   emblem_colors: {0: '#397b9c'}
-  background_color: '#eee'
-  epic_color: '#444'
-  text_color: '#444'
-  link_color: '#379'
-  vlink_color: '#973'
-  copyright_color: '#379'
+  colors:
+    background: '#eee'
+    text: '#444'
+    epic: '#444'
+    blur: '#379'
+    link: '#379'
+    vlink: '#973'
 travis:
   emblem_shape: ☲
   # failed, started, passed, passed
   emblem_colors: {1: '#3fa75f', 2: '#db423c', 3: '#d2c93b', 5: '#3fa75f'}
-  background_color: '#eff0ec'
-  epic_color: '#a6adad'
-  text_color: '#777'
-  link_color: '#63a4a3'
-  vlink_color: '#83a3a5'
-  copyright_color: '#a6adad'
+  colors:
+    background: '#eff0ec'
+    text: '#777'
+    epic: '#a6adad'
+    blur: '#a6adad'
+    link: '#63a4a3'
+    vlink: '#83a3a5'
 google:
   emblem_shape: ☲
   emblem_colors: {1: '#4285f4', 2: '#ea4335', 3: '#34a853', 5: '#fbbc05'}
-  text_color: '#4d4d4d'
-  link_color: '#4285f4'
-  vlink_color: '#3f51b5'
-  copyright_color: '#9e9e9e'
+  colors:
+    text: '#4d4d4d'
+    blur: '#9e9e9e'
+    link: '#4285f4'
+    vlink: '#3f51b5'
 mit:
   emblem_shape: ☶
   emblem_colors: {0: '#000', 5: '#a31f34'}
-  epic_color: '#a31f34'
-  text_color: '#222'
-  link_color: '#a31f34'
-  copyright_color: '#333'
+  colors:
+    text: '#222'
+    epic: '#a31f34'
+    blur: '#333'
+    link: '#a31f34'
 spoqa:
   emblem_shape: ☲
   emblem_colors: {0: '#4c80f1'}
-  text_color: '#4d5256'
-  link_color: '#4c80f1'
-  vlink_color: '#2c5ae9'
-  copyright_color: '#a9afb3'
+  colors:
+    text: '#4d5256'
+    blur: '#a9afb3'
+    link: '#4c80f1'
+    vlink: '#2c5ae9'
   text:
     font: 'Spoqa Han Sans'
     css: '//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css'
@@ -160,34 +170,38 @@ spoqa:
 twitter:
   emblem_shape: ☷
   emblem_colors: {0: '#1da1f2'}
-  epic_color: '#14171a'
-  text_color: '#657786'
-  link_color: '#3b94d9'
-  copyright_color: '#657786'
+  colors:
+    text: '#657786'
+    epic: '#14171a'
+    blur: '#657786'
+    link: '#3b94d9'
 microsoft:
   emblem_shape: ☲
   emblem_colors: {1: '#f25022', 2: '#7fba00', 3: '#ffb900', 5: '#00a4ef'}
-  epic_color: '#505050'
-  text_color: '#505050'
-  link_color: '#0072c6'
-  vlink_color: '#405fb5'
-  copyright_color: '#969696'
+  colors:
+    text: '#505050'
+    epic: '#505050'
+    blur: '#969696'
+    link: '#0072c6'
+    vlink: '#405fb5'
 naver:
   emblem_shape: ☲
   emblem_colors: {0: '#00c73c'}
-  epic_color: '#00c73c'
-  text_color: '#333'
-  link_color: '#15b'
-  vlink_color: '#86a'
-  copyright_color: '#999'
+  colors:
+    text: '#333'
+    epic: '#00c73c'
+    blur: '#999'
+    link: '#15b'
+    vlink: '#86a'
 blizzard:
   emblem_shape: ☲
   emblem_colors: {0: '#00adef'}
-  background_color: '#010e16'
-  epic_color: '#fff'
-  text_color: '#99cee0'
-  link_color: '#01b2f1'
-  copyright_color: '#366a80'
+  colors:
+    background: '#010e16'
+    text: '#99cee0'
+    epic: '#fff'
+    blur: '#366a80'
+    link: '#01b2f1'
   css: |
     body {
       background-image: linear-gradient(#002434, #010e16 40rem);
@@ -195,45 +209,50 @@ blizzard:
 couchbase:
   emblem_shape: ☲
   emblem_colors: {0: '#ec1e2c'}
-  text_color: '#000'
-  link_color: '#ec1e2c'
-  vlink_color: '#cc2a2e'
-  copyright_color: '#252525'
+  colors:
+    text: '#000'
+    blur: '#252525'
+    link: '#ec1e2c'
+    vlink: '#cc2a2e'
 nexon:
   emblem_shape: ☳
   emblem_colors: {0: '#0b2a4a', 3: '#c3d600', 4: '#00a1e1', 5: '#00a1e1'}
-  text_color: '#231f20'
-  link_color: '#00a1e1'
-  vlink_color: '#8bafd6'
-  copyright_color: '#8aa'
+  colors:
+    text: '#231f20'
+    blur: '#8aa'
+    link: '#00a1e1'
+    vlink: '#8bafd6'
 ycombinator:
   emblem_shape: ☲
   emblem_colors: {0: '#f26522'}
-  background_color: '#f6f6ef'
-  epic_color: '#f26522'
-  text_color: '#000'
-  link_color: '#268bd2'
-  copyright_color: '#999'
+  colors:
+    background: '#f6f6ef'
+    text: '#000'
+    epic: '#f26522'
+    blur: '#999'
+    link: '#268bd2'
   plain_doc: true
 gitlab:
   emblem_shape: ☵
   emblem_colors: {0: '#e24329',
                   1: '#fc6d26', 3: '#fc6d26',
                   4: '#fca326', 6: '#fca326'}
-  background_color: '#f9f9f9'
-  epic_color: '#e14329'
-  text_color: '#333'
-  link_color: '#6b4fbb'
-  vlink_color: '#548'
-  copyright_color: '#8c929d'
+  colors:
+    background: '#f9f9f9'
+    text: '#333'
+    epic: '#e14329'
+    blur: '#8c929d'
+    link: '#6b4fbb'
+    vlink: '#548'
 lcd:
   emblem_shape: ☲
   emblem_colors: {0: '#332', 5: '#661'}
-  background_color: '#9a8'
-  text_color: '#332'
-  link_color: '#461'
-  vlink_color: '#661'
-  copyright_color: '#664'
+  colors:
+    background: '#9a8'
+    text: '#332'
+    blur: '#664'
+    link: '#461'
+    vlink: '#661'
   text: {font: Share Tech Mono, generic: monospace}
   css: |
     body { text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.2); }
@@ -241,18 +260,20 @@ lcd:
 heumtax:
   emblem_shape: ☲
   emblem_colors: {0: '#1f274b'}
-  epic_color: '#1f274b'
-  text_color: '#363a3c'
-  link_color: '#0076da'
-  copyright_color: '#686868'
+  colors:
+    text: '#363a3c'
+    epic: '#1f274b'
+    blur: '#686868'
+    link: '#0076da'
   title: {weight: 600}
 python:
   emblem_shape: ☲
   emblem_colors: {0: '#3776ab', 3: '#ffd343', 5: '#ffd343'}
-  text_color: '#222'
-  link_color: '#0072aa'
-  vlink_color: '#6363bb'
-  copyright_color: '#555'
+  colors:
+    text: '#222'
+    blur: '#555'
+    link: '#0072aa'
+    vlink: '#6363bb'
   css: |
     .-epic main > p, .-epic main > ul {
       background: #eeffcc;
@@ -262,18 +283,20 @@ python:
 slack:
   emblem_shape: ☲
   emblem_colors: {1: '#39ae85', 2: '#71c3ca', 3: '#e1a83e', 5: '#ce215b'}
-  text_color: '#555459'
-  link_color: '#007ab8'
-  copyright_color: '#9e9ea6'
+  colors:
+    text: '#555459'
+    blur: '#9e9ea6'
+    link: '#007ab8'
   text: {font: Lato}
   title: {weight: 600}
 ribbon:
   emblem_shape: ☲
   emblem_colors: {0: '#fc0'}
-  text_color: '#220'
-  link_color: '#57c'
-  vlink_color: '#89a'
-  copyright_color: '#a97'
+  colors:
+    text: '#220'
+    blur: '#a97'
+    link: '#57c'
+    vlink: '#89a'
   css: |
     .emblem-left i, .emblem-middle .emblem-bottom {
       background-image: linear-gradient(#e90, #fc0);
@@ -291,24 +314,28 @@ ribbon:
 turret:
   emblem_shape: ☲
   emblem_colors: {0: '#eee', 5: '#e34'}
-  background_color: '#222'
-  epic_color: '#e34'
-  text_color: '#888'
-  link_color: '#ccc'
-  vlink_color: '#aaa'
-  copyright_color: '#666'
+  colors:
+    background: '#222'
+    text: '#888'
+    epic: '#e34'
+    blur: '#666'
+    link: '#ccc'
+    vlink: '#aaa'
 netmarble:
   emblem_shape: ☵
   emblem_colors: {0: '#ffde00', 4: '#fe605f', 3: '#5d3824', 6: '#5d3824'}
-  text_color: '#5d3824'
-  link_color: '#2890d8'
-  copyright_color: '#999'
+  colors:
+    text: '#5d3824'
+    blur: '#999'
+    link: '#2890d8'
   title: {font: Capriola}
 doodle:
   emblem_shape: ☲
   emblem_colors: {0: '#f49', 5: '#ef3'}
-  link_color: '#04f'
-  vlink_color: '#b0e'
+  colors:
+  colors:
+    link: '#04f'
+    vlink: '#b0e'
   text: {font: Rock Salt}
   css: |
     * { line-height: 1.8; }
