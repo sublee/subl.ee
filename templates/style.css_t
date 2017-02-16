@@ -14,24 +14,25 @@
 {% set link_color = link_color|d('#00f') %}
 {% set vlink_color = vlink_color|d(link_color) %}
 
-{% set font = {
-  'family': 'Hind',
+{% set text = {
+  'font': 'Hind',
   'generic': 'sans-serif',
   'weight': 400,
-}|update(font) %}
+}|update(text) %}
+{% set title = {}|update(text)|update(title) %}
+
 {# NOTE: the below if-block is workaround for calling #}
 {# Python functions without the caller parameter. #}
-{% if font.setdefault('title_family', font.family) %}{% endif %}
-{% if font.setdefault('title_generic', font.generic) %}{% endif %}
-{% if font.setdefault('title_weight', font.weight) %}{% endif %}
+{% for _text in [text, title] %}
+  {% if _text.setdefault(
+    'css', '//fonts.googleapis.com/css?family=' ~
+    _text.font|replace(' ', '+') ~ ':' ~ _text.weight
+  ) %}{% endif %}
+{% endfor %}
 
-@import url(//fonts.googleapis.com/css?family={{
-  font.family|replace(' ', '+') ~ ':' ~ font.weight
-}});
-{% if (font.family, font.weight) != (font.title_family, font.title_weight) %}
-  @import url(//fonts.googleapis.com/css?family={{
-    font.title_family|replace(' ', '+') ~ ':' ~ font.title_weight
-  }});
+@import url({{ text.css }});
+{% if text.css != title.css %}
+  @import url({{ title.css }});
 {% endif %}
 
 * {
@@ -60,8 +61,8 @@ body {
   position: relative;
   margin: 3em 10%;
   {{ rem('max-width', 50) }}
-  font-family: '{{ font.family }}', {{ font.generic }};
-  font-weight: {{ font.weight }};
+  font-family: '{{ text.font }}', {{ text.generic }};
+  font-weight: {{ text.weight }};
   color: {{ text_color }};
   background-color: {{ background_color }};
   background-repeat: no-repeat;
@@ -93,8 +94,10 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, dl, hr, pre {
 }
 
 h1, h2 {
-  font-family: '{{ font.title_family }}', {{ font.title_generic }};
-  font-weight: {{ font.title_weight }};
+  {% if (text.font, text.generic) != (title.font, title.generic) %}
+    font-family: '{{ title.font }}', {{ title.generic }};
+  {% endif %}
+  font-weight: {{ title.weight }};
   {% if not plain_doc %}
     color: {{ epic_color }};
   {% endif %}

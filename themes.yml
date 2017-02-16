@@ -34,14 +34,12 @@
 # - vlink_color (default: link_color)
 # - copyright_color (default: text_color)
 # - plain_doc - set it to true to use text_color for titles in non-epic pages.
-# - font
-#   - family - the font name which can be downloaded from Google Fonts.
-#              (default: [Hind])
+# - text
+#   - font - the font name. (default: [Hind])
 #   - generic - serif|sans-serif|monospace (default: sans-serif)
+#   - css - the web font CSS URL. (default: Google Fonts)
 #   - weight - font weight for normal text. (default: 400)
-#   - title_family (default: family)
-#   - title_generic (default: generic)
-#   - title_weight (default: weight)
+# - title - same with text, but applied to titles. (default: text.*)
 # - css - additional css code.
 #
 sublee:
@@ -151,7 +149,8 @@ spoqa:
   link_color: '#4c80f1'
   vlink_color: '#2c5ae9'
   copyright_color: '#a9afb3'
-  font: {weight: 400, title_weight: 300}
+  text: {weight: 400}
+  title: {weight: 300}
   css: |
     h1 { font-size: 2.5em; }
     h2 { font-size: 1.5em; }
@@ -232,7 +231,7 @@ lcd:
   link_color: '#461'
   vlink_color: '#661'
   copyright_color: '#664'
-  font: {family: Share Tech Mono, generic: monospace}
+  text: {font: Share Tech Mono, generic: monospace}
   css: |
     body { text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.2); }
     .emblem i { box-shadow: 2px 3px 1px rgba(0, 0, 0, 0.2); }
@@ -243,7 +242,7 @@ heumtax:
   text_color: '#363a3c'
   link_color: '#0076da'
   copyright_color: '#686868'
-  font: {title_weight: 600}
+  title: {weight: 600}
 python:
   emblem_shape: ☲
   emblem_colors: {0: '#3776ab', 3: '#ffd343', 5: '#ffd343'}
@@ -263,7 +262,8 @@ slack:
   text_color: '#555459'
   link_color: '#007ab8'
   copyright_color: '#9e9ea6'
-  font: {family: Lato, title_weight: 600}
+  text: {font: Lato}
+  title: {weight: 600}
 ribbon:
   emblem_shape: ☲
   emblem_colors: {0: '#fc0'}
@@ -300,13 +300,13 @@ netmarble:
   text_color: '#5d3824'
   link_color: '#2890d8'
   copyright_color: '#999'
-  font: {title_family: Capriola}
+  title: {font: Capriola}
 doodle:
   emblem_shape: ☲
   emblem_colors: {0: '#f49', 5: '#ef3'}
   link_color: '#04f'
   vlink_color: '#b0e'
-  font: {family: Rock Salt}
+  text: {font: Rock Salt}
   css: |
     * { line-height: 1.8; }
     .emblem { transform: rotate(-2deg); }
