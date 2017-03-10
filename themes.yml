@@ -57,6 +57,7 @@ sublee:
     link: '#4ac'
     vlink: '#589'
   plain_doc: true
+
 sublee-dark:
   emblem:
     shape: ☲
@@ -68,6 +69,7 @@ sublee-dark:
     blur: '#455'
     link: '#ca4'
     vlink: '#986'
+
 mogef:
   emblem:
     shape: ☰
@@ -78,6 +80,7 @@ mogef:
     blur: '#bcbe50'
     link: '#4e9fd7'
     vlink: '#989ccb'
+
 facebook:
   emblem:
     shape: ☲
@@ -120,6 +123,7 @@ facebook:
       .-doc .emblem-wrap { width: auto; }
       .-doc .emblem { zoom: 1; margin: auto; }
     }
+
 mearie:
   emblem:
     shape: ☰
@@ -131,6 +135,7 @@ mearie:
     blur: '#379'
     link: '#379'
     vlink: '#973'
+
 travis:
   emblem:
     shape: ☲
@@ -145,6 +150,7 @@ travis:
     blur: '#a6adad'
     link: '#63a4a3'
     vlink: '#83a3a5'
+
 google:
   emblem:
     shape: ☲
@@ -154,6 +160,7 @@ google:
     blur: '#9e9e9e'
     link: '#4285f4'
     vlink: '#3f51b5'
+
 mit:
   emblem:
     shape: ☶
@@ -163,6 +170,7 @@ mit:
     epic: '#a31f34'
     blur: '#333'
     link: '#a31f34'
+
 spoqa:
   emblem:
     shape: ☲
@@ -180,6 +188,7 @@ spoqa:
   css: |
     h1 { font-size: 2.5em; }
     h2 { font-size: 1.5em; }
+
 twitter:
   emblem:
     shape: ☷
@@ -189,6 +198,7 @@ twitter:
     epic: '#14171a'
     blur: '#657786'
     link: '#3b94d9'
+
 microsoft:
   emblem:
     shape: ☲
@@ -199,6 +209,7 @@ microsoft:
     blur: '#969696'
     link: '#0072c6'
     vlink: '#405fb5'
+
 naver:
   emblem:
     shape: ☲
@@ -209,6 +220,7 @@ naver:
     blur: '#999'
     link: '#15b'
     vlink: '#86a'
+
 blizzard:
   emblem:
     shape: ☲
@@ -223,6 +235,7 @@ blizzard:
     body {
       background-image: linear-gradient(#002434, #010e16 40rem);
     }
+
 couchbase:
   emblem:
     shape: ☲
@@ -232,6 +245,7 @@ couchbase:
     blur: '#252525'
     link: '#ec1e2c'
     vlink: '#cc2a2e'
+
 nexon:
   emblem:
     shape: ☳
@@ -241,6 +255,7 @@ nexon:
     blur: '#8aa'
     link: '#00a1e1'
     vlink: '#8bafd6'
+
 ycombinator:
   emblem:
     shape: ☲
@@ -252,6 +267,7 @@ ycombinator:
     blur: '#999'
     link: '#268bd2'
   plain_doc: true
+
 gitlab:
   emblem:
     shape: ☵
@@ -265,6 +281,7 @@ gitlab:
     blur: '#8c929d'
     link: '#6b4fbb'
     vlink: '#548'
+
 lcd:
   emblem:
     shape: ☲
@@ -279,6 +296,7 @@ lcd:
   css: |
     body { text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.2); }
     .emblem i { box-shadow: 2px 3px 1px rgba(0, 0, 0, 0.2); }
+
 heumtax:
   emblem:
     shape: ☲
@@ -289,6 +307,7 @@ heumtax:
     blur: '#686868'
     link: '#0076da'
   title: {weight: 600}
+
 python:
   emblem:
     shape: ☲
@@ -304,6 +323,7 @@ python:
       border: 1px solid #ac9;
       padding: 0.2em 0.5em;
     }
+
 slack:
   emblem:
     shape: ☲
@@ -314,6 +334,7 @@ slack:
     link: '#007ab8'
   text: {font: Lato}
   title: {weight: 600}
+
 ribbon:
   emblem:
     shape: ☲
@@ -337,6 +358,7 @@ ribbon:
       color: #fc0;
     }
     @media screen and (max-width: 50rem) { h1:before { display: none; } }
+
 turret:
   emblem:
     shape: ☲
@@ -348,6 +370,7 @@ turret:
     blur: '#666'
     link: '#ccc'
     vlink: '#aaa'
+
 netmarble:
   emblem:
     shape: ☵
@@ -359,6 +382,7 @@ netmarble:
   title: {font: Capriola}
   css: |
     h1, h2 { letter-spacing: -0.025em; }
+
 doodle:
   emblem:
     shape: ☲
