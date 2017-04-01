@@ -46,9 +46,9 @@ I spoke about
 -------------
 
 - [Python Survival Guide][nxtk16-slide] at Nexon Talk 2016 (Korean)
-- [The server architecture of Durango Vol. 2][ndc16-slide] at NDC16 (Korean)
+- [The server architecture of Durango Vol. 2][ndc16-slide] at NDC 2016 (Korean)
 - [Profiling][pyconkr2015-slide] at PyCon KR 2015 (Korean)
-- [The server architecture of Durango][ndc14-slide] at NDC14 (Korean)
+- [The server architecture of Durango][ndc14-slide] at NDC 2014 (Korean)
 
 [nxtk16-slide]: http://www.slideshare.net/sublee/ss-67589513
 [ndc16-slide]: http://www.slideshare.net/sublee/lt-vol-2

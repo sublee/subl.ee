@@ -164,9 +164,9 @@ Invited Talks
 -------------
 
 - [Python Survival Guide][nxtk16-slide] at Nexon Talk 2016 (Korean)
-- [The server architecture of Durango Vol. 2][ndc16-slide] at NDC16 (Korean)
+- [The server architecture of Durango Vol. 2][ndc16-slide] at NDC 2016 (Korean)
 - [Profiling][pyconkr2015-slide] at PyCon KR 2015 (Korean)
-- [The server architecture of Durango][ndc14-slide] at NDC14 (Korean)
+- [The server architecture of Durango][ndc14-slide] at NDC 2014 (Korean)
 
 Education
 ---------
@@ -206,13 +206,7 @@ Computer Software, [Kwangwoon University][kw], 2008
 [kw]: http://www.kw.ac.kr/
 
 *[MMORPG]: Massively multiplayer online role-playing game
-*[AWS]: Amazon Web Services
 *[MVC]: Model-view-controller
-*[UI]: User Interface
-*[UX]: User Experience
 *[TUI]: Text-based User Interface
-*[API]: Application Program Interface
-*[RPC]: Remote Procedure Call
 *[XSS]: Cross-site Scripting
-*[NDC16]: Nexon Developers Conference 2016
-*[NDC14]: Nexon Developers Conference 2014
+*[NDC]: Nexon Developers Conference
