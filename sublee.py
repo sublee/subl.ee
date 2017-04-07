@@ -198,7 +198,7 @@ def css(theme):
     return res, 200, {'Content-Type': 'text/css'}
 
 
-@app.route('/runker')
+@app.route('/runker/')
 def subleerunker():
     """A frame wrapper of 'Subleerunker'."""
     return dedent('''
