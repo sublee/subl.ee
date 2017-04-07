@@ -209,6 +209,9 @@ def subleerunker():
         <title>Subleerunker</title>
         <link rel="shortcut icon" type="image/icon"
               href="https://sublee.github.io/subleerunker/favicon.ico" />
+        <script>
+          setTimeout(function() { frames[0].focus(); }, 0);
+        </script>
       </head>
       <frameset>
         <frame src="https://sublee.github.io/subleerunker/" />
