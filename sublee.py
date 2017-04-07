@@ -18,6 +18,7 @@ import itertools
 import os
 import re
 import socket
+from textwrap import dedent
 from urlparse import urlparse
 
 import click
@@ -195,6 +196,24 @@ def css(theme):
     colors = themes[theme]
     res = render_template('style.css_t', rgba=rgba, **colors)
     return res, 200, {'Content-Type': 'text/css'}
+
+
+@app.route('/runker')
+def subleerunker():
+    """A frame wrapper of 'Subleerunker'."""
+    return dedent('''
+    <!doctype html>
+    <html>
+      <head>
+        <title>Subleerunker</title>
+        <link rel="shortcut icon" type="image/icon"
+              href="https://sublee.github.io/subleerunker/favicon.ico" />
+      </head>
+      <frameset>
+        <frame src="https://sublee.github.io/subleerunker/" />
+      </frameset>
+    </html>
+    ''')
 
 
 def render_error(error):
