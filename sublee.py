@@ -205,6 +205,7 @@ def subleerunker():
     <!doctype html>
     <html>
       <head>
+        <meta name="viewport" content="width=320, user-scalable=0" />
         <title>Subleerunker</title>
         <link rel="shortcut icon" type="image/icon"
               href="https://sublee.github.io/subleerunker/favicon.ico" />
