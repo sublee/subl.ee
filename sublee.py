@@ -200,24 +200,22 @@ def css(theme):
 
 @app.route('/runker/')
 def subleerunker():
-    """A frame wrapper of 'Subleerunker'."""
+    """A frame wrapper of 'SUBLEERUNKER'."""
+    url = 'https://sublee.github.io/subleerunker'
     return dedent('''
     <!doctype html>
     <html>
-      <head>
-        <meta name="viewport" content="width=320, user-scalable=0" />
-        <title>Subleerunker</title>
-        <link rel="shortcut icon" type="image/icon"
-              href="https://sublee.github.io/subleerunker/favicon.ico" />
-        <script>
-          setTimeout(function() { frames[0].focus(); }, 0);
-        </script>
-      </head>
-      <frameset>
-        <frame src="https://sublee.github.io/subleerunker/" />
-      </frameset>
+    <head>
+      <meta name="viewport" content="width=320, user-scalable=0" />
+      <title>SUBLEERUNKER</title>
+      <link rel="icon" type="image/icon" href="%(url)s/favicon.ico" />
+      <script> setTimeout(function() { frames[0].focus(); }, 0); </script>
+    </head>
+    <frameset>
+      <frame src="%(url)s/" />
+    </frameset>
     </html>
-    ''')
+    ''') % {'url': url}
 
 
 def render_error(error):
