@@ -8,7 +8,7 @@ Email {: .label }
   {: .attr }
 
 Web Sites {: .label }
-: [Homepage](https://subl.ee/),
+: [Homepage](/),
   [GitHub Profile](https://github.com/sublee),
   [LinkedIn Profile](https://linkedin.com/in/sublee)
   {: .attr }
@@ -187,7 +187,7 @@ Computer Software, [Kwangwoon University][kw], 2008
 [zeronimo]: https://github.com/sublee/zeronimo
 [lets]: https://github.com/sublee/lets
 [jdoctest]: https://lunant.github.com/jdoctest
-[subleerunker]: https://subl.ee/runker
+[subleerunker]: runker/
 [me2virus]: https://github.com/sublee/me2virus
 [me2day]: http://en.wikipedia.org/wiki/Me2day
 [flask]: http://flask.pocoo.org/
