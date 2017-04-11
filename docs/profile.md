@@ -30,7 +30,7 @@ I made or am making
 - [Hangulize][] which is a Korean alphabet transcriber.
 - Game development libraries: [TrueSkill][], [Energy][], [Ranking][]
 - Small Flask extensions: [Flask-AutoIndex][] and [Flask-Silk][]
-- [Subleerunker][] which is a simple game with my pixel-art.
+- [SUBLEERUNKER][] which is a simple game with my pixel-art.
 
 [Durango]: http://durango.nexon.com/
 [KartRider Dash]: http://www.facebook.com/kartriderdash
@@ -42,7 +42,7 @@ I made or am making
 [Ranking]: http://pythonhosted.org/ranking
 [Flask-AutoIndex]: http://pythonhosted.org/Flask-AutoIndex
 [Flask-Silk]: http://pythonhosted.org/Flask-Silk
-[Subleerunker]: runker/
+[sUBLEERUNKER]: runker/
 
 I spoke about
 -------------
