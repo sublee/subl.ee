@@ -202,20 +202,7 @@ def css(theme):
 def subleerunker():
     """A frame wrapper of 'SUBLEERUNKER'."""
     url = 'https://sublee.github.io/subleerunker'
-    return dedent('''
-    <!doctype html>
-    <html>
-    <head>
-      <meta name="viewport" content="width=320, user-scalable=0" />
-      <title>SUBLEERUNKER</title>
-      <link rel="icon" type="image/icon" href="%(url)s/favicon.ico" />
-      <script> setTimeout(function() { frames[0].focus(); }, 0); </script>
-    </head>
-    <frameset>
-      <frame src="%(url)s/" />
-    </frameset>
-    </html>
-    ''') % {'url': url}
+    return render_template('runker.html', url=url)
 
 
 def render_error(error):
