@@ -3,10 +3,10 @@
 <head>
   <meta name="viewport" content="width=320, user-scalable=0" />
   <title>SUBLEERUNKER</title>
-  <link rel="icon" type="image/icon" href="%(url)s/favicon.ico" />
-  <script> setTimeout(function() { frames[0].focus(); }, 0); </script>
+  <link rel="icon" type="image/icon" href="{{ url }}/favicon.ico" />
   {% from 'ga.html' import ga %}
   {{ ga('UA-1078484-7') }}
+  <script> setTimeout(function() { frames[0].focus(); }, 0); </script>
 </head>
 <frameset>
   <frame src="{{ url }}" />
