@@ -201,7 +201,7 @@ def css(theme):
 @app.route('/runker/')
 def subleerunker():
     """A frame wrapper of 'SUBLEERUNKER'."""
-    url = 'https://sublee.github.io/subleerunker'
+    url = 'https://sublee.github.io/subleerunker/'
     return render_template('runker.html', url=url)
 
 
