@@ -8,15 +8,15 @@
   {% from 'ga.html' import ga %}
   {{ ga('UA-1078484-7') }}
   <script>
-  function onload() {
+  document.addEventListener('DOMContentLoaded', function() {
     if (location.search) {
       document.getElementsByTagName('frame')[0].src += location.search;
     }
     frames[0].focus();
-  }
+  });
   </script>
 </head>
-<frameset onload="onload();">
+<frameset>
   <frame src="{{ url }}" />
 </frameset>
 </html>
