@@ -149,16 +149,17 @@ Others
                       was written on the user's wall.
 
 Contributed
-:   [Babel#427](https://github.com/python-babel/babel/pull/427) and
-    [#488](https://github.com/python-babel/babel/pull/488),
+:   [Babel#427](https://github.com/python-babel/babel/pull/427),
+    [#488](https://github.com/python-babel/babel/pull/488);
     [couchbase-python-client#32](
-      https://github.com/couchbase/couchbase-python-client/pull/32) and
+      https://github.com/couchbase/couchbase-python-client/pull/32),
     [#33](https://github.com/couchbase/couchbase-python-client/pull/33),
-    [etcd#4320](https://github.com/coreos/etcd/pull/4320),
-    [Flask-0.10.1](https://github.com/mitsuhiko/flask/commit/6fca662),
-    [gevent#608](https://github.com/gevent/gevent/pull/608),
-    [jQuery-1.4.3](https://blog.jquery.com/2010/10/16/jquery-143-released/),
-    [node-irc#3](https://github.com/martynsmith/node-irc/pull/3),
+    [#35](https://github.com/couchbase/couchbase-python-client/pull/35);
+    [etcd#4320](https://github.com/coreos/etcd/pull/4320);
+    [Flask-0.10.1](https://github.com/mitsuhiko/flask/commit/6fca662);
+    [gevent#608](https://github.com/gevent/gevent/pull/608);
+    [jQuery-1.4.3](https://blog.jquery.com/2010/10/16/jquery-143-released/);
+    [node-irc#3](https://github.com/martynsmith/node-irc/pull/3);
     [PyZMQ#951](https://github.com/zeromq/pyzmq/pull/951).
 
 Invited Talks
