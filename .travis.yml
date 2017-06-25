@@ -13,11 +13,9 @@ script:
     -K $encrypted_5be8b973960e_key -iv $encrypted_5be8b973960e_iv \
     -in keys.tar.enc -out keys.tar -d
   tar xvf keys.tar
-  chmod 600 keys/subl.ee
-  chmod 600 keys/subl.ee-archives
   eval "$(ssh-agent -s)"
-  ssh-add keys/subl.ee
-  ssh-add keys/subl.ee-archives
+  chmod 600 keys/*
+  ssh-add keys/*
 - | # setup git
   git config --global user.name "Heungsub Lee"
   git config --global user.email "sub@subl.ee"
