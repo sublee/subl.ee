@@ -28,20 +28,23 @@ script:
   git -C subl.ee-archives checkout master
   cp -r .frozen subl.ee-archives/"$SHORT_COMMIT"
   pushd subl.ee-archives
-  python archives.py preserve "$SHORT_COMMIT"
-  git add "$SHORT_COMMIT"
-  git commit -m "Archive to deploy at https://archives.subl.ee/$SHORT_COMMIT"
-  git push origin master > /dev/null 2>&1
+    python archives.py preserve "$SHORT_COMMIT"
+    git add "$SHORT_COMMIT"
+    git commit -m "Archive to deploy at https://archives.subl.ee/$SHORT_COMMIT"
+    git push origin master > /dev/null 2>&1
   popd
   rm -rf subl.ee-archives
 - | # deploy subl.ee
-  rm -rf .gh-pages && git clone -b gh-pages "$REPO" .gh-pages && cd .gh-pages
-  git rm -r --ignore-unmatch *
-  mv ../.frozen/* .
-  echo subl.ee > CNAME
-  git add --all
-  git commit -m "Deploy subl.ee ($TRAVIS_COMMIT)"
-  git push origin gh-pages > /dev/null 2>&1
+  rm -rf .gh-pages
+  git clone -b gh-pages git@github.com:sublee/subl.ee.git .gh-pages
+  pushd .gh-pages
+    git rm -r --ignore-unmatch *
+    mv ../.frozen/* .
+    echo subl.ee > CNAME
+    git add --all
+    git commit -m "Deploy subl.ee ($TRAVIS_COMMIT)"
+    git push origin gh-pages > /dev/null 2>&1
+  popd
 - | # deploy eelb.us
   REVERSED=$(echo '
   transform: scaleX(-1);
@@ -56,6 +59,6 @@ script:
     sed -i '0,/<html/s/<html/\0 style="'"$REVERSED"'"/' "$html"
   done
   echo eelb.us > CNAME
-  git remote add eelbus "https://$GITHUB_TOKEN@github.com/sublee/eelb.us"
+  git remote add eelbus git@github.com:sublee/eelb.us.git
   git commit -am "Reverse for eelb.us ($TRAVIS_COMMIT)"
   git push -f eelbus gh-pages > /dev/null 2>&1
