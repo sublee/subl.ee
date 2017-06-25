@@ -2,10 +2,6 @@ language: python
 sudo: false
 python:
 - 2.7
-env:
-- secure: "QGo/0YV+WvtJ4Xm5guOc08pMcI1SwsBlASi9rK+MLfSnC6cLS+Mp9zyAC0SAKD4jBQF\
-           LRzVhwtGwkUnD7kP/+KGptcc3fap/w1O+w9GZt9Pa9v36CNG7a3m2+47dgJpbLoUF8r\
-           h9tt5xuf34GGECjKXxf6BDKt6KB5xtuOgh+Es="
 install:
 - pip install -r requirements.txt
 script:
@@ -28,8 +24,14 @@ after_success:
   git push origin master > /dev/null 2>&1
   popd
   rm -rf subl.ee-archives
+- | # config ssh key
+  openssl aes-256-cbc \
+    -K $encrypted_5be8b973960e_key -iv $encrypted_5be8b973960e_iv \
+    -in ../key.enc -out key -d
+  chmod 600 key
+  eval "$(ssh-agent -s)"
+  ssh-add key
 - | # deploy subl.ee
-  export REPO="https://$GITHUB_TOKEN@github.com/sublee/subl.ee"
   rm -rf .gh-pages && git clone -b gh-pages "$REPO" .gh-pages && cd .gh-pages
   git rm -r --ignore-unmatch *
   mv ../.frozen/* .
