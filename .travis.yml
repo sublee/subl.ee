@@ -11,10 +11,8 @@ script:
 - | # config ssh keys
   openssl aes-256-cbc \
     -K $encrypted_5be8b973960e_key -iv $encrypted_5be8b973960e_iv \
-    -in keys/subl.ee.enc -out keys/subl.ee -d
-  openssl aes-256-cbc \
-    -K $encrypted_5be8b973960e_key -iv $encrypted_5be8b973960e_iv \
-    -in keys/subl.ee-archives.enc -out keys/subl.ee-archives -d
+    -in keys.tar.enc -out keys.tar -d
+  tar xvf keys.tar
   chmod 600 keys/subl.ee
   chmod 600 keys/subl.ee-archives
   eval "$(ssh-agent -s)"
