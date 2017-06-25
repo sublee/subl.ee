@@ -5,9 +5,9 @@ python:
 install:
 - pip install -r requirements.txt
 script:
-- rm -rf .frozen && mkdir .frozen
-- python sublee.py freeze .frozen
-after_success:
+- | # freeze subl.ee
+  rm -rf .frozen && mkdir .frozen
+  python sublee.py freeze .frozen
 - | # config ssh keys
   openssl aes-256-cbc \
     -K $encrypted_f9daf94881ca_key -iv $encrypted_f9daf94881ca_iv \
