@@ -160,6 +160,8 @@ Contributed
     [gevent#608](https://github.com/gevent/gevent/pull/608);
     [jQuery-1.4.3](https://blog.jquery.com/2010/10/16/jquery-143-released/);
     [node-irc#3](https://github.com/martynsmith/node-irc/pull/3);
+    [pytest-rerunfailures#47](
+      https://github.com/pytest-dev/pytest-rerunfailures/pull/47);
     [PyZMQ#951](https://github.com/zeromq/pyzmq/pull/951).
 
 Invited Talks
