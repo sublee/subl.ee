@@ -8,13 +8,25 @@ script:
 - rm -rf .frozen && mkdir .frozen
 - python sublee.py freeze .frozen
 after_success:
+- | # config ssh keys
+  openssl aes-256-cbc \
+    -K $encrypted_f9daf94881ca_key -iv $encrypted_f9daf94881ca_iv \
+    -in keys/subl.ee.enc -out keys/subl.ee -d
+  openssl aes-256-cbc \
+    -K $encrypted_f9daf94881ca_key -iv $encrypted_f9daf94881ca_iv \
+    -in keys/subl.ee-archive.enc -out keys/subl.ee-archive -d
+  chmod 600 keys/subl.ee
+  chmod 600 keys/subl.ee-archives
+  eval "$(ssh-agent -s)"
+  ssh-add keys/subl.ee
+  ssh-add keys/subl.ee-archives
 - | # setup git
   git config --global user.name "Heungsub Lee"
   git config --global user.email "sub@subl.ee"
   git fetch --unshallow
 - | # archive at archives.subl.ee
   SHORT_COMMIT="$(git rev-parse --short "$TRAVIS_COMMIT")"
-  git clone "https://$GITHUB_TOKEN@github.com/sublee/subl.ee-archives"
+  git clone git@github.com:sublee/subl.ee-archives.git
   git -C subl.ee-archives checkout master
   cp -r .frozen subl.ee-archives/"$SHORT_COMMIT"
   pushd subl.ee-archives
@@ -24,13 +36,6 @@ after_success:
   git push origin master > /dev/null 2>&1
   popd
   rm -rf subl.ee-archives
-- | # config ssh key
-  openssl aes-256-cbc \
-    -K $encrypted_5be8b973960e_key -iv $encrypted_5be8b973960e_iv \
-    -in ../key.enc -out key -d
-  chmod 600 key
-  eval "$(ssh-agent -s)"
-  ssh-add key
 - | # deploy subl.ee
   rm -rf .gh-pages && git clone -b gh-pages "$REPO" .gh-pages && cd .gh-pages
   git rm -r --ignore-unmatch *
