@@ -190,7 +190,7 @@ Computer Software, [Kwangwoon University][kw], 2008
 [zeronimo]: https://github.com/sublee/zeronimo
 [lets]: https://github.com/sublee/lets
 [jdoctest]: https://lunant.github.com/jdoctest
-[subleerunker]: runker/
+[subleerunker]: /runker/
 [me2virus]: https://github.com/sublee/me2virus
 [me2day]: http://en.wikipedia.org/wiki/Me2day
 [flask]: http://flask.pocoo.org/
