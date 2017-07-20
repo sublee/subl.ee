@@ -42,7 +42,7 @@ I made or am making
 [Ranking]: http://pythonhosted.org/ranking
 [Flask-AutoIndex]: http://pythonhosted.org/Flask-AutoIndex
 [Flask-Silk]: http://pythonhosted.org/Flask-Silk
-[sUBLEERUNKER]: runker/
+[sUBLEERUNKER]: /runker/
 
 I spoke about
 -------------
