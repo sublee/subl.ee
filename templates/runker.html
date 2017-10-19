@@ -11,7 +11,7 @@
   document.addEventListener('DOMContentLoaded', function() {
     if (location.search || location.hash) {
       var frameElem = document.getElementsByTagName('frame')[0];
-      frameElem .src += location.search + location.hash;
+      frameElem.src += location.search + location.hash;
     }
     window.frames[0].focus();
   });
