@@ -11,33 +11,6 @@ script:
   rm -rf .frozen && mkdir .frozen
   python sublee.py freeze .frozen
 
-- | # config ssh keys
-  openssl aes-256-cbc \
-    -K $encrypted_5be8b973960e_key -iv $encrypted_5be8b973960e_iv \
-    -in keys.tar.enc -out keys.tar -d
-  tar xvf keys.tar
-  eval "$(ssh-agent -s)"
-  chmod 600 keys/*
-  ssh-add keys/*
-
-- | # setup git
-  git config --global user.name "Heungsub Lee"
-  git config --global user.email "sub@subl.ee"
-  git fetch --unshallow
-
-- | # archive at archives.subl.ee
-  SHORT_COMMIT="$(git rev-parse --short "$TRAVIS_COMMIT")"
-  git clone git@github.com:sublee/subl.ee-archives.git
-  git -C subl.ee-archives checkout master
-  cp -r .frozen subl.ee-archives/"$SHORT_COMMIT"
-  pushd subl.ee-archives
-    python archives.py preserve "$SHORT_COMMIT"
-    git add "$SHORT_COMMIT"
-    git commit -m "Archive to deploy at https://archives.subl.ee/$SHORT_COMMIT"
-    git push origin master > /dev/null 2>&1
-  popd
-  rm -rf subl.ee-archives
-
 - | # prepare subl.ee gh-pages
   mkdir .gh-pages-subl.ee
   pushd .gh-pages-subl.ee
@@ -63,6 +36,17 @@ script:
     do
       sed -i '0,/<html/s/<html/\0 style="'"$REVERSED"'"/' "$html"
     done
+  popd
+
+- | # archive at archives.subl.ee
+  SHORT_COMMIT="$(git rev-parse --short "$TRAVIS_COMMIT")"
+  git clone "https://sublee:$GITHUB_TOKEN@github.com/sublee/subl.ee-archives"
+  pushd subl.ee-archives
+    cp -r ../.frozen "$SHORT_COMMIT"
+    python archives.py preserve "$SHORT_COMMIT"
+    git add "$SHORT_COMMIT"
+    git commit -m "Archive at https://archives.subl.ee/$SHORT_COMMIT"
+    git push origin master > /dev/null 2>&1
   popd
 
 deploy:
