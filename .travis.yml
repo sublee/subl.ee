@@ -2,12 +2,15 @@ language: python
 sudo: false
 python:
 - 2.7
+
 install:
 - pip install -r requirements.txt
+
 script:
 - | # freeze subl.ee
   rm -rf .frozen && mkdir .frozen
   python sublee.py freeze .frozen
+
 - | # config ssh keys
   openssl aes-256-cbc \
     -K $encrypted_5be8b973960e_key -iv $encrypted_5be8b973960e_iv \
@@ -16,10 +19,12 @@ script:
   eval "$(ssh-agent -s)"
   chmod 600 keys/*
   ssh-add keys/*
+
 - | # setup git
   git config --global user.name "Heungsub Lee"
   git config --global user.email "sub@subl.ee"
   git fetch --unshallow
+
 - | # archive at archives.subl.ee
   SHORT_COMMIT="$(git rev-parse --short "$TRAVIS_COMMIT")"
   git clone git@github.com:sublee/subl.ee-archives.git
@@ -32,31 +37,47 @@ script:
     git push origin master > /dev/null 2>&1
   popd
   rm -rf subl.ee-archives
-- | # deploy subl.ee
-  rm -rf .gh-pages
-  git clone -b gh-pages git@github.com:sublee/subl.ee.git .gh-pages
-  pushd .gh-pages
-    git rm -r --ignore-unmatch *
-    mv ../.frozen/* .
+
+- | # prepare subl.ee gh-pages
+  mkdir .gh-pages-subl.ee
+  pushd .gh-pages-subl.ee
+    cp -r ../.frozen/* .
     echo subl.ee > CNAME
-    git add --all
-    git commit -m "Deploy subl.ee ($TRAVIS_COMMIT)"
-    git push origin gh-pages > /dev/null 2>&1
   popd
-- | # deploy eelb.us
-  REVERSED=$(echo '
-  transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
-  -moz-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  filter: FlipH;
-  -ms-filter: FlipH;
-  ' | xargs echo)
-  for html in $(find . -name '*.html')
-  do
-    sed -i '0,/<html/s/<html/\0 style="'"$REVERSED"'"/' "$html"
-  done
-  echo eelb.us > CNAME
-  git remote add eelbus git@github.com:sublee/eelb.us.git
-  git commit -am "Reverse for eelb.us ($TRAVIS_COMMIT)"
-  git push -f eelbus gh-pages > /dev/null 2>&1
+
+- | # prepare eelb.us gh-pages
+  mkdir .gh-pages-eelb.us
+  pushd .gh-pages-eelb.us
+    cp -r ../.frozen/* .
+    echo eelb.us > CNAME
+    # reverse the pages
+    REVERSED=$(echo '
+    transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: FlipH;
+    ' | xargs echo)
+    for html in $(find . -name '*.html')
+    do
+      sed -i '0,/<html/s/<html/\0 style="'"$REVERSED"'"/' "$html"
+    done
+  popd
+
+deploy:
+  # subl.ee
+  - provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    local_dir: .gh-pages-subl.ee
+    on:
+      branch: master
+  # eelb.us
+  - provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    local_dir: .gh-pages-eelb.us
+    repo: sublee/eelb.us
+    on:
+      branch: master
