@@ -43,8 +43,13 @@ script:
   git clone "https://sublee:$GITHUB_TOKEN@github.com/sublee/subl.ee-archives"
   pushd subl.ee-archives
     cp -r ../.frozen "$SHORT_COMMIT"
+
     python archives.py preserve "$SHORT_COMMIT"
+    python archives.py index > index.html
+
     git add "$SHORT_COMMIT"
+    git add index.html
+
     git commit -m "Archive at https://archives.subl.ee/$SHORT_COMMIT"
     git push origin master > /dev/null 2>&1
   popd
