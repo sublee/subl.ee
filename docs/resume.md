@@ -56,7 +56,7 @@ Tools {: .label }
 Work Experience
 ---------------
 
-Game Server Architect {: .label }
+Game Server Technical Director {: .label }
 What! Studio in [Nexon][], 2013--
 :   Developing <cite>[Durango][]</cite>, a seamless open world MMORPG.
     {: .note }
