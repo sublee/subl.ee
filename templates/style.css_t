@@ -59,7 +59,6 @@ body {
   background-color: {{ colors.background }};
   background-repeat: no-repeat;
   white-space: normal;
-  transition: margin 0.2s;
   -webkit-font-smoothing: antialiased;
 }
 
