@@ -295,6 +295,10 @@ i {
 
 /* Error */
 
+.error h1 {
+  white-space: normal;
+}
+
 .error footer {
   margin-top: 0;
 }
