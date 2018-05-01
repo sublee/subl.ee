@@ -167,18 +167,18 @@ Contributed
 Invited Talks
 -------------
 
-- [The server architecture of Durango][ndc14] at NDC 2014 (Korean)
-- [The server architecture of Durango Vol. 2][ndc16] at NDC 2016 (Korean)
 - [The server architecture of Durango Vol. 3][ndc18] at NDC 2018 (Korean)
-- [Profiling][pycon15] at PyCon KR 2015 (Korean)
 - [Python Survival Guide][nxtk16] at Nexon Talk 2016 (Korean)
+- [The server architecture of Durango Vol. 2][ndc16] at NDC 2016 (Korean)
+- [Profiling][pycon15] at PyCon KR 2015 (Korean)
+- [The server architecture of Durango][ndc14] at NDC 2014 (Korean)
 
-[ndc14]: https://subl.ee/~ndc14
-[ndc16]: https://subl.ee/~ndc16
 [ndc18]: https://subl.ee/~ndc18
+[ndc16]: https://subl.ee/~ndc16
+[ndc14]: https://subl.ee/~ndc14
 
-[pycon15]: https://subl.ee/~pycon15
 [nxtk16]:  https://subl.ee/~nxtk16
+[pycon15]: https://subl.ee/~pycon15
 
 Education
 ---------
