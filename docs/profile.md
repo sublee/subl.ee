@@ -47,12 +47,15 @@ I made or am making
 I spoke about
 -------------
 
-- [Python Survival Guide][nxtk16-slide] at Nexon Talk 2016 (Korean)
-- [The server architecture of Durango Vol. 2][ndc16-slide] at NDC 2016 (Korean)
-- [Profiling][pyconkr2015-slide] at PyCon KR 2015 (Korean)
-- [The server architecture of Durango][ndc14-slide] at NDC 2014 (Korean)
+- [The server architecture of Durango][ndc14] at NDC 2014 (Korean)
+- [The server architecture of Durango Vol. 2][ndc16] at NDC 2016 (Korean)
+- [The server architecture of Durango Vol. 3][ndc18] at NDC 2018 (Korean)
+- [Profiling][pycon15] at PyCon KR 2015 (Korean)
+- [Python Survival Guide][nxtk16] at Nexon Talk 2016 (Korean)
 
-[nxtk16-slide]: http://www.slideshare.net/sublee/ss-67589513
-[ndc16-slide]: http://www.slideshare.net/sublee/lt-vol-2
-[pyconkr2015-slide]: http://www.slideshare.net/sublee/profiling-52226374
-[ndc14-slide]: http://www.slideshare.net/sublee/spof-mmorpg
+[ndc14]: https://subl.ee/~ndc14
+[ndc16]: https://subl.ee/~ndc16
+[ndc18]: https://subl.ee/~ndc18
+
+[pycon15]: https://subl.ee/~pycon15
+[nxtk16]:  https://subl.ee/~nxtk16
