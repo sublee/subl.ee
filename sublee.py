@@ -69,6 +69,8 @@ app = Flask(__name__, static_url_path='/-')
 
 
 def jinja_minify_js(caller, mangle_toplevel=False):
+    if app.debug:
+        return caller()
     return minify_js(caller(), mangle=True, mangle_toplevel=mangle_toplevel)
 
 
@@ -258,10 +260,9 @@ def cli():
 @cli.command()
 @click.option('--host', '-h', default='0.0.0.0')
 @click.option('--port', '-p', type=click.IntRange(1, 65536), default=8080)
-@click.option('--debug', is_flag=True)
-def run(host, port, debug):
+def run(host, port):
     """Run a web server for the website."""
-    app.run(host=host, port=port, debug=debug)
+    app.run(host=host, port=port, debug=True)
 
 
 @cli.command()
