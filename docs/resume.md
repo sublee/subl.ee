@@ -19,7 +19,8 @@ Web Sites {: .label }
 Interests
 ---------
 
-- Distributed game server architecture on a cloud infrastructure
+- Distributed server on a cloud infrastructure
+- DevOps across a huge server
 - Efficient and happy development process
 - Free and open source software
 
@@ -27,27 +28,32 @@ Skills
 ------
 
 Programming Languages {: .label }
-: Python (expert), Bash, C#, Go, Node.js, C
+: Go, Python (expert), Bash, C#, Node.js, C
   {: .attr }
 
-Back-end Technologies {: .label }
-: ZeroMQ, AWS, Docker, etcd, gevent, Google App Engine, Upstart, Fabric, Linux
+DevOps {: .label }
+: AWS, Terraform, Google Cloud, Docker, Systemd, Upstart, Ansible, Fabric,
+  Linux
   {: .attr }
 
-Databases or Cache Storages {: .label }
-: Couchbase, Redis, PostgreSQL, SQLite, MongoDB
-  {: .attr }
-
-Test Engineering {: .label }
-: pytest, GitLab CI, Travis CI
+Storages {: .label }
+: Couchbase, Redis, etcd, MySQL, PostgreSQL, SQLite, MongoDB
   {: .attr }
 
 Web Development {: .label }
 : Flask, Requests, jQuery, socket.io, HTML5/CSS3, Nginx, Gunicorn
   {: .attr }
 
+Test Engineering {: .label }
+: pytest, GitLab CI, Travis CI
+  {: .attr }
+
+Back-end Technologies {: .label }
+: ZeroMQ
+  {: .attr }
+
 Tools {: .label }
-: Vim, Visual Studio, Git, Plastic SCM, Mercurial, Visio, VirtualBox
+: Vim, tmux, Visual Studio Code, Git, Plastic SCM, Mercurial, VirtualBox
   {: .attr }
 {^ .attrs }
 
