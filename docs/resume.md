@@ -19,8 +19,8 @@ Web Sites {: .label }
 Interests
 ---------
 
-- Distributed server on a cloud infrastructure
-- DevOps across a huge server
+- Distributed server architecture on a cloud infrastructure
+- DevOps in huge systems
 - Efficient and happy development process
 - Free and open source software
 
