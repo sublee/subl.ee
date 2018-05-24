@@ -32,8 +32,7 @@ Programming Languages {: .label }
   {: .attr }
 
 DevOps {: .label }
-: AWS, Terraform, Google Cloud, Docker, Systemd, Upstart, Ansible, Fabric,
-  Linux
+: AWS, Terraform, Google Cloud, Docker, Ansible, systemd, Linux
   {: .attr }
 
 Storages {: .label }
