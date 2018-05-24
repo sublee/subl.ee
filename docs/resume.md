@@ -31,7 +31,7 @@ Programming Languages {: .label }
   {: .attr }
 
 Back-end Technologies {: .label }
-: ØMQ, AWS, Docker, etcd, gevent, Google App Engine, Upstart, Fabric, Linux
+: ZeroMQ, AWS, Docker, etcd, gevent, Google App Engine, Upstart, Fabric, Linux
   {: .attr }
 
 Databases or Cache Storages {: .label }
@@ -65,7 +65,7 @@ What! Studio in [Nexon][], 2013--
     development process and pipelines for the studio.  Leading game server
     engineers and DevOps engineers.
 
-    Using Python, C#, C, Cython, ØMQ, MsgPack, Couchbase, etcd, Redis,
+    Using Python, C#, C, Cython, ZeroMQ, MsgPack, Couchbase, etcd, Redis,
     PostgreSQL, Unity3D, Git, PlasticSCM, Fabric, Docker, Ubuntu, and AWS.
 
 Game Development Engineer {: .label }
@@ -139,7 +139,7 @@ Open Source Experience
     to translate undocumented proper nouns.
 
 Others
-:   - [Zeronimo][] -- A distributed RPC system based on ØMQ
+:   - [Zeronimo][] -- A distributed RPC system based on ZeroMQ
     - [Lets][] -- Several utilities for gevent
     - [Energy][] -- Energy system for social games
     - [Flask-AutoIndex][] -- mod_autoindex for Flask
