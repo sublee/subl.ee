@@ -31,28 +31,24 @@ Programming Languages {: .label }
 : Go, Python (expert), Bash, C#, Node.js, C
   {: .attr }
 
+Back-end Technologies {: .label }
+: ZeroMQ, Couchbase, Redis, etcd, MySQL, PostgreSQL
+  {: .attr }
+
+Web Development {: .label }
+: Vue.js, Flask, jQuery, socket.io, HTML5/CSS3, Nginx
+  {: .attr }
+
 DevOps {: .label }
 : AWS, Terraform, Google Cloud, Docker, Ansible, systemd, Linux
   {: .attr }
 
-Storages {: .label }
-: Couchbase, Redis, etcd, MySQL, PostgreSQL, SQLite, MongoDB
-  {: .attr }
-
-Web Development {: .label }
-: Flask, Requests, jQuery, socket.io, HTML5/CSS3, Nginx, Gunicorn
-  {: .attr }
-
 Test Engineering {: .label }
-: pytest, GitLab CI, Travis CI
-  {: .attr }
-
-Back-end Technologies {: .label }
-: ZeroMQ
+: Testify, pytest, GitLab CI, Travis CI
   {: .attr }
 
 Tools {: .label }
-: Vim, tmux, Visual Studio Code, Git, Plastic SCM, Mercurial, VirtualBox
+: Vim, tmux, ZSH, Visual Studio Code, Git, VirtualBox
   {: .attr }
 {^ .attrs }
 
@@ -65,25 +61,29 @@ Game Server Technical Director {: .label }
 What! Studio in [Nexon][], 2013--
 :   Developing <cite>[Durango][]</cite>, a seamless open world MMORPG.
     {: .note }
-:   Designing and implementing the architecture of a flexible distributed
-    MMORPG server to achieve high-availability of the game service.  Building a
-    development process and pipelines for the studio.  Leading game server
-    engineers and DevOps engineers.
 
-    Using Python, C#, C, Cython, ZeroMQ, MsgPack, Couchbase, etcd, Redis,
-    PostgreSQL, Unity3D, Git, PlasticSCM, Fabric, Docker, Ubuntu, and AWS.
+:   Designing and implementing the architecture of a distributed MMORPG server.
+    Achieved up to 70k concurrent users per MMO world. Launched this game in
+    Korea and Indonesia. Maintaining the game service continuously.
+
+    Built a development process and pipelines for the studio. Leading game
+    server engineers and DevOps engineers.
+
+    Using Python, C#, Cython, ZeroMQ, MsgPack, Couchbase, etcd, Redis, MySQL,
+    Unity3D, Git, PlasticSCM, Ansible, Fabric, Docker, Ubuntu, and AWS.
 
 Game Development Engineer {: .label }
 Team Lupin in [Nexon][], 2011--2013
 :   Developed and published mobile and Web series of
     <cite>[KartRider][]</cite>, a synchronous multiplayer casual racing game.
     {: .note }
+
 :   Designed and implemented a distributed game server architecture for
     synchronous multiplayer games for the <cite>KartRider Dash</cite> and
     <cite>KartRider Coin Rush</cite> series.
 
     Researched various rating systems such as [Elo][], [Glicko][], and
-    [TrueSkill][].  Implemented a simple matchmaker for 4v4 or free-for-all
+    [TrueSkill][]. Implemented a simple matchmaker for 4v4 or free-for-all
     racing games.
 
     Used Python, Redis as a message broker, Couchbase, MongoDB, Unity3D,
@@ -93,9 +93,10 @@ Full Stack Web Developer {: .label }
 [Npine][], 2008--2011
 :   Supplies stock images for business on <cite>[Iclickart][]</cite>.
     {: .note }
-:   Developed a web server framework adapting the MVC pattern by PHP5.  Made
+
+:   Developed a web server framework adapting the MVC pattern by PHP5. Made
     and maintained web sites where provide stock images including
-    <cite>[Iclickart][]</cite> by the own framework.  Maintained physical Linux
+    <cite>[Iclickart][]</cite> by the own framework. Maintained physical Linux
     machines in a data center.
 
     Led the software engineering team.
@@ -105,6 +106,7 @@ Front-end Web Developer {: .label }
 :   Served <cite>VLAAH</cite>, a social network service for discovering,
     sharing, and utilizing opinions.
     {: .note }
+
 :   Designed and implemented the UI/UX for <cite>VLAAH</cite> by PHP5,
     JavaScript with MooTools, and Python.
 
@@ -114,14 +116,21 @@ Front-end Web Developer {: .label }
 Open Source Experience
 ----------------------
 
+[Hangulize 2][hangulize2], 2018--
+:   Reboot of [Hangulize][] in Go.
+    {: .note }
+
+:   Re-implemented Hangulize, which is also listed at the below, to achieve
+    better features, performance, and productivity in Go rather than Python.
+
 [Profiling][], 2014--
 :   An interactive profiler for Python inspired by the Unity3D profiler.
     {: .note }
 
 :   Developed to find bottlenecks in the <cite>[Durango][]</cite> server by
-    Python and C.  Designed a handy interactive TUI like [htop][] by [Urwid][].
+    Python and C. Designed a handy interactive TUI like [htop][] by [Urwid][].
 
-    On GitHub, 2400+ people stared this project.  Also it was the 3rd daily
+    On GitHub, 2600+ people stared this project. Also it was the 3rd daily
     trending repository at Sep 22, 2014.
 
 [TrueSkill][trueskill-py], 2012--
@@ -140,7 +149,7 @@ Open Source Experience
     [hangulize-idea] by Python and complex regular expressions.
 
     Designed and implemented the Web service and RESTful API by [Flask][] on
-    [Google App Engine][gae].  Many professional Korean translators visit here
+    [Google App Engine][gae]. Many professional Korean translators visit here
     to translate undocumented proper nouns.
 
 Others
@@ -196,6 +205,7 @@ Computer Software, [Kwangwoon University][kw], 2008
 [urwid]: http://urwid.org/
 [trueskill-py]: http://trueskill.org/
 [trueskill]: http://research.microsoft.com/en-us/projects/trueskill/
+[hangulize2]: https://github.com/sublee/hangulize2
 [hangulize]: http://hangulize.org/
 [hangulize-idea]: http://iceager.egloos.com/2610028
 [energy]: http://pythonhosted.org/energy
