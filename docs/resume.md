@@ -21,8 +21,7 @@ Interests
 
 - Distributed server architecture on a cloud infrastructure
 - DevOps in huge systems
-- High quality internationalization systems based on linguistics
-- Efficient and happy development process
+- Internationalization systems based on linguistics
 - Free and open source software
 
 Skills
