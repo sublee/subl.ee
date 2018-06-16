@@ -21,6 +21,7 @@ Interests
 
 - Distributed server architecture on a cloud infrastructure
 - DevOps in huge systems
+- High quality internationalization systems based on linguistics
 - Efficient and happy development process
 - Free and open source software
 
@@ -63,11 +64,19 @@ What! Studio in [Nexon][], 2013--
     {: .note }
 
 :   Designing and implementing the architecture of a distributed MMORPG server.
-    Achieved up to 70k concurrent users per MMO world. Launched this game in
-    Korea and Indonesia. Maintaining the game service continuously.
+    Achieved up to 70k concurrent users per MMO world with a scalable
+    geological space. Launched this game in Korea and Indonesia. Maintaining
+    the game service continuously.
 
-    Built a development process and pipelines for the studio. Leading game
-    server engineers and DevOps engineers.
+    Talked about the architecture in NDC [2014][ndc14], [2016][ndc16], and
+    [2018][ndc18] (Korean).
+
+    Built an internationalization system based on gettext. Implemented a high
+    quality message interpolation focused on linguistics features of Korean and
+    Indo-European languages.
+
+    Building a development process with code review and pipelines for the
+    studio. Leading the game server engineers and the DevOps engineers.
 
     Using Python, C#, Cython, ZeroMQ, MsgPack, Couchbase, etcd, Redis, MySQL,
     Unity3D, Git, PlasticSCM, Ansible, Fabric, Docker, Ubuntu, and AWS.
@@ -80,7 +89,8 @@ Team Lupin in [Nexon][], 2011--2013
 
 :   Designed and implemented a distributed game server architecture for
     synchronous multiplayer games for the <cite>KartRider Dash</cite> and
-    <cite>KartRider Coin Rush</cite> series.
+    <cite>KartRider Coin Rush</cite> series. Launched these games globally and
+    maintained them.
 
     Researched various rating systems such as [Elo][], [Glicko][], and
     [TrueSkill][]. Implemented a simple matchmaker for 4v4 or free-for-all
@@ -130,7 +140,7 @@ Open Source Experience
 :   Developed to find bottlenecks in the <cite>[Durango][]</cite> server by
     Python and C. Designed a handy interactive TUI like [htop][] by [Urwid][].
 
-    On GitHub, 2600+ people stared this project. Also it was the 3rd daily
+    On GitHub, 2700+ people stared this project. Also it was the 3rd daily
     trending repository at Sep 22, 2014.
 
 [TrueSkill][trueskill-py], 2012--
