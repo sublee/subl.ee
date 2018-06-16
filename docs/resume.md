@@ -37,7 +37,7 @@ Back-end Technologies {: .label }
   {: .attr }
 
 Web Development {: .label }
-: Vue.js, Flask, jQuery, socket.io, HTML5/CSS3, Nginx
+: Vue.js, Lodash, Flask, jQuery, socket.io, HTML5/CSS3, Nginx
   {: .attr }
 
 DevOps {: .label }
