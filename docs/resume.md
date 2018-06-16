@@ -68,15 +68,9 @@ What! Studio in [Nexon][], 2013--
     geological space. Launched this game in Korea and Indonesia. Maintaining
     the game service continuously.
 
-    Talked about the architecture in NDC [2014][ndc14], [2016][ndc16], and
-    [2018][ndc18] (Korean).
-
     Built an internationalization system based on gettext. Implemented a high
     quality message interpolation focused on linguistics features of Korean and
     Indo-European languages.
-
-    Building a development process with code review and pipelines for the
-    studio. Leading the game server engineers and the DevOps engineers.
 
     Using Python, C#, Cython, ZeroMQ, MsgPack, Couchbase, etcd, Redis, MySQL,
     Unity3D, Git, PlasticSCM, Ansible, Fabric, Docker, Ubuntu, and AWS.
