@@ -20,7 +20,7 @@ Interests
 ---------
 
 - Distributed server architecture on a cloud infrastructure
-- DevOps in huge systems
+- DevOps for huge systems
 - Internationalization systems based on linguistics
 - Free and open source software
 
@@ -28,7 +28,7 @@ Skills
 ------
 
 Programming Languages {: .label }
-: Go, Python (expert), Bash, C#, Node.js, C
+: Go, Python (expert), Bash, C#
   {: .attr }
 
 Back-end Technologies {: .label }
@@ -36,11 +36,11 @@ Back-end Technologies {: .label }
   {: .attr }
 
 Web Development {: .label }
-: Vue.js, Lodash, Flask, jQuery, socket.io, HTML5/CSS3, Nginx
+: Vue.js, Lodash, Gin, Flask, socket.io, jQuery, HTML5/CSS3, Nginx
   {: .attr }
 
 DevOps {: .label }
-: AWS, Terraform, Google Cloud, Docker, Ansible, systemd, Linux
+: AWS, GAE, Terraform, Packer, Docker, Ansible, Linux
   {: .attr }
 
 Test Engineering {: .label }
@@ -48,7 +48,7 @@ Test Engineering {: .label }
   {: .attr }
 
 Tools {: .label }
-: Vim, tmux, ZSH, Visual Studio Code, Git, VirtualBox
+: Vim, tmux, ZSH, Git, VS Code, VirtualBox
   {: .attr }
 {^ .attrs }
 
@@ -136,14 +136,6 @@ Open Source Experience
     On GitHub, 2700+ people stared this project. Also it was the 3rd daily
     trending repository at Sep 22, 2014.
 
-[TrueSkill][trueskill-py], 2012--
-:   A Python implementation of [TrueSkill<sup>TM</sup>][trueskill] which is a
-    rating algorithm for Xbox Live.
-    {: .note }
-
-:   Implemented TrueSkill<sup>TM</sup> by Python with simple API to learn and
-    share the smart algorithm.
-
 [Hangulize][], 2010--
 :   Automatically transcribes a non-Korean word into Hangul.
     {: .note }
@@ -155,10 +147,16 @@ Open Source Experience
     [Google App Engine][gae]. Many professional Korean translators visit here
     to translate undocumented proper nouns.
 
+[TrueSkill][trueskill-py], 2012--
+:   A Python implementation of [TrueSkill<sup>TM</sup>][trueskill] which is a
+    rating algorithm for Xbox Live.
+    {: .note }
+
+:   Implemented TrueSkill<sup>TM</sup> by Python with simple API to learn and
+    share the smart algorithm.
+
 Others
 :   - [Zeronimo][] -- A distributed RPC system based on ZeroMQ
-    - [Lets][] -- Several utilities for gevent
-    - [Energy][] -- Energy system for social games
     - [Flask-AutoIndex][] -- mod_autoindex for Flask
     - [SUBLEERUNKER][] -- A simple prody game of SUBERUNKER
     - [Me2virus][] -- An XSS attack on [Me2day][], a social network service.
@@ -208,7 +206,7 @@ Computer Software, [Kwangwoon University][kw], 2008
 [urwid]: http://urwid.org/
 [trueskill-py]: http://trueskill.org/
 [trueskill]: http://research.microsoft.com/en-us/projects/trueskill/
-[hangulize2]: https://github.com/sublee/hangulize2
+[hangulize2]: https://github.com/hangulize
 [hangulize]: http://hangulize.org/
 [hangulize-idea]: http://iceager.egloos.com/2610028
 [energy]: http://pythonhosted.org/energy
@@ -232,6 +230,8 @@ Computer Software, [Kwangwoon University][kw], 2008
 [lunant]: http://lunant.net/
 [kw]: http://www.kw.ac.kr/
 
+*[AWS]: Amazon Web Services
+*[GAE]: Google App Engine
 *[MMORPG]: Massively multiplayer online role-playing game
 *[MVC]: Model-view-controller
 *[TUI]: Text-based User Interface
