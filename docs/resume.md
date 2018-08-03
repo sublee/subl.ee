@@ -19,8 +19,7 @@ Web Sites {: .label }
 Interests
 ---------
 
-- Distributed server architecture on a cloud infrastructure
-- DevOps for huge systems
+- Distributed server architecture
 - Internationalization systems based on linguistics
 - Free and open source software
 
@@ -40,7 +39,7 @@ Web Development {: .label }
   {: .attr }
 
 DevOps {: .label }
-: AWS, GAE, Terraform, Packer, Docker, Ansible, Linux
+: AWS, GAE, Terraform, Packer, Docker, Ansible, Datadog, Linux
   {: .attr }
 
 Test Engineering {: .label }
@@ -57,14 +56,14 @@ Tools {: .label }
 Work Experience
 ---------------
 
-Game Server Technical Director {: .label }
+Game Server Architect {: .label }
 What! Studio in [Nexon][], 2013--
 :   Developing <cite>[Durango][]</cite>, a seamless open world MMORPG.
     {: .note }
 
 :   Designing and implementing the architecture of a distributed MMORPG server.
     Achieved up to 70k concurrent users per MMO world with a scalable
-    geological space. Launched this game in Korea and Indonesia. Maintaining
+    geological space. Launched this game in Korea and Indonesia. Maintained
     the game service continuously.
 
     Built an internationalization system based on gettext. Implemented a high
