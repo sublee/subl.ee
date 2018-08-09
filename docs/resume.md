@@ -206,7 +206,7 @@ Computer Software, [Kwangwoon University][kw], 2008
 [trueskill-py]: http://trueskill.org/
 [trueskill]: http://research.microsoft.com/en-us/projects/trueskill/
 [hangulize2]: https://github.com/hangulize
-[hangulize]: http://hangulize.org/
+[hangulize]: https://hangulize.org/
 [hangulize-idea]: http://iceager.egloos.com/2610028
 [energy]: http://pythonhosted.org/energy
 [flask-autoindex]: http://pythonhosted.org/Flask-AutoIndex
