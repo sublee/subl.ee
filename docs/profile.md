@@ -40,7 +40,7 @@ I've made
 I spoke about
 -------------
 
-- Remake of Hangulize (coming soon) at Golang Korea Meetup Aug 2018 (Korean)
+- [Remake of Hangulize][gokr1808] at Golang Korea Meetup Aug 2018 (Korean)
 - [The server architecture of Durango Vol. 3][ndc18] at NDC 2018 (Korean)
 - [Python Survival Guide][nxtk16] at Nexon Talk 2016 (Korean)
 - [The server architecture of Durango Vol. 2][ndc16] at NDC 2016 (Korean)
@@ -51,5 +51,6 @@ I spoke about
 [ndc16]: https://subl.ee/~ndc16
 [ndc14]: https://subl.ee/~ndc14
 
-[nxtk16]:  https://subl.ee/~nxtk16
-[pycon15]: https://subl.ee/~pycon15
+[gokr1808]: https://subl.ee/~gokr1808
+[nxtk16]:   https://subl.ee/~nxtk16
+[pycon15]:  https://subl.ee/~pycon15
