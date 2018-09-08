@@ -205,7 +205,7 @@ Computer Software, [Kwangwoon University][kw], 2008
 [profiling]: https://github.com/what-studio/profiling
 [htop]: http://hisham.hm/htop
 [urwid]: http://urwid.org/
-[trueskill-py]: http://trueskill.org/
+[trueskill-py]: https://trueskill.org/
 [trueskill]: http://research.microsoft.com/en-us/projects/trueskill/
 [hangulize2]: https://github.com/hangulize
 [hangulize]: https://hangulize.org/
@@ -220,7 +220,7 @@ Computer Software, [Kwangwoon University][kw], 2008
 [me2day]: http://en.wikipedia.org/wiki/Me2day
 [flask]: http://flask.pocoo.org/
 [gae]: https://cloud.google.com/appengine
-[nexon]: http://company.nexon.com/eng
+[nexon]: https://company.nexon.com/eng
 [durango]: http://durango.nexon.com/
 [vindictus]: http://en.wikipedia.org/wiki/Vindictus
 [kartrider]: http://kart.nexon.com/

@@ -16,10 +16,10 @@ at [What! Studio][] in [Nexon][] and also an [open source][] enthusiast.
 More details are in my [résumé](/resume/).
 {: .hard-returns }
 
-[sub@subl.ee]: mailto:sub@subl.ee
+[sub@subl.ee]:  mailto:sub@subl.ee
 [What! Studio]: https://github.com/what-studio
-[Nexon]: http://nexon.com/
-[Open Source]: https://github.com/sublee
+[Nexon]:        https://company.nexon.com/eng
+[Open Source]:  https://github.com/sublee
 
 I've made
 ---------
@@ -31,11 +31,12 @@ I've made
 - [TrueSkill][]: A rating system for online games.
 - [SUBLEERUNKER][]: A simple game with pixel-art what I drew.
 
-[Durango]: http://durango.nexon.com/
+[Durango]:   http://durango.nexon.com/
 [Profiling]: https://github.com/what-studio/profiling
 [Hangulize]: https://hangulize.org/
-[TrueSkill]: http://trueskill.org/
-[sUBLEERUNKER]: /runker/
+[TrueSkill]: https://trueskill.org/
+
+[SUBLEERUNKER]: /runker/
 
 I spoke about
 -------------
