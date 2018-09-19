@@ -406,3 +406,16 @@ papago:
     blur: '#777'
     link: '#00a9ff'
     vlink: '#0085ff'
+
+naver-labs:
+  emblem:
+    shape: ☲
+    colors: {0: '#000'}
+  colors:
+    text: '#555'
+    epic: '#333'
+    blur: '#999'
+    link: '#0078ff'
+  text: {font: Roboto}
+  css: |
+    h1, h2 { font-weight: 700; text-transform: uppercase; }
