@@ -431,3 +431,13 @@ terraform:
   text: {font: Open Sans}
   css: |
     .emblem { transform: skewy(15deg); }
+
+korbit:
+  emblem:
+    shape: ☷
+    colors: {0: '#3bc2d4'}
+  colors:
+    text: '#333'
+    epic: '#3bc2d4'
+    blur: '#777'
+    link: '#3bc2d4'
