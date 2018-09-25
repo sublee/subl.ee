@@ -455,6 +455,20 @@ nekoyume:
     link: '#1c7ed6'
   title: {font: Fredericka the Great, generic: cursive}
 
+kakao:
+  emblem:
+    shape: ☲
+    colors: {0: '#ffcd00'}
+  colors:
+    text: '#666'
+    epic: '#1e1e1e'
+    blur: '#666'
+    link: '#1e1e1e'
+  title: {font: Ubuntu, weight: 500}
+  css: |
+    a:link, a:visited { text-decoration: underline; }
+    a:hover { font-weight: 700; }
+
 trello:
   emblem:
     shape: ☰
