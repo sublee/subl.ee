@@ -417,8 +417,9 @@ naver-labs:
     blur: '#999'
     link: '#0078ff'
   text: {font: Roboto}
+  title: {weight: 700}
   css: |
-    h1, h2 { font-weight: 700; text-transform: uppercase; }
+    h1, h2 { text-transform: uppercase; }
 
 terraform:
   emblem:
@@ -463,6 +464,6 @@ trello:
     blur: '#8c8c8c'
     link: '#298fca'
     vlink: '#0079bf'
+  title: {weight: 700}
   css: |
-    h1, h2 { font-weight: 700; }
     .emblem i { border-radius: 4px; }
