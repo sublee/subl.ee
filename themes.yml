@@ -430,9 +430,9 @@ terraform:
     link: '#5c4ee5'
   text: {font: Open Sans}
   css: |
-    .emblem-left   { transform: skewy(15deg) translateY(-8px); }
-    .emblem-middle { transform: skewy(15deg); }
-    .emblem-right  { transform: skewy(-15deg); }
+    .emblem-left   { transform: skewy(20deg) translateY(-11px); }
+    .emblem-middle { transform: skewy(20deg); }
+    .emblem-right  { transform: skewy(-20deg); }
 
 korbit:
   emblem:
