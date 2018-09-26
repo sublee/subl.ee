@@ -485,3 +485,18 @@ trello:
   title: {weight: 700}
   css: |
     .emblem i { border-radius: 4px; }
+
+golang:
+  emblem:
+    shape: ☲
+    colors: {0: '#76e1fe'}
+  colors:
+    text: '#222'
+    blur: '#666'
+    epic: '#375eab'
+    link: '#375eab'
+  text: {font: Arial, css: false}
+  css: |
+    h2 { background: #e0ebf5; padding: 0.5rem; line-height: 1; }
+    .-epic h2 { margin-bottom: 1rem; }
+    .emblem i { outline: 1px solid #384e54; }
