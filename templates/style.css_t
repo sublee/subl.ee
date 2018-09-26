@@ -31,8 +31,11 @@
                 _text.font|replace(' ', '+') ~ ':' ~ _text.weight) }}
 {% endfor %}
 
-@import url({{ text.css }});
-{% if text.css != title.css %}
+{% if text.css %}
+  @import url({{ text.css }});
+{% endif %}
+
+{% if title.css and title.css != text.css %}
   @import url({{ title.css }});
 {% endif %}
 

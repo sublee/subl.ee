@@ -1,10 +1,11 @@
 # Spec:
 #
 # - emblem:
-#   - shape - a bagua (팔괘) character which describes the layout of the emblem
-#             plates.  See the "Emblem shapes" section.
+#   - shape  - a bagua (팔괘) character which describes the layout of the
+#              emblem plates.  See the "Emblem shapes" section.
 #   - colors - a dict containing colors by their plate numbers like
 #              {0: '#f00', 5: '#ff0'}.  See the "Emblem plate numbers" section.
+#
 # - colors
 #   - background (default: #fff)
 #   - text (default: #000)
@@ -12,14 +13,17 @@
 #   - blur (default: colors.text)
 #   - link (default: #00f)
 #   - vlink (default: colors.link)
-# - plain_doc - set it to true to use colors.text for titles in non-epic pages.
+#
 # - text
-#   - font - the font name. (default: [Hind])
+#   - font    - the font name. (default: [Hind])
 #   - generic - serif|sans-serif|monospace (default: sans-serif)
-#   - css - the web font CSS URL. (default: Google Fonts)
-#   - weight - font weight for normal text. (default: 400)
+#   - weight  - font weight for normal text. (default: 400)
+#   - css     - the web font CSS URL. (default: Google Fonts)
+#
 # - title - same with text, but applied to titles. (default: text.*)
+#
 # - css - additional css code.
+# - plain_doc - set it to true to use colors.text for titles in non-epic pages.
 #
 # Emblem shapes: (top becomes left)
 #
