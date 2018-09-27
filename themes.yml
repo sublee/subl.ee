@@ -500,3 +500,13 @@ golang:
     h2 { background: #e0ebf5; padding: 0.5rem; line-height: 1; }
     .-epic h2 { margin-bottom: 1rem; }
     .emblem i { outline: 1px solid #384e54; }
+
+netflix:
+  emblem:
+    shape: ☲
+    colors: {0: '#e50914'}
+  colors:
+    text: '#141414'
+    blur: '#a7a5a5'
+    link: '#e50914'
+  title: {weight: 600}
