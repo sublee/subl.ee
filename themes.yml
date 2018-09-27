@@ -465,7 +465,7 @@ kakao:
     colors: {0: '#ffcd00'}
   colors:
     text: '#666'
-    epic: '#1e1e1e'
+    epic: '#4c4c4c'
     blur: '#666'
     link: '#1e1e1e'
   title: {font: Ubuntu, weight: 500}
