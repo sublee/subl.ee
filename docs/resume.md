@@ -27,7 +27,7 @@ Skills
 ------
 
 Programming Languages {: .label }
-: Go, Python (expert), Bash, C#
+: Go, Python (expert), JavaScript, Bash, C#
   {: .attr }
 
 Back-end Technologies {: .label }
@@ -118,12 +118,17 @@ Front-end Web Developer {: .label }
 Open Source Experience
 ----------------------
 
-[Hangulize 2][hangulize2], 2018--
-:   Reboot of [Hangulize][] in Go.
+[Hangulize][], 2010--
+:   Automatically transcribes a non-Korean word into Hangul.
     {: .note }
 
-:   Re-implemented Hangulize, which is also listed at the below, to achieve
-    better features, performance, and productivity in Go rather than Python.
+:   Implemented the library to realize [Brian Jongseong Park's idea]
+    [hangulize-idea]. Originally, wrote it in Python, but rewrote in Go to
+    achieve better features, performance, and productivity.
+
+    Designed and implemented the Web service and RESTful API on
+    [Google App Engine][gae]. Many professional Korean translators visit here
+    to translate undocumented proper nouns.
 
 [Profiling][], 2014--
 :   An interactive profiler for Python inspired by the Unity3D profiler.
@@ -135,17 +140,6 @@ Open Source Experience
     On GitHub, 2700+ people stared this project. Also it was the 3rd daily
     trending repository at Sep 22, 2014.
 
-[Hangulize][], 2010--
-:   Automatically transcribes a non-Korean word into Hangul.
-    {: .note }
-
-:   Implemented the library to realize [Brian Jongseong Park's idea]
-    [hangulize-idea] by Python and complex regular expressions.
-
-    Designed and implemented the Web service and RESTful API by [Flask][] on
-    [Google App Engine][gae]. Many professional Korean translators visit here
-    to translate undocumented proper nouns.
-
 [TrueSkill][trueskill-py], 2012--
 :   A Python implementation of [TrueSkill<sup>TM</sup>][trueskill] which is a
     rating algorithm for Xbox Live.
@@ -155,9 +149,9 @@ Open Source Experience
     share the smart algorithm.
 
 Others
-:   - [Zeronimo][] -- A distributed RPC system based on ZeroMQ
+:   - [SUBLEERUNKER][] -- A simple prody game of SUBERUNKER.
+                          Play it in your Web browser.
     - [Flask-AutoIndex][] -- mod_autoindex for Flask
-    - [SUBLEERUNKER][] -- A simple prody game of SUBERUNKER
     - [Me2virus][] -- An XSS attack on [Me2day][], a social network service.
                       When a user looks an infected post, a new infected post
                       was written on the user's wall.
@@ -212,8 +206,6 @@ Computer Software, [Kwangwoon University][kw], 2008
 [hangulize-idea]: http://iceager.egloos.com/2610028
 [energy]: http://pythonhosted.org/energy
 [flask-autoindex]: http://pythonhosted.org/Flask-AutoIndex
-[zeronimo]: https://github.com/sublee/zeronimo
-[lets]: https://github.com/sublee/lets
 [jdoctest]: https://lunant.github.com/jdoctest
 [subleerunker]: /runker/
 [me2virus]: https://github.com/sublee/me2virus
