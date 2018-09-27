@@ -123,12 +123,15 @@ Open Source Experience
     {: .note }
 
 :   Implemented the library to realize [Brian Jongseong Park's idea]
-    [hangulize-idea]. Originally, wrote it in Python, but rewrote in Go to
+    [hangulize-idea]. Originally, wrote it in Python. But rewrote it in Go to
     achieve better features, performance, and productivity.
 
-    Designed and implemented the Web service and RESTful API on
-    [Google App Engine][gae]. Many professional Korean translators visit here
-    to translate undocumented proper nouns.
+    Designed and implemented the Web service and RESTful API. Professional
+    Korean translators usually visit here to translate undocumented proper
+    nouns. For example, Netflix refers this project in [the Korean timed text
+    style guide][netflix-style].
+
+    Using Go, RE2, GopherJS, Vue.js, Travis CI, Heroku, and GAE.
 
 [Profiling][], 2014--
 :   An interactive profiler for Python inspired by the Unity3D profiler.
@@ -205,6 +208,7 @@ Computer Software, [Kwangwoon University][kw], 2008
 [hangulize]: https://hangulize.org/
 [hangulize-idea]: http://iceager.egloos.com/2610028
 [energy]: http://pythonhosted.org/energy
+[netflix-style]: https://partnerhelp.netflixstudios.com/hc/en-us/articles/216001127-Korean-Timed-Text-Style-Guide
 [flask-autoindex]: http://pythonhosted.org/Flask-AutoIndex
 [jdoctest]: https://lunant.github.com/jdoctest
 [subleerunker]: /runker/
