@@ -510,3 +510,14 @@ netflix:
     blur: '#a7a5a5'
     link: '#e50914'
   title: {weight: 600}
+
+samsung:
+  emblem:
+    shape: ☲
+    colors: {0: '#2c2e87'}
+  colors:
+    blur: '#a6a6a6'
+    link: '#1428a0'
+  title: {weight: 600}
+  css: |
+    h1, h2 { text-transform: uppercase; }
