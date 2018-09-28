@@ -214,34 +214,36 @@ Education
 Computer Software, [Kwangwoon University][kw], 2008
 -- Completed the first year and left in mid course.
 
-[profiling]: https://github.com/what-studio/profiling
+<!-- links -->
+[durango]: http://durango.nexon.com/
+[elo]: https://en.wikipedia.org/wiki/Elo_rating_system
+[flask-autoindex]: http://pythonhosted.org/Flask-AutoIndex
+[glicko]: https://en.wikipedia.org/wiki/Glicko_rating_system
+[hangulize-idea]: http://iceager.egloos.com/2610028
+[hangulize]: https://hangulize.org/
 [htop]: http://hisham.hm/htop
-[urwid]: http://urwid.org/
+[iclickart]: http://iclickart.co.kr/
+[jdoctest]: https://lunant.github.com/jdoctest
+[kartrider]: http://kart.nexon.com/
+[kw]: http://www.kw.ac.kr/
+[lunant]: http://lunant.net/
+[me2day]: https://en.wikipedia.org/wiki/Me2day
+[me2virus]: https://github.com/sublee/me2virus
+[netflix-style]: https://partnerhelp.netflixstudios.com/hc/en-us/articles/216001127-Korean-Timed-Text-Style-Guide
+[nexon]: https://company.nexon.com/eng
+[npine]: http://en.npine.com/
+[profiling]: https://github.com/what-studio/profiling
+[subleerunker]: /runker/
 [trueskill-py]: https://trueskill.org/
 [trueskill]: http://research.microsoft.com/en-us/projects/trueskill/
-[hangulize]: https://hangulize.org/
-[hangulize-idea]: http://iceager.egloos.com/2610028
-[netflix-style]: https://partnerhelp.netflixstudios.com/hc/en-us/articles/216001127-Korean-Timed-Text-Style-Guide
-[flask-autoindex]: http://pythonhosted.org/Flask-AutoIndex
-[jdoctest]: https://lunant.github.com/jdoctest
-[subleerunker]: /runker/
-[me2virus]: https://github.com/sublee/me2virus
-[me2day]: https://en.wikipedia.org/wiki/Me2day
-[nexon]: https://company.nexon.com/eng
-[durango]: http://durango.nexon.com/
+[urwid]: http://urwid.org/
 [vindictus]: https://en.wikipedia.org/wiki/Vindictus
-[kartrider]: http://kart.nexon.com/
-[elo]: https://en.wikipedia.org/wiki/Elo_rating_system
-[glicko]: https://en.wikipedia.org/wiki/Glicko_rating_system
-[npine]: http://en.npine.com/
-[iclickart]: http://iclickart.co.kr/
-[lunant]: http://lunant.net/
-[kw]: http://www.kw.ac.kr/
 
+<!-- abbrs -->
 *[AWS]: Amazon Web Services
 *[GAE]: Google App Engine
 *[MMORPG]: Massively multiplayer online role-playing game
 *[MVC]: Model-view-controller
+*[NDC]: Nexon Developers Conference
 *[TUI]: Text-based User Interface
 *[XSS]: Cross-site Scripting
-*[NDC]: Nexon Developers Conference
