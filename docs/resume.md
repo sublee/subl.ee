@@ -20,6 +20,7 @@ Interests
 ---------
 
 - Distributed server architecture
+- Developing and documentating API for engineers
 - Internationalization systems based on linguistics
 - Free and open source software
 
