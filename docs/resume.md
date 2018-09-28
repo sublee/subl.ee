@@ -194,6 +194,12 @@ Invited Talks
 [nxtk16]:   https://subl.ee/~nxtk16
 [pycon15]:  https://subl.ee/~pycon15
 
+Languages
+---------
+
+- Korean -- native
+- English -- pre-intermediate
+
 Education
 ---------
 
