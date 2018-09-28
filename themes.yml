@@ -62,18 +62,6 @@ sublee:
     vlink: '#589'
   plain_doc: true
 
-sublee-dark:
-  emblem:
-    shape: ☲
-    colors: {0: '#e34', 5: '#fc3'}
-  colors:
-    background: '#192222'
-    text: '#788'
-    epic: '#e34'
-    blur: '#455'
-    link: '#ca4'
-    vlink: '#986'
-
 mogef:
   emblem:
     shape: ☰
