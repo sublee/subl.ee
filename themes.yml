@@ -548,6 +548,10 @@ woowahan:
       text-decoration: underline;
       text-decoration-color: #2ac1bc;
     }
+    .emblem-left  { transform: skew(1deg, 2deg); }
+    .emblem-right { transform: skew(-1deg, -1deg); }
+    .emblem-middle .emblem-top    { transform: skew(-2deg, 1deg); }
+    .emblem-middle .emblem-bottom { transform: skew(-2deg, -1deg); }
 
 yanolja:
   emblem:
