@@ -240,16 +240,6 @@ blizzard:
       background-image: linear-gradient(#002434, #010e16 40rem);
     }
 
-couchbase:
-  emblem:
-    shape: ☲
-    colors: {0: '#ec1e2c'}
-  colors:
-    text: '#000'
-    blur: '#252525'
-    link: '#ec1e2c'
-    vlink: '#cc2a2e'
-
 nexon:
   emblem:
     shape: ☳
