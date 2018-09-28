@@ -546,3 +546,17 @@ aws:
     blur: '#828282'
     link: '#007eb9'
     vlink: '#005b86'
+
+woowahan:
+  emblem:
+    shape: ☲
+    colors: {0: '#2ac1bc'}
+  colors:
+    text: '#000'
+    link: '#000'
+  title: {font: Hanna, css: //fonts.googleapis.com/earlyaccess/hanna.css}
+  css: |
+    a:link, a:visited {
+      text-decoration: underline;
+      text-decoration-color: #2ac1bc;
+    }
