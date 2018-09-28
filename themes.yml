@@ -546,3 +546,13 @@ between:
   title: {font: Varela Round}
   css: |
     .emblem i { border-radius: 6px; }
+
+aws:
+  emblem:
+    shape: ☲
+    colors: {0: '#f90'}
+  colors:
+    text: '#252f3e'
+    blur: '#828282'
+    link: '#007eb9'
+    vlink: '#005b86'
