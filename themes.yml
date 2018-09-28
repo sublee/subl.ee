@@ -532,3 +532,17 @@ lg:
     blur: '#666'
     link: '#a50034'
   text: {font: Heebo, weight: 300}
+
+between:
+  emblem:
+    shape: ☲
+    colors: {0: '#38dcd7'}
+  colors:
+    background: '#f9f9f9'
+    text: '#555'
+    epic: '#14c1c7'
+    blur: '#777'
+    link: '#14c1c7'
+  title: {font: Varela Round}
+  css: |
+    .emblem i { border-radius: 6px; }
