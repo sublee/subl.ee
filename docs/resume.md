@@ -74,6 +74,14 @@ What! Studio in [Nexon][], 2013--
     Using Python, C#, Cython, ZeroMQ, MsgPack, Couchbase, etcd, Redis, MySQL,
     Unity3D, Git, PlasticSCM, Ansible, Fabric, Docker, Ubuntu, and AWS.
 
+Reviewer {: .label }
+NDC TF in [Nexon][], 2018
+:   NDC is the biggest conference in the Korean game industry, like GDC.
+    {: .note }
+
+:   Reviewed applied presentations for NDC 2018. Organized the conference
+    timetable. Helped the speakers to make their presentation better.
+
 Game Development Engineer {: .label }
 Team Lupin in [Nexon][], 2011--2013
 :   Developed and published mobile and Web series of
