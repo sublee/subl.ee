@@ -353,18 +353,6 @@ ribbon:
     }
     @media screen and (max-width: 50rem) { h1:before { display: none; } }
 
-turret:
-  emblem:
-    shape: ☲
-    colors: {0: '#eee', 5: '#e34'}
-  colors:
-    background: '#222'
-    text: '#888'
-    epic: '#e34'
-    blur: '#666'
-    link: '#ccc'
-    vlink: '#aaa'
-
 netmarble:
   emblem:
     shape: ☵
