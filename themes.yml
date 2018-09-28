@@ -521,3 +521,14 @@ samsung:
   title: {weight: 600}
   css: |
     h1, h2 { text-transform: uppercase; }
+
+lg:
+  emblem:
+    shape: ☲
+    colors: {0: '#a50034'}
+  colors:
+    text: '#333'
+    epic: '#000'
+    blur: '#666'
+    link: '#a50034'
+  text: {font: Heebo, weight: 300}
