@@ -567,3 +567,27 @@ coupang:
     blur: '#888'
     link: '#4285f4'
   title: {weight: 600}
+
+tron:
+  emblem:
+    shape: ☲
+    colors: {0: '#5ff'}
+  colors:
+    background: '#000'
+    text: '#5ff'
+    epic: '#ffc'
+    blur: '#09b'
+    link: '#eff'
+  title: {weight: 600}
+  css: |
+    .emblem i {
+      outline: 1px solid #5ff;
+      box-shadow: 0 0 10px #5ff, 0 0 20px #5ff, inset 0 0 10px #5ff;
+      background: transparent !important;
+    }
+    h1, h2 {
+      text-shadow: 0 0 3px #f20, 0 0 5px #f20, 0 0 10px #f20;
+    }
+    a:link, a:visited {
+      text-shadow: 0 0 5px #5ff, 0 0 10px #5ff;
+    }
