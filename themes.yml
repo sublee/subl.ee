@@ -591,3 +591,18 @@ tron:
     a:link, a:visited {
       text-shadow: 0 0 5px #5ff, 0 0 10px #5ff;
     }
+
+devsisters:
+  emblem:
+    shape: ☲
+    colors: {0: '#ff6000'}
+  colors:
+    background: '#1f1f1f'
+    text: '#999'
+    epic: '#ff6000'
+    blur: '#777'
+    link: '#ff6000'
+  title: {font: Open Sans, weight: 800}
+  css: |
+    h1 { text-transform: uppercase; letter-spacing: -0.1rem; }
+    h2 { letter-spacing: -0.05rem; }
