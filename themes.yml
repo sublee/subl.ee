@@ -617,3 +617,5 @@ ridi:
     blur: '#999'
     link: '#1f8ce6'
   title: {weight: 600}
+  css: |
+    .emblem i { border-radius: 2px; }
