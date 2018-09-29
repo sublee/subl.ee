@@ -606,3 +606,14 @@ devsisters:
   css: |
     h1 { text-transform: uppercase; letter-spacing: -0.1rem; }
     h2 { letter-spacing: -0.05rem; }
+
+ridi:
+  emblem:
+    shape: ☲
+    colors: {0: '#1f8ce6'}
+  colors:
+    text: '#555'
+    epic: '#3e3835'
+    blur: '#999'
+    link: '#1f8ce6'
+  title: {weight: 600}
