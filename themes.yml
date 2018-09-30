@@ -433,11 +433,10 @@ kakao:
     text: '#666'
     epic: '#4c4c4c'
     blur: '#666'
-    link: '#1e1e1e'
-  title: {font: Ubuntu, weight: 500}
+    link: '#337ab7'
+  title: {weight: 500}
   css: |
-    a:link, a:visited { text-decoration: underline; }
-    a:hover { font-weight: 700; }
+    h2 { border-left: 0.25rem solid #ffcd00; padding-left: 0.5rem; }
 
 trello:
   emblem:
