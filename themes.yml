@@ -618,3 +618,26 @@ ridi:
   title: {weight: 600}
   css: |
     .emblem i { border-radius: 2px; }
+
+piedpiper:
+  emblem:
+    shape: ☲
+    colors: {0: '#007765'}
+  colors:
+    background: '#eee'
+    text: '#565656'
+    epic: '#007765'
+    link: '#77a037'
+  css: |
+    .emblem-left i {
+      background-image: linear-gradient(135deg, #3a7, #186);
+    }
+    .emblem-middle .emblem-top {
+      background-image: linear-gradient(135deg, #2a7, #186);
+    }
+    .emblem-middle .emblem-bottom {
+      background-image: linear-gradient(135deg, #196, #086);
+    }
+    .emblem-right i {
+      background-image: linear-gradient(135deg, #297, #007765);
+    }
