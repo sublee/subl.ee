@@ -169,7 +169,8 @@ Others
                       was written on the user's wall.
 
 Contributed
-:   [Babel#427](https://github.com/python-babel/babel/pull/427),
+:   [awesome-go#2104](https://github.com/avelino/awesome-go/pull/2104),
+    [Babel#427](https://github.com/python-babel/babel/pull/427),
     [#488](https://github.com/python-babel/babel/pull/488);
     [couchbase-python-client#32](
       https://github.com/couchbase/couchbase-python-client/pull/32),
