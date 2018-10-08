@@ -142,6 +142,13 @@ Open Source Experience
 
     Using Go, RE2, GopherJS, Vue.js, Travis CI, Heroku, and GAE.
 
+[Tossi][], 2016--
+:   An implementation of Korean allomorphic particles.
+    {: .note }
+
+:   Developed to provide the most natural Korean sentence in [Durango][].
+    Researched several linguistics papers.
+
 [Profiling][], 2014--
 :   An interactive profiler for Python inspired by the Unity3D profiler.
     {: .note }
@@ -235,6 +242,7 @@ Computer Software, [Kwangwoon University][kw], 2008
 [npine]: http://en.npine.com/
 [profiling]: https://github.com/what-studio/profiling
 [subleerunker]: /runker/
+[tossi]: https://github.com/what-studio/tossi
 [trueskill-py]: https://trueskill.org/
 [trueskill]: http://research.microsoft.com/en-us/projects/trueskill/
 [urwid]: http://urwid.org/

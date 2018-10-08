@@ -27,11 +27,13 @@ I've made
 - [Durango][] at What! Studio in Nexon.
 - Kartrider Dash and Coin Rush series at Team Lupin in Nexon.
 - [Hangulize][]: A Korean alphabet transcriber.
+- [Tossi][]: An implementation of Korean allomorphic particles.
 - [Profiling][]: An interactive continuous Python profiler.
 - [TrueSkill][]: A rating system for online games.
 - [SUBLEERUNKER][]: A simple game with pixel-art what I drew.
 
 [Durango]:   http://durango.nexon.com/
+[Tossi]:     https://github.com/what-studio/tossi
 [Profiling]: https://github.com/what-studio/profiling
 [Hangulize]: https://hangulize.org/
 [TrueSkill]: https://trueskill.org/
