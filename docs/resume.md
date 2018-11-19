@@ -3,8 +3,10 @@ Title: Résumé: Heungsub Lee
 Heungsub Lee
 ============
 
-Email {: .label }
+Contact {: .label }
 : [heungsub.lee@subl.ee](mailto:heungsub.lee@subl.ee)
+  or
+  [+821032152380](sms:821032152380)
   {: .attr }
 
 Web Sites {: .label }
