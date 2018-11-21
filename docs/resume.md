@@ -200,7 +200,8 @@ Invited Talks
 - [Remake of Hangulize][gokr1808] at Golang Korea Meetup Aug 2018 (Korean)
 - [The server architecture of Durango Vol. 3][ndc18] at NDC 2018 (Korean)
 - [Python Survival Guide][nxtk16] at Nexon Talk 2016 (Korean)
-- [The server architecture of Durango Vol. 2][ndc16] at NDC 2016 (Korean)
+- [The server architecture of Durango Vol. 2][ndc16] at NDC 2016,
+  awarded the grand prize (Korean)
 - [Profiling][pycon15] at PyCon KR 2015 (Korean)
 - [The server architecture of Durango][ndc14] at NDC 2014 (Korean)
 
