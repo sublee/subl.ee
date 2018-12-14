@@ -9,16 +9,14 @@ Heungsub Lee
 I am
 ----
 
-Heungsub Lee <[sub@subl.ee][]\>, a game server architect
+Heungsub Lee <[sub@subl.ee][]\>, a software engineer
 <br />
-at [What! Studio][] in [Nexon][] and also an [open source][] enthusiast.
+without a job, but an [open source][] enthusiast.
 <br />
 More details are in my [résumé](/resume/).
 {: .hard-returns }
 
 [sub@subl.ee]:  mailto:sub@subl.ee
-[What! Studio]: https://github.com/what-studio
-[Nexon]:        https://company.nexon.com/eng
 [Open Source]:  https://github.com/sublee
 
 I've made
