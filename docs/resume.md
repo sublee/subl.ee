@@ -60,11 +60,11 @@ Work Experience
 ---------------
 
 Game Server Architect {: .label }
-What! Studio in [Nexon][], 2013--
+What! Studio in [Nexon][], 2013--2018
 :   Developing <cite>[Durango][]</cite>, a seamless open world MMORPG.
     {: .note }
 
-:   Designing and implementing the architecture of a distributed MMORPG server.
+:   Designed and implemented the architecture of a distributed MMORPG server.
     Achieved up to 70k concurrent users per MMO world with a scalable
     geological space. Launched this game in Korea and Indonesia. Maintained
     the game service continuously.
@@ -73,8 +73,9 @@ What! Studio in [Nexon][], 2013--
     quality message interpolation focused on linguistics features of Korean and
     Indo-European languages.
 
-    Using Python, C#, Cython, ZeroMQ, MsgPack, Couchbase, etcd, Redis, MySQL,
-    Unity3D, Git, PlasticSCM, Ansible, Fabric, Docker, Ubuntu, and AWS.
+    Used Python, C#, Cython, ZeroMQ, MsgPack, Couchbase, etcd, Redis, MySQL,
+    Unity3D, Git, PlasticSCM, Ansible, Fabric, Docker, Ubuntu, and especially
+    AWS.
 
 Reviewer {: .label }
 NDC TF in [Nexon][], 2018
