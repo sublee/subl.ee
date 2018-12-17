@@ -11,13 +11,14 @@ I am
 
 Heungsub Lee <[sub@subl.ee][]\>, a software engineer
 <br />
-without a job, but an [open source][] enthusiast.
+at [Kakao Brain][] and also an [open source][] enthusiast.
 <br />
 More details are in my [résumé](/resume/).
 {: .hard-returns }
 
-[sub@subl.ee]:  mailto:sub@subl.ee
-[Open Source]:  https://github.com/sublee
+[sub@subl.ee]: mailto:sub@subl.ee
+[Kakao Brain]: https://kakaobrain.com/
+[Open Source]: https://github.com/sublee
 
 I've made
 ---------

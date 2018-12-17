@@ -59,6 +59,13 @@ Tools {: .label }
 Work Experience
 ---------------
 
+Software Engineer {: .label }
+[Kakao Brain][kakao-brain], 2018--
+:   The artificial intelligence laboratory in Kakao.
+    {: .note }
+
+:   Just joined!
+
 Game Server Architect {: .label }
 What! Studio in [Nexon][], 2013--2018
 :   Developing <cite>[Durango][]</cite>, a seamless open world MMORPG.
@@ -236,6 +243,7 @@ Computer Software, [Kwangwoon University][kw], 2008
 [htop]: http://hisham.hm/htop
 [iclickart]: http://iclickart.co.kr/
 [jdoctest]: https://lunant.github.com/jdoctest
+[kakao-brain]: https://kakaobrain.com/
 [kartrider]: http://kart.nexon.com/
 [kw]: http://www.kw.ac.kr/
 [lunant]: http://lunant.net/
