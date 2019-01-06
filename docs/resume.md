@@ -189,8 +189,7 @@ Contributed
 :   [awesome-go#2104](https://github.com/avelino/awesome-go/pull/2104),
     [Babel#427](https://github.com/python-babel/babel/pull/427),
     [#488](https://github.com/python-babel/babel/pull/488);
-    [couchbase-python-client#32](
-      https://github.com/couchbase/couchbase-python-client/pull/32),
+    [couchbase-python-client#32](https://github.com/couchbase/couchbase-python-client/pull/32),
     [#33](https://github.com/couchbase/couchbase-python-client/pull/33),
     [#35](https://github.com/couchbase/couchbase-python-client/pull/35);
     [etcd#4320](https://github.com/coreos/etcd/pull/4320);
@@ -198,9 +197,9 @@ Contributed
     [gevent#608](https://github.com/gevent/gevent/pull/608);
     [jQuery-1.4.3](https://blog.jquery.com/2010/10/16/jquery-143-released/);
     [node-irc#3](https://github.com/martynsmith/node-irc/pull/3);
-    [pytest-rerunfailures#47](
-      https://github.com/pytest-dev/pytest-rerunfailures/pull/47);
-    [PyZMQ#951](https://github.com/zeromq/pyzmq/pull/951).
+    [pytest-rerunfailures#47](https://github.com/pytest-dev/pytest-rerunfailures/pull/47);
+    [PyZMQ#951](https://github.com/zeromq/pyzmq/pull/951);
+    [TensorFlow#24678](https://github.com/tensorflow/tensorflow/pull/24678).
 
 Invited Talks
 -------------
