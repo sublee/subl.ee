@@ -61,7 +61,7 @@ Work Experience
 
 Software Engineer {: .label }
 [Kakao Brain][kakao-brain], 2018--
-:   The artificial intelligence laboratory in Kakao.
+:   A deep learning artificial intelligence laboratory in Kakao.
     {: .note }
 
 :   Just joined!
