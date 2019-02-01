@@ -21,9 +21,9 @@ Web Sites {: .label }
 Interests
 ---------
 
+- Parallel and distributed deep learning
 - Distributed server architecture
 - Developing and documentating API for engineers
-- Internationalization systems based on linguistics
 - Free and open source software
 
 Skills
@@ -64,7 +64,10 @@ Software Engineer {: .label }
 :   A deep learning artificial intelligence laboratory in Kakao.
     {: .note }
 
-:   Just joined!
+:   Focusing on parallel and distributed deep learning to boost the training
+    speed.
+
+    Using Python 3, PyTorch, Horovod.
 
 Game Server Architect {: .label }
 What! Studio in [Nexon][], 2013--2018
