@@ -660,15 +660,3 @@ piedpiper:
     .emblem-right i {
       background-image: linear-gradient(135deg, #297, #007765);
     }
-
-maldives:
-  emblem:
-    shape: ☵
-    colors: {0: '#7be5e5', 6: '#f9f0b6'}
-  colors:
-    text: '#444'
-    epic: '#5dc'
-    blur: '#798'
-    link: '#cb3'
-    vlink: '#986'
-  plain_doc: true
