@@ -97,7 +97,7 @@ NDC TF in [Nexon][], 2018
 
 Game Development Engineer {: .label }
 Team Lupin in [Nexon][], 2011--2013
-:   Developed and published mobile and Web series of
+:   Developed and published mobile and web series of
     <cite>[KartRider][]</cite>, a synchronous multiplayer casual racing game.
     {: .note }
 
@@ -148,7 +148,7 @@ Open Source Experience
     [hangulize-idea]. Originally, wrote it in Python. But rewrote it in Go to
     achieve better features, performance, and productivity.
 
-    Designed and implemented the Web service and RESTful API. Professional
+    Designed and implemented the web service and RESTful API. Professional
     Korean translators usually visit here to translate undocumented proper
     nouns. For example, Netflix refers this project in [the Korean timed text
     style guide][netflix-style].
@@ -182,7 +182,7 @@ Open Source Experience
 
 Others
 :   - [SUBLEERUNKER][] -- A simple prody game of SUBERUNKER.
-                          Play it in your Web browser.
+                          Play it in your web browser.
     - [Flask-AutoIndex][] -- mod_autoindex for Flask
     - [Me2virus][] -- An XSS attack on [Me2day][], a social network service.
                       When a user looks an infected post, a new infected post
