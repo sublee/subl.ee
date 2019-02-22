@@ -33,12 +33,12 @@ Programming Languages {: .label }
 : Go, Python (expert), JavaScript, Bash, C#
   {: .attr }
 
-Back-end Technologies {: .label }
-: ZeroMQ, Couchbase, Redis, etcd, MySQL, PostgreSQL
+Deep Learning {: .label }
+: PyTorch
   {: .attr }
 
-Web Development {: .label }
-: Vue.js, Lodash, Gin, Flask, socket.io, jQuery, HTML5/CSS3, Nginx
+Back-end Technologies {: .label }
+: ZeroMQ, Couchbase, Redis, etcd, MySQL, PostgreSQL
   {: .attr }
 
 DevOps {: .label }
@@ -46,11 +46,7 @@ DevOps {: .label }
   {: .attr }
 
 Test Engineering {: .label }
-: Testify, pytest, GitLab CI, Travis CI
-  {: .attr }
-
-Tools {: .label }
-: Vim, tmux, ZSH, Git, VS Code, VirtualBox
+: Testify, mypy, pytest, GitLab CI, Travis CI
   {: .attr }
 {^ .attrs }
 
