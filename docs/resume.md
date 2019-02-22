@@ -64,7 +64,7 @@ Software Engineer {: .label }
 :   A deep learning artificial intelligence laboratory in Kakao.
     {: .note }
 
-:   Focusing on parallel and distributed deep learning to boost the training
+:   Focus on parallel and distributed deep learning to boost the training
     speed.
 
     Using Python 3, PyTorch, Horovod.
@@ -153,7 +153,7 @@ Open Source Experience
     nouns. For example, Netflix refers this project in [the Korean timed text
     style guide][netflix-style].
 
-    Using Go, RE2, GopherJS, Vue.js, Travis CI, Heroku, and GAE.
+    Use Go, RE2, GopherJS, Vue.js, Travis CI, Heroku, and GAE.
 
 [Tossi][], 2016--
 :   An implementation of Korean allomorphic particles.
