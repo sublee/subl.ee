@@ -23,21 +23,23 @@ More details are in my [résumé](/resume/).
 I've made
 ---------
 
-- [Durango][] at What! Studio in Nexon.
-- Kartrider Dash and Coin Rush series at Team Lupin in Nexon.
 - [Hangulize][]: A Korean alphabet transcriber.
 - [Tossi][]: An implementation of Korean allomorphic particles.
-- [Profiling][]: An interactive continuous Python profiler.
+- [SUBLEERUNKER][]: A simple game with pixel art what I drew
+  <br>
+  (Sometimes I draw pixel art as a hobby. Visit my [DeviantArt][].)
+- [Durango][] at What! Studio in Nexon.
+- Kartrider Dash and Coin Rush series at Team Lupin in Nexon.
 - [TrueSkill][]: A rating system for online games.
-- [SUBLEERUNKER][]: A simple game with pixel-art what I drew.
+- [Profiling][]: An interactive continuous Python profiler.
 
-[Durango]:   http://durango.nexon.com/
-[Tossi]:     https://github.com/what-studio/tossi
-[Profiling]: https://github.com/what-studio/profiling
 [Hangulize]: https://hangulize.org/
-[TrueSkill]: https://trueskill.org/
-
+[Tossi]:     https://github.com/what-studio/tossi
 [SUBLEERUNKER]: /runker/
+[DeviantArt]:  https://www.deviantart.com/sublee
+[Durango]:   http://durango.nexon.com/
+[TrueSkill]: https://trueskill.org/
+[Profiling]: https://github.com/what-studio/profiling
 
 I spoke about
 -------------
