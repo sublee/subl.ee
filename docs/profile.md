@@ -10,9 +10,9 @@ I am
 ----
 
 Heungsub Lee <[sub@subl.ee][]\>, a software engineer
-<br />
+<br>
 at [Kakao Brain][] and also an [open source][] enthusiast.
-<br />
+<br>
 More details are in my [résumé](/resume/).
 {: .hard-returns }
 
