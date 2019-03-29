@@ -25,9 +25,7 @@ I've made
 
 - [Hangulize][]: A Korean alphabet transcriber.
 - [Tossi][]: An implementation of Korean allomorphic particles.
-- [SUBLEERUNKER][]: A simple game with pixel art what I drew
-  <br>
-  (Sometimes I draw pixel art as a hobby. Visit my [DeviantArt][].)
+- [SUBLEERUNKER][]: A simple game with [my pixel art][DeviantArt].
 - [Durango][] at What! Studio in Nexon.
 - Kartrider Dash and Coin Rush series at Team Lupin in Nexon.
 - [TrueSkill][]: A rating system for online games.
