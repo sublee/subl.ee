@@ -31,13 +31,13 @@ I've made
 - [TrueSkill][]: A rating system for online games.
 - [Profiling][]: An interactive continuous Python profiler.
 
-[Hangulize]: https://hangulize.org/
-[Tossi]:     https://github.com/what-studio/tossi
+[Hangulize]:    https://hangulize.org/
+[Tossi]:        https://github.com/what-studio/tossi
 [SUBLEERUNKER]: /runker/
-[DeviantArt]:  https://www.deviantart.com/sublee
-[Durango]:   http://durango.nexon.com/
-[TrueSkill]: https://trueskill.org/
-[Profiling]: https://github.com/what-studio/profiling
+[DeviantArt]:   https://www.deviantart.com/sublee/gallery/
+[Durango]:      http://durango.nexon.com/
+[TrueSkill]:    https://trueskill.org/
+[Profiling]:    https://github.com/what-studio/profiling
 
 I spoke about
 -------------
