@@ -34,7 +34,7 @@ I've made
 [Hangulize]:    https://hangulize.org/
 [Tossi]:        https://github.com/what-studio/tossi
 [SUBLEERUNKER]: /runker/
-[DeviantArt]:   https://www.deviantart.com/sublee/gallery/
+[DeviantArt]:   https://www.deviantart.com/sublee/gallery/?catpath=/
 [Durango]:      http://durango.nexon.com/
 [TrueSkill]:    https://trueskill.org/
 [Profiling]:    https://github.com/what-studio/profiling
