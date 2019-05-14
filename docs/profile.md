@@ -23,6 +23,7 @@ More details are in my [résumé](/resume/).
 I've made
 ---------
 
+- [torchgpipe][]: A GPipe implementation in PyTorch.
 - [Hangulize][]: A Korean alphabet transcriber.
 - [Tossi][]: An implementation of Korean allomorphic particles.
 - [SUBLEERUNKER][]: A simple game with [my pixel art][DeviantArt].
@@ -31,6 +32,7 @@ I've made
 - [TrueSkill][]: A rating system for online games.
 - [Profiling][]: An interactive continuous Python profiler.
 
+[torchgpipe]:   https://github.com/kakaobrain/torchgpipe
 [Hangulize]:    https://hangulize.org/
 [Tossi]:        https://github.com/what-studio/tossi
 [SUBLEERUNKER]: /runker/

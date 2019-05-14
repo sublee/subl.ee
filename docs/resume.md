@@ -34,7 +34,7 @@ Programming Languages {: .label }
   {: .attr }
 
 Deep Learning {: .label }
-: PyTorch
+: PyTorch, Data/model/pipeline parallelism
   {: .attr }
 
 Back-end Technologies {: .label }
@@ -63,7 +63,11 @@ Software Engineer {: .label }
 :   Focus on parallel and distributed deep learning to boost the training
     speed.
 
-    Using Python 3, PyTorch, Horovod.
+    Reproduced [GPipe][], which is a pipeline parallelism framework with
+    checkpointing by Google, in PyTorch and implemented [torchgpipe][] as a
+    library.
+
+    Using Python 3, PyTorch.
 
 Game Server Architect {: .label }
 What! Studio in [Nexon][], 2013--2018
@@ -135,6 +139,15 @@ Front-end Web Developer {: .label }
 
 Open Source Experience
 ----------------------
+
+[torchgpipe][], 2019--
+:   A GPipe implementation in PyTorch.
+    {: .note }
+
+:   Implemented the library to make [GPipe][] easy to use by deep learning
+    researchers.
+
+    Use Python 3, and PyTorch.
 
 [Hangulize][], 2010--
 :   Automatically transcribes a non-Korean word into Hangul.
@@ -234,6 +247,8 @@ Computer Software, [Kwangwoon University][kw], 2008
 -- Completed the first year and left in mid course.
 
 <!-- links -->
+[gpipe]: https://arxiv.org/abs/1811.06965
+[torchgpipe]: https://github.com/kakaobrain/torchgpipe
 [durango]: http://durango.nexon.com/
 [elo]: https://en.wikipedia.org/wiki/Elo_rating_system
 [flask-autoindex]: http://pythonhosted.org/Flask-AutoIndex
