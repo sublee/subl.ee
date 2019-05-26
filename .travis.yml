@@ -17,25 +17,6 @@ script:
     cp -r ../.frozen/* .
   popd
 
-- | # prepare eelb.us gh-pages
-  mkdir .gh-pages-eelb.us
-  pushd .gh-pages-eelb.us
-    cp -r ../.frozen/* .
-    # reverse the pages
-    REVERSED=$(echo '
-    transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    -moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    filter: FlipH;
-    -ms-filter: FlipH;
-    ' | xargs echo)
-    for html in $(find . -name '*.html')
-    do
-      sed -i '0,/<html/s/<html/\0 style="'"$REVERSED"'"/' "$html"
-    done
-  popd
-
 - | # archive at archives.subl.ee
   SHORT_COMMIT="$(git rev-parse --short "$TRAVIS_COMMIT")"
   git clone "https://sublee:$GITHUB_TOKEN@github.com/sublee/subl.ee-archives"
@@ -58,13 +39,5 @@ deploy:
     skip_cleanup: true
     github_token: $GITHUB_TOKEN
     local_dir: .gh-pages-subl.ee
-    on:
-      branch: master
-  # eelb.us
-  - provider: pages
-    skip_cleanup: true
-    github_token: $GITHUB_TOKEN
-    local_dir: .gh-pages-eelb.us
-    repo: sublee/eelb.us
     on:
       branch: master
