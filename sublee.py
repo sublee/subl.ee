@@ -3,9 +3,9 @@
    sublee
    ~~~~~~
 
-   http://subl.ee/
+   https://subl.ee/
 
-   :copyright: (c) 2013-2017 by Heungsub Lee
+   :copyright: (c) 2013-2019 by Heungsub Lee
    :license: Public Domain
 
 """
