@@ -233,7 +233,7 @@ def prepare_freezing(app):
     from flask_frozen import Freezer
     freezer = Freezer(app, with_static_files=False)
     app.config.update({
-        'FREEZER_DESTINATION_IGNORE': ['.git*', 'CNAME'],
+        'FREEZER_DESTINATION_IGNORE': ['.git*'],
         'FREEZER_IGNORE_MIMETYPE_WARNINGS': True,
     })
     @app.route('/404.html')

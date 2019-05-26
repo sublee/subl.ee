@@ -15,14 +15,12 @@ script:
   mkdir .gh-pages-subl.ee
   pushd .gh-pages-subl.ee
     cp -r ../.frozen/* .
-    echo subl.ee > CNAME
   popd
 
 - | # prepare eelb.us gh-pages
   mkdir .gh-pages-eelb.us
   pushd .gh-pages-eelb.us
     cp -r ../.frozen/* .
-    echo eelb.us > CNAME
     # reverse the pages
     REVERSED=$(echo '
     transform: scaleX(-1);
