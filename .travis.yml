@@ -15,6 +15,7 @@ script:
   mkdir .gh-pages-subl.ee
   pushd .gh-pages-subl.ee
     cp -r ../.frozen/* .
+    echo subl.ee > CNAME
   popd
 
 - | # archive at archives.subl.ee
