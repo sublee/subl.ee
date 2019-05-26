@@ -12,23 +12,19 @@
 from __future__ import unicode_literals, with_statement
 
 from datetime import date, datetime
-from functools import partial, wraps
+from functools import wraps
 import io
 import itertools
 import os
 import re
 import socket
-from textwrap import dedent
 from urlparse import urlparse
 
 import click
-from cssmin import cssmin as minify_css
 from flask import Flask, render_template, send_file
-from htmlmin import minify as minify_html
 import inflection
 import jinja2
 from markdown import Markdown
-from slimit import minify as minify_js
 from werkzeug.exceptions import NotFound
 import yaml
 
@@ -57,21 +53,10 @@ MARKDOWN_EXTENSIONS = [
     'markdown.extensions.smarty',
     'markdown_attr_plus',
 ]
-MINIFIERS = {
-    'text/html': partial(minify_html, remove_optional_attribute_quotes=False),
-    'text/css': minify_css,
-    'text/javascript': minify_js,
-}
 
 
 #: The Flask application.
 app = Flask(__name__, static_url_path='/-')
-
-
-def jinja_minify_js(caller, mangle_toplevel=False):
-    if app.debug:
-        return caller()
-    return minify_js(caller(), mangle=True, mangle_toplevel=mangle_toplevel)
 
 
 def jinja_meta(content, **attrs):
@@ -100,23 +85,11 @@ def is_splitted_trigram_bar(trigram, offset):
 
 app.jinja_env.globals.update({
     'zip': itertools.izip,
-    'minify_js': jinja_minify_js,
     'meta': jinja_meta,
     'cdnjs': (lambda path: '//cdnjs.cloudflare.com/ajax/libs/' + path),
 })
 app.jinja_env.filters.update({'update': update_dict})
 app.jinja_env.tests.update({'splitted_trigram_bar': is_splitted_trigram_bar})
-
-
-@app.after_request
-def minify_response(response):
-    if not response.direct_passthrough:
-        for content_type, minify in MINIFIERS.items():
-            if response.content_type.startswith(content_type):
-                data = response.get_data(as_text=True)
-                response.set_data(minify(data))
-                break
-    return response
 
 
 def copyright_year(year_since=None, dash='\u2013'):

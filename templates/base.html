@@ -13,17 +13,13 @@
   <script src="{{ cdnjs('html5shiv/3.7.2/html5shiv.min.js') }}"></script>
   <script src="{{ cdnjs('sizzle/2.1.1/sizzle.min.js') }}"></script>
   <script>
-    {%- call minify_js() %}
-      document.head = document.getElementsByTagName('head')[0];
-      document.querySelector = function(query) { return Sizzle(query)[0]; };
-      document.querySelectorAll = function(query) { return Sizzle(query); };
-    {% endcall -%}
+    document.head = document.getElementsByTagName('head')[0];
+    document.querySelector = function(query) { return Sizzle(query)[0]; };
+    document.querySelectorAll = function(query) { return Sizzle(query); };
   </script>
   <![endif]-->
   <script>
-    {%- call minify_js() %}
-      {% include 'theme.js_t' %}
-    {% endcall -%}
+    {% include 'theme.js_t' %}
   </script>
   {# open graph #}
   {{ meta(type or 'website', property='og:type')
@@ -75,48 +71,44 @@
           &copy; <span class="year">{{ copyright_year }}</span> {{ author }}
         </p>
         <script>
-          {%- call minify_js(mangle_toplevel=True) %}
-            // auto-renew the year range of the copyright.
-            var yearSpan = document.querySelector('.year');
-            var since = Number(/^[0-9]+/.exec(yearSpan.innerText)[0]);
-            var until = Number(/[0-9]+$/.exec(yearSpan.innerText)[0]);
-            var thisYear = (new Date()).getFullYear();
-            until = Math.max(until, thisYear);
-            if (since < until) {
-              yearSpan.innerHTML = since + '&ndash;' + until;
-            } else {
-              yearSpan.innerHTML = until;
-            }
-          {% endcall -%}
+          // auto-renew the year range of the copyright.
+          var yearSpan = document.querySelector('.year');
+          var since = Number(/^[0-9]+/.exec(yearSpan.innerText)[0]);
+          var until = Number(/[0-9]+$/.exec(yearSpan.innerText)[0]);
+          var thisYear = (new Date()).getFullYear();
+          until = Math.max(until, thisYear);
+          if (since < until) {
+            yearSpan.innerHTML = since + '&ndash;' + until;
+          } else {
+            yearSpan.innerHTML = until;
+          }
         </script>
       {% endblock %}
     </footer>
   {% endblock %}
   <script>
-    {%- call minify_js() %}
-      function keepTheme() {
-        var $anchors = document.querySelectorAll('a[href]');
-        for (var i = 0; i < $anchors.length; ++i) {
-          var $a = $anchors[i];
-          var href = $a.getAttribute('href');
-          if (/^(#|https?:\/\/|mailto:)/.exec(href)) {
-            continue;
-          }
-          if (!/([?&])theme=[^&]+/.exec(href)) {
-            var sep = /\?/.exec(href) ? '&' : '?';
-            href += sep + 'theme=' + __theme__;
-          }
-          $a.setAttribute('href', href);
+    function keepTheme() {
+      var $anchors = document.querySelectorAll('a[href]');
+      for (var i = 0; i < $anchors.length; ++i) {
+        var $a = $anchors[i];
+        var href = $a.getAttribute('href');
+        if (/^(#|https?:\/\/|mailto:)/.exec(href)) {
+          continue;
         }
+        if (!/([?&])theme=[^&]+/.exec(href)) {
+          var sep = /\?/.exec(href) ? '&' : '?';
+          href += sep + 'theme=' + __theme__;
+        }
+        $a.setAttribute('href', href);
       }
-      if (__themeSelected__) {
-        keepTheme();
-      }
-      // avoid an animation at the first time.
-      window.onload = function() {
-        document.body.style.transition = 'margin 0.2s';
-      };
-    {% endcall -%}
+    }
+    if (__themeSelected__) {
+      keepTheme();
+    }
+    // avoid an animation at the first time.
+    window.onload = function() {
+      document.body.style.transition = 'margin 0.2s';
+    };
   </script>
   {% if google_analytics %}
     {% from 'ga.html' import ga %}
@@ -125,10 +117,8 @@
   {% if naver_analytics %}
     <script src="//wcs.naver.net/wcslog.js"></script>
     <script>
-      {%- call minify_js() %}
-        var wcs_add = {wa: '{{ naver_analytics }}'};
-        wcs_do();
-      {% endcall -%}
+      var wcs_add = {wa: '{{ naver_analytics }}'};
+      wcs_do();
     </script>
   {% endif %}
 </body>
