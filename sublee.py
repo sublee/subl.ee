@@ -23,7 +23,7 @@ from urlparse import urlparse
 
 import click
 from cssmin import cssmin as minify_css
-from flask import Flask, render_template
+from flask import Flask, render_template, send_file
 from htmlmin import minify as minify_html
 import inflection
 import jinja2
@@ -163,6 +163,11 @@ def doc(doc_name):
     ctx = make_context(doc_html=doc_html, doc_name=doc_name,
                        doc_modified_at=doc_modified_at, **doc_meta)
     return render_template('doc.html', **ctx)
+
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_file(os.path.join(os.path.dirname(__file__), 'favicon.ico'))
 
 
 @app.route('/themes/')
