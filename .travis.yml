@@ -18,6 +18,7 @@ script:
     git rm -r .
     cp -r ../.frozen/* .
     echo subl.ee > CNAME
+    echo "$TRAVIS_COMMIT" > VERSION
     git add .
   popd
 
