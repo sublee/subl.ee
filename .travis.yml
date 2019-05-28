@@ -12,10 +12,19 @@ script:
   python sublee.py freeze .frozen
 
 - | # prepare subl.ee gh-pages
-  mkdir .gh-pages-subl.ee
+  git clone "https://sublee:$GITHUB_TOKEN@github.com/sublee/subl.ee" .gh-pages-subl.ee
   pushd .gh-pages-subl.ee
+    git checkout gh-pages
+    git rm -r .
     cp -r ../.frozen/* .
     echo subl.ee > CNAME
+    git add .
+  popd
+
+- | # deploy subl.ee gh-pages
+  pushd .gh-pages-subl.ee
+    git commit -m 'Deploy subl.ee' --allow-empty
+    git push origin gh-pages
   popd
 
 - | # archive at archives.subl.ee
@@ -34,11 +43,6 @@ script:
     git push origin master > /dev/null 2>&1
   popd
 
-deploy:
-  # subl.ee
-  - provider: pages
-    skip_cleanup: true
-    github_token: $GITHUB_TOKEN
-    local_dir: .gh-pages-subl.ee
-    on:
-      branch: master
+branches:
+  only:
+  - master
