@@ -24,7 +24,7 @@ script:
 
 - | # deploy subl.ee gh-pages
   pushd .gh-pages-subl.ee
-    git commit -m 'Deploy subl.ee $TRAVIS_COMMIT' --allow-empty
+    git commit -m "Deploy subl.ee $TRAVIS_COMMIT" --allow-empty
     git push -f origin gh-pages
   popd
 
