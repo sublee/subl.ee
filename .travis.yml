@@ -25,7 +25,7 @@ script:
 - | # deploy subl.ee gh-pages
   pushd .gh-pages-subl.ee
     git commit -m 'Deploy subl.ee' --allow-empty
-    git push origin gh-pages
+    git push -f origin gh-pages
   popd
 
 - | # archive at archives.subl.ee
