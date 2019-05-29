@@ -54,8 +54,8 @@ sublee:
     shape: ☲
     colors: {0: '#e56', 5: '#fd6'}
   colors:
-    text: '#556'
-    blur: '#889'
+    text: '#335'
+    blur: '#779'
     link: '#47e'
     vlink: '#79c'
 
