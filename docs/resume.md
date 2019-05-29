@@ -22,7 +22,6 @@ Interests
 ---------
 
 - Parallel and distributed deep learning
-- Distributed server architecture
 - Developing and documentating API for engineers
 - Free and open source software
 
@@ -30,19 +29,15 @@ Skills
 ------
 
 Programming Languages {: .label }
-: Go, Python (expert), JavaScript, Bash, C#
+: Python (expert), Go, JavaScript, Bash, C#
   {: .attr }
 
-Deep Learning {: .label }
-: PyTorch, Data/model/pipeline parallelism
+AI Research {: .label }
+: PyTorch, NVIDIA Nsignt Systems, Data/model/pipeline Parallelism
   {: .attr }
 
-Back-end Technologies {: .label }
-: ZeroMQ, Couchbase, Redis, etcd, MySQL, PostgreSQL
-  {: .attr }
-
-DevOps {: .label }
-: AWS, GAE, Terraform, Packer, Docker, Ansible, Datadog, Linux
+Back-end Developement {: .label }
+: Linux, AWS, Terraform, Docker, ZeroMQ, Redis, etcd, MySQL
   {: .attr }
 
 Test Engineering {: .label }
@@ -67,63 +62,40 @@ Software Engineer {: .label }
     checkpointing by Google, in PyTorch and implemented [torchgpipe][] as a
     library.
 
-    Using Python 3, PyTorch.
-
 Game Server Architect {: .label }
 What! Studio in [Nexon][], 2013--2018
 :   Developing <cite>[Durango][]</cite>, a seamless open world MMORPG.
     {: .note }
 
 :   Designed and implemented the architecture of a distributed MMORPG server.
-    Achieved up to 70k concurrent users per MMO world with a scalable
-    geological space. Launched this game in Korea and Indonesia. Maintained
-    the game service continuously.
+    Achieved up to 70k concurrent users per MMO world. Launched the game and
+    maintained it.
 
-    Built an internationalization system based on gettext. Implemented a high
-    quality message interpolation focused on linguistics features of Korean and
-    Indo-European languages.
-
-    Used Python, C#, Cython, ZeroMQ, MsgPack, Couchbase, etcd, Redis, MySQL,
-    Unity3D, Git, PlasticSCM, Ansible, Fabric, Docker, Ubuntu, and especially
-    AWS.
-
-Reviewer {: .label }
-NDC TF in [Nexon][], 2018
-:   NDC is the biggest conference in the Korean game industry, like GDC.
-    {: .note }
-
-:   Reviewed applied presentations for NDC 2018. Organized the conference
-    timetable. Helped the speakers to make their presentation better.
+    Built an internationalization and localization system focused on
+    linguistics features of Korean and Indo-European languages.
 
 Game Development Engineer {: .label }
 Team Lupin in [Nexon][], 2011--2013
-:   Developed and published mobile and web series of
-    <cite>[KartRider][]</cite>, a synchronous multiplayer casual racing game.
+:   Developed and launched two multiplayer racing games: <cite>[KartRider][]
+    Dash & Coin Rush</cite>
     {: .note }
 
 :   Designed and implemented a distributed game server architecture for
-    synchronous multiplayer games for the <cite>KartRider Dash</cite> and
-    <cite>KartRider Coin Rush</cite> series. Launched these games globally and
+    synchronous multiplayer racing games. Launched the games globally and
     maintained them.
 
     Researched various rating systems such as [Elo][], [Glicko][], and
     [TrueSkill][]. Implemented a simple matchmaker for 4v4 or free-for-all
     racing games.
 
-    Used Python, Redis as a message broker, Couchbase, MongoDB, Unity3D,
-    Mercurial, Ubuntu, and AWS.
-
 Full Stack Web Developer {: .label }
 [Npine][], 2008--2011
 :   Supplies stock images for business on <cite>[Iclickart][]</cite>.
     {: .note }
 
-:   Developed a web server framework adapting the MVC pattern by PHP5. Made
-    and maintained web sites where provide stock images including
-    <cite>[Iclickart][]</cite> by the own framework. Maintained physical Linux
-    machines in a data center.
-
-    Led the software engineering team.
+:   Developed a web server framework adapting the MVC pattern by PHP5.
+    Maintained physical Linux machines in a data center. Led the software
+    engineering team.
 
 Front-end Web Developer {: .label }
 [Lunant][], 2008--2011
@@ -132,22 +104,20 @@ Front-end Web Developer {: .label }
     {: .note }
 
 :   Designed and implemented the UI/UX for <cite>VLAAH</cite> by PHP5,
-    JavaScript with MooTools, and Python.
-
-    Developed [jDoctest][], which tests JavaScript examples in doc comments,
-    by JavaScript.
+    JavaScript with MooTools, and Python. Developed [jDoctest][], which tests
+    JavaScript examples in doc comments, by JavaScript.
 
 Open Source Experience
 ----------------------
 
 [torchgpipe][], 2019--
-:   A GPipe implementation in PyTorch.
+:   [GPipe][] for PyTorch. GPipe is a scalable pipeline parallelism library for
+    training of a giant model.
     {: .note }
 
-:   Implemented the library to make [GPipe][] easy to use by deep learning
-    researchers.
-
-    Use Python 3, and PyTorch.
+:   Implemented the library with handy interface for easy integration by deep
+    learning researchers or engineers. Reproduced the benchmarks in the GPipe
+    paper.
 
 [Hangulize][], 2010--
 :   Automatically transcribes a non-Korean word into Hangul.
@@ -162,35 +132,27 @@ Open Source Experience
     nouns. For example, Netflix refers this project in [the Korean timed text
     style guide][netflix-style].
 
-    Use Go, RE2, GopherJS, Vue.js, Travis CI, Heroku, and GAE.
-
-[Tossi][], 2016--
-:   An implementation of Korean allomorphic particles.
+[TrueSkill][trueskill-py], 2012--
+:   A Python implementation of [TrueSkill™][trueskill] which is a rating
+    algorithm for Xbox Live.
     {: .note }
 
-:   Developed to provide the most natural Korean sentence in [Durango][].
-    Researched several linguistics papers.
+:   Implemented TrueSkill™ by Python with simple API to learn and share the
+    smart algorithm.
 
-[Profiling][], 2014--
+[Profiling][], 2014--2018
 :   An interactive profiler for Python inspired by the Unity3D profiler.
     {: .note }
 
 :   Developed to find bottlenecks in the <cite>[Durango][]</cite> server by
     Python and C. Designed a handy interactive TUI like [htop][] by [Urwid][].
 
-    On GitHub, 2700+ people stared this project. Also it was the 3rd daily
+    On GitHub, 2800+ people stared this project. Also it was the 3rd daily
     trending repository at Sep 22, 2014.
 
-[TrueSkill][trueskill-py], 2012--
-:   A Python implementation of [TrueSkill<sup>TM</sup>][trueskill] which is a
-    rating algorithm for Xbox Live.
-    {: .note }
-
-:   Implemented TrueSkill<sup>TM</sup> by Python with simple API to learn and
-    share the smart algorithm.
-
 Others
-:   - [SUBLEERUNKER][] -- A simple prody game of SUBERUNKER.
+:   - [Tossi][] -- A utility for Korean allomorphic particles.
+    - [SUBLEERUNKER][] -- A simple prody game of SUBERUNKER.
                           Play it in your web browser.
     - [Flask-AutoIndex][] -- mod_autoindex for Flask
     - [Me2virus][] -- An XSS attack on [Me2day][], a social network service.
@@ -279,7 +241,6 @@ Computer Software, [Kwangwoon University][kw], 2008
 
 <!-- abbrs -->
 *[AWS]: Amazon Web Services
-*[GAE]: Google App Engine
 *[MMORPG]: Massively multiplayer online role-playing game
 *[MVC]: Model-view-controller
 *[NDC]: Nexon Developers Conference
