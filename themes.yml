@@ -751,3 +751,18 @@ cwkim:
     .copyright::after {
       content: '⚡';
     }
+
+yeonghoey:
+  emblem:
+    shape: ☲
+    colors: {0: '#212121'}
+  colors:
+    text: '#212121'
+    blur: '#757575'
+    link: '#00e'      # Chrome default
+    vlink: '#551a8b'  # Chrome default
+  text: {font: Roboto Condensed}
+  title: {weight: 600}
+  css: |
+    h2 { border-bottom: 2px solid #212121; margin-bottom: 0.3rem !important; }
+    hr { display: none; }
