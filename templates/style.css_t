@@ -389,7 +389,7 @@ i {
 
 @media print {
   @page {
-    margin: 5mm;
+    margin: 3rem;
   }
   * {
     line-height: 1.6;
@@ -423,12 +423,28 @@ i {
   a:link, a:visited {
     color: black;
   }
-  /* a[href^=http]:after { */
-  /*   content: '(' attr(href) ')'; */
-  /*   font-size: 0.8em; */
-  /*   font-weight:normal; */
-  /*   color: gray; */
-  /* } */
+
+  .resume {
+    column-count: 2;
+    column-gap: 3rem;
+    color: black;
+  }
+  .resume * {
+    line-height: 1.2;
+    text-align: justify;
+  }
+  .resume h1, .resume h2 {
+    font-weight: 600;
+  }
+  .resume .label {
+    color: gray;
+  }
+  .resume dd {
+    margin-left: 0;
+  }
+  .resume hr {
+    display: none;
+  }
 }
 
 {{ css }}
