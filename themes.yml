@@ -722,3 +722,32 @@ pytorch:
       padding: 0.2rem 0.5rem;
       border-left: 3px solid #ee4c2c;
     }
+
+cwkim:
+  emblem:
+    shape: ☵
+    colors: {0: '#208aa2', 2: '#e0b46d', 3: '#e8acac', 4: '#c9c9c9'}
+  colors:
+    link: '#0058ff'
+    vlink: '#000ec5'
+  title: {weight: 600}
+  css: |
+    .emblem i {
+      background: url(https://chanwoong.kim/imgs/profile-000.jpg);
+      background-size: 86px 86px;
+    }
+    .emblem-left .emblem-bottom {
+      background-position: 0 -45px;
+    }
+    .emblem-middle .emblem-top {
+      background-position: -30px 0;
+    }
+    .emblem-right .emblem-top {
+      background-position: -60px 0;
+    }
+    .emblem-right .emblem-bottom {
+      background-position: -60px -45px;
+    }
+    .copyright::after {
+      content: '⚡';
+    }
