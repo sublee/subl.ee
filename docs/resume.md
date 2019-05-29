@@ -211,6 +211,7 @@ Contributed
     [jQuery-1.4.3](https://blog.jquery.com/2010/10/16/jquery-143-released/);
     [node-irc#3](https://github.com/martynsmith/node-irc/pull/3);
     [pytest-rerunfailures#47](https://github.com/pytest-dev/pytest-rerunfailures/pull/47);
+    [PyTorch#21006](https://github.com/pytorch/pytorch/pull/21006);
     [PyZMQ#951](https://github.com/zeromq/pyzmq/pull/951);
     [TensorFlow#24678](https://github.com/tensorflow/tensorflow/pull/24678).
 
