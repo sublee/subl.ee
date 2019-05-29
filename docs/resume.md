@@ -33,7 +33,7 @@ Programming Languages {: .label }
   {: .attr }
 
 AI Research {: .label }
-: PyTorch, NVIDIA Nsignt Systems, Data/model/pipeline Parallelism
+: PyTorch, NVIDIA Nsight Systems, Data/model/pipeline Parallelism
   {: .attr }
 
 Back-end Developement {: .label }
