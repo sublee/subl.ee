@@ -45,6 +45,7 @@
   border: none;
   font-size: 1em;
   line-height: 1.5;
+  text-decoration: none;
   clear: left;
 }
 
@@ -110,10 +111,6 @@ h2 {
 
 h1:target, h2:target, h3:target, h4:target, h5:target, h6:target {
   text-decoration: underline;
-}
-
-a:link, a:visited {
-  text-decoration: none;
 }
 
 a:link {
@@ -207,7 +204,6 @@ sup, sub {
 
 abbr, acronym {
   cursor: help;
-  text-decoration: none;
 }
 
 i {
@@ -288,7 +284,7 @@ i {
 
 /* Profile */
 
-.profile {
+.profile body {
   white-space: nowrap;
   {{ rem('max-width', 35) }}
 }
@@ -341,7 +337,7 @@ i {
   .themes li { width: 25%; }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 500px) {
   body {
     margin: 2em 2%;
     width: auto;
@@ -355,7 +351,7 @@ i {
     display: none;
   }
 
-  .-epic {
+  .-epic body {
     margin-top: 2em;
   }
 
@@ -363,7 +359,7 @@ i {
     font-size: 1em;
   }
 
-  .-doc {
+  .-doc body {
     margin-top: 1em;
   }
 
@@ -376,74 +372,12 @@ i {
     margin: 0;
   }
 
-  .profile {
+  .profile body {
     white-space: normal;
   }
 
   .themes li {
     width: 33%;
-  }
-}
-
-/* Print Layout */
-
-@media print {
-  @page {
-    margin: 3rem;
-  }
-  * {
-    line-height: 1.6;
-  }
-  html {
-    font-size: 12pt;
-  }
-  body {
-    margin: 0;
-    max-width: none;
-    color: black;
-    background: white;
-    /* font-family: serif; */
-  }
-  h1, h2, .-epic h2 {
-    color: black;
-  }
-  h1 {
-    font-size: 1.5em;
-  }
-  hr {
-    height: 0;
-    border-bottom: solid 1pt black;
-  }
-  dt.label {
-    color: gray;
-  }
-  footer, .emblem {
-    display: none;
-  }
-  a:link, a:visited {
-    color: black;
-  }
-
-  .resume {
-    column-count: 2;
-    column-gap: 3rem;
-    color: black;
-  }
-  .resume * {
-    line-height: 1.2;
-    text-align: justify;
-  }
-  .resume h1, .resume h2 {
-    font-weight: 600;
-  }
-  .resume .label {
-    color: gray;
-  }
-  .resume dd {
-    margin-left: 0;
-  }
-  .resume hr {
-    display: none;
   }
 }
 

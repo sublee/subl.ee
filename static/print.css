@@ -1,0 +1,107 @@
+@import url(https://fonts.googleapis.com/css?family=Vollkorn:400,400i,600&display=swap);
+
+@page {
+  margin: 1cm;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 1em;
+  line-height: 1.2;
+  text-decoration: none;
+  clear: left;
+  color: black;
+}
+
+footer, .emblem {
+  display: none;
+}
+
+html {
+  font-size: 9pt;
+  font-family: 'Vollkorn', serif;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  max-width: none;
+  color: black;
+  background: white;
+}
+
+a:link, a:visited {
+  color: navy;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5rem;
+}
+p, ul, ol, dl, hr, pre {
+  margin-bottom: 1rem;
+}
+dd p {
+  margin-bottom: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+hr {
+  height: 0;
+  border-bottom: solid 1pt black;
+}
+
+ul li {
+  position: relative;
+  list-style: none;
+  padding-left: 0.8rem;
+}
+
+ul li:before {
+  position: absolute;
+  left: 0;
+  content: '-';
+}
+
+p {
+  text-align: justify;
+}
+
+dd, p {
+  text-indent: 1rem;
+}
+dd.note, dd.attr, dd ul, dd ol {
+  text-indent: 0;
+}
+
+dt.label, dd.note {
+  font-size: 0.8rem;
+  line-height: 1;
+}
+dd {
+  margin-bottom: 1rem;
+}
+dd.note {
+  margin-bottom: 0.5rem;
+}
+dd.attr {
+  margin-left: 1rem;
+  margin-bottom: 0;
+}
+
+.-epic {
+  font-size: 12pt;
+}
+
+.resume {
+  column-count: 2;
+  column-gap: 1cm;
+}

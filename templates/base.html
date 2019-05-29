@@ -1,14 +1,17 @@
 <!doctype html>
-<html prefix="og: http://ogp.me/ns#">
+<html prefix="og: http://ogp.me/ns#" class="{% block class %}{% endblock %}">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
   <title>{% block title %}{{ title }}{% endblock %}</title>
-  <link rel="stylesheet" class="theme"
-    href="{{ url_for('css', theme=theme) }}" />
-  <link rel="icon" type="image/icon" sizes="16x16"
-    href="{{ url_for('favicon') }}" />
+
+  <link rel="icon" type="image/icon" sizes="16x16" href="{{ url_for('favicon') }}" />
+
+  <link rel="stylesheet" media="screen" href="{{ url_for('css', theme=theme) }}" class="theme" />
+  <link rel="stylesheet" media="print" href="{{ url_for('static', filename='print.css') }}" />
+
   <!--[if lt IE 9]>
   <script src="{{ cdnjs('html5shiv/3.7.2/html5shiv.min.js') }}"></script>
   <script src="{{ cdnjs('sizzle/2.1.1/sizzle.min.js') }}"></script>
@@ -18,9 +21,11 @@
     document.querySelectorAll = function(query) { return Sizzle(query); };
   </script>
   <![endif]-->
+
   <script>
     {% include 'theme.js_t' %}
   </script>
+
   {# open graph #}
   {{ meta(type or 'website', property='og:type')
    ~ meta(title, property='og:title')
@@ -29,14 +34,16 @@
    ~ meta(url_root ~ url_for('static', filename='og.gif'), property='og:image')
    ~ meta('image/gif', property='og:image:type')
   }}
+
   {# html meta #}
   {{ meta(author, name='author')
    ~ meta(email, name='contact')
    ~ meta('&copy; '|safe ~ copyright_year ~ ' ' ~ author, name='copyright')
   }}
+
   {% block head %}{% endblock %}
 </head>
-<body class="{% block class %}{% endblock %}">
+<body>
   {% block header %}
     <header>
       <div class="emblem-wrap">
@@ -60,10 +67,12 @@
       <!--<![endif]-->
     </header>
   {% endblock %}
+
   <main>
     {% block main %}
     {% endblock %}
   </main>
+
   {% block footer %}
     <footer>
       {% block inner_footer %}
@@ -86,6 +95,7 @@
       {% endblock %}
     </footer>
   {% endblock %}
+
   <script>
     function keepTheme() {
       var $anchors = document.querySelectorAll('a[href]');
@@ -110,10 +120,12 @@
       document.body.style.transition = 'margin 0.2s';
     };
   </script>
+
   {% if google_analytics %}
     {% from 'ga.html' import ga %}
     {{ ga(google_analytics) }}
   {% endif %}
+
   {% if naver_analytics %}
     <script src="//wcs.naver.net/wcslog.js"></script>
     <script>
