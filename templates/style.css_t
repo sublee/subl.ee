@@ -148,6 +148,10 @@ ul li:before {
 dd {
   {{ rem('margin-left', 0.8) }}
 }
+dd ul, dd ol {
+  {{ rem('margin-left', -0.8) }}
+}
+
 
 dd.attr, dd.note {
   margin-left: 0;
