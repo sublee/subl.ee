@@ -207,6 +207,7 @@ sup, sub {
 
 abbr, acronym {
   cursor: help;
+  text-decoration: none;
 }
 
 i {
