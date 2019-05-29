@@ -705,3 +705,14 @@ toss:
     text: '#454f5d'
     epic: '#4c6ed5'
     link: '#4c6ed5'
+
+pytorch:
+  emblem:
+    shape: ☴
+    colors: {0: '#ee4c2c'}
+  colors:
+    text: '#212529'
+    blur: '#6c6c6d'
+    link: '#ee4c2c'
+  css: |
+    h1, h2 { text-transform: uppercase; }
