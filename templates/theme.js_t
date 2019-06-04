@@ -19,7 +19,15 @@ function parseThemeURL(url) {
 }
 
 function isThemeLoaded() {
-  var css = document.styleSheets[0];
+  var css;
+
+  for (var i = 0; i < document.styleSheets.length; i++) {
+    if (document.styleSheets[i].ownerNode.className === 'theme') {
+      css = document.styleSheets[i];
+      break;
+    }
+  }
+
   return css && (__theme__ == parseThemeURL(css.href)) && css.cssRules;
 }
 
