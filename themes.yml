@@ -49,7 +49,7 @@
 #   |   | |   | |   |   |   | |   | |   |   |   | |   | |   |
 #   +---+ +---+ +---+   +---+ +---+ +---+   +---+ +---+ +---+
 #
-sublee:
+sublee-bluish:
   emblem:
     shape: ☲
     colors: {0: '#e57', 5: '#fd8'}
@@ -59,7 +59,7 @@ sublee:
     link: '#47e'
     vlink: '#79c'
 
-sublee-v3:
+sublee-greenish:
   emblem:
     shape: ☲
     colors: {0: '#e56', 5: '#fd6'}
@@ -72,7 +72,7 @@ sublee-v3:
     vlink: '#589'
   plain_doc: true
 
-sublee-v2:
+sublee-dark:
   emblem:
     shape: ☲
     colors: {0: '#e34', 5: '#fc3'}
@@ -84,7 +84,7 @@ sublee-v2:
     link: '#ca4'
     vlink: '#986'
 
-sublee-v1:
+sublee-flame:
   emblem:
     shape: ☲
     colors: {0: '#e50', 3: '#b20', 5: '#fd4'}

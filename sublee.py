@@ -103,9 +103,8 @@ def copyright_year(year_since=None, dash='\u2013'):
 def make_context(*args, **kwargs):
     with open(META) as f:
         meta = yaml.load(f)
-    copyright_year_since = meta.get('copyright_year_since')
-    c = dict(meta, theme=DEFAULT_THEME,
-             copyright_year=copyright_year(copyright_year_since))
+    copyright_year_since = meta.pop('copyright_year_since')
+    c = dict(meta, copyright_year=copyright_year(copyright_year_since))
     c.update(*args, **kwargs)
     return c
 
