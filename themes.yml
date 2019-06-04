@@ -804,3 +804,13 @@ pubg:
     h1, h2 { text-transform: uppercase; }
     h1 { font-size: 3em; }
     h2 { font-size: 2em !important; }
+
+redis:
+  emblem:
+    shape: ☲
+    colors: {0: '#d92a21', 3: '#a41f16', 5: '#a41f16'}
+  colors:
+    text: '#333'
+    link: '#06a'
+    blur: '#777'
+  title: {weight: 600}
