@@ -22,7 +22,7 @@ Interests
 ---------
 
 - Parallel and distributed deep learning
-- Developing and documentating API for engineers
+- Developing and documenting API for engineers
 - Free and open source software
 
 Skills
@@ -36,7 +36,7 @@ AI Research {: .label }
 : PyTorch, NVIDIA Nsight Systems, Data/model/pipeline Parallelism
   {: .attr }
 
-Back-end Developement {: .label }
+Back-end Development {: .label }
 : Linux, AWS, Terraform, Docker, ZeroMQ, Redis, etcd, MySQL
   {: .attr }
 
@@ -51,16 +51,15 @@ Work Experience
 ---------------
 
 Software Engineer {: .label }
-[Kakao Brain][kakao-brain], 2018--
+[Kakao Brain][kakaobrain], 2018--
 :   A deep learning artificial intelligence laboratory in Kakao.
     {: .note }
 
-:   Focus on parallel and distributed deep learning to boost the training
-    speed.
+:   Focused on parallel and distributed deep learning to boost training
+    performance.
 
-    Reproduced [GPipe][], which is a pipeline parallelism framework with
-    checkpointing by Google, in PyTorch and implemented [torchgpipe][] as a
-    library.
+    Reproduced [GPipe][] in PyTorch, and developed [torchgpipe][] as an open
+    source library.
 
 Game Server Architect {: .label }
 What! Studio in [Nexon][], 2013--2018
@@ -68,98 +67,104 @@ What! Studio in [Nexon][], 2013--2018
     {: .note }
 
 :   Designed and implemented the architecture of a distributed MMORPG server.
-    Achieved up to 70k concurrent users per MMO world. Launched the game and
-    maintained it.
+    The server achieved up to 70k concurrent users per MMO world.
 
     Built an internationalization and localization system focused on
     linguistics features of Korean and Indo-European languages.
 
+    Led the server development team including up to 15 game server engineers.
+
 Game Development Engineer {: .label }
 Team Lupin in [Nexon][], 2011--2013
-:   Developed and launched two multiplayer racing games: <cite>[KartRider][]
-    Dash & Coin Rush</cite>
+:   Developed and launched multiplayer racing games: <cite>[KartRider][] Dash &
+    Coin Rush</cite>
     {: .note }
 
 :   Designed and implemented a distributed game server architecture for
-    synchronous multiplayer racing games. Launched the games globally and
-    maintained them.
+    synchronous multiplayer racing games.
 
-    Researched various rating systems such as [Elo][], [Glicko][], and
-    [TrueSkill][]. Implemented a simple matchmaker for 4v4 or free-for-all
-    racing games.
+    Researched rating systems such as Elo, Glicko, and
+    [TrueSkill][trueskill-tm] to develop a matchmaker for 4v4 or free-for-all
+    games.
 
 Full Stack Web Developer {: .label }
 [Npine][], 2008--2011
 :   Supplies stock images for business on <cite>[Iclickart][]</cite>.
     {: .note }
 
-:   Developed a web server framework adapting the MVC pattern by PHP5.
-    Maintained physical Linux machines in a data center. Led the software
-    engineering team.
+:   Developed web services from the base framework to the application.
+
+    Maintained physical Linux machines in a data center.
+
+    Led the software engineering team including three web developers.
 
 Front-end Web Developer {: .label }
 [Lunant][], 2008--2011
-:   Served <cite>VLAAH</cite>, a social network service for discovering,
-    sharing, and utilizing opinions.
+:   Served <cite>VLAAH</cite>, social media for discovering, sharing, and
+    utilizing opinions.
     {: .note }
 
-:   Designed and implemented the UI/UX for <cite>VLAAH</cite> by PHP5,
-    JavaScript with MooTools, and Python. Developed [jDoctest][], which tests
-    JavaScript examples in doc comments, by JavaScript.
+:   Designed and implemented the UI/UX for <cite>VLAAH</cite>.
+
+    Developed an open source project [jDoctest][], which is a JavaScript
+    testing framework using example code in documentation comments.
 
 Open Source Experience
 ----------------------
 
 [torchgpipe][], 2019--
-:   [GPipe][] for PyTorch. GPipe is a scalable pipeline parallelism library for
-    training of a giant model.
+:   A GPipe implementation in PyTorch.
     {: .note }
 
-:   Implemented the library with handy interface for easy integration by deep
-    learning researchers or engineers. Reproduced the benchmarks in the GPipe
-    paper.
+:   Implemented [GPipe][], which is a scalable pipeline parallelism library for
+    training of a giant model, for PyTorch with a handy interface.
+
+    Reproduced a ResNet-101 performance benchmark in the original GPipe paper.
 
 [Hangulize][], 2010--
 :   Automatically transcribes a non-Korean word into Hangul.
     {: .note }
 
-:   Implemented the library to realize [Brian Jongseong Park's idea]
-    [hangulize-idea]. Originally, wrote it in Python. But rewrote it in Go to
-    achieve better features, performance, and productivity.
+:   Implemented an automatic Hangul transcription algorithm to realize
+    [Brian Jongseong Park's idea] [hangulize-idea]. By origin, it was written
+    in Python, but rewritten in Go for better features, performance, and
+    productivity.
 
-    Designed and implemented the web service and RESTful API. Professional
+    Designed and implemented the web service and RESTful API. Many professional
     Korean translators usually visit here to translate undocumented proper
-    nouns. For example, Netflix refers this project in [the Korean timed text
-    style guide][netflix-style].
+    nouns. For example, Ryu Gwang, who is a famous technical translator,
+    introduced this web service in [his posting (Korean)][ryugwang].
+    Furthermore, Netflix refers to it in [the Korean timed text style
+    guide][netflix-style].
 
-[TrueSkill][trueskill-py], 2012--
-:   A Python implementation of [TrueSkill™][trueskill] which is a rating
-    algorithm for Xbox Live.
+[TrueSkill][trueskill], 2012--
+:   A TrueSkill™ implementation in Python.
     {: .note }
 
-:   Implemented TrueSkill™ by Python with simple API to learn and share the
-    smart algorithm.
+:   Implemented [TrueSkill™][trueskill-tm], which is a rating algorithm for
+    Xbox Live, in Python with a handy interface to learn and popularize the
+    algorithm.
 
 [Profiling][], 2014--2018
 :   An interactive profiler for Python inspired by the Unity3D profiler.
     {: .note }
 
-:   Developed to find bottlenecks in the <cite>[Durango][]</cite> server by
-    Python and C. Designed a handy interactive TUI like [htop][] by [Urwid][].
+:   Developed a tracing based and statistical profiler for Python with a handy
+    interactive TUI like [htop][].
 
-    On GitHub, 2800+ people stared this project. Also it was the 3rd daily
-    trending repository at Sep 22, 2014.
+    2800+ people have stared this project on GitHub. Also, it was the 3rd daily
+    trending repository on Sep 22, 2014.
 
 Others
 :   - [Tossi][] -- A utility for Korean allomorphic particles.
-    - [SUBLEERUNKER][] -- A simple prody game of SUBERUNKER.
-                          Play it in your web browser.
+    - [SUBLEERUNKER][] -- A simple parody game of SUBERUNKER. Play it in your
+                          web browser.
     - [Flask-AutoIndex][] -- mod_autoindex for Flask
-    - [Me2virus][] -- An XSS attack on [Me2day][], a social network service.
-                      When a user looks an infected post, a new infected post
-                      was written on the user's wall.
+    - [Me2virus][] -- An XSS attack on [Me2day][], social media. When a user
+                      looks at an infected post, a new infected post was
+                      written on the user's wall.
 
-Contributed
+Contributions
 :   [awesome-go#2104](https://github.com/avelino/awesome-go/pull/2104);
     [Babel#427](https://github.com/python-babel/babel/pull/427),
     [#488](https://github.com/python-babel/babel/pull/488);
@@ -178,8 +183,8 @@ Contributed
     [PyZMQ#951](https://github.com/zeromq/pyzmq/pull/951);
     [TensorFlow#24678](https://github.com/tensorflow/tensorflow/pull/24678).
 
-Invited Talks
--------------
+Public Speeches
+---------------
 
 - [Remake of Hangulize][gokr1808] at Golang Korea Meetup Aug 2018 (Korean)
 - [The server architecture of Durango Vol. 3][ndc18] at NDC 2018 (Korean)
@@ -203,27 +208,26 @@ Languages
 ---------
 
 - Korean -- native
-- English -- pre-intermediate
+- English -- conversational
 
 Education
 ---------
 
 Computer Software, [Kwangwoon University][kw], 2008
--- Completed the first year and left in mid course.
+-- Completed the first year only.
 
 <!-- links -->
 [gpipe]: https://arxiv.org/abs/1811.06965
 [torchgpipe]: https://github.com/kakaobrain/torchgpipe
 [durango]: http://durango.nexon.com/
-[elo]: https://en.wikipedia.org/wiki/Elo_rating_system
 [flask-autoindex]: http://pythonhosted.org/Flask-AutoIndex
-[glicko]: https://en.wikipedia.org/wiki/Glicko_rating_system
 [hangulize-idea]: http://iceager.egloos.com/2610028
 [hangulize]: https://hangulize.org/
+[ryugwang]: http://occamsrazr.net/tt/351
 [htop]: http://hisham.hm/htop
 [iclickart]: http://iclickart.co.kr/
 [jdoctest]: https://lunant.github.com/jdoctest
-[kakao-brain]: https://kakaobrain.com/
+[kakaobrain]: https://kakaobrain.com/
 [kartrider]: http://kart.nexon.com/
 [kw]: http://www.kw.ac.kr/
 [lunant]: http://lunant.net/
@@ -235,15 +239,12 @@ Computer Software, [Kwangwoon University][kw], 2008
 [profiling]: https://github.com/what-studio/profiling
 [subleerunker]: /runker/
 [tossi]: https://github.com/what-studio/tossi
-[trueskill-py]: https://trueskill.org/
-[trueskill]: http://research.microsoft.com/en-us/projects/trueskill/
-[urwid]: http://urwid.org/
-[vindictus]: https://en.wikipedia.org/wiki/Vindictus
+[trueskill]: https://trueskill.org/
+[trueskill-tm]: http://research.microsoft.com/en-us/projects/trueskill/
 
 <!-- abbrs -->
 *[AWS]: Amazon Web Services
 *[MMORPG]: Massively multiplayer online role-playing game
-*[MVC]: Model-view-controller
 *[NDC]: Nexon Developers Conference
 *[TUI]: Text-based User Interface
 *[XSS]: Cross-site Scripting
