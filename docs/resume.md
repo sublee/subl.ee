@@ -165,23 +165,25 @@ Others
                       written on the user's wall.
 
 Contributions
-:   [awesome-go#2104](https://github.com/avelino/awesome-go/pull/2104);
-    [Babel#427](https://github.com/python-babel/babel/pull/427),
-    [#488](https://github.com/python-babel/babel/pull/488);
-    [base65536#2](https://github.com/Parkayun/base65536/pull/2);
-    [couchbase-python-client#32](https://github.com/couchbase/couchbase-python-client/pull/32),
-    [#33](https://github.com/couchbase/couchbase-python-client/pull/33),
-    [#35](https://github.com/couchbase/couchbase-python-client/pull/35);
-    [etcd#4320](https://github.com/coreos/etcd/pull/4320);
-    [Flask-0.10.1](https://github.com/mitsuhiko/flask/commit/6fca662);
-    [gevent#608](https://github.com/gevent/gevent/pull/608);
-    [jQuery-1.4.3](https://blog.jquery.com/2010/10/16/jquery-143-released/);
-    [node-irc#3](https://github.com/martynsmith/node-irc/pull/3);
-    [pytest-rerunfailures#47](https://github.com/pytest-dev/pytest-rerunfailures/pull/47);
-    [PyTorch#21006](https://github.com/pytorch/pytorch/pull/21006),
-    [#21192](https://github.com/pytorch/pytorch/pull/21192);
-    [PyZMQ#951](https://github.com/zeromq/pyzmq/pull/951);
-    [TensorFlow#24678](https://github.com/tensorflow/tensorflow/pull/24678).
+:   For [PyTorch][],
+        deprecated inconsistent API ([#21006][pytorch#21006]),
+        discussed a counterintuitive behavior of the autograd engine
+        ([#18568][pytorch#18568]);
+    for [ZeroMQ][],
+        discussed a PUB socket crash ([#2942][zeromq#2942]);
+    for [Flask][],
+        fixed a bug to generate URL with a subdomain ([#108][flask#108]);
+    for [jQuery 1.4.3][jquery-143],
+        restored a missing part of the content negotiation header for Ajax.
+
+[pytorch]:       https://pytorch.org/
+[pytorch#21006]: https://github.com/pytorch/pytorch/pull/21006
+[pytorch#18568]: https://github.com/pytorch/pytorch/pull/18568
+[zeromq]:        http://zeromq.org/
+[zeromq#2942]:   https://github.com/zeromq/libzmq/issues/2942
+[flask]:         http://flask.pocoo.org/
+[flask#108]:     https://github.com/pallets/flask/issues/108
+[jquery-143]:    https://blog.jquery.com/2010/10/16/jquery-143-released/
 
 Public Speeches
 ---------------
