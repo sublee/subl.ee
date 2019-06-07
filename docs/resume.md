@@ -61,6 +61,10 @@ Software Engineer {: .label }
     Reproduced [GPipe][] in PyTorch, and developed [torchgpipe][] as an open
     source library.
 
+[kakaobrain]: https://kakaobrain.com/
+[gpipe]: https://arxiv.org/abs/1811.06965
+[torchgpipe]: https://github.com/kakaobrain/torchgpipe
+
 Game Server Architect {: .label }
 What! Studio in [Nexon][], 2013--2018
 :   Developing <cite>[Durango][]</cite>, a seamless open world MMORPG.
@@ -72,7 +76,10 @@ What! Studio in [Nexon][], 2013--2018
     Built an internationalization and localization system focused on
     linguistics features of Korean and Indo-European languages.
 
-    Led the server development team including up to 15 game server engineers.
+    Led the server development team including up to 15 engineers.
+
+[nexon]: https://company.nexon.com/eng
+[durango]: http://durango.nexon.com/
 
 Game Development Engineer {: .label }
 Team Lupin in [Nexon][], 2011--2013
@@ -87,6 +94,10 @@ Team Lupin in [Nexon][], 2011--2013
     [TrueSkill][trueskill-tm] to develop a matchmaker for 4v4 or free-for-all
     games.
 
+[nexon]: https://company.nexon.com/eng
+[kartrider]: http://kart.nexon.com/
+[trueskill-tm]: http://research.microsoft.com/en-us/projects/trueskill/
+
 Full Stack Web Developer {: .label }
 [Npine][], 2008--2011
 :   Supplies stock images for business on <cite>[Iclickart][]</cite>.
@@ -96,7 +107,10 @@ Full Stack Web Developer {: .label }
 
     Maintained physical Linux machines in a data center.
 
-    Led the software engineering team including three web developers.
+    Led the development team including three web developers.
+
+[npine]: http://en.npine.com/
+[iclickart]: http://iclickart.co.kr/
 
 Front-end Web Developer {: .label }
 [Lunant][], 2008--2011
@@ -108,6 +122,9 @@ Front-end Web Developer {: .label }
 
     Developed an open source project [jDoctest][], which is a JavaScript
     testing framework using example code in documentation comments.
+
+[lunant]: http://lunant.net/
+[jdoctest]: https://lunant.github.com/jdoctest
 
 Open Source Experience
 ----------------------
@@ -121,21 +138,28 @@ Open Source Experience
 
     Reproduced a ResNet-101 performance benchmark in the original GPipe paper.
 
+[torchgpipe]: https://github.com/kakaobrain/torchgpipe
+[gpipe]: https://arxiv.org/abs/1811.06965
+
 [Hangulize][], 2010--
 :   Automatically transcribes a non-Korean word into Hangul.
     {: .note }
 
-:   Implemented an automatic Hangul transcription algorithm to realize
-    [Brian Jongseong Park's idea] [hangulize-idea]. By origin, it was written
-    in Python, but rewritten in Go for better features, performance, and
+:   Implemented an automatic Hangul transcription algorithm to realize [Brian
+    Jongseong Park's idea][hangulize-idea]. By origin, it was written in
+    Python, but rewritten in Go for better features, performance, and
     productivity.
 
     Designed and implemented the web service and RESTful API. Many professional
     Korean translators usually visit here to translate undocumented proper
     nouns. For example, Ryu Gwang, who is a famous technical translator,
-    introduced this web service in [his posting (Korean)][ryugwang].
-    Furthermore, Netflix refers to it in [the Korean timed text style
-    guide][netflix-style].
+    introduced this web service in [his posting (Korean)][ryugwang]. Netflix
+    also refers to it in [the Korean timed text style guide][netflix-style].
+
+[hangulize]: https://hangulize.org/
+[hangulize-idea]: http://iceager.egloos.com/2610028
+[ryugwang]: http://occamsrazr.net/tt/351
+[netflix-style]: https://partnerhelp.netflixstudios.com/hc/en-us/articles/216001127-Korean-Timed-Text-Style-Guide
 
 [TrueSkill][trueskill], 2012--
 :   A TrueSkill™ implementation in Python.
@@ -145,15 +169,21 @@ Open Source Experience
     Xbox Live, in Python with a handy interface to learn and popularize the
     algorithm.
 
+[trueskill]: https://trueskill.org/
+[trueskill-tm]: http://research.microsoft.com/en-us/projects/trueskill/
+
 [Profiling][], 2014--2018
 :   An interactive profiler for Python inspired by the Unity3D profiler.
     {: .note }
 
 :   Developed a tracing based and statistical profiler for Python with a handy
-    interactive TUI like [htop][].
+    interactive TUI inspired by [the Unity profiler][unity-profiler].
 
     2800+ people have stared this project on GitHub. Also, it was the 3rd daily
     trending repository on Sep 22, 2014.
+
+[profiling]: https://github.com/what-studio/profiling
+[unity-profiler]: https://docs.unity3d.com/Manual/ProfilerWindow.html
 
 Others
 :   - [Tossi][] -- A utility for Korean allomorphic particles.
@@ -163,6 +193,12 @@ Others
     - [Me2virus][] -- An XSS attack on [Me2day][], social media. When a user
                       looks at an infected post, a new infected post was
                       written on the user's wall.
+
+[tossi]: https://github.com/what-studio/tossi
+[subleerunker]: /runker/
+[flask-autoindex]: http://pythonhosted.org/Flask-AutoIndex
+[me2virus]: https://github.com/sublee/me2virus
+[me2day]: https://en.wikipedia.org/wiki/Me2day
 
 Contributions
 :   For [PyTorch][],
@@ -218,31 +254,7 @@ Education
 Computer Software, [Kwangwoon University][kw], 2008
 -- Completed the first year only.
 
-<!-- links -->
-[gpipe]: https://arxiv.org/abs/1811.06965
-[torchgpipe]: https://github.com/kakaobrain/torchgpipe
-[durango]: http://durango.nexon.com/
-[flask-autoindex]: http://pythonhosted.org/Flask-AutoIndex
-[hangulize-idea]: http://iceager.egloos.com/2610028
-[hangulize]: https://hangulize.org/
-[ryugwang]: http://occamsrazr.net/tt/351
-[htop]: http://hisham.hm/htop
-[iclickart]: http://iclickart.co.kr/
-[jdoctest]: https://lunant.github.com/jdoctest
-[kakaobrain]: https://kakaobrain.com/
-[kartrider]: http://kart.nexon.com/
 [kw]: http://www.kw.ac.kr/
-[lunant]: http://lunant.net/
-[me2day]: https://en.wikipedia.org/wiki/Me2day
-[me2virus]: https://github.com/sublee/me2virus
-[netflix-style]: https://partnerhelp.netflixstudios.com/hc/en-us/articles/216001127-Korean-Timed-Text-Style-Guide
-[nexon]: https://company.nexon.com/eng
-[npine]: http://en.npine.com/
-[profiling]: https://github.com/what-studio/profiling
-[subleerunker]: /runker/
-[tossi]: https://github.com/what-studio/tossi
-[trueskill]: https://trueskill.org/
-[trueskill-tm]: http://research.microsoft.com/en-us/projects/trueskill/
 
 <!-- abbrs -->
 *[AWS]: Amazon Web Services
