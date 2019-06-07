@@ -814,3 +814,13 @@ redis:
     link: '#06a'
     blur: '#777'
   title: {weight: 600}
+
+noom:
+  emblem:
+    shape: ☲
+    colors: {0: '#fd7451'}
+  colors:
+    text: '#4d4d4d'
+    epic: '#fd7451'
+    link: '#47b9b4'
+    blur: '#7a8d99'
