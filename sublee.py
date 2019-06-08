@@ -18,7 +18,7 @@ import itertools
 import os
 import re
 import socket
-from urlparse import urlparse
+from urllib.parse import urlparse
 
 import click
 from flask import Flask, render_template, send_file
@@ -83,7 +83,7 @@ def is_splitted_trigram_bar(trigram, offset):
 
 
 app.jinja_env.globals.update({
-    'zip': itertools.izip,
+    'zip': zip,
     'meta': jinja_meta,
     'cdnjs': (lambda path: '//cdnjs.cloudflare.com/ajax/libs/' + path),
 })
@@ -113,8 +113,8 @@ def make_context(*args, **kwargs):
 def doc(doc_name):
     filename = os.path.join(DOCS, os.path.extsep.join([doc_name, 'md']))
     try:
-        with open(filename) as f:
-            doc_text = f.read().decode('utf-8')
+        with open(filename, encoding='utf-8') as f:
+            doc_text = f.read()
     except IOError:
         raise NotFound
     markdown = Markdown(extensions=MARKDOWN_EXTENSIONS)
@@ -178,7 +178,7 @@ def render_error(error):
     """The HTTP error page."""
     ctx = make_context(error=error)
     return render_template('error.html', **ctx)
-for status in range(400, 420) + range(500, 506):
+for status in itertools.chain(range(400, 420), range(500, 506)):
     def _error(error, status=status):
         return render_error(error), status
     try:
@@ -211,7 +211,7 @@ def prepare_freezing(app):
     def css():
         with open(THEMES) as f:
             themes = yaml.load(f, Loader=yaml.FullLoader)
-        for theme in themes.viewkeys():
+        for theme in themes.keys():
             yield {'theme': theme}
     return freezer
 
