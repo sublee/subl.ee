@@ -24,6 +24,7 @@ import click
 from flask import Flask, render_template, send_file
 import jinja2
 from markdown import Markdown
+import weasyprint
 from werkzeug.exceptions import NotFound
 import yaml
 
@@ -129,7 +130,20 @@ def doc(doc_name):
 
 @app.route('/favicon.ico')
 def favicon():
-    return send_file(os.path.join(os.path.dirname(__file__), 'favicon.ico'))
+    return send_file(os.path.join(ROOT, 'favicon.ico'))
+
+
+@app.route('/resume.pdf')
+def resume_pdf():
+    html = weasyprint.HTML(string=doc('resume'))
+    with open(os.path.join(ROOT, 'static/print.css')) as f:
+        css = weasyprint.CSS(string=f.read())
+
+    f = io.BytesIO()
+    html.write_pdf(f, stylesheets=[css])
+    f.seek(0)
+
+    return send_file(f, mimetype='application/pdf')
 
 
 @app.route('/themes/')
