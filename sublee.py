@@ -48,7 +48,7 @@ MARKDOWN_EXTENSIONS = [
     'markdown.extensions.abbr',
     'markdown.extensions.attr_list',
     'markdown.extensions.def_list',
-    'markdown.extensions.headerid',
+    'markdown.extensions.toc',
     'markdown.extensions.meta',
     'markdown.extensions.smarty',
 ]
@@ -101,7 +101,7 @@ def copyright_year(year_since=None, dash='\u2013'):
 
 def make_context(*args, **kwargs):
     with open(META) as f:
-        meta = yaml.load(f)
+        meta = yaml.load(f, Loader=yaml.FullLoader)
     copyright_year_since = meta.pop('copyright_year_since')
     c = dict(meta, copyright_year=copyright_year(copyright_year_since))
     c.update(*args, **kwargs)
@@ -136,7 +136,7 @@ def favicon():
 def themes():
     """Theme selector."""
     with open(THEMES) as f:
-        themes = yaml.load(f)
+        themes = yaml.load(f, Loader=yaml.FullLoader)
     ctx = make_context(themes=themes)
     return render_template('themes.html', **ctx)
 
@@ -161,7 +161,7 @@ def rgba(color, alpha=1):
 def css(theme):
     """Generates a CSS file from the given theme."""
     with open(THEMES) as f:
-        themes = yaml.load(f)
+        themes = yaml.load(f, Loader=yaml.FullLoader)
     colors = themes[theme]
     res = render_template('style.css_t', rgba=rgba, **colors)
     return res, 200, {'Content-Type': 'text/css'}
@@ -210,7 +210,7 @@ def prepare_freezing(app):
     @freezer.register_generator
     def css():
         with open(THEMES) as f:
-            themes = yaml.load(f)
+            themes = yaml.load(f, Loader=yaml.FullLoader)
         for theme in themes.viewkeys():
             yield {'theme': theme}
     return freezer

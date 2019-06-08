@@ -24,8 +24,8 @@
   'font': 'Hind',
   'generic': 'sans-serif',
   'weight': 400,
-}|update(text) %}
-{% set title = {}|update(text)|update(title) %}
+}|update(text or {}) %}
+{% set title = {}|update(text)|update(title or {}) %}
 {% for _text in [text, title] %}
   {{ setdefault(_text, 'css', '//fonts.googleapis.com/css?family=' ~
                 _text.font|replace(' ', '+') ~ ':' ~ _text.weight) }}

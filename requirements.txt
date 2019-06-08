@@ -1,8 +1,7 @@
-click>=4.0,<5.1
-frozen-flask>=0.11,<0.12
-lxml>=3.4.4,<3.5
-markdown==2.6.7
-markdown_attr_plus>=0.3.0,<0.4
-ply==3.4
-requests>=2.6.2,<2.7
-pyyaml>=3.11,<3.12
+click==7.0
+frozen-flask==0.15
+lxml==4.3.3
+markdown==3.1.1
+requests==2.22.0
+pyyaml==5.1.1
+weasyprint==47
