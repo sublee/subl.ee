@@ -135,12 +135,13 @@ def favicon():
 
 @app.route('/resume.pdf')
 def resume_pdf():
+    font_config = weasyprint.fonts.FontConfiguration()
     html = weasyprint.HTML(string=doc('resume'))
     with open(os.path.join(ROOT, 'static/print.css')) as f:
-        css = weasyprint.CSS(string=f.read())
+        css = weasyprint.CSS(string=f.read(), font_config=font_config)
 
     f = io.BytesIO()
-    html.write_pdf(f, stylesheets=[css])
+    html.write_pdf(f, stylesheets=[css], font_config=font_config)
     f.seek(0)
 
     return send_file(f, mimetype='application/pdf')
