@@ -22,7 +22,6 @@ from urlparse import urlparse
 
 import click
 from flask import Flask, render_template, send_file
-import inflection
 import jinja2
 from markdown import Markdown
 from werkzeug.exceptions import NotFound
@@ -109,15 +108,6 @@ def make_context(*args, **kwargs):
     return c
 
 
-def normalize_doc_meta(raw_meta):
-    normal_meta = {}
-    for key, values in raw_meta.items():
-        key = inflection.underscore(key)
-        value = '\n'.join(values)
-        normal_meta[key] = value
-    return normal_meta
-
-
 @app.route('/', defaults={'doc_name': 'profile'})
 @app.route('/<doc_name>/')
 def doc(doc_name):
@@ -129,7 +119,7 @@ def doc(doc_name):
         raise NotFound
     markdown = Markdown(extensions=MARKDOWN_EXTENSIONS)
     doc_html = markdown.convert(doc_text)
-    doc_meta = normalize_doc_meta(markdown.Meta)
+    doc_meta = {k: '\n'.join(v) for k, v in markdown.Meta.items()}
     stat = os.stat(filename)
     doc_modified_at = datetime.utcfromtimestamp(stat.st_mtime)
     ctx = make_context(doc_html=doc_html, doc_name=doc_name,

@@ -1,7 +1,7 @@
-Title: Heungsub Lee
-Description: Homepage of Heungsub Lee
-Keywords: Heungsub Lee, Heungsub, sublee, 이흥섭, 흥섭
-Layout: epic
+title: Heungsub Lee
+description: Homepage of Heungsub Lee
+keywords: Heungsub Lee, Heungsub, sublee, 이흥섭, 흥섭
+layout: epic
 
 Heungsub Lee
 ============
