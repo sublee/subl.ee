@@ -1,4 +1,4 @@
-Title: Résumé: Heungsub Lee
+title: Résumé: Heungsub Lee
 
 Heungsub Lee
 ============
@@ -14,7 +14,6 @@ Web Sites {: .label }
   [GitHub Profile](https://github.com/sublee),
   [LinkedIn Profile](https://linkedin.com/in/sublee)
   {: .attr }
-{^ .attrs }
 
 ---
 
@@ -43,7 +42,6 @@ Back-end Development {: .label }
 Test Engineering {: .label }
 : Testify, mypy, pytest, GitLab CI, Travis CI
   {: .attr }
-{^ .attrs }
 
 ---
 

@@ -24,8 +24,8 @@
   'font': 'Hind',
   'generic': 'sans-serif',
   'weight': 400,
-}|update(text) %}
-{% set title = {}|update(text)|update(title) %}
+}|update(text or {}) %}
+{% set title = {}|update(text)|update(title or {}) %}
 {% for _text in [text, title] %}
   {{ setdefault(_text, 'css', '//fonts.googleapis.com/css?family=' ~
                 _text.font|replace(' ', '+') ~ ':' ~ _text.weight) }}
@@ -147,6 +147,7 @@ ul li:before {
 
 dd {
   {{ rem('margin-left', 0.8) }}
+  {{ rem('margin-bottom', 1) }}
 }
 dd ul, dd ol {
   {{ rem('margin-left', -0.8) }}
@@ -155,9 +156,10 @@ dd ul, dd ol {
 
 dd.attr, dd.note {
   margin-left: 0;
+  margin-bottom: 0;
 }
 
-dt, dd p, dd ul, dd ol, dd dl, dd hr, dl.attrs dt.label {
+dt, dd p, dd ul, dd ol, dd dl, dd hr, dt.label {
   {{ rem('margin-top', 0.6) }}
   margin-bottom: 0;
 }
@@ -170,23 +172,13 @@ dt + dt {
   margin-top: 0;
 }
 
-/*
-dd, dd p, dd ul, dd ol, dd dl, dd hr, dl.attrs dt.label {
-  {{ rem('margin-top', 0.8) }}
-}
-*/
-
 dt.label {
   {{ rem('font-size', 0.8) }}
   color: {{ colors.blur }};
   line-height: 1;
 }
 
-dl.attrs dt.label {
-  margin-bottom: 0;
-}
-
-dl.attrs dd {
+dd.attr {
   margin-top: 0;
 }
 

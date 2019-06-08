@@ -18,13 +18,13 @@ import itertools
 import os
 import re
 import socket
-from urlparse import urlparse
+from urllib.parse import urlparse
 
 import click
 from flask import Flask, render_template, send_file
-import inflection
 import jinja2
 from markdown import Markdown
+import weasyprint
 from werkzeug.exceptions import NotFound
 import yaml
 
@@ -47,11 +47,11 @@ THEMES = os.path.join(ROOT, 'themes.yml')
 DEFAULT_THEME = 'sublee'
 MARKDOWN_EXTENSIONS = [
     'markdown.extensions.abbr',
+    'markdown.extensions.attr_list',
     'markdown.extensions.def_list',
-    'markdown.extensions.headerid',
+    'markdown.extensions.toc',
     'markdown.extensions.meta',
     'markdown.extensions.smarty',
-    'markdown_attr_plus',
 ]
 
 
@@ -84,7 +84,7 @@ def is_splitted_trigram_bar(trigram, offset):
 
 
 app.jinja_env.globals.update({
-    'zip': itertools.izip,
+    'zip': zip,
     'meta': jinja_meta,
     'cdnjs': (lambda path: '//cdnjs.cloudflare.com/ajax/libs/' + path),
 })
@@ -102,20 +102,11 @@ def copyright_year(year_since=None, dash='\u2013'):
 
 def make_context(*args, **kwargs):
     with open(META) as f:
-        meta = yaml.load(f)
+        meta = yaml.load(f, Loader=yaml.FullLoader)
     copyright_year_since = meta.pop('copyright_year_since')
     c = dict(meta, copyright_year=copyright_year(copyright_year_since))
     c.update(*args, **kwargs)
     return c
-
-
-def normalize_doc_meta(raw_meta):
-    normal_meta = {}
-    for key, values in raw_meta.items():
-        key = inflection.underscore(key)
-        value = '\n'.join(values)
-        normal_meta[key] = value
-    return normal_meta
 
 
 @app.route('/', defaults={'doc_name': 'profile'})
@@ -123,13 +114,13 @@ def normalize_doc_meta(raw_meta):
 def doc(doc_name):
     filename = os.path.join(DOCS, os.path.extsep.join([doc_name, 'md']))
     try:
-        with open(filename) as f:
-            doc_text = f.read().decode('utf-8')
+        with open(filename, encoding='utf-8') as f:
+            doc_text = f.read()
     except IOError:
         raise NotFound
     markdown = Markdown(extensions=MARKDOWN_EXTENSIONS)
     doc_html = markdown.convert(doc_text)
-    doc_meta = normalize_doc_meta(markdown.Meta)
+    doc_meta = {k: '\n'.join(v) for k, v in markdown.Meta.items()}
     stat = os.stat(filename)
     doc_modified_at = datetime.utcfromtimestamp(stat.st_mtime)
     ctx = make_context(doc_html=doc_html, doc_name=doc_name,
@@ -139,14 +130,27 @@ def doc(doc_name):
 
 @app.route('/favicon.ico')
 def favicon():
-    return send_file(os.path.join(os.path.dirname(__file__), 'favicon.ico'))
+    return send_file(os.path.join(ROOT, 'favicon.ico'))
+
+
+@app.route('/resume.pdf')
+def resume_pdf():
+    html = weasyprint.HTML(string=doc('resume'))
+    with open(os.path.join(ROOT, 'static/print.css')) as f:
+        css = weasyprint.CSS(string=f.read())
+
+    f = io.BytesIO()
+    html.write_pdf(f, stylesheets=[css])
+    f.seek(0)
+
+    return send_file(f, mimetype='application/pdf')
 
 
 @app.route('/themes/')
 def themes():
     """Theme selector."""
     with open(THEMES) as f:
-        themes = yaml.load(f)
+        themes = yaml.load(f, Loader=yaml.FullLoader)
     ctx = make_context(themes=themes)
     return render_template('themes.html', **ctx)
 
@@ -171,7 +175,7 @@ def rgba(color, alpha=1):
 def css(theme):
     """Generates a CSS file from the given theme."""
     with open(THEMES) as f:
-        themes = yaml.load(f)
+        themes = yaml.load(f, Loader=yaml.FullLoader)
     colors = themes[theme]
     res = render_template('style.css_t', rgba=rgba, **colors)
     return res, 200, {'Content-Type': 'text/css'}
@@ -188,7 +192,7 @@ def render_error(error):
     """The HTTP error page."""
     ctx = make_context(error=error)
     return render_template('error.html', **ctx)
-for status in range(400, 420) + range(500, 506):
+for status in itertools.chain(range(400, 420), range(500, 506)):
     def _error(error, status=status):
         return render_error(error), status
     try:
@@ -220,8 +224,8 @@ def prepare_freezing(app):
     @freezer.register_generator
     def css():
         with open(THEMES) as f:
-            themes = yaml.load(f)
-        for theme in themes.viewkeys():
+            themes = yaml.load(f, Loader=yaml.FullLoader)
+        for theme in themes.keys():
             yield {'theme': theme}
     return freezer
 
