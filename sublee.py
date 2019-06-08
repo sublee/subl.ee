@@ -47,11 +47,11 @@ THEMES = os.path.join(ROOT, 'themes.yml')
 DEFAULT_THEME = 'sublee'
 MARKDOWN_EXTENSIONS = [
     'markdown.extensions.abbr',
+    'markdown.extensions.attr_list',
     'markdown.extensions.def_list',
     'markdown.extensions.headerid',
     'markdown.extensions.meta',
     'markdown.extensions.smarty',
-    'markdown_attr_plus',
 ]
 
 
