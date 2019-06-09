@@ -9,19 +9,20 @@
    :license: Public Domain
 
 """
-from __future__ import unicode_literals, with_statement
-
 from datetime import date
 from functools import wraps
+from glob import glob
 import io
 import itertools
 import os
 import re
 import socket
+from typing import Union
 from urllib.parse import urlparse
 
 import click
 from flask import Flask, render_template, send_file
+from flask_frozen import Freezer
 import jinja2
 from markdown import Markdown
 import weasyprint
@@ -210,8 +211,6 @@ for status in itertools.chain(range(400, 420), range(500, 506)):
 
 
 def prepare_freezing(app):
-    from glob import glob
-    from flask_frozen import Freezer
     freezer = Freezer(app, with_static_files=False)
     app.config.update({
         'FREEZER_DESTINATION_IGNORE': ['.git*', 'CNAME'],
