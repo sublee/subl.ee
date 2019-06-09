@@ -10,15 +10,12 @@
 
 """
 from datetime import date
-from functools import wraps
 from glob import glob
 import io
 import itertools
 import os
 import re
-import socket
 from typing import Any, Dict, Iterator, Optional, Tuple, Union
-from urllib.parse import urlparse
 
 import click
 from flask import Flask, Response, render_template, send_file
@@ -196,7 +193,7 @@ def rgba(color: str, alpha: float = 1.0) -> str:
         g = int(rgb_hex[2:4], 16)
         b = int(rgb_hex[4:6], 16)
     elif color.startswith('rgb('):
-        r, g, b = re.findall('\d+', color)
+        r, g, b = re.findall(r'\d+', color)
     elif color.startswith('rgba('):
         return color
     return 'rgba({0}, {1}, {2}, {3})'.format(r, g, b, alpha)
@@ -231,9 +228,9 @@ for status in itertools.chain(range(400, 420), range(500, 506)):
 
     try:
         app.errorhandler(status)(_error)
-    except:
-        # Ignore errors during registering an error handler.  KeyError occurs
-        # when handling 402 status code on Flask-0.11.
+    except KeyError:
+        # Ignore errors during registering an error handler.
+        # KeyError occurs when handling status code 402.
         pass
 
     del _error
