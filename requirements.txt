@@ -1,5 +1,24 @@
-click==7.0
-frozen-flask==0.15
-markdown==3.1.1
-pyyaml==5.1.1
-weasyprint==0.42.3  # https://github.com/Kozea/WeasyPrint/issues/1#issuecomment-500153366
+Click==7.0
+Flask==1.0.3
+Frozen-Flask==0.15
+Markdown==3.1.1
+PyYAML==5.1.1
+WeasyPrint==0.42.3  # https://github.com/Kozea/WeasyPrint/issues/1#issuecomment-500153366
+
+cairocffi==1.0.2
+CairoSVG==2.4.0
+cffi==1.12.3
+cssselect2==0.2.1
+defusedxml==0.6.0
+html5lib==1.0.1
+itsdangerous==1.1.0
+Jinja2==2.10.1
+MarkupSafe==1.1.1
+pdfrw==0.4
+Pillow==6.0.0
+pycparser==2.19
+Pyphen==0.9.5
+six==1.12.0
+tinycss2==1.0.2
+webencodings==0.5.1
+Werkzeug==0.15.4
