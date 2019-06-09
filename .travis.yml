@@ -6,8 +6,13 @@ python:
 
 install:
 - pip install -r requirements.txt
+- pip install flake8 mypy
 
 script:
+- | # lint
+  flake8 sublee.py
+  mypy sublee.py
+
 - | # freeze subl.ee
   rm -rf .frozen && mkdir .frozen
   python sublee.py freeze .frozen
