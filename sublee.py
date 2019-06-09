@@ -50,30 +50,43 @@ MARKDOWN_EXTENSIONS = [
     'markdown.extensions.abbr',
     'markdown.extensions.attr_list',
     'markdown.extensions.def_list',
-    'markdown.extensions.toc',
     'markdown.extensions.meta',
     'markdown.extensions.smarty',
+    'markdown.extensions.toc',
 ]
 
 
-#: The Flask application.
+# The Flask application.
 app = Flask(__name__, static_url_path='/-')
 
 
-def jinja_meta(content, **attrs):
+def jinja_meta(content: str, **attrs: str) -> jinja2.Markup:
+    """A Jinja function generating <meta> element."""
     buf = io.StringIO()
     buf.write('<meta ')
+
     for key, attr in attrs.items():
         key = key.replace('_', '-')
         attr = jinja2.escape(attr)
         buf.write('{key}="{attr}" '.format(key=key, attr=attr))
+
     content = jinja2.escape(content)
     buf.write('content="{content}" />'.format(content=content))
+
     return jinja2.Markup(buf.getvalue())
 
 
-def update_dict(d1, d2):
-    d1.update(d2)
+def jinja_cdnjs(path: str) -> str:
+    """A Jinja function generating a URL at cdnjs."""
+    return 'https://cdnjs.cloudflare.com/ajax/libs/%s' % path
+
+
+def jinja_update(d1: dict, d2: Union[dict, jinja2.Undefined]) -> dict:
+    """A Jinja filter updating the target dictionary with the given
+    dictionary.
+    """
+    if not isinstance(d2, jinja2.Undefined):
+        d1.update(d2)
     return d1
 
 
@@ -85,11 +98,10 @@ def is_splitted_trigram_bar(trigram, offset):
 
 
 app.jinja_env.globals.update({
-    'zip': zip,
     'meta': jinja_meta,
     'cdnjs': (lambda path: '//cdnjs.cloudflare.com/ajax/libs/' + path),
 })
-app.jinja_env.filters.update({'update': update_dict})
+app.jinja_env.filters.update({'update': jinja_update})
 app.jinja_env.tests.update({'splitted_trigram_bar': is_splitted_trigram_bar})
 
 
