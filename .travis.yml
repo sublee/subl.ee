@@ -17,6 +17,7 @@ script:
   rm -rf .frozen && mkdir .frozen
   python sublee.py freeze .frozen
 
+after_success:
 - | # prepare subl.ee gh-pages
   git clone "https://sublee:$GITHUB_TOKEN@github.com/sublee/subl.ee" .gh-pages-subl.ee
   pushd .gh-pages-subl.ee
