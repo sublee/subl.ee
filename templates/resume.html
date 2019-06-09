@@ -1,2 +1,7 @@
 {% extends 'base.html' %}
+
 {% block class %}resume{% endblock %}
+
+{% block head %}
+  <link rel="alternate" type="application/pdf" href="{{ url_for('resume_pdf') }}" />
+{% endblock %}
