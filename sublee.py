@@ -9,19 +9,17 @@
    :license: Public Domain
 
 """
-from __future__ import unicode_literals, with_statement
-
 from datetime import date
-from functools import wraps
+from glob import glob
 import io
 import itertools
 import os
 import re
-import socket
-from urllib.parse import urlparse
+from typing import Any, Dict, Iterator, Optional, Tuple, Union
 
 import click
-from flask import Flask, render_template, send_file
+from flask import Flask, Response, render_template, send_file
+from flask_frozen import Freezer
 import jinja2
 from markdown import Markdown
 import weasyprint
@@ -49,50 +47,71 @@ MARKDOWN_EXTENSIONS = [
     'markdown.extensions.abbr',
     'markdown.extensions.attr_list',
     'markdown.extensions.def_list',
-    'markdown.extensions.toc',
     'markdown.extensions.meta',
     'markdown.extensions.smarty',
+    'markdown.extensions.toc',
 ]
 
 
-#: The Flask application.
+# The Flask application.
 app = Flask(__name__, static_url_path='/-')
 
 
-def jinja_meta(content, **attrs):
+def jinja_meta(content: str, **attrs: str) -> jinja2.Markup:
+    """A Jinja function generating <meta> element."""
     buf = io.StringIO()
     buf.write('<meta ')
+
     for key, attr in attrs.items():
         key = key.replace('_', '-')
         attr = jinja2.escape(attr)
         buf.write('{key}="{attr}" '.format(key=key, attr=attr))
+
     content = jinja2.escape(content)
     buf.write('content="{content}" />'.format(content=content))
+
     return jinja2.Markup(buf.getvalue())
 
 
-def update_dict(d1, d2):
-    d1.update(d2)
+def jinja_cdnjs(path: str) -> str:
+    """A Jinja function generating a URL at cdnjs."""
+    return 'https://cdnjs.cloudflare.com/ajax/libs/%s' % path
+
+
+def jinja_update(d1: dict, d2: Union[dict, jinja2.Undefined]) -> dict:
+    """A Jinja filter updating the target dictionary with the given
+    dictionary.
+    """
+    if not isinstance(d2, jinja2.Undefined):
+        d1.update(d2)
     return d1
 
 
-def is_splitted_trigram_bar(trigram, offset):
+def jinja_splitted_trigram_bar(trigram: str, offset: int) -> bool:
+    """A Jinja test checking whether a tiagram has a splitted bar at the
+    offset. For example, (☲, 1) is true while (☲, 0) and (☲, 2) is false.
+    """
     # 9776 is unicode number of ☰ (u'\u2630', TRIGRAM_FOR_HEAVEN).
     # The unicode distance of a trigram from the trigram for heaven is a 3-bit
     # digit.  Splitted bars are at non-negative bits.
-    return (ord(trigram) - 9776) & (1 << offset)
+    return bool((ord(trigram) - 9776) & (1 << offset))
 
 
 app.jinja_env.globals.update({
-    'zip': zip,
     'meta': jinja_meta,
     'cdnjs': (lambda path: '//cdnjs.cloudflare.com/ajax/libs/' + path),
 })
-app.jinja_env.filters.update({'update': update_dict})
-app.jinja_env.tests.update({'splitted_trigram_bar': is_splitted_trigram_bar})
+app.jinja_env.filters.update({
+    'update': jinja_update,
+})
+app.jinja_env.tests.update({
+    'splitted_trigram_bar': jinja_splitted_trigram_bar,
+})
 
 
-def copyright_year(year_since=None, dash='\u2013'):
+def copyright_year(year_since: Optional[int] = None,
+                   dash: str = '\u2013',
+                   ) -> str:
     """Generates an auto-renewed year range of the copyright."""
     this_year = date.today().year
     if year_since is None or year_since == this_year:
@@ -100,16 +119,20 @@ def copyright_year(year_since=None, dash='\u2013'):
     return '{0}{1}{2}'.format(year_since, dash, this_year)
 
 
-def make_context(*args, **kwargs):
+def make_context(*args: Any, **kwargs: Any) -> Dict[str, Any]:
+    """Makes a template context with defaults."""
     with open(META) as f:
         meta = yaml.load(f, Loader=yaml.FullLoader)
+
     copyright_year_since = meta.pop('copyright_year_since')
     c = dict(meta, copyright_year=copyright_year(copyright_year_since))
+
     c.update(*args, **kwargs)
     return c
 
 
-def markdown(text):
+def markdown(text: str) -> Tuple[str, Dict[str, str]]:
+    """Renders a Markdown document."""
     markdown = Markdown(extensions=MARKDOWN_EXTENSIONS)
     html = markdown.convert(text)
     meta = {k: '\n'.join(v) for k, v in markdown.Meta.items()}
@@ -117,7 +140,7 @@ def markdown(text):
 
 
 @app.route('/')
-def index():
+def index() -> str:
     with open(os.path.join(ROOT, 'index.md'), encoding='utf-8') as f:
         html, meta = markdown(f.read())
     ctx = make_context(html=html, **meta)
@@ -125,7 +148,7 @@ def index():
 
 
 @app.route('/resume/')
-def resume():
+def resume() -> str:
     with open(os.path.join(ROOT, 'resume.md'), encoding='utf-8') as f:
         html, meta = markdown(f.read())
     ctx = make_context(html=html, **meta)
@@ -133,21 +156,21 @@ def resume():
 
 
 @app.route('/resume.pdf')
-def resume_pdf():
+def resume_pdf() -> Response:
     font_config = weasyprint.fonts.FontConfiguration()
     html = weasyprint.HTML(string=resume())
     with open(os.path.join(ROOT, 'static/print.css')) as f:
         css = weasyprint.CSS(string=f.read(), font_config=font_config)
 
-    f = io.BytesIO()
-    html.write_pdf(f, stylesheets=[css], font_config=font_config)
-    f.seek(0)
+    pdf = io.BytesIO()
+    html.write_pdf(pdf, stylesheets=[css], font_config=font_config)
+    pdf.seek(0)
 
-    return send_file(f, mimetype='application/pdf')
+    return send_file(pdf, mimetype='application/pdf')
 
 
 @app.route('/themes/')
-def themes():
+def themes() -> str:
     """Theme selector."""
     with open(THEMES) as f:
         themes = yaml.load(f, Loader=yaml.FullLoader)
@@ -156,11 +179,11 @@ def themes():
 
 
 @app.route('/favicon.ico')
-def favicon():
+def favicon() -> Response:
     return send_file(os.path.join(ROOT, 'favicon.ico'))
 
 
-def rgba(color, alpha=1):
+def rgba(color: str, alpha: float = 1.0) -> str:
     """Converts RGB hex string to CSS RGBA expression."""
     if color.startswith('#'):
         rgb_hex = color[1:]
@@ -170,14 +193,14 @@ def rgba(color, alpha=1):
         g = int(rgb_hex[2:4], 16)
         b = int(rgb_hex[4:6], 16)
     elif color.startswith('rgb('):
-        r, g, b = re.findall('\d+', color)
+        r, g, b = re.findall(r'\d+', color)
     elif color.startswith('rgba('):
         return color
     return 'rgba({0}, {1}, {2}, {3})'.format(r, g, b, alpha)
 
 
 @app.route('/style-<theme>.css')
-def css(theme):
+def css(theme: str) -> Tuple[Response, int, Dict[str, str]]:
     """Generates a CSS file from the given theme."""
     with open(THEMES) as f:
         themes = yaml.load(f, Loader=yaml.FullLoader)
@@ -187,51 +210,59 @@ def css(theme):
 
 
 @app.route('/runker/')
-def subleerunker():
+def subleerunker() -> str:
     """A frame wrapper of 'SUBLEERUNKER'."""
     url = 'https://sublee.github.io/subleerunker/'
     return render_template('runker.html', url=url)
 
 
-def render_error(error):
+def render_error(error: Exception) -> str:
     """The HTTP error page."""
     ctx = make_context(error=error)
     return render_template('error.html', **ctx)
+
+
 for status in itertools.chain(range(400, 420), range(500, 506)):
-    def _error(error, status=status):
+    def _error(error: Exception, status: int = status) -> Tuple[str, int]:
         return render_error(error), status
+
     try:
         app.errorhandler(status)(_error)
-    except:
-        # Ignore errors during registering an error handler.  KeyError occurs
-        # when handling 402 status code on Flask-0.11.
+    except KeyError:
+        # Ignore errors during registering an error handler.
+        # KeyError occurs when handling status code 402.
         pass
+
     del _error
 
 
-def prepare_freezing(app):
-    from glob import glob
-    from flask_frozen import Freezer
+def prepare_freezing(app: Flask) -> Freezer:
+    """Prepares to freeze the Flask application."""
     freezer = Freezer(app, with_static_files=False)
+
     app.config.update({
         'FREEZER_DESTINATION_IGNORE': ['.git*', 'CNAME'],
         'FREEZER_IGNORE_MIMETYPE_WARNINGS': True,
     })
+
     @app.route('/404.html')
-    def not_found():
+    def not_found() -> str:
         return render_error(NotFound())
+
     @freezer.register_generator
-    def doc():
+    def doc() -> Iterator[Dict[str, str]]:
         for filename in glob(os.path.join(DOCS, '*.md')):
             filename = os.path.basename(filename)
             doc_name, __ = filename.rsplit(os.path.extsep, 1)
             yield {'doc_name': doc_name}
+
     @freezer.register_generator
-    def css():
+    def css() -> Iterator[Dict[str, str]]:
         with open(THEMES) as f:
             themes = yaml.load(f, Loader=yaml.FullLoader)
         for theme in themes.keys():
             yield {'theme': theme}
+
     return freezer
 
 
@@ -239,21 +270,21 @@ def prepare_freezing(app):
 
 
 @click.group()
-def cli():
+def cli() -> None:
     pass
 
 
 @cli.command()
 @click.option('--host', '-h', default='0.0.0.0')
 @click.option('--port', '-p', type=click.IntRange(1, 65536), default=8080)
-def run(host, port):
+def run(host: str, port: int) -> None:
     """Run a web server for the website."""
     app.run(host=host, port=port, debug=True)
 
 
 @cli.command()
 @click.argument('dest', type=click.Path(file_okay=False, writable=True))
-def freeze(dest):
+def freeze(dest: str) -> None:
     """Freeze the website as static files."""
     app.config['FREEZER_DESTINATION'] = dest
     freezer = prepare_freezing(app)

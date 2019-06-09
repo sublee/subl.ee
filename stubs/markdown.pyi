@@ -1,0 +1,6 @@
+from typing import Dict, List
+
+class Markdown:
+    Meta: Dict[str, str]
+    def __init__(self, extensions: List[str] = []) -> None: ...
+    def convert(self, source: str) -> str: ...
