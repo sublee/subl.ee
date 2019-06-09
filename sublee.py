@@ -11,7 +11,7 @@
 """
 from __future__ import unicode_literals, with_statement
 
-from datetime import date, datetime
+from datetime import date
 from functools import wraps
 import io
 import itertools
@@ -109,34 +109,33 @@ def make_context(*args, **kwargs):
     return c
 
 
-@app.route('/', defaults={'doc_name': 'profile'})
-@app.route('/<doc_name>/')
-def doc(doc_name):
-    filename = os.path.join(DOCS, os.path.extsep.join([doc_name, 'md']))
-    try:
-        with open(filename, encoding='utf-8') as f:
-            doc_text = f.read()
-    except IOError:
-        raise NotFound
+def markdown(text):
     markdown = Markdown(extensions=MARKDOWN_EXTENSIONS)
-    doc_html = markdown.convert(doc_text)
-    doc_meta = {k: '\n'.join(v) for k, v in markdown.Meta.items()}
-    stat = os.stat(filename)
-    doc_modified_at = datetime.utcfromtimestamp(stat.st_mtime)
-    ctx = make_context(doc_html=doc_html, doc_name=doc_name,
-                       doc_modified_at=doc_modified_at, **doc_meta)
-    return render_template('doc.html', **ctx)
+    html = markdown.convert(text)
+    meta = {k: '\n'.join(v) for k, v in markdown.Meta.items()}
+    return html, meta
 
 
-@app.route('/favicon.ico')
-def favicon():
-    return send_file(os.path.join(ROOT, 'favicon.ico'))
+@app.route('/')
+def index():
+    with open(os.path.join(ROOT, 'index.md'), encoding='utf-8') as f:
+        html, meta = markdown(f.read())
+    ctx = make_context(html=html, **meta)
+    return render_template('index.html', **ctx)
+
+
+@app.route('/resume/')
+def resume():
+    with open(os.path.join(ROOT, 'resume.md'), encoding='utf-8') as f:
+        html, meta = markdown(f.read())
+    ctx = make_context(html=html, **meta)
+    return render_template('resume.html', **ctx)
 
 
 @app.route('/resume.pdf')
 def resume_pdf():
     font_config = weasyprint.fonts.FontConfiguration()
-    html = weasyprint.HTML(string=doc('resume'))
+    html = weasyprint.HTML(string=resume())
     with open(os.path.join(ROOT, 'static/print.css')) as f:
         css = weasyprint.CSS(string=f.read(), font_config=font_config)
 
@@ -154,6 +153,11 @@ def themes():
         themes = yaml.load(f, Loader=yaml.FullLoader)
     ctx = make_context(themes=themes)
     return render_template('themes.html', **ctx)
+
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_file(os.path.join(ROOT, 'favicon.ico'))
 
 
 def rgba(color, alpha=1):

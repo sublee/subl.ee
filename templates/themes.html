@@ -46,7 +46,7 @@
         prevA.setAttribute('href', href);
         prevA.setAttribute('class', '');
       }
-      var url_root = {{ url_for('doc')|tojson }};
+      var url_root = {{ url_for('index')|tojson }};
       a.setAttribute('href', url_root + '?theme=' + theme);
       a.setAttribute('class', 'selected');
       arguments.callee.a = a;

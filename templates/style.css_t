@@ -254,39 +254,37 @@ i {
   {% endif %}
 {% endfor %}
 
-/* Epic Layout */
+/* Index */
 
-.-epic main {
+.index body {
+  white-space: nowrap;
+  {{ rem('max-width', 35) }}
+}
+
+.index main {
   font-size: 1.05em;
 }
 
-.-epic header {
+.index header {
   {{ rem('margin-bottom', 2) }};
 }
 
-.-epic h2 {
+.index h1 {
+  display: none;
+}
+
+.index h2 {
   margin-bottom: 0;
   font-size: 1.2em;
   color: {{ colors.epic }};
 }
 
-/* Doc Layout */
+/* Resume */
 
-.-doc .emblem-wrap {
+.resume .emblem-wrap {
   position: absolute;
   right: 0;
   margin: 0 0.3em;
-}
-
-/* Profile */
-
-.profile body {
-  white-space: nowrap;
-  {{ rem('max-width', 35) }}
-}
-
-.profile h1 {
-  display: none;
 }
 
 /* Error */
@@ -347,23 +345,23 @@ i {
     display: none;
   }
 
-  .-epic body {
+  .index body {
     margin-top: 2em;
   }
 
-  .-epic main {
+  .index main {
     font-size: 1em;
   }
 
-  .-doc body {
+  .resume body {
     margin-top: 1em;
   }
 
-  .-doc .emblem-wrap {
+  .resume .emblem-wrap {
     width: 45px;
   }
 
-  .-doc .emblem {
+  .resume .emblem {
     zoom: 0.5;
     margin: 0;
   }
