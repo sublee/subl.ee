@@ -824,3 +824,12 @@ noom:
     epic: '#fd7451'
     link: '#47b9b4'
     blur: '#7a8d99'
+
+tada:
+  emblem:
+    shape: ☰
+    colors: {0: '#2a2b4a'}
+  colors:
+    text: '#2a2b4a'
+    blur: '#9494a5'
+    link: '#00a4cd'
