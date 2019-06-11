@@ -10,9 +10,9 @@ Contact {: .label }
   {: .attr }
 
 Web Sites {: .label }
-: [Homepage](/),
-  [GitHub Profile](https://github.com/sublee),
-  [LinkedIn Profile](https://linkedin.com/in/sublee)
+: [subl.ee](/),
+  [github.com/sublee](https://github.com/sublee),
+  [linkedin.com/in/sublee](https://linkedin.com/in/sublee)
   {: .attr }
 
 ---
