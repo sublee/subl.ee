@@ -348,6 +348,7 @@ i {
 
   .index body {
     margin-top: 2em;
+    white-space: normal;
   }
 
   .index main {
@@ -365,10 +366,6 @@ i {
   .resume .emblem {
     zoom: 0.5;
     margin: 0;
-  }
-
-  .profile body {
-    white-space: normal;
   }
 
   .themes li {
