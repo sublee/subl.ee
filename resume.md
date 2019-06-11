@@ -177,7 +177,7 @@ Open Source Experience
 :   Developed a tracing based and statistical profiler for Python with a handy
     interactive TUI inspired by [the Unity profiler][unity-profiler].
 
-    On GitHub, this project has been starred by 2800+ people. Also, it was the
+    On GitHub, this project has been starred by 2.9k people. Also, it was the
     3rd daily trending repository on Sep 22, 2014.
 
 [profiling]: https://github.com/what-studio/profiling
