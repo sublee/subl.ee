@@ -228,6 +228,7 @@ i {
 }
 
 .emblem i {
+  position: relative;
   display: block;
   height: {{ emblem_width / 2 - emblem_plate_margin }}px;
   background-repeat: no-repeat;
