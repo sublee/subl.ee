@@ -15,16 +15,17 @@ import itertools
 import os
 import re
 from typing import Any, Dict, Iterator, Optional, Tuple, Union
+from urllib.parse import urlparse
 
 import click
-from flask import Flask, Response, render_template, send_file
-from flask_frozen import Freezer
 import jinja2
 from markdown import Markdown
 import weasyprint
 from werkzeug.exceptions import NotFound
 import yaml
-
+from flask import (Flask, Response, make_response, render_template, send_file,
+                   url_for)
+from flask_frozen import Freezer
 
 __version__ = '2.4.0'
 __all__ = ['app']
@@ -213,6 +214,30 @@ def subleerunker() -> str:
     """A frame wrapper of 'SUBLEERUNKER'."""
     url = 'https://sublee.github.io/subleerunker/'
     return render_template('runker.html', url=url)
+
+
+@app.route('/robots.txt')
+def robots_txt() -> Response:
+    buf = io.StringIO()
+
+    sitemap_url = url_for('sitemap_txt', _external=True)
+    print('Sitemap: %s' % sitemap_url, file=buf)
+
+    res = make_response(buf.getvalue())
+    res.mimetype = 'text/plain'
+    return res
+
+
+@app.route('/sitemap.txt')
+def sitemap_txt() -> Response:
+    buf = io.StringIO()
+
+    print(url_for('index', _external=True), file=buf)
+    print(url_for('resume', _external=True), file=buf)
+
+    res = make_response(buf.getvalue())
+    res.mimetype = 'text/plain'
+    return res
 
 
 def render_error(error: Exception) -> str:
