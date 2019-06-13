@@ -273,13 +273,6 @@ def prepare_freezing(app: Flask) -> Freezer:
         return render_error(NotFound())
 
     @freezer.register_generator
-    def doc() -> Iterator[Dict[str, str]]:
-        for filename in glob(os.path.join(DOCS, '*.md')):
-            filename = os.path.basename(filename)
-            doc_name, __ = filename.rsplit(os.path.extsep, 1)
-            yield {'doc_name': doc_name}
-
-    @freezer.register_generator
     def css() -> Iterator[Dict[str, str]]:
         with open(THEMES) as f:
             themes = yaml.load(f, Loader=yaml.FullLoader)
