@@ -8,24 +8,23 @@
    :license: Public Domain
 
 """
-from datetime import date
-from glob import glob
 import io
 import itertools
 import os
 import re
+from datetime import date
 from typing import Any, Dict, Iterator, Optional, Tuple, Union
 from urllib.parse import urlparse
 
 import click
 import jinja2
-from markdown import Markdown
 import weasyprint
-from werkzeug.exceptions import NotFound
 import yaml
 from flask import (Flask, Response, make_response, render_template, send_file,
                    url_for)
 from flask_frozen import Freezer
+from markdown import Markdown
+from werkzeug.exceptions import NotFound
 
 __version__ = '2.4.0'
 __all__ = ['app']
