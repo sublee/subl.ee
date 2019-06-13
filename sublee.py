@@ -302,6 +302,14 @@ def run(host: str, port: int) -> None:
 @click.argument('dest', type=click.Path(file_okay=False, writable=True))
 def freeze(dest: str) -> None:
     """Freeze the website as static files."""
+    # Config URL scheme and server name.
+    with open(META) as f:
+        meta = yaml.load(f, Loader=yaml.FullLoader)
+    url_root = urlparse(meta['url_root'])
+    app.config['PREFERRED_URL_SCHEME'] = url_root.scheme
+    app.config['SERVER_NAME'] = url_root.hostname
+
+    # Freeze the website.
     app.config['FREEZER_DESTINATION'] = dest
     freezer = prepare_freezing(app)
     freezer.freeze()
