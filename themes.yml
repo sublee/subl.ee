@@ -874,3 +874,30 @@ twitch:
       height: 100%;
       box-shadow: -2px 4px 0 5px #6441a4;
     }
+
+ipari:
+  emblem:
+    shape: ☲
+    colors: {0: '#4bbfc3', 3: '#7baabe', 5: '#68b4c0'}
+  colors:
+    text: '#777'
+    blur: '#999'
+    link: '#2a99b6'
+  title:
+    font: Raleway
+  css: |
+    h1::after {
+      content: '/';
+      margin-left: 0.2em;
+      font-size: 80%;
+      color: rgba(232, 250, 0, 0.8);
+    }
+
+    a:hover {
+      text-decoration-color: rgba(232, 250, 0, 0.8);
+    }
+
+    hr {
+      background-color: #aaa;
+      height: 1px;
+    }
