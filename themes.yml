@@ -822,8 +822,8 @@ noom:
   colors:
     text: '#4d4d4d'
     epic: '#fd7451'
-    link: '#47b9b4'
     blur: '#7a8d99'
+    link: '#47b9b4'
 
 tada:
   emblem:
@@ -842,8 +842,8 @@ twitch:
     background: '#faf9fa'
     text: '#392e5c'
     epic: '#6441a4'
-    link: '#6441a4'
     blur: '#898395'
+    link: '#6441a4'
   css: |
     .emblem i::before {
       content: '';
@@ -900,4 +900,37 @@ ipari:
     hr {
       background-color: #aaa;
       height: 1px;
+    }
+
+alabaster:
+  emblem:
+    shape: ☲
+    colors: {0: '#3e4349'}
+  colors:
+    text: '#000'
+    epic: '#3e4349'
+    blur: '#888'
+    link: '#004b6b'
+  text:
+    font: Georgia
+    generic: serif
+    css: false
+  css: |
+    a:link, a:visited {
+      text-decoration: none;
+      border-bottom: 1px dotted #004b6b;
+    }
+
+    a:hover {
+      color: #6d4100;
+      border-bottom: 1px solid #6d4100
+    }
+
+    h1 {
+      font-weight: bold;
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.75rem;
     }
