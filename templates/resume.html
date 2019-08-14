@@ -5,3 +5,9 @@
 {% block head %}
   <link rel="alternate" type="application/pdf" href="{{ url_for('resume_pdf') }}" />
 {% endblock %}
+
+{% block inner_footer %}
+  {{ super() }}
+  &middot;
+  <a href="{{ url_for('resume_pdf') }}" target="_blank">PDF</a>
+{% endblock %}

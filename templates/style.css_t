@@ -77,9 +77,6 @@ header {
 
 footer {
   {{ rem('margin-top', 2) }};
-}
-
-footer p {
   font-size: 0.8em;
   color: {{ colors.blur }};
 }
