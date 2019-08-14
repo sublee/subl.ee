@@ -31,6 +31,7 @@ I've made
 - Kartrider Dash and Coin Rush series at Team Lupin in Nexon.
 - [TrueSkill][]: A rating system for online games.
 - [Profiling][]: An interactive continuous Python profiler.
+- [Sublette][]: My own color schemes.
 
 [torchgpipe]:   https://github.com/kakaobrain/torchgpipe
 [Hangulize]:    https://hangulize.org/
