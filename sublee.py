@@ -199,7 +199,7 @@ def rgba(color: str, alpha: float = 1.0) -> str:
 
 
 @app.route('/style-<theme>.css')
-def css(theme: str) -> Tuple[Response, int, Dict[str, str]]:
+def css(theme: str) -> Tuple[str, int, Dict[str, str]]:
     """Generates a CSS file from the given theme."""
     with open(THEMES) as f:
         themes = yaml.load(f, Loader=yaml.FullLoader)
