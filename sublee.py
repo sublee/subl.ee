@@ -77,7 +77,9 @@ def jinja_cdnjs(path: str) -> str:
     return 'https://cdnjs.cloudflare.com/ajax/libs/%s' % path
 
 
-def jinja_update(d1: dict, d2: Union[dict, jinja2.Undefined]) -> dict:
+def jinja_update(d1: Dict[Any, Any],
+                 d2: Union[Dict[Any, Any], jinja2.Undefined],
+                 ) -> Dict[Any, Any]:
     """A Jinja filter updating the target dictionary with the given
     dictionary.
     """
@@ -165,7 +167,8 @@ def resume_pdf() -> Response:
     html.write_pdf(pdf, stylesheets=[css], font_config=font_config)
     pdf.seek(0)
 
-    return send_file(pdf, mimetype='application/pdf')
+    res: Response = send_file(pdf, mimetype='application/pdf')
+    return res
 
 
 @app.route('/themes/')
@@ -179,7 +182,8 @@ def themes() -> str:
 
 @app.route('/favicon.ico')
 def favicon() -> Response:
-    return send_file(os.path.join(ROOT, 'favicon.ico'))
+    res: Response = send_file(os.path.join(ROOT, 'favicon.ico'))
+    return res
 
 
 def rgba(color: str, alpha: float = 1.0) -> str:
@@ -222,7 +226,7 @@ def robots_txt() -> Response:
     sitemap_url = url_for('sitemap_txt', _external=True)
     print('Sitemap: %s' % sitemap_url, file=buf)
 
-    res = make_response(buf.getvalue())
+    res: Response = make_response(buf.getvalue())
     res.mimetype = 'text/plain'
     return res
 
@@ -234,7 +238,7 @@ def sitemap_txt() -> Response:
     print(url_for('index', _external=True), file=buf)
     print(url_for('resume', _external=True), file=buf)
 
-    res = make_response(buf.getvalue())
+    res: Response = make_response(buf.getvalue())
     res.mimetype = 'text/plain'
     return res
 
