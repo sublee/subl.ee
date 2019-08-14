@@ -25,7 +25,7 @@ I've made
 
 - [torchgpipe][]: A GPipe implementation in PyTorch.
 - [Hangulize][]: A Korean alphabet transcriber.
-- [Tossi][]: An implementation of Korean allomorphic particles.
+- [Tossi][]: A utility for Korean allomorphic particles.
 - [SUBLEERUNKER][]: A simple game with [my pixel art][DeviantArt].
 - [Durango][] at What! Studio in Nexon.
 - Kartrider Dash and Coin Rush series at Team Lupin in Nexon.
@@ -40,21 +40,21 @@ I've made
 [Durango]:      http://durango.nexon.com/
 [TrueSkill]:    https://trueskill.org/
 [Profiling]:    https://github.com/what-studio/profiling
+[Sublette]:     https://github.com/sublee/sublette
 
 I spoke about
 -------------
 
 - [Remake of Hangulize][gokr1808] at Golang Korea Meetup Aug 2018 (Korean)
-- [The server architecture of Durango Vol. 3][ndc18] at NDC 2018 (Korean)
 - [Python Survival Guide][nxtk16] at Nexon Talk 2016 (Korean)
-- [The server architecture of Durango Vol. 2][ndc16] at NDC 2016 (Korean)
 - [Profiling][pycon15] at PyCon KR 2015 (Korean)
-- [The server architecture of Durango][ndc14] at NDC 2014 (Korean)
-
-[ndc18]: https://subl.ee/~ndc18
-[ndc16]: https://subl.ee/~ndc16
-[ndc14]: https://subl.ee/~ndc14
+- Server architecture of Durango, at [NDC 2014][ndc14], [2016][ndc16], and
+  [2018][ndc18] (Korean)
 
 [gokr1808]: https://subl.ee/~gokr1808
 [nxtk16]:   https://subl.ee/~nxtk16
 [pycon15]:  https://subl.ee/~pycon15
+
+[ndc14]: https://subl.ee/~ndc14
+[ndc16]: https://subl.ee/~ndc16
+[ndc18]: https://subl.ee/~ndc18
