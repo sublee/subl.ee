@@ -96,7 +96,7 @@ Team Lupin in [Nexon][], 2011--2013
 [kartrider]: http://kart.nexon.com/
 [trueskill-tm]: http://research.microsoft.com/en-us/projects/trueskill/
 
-Full Stack Web Developer {: .label }
+Web Developer {: .label }
 [Npine][], 2008--2011
 :   Supplies stock images for business on <cite>[Iclickart][]</cite>.
     {: .note }
