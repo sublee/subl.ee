@@ -227,12 +227,12 @@ Public Speeches
 ---------------
 
 - [Remake of Hangulize<sup>ko</sup>][gokr1808] at Golang Korea Meetup Aug 2018
-- [The server architecture of Durango Vol. 3<sup>ko</sup>][ndc18] at NDC 2018
+- [Server architecture of Durango Vol. 3<sup>ko</sup>][ndc18] at NDC 2018
 - [Python Survival Guide<sup>ko</sup>][nxtk16] at Nexon Talk 2016
-- [The server architecture of Durango Vol. 2<sup>ko</sup>][ndc16] at NDC 2016,
+- [Server architecture of Durango Vol. 2<sup>ko</sup>][ndc16] at NDC 2016,
   awarded the grand prize
 - [Profiling<sup>ko</sup>][pycon15] at PyCon KR 2015
-- [The server architecture of Durango<sup>ko</sup>][ndc14] at NDC 2014
+- [Server architecture of Durango<sup>ko</sup>][ndc14] at NDC 2014
 
 [ndc18]: https://subl.ee/~ndc18
 [ndc16]: https://subl.ee/~ndc16
