@@ -151,8 +151,9 @@ Open Source Experience
     Designed and implemented the web service and RESTful API. Many professional
     Korean translators usually visit here to translate undocumented proper
     nouns. For example, Ryu Gwang, who is a famous technical translator,
-    introduced this web service in [his posting (Korean)][ryugwang]. Netflix
-    also refers to it in [the Korean timed text style guide][netflix-style].
+    introduced this web service in [his posting<sup>ko</sup>][ryugwang].
+    Netflix also refers to it in [the Korean timed text style
+    guide][netflix-style].
 
 [hangulize]: https://hangulize.org/
 [hangulize-idea]: http://iceager.egloos.com/2610028
@@ -222,13 +223,13 @@ Contributions
 Public Speeches
 ---------------
 
-- [Remake of Hangulize][gokr1808] at Golang Korea Meetup Aug 2018 (Korean)
-- [The server architecture of Durango Vol. 3][ndc18] at NDC 2018 (Korean)
-- [Python Survival Guide][nxtk16] at Nexon Talk 2016 (Korean)
-- [The server architecture of Durango Vol. 2][ndc16] at NDC 2016,
-  awarded the grand prize (Korean)
-- [Profiling][pycon15] at PyCon KR 2015 (Korean)
-- [The server architecture of Durango][ndc14] at NDC 2014 (Korean)
+- [Remake of Hangulize<sup>ko</sup>][gokr1808] at Golang Korea Meetup Aug 2018
+- [The server architecture of Durango Vol. 3<sup>ko</sup>][ndc18] at NDC 2018
+- [Python Survival Guide<sup>ko</sup>][nxtk16] at Nexon Talk 2016
+- [The server architecture of Durango Vol. 2<sup>ko</sup>][ndc16] at NDC 2016,
+  awarded the grand prize
+- [Profiling<sup>ko</sup>][pycon15] at PyCon KR 2015
+- [The server architecture of Durango<sup>ko</sup>][ndc14] at NDC 2014
 
 [ndc18]: https://subl.ee/~ndc18
 [ndc16]: https://subl.ee/~ndc16
