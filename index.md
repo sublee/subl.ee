@@ -20,8 +20,8 @@ More details are in my [résumé](/resume/).
 [Kakao Brain]: https://kakaobrain.com/
 [Open Source]: https://github.com/sublee
 
-I've made
----------
+I have made
+-----------
 
 - [torchgpipe][]: A GPipe implementation in PyTorch.
 - [Hangulize][]: A Korean alphabet transcriber.
