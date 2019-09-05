@@ -191,9 +191,9 @@ Others
 :   - [Tossi][] -- A utility for Korean allomorphic particles.
     - [Click Default Group][click-default-group] -- Implicit default subcommand
                                                     for CLI based on [Click][].
+    - [Flask-AutoIndex][] -- mod_autoindex for Flask
     - [SUBLEERUNKER][] -- A simple parody game of SUBERUNKER. Play it in your
                           web browser.
-    - [Flask-AutoIndex][] -- mod_autoindex for Flask
     - [Me2virus][] -- An XSS attack on [Me2day][], social media. When a user
                       looks at an infected post, a new infected post was
                       written on the user's wall.
@@ -201,8 +201,8 @@ Others
 [tossi]: https://github.com/what-studio/tossi
 [click-default-group]: https://github.com/click-contrib/click-default-group
 [click]: https://click.palletsprojects.com/
-[subleerunker]: /runker/
 [flask-autoindex]: http://pythonhosted.org/Flask-AutoIndex
+[subleerunker]: /runker/
 [me2virus]: https://github.com/sublee/me2virus
 [me2day]: https://en.wikipedia.org/wiki/Me2day
 
