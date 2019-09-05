@@ -189,6 +189,8 @@ Open Source Experience
 
 Others
 :   - [Tossi][] -- A utility for Korean allomorphic particles.
+    - [Click Default Group][click-default-group] -- Implicit default subcommand
+                                                    for CLI based on [Click][].
     - [SUBLEERUNKER][] -- A simple parody game of SUBERUNKER. Play it in your
                           web browser.
     - [Flask-AutoIndex][] -- mod_autoindex for Flask
@@ -197,6 +199,8 @@ Others
                       written on the user's wall.
 
 [tossi]: https://github.com/what-studio/tossi
+[click-default-group]: https://github.com/click-contrib/click-default-group
+[click]: https://click.palletsprojects.com/
 [subleerunker]: /runker/
 [flask-autoindex]: http://pythonhosted.org/Flask-AutoIndex
 [me2virus]: https://github.com/sublee/me2virus
@@ -260,7 +264,8 @@ Computer Software, [Kwangwoon University][kw], 2008
 
 <!-- abbrs -->
 *[AWS]: Amazon Web Services
+*[CLI]: Command-line interface
 *[MMORPG]: Massively multiplayer online role-playing game
 *[NDC]: Nexon Developers Conference
-*[TUI]: Text-based User Interface
-*[XSS]: Cross-site Scripting
+*[TUI]: Text-based user interface
+*[XSS]: Cross-site scripting
