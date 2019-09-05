@@ -224,7 +224,7 @@ Contributions
 [pytorch#18568]: https://github.com/pytorch/pytorch/pull/18568
 [zeromq]:        http://zeromq.org/
 [zeromq#2942]:   https://github.com/zeromq/libzmq/issues/2942
-[flask]:         http://flask.pocoo.org/
+[flask]:         https://flask.palletsprojects.com/
 [flask#108]:     https://github.com/pallets/flask/issues/108
 [jquery-143]:    https://blog.jquery.com/2010/10/16/jquery-143-released/
 
