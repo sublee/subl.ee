@@ -90,7 +90,7 @@ dd.note, dd.attr, dd ul, dd ol {
   text-indent: 0;
 }
 
-dt.label, dd.note {
+dt.label, dd.note, dd.note * {
   font-size: 0.8rem;
   line-height: 1;
 }
