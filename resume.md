@@ -40,7 +40,7 @@ Back-end Development {: .label }
   {: .attr }
 
 Test Engineering {: .label }
-: Testify, mypy, pytest, GitLab CI, Travis CI
+: Travis CI, GitLab CI, mypy, pytest, Testify
   {: .attr }
 
 ---
@@ -69,7 +69,7 @@ What! Studio in [Nexon][], 2013--2018
     {: .note }
 
 :   Designed and implemented the architecture of a distributed MMORPG server.
-    The server achieved up to 70k concurrent users per MMO world.
+    The server achieved up to 70k concurrent users per game world.
 
     Built an internationalization and localization system focused on
     linguistics features of Korean and Indo-European languages.
@@ -89,8 +89,8 @@ Team Lupin in [Nexon][], 2011--2013
     synchronous multiplayer racing games.
 
     Researched rating systems such as Elo, Glicko, and
-    [TrueSkill][trueskill-tm] to develop a matchmaker for 4v4 or free-for-all
-    games.
+    [TrueSkill][trueskill-tm] to develop a matchmaker for both 4v4 and
+    free-for-all games.
 
 [nexon]: https://company.nexon.com/eng
 [kartrider]: http://kart.nexon.com/
