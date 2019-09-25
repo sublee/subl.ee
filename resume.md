@@ -232,6 +232,7 @@ Public Speeches
 ---------------
 
 - [Remake of Hangulize<sup>ko</sup>][gokr1808] at Golang Korea Meetup Aug 2018
+  and Naver D2
 - [Server architecture of Durango Vol. 3<sup>ko</sup>][ndc18] at NDC 2018
 - [Python Survival Guide<sup>ko</sup>][nxtk16] at Nexon Talk 2016
 - [Server architecture of Durango Vol. 2<sup>ko</sup>][ndc16] at NDC 2016,
