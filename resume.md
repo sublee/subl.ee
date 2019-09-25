@@ -133,7 +133,7 @@ Open Source Experience
 
 :   Developed [GPipe][] in PyTorch. GPipe is a scalable pipeline parallelism
     library for training of a giant model. The story behind this project can be
-    found in [Kakao Brain Blog<sup>ko</sup>][torchgpipe-blog].
+    found on [Kakao Brain Blog<sup>ko</sup>][torchgpipe-blog].
 
     Optimized the pipeline parallelism and checkpointing for CUDA and PyTorch's
     autograd engine.

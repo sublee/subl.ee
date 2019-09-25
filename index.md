@@ -46,7 +46,7 @@ I have made
 I told about
 ------------
 
-- [The story behind torchgpipe<sup>ko</sup>][torchgpipe-blog] in Kakao Brain Blog
+- [The story behind torchgpipe<sup>ko</sup>][torchgpipe-blog] on Kakao Brain Blog
 - [Remake of Hangulize<sup>ko</sup>][gokr1808] at Golang Korea Meetup Aug 2018
 - [Python Survival Guide<sup>ko</sup>][nxtk16] at Nexon Talk 2016
 - [Profiling<sup>ko</sup>][pycon15] at PyCon KR 2015
