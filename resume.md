@@ -65,7 +65,7 @@ Software Engineer {: .label }
 
 Game Server Architect {: .label }
 What! Studio in [Nexon][], 2013--2018
-:   Developing <cite>[Durango][]</cite>, a seamless open world MMORPG.
+:   Developed and launched <cite>[Durango][]</cite>, an open world MMORPG.
     {: .note }
 
 :   Designed and implemented the architecture of a distributed MMORPG server.
