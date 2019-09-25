@@ -163,8 +163,11 @@ def resume_pdf() -> Response:
     with open(os.path.join(ROOT, 'static/print.css')) as f:
         css = weasyprint.CSS(string=f.read(), font_config=font_config)
 
+    doc = html.render(stylesheets=[css], font_config=font_config)
+    assert len(doc.pages) == 1, 'resume.pdf contains %d pages' % len(doc.pages)
+
     pdf = io.BytesIO()
-    html.write_pdf(pdf, stylesheets=[css], font_config=font_config)
+    doc.write_pdf(pdf)
     pdf.seek(0)
 
     res: Response = send_file(pdf, mimetype='application/pdf')
