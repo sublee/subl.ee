@@ -98,25 +98,6 @@ sublee-flame:
     font: Lusitana
     generic: serif
 
-paper:
-  emblem:
-    shape: ☲
-    colors: {0: '#000'}
-  colors:
-    background: '#fff'
-    text: '#000'
-    link: '#56f'
-    vlink: '#b3e'
-  text: {font: Noto Serif, generic: serif}
-  css: |
-    * {
-      line-height: 1.25;
-    }
-    hr {
-      background: #000;
-      height: 0.2rem;
-    }
-
 mogef:
   emblem:
     shape: ☰
