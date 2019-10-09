@@ -208,17 +208,17 @@ Others
 [me2day]: https://en.wikipedia.org/wiki/Me2day
 
 Contributions
-:   For [PyTorch][],
-        fixed potential GPU memory violation ([#27371][pytorch#27371]),
-        deprecated inconsistent API ([#21006][pytorch#21006]),
-        discussed a counterintuitive behavior of the autograd engine
-        ([#18568][pytorch#18568]);
-    for [ZeroMQ][],
-        discussed a PUB socket crash ([#2942][zeromq#2942]);
-    for [Flask][],
-        fixed a bug to generate URL with a subdomain ([#108][flask#108]);
-    for [jQuery 1.4.3][jquery-143],
-        restored a missing part of the content negotiation header for Ajax.
+:   - For [PyTorch][],
+      fixed potential GPU memory violation ([#27371][pytorch#27371]);
+      deprecated inconsistent API ([#21006][pytorch#21006]);
+      discussed a counterintuitive behavior of the autograd engine
+      ([#18568][pytorch#18568]).
+    - For [ZeroMQ][],
+      discussed a PUB socket crash ([#2942][zeromq#2942]).
+    - For [Flask][],
+      fixed a bug to generate URL with a subdomain ([#108][flask#108]).
+    - For [jQuery 1.4.3][jquery-143] --
+      restored a missing part of the content negotiation header for Ajax.
 
 [pytorch]:       https://pytorch.org/
 [pytorch#27371]: https://github.com/pytorch/pytorch/pull/27371
