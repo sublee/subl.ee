@@ -209,6 +209,7 @@ Others
 
 Contributions
 :   For [PyTorch][],
+        fixed potential GPU memory violation ([#27371][pytorch#27371]),
         deprecated inconsistent API ([#21006][pytorch#21006]),
         discussed a counterintuitive behavior of the autograd engine
         ([#18568][pytorch#18568]);
@@ -220,6 +221,7 @@ Contributions
         restored a missing part of the content negotiation header for Ajax.
 
 [pytorch]:       https://pytorch.org/
+[pytorch#27371]: https://github.com/pytorch/pytorch/pull/27371
 [pytorch#21006]: https://github.com/pytorch/pytorch/pull/21006
 [pytorch#18568]: https://github.com/pytorch/pytorch/pull/18568
 [zeromq]:        http://zeromq.org/
