@@ -169,10 +169,11 @@ Open Source Experience
 
 :   Implemented [TrueSkill™][trueskill-tm], which is a rating algorithm for
     Xbox Live, in Python with a handy interface to learn and popularize the
-    algorithm.
+    algorithm. This project was introduced in [PyData Berlin 2019][pydata2019].
 
 [trueskill]: https://trueskill.org/
 [trueskill-tm]: http://research.microsoft.com/en-us/projects/trueskill/
+[pydata2019]: https://docs.google.com/presentation/d/1S5v9D31vpsr22efMSSCO6hmN2SQNCIqKG7JyGzUSzeI/edit?usp=sharing
 
 [Profiling][], 2014--2018
 :   An interactive profiler for Python inspired by the Unity3D profiler.
