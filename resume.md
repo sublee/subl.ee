@@ -153,10 +153,9 @@ Open Source Experience
 
     Designed and implemented the web service and RESTful API. Many professional
     Korean translators usually visit here to translate undocumented proper
-    nouns. For example, Ryu Gwang, who is a famous technical translator,
-    introduced this web service in [his posting<sup>ko</sup>][ryugwang].
-    Netflix also refers to it in [the Korean timed text style
-    guide][netflix-style].
+    nouns. For example, Ryu Gwang a technical translator introduced this web
+    service in [his posting<sup>ko</sup>][ryugwang]. Netflix also refers to it
+    in [the Korean timed text style guide][netflix-style].
 
 [hangulize]: https://hangulize.org/
 [hangulize-idea]: http://iceager.egloos.com/2610028
