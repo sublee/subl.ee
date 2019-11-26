@@ -9,16 +9,13 @@ Heungsub Lee
 I am
 ----
 
-Heungsub Lee <[sub@subl.ee][]\>, a software engineer
-<br>
-at [Kakao Brain][] and also an [open source][] enthusiast.
+Heungsub Lee, a [software engineer] at [Kakao Brain][].
 <br>
 More details are in my [résumé](/resume/).
 {: .hard-returns }
 
-[sub@subl.ee]: mailto:sub@subl.ee
+[software engineer]: https://github.com/sublee
 [Kakao Brain]: https://kakaobrain.com/
-[Open Source]: https://github.com/sublee
 
 I have made
 -----------
