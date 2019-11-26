@@ -915,3 +915,48 @@ alabaster:
     h2 {
       font-size: 1.75rem;
     }
+
+openai:
+  emblem:
+    shape: ☷
+    colors: {1: '#ff157e', 2: '#ff4747', 3: '#ffa30e',
+             4: '#00e0ff', 5: '#328cff', 6: '#873cff'}
+  colors:
+    text: '#050526'
+    link: '#050526'
+    blur: '#828292'
+  title:
+    weight: 700
+  css: |
+    .emblem-left .emblem-top {
+      background-image: linear-gradient( 90deg, transparent  0%, #ff474766),
+                        linear-gradient(180deg, transparent 25%, #807abebb);
+    }
+    .emblem-middle .emblem-top {
+      background-image: linear-gradient(180deg, transparent 25%, #9969a3bb);
+    }
+    .emblem-right .emblem-top {
+      background-image: linear-gradient(-90deg, transparent  0%, #ff474766),
+                        linear-gradient(180deg, transparent 25%, #c37086bb);
+    }
+
+    .emblem-left .emblem-bottom {
+      background-image: linear-gradient( 90deg, transparent  0%, #328cff66),
+                        linear-gradient(  0deg, transparent 25%, #807abebb);
+    }
+    .emblem-middle .emblem-bottom {
+      background-image: linear-gradient(  0deg, transparent 25%, #9969a3bb);
+    }
+    .emblem-right .emblem-bottom {
+      background-image: linear-gradient(-90deg, transparent  0%, #328cff66),
+                        linear-gradient(  0deg, transparent 25%, #c37086bb);
+    }
+
+    a:link, a:visited {
+      text-decoration: underline;
+      text-decoration-color: #b4b4be;
+    }
+
+    a:hover {
+      color: #828292;
+    }
