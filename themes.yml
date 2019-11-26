@@ -135,7 +135,7 @@ facebook:
       padding-top: .5rem;
       padding-bottom: .5rem;
     }
-    .-doc .emblem {
+    .resume .emblem {
       border: 1px solid rgba(0, 0, 0, .2);
       border-radius: 2px;
       margin: 0;
@@ -145,11 +145,11 @@ facebook:
         no-repeat center;
       background-color: #fff;
     }
-    .-doc .emblem div { display: none; }
-    .-doc .emblem-wrap { padding-right: 6px; }
+    .resume .emblem div { display: none; }
+    .resume .emblem-wrap { padding-right: 6px; }
     @media screen and (max-width: 480px) {
-      .-doc .emblem-wrap { width: auto; }
-      .-doc .emblem { zoom: 1; margin: auto; }
+      .resume .emblem-wrap { width: auto; }
+      .resume .emblem { zoom: 1; margin: auto; }
     }
 
 mearie:
