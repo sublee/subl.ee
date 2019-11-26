@@ -23,22 +23,19 @@ I have made
 - [torchgpipe][]: A GPipe implementation in PyTorch.
 - [Hangulize][]: A Korean alphabet transcriber.
 - [Tossi][]: A utility for Korean allomorphic particles.
-- [SUBLEERUNKER][]: A simple game with [my pixel art][DeviantArt].
-- [Durango][] at What! Studio in Nexon.
-- Kartrider Dash and Coin Rush series at Team Lupin in Nexon.
 - [TrueSkill][]: A rating system for online games.
 - [Profiling][]: An interactive continuous Python profiler.
-- [Sublette][]: My own color schemes.
+- [SUBLEERUNKER][]: A simple game with [my pixel art][DeviantArt].
+- [Durango][], Kartrider Dash & Coin Rush at Nexon.
 
 [torchgpipe]:   https://github.com/kakaobrain/torchgpipe
 [Hangulize]:    https://hangulize.org/
 [Tossi]:        https://github.com/what-studio/tossi
+[TrueSkill]:    https://trueskill.org/
+[Profiling]:    https://github.com/what-studio/profiling
 [SUBLEERUNKER]: /runker/
 [DeviantArt]:   https://www.deviantart.com/sublee/gallery/?catpath=/
 [Durango]:      http://durango.nexon.com/
-[TrueSkill]:    https://trueskill.org/
-[Profiling]:    https://github.com/what-studio/profiling
-[Sublette]:     https://github.com/sublee/sublette
 
 I told about
 ------------
