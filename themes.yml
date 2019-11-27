@@ -880,27 +880,27 @@ openai:
     weight: 700
   css: |
     .emblem-left .emblem-top {
-      background-image: linear-gradient( 90deg, transparent  0%, #ff474766),
-                        linear-gradient(180deg, transparent 25%, #807abebb);
+      background-image: linear-gradient( 90deg, #ff157e00  0%, #ff474766),
+                        linear-gradient(180deg, #ff157e00 25%, #807abebb);
     }
     .emblem-middle .emblem-top {
-      background-image: linear-gradient(180deg, transparent 25%, #9969a3bb);
+      background-image: linear-gradient(180deg, #ff474700 25%, #9969a3bb);
     }
     .emblem-right .emblem-top {
-      background-image: linear-gradient(-90deg, transparent  0%, #ff474766),
-                        linear-gradient(180deg, transparent 25%, #c37086bb);
+      background-image: linear-gradient(-90deg, #ffa30e00  0%, #ff474766),
+                        linear-gradient(180deg, #ffa30e00 25%, #c37086bb);
     }
 
     .emblem-left .emblem-bottom {
-      background-image: linear-gradient( 90deg, transparent  0%, #328cff66),
-                        linear-gradient(  0deg, transparent 25%, #807abebb);
+      background-image: linear-gradient( 90deg, #00e0ff00  0%, #328cff66),
+                        linear-gradient(  0deg, #00e0ff00 25%, #807abebb);
     }
     .emblem-middle .emblem-bottom {
-      background-image: linear-gradient(  0deg, transparent 25%, #9969a3bb);
+      background-image: linear-gradient(  0deg, #328cff00 25%, #9969a3bb);
     }
     .emblem-right .emblem-bottom {
-      background-image: linear-gradient(-90deg, transparent  0%, #328cff66),
-                        linear-gradient(  0deg, transparent 25%, #c37086bb);
+      background-image: linear-gradient(-90deg, #873cff00  0%, #328cff66),
+                        linear-gradient(  0deg, #873cff00 25%, #c37086bb);
     }
 
     a:link, a:visited {
