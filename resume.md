@@ -210,9 +210,9 @@ Others
 Contributions
 :   - For [PyTorch][],
       fixed potential GPU memory violation ([#27371][pytorch#27371]);
-      deprecated inconsistent API ([#21006][pytorch#21006]);
-      discussed a counterintuitive behavior of the autograd engine
-      ([#18568][pytorch#18568]).
+      deprecated inconsistent API ([#21006][pytorch#21006],
+      [#25985][pytorch#25985]); discussed a counterintuitive behavior
+      of the autograd engine ([#18568][pytorch#18568]).
     - For [ZeroMQ][],
       discussed a PUB socket crash ([#2942][zeromq#2942]).
     - For [Flask][],
@@ -223,6 +223,7 @@ Contributions
 [pytorch]:       https://pytorch.org/
 [pytorch#27371]: https://github.com/pytorch/pytorch/pull/27371
 [pytorch#21006]: https://github.com/pytorch/pytorch/pull/21006
+[pytorch#25985]: https://github.com/pytorch/pytorch/pull/25985
 [pytorch#18568]: https://github.com/pytorch/pytorch/pull/18568
 [zeromq]:        http://zeromq.org/
 [zeromq#2942]:   https://github.com/zeromq/libzmq/issues/2942
