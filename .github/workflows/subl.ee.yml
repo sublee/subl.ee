@@ -1,0 +1,42 @@
+name: subl.ee
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Python
+      uses: actions/setup-python@v1
+
+    - name: Install
+      run: |
+        sudo apt-get install -y libcairo2-dev libpango1.0-dev
+        pip install -r requirements.txt
+        pip install flake8 mypy
+
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Lint
+      run: |
+        flake8 sublee.py
+        mypy sublee.py
+
+    - name: Freeze
+      run: |
+        rm -rf .gh-pages && mkdir .gh-pages
+        python sublee.py freeze .gh-pages
+        echo subl.ee > .gh-pages/CNAME
+        echo "$GITHUB_SHA" > .gh-pages/version.txt
+
+    - name: GitHub Pages
+      if: success()
+      uses: crazy-max/ghaction-github-pages@v1
+      with:
+        build_dir: .gh-pages
+      env:
+        GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
