@@ -26,7 +26,7 @@ I have made
 - [TrueSkill][]: A rating system for online games.
 - [Profiling][]: An interactive continuous Python profiler.
 - [SUBLEERUNKER][]: A simple game with [my pixel art][DeviantArt].
-- [Durango][], Kartrider Dash & Coin Rush at Nexon.
+- Durango, Kartrider Dash & Coin Rush at Nexon.
 
 [torchgpipe]:   https://github.com/kakaobrain/torchgpipe
 [Hangulize]:    https://hangulize.org/
@@ -35,7 +35,6 @@ I have made
 [Profiling]:    https://github.com/what-studio/profiling
 [SUBLEERUNKER]: /runker/
 [DeviantArt]:   https://www.deviantart.com/sublee/gallery/?catpath=/
-[Durango]:      http://durango.nexon.com/
 
 I told about
 ------------

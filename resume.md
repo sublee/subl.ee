@@ -65,7 +65,7 @@ Software Engineer {: .label }
 
 Game Server Architect {: .label }
 What! Studio in [Nexon][], 2013--2018
-:   Developed and launched <cite>[Durango][]</cite>, an open world MMORPG.
+:   Developed and launched <cite>Durango</cite>, an open world MMORPG.
     {: .note }
 
 :   Designed and implemented the architecture of a distributed MMORPG server.
@@ -77,7 +77,6 @@ What! Studio in [Nexon][], 2013--2018
     Led the server development team including up to 15 engineers.
 
 [nexon]: https://company.nexon.com/eng
-[durango]: http://durango.nexon.com/
 
 Game Development Engineer {: .label }
 Team Lupin in [Nexon][], 2011--2013
