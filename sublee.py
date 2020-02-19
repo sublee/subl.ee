@@ -205,14 +205,30 @@ def rgba(color: str, alpha: float = 1.0) -> str:
     return 'rgba({0}, {1}, {2}, {3})'.format(r, g, b, alpha)
 
 
+def render_css(style: Dict[str, Any], **kwargs: Any) -> str:
+    kwargs.update(style)
+    return render_template('style.css_t', rgba=rgba, **kwargs)
+
+
 @app.route('/style-<theme>.css')
 def css(theme: str) -> Tuple[str, int, Dict[str, str]]:
     """Generates a CSS file from the given theme."""
     with open(THEMES) as f:
         themes = yaml.load(f, Loader=yaml.FullLoader)
-    colors = themes[theme]
-    res = render_template('style.css_t', rgba=rgba, **colors)
-    return res, 200, {'Content-Type': 'text/css'}
+
+    # Embed dark theme.
+    dark_css: Optional[str] = None
+    try:
+        dark_style = themes[theme + ':dark']
+    except KeyError:
+        pass
+    else:
+        dark_css = render_css(dark_style)
+
+    style = themes[theme]
+    css = render_css(style, dark_css=dark_css)
+
+    return css, 200, {'Content-Type': 'text/css'}
 
 
 @app.route('/runker/')

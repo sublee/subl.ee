@@ -371,3 +371,11 @@ i {
 }
 
 {{ css }}
+
+{% if dark_css %}
+/* Dark Mode */
+
+@media (prefers-color-scheme: dark) {
+  {{ dark_css }}
+}
+{% endif %}
