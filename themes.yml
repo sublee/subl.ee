@@ -59,6 +59,17 @@ sublee-bluish:
     link: '#47e'
     vlink: '#79c'
 
+sublee-bluish:dark:
+  emblem:
+    shape: ☲
+    colors: {0: '#c46', 5: '#da6'}
+  colors:
+    background: '#151518'
+    text: '#9999a4'
+    blur: '#77778f'
+    link: '#68d'
+    vlink: '#679'
+
 sublee-greenish:
   emblem:
     shape: ☲
