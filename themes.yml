@@ -66,11 +66,11 @@ sublue:dark:
     shape: ☲
     colors: {0: '#e57', 5: '#fd8'}
   colors:
-    background: '#141419'
-    text: '#99a'
-    blur: '#778'
+    background: '#151419'
+    text: '#9999a4'
+    blur: '#667'
     link: '#68d'
-    vlink: '#568'
+    vlink: '#679'
 
 legacy-v2:
   emblem:
