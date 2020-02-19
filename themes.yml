@@ -1,5 +1,7 @@
 # Spec:
 #
+# - A corresponding theme named "*:dark" will be embeded as the dark theme.
+#
 # - emblem:
 #   - shape  - a bagua (팔괘) character which describes the layout of the
 #              emblem plates.  See the "Emblem shapes" section.
