@@ -49,7 +49,7 @@
 #   |   | |   | |   |   |   | |   | |   |   |   | |   | |   |
 #   +---+ +---+ +---+   +---+ +---+ +---+   +---+ +---+ +---+
 #
-sublee-bluish:
+sublue:
   emblem:
     shape: ☲
     colors: {0: '#e57', 5: '#fd8'}
@@ -59,7 +59,7 @@ sublee-bluish:
     link: '#47e'
     vlink: '#79c'
 
-sublee-bluish:dark:
+sublue:dark:
   emblem:
     shape: ☲
     colors: {0: '#e57', 5: '#fd8'}
@@ -70,7 +70,7 @@ sublee-bluish:dark:
     link: '#68d'
     vlink: '#568'
 
-sublee-greenish:
+legacy-v2:
   emblem:
     shape: ☲
     colors: {0: '#e56', 5: '#fd6'}
@@ -83,7 +83,7 @@ sublee-greenish:
     vlink: '#589'
   plain_doc: true
 
-sublee-dark:
+legacy-v1:
   emblem:
     shape: ☲
     colors: {0: '#e34', 5: '#fc3'}
@@ -94,20 +94,6 @@ sublee-dark:
     blur: '#455'
     link: '#ca4'
     vlink: '#986'
-
-sublee-flame:
-  emblem:
-    shape: ☲
-    colors: {0: '#e50', 3: '#b20', 5: '#fd4'}
-  colors:
-    epic: '#000'
-    text: '#333'
-    blur: '#999'
-    link: '#48d'
-    vlink: '#78b'
-  text:
-    font: Lusitana
-    generic: serif
 
 mogef:
   emblem:
