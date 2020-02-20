@@ -61,7 +61,7 @@ Software Engineer {: .label }
 
 [kakaobrain]: https://kakaobrain.com/
 [gpipe]: https://arxiv.org/abs/1811.06965
-[torchgpipe]: https://github.com/kakaobrain/torchgpipe
+[torchgpipe]: https://torchgpipe.readthedocs.io/
 
 Game Server Architect {: .label }
 What! Studio in [Nexon][], 2013--2018
@@ -137,7 +137,7 @@ Open Source Experience
     Optimized the pipeline parallelism and checkpointing for CUDA and PyTorch's
     autograd engine.
 
-[torchgpipe]: https://github.com/kakaobrain/torchgpipe
+[torchgpipe]: https://torchgpipe.readthedocs.io/
 [gpipe]: https://arxiv.org/abs/1811.06965
 [torchgpipe-blog]: https://kakaobrain.com/blog/66
 

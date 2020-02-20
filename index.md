@@ -28,7 +28,7 @@ I have made
 - [SUBLEERUNKER][]: A simple game with [my pixel art][DeviantArt].
 - Durango, Kartrider Dash & Coin Rush at Nexon.
 
-[torchgpipe]:   https://github.com/kakaobrain/torchgpipe
+[torchgpipe]:   https://torchgpipe.readthedocs.io/
 [Hangulize]:    https://hangulize.org/
 [Tossi]:        https://github.com/what-studio/tossi
 [TrueSkill]:    https://trueskill.org/
