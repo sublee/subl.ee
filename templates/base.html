@@ -8,7 +8,7 @@
   <title>{% block title %}{{ title }}{% endblock %}</title>
   {{ meta(keywords, name='keywords') if keywords }}
 
-  <link rel="icon" type="image/icon" sizes="16x16" href="{{ url_for('favicon') }}" />
+  <link rel="icon" type="image/icon" sizes="16x16 32x32 48x48 128x128 256x256" href="{{ url_for('favicon') }}" />
 
   <link rel="stylesheet" media="screen" href="{{ url_for('css', theme=theme) }}" class="theme" />
   <link rel="stylesheet" media="print" href="{{ url_for('static', filename='print.css') }}" />
