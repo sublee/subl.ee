@@ -69,7 +69,7 @@ sublue:dark:
     background: '#151419'
     text: '#9999a4'
     blur: '#667'
-    link: '#68d'
+    link: '#68e'
     vlink: '#679'
 
 legacy-v2:
