@@ -189,6 +189,12 @@ def favicon() -> Response:
     return res
 
 
+@app.route('/qrcode.png')
+def qrcode() -> Response:
+    res: Response = send_file(os.path.join(ROOT, 'qrcode.png'))
+    return res
+
+
 def rgba(color: str, alpha: float = 1.0) -> str:
     """Converts RGB hex string to CSS RGBA expression."""
     if color.startswith('#'):
