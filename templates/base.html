@@ -32,8 +32,8 @@
    ~ meta(title, property='og:title')
    ~(meta(description, property='og:description') if description)
    ~ meta(url_root ~ url_path, property='og:url')
-   ~ meta(url_root ~ url_for('static', filename='og.gif'), property='og:image')
-   ~ meta('image/gif', property='og:image:type')
+   ~ meta(url_root ~ url_for('qrcode'), property='og:image')
+   ~ meta('image/png', property='og:image:type')
   }}
 
   {# html meta #}
