@@ -951,16 +951,16 @@ planetarium:
   css: |
     .copyright::before {
       content: 'This site is optimized for 1024 by 768.';
-      color: #0e0;
+      color: #3d0;
     }
     body {
       background-repeat: repeat;
       background-image:
         radial-gradient(#fff, #006 3px, transparent 10px),
-        radial-gradient(#fff, #033 2px, transparent 5px),
-        radial-gradient(#fff, transparent 2px),
+        radial-gradient(#0ff, #006 3px, transparent 10px),
+        radial-gradient(#0ff, #003 2px, transparent 5px),
         radial-gradient(#fff, transparent 1px),
-        radial-gradient(#fff, transparent 1px),
+        radial-gradient(#999, transparent 1px);
         radial-gradient(#fff, transparent 1px);
       background-size:
         750px 750px,
@@ -971,11 +971,11 @@ planetarium:
         150px 150px;
       background-position:
             0     0,
-         10px  40px,
-         40px  60px,
+         10px     0,
+         40px 400px,
         180px 270px,
-         90px 100px,
-         30px 150px;
+        190px 200px,
+        130px 150px;
     }
     h1 {
       float: left;
@@ -984,10 +984,14 @@ planetarium:
       background-image: linear-gradient(to right, #f00, #ff0, #0f0, #00f, #f0f);
       -webkit-background-clip: text;
     }
-    h2 {
+    .index h2 {
       border: 3px outset #999;
       padding: 0 5px;
     }
     a {
       text-decoration: underline;
+    }
+    hr {
+      background-image: linear-gradient(to right, #f00, #ff0, #0f0, #00f, #f0f);
+      height: 3px;
     }
