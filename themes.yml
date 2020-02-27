@@ -934,3 +934,53 @@ planetarium:
     h2 {
       letter-spacing: -0.0607em;
     }
+
+90s:
+  emblem:
+    shape: ☲
+    colors: {0: '#e01', 5: '#ee1'}
+  colors:
+    background: '#014'
+    text: '#ccc'
+    epic: '#ee0'
+    blur: '#999'
+    link: '#0ff'
+    vlink: '#c9f'
+  text: {font: Comic Sans MS, css: false}
+  css: |
+    body {
+      background-repeat: repeat;
+      background-image:
+        radial-gradient(#fff, #006 3px, transparent 10px),
+        radial-gradient(#fff, #033 2px, transparent 5px),
+        radial-gradient(#fff, transparent 2px),
+        radial-gradient(#fff, transparent 1px),
+        radial-gradient(#fff, transparent 1px);
+      background-size:
+        750px 750px,
+        550px 550px,
+        350px 350px,
+        250px 250px,
+        150px 150px;
+      background-position:
+            0     0,
+         50px  40px,
+         40px  60px,
+        130px 270px,
+         70px 100px;
+    }
+    h1 {
+      float: left;
+      padding-right: 0;
+      color: transparent;
+      background-image: linear-gradient(to right, #f00, #ff0, #0f0, #00f, #f0f);
+      -webkit-background-clip: text;
+      font-weight: 600;
+    }
+    h2 {
+      border: 3px outset #999;
+      padding: 0 5px;
+    }
+    a {
+      text-decoration: underline;
+    }
