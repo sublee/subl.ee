@@ -981,7 +981,7 @@ planetarium:
       float: left;
       padding-right: 0;
       color: transparent;
-      background-image: linear-gradient(to right, #f00, #ff0, #0f0, #00f, #f0f);
+      background-image: linear-gradient(to right, #f00, #ff0, #0f0, #0ff, #00f, #f0f);
       -webkit-background-clip: text;
     }
     .index h2 {
@@ -993,6 +993,6 @@ planetarium:
       text-decoration: underline;
     }
     hr {
-      background-image: linear-gradient(to right, #f00, #ff0, #0f0, #00f, #f0f);
+      background-image: linear-gradient(to right, #f00, #ff0, #0f0, #0ff, #00f, #f0f);
       height: 3px;
     }
