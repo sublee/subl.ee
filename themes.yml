@@ -987,6 +987,7 @@ planetarium:
     .index h2 {
       border: 3px outset #999;
       padding: 0 5px;
+      margin: 0.5rem 0;
     }
     a {
       text-decoration: underline;
