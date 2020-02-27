@@ -946,8 +946,13 @@ planetarium:
     blur: '#999'
     link: '#0ff'
     vlink: '#c9f'
-  text: {font: Comic Sans MS, css: false}
+  text: {font: Mali, weight: 500}
+  title: {weight: 600}
   css: |
+    .copyright::before {
+      content: 'This site is optimized for 1024 by 768.';
+      color: #0e0;
+    }
     body {
       background-repeat: repeat;
       background-image:
@@ -955,19 +960,22 @@ planetarium:
         radial-gradient(#fff, #033 2px, transparent 5px),
         radial-gradient(#fff, transparent 2px),
         radial-gradient(#fff, transparent 1px),
+        radial-gradient(#fff, transparent 1px),
         radial-gradient(#fff, transparent 1px);
       background-size:
         750px 750px,
         550px 550px,
         350px 350px,
         250px 250px,
+        200px 200px,
         150px 150px;
       background-position:
             0     0,
-         50px  40px,
+         10px  40px,
          40px  60px,
-        130px 270px,
-         70px 100px;
+        180px 270px,
+         90px 100px,
+         30px 150px;
     }
     h1 {
       float: left;
@@ -975,7 +983,6 @@ planetarium:
       color: transparent;
       background-image: linear-gradient(to right, #f00, #ff0, #0f0, #00f, #f0f);
       -webkit-background-clip: text;
-      font-weight: 600;
     }
     h2 {
       border: 3px outset #999;
