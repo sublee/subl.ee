@@ -984,7 +984,7 @@ planetarium:
       -webkit-background-clip: text;
     }
     h2 {
-      background-image: url(/-/90s/stars.gif);
+      background-image: url({{ url_for('static', filename='90s/stars.gif') }});
       background-repeat: no-repeat;
       background-position: left center;
       margin-left: -8px;
@@ -1012,7 +1012,7 @@ planetarium:
     }
     footer::before {
       display: inline-block;
-      background-image: url(/-/90s/counter.gif);
+      background-image: url({{ url_for('static', filename='90s/counter.gif') }});
       width: 61px;
       height: 24px;
       vertical-align: middle;
@@ -1025,17 +1025,24 @@ planetarium:
     }
     footer a {
       padding-left: 18px;
-      background-image: url(/-/90s/save.gif);
+      background-image: url({{ url_for('static', filename='90s/save.gif') }});
       background-repeat: no-repeat;
       background-position: left bottom;
     }
     .emblem::before {
-      position: absolute;
-      margin-left: 70px;
-      margin-top: 12px;
-      display: inline-block;
       content: '';
+
+      position: absolute;
+      margin-left: 80px;
+      margin-top: 12px;
+
+      display: inline-block;
       width: 82px;
       height: 68px;
-      background-image: url(/-/90s/dance.gif);
+
+      /*
+      Source: https://commons.wikimedia.org/wiki/File:HAMERDANCE.gif
+      License: CC BY-SA 4.0
+      */
+      background-image: url({{ url_for('static', filename='90s/dance.gif') }});
     }

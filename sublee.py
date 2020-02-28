@@ -20,8 +20,8 @@ import click
 import jinja2
 import weasyprint
 import yaml
-from flask import (Flask, Response, make_response, render_template, send_file,
-                   url_for)
+from flask import (Flask, Response, make_response, render_template,
+                   render_template_string, send_file, url_for)
 from flask_frozen import Freezer
 from markdown import Markdown
 from werkzeug.exceptions import NotFound
@@ -211,9 +211,8 @@ def rgba(color: str, alpha: float = 1.0) -> str:
     return 'rgba({0}, {1}, {2}, {3})'.format(r, g, b, alpha)
 
 
-def render_css(style: Dict[str, Any], **kwargs: Any) -> str:
-    kwargs.update(style)
-    return render_template('style.css_t', rgba=rgba, **kwargs)
+def render_css(style: Dict[str, Any]) -> str:
+    return render_template('style.css_t', rgba=rgba, **style)
 
 
 @app.route('/style-<theme>.css')
@@ -222,17 +221,25 @@ def css(theme: str) -> Tuple[str, int, Dict[str, str]]:
     with open(THEMES) as f:
         themes = yaml.load(f, Loader=yaml.FullLoader)
 
-    # Embed dark theme.
-    dark_css: Optional[str] = None
-    try:
-        dark_style = themes[theme + ':dark']
-    except KeyError:
-        pass
-    else:
-        dark_css = render_css(dark_style)
-
     style = themes[theme]
-    css = render_css(style, dark_css=dark_css)
+
+    with io.StringIO() as buf:
+        buf.write(render_css(style))
+
+        if 'css' in style:
+            buf.write(render_template_string(style['css']))
+
+        try:
+            dark_style = themes[theme + ':dark']
+        except KeyError:
+            pass
+        else:
+            dark_css = render_css(dark_style)
+            buf.write('@media (prefers-color-scheme: dark) {')
+            buf.write(dark_css)
+            buf.write('}')
+
+        css = buf.getvalue()
 
     return css, 200, {'Content-Type': 'text/css'}
 
