@@ -994,8 +994,21 @@ planetarium:
       text-decoration: underline;
     }
     hr {
-      background-image: linear-gradient(to right, #f00, #ff0, #0f0, #0ff, #00f, #f0f);
+      animation-duration: 10s;
+      animation-timing-function: linear;
+      animation-name: rainbow;
+      animation-iteration-count: infinite;
+      background-image: linear-gradient(to right, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
+      background-size: 50%;
       height: 3px;
+    }
+    @keyframes rainbow {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: 100% 0;
+      }
     }
     footer::before {
       display: inline-block;
