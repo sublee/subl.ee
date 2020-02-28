@@ -996,3 +996,9 @@ planetarium:
       background-image: linear-gradient(to right, #f00, #ff0, #0f0, #0ff, #00f, #f0f);
       height: 3px;
     }
+    footer a {
+      padding-left: 18px;
+      background-image: url('data:image/gif;base64,R0lGODlhDgAOAKIAAADMzABmZpn//3eIiP///wAAAP///wAAACH5BAEAAAYALAAAAAAOAA4AAAM9WLqsZkWIQaoNokAB6CUBACicVwWgSHbWpUZdIM/Dy4l4PkZD7/+7SasVIlF+vZRx6FKwkJTAYMlUNq6LBAA7');
+      background-repeat: no-repeat;
+      background-position: left bottom;
+    }
