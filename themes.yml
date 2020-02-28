@@ -994,7 +994,7 @@ planetarium:
       text-decoration: underline;
     }
     hr {
-      animation-duration: 10s;
+      animation-duration: 5s;
       animation-timing-function: linear;
       animation-name: rainbow;
       animation-iteration-count: infinite;
@@ -1034,7 +1034,7 @@ planetarium:
 
       position: absolute;
       margin-left: 80px;
-      margin-top: 12px;
+      margin-top: 14px;
 
       display: inline-block;
       width: 82px;
@@ -1045,4 +1045,7 @@ planetarium:
       License: CC BY-SA 4.0
       */
       background-image: url({{ url_for('static', filename='90s/dance.gif') }});
+    }
+    .resume .emblem::before {
+      margin-left: -80px;
     }
