@@ -943,15 +943,14 @@ planetarium:
     background: '#014'
     text: '#ccc'
     epic: '#ee0'
-    blur: '#999'
+    blur: '#889'
     link: '#0ff'
     vlink: '#c9f'
   text: {font: Mali, weight: 500}
   title: {weight: 600}
   css: |
-    .copyright::before {
-      content: 'This site is optimized for 1024 by 768.';
-      color: #3d0;
+    a:hover {
+      color: #e01;
     }
     body {
       background-repeat: repeat;
@@ -984,10 +983,12 @@ planetarium:
       background-image: linear-gradient(to right, #f00, #ff0, #0f0, #0ff, #00f, #f0f);
       -webkit-background-clip: text;
     }
-    .index h2 {
-      border: 3px outset #999;
-      padding: 0 5px;
-      margin: 0.5rem 0;
+    h2 {
+      background-image: url(/-/90s/stars.gif);
+      background-repeat: no-repeat;
+      background-position: left center;
+      margin-left: -8px;
+      padding-left: 24px;
     }
     a {
       text-decoration: underline;
@@ -996,9 +997,32 @@ planetarium:
       background-image: linear-gradient(to right, #f00, #ff0, #0f0, #0ff, #00f, #f0f);
       height: 3px;
     }
+    footer::before {
+      display: inline-block;
+      background-image: url(/-/90s/counter.gif);
+      width: 61px;
+      height: 24px;
+      vertical-align: middle;
+      margin-right: 3px;
+      content: '';
+    }
+    .copyright::before {
+      content: 'This site is optimized for 1024 by 768.';
+      color: #3d0;
+    }
     footer a {
       padding-left: 18px;
-      background-image: url('data:image/gif;base64,R0lGODlhDgAOAKIAAADMzABmZpn//3eIiP///wAAAP///wAAACH5BAEAAAYALAAAAAAOAA4AAAM9WLqsZkWIQaoNokAB6CUBACicVwWgSHbWpUZdIM/Dy4l4PkZD7/+7SasVIlF+vZRx6FKwkJTAYMlUNq6LBAA7');
+      background-image: url(/-/90s/save.gif);
       background-repeat: no-repeat;
       background-position: left bottom;
+    }
+    .emblem::before {
+      position: absolute;
+      margin-left: 70px;
+      margin-top: 12px;
+      display: inline-block;
+      content: '';
+      width: 82px;
+      height: 68px;
+      background-image: url(/-/90s/dance.gif);
     }
