@@ -329,7 +329,7 @@ i {
   .themes li { width: 25%; }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
   body {
     margin: 2em 2%;
     width: auto;

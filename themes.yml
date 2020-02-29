@@ -949,45 +949,51 @@ planetarium:
   text: {font: Mali, weight: 500}
   title: {weight: 600}
   css: |
+    * {
+      image-rendering: pixelated;
+    }
     a:hover {
       color: #e01;
+    }
+    html {
+      cursor: url({{ url_for('static', filename='90s/cursor.gif')}}), auto;
     }
     body {
       background-repeat: repeat;
       background-image:
-        radial-gradient(#fff, #006 3px, transparent 10px),
-        radial-gradient(#0ff, #006 3px, transparent 10px),
-        radial-gradient(#0ff, #003 2px, transparent 5px),
-        radial-gradient(#fff, transparent 1px),
-        radial-gradient(#999, transparent 1px);
-        radial-gradient(#fff, transparent 1px);
+        radial-gradient(#fff, #006 3px, rgba(255,255,255,0) 10px),
+        radial-gradient(#0ff, #006 3px, rgba(255,255,255,0) 10px),
+        radial-gradient(#0ff, #003 2px, rgba(255,255,255,0) 5px),
+        radial-gradient(#fff, rgba(255,255,255,0) 1px),
+        radial-gradient(#999, rgba(255,255,255,0) 1px);
+        radial-gradient(#fff, rgba(255,255,255,0) 1px);
       background-size:
-        750px 750px,
-        550px 550px,
-        350px 350px,
-        250px 250px,
+        800px 800px,
+        500px 500px,
+        400px 400px,
+        300px 300px,
         200px 200px,
-        150px 150px;
+        100px 100px;
       background-position:
-            0     0,
-         10px     0,
-         40px 400px,
-        180px 270px,
-        190px 200px,
-        130px 150px;
+            0 150px,
+         30px 120px,
+         60px  90px,
+         90px  60px,
+        120px  30px,
+        150px     0;
     }
     h1 {
-      float: left;
-      padding-right: 0;
-      color: transparent;
-      background-image: linear-gradient(to right, #f00, #ff0, #0f0, #0ff, #00f, #f0f);
-      -webkit-background-clip: text;
+      color: #ee1;
+      text-shadow:
+        3px 3px 0   #30f,
+        2px 2px 0   #30f,
+        1px 1px 0   #30f,
+        0   0   3px #30f;
     }
     h2 {
       background-image: url({{ url_for('static', filename='90s/stars.gif') }});
       background-repeat: no-repeat;
       background-position: left center;
-      margin-left: -8px;
       padding-left: 24px;
     }
     a {
@@ -1029,16 +1035,16 @@ planetarium:
       background-repeat: no-repeat;
       background-position: left bottom;
     }
-    .emblem::before {
+    .resume .emblem::before {
       content: '';
 
       position: absolute;
-      margin-left: 80px;
-      margin-top: 14px;
+      left: -50px;
+      top: 20px;
 
       display: inline-block;
-      width: 82px;
-      height: 68px;
+      width: 50px;
+      height: 50px;
 
       /*
       Source: https://commons.wikimedia.org/wiki/File:HAMERDANCE.gif
@@ -1046,6 +1052,9 @@ planetarium:
       */
       background-image: url({{ url_for('static', filename='90s/dance.gif') }});
     }
-    .resume .emblem::before {
-      margin-left: -80px;
+    @media screen and (max-width: 550px) {
+      .resume .emblem::before {
+        zoom: 2;
+        margin-top: -5px;
+      }
     }
