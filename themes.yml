@@ -949,15 +949,11 @@ planetarium:
   text: {font: Mali, weight: 500}
   title: {weight: 600}
   css: |
-    * {
+    html {
+      cursor: url({{ url_for('static', filename='90s/cursor.cur')}}), auto;
       image-rendering: pixelated;
     }
-    a:hover {
-      color: #e01;
-    }
-    html {
-      cursor: url({{ url_for('static', filename='90s/cursor.gif')}}), auto;
-    }
+
     body {
       background-repeat: repeat;
       background-image:
@@ -982,6 +978,7 @@ planetarium:
         120px  30px,
         150px     0;
     }
+
     h1 {
       color: #ee1;
       text-shadow:
@@ -996,9 +993,14 @@ planetarium:
       background-position: left center;
       padding-left: 24px;
     }
+
     a {
       text-decoration: underline;
     }
+    a:hover {
+      color: #e01;
+    }
+
     hr {
       animation-duration: 5s;
       animation-timing-function: linear;
@@ -1016,6 +1018,7 @@ planetarium:
         background-position: 100% 0;
       }
     }
+
     footer::before {
       display: inline-block;
       background-image: url({{ url_for('static', filename='90s/counter.gif') }});
@@ -1035,6 +1038,7 @@ planetarium:
       background-repeat: no-repeat;
       background-position: left bottom;
     }
+
     .resume .emblem::before {
       content: '';
 
