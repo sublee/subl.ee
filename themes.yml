@@ -942,7 +942,7 @@ planetarium:
   colors:
     background: '#014'
     text: '#ccc'
-    epic: '#ee0'
+    epic: '#ee1'
     blur: '#889'
     link: '#0ff'
     vlink: '#c9f'
