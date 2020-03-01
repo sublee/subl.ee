@@ -16,7 +16,8 @@
   'text': '#000',
   'link': '#00f',
 }|update(colors) %}
-{{ setdefault(colors, 'epic', colors.text) }}
+{{ setdefault(colors, 'title', colors.text) }}
+{{ setdefault(colors, 'title_index', colors.title) }}
 {{ setdefault(colors, 'blur', colors.text) }}
 {{ setdefault(colors, 'vlink', colors.link) }}
 
@@ -90,9 +91,7 @@ h1, h2 {
     font-family: '{{ title.font }}', {{ title.generic }};
   {% endif %}
   font-weight: {{ title.weight }};
-  {% if not plain_doc %}
-    color: {{ colors.epic }};
-  {% endif %}
+  color: {{ colors.title }};
 }
 
 h1 {
@@ -200,7 +199,7 @@ abbr, acronym {
 }
 
 i {
-  color: {{ colors.epic }};
+  color: {{ colors.title }};
 }
 
 /* Emblem */
@@ -274,7 +273,7 @@ i {
 .index h2 {
   margin-bottom: 0;
   font-size: 1.2em;
-  color: {{ colors.epic }};
+  color: {{ colors.title_index }};
 }
 
 /* Resume */

@@ -1,0 +1,9 @@
+papago:
+  emblem:
+    shape: ☵
+    colors: {0: '#00a9ff', 3: '#26cd6b', 4: '#0085ff', 6: '#f8be00'}
+  colors:
+    title: '#26cd6b'
+    blur: '#777'
+    link: '#00a9ff'
+    vlink: '#0085ff'

@@ -1,0 +1,9 @@
+netflix:
+  emblem:
+    shape: ☲
+    colors: {0: '#e50914'}
+  colors:
+    text: '#141414'
+    blur: '#a7a5a5'
+    link: '#e50914'
+  title: {weight: 600}

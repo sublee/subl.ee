@@ -1,0 +1,42 @@
+facebook:
+  emblem:
+    shape: ☲
+    colors: {0: '#3b5999'}
+  colors:
+    background: '#e9eaed'
+    text: '#141823'
+    title: '#1e2d4c'
+    blur: '#9197a3'
+    link: '#3b5998'
+  css: |
+    main > p, main > ul, main > dl {
+      margin-left: -.8rem;
+      margin-right: -.8rem;
+      padding: .8rem;
+      border: 1px solid;
+      border-radius: 3px;
+      border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+      background: #fff;
+    }
+    main > dl > dt:first-child { margin-top: 0 !important; }
+    hr { display: none; }
+    .profile main > p, .profile main > ul, .profile main > dl {
+      padding-top: .5rem;
+      padding-bottom: .5rem;
+    }
+    .resume .emblem {
+      border: 1px solid rgba(0, 0, 0, .2);
+      border-radius: 2px;
+      margin: 0;
+      padding: 4px;
+      background:
+        url(//gravatar.com/avatar/c55dd7c0a68acd97963da84a3175cc66?s=90)
+        no-repeat center;
+      background-color: #fff;
+    }
+    .resume .emblem div { display: none; }
+    .resume .emblem-wrap { padding-right: 6px; }
+    @media screen and (max-width: 550px) {
+      .resume .emblem-wrap { width: auto; }
+      .resume .emblem { transform: none; margin: auto; }
+    }

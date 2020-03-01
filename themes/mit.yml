@@ -1,0 +1,9 @@
+mit:
+  emblem:
+    shape: ☶
+    colors: {0: '#000', 5: '#a31f34'}
+  colors:
+    text: '#222'
+    title: '#a31f34'
+    blur: '#333'
+    link: '#a31f34'

@@ -8,6 +8,7 @@
    :license: Public Domain
 
 """
+import glob
 import io
 import itertools
 import os
@@ -38,7 +39,7 @@ click.disable_unicode_literals_warning = True
 ROOT = os.path.dirname(__file__)
 DOCS = os.path.join(ROOT, 'docs')
 META = os.path.join(ROOT, 'meta.yml')
-THEMES = os.path.join(ROOT, 'themes.yml')
+THEMES = os.path.join(ROOT, 'themes/*.yml')
 
 
 DEFAULT_THEME = 'sublee'
@@ -140,6 +141,14 @@ def markdown(text: str) -> Tuple[str, Dict[str, str]]:
     return html, meta
 
 
+def load_themes() -> Dict[str, Dict[str, str]]:
+    themes: Dict[str, Dict[str, str]] = {}
+    for path in glob.glob(THEMES):
+        with open(path) as f:
+            themes.update(yaml.load(f, Loader=yaml.FullLoader))
+    return themes
+
+
 @app.route('/')
 def index() -> str:
     with open(os.path.join(ROOT, 'index.md'), encoding='utf-8') as f:
@@ -177,8 +186,7 @@ def resume_pdf() -> Response:
 @app.route('/themes/')
 def themes() -> str:
     """Theme selector."""
-    with open(THEMES) as f:
-        themes = yaml.load(f, Loader=yaml.FullLoader)
+    themes = load_themes()
     ctx = make_context(themes=themes)
     return render_template('themes.html', **ctx)
 
@@ -211,16 +219,10 @@ def rgba(color: str, alpha: float = 1.0) -> str:
     return 'rgba({0}, {1}, {2}, {3})'.format(r, g, b, alpha)
 
 
-def render_css(style: Dict[str, Any]) -> str:
-    return render_template('style.css_t', rgba=rgba, **style)
-
-
 @app.route('/style-<theme>.css')
 def css(theme: str) -> Tuple[str, int, Dict[str, str]]:
     """Generates a CSS file from the given theme."""
-    with open(THEMES) as f:
-        themes = yaml.load(f, Loader=yaml.FullLoader)
-
+    themes = load_themes()
     style = themes[theme]
 
     with io.StringIO() as buf:
@@ -309,9 +311,7 @@ def prepare_freezing(app: Flask) -> Freezer:
 
     @freezer.register_generator
     def css() -> Iterator[Dict[str, str]]:
-        with open(THEMES) as f:
-            themes = yaml.load(f, Loader=yaml.FullLoader)
-        for theme in themes.keys():
+        for theme in load_themes().keys():
             yield {'theme': theme}
 
     return freezer

@@ -1,0 +1,9 @@
+slack:
+  emblem:
+    shape: ☲
+    colors: {1: '#36c5f0', 2: '#2eb67d', 3: '#e01e5a', 5: '#ecb22e'}
+  colors:
+    text: '#000'
+    blur: '#7c3085'
+    link: '#1264a3'
+  title: {weight: 600}

@@ -1,0 +1,15 @@
+python:
+  emblem:
+    shape: ☲
+    colors: {0: '#3776ab', 3: '#ffd343', 5: '#ffd343'}
+  colors:
+    text: '#222'
+    blur: '#555'
+    link: '#0072aa'
+    vlink: '#6363bb'
+  css: |
+    .resume main > p, .resume main > ul {
+      background: #eeffcc;
+      border: 1px solid #ac9;
+      padding: 0.2em 0.5em;
+    }

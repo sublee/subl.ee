@@ -1,0 +1,9 @@
+nekoyume:
+  emblem:
+    shape: ☲
+    colors: {0: '#5b6f90'}
+  colors:
+    text: '#495057'
+    blur: '#adb5bd'
+    link: '#1c7ed6'
+  title: {font: Fredericka the Great, generic: cursive}

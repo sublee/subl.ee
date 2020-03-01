@@ -1,0 +1,20 @@
+sundaytoz:
+  emblem:
+    shape: ☲
+    colors: {0: '#ff003f'}
+  colors:
+    text: '#191919'
+    blur: '#4a4a4a'
+    link: '#274a82'
+  text: {font: Source Sans Pro}
+  title: {weight: 600}
+  css: |
+    h1, h2 { text-transform: uppercase; }
+    h1 {
+      color: #ff003f;
+    }
+    h2 {
+      text-decoration: underline;
+      text-decoration-color: #ff003f;
+    }
+    .emblem i { border-radius: 6px; }

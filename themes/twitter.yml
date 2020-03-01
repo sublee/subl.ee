@@ -1,0 +1,9 @@
+twitter:
+  emblem:
+    shape: ☷
+    colors: {0: '#1da1f2'}
+  colors:
+    text: '#657786'
+    title: '#14171a'
+    blur: '#657786'
+    link: '#3b94d9'

@@ -1,0 +1,52 @@
+Spec:
+
+- A corresponding theme named "*:dark" will be embeded as the dark theme.
+
+- emblem:
+  - shape  - a bagua (팔괘) character which describes the layout of the
+             emblem plates.  See the "Emblem shapes" section.
+  - colors - a dict containing colors by their plate numbers like
+             {0: '#f00', 5: '#ff0'}.  See the "Emblem plate numbers" section.
+
+- colors
+  - background (default: #fff)
+  - text (default: #000)
+  - title (default: colors.text)
+  - title_index_only (default: colors.text)
+  - blur (default: colors.text)
+  - link (default: #00f)
+  - vlink (default: colors.link)
+
+- text
+  - font    - The font name. (default: [Hind])
+  - generic - serif|sans-serif|monospace (default: sans-serif)
+  - weight  - Font weight for normal text. (default: 400)
+  - css     - The web font CSS URL. (default: Google Fonts)
+
+- title - Same with text, but applied to titles. (default: text.*)
+
+- css - Additional css code.
+
+Emblem shapes: (top becomes left)
+
+- ☰ 0 000 \u2630
+- ☱ 1 100 \u2631
+- ☲ 2 010 \u2632
+- ☳ 3 110 \u2633
+- ☴ 4 001 \u2634
+- ☵ 5 101 \u2635
+- ☶ 6 011 \u2636
+- ☷ 7 111 \u2637
+
+Emblem plate numbers:
+
+  +---+ +---+ +---+   +---+ +---+ +---+   +---+ +---+ +---+
+  |   | |   | |   |   |   | |   | |   |   |   | |   | |   |
+  | 1 | | 2 | | 3 |   | 1 | | 2 | | 3 |   | 0 | | 0 | | 0 |
+  |   | |   | |   |   |   | |   | |   |   |   | |   | |   |
+  |   | +---+ |   |   +---+ +---+ +---+   +---+ +---+ +---+
+  |   | +---+ |   |   +---+ +---+ +---+   +---+ +---+ +---+
+  |   | |   | |   |   |   | |   | |   |   |   | |   | |   |
+  |   | | 5 | |   |   | 4 | | 5 | | 6 |   | 0 | | 0 | | 0 |
+  |   | |   | |   |   |   | |   | |   |   |   | |   | |   |
+  +---+ +---+ +---+   +---+ +---+ +---+   +---+ +---+ +---+

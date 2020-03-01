@@ -1,0 +1,32 @@
+alabaster:
+  emblem:
+    shape: ☲
+    colors: {0: '#3e4349'}
+  colors:
+    text: '#000'
+    title: '#3e4349'
+    blur: '#888'
+    link: '#004b6b'
+  text:
+    font: Georgia
+    generic: serif
+    css: false
+  css: |
+    a:link, a:visited {
+      text-decoration: none;
+      border-bottom: 1px dotted #004b6b;
+    }
+
+    a:hover {
+      color: #6d4100;
+      border-bottom: 1px solid #6d4100
+    }
+
+    h1 {
+      font-weight: bold;
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+    }

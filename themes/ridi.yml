@@ -1,0 +1,12 @@
+ridi:
+  emblem:
+    shape: ☲
+    colors: {0: '#1f8ce6'}
+  colors:
+    text: '#555'
+    title: '#3e3835'
+    blur: '#999'
+    link: '#1f8ce6'
+  title: {weight: 600}
+  css: |
+    .emblem i { border-radius: 2px; }

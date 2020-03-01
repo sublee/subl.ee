@@ -1,0 +1,9 @@
+nexon:
+  emblem:
+    shape: ☳
+    colors: {0: '#0b2a4a', 3: '#c3d600', 4: '#00a1e1', 5: '#00a1e1'}
+  colors:
+    text: '#231f20'
+    blur: '#8aa'
+    link: '#00a1e1'
+    vlink: '#8bafd6'

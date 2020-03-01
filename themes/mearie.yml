@@ -1,0 +1,11 @@
+mearie:
+  emblem:
+    shape: ☰
+    colors: {0: '#397b9c'}
+  colors:
+    background: '#eee'
+    text: '#444'
+    title: '#444'
+    blur: '#379'
+    link: '#379'
+    vlink: '#973'

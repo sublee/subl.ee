@@ -1,0 +1,13 @@
+coupang:
+  emblem:
+    shape: ☶
+    colors: {
+      0: '#521110',
+      2: '#d73227', 3: '#e99923',
+      5: '#92ba3e', 6: '#50a3d9',
+    }
+  colors:
+    text: '#333'
+    blur: '#888'
+    link: '#4285f4'
+  title: {weight: 600}

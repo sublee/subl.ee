@@ -1,0 +1,17 @@
+planetarium:
+  emblem:
+    shape: ☲
+    colors: {0: '#3e2a8c', 5: '#98f0c0'}
+  colors:
+    background: '#f5fef9'
+    text: '#3e2a8c'
+    link: '#3e2a8c'
+  text:
+    font: Montserrat
+    weight: 500
+  title:
+    weight: 600
+  css: |
+    h2 {
+      letter-spacing: -0.0607em;
+    }

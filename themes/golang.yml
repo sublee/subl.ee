@@ -1,0 +1,14 @@
+golang:
+  emblem:
+    shape: ☲
+    colors: {0: '#76e1fe'}
+  colors:
+    text: '#222'
+    blur: '#666'
+    title: '#375eab'
+    link: '#375eab'
+  text: {font: Arial, css: false}
+  css: |
+    h2 { background: #e0ebf5; padding: 0.5rem; line-height: 1; }
+    .resume h2 { margin-bottom: 1rem; }
+    .emblem i { outline: 1px solid #384e54; }

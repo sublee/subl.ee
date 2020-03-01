@@ -1,0 +1,24 @@
+naver:
+  emblem:
+    shape: ☲
+    colors: {0: '#00c73c'}
+  colors:
+    text: '#333'
+    title: '#00c73c'
+    blur: '#999'
+    link: '#15b'
+    vlink: '#86a'
+
+naver-labs:
+  emblem:
+    shape: ☲
+    colors: {0: '#000'}
+  colors:
+    text: '#555'
+    title: '#333'
+    blur: '#999'
+    link: '#0078ff'
+  text: {font: Roboto}
+  title: {weight: 700}
+  css: |
+    h1, h2 { text-transform: uppercase; }

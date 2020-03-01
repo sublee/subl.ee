@@ -1,0 +1,20 @@
+sublue:
+  emblem:
+    shape: ☲
+    colors: {0: '#e57', 5: '#fd8'}
+  colors:
+    text: '#335'
+    blur: '#779'
+    link: '#47e'
+    vlink: '#79c'
+
+sublue:dark:
+  emblem:
+    shape: ☲
+    colors: {0: '#e57', 5: '#fd8'}
+  colors:
+    background: '#151419'
+    text: '#9999a4'
+    blur: '#667'
+    link: '#68e'
+    vlink: '#679'

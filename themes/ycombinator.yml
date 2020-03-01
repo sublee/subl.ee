@@ -1,0 +1,10 @@
+ycombinator:
+  emblem:
+    shape: ☲
+    colors: {0: '#f26522'}
+  colors:
+    background: '#f6f6ef'
+    text: '#000'
+    title_index: '#f26522'
+    blur: '#999'
+    link: '#268bd2'

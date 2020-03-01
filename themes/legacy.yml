@@ -1,0 +1,23 @@
+legacy-v1:
+  emblem:
+    shape: ☲
+    colors: {0: '#e34', 5: '#fc3'}
+  colors:
+    background: '#192222'
+    text: '#788'
+    epic: '#e34'
+    blur: '#455'
+    link: '#ca4'
+    vlink: '#986'
+
+legacy-v2:
+  emblem:
+    shape: ☲
+    colors: {0: '#e56', 5: '#fd6'}
+  colors:
+    background: '#fafaf8'
+    text: '#344'
+    title_index: '#e56'
+    blur: '#677'
+    link: '#4ac'
+    vlink: '#589'

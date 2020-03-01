@@ -1,0 +1,9 @@
+google:
+  emblem:
+    shape: ☲
+    colors: {1: '#4285f4', 2: '#ea4335', 3: '#34a853', 5: '#fbbc05'}
+  colors:
+    text: '#4d4d4d'
+    blur: '#9e9e9e'
+    link: '#4285f4'
+    vlink: '#3f51b5'

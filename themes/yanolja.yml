@@ -1,0 +1,12 @@
+yanolja:
+  emblem:
+    shape: ☲
+    colors: {0: '#ff3478'}
+  colors:
+    text: '#414141'
+    title: '#ff3478'
+    blur: '#888'
+    link: '#ff3478'
+  title: {weight: 600}
+  css: |
+    h1, h2 { text-transform: uppercase; letter-spacing: 0.1rem; }

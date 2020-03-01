@@ -1,0 +1,13 @@
+terraform:
+  emblem:
+    shape: ☷
+    colors: {0: '#5c4ee5'}
+  colors:
+    text: '#555'
+    blur: '#777'
+    link: '#5c4ee5'
+  text: {font: Open Sans}
+  css: |
+    .emblem-left   { transform: skewy(20deg) translateY(-11px); }
+    .emblem-middle { transform: skewy(20deg); }
+    .emblem-right  { transform: skewy(-20deg); }

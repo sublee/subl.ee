@@ -1,0 +1,76 @@
+cwkim:
+  emblem:
+    shape: ☳
+    colors: {0: '#e8acac', 2: '#eab45d', 4: '#ff6065', 5: '#00cef9'}
+  colors:
+    link: '#0058ff'
+    vlink: '#000ec5'
+  title: {weight: 600}
+  css: |
+    .emblem i {
+      background: url(https://chanwoong.kim/imgs/profile-001.png);
+      background-size: 86px 86px;
+    }
+    .emblem-left .emblem-top {
+      background-position: 0 0;
+    }
+    .emblem-middle .emblem-top {
+      background-position: -30px 0;
+    }
+    .emblem-right .emblem-top {
+      background-position: -60px 0;
+    }
+    .emblem-left .emblem-bottom {
+      background-position: 0 -45px;
+    }
+    .emblem-middle .emblem-bottom {
+      background-position: -30px -45px;
+    }
+    .emblem-right .emblem-bottom {
+      background-position: -60px -45px;
+    }
+    .copyright::after {
+      content: '⚡';
+    }
+
+yeonghoey:
+  emblem:
+    shape: ☲
+    colors: {0: '#212121'}
+  colors:
+    text: '#212121'
+    blur: '#757575'
+    link: '#00e'      # Chrome default
+    vlink: '#551a8b'  # Chrome default
+  text: {font: Roboto Condensed}
+  title: {weight: 600}
+  css: |
+    h2 { border-bottom: 2px solid #212121; margin-bottom: 0.3rem !important; }
+    hr { display: none; }
+
+ipari:
+  emblem:
+    shape: ☲
+    colors: {0: '#4bbfc3', 3: '#7baabe', 5: '#68b4c0'}
+  colors:
+    text: '#777'
+    blur: '#999'
+    link: '#2a99b6'
+  title:
+    font: Raleway
+  css: |
+    h1::after {
+      content: '/';
+      margin-left: 0.2em;
+      font-size: 80%;
+      color: rgba(232, 250, 0, 0.8);
+    }
+
+    a:hover {
+      text-decoration-color: rgba(232, 250, 0, 0.8);
+    }
+
+    hr {
+      background-color: #aaa;
+      height: 1px;
+    }

@@ -1,0 +1,14 @@
+blizzard:
+  emblem:
+    shape: ☲
+    colors: {0: '#00adef'}
+  colors:
+    background: '#010e16'
+    text: '#99cee0'
+    title: '#fff'
+    blur: '#366a80'
+    link: '#01b2f1'
+  css: |
+    body {
+      background-image: linear-gradient(#002434, #010e16 40rem);
+    }

@@ -1,0 +1,17 @@
+spoqa:
+  emblem:
+    shape: ☲
+    colors: {0: '#4c80f1'}
+  colors:
+    text: '#4d5256'
+    blur: '#a9afb3'
+    link: '#4c80f1'
+    vlink: '#2c5ae9'
+  text:
+    font: 'Spoqa Han Sans'
+    css: '//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css'
+    weight: 400
+  title: {weight: 300}
+  css: |
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 1.5em; }
