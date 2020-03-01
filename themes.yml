@@ -146,9 +146,9 @@ facebook:
     }
     .resume .emblem div { display: none; }
     .resume .emblem-wrap { padding-right: 6px; }
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 550px) {
       .resume .emblem-wrap { width: auto; }
-      .resume .emblem { zoom: 1; margin: auto; }
+      .resume .emblem { transform: none; margin: auto; }
     }
 
 mearie:
@@ -320,7 +320,7 @@ python:
     link: '#0072aa'
     vlink: '#6363bb'
   css: |
-    .-epic main > p, .-epic main > ul {
+    .resume main > p, .resume main > ul {
       background: #eeffcc;
       border: 1px solid #ac9;
       padding: 0.2em 0.5em;
@@ -382,8 +382,8 @@ doodle:
   text: {font: Rock Salt}
   css: |
     * { line-height: 1.8; }
-    .emblem { transform: rotate(-2deg); }
-    .-epic main { font-size: 1em; }
+    .emblem-wrap { transform: rotate(-2deg); }
+    .resume main { font-size: 1em; }
     abbr { display: inline-block; line-height: 1; background: #ef3; }
 
 papago:
@@ -482,7 +482,7 @@ golang:
   text: {font: Arial, css: false}
   css: |
     h2 { background: #e0ebf5; padding: 0.5rem; line-height: 1; }
-    .-epic h2 { margin-bottom: 1rem; }
+    .resume h2 { margin-bottom: 1rem; }
     .emblem i { outline: 1px solid #384e54; }
 
 netflix:
@@ -1039,7 +1039,7 @@ planetarium:
       background-position: left bottom;
     }
 
-    .resume .emblem::before {
+    .resume .emblem-wrap::before {
       content: '';
 
       position: absolute;
@@ -1057,8 +1057,7 @@ planetarium:
       background-image: url({{ url_for('static', filename='90s/dance.gif') }});
     }
     @media screen and (max-width: 550px) {
-      .resume .emblem::before {
-        zoom: 2;
+      .resume .emblem-wrap::before {
         top: -3px;
       }
     }
