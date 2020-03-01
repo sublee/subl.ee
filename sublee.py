@@ -224,19 +224,18 @@ def css(theme: str) -> Tuple[str, int, Dict[str, str]]:
     style = themes[theme]
 
     with io.StringIO() as buf:
-        buf.write(render_css(style))
+        buf.write(render_template('style.css_t', rgba=rgba, **style))
 
         if 'css' in style:
-            buf.write(render_template_string(style['css']))
+            buf.write(render_template_string(style['css'], rgba=rgba, **style))
 
         try:
             dark_style = themes[theme + ':dark']
         except KeyError:
             pass
         else:
-            dark_css = render_css(dark_style)
             buf.write('@media (prefers-color-scheme: dark) {')
-            buf.write(dark_css)
+            buf.write(render_template('style.css_t', rgba=rgba, **dark_style))
             buf.write('}')
 
         css = buf.getvalue()

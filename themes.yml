@@ -957,35 +957,35 @@ planetarium:
     body {
       background-repeat: repeat;
       background-image:
-        radial-gradient(#fff, #006 3px, rgba(255,255,255,0) 10px),
-        radial-gradient(#0ff, #006 3px, rgba(255,255,255,0) 10px),
-        radial-gradient(#0ff, #003 2px, rgba(255,255,255,0) 5px),
-        radial-gradient(#fff, rgba(255,255,255,0) 1px),
-        radial-gradient(#999, rgba(255,255,255,0) 1px);
-        radial-gradient(#fff, rgba(255,255,255,0) 1px);
+        radial-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.1) 0.1rem, transparent 0.2rem),
+        radial-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.1) 0.1rem, transparent 0.2rem),
+        radial-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.1) 0.1rem, transparent 0.2rem),
+        radial-gradient(#0ff, rgba(0,0,255,0.1) 0.1rem, transparent 0.5rem),
+        radial-gradient(#0ff, rgba(0,0,255,0.1) 0.2rem, transparent 1rem),
+        radial-gradient(#fff, rgba(0,0,255,0.1) 0.3rem, transparent 1rem);
       background-size:
-        800px 800px,
-        500px 500px,
-        400px 400px,
-        300px 300px,
-        200px 200px,
-        100px 100px;
+        10rem 10rem,
+        10rem 10rem,
+        10rem 10rem,
+        20rem 20rem,
+        20rem 20rem,
+        30rem 30rem;
       background-position:
-            0 150px,
-         30px 120px,
-         60px  90px,
-         90px  60px,
-        120px  30px,
-        150px     0;
+         2rem  1rem,
+         8rem  7rem,
+         6rem  6rem,
+        -5rem -1rem,
+        -1rem -6rem,
+        -2rem -5rem;
     }
 
     h1 {
       color: #ee1;
       text-shadow:
-        3px 3px 0   #30f,
-        2px 2px 0   #30f,
-        1px 1px 0   #30f,
-        0   0   3px #30f;
+        3px 3px 0   #40f,
+        2px 2px 0   #40f,
+        1px 1px 0   #40f,
+        0   0   3px #40f;
     }
     h2 {
       background-image: url({{ url_for('static', filename='90s/stars.gif') }});
@@ -1059,6 +1059,6 @@ planetarium:
     @media screen and (max-width: 550px) {
       .resume .emblem::before {
         zoom: 2;
-        margin-top: -5px;
+        top: -3px;
       }
     }
