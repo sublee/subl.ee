@@ -185,7 +185,7 @@ dd.note {
 }
 
 hr {
-  {{ rem('margin-top', 1.5) }};
+  {{ rem('margin-top', 1.5) }}
   {{ rem('height', 0.1) }}
   background-color: {{ rgba(colors.blur, 0.1) }};
 }
