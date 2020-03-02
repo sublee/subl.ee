@@ -80,6 +80,21 @@ a:hover {
   color: #e01;
 }
 
+a[href^="mailto:"] {
+  padding-left: 18px;
+  background: url({{ data_uri('email.gif') }}) left bottom no-repeat;
+}
+
+a[href^="sms:"] {
+  padding-left: 18px;
+  background: url({{ data_uri('phone.gif') }}) left bottom no-repeat;
+}
+
+footer a {
+  padding-left: 18px;
+  background: url({{ data_uri('save.gif') }}) left bottom no-repeat;
+}
+
 hr {
   animation: rainbow 5s linear infinite;
   background-image: linear-gradient(to right, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
@@ -108,13 +123,6 @@ footer::before {
 .copyright::before {
   content: 'This site is optimized for 1024 by 768.';
   color: #3d0;
-}
-
-footer a {
-  padding-left: 18px;
-  background-image: url({{ data_uri('save.gif') }});
-  background-repeat: no-repeat;
-  background-position: left bottom;
 }
 
 .resume .emblem-wrap::before {
