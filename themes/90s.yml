@@ -13,8 +13,17 @@
   title: {weight: 600}
   css: |
     html {
-      cursor: url({{ url_for('static', filename='90s/cursor.cur')}}), auto;
+      cursor: url({{ data_uri('cursor.gif') }}), auto;
       image-rendering: pixelated;
+    }
+    /*
+    Internet Explorer does not support data URI in cursor.
+    See: https://docs.microsoft.com/en-us/previous-versions//cc848897(v=vs.85)?redirectedfrom=MSDN
+    */
+    @media all and (-ms-high-contrast:none) {
+      html {
+        cursor: auto;
+      }
     }
 
     body {
@@ -50,8 +59,9 @@
         1px 1px 0   #40f,
         0   0   3px #40f;
     }
+
     h2 {
-      background-image: url({{ url_for('static', filename='90s/stars.gif') }});
+      background-image: url({{ data_uri('stars.gif') }});
       background-repeat: no-repeat;
       background-position: left center;
       padding-left: 24px;
@@ -84,20 +94,22 @@
 
     footer::before {
       display: inline-block;
-      background-image: url({{ url_for('static', filename='90s/counter.gif') }});
+      background-image: url({{ data_uri('counter.gif') }});
       width: 61px;
       height: 24px;
       vertical-align: middle;
       margin-right: 3px;
       content: '';
     }
+
     .copyright::before {
       content: 'This site is optimized for 1024 by 768.';
       color: #3d0;
     }
+
     footer a {
       padding-left: 18px;
-      background-image: url({{ url_for('static', filename='90s/save.gif') }});
+      background-image: url({{ data_uri('save.gif') }});
       background-repeat: no-repeat;
       background-position: left bottom;
     }
@@ -117,7 +129,7 @@
       Source: https://commons.wikimedia.org/wiki/File:HAMERDANCE.gif
       License: CC BY-SA 4.0
       */
-      background-image: url({{ url_for('static', filename='90s/dance.gif') }});
+      background-image: url({{ data_uri('dance.gif') }});
     }
     @media screen and (max-width: 550px) {
       .resume .emblem-wrap::before {

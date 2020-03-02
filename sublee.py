@@ -8,6 +8,8 @@
    :license: Public Domain
 
 """
+import base64
+import mimetypes
 import glob
 import io
 import itertools
@@ -158,6 +160,22 @@ def markdown(text: str) -> Tuple[str, Dict[str, str]]:
     return html, meta
 
 
+def data_uri(path: str) -> str:
+    """Encodes a file as a data URI."""
+    mimetype, charset = mimetypes.guess_type(path, strict=False)
+    if mimetype is None:
+        mimetype = 'application/octet-stream'
+    if charset is None:
+        mediatype = mimetype
+    else:
+        mediatype = f'{mimetype};charset={charset}'
+
+    with open(path, 'rb') as f:
+        data = base64.b64encode(f.read()).decode()
+
+    return f'data:{mediatype};base64,{data}'
+
+
 def load_themes() -> Dict[str, Dict[str, str]]:
     themes: Dict[str, Dict[str, str]] = {}
     for path in glob.glob(THEMES):
@@ -229,8 +247,11 @@ def css(theme: str) -> Tuple[str, int, Dict[str, str]]:
     with io.StringIO() as buf:
         buf.write(render_template('style.css_t', **style))
 
+        def _data_uri(path: str) -> str:
+            return data_uri(os.path.join(ROOT, 'themes', theme, path))
+
         if 'css' in style:
-            buf.write(render_template_string(style['css'], **style))
+            buf.write(render_template_string(style['css'], data_uri=_data_uri))
 
         try:
             dark_style = themes[theme + ':dark']
