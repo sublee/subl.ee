@@ -56,7 +56,7 @@ MARKDOWN_EXTENSIONS = [
 
 
 # The Flask application.
-app = Flask(__name__, static_url_path='/-')
+app = Flask(__name__, static_folder=None)
 
 
 def jinja_meta(content: str, **attrs: str) -> jinja2.Markup:
@@ -204,7 +204,7 @@ def resume() -> str:
 def resume_pdf() -> Response:
     font_config = weasyprint.fonts.FontConfiguration()
     html = weasyprint.HTML(string=resume())
-    with open(os.path.join(ROOT, 'static/print.css')) as f:
+    with open(os.path.join(ROOT, 'print.css')) as f:
         css = weasyprint.CSS(string=f.read(), font_config=font_config)
 
     doc = html.render(stylesheets=[css], font_config=font_config)
@@ -265,6 +265,12 @@ def css(theme: str) -> Tuple[str, int, Dict[str, str]]:
         css = buf.getvalue()
 
     return css, 200, {'Content-Type': 'text/css'}
+
+
+@app.route('/print.css')
+def print_css() -> Response:
+    res: Response = send_file(os.path.join(ROOT, 'print.css'))
+    return res
 
 
 @app.route('/runker/')
