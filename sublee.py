@@ -73,6 +73,22 @@ def jinja_meta(content: str, **attrs: str) -> jinja2.Markup:
     return jinja2.Markup(buf.getvalue())
 
 
+def jinja_rgba(color: str, alpha: float = 1.0) -> str:
+    """Converts RGB hex string to CSS RGBA expression."""
+    if color.startswith('#'):
+        rgb_hex = color[1:]
+        if len(rgb_hex) == 3:
+            rgb_hex = '{0}{0}{1}{1}{2}{2}'.format(*rgb_hex)
+        r = int(rgb_hex[0:2], 16)
+        g = int(rgb_hex[2:4], 16)
+        b = int(rgb_hex[4:6], 16)
+    elif color.startswith('rgb('):
+        r, g, b = re.findall(r'\d+', color)
+    elif color.startswith('rgba('):
+        return color
+    return 'rgba({0}, {1}, {2}, {3})'.format(r, g, b, alpha)
+
+
 def jinja_cdnjs(path: str) -> str:
     """A Jinja function generating a URL at cdnjs."""
     return 'https://cdnjs.cloudflare.com/ajax/libs/%s' % path
@@ -101,6 +117,7 @@ def jinja_splitted_trigram_bar(trigram: str, offset: int) -> bool:
 
 app.jinja_env.globals.update({
     'meta': jinja_meta,
+    'rgba': jinja_rgba,
     'cdnjs': (lambda path: '//cdnjs.cloudflare.com/ajax/libs/' + path),
 })
 app.jinja_env.filters.update({
@@ -203,22 +220,6 @@ def qrcode() -> Response:
     return res
 
 
-def rgba(color: str, alpha: float = 1.0) -> str:
-    """Converts RGB hex string to CSS RGBA expression."""
-    if color.startswith('#'):
-        rgb_hex = color[1:]
-        if len(rgb_hex) == 3:
-            rgb_hex = '{0}{0}{1}{1}{2}{2}'.format(*rgb_hex)
-        r = int(rgb_hex[0:2], 16)
-        g = int(rgb_hex[2:4], 16)
-        b = int(rgb_hex[4:6], 16)
-    elif color.startswith('rgb('):
-        r, g, b = re.findall(r'\d+', color)
-    elif color.startswith('rgba('):
-        return color
-    return 'rgba({0}, {1}, {2}, {3})'.format(r, g, b, alpha)
-
-
 @app.route('/style-<theme>.css')
 def css(theme: str) -> Tuple[str, int, Dict[str, str]]:
     """Generates a CSS file from the given theme."""
@@ -226,10 +227,10 @@ def css(theme: str) -> Tuple[str, int, Dict[str, str]]:
     style = themes[theme]
 
     with io.StringIO() as buf:
-        buf.write(render_template('style.css_t', rgba=rgba, **style))
+        buf.write(render_template('style.css_t', **style))
 
         if 'css' in style:
-            buf.write(render_template_string(style['css'], rgba=rgba, **style))
+            buf.write(render_template_string(style['css'], **style))
 
         try:
             dark_style = themes[theme + ':dark']
@@ -237,7 +238,7 @@ def css(theme: str) -> Tuple[str, int, Dict[str, str]]:
             pass
         else:
             buf.write('@media (prefers-color-scheme: dark) {')
-            buf.write(render_template('style.css_t', rgba=rgba, **dark_style))
+            buf.write(render_template('style.css_t', **dark_style))
             buf.write('}')
 
         css = buf.getvalue()
