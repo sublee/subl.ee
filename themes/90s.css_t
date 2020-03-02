@@ -1,16 +1,34 @@
 {# vim: set ft=css: #}
 
 html {
-  cursor: url({{ data_uri('cursor.gif') }}), auto;
   image-rendering: pixelated;
+
+  cursor: url({{ data_uri('cursor-1.gif') }}), auto;
+  animation: cursor 1s linear infinite;
 }
+@keyframes cursor {
+   0.000% { cursor: url({{ data_uri('cursor-1.gif')  }}), auto; }
+   7.692% { cursor: url({{ data_uri('cursor-2.gif')  }}), auto; }
+  15.385% { cursor: url({{ data_uri('cursor-3.gif')  }}), auto; }
+  23.077% { cursor: url({{ data_uri('cursor-4.gif')  }}), auto; }
+  30.769% { cursor: url({{ data_uri('cursor-5.gif')  }}), auto; }
+  38.462% { cursor: url({{ data_uri('cursor-6.gif')  }}), auto; }
+  46.154% { cursor: url({{ data_uri('cursor-7.gif')  }}), auto; }
+  53.846% { cursor: url({{ data_uri('cursor-8.gif')  }}), auto; }
+  61.538% { cursor: url({{ data_uri('cursor-9.gif')  }}), auto; }
+  69.231% { cursor: url({{ data_uri('cursor-10.gif') }}), auto; }
+  76.923% { cursor: url({{ data_uri('cursor-11.gif') }}), auto; }
+  84.615% { cursor: url({{ data_uri('cursor-12.gif') }}), auto; }
+  92.308% { cursor: url({{ data_uri('cursor-13.gif') }}), auto; }
+}
+
 /*
 Internet Explorer does not support data URI in cursor.
 See: https://docs.microsoft.com/en-us/previous-versions//cc848897(v=vs.85)?redirectedfrom=MSDN
 */
 @media all and (-ms-high-contrast:none) {
   html {
-    cursor: url('https://github.com/sublee/subl.ee/raw/60519ee7b385b42dee712422e405fd38670a590b/static/90s/cursor.cur'), auto;
+    cursor: auto;
   }
 }
 
