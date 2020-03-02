@@ -10,7 +10,7 @@ See: https://docs.microsoft.com/en-us/previous-versions//cc848897(v=vs.85)?redir
 */
 @media all and (-ms-high-contrast:none) {
   html {
-    cursor: auto;
+    cursor: url('https://github.com/sublee/subl.ee/raw/60519ee7b385b42dee712422e405fd38670a590b/static/90s/cursor.cur'), auto;
   }
 }
 
