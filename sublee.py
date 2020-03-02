@@ -29,7 +29,7 @@ from flask_frozen import Freezer
 from markdown import Markdown
 from werkzeug.exceptions import NotFound
 
-__version__ = '2.4.0'
+__version__ = '2.5.0'
 __all__ = ['app']
 
 
