@@ -252,6 +252,9 @@ def css(theme: str) -> Tuple[str, int, Dict[str, str]]:
 
         if 'css' in style:
             buf.write(render_template_string(style['css'], data_uri=_data_uri))
+        if 'css_file' in style:
+            with open(os.path.join(ROOT, 'themes', style['css_file'])) as f:
+                buf.write(render_template_string(f.read(), data_uri=_data_uri))
 
         try:
             dark_style = themes[theme + ':dark']
