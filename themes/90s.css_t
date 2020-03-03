@@ -66,11 +66,9 @@ h1 {
     0   0   3px #40f;
 }
 
-h2 {
-  background-image: url({{ data_uri('stars.gif') }});
-  background-repeat: no-repeat;
-  background-position: left center;
-  padding-left: 24px;
+h2::before {
+  content: url({{ data_uri('stars.gif') }});
+  margin-right: 0.4rem;
 }
 
 a {
@@ -80,19 +78,22 @@ a:hover {
   color: #e01;
 }
 
-a[href^="mailto:"] {
-  padding-left: 18px;
-  background: url({{ data_uri('email.gif') }}) left bottom no-repeat;
+a[href^="mailto:"]::before {
+  content: url({{ data_uri('email.gif') }});
+  vertical-align: top;
+  margin-right: 0.2rem;
 }
 
-a[href^="sms:"] {
-  padding-left: 18px;
-  background: url({{ data_uri('phone.gif') }}) left bottom no-repeat;
+a[href^="sms:"]::before {
+  content: url({{ data_uri('phone.gif') }});
+  vertical-align: top;
+  margin-right: 0.2rem;
 }
 
-footer a {
-  padding-left: 18px;
-  background: url({{ data_uri('save.gif') }}) left bottom no-repeat;
+footer a::before {
+  content: url({{ data_uri('save.gif') }});
+  vertical-align: middle;
+  margin-right: 0.2rem;
 }
 
 hr {
@@ -111,13 +112,9 @@ hr {
 }
 
 footer::before {
-  display: inline-block;
-  background-image: url({{ data_uri('counter.gif') }});
-  width: 61px;
-  height: 24px;
-  vertical-align: middle;
-  margin-right: 3px;
-  content: '';
+  content: url({{ data_uri('counter.gif') }});
+  vertical-align: top;
+  margin-right: 0.2rem;
 }
 
 .copyright::before {
@@ -126,21 +123,15 @@ footer::before {
 }
 
 .resume .emblem-wrap::before {
-  content: '';
-
   position: absolute;
   left: -50px;
   top: 20px;
-
-  display: inline-block;
-  width: 50px;
-  height: 50px;
 
   /*
   Source: https://commons.wikimedia.org/wiki/File:HAMERDANCE.gif
   License: CC BY-SA 4.0
   */
-  background-image: url({{ data_uri('dance.gif') }});
+  content: url({{ data_uri('dance.gif') }});
 }
 @media screen and (max-width: 550px) {
   .resume .emblem-wrap::before {
