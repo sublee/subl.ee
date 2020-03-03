@@ -68,7 +68,6 @@ h1 {
 
 h2::before {
   content: url({{ data_uri('stars.gif') }});
-  height: 16px;
   display: inline-block;
   vertical-align: top;
   margin-right: 0.4rem;
@@ -83,23 +82,22 @@ a:hover {
 
 a[href^="mailto:"]::before {
   content: url({{ data_uri('email.gif') }});
-  height: 22px;
   display: inline-block;
   vertical-align: top;
+  margin-top: 1px;
   margin-right: 0.2rem;
 }
 
 a[href^="sms:"]::before {
   content: url({{ data_uri('phone.gif') }});
-  height: 22px;
   display: inline-block;
   vertical-align: top;
+  margin-top: 3px;
   margin-right: 0.2rem;
 }
 
 footer a::before {
   content: url({{ data_uri('save.gif') }});
-  height: 14px;
   display: inline-block;
   vertical-align: top;
   margin-top: 3px;
