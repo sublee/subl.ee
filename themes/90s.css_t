@@ -84,7 +84,7 @@ a[href^="mailto:"]::before {
   content: url({{ data_uri('email.gif') }});
   display: inline-block;
   vertical-align: top;
-  margin-top: 1px;
+  margin-top: 2px;
   margin-right: 0.2rem;
 }
 
