@@ -1,0 +1,14 @@
+web2.0:
+  emblem:
+    shape: ☲
+    colors: {0: '#e57', 5: '#fc6'}
+  colors:
+    background: '#eee'
+    text: '#333'
+    link: '#57e'
+    vlink: '#75e'
+    title: '#fff'
+    blur: '#888'
+  text: {font: Heebo}
+  title: {weight: 900}
+  css_file: web2.0.css_t
