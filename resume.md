@@ -28,7 +28,7 @@ Skills
 ------
 
 Programming Languages {: .label }
-: Python (expert), Go, JavaScript, Bash, C#
+: Python (expert), Go, Bash, C#, JavaScript
   {: .attr }
 
 AI Research {: .label }
@@ -36,11 +36,11 @@ AI Research {: .label }
   {: .attr }
 
 Back-end Development {: .label }
-: Linux, AWS, Terraform, Docker, ZeroMQ, Redis, etcd, MySQL
+: Linux, AWS, Terraform, Docker, ZeroMQ, Redis, Couchbase, MySQL, etcd
   {: .attr }
 
 Test Engineering {: .label }
-: Travis CI, GitLab CI, mypy, pytest, Testify
+: GitHub Actions, Travis CI, GitLab CI, mypy, pytest, Testify
   {: .attr }
 
 ---
@@ -53,11 +53,11 @@ Software Engineer {: .label }
 :   A deep learning artificial intelligence laboratory in Kakao.
     {: .note }
 
-:   Focused on parallel and distributed deep learning to boost training
-    performance.
+:   Developing an AutoML system.
 
-    Reproduced [GPipe][] in PyTorch, and developed [torchgpipe][] as an open
-    source library.
+    Developed and maintaining [torchgpipe] reproducing [GPipe][] in PyTorch,
+    which is to focus on parallel and distributed deep learning to boost
+    training performance.
 
 [kakaobrain]: https://kakaobrain.com/
 [gpipe]: https://arxiv.org/abs/1811.06965
