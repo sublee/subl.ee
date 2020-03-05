@@ -9,10 +9,10 @@
 
 """
 import base64
-import mimetypes
 import glob
 import io
 import itertools
+import mimetypes
 import os
 import re
 from datetime import date
