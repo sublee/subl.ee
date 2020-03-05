@@ -54,7 +54,6 @@ html {
 
 body {
   position: relative;
-  margin: 3em 10%;
   max-width: 50rem;
   font-family: '{{ text.font }}', {{ text.generic }};
   font-weight: {{ text.weight }};
