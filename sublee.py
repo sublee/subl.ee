@@ -211,7 +211,10 @@ def resume_pdf() -> Response:
         css = weasyprint.CSS(string=f.read(), font_config=font_config)
 
     doc = html.render(stylesheets=[css], font_config=font_config)
-    assert len(doc.pages) == 1, 'resume.pdf contains %d pages' % len(doc.pages)
+
+    if 'FREEZER_DESTINATION' in app.config:
+        if len(doc.pages) != 1:
+            raise AssertionError(f'resume.pdf contains {len(doc.pages)} pages')
 
     pdf = io.BytesIO()
     doc.write_pdf(pdf)
