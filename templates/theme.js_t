@@ -52,21 +52,27 @@ function generateFavicon(shape, colors) {
   favicon.width = 16;
   favicon.height = 16;
   var ctx = favicon.getContext('2d');
-  var partitioned, left;
+
+  var shapeFlags = {'☰': [0,0,0], '☱': [1,0,0], '☲': [0,1,0],
+                    '☳': [1,1,0], '☴': [0,0,1], '☵': [1,0,1],
+                    '☶': [0,1,1], '☷': [1,1,1]}[shape];
+
   for (var i = 0; i < 3; ++i) {
-    partitioned = !!shape[i];
-    left = 1 + i * 5;
-    ctx.fillStyle = colors[i + 1] || colors[0];
-    if (partitioned) {
-      // shape: i
+    var split = shapeFlags[i] === 1;
+    var left = 1 + i * 5;
+
+    if (split) {
+      ctx.fillStyle = colors[i + 1] || colors[0];
       ctx.fillRect(left, 1, 4, 7);
+
       ctx.fillStyle = colors[i + 4] || colors[0];
       ctx.fillRect(left, 9, 4, 6);
     } else {
-      // shape: I
+      ctx.fillStyle = colors[i + 1] || colors[0];
       ctx.fillRect(left, 1, 4, 14);
     }
   }
+
   return favicon;
 }
 
@@ -75,30 +81,17 @@ function updateFavicon() {
     if (!isThemeLoaded()) {
       throw 'retry';
     }
-    function rgbOnly(color) {
-      if (/^rgba/i.exec(color)) {
-        throw 'retry';
-      } else {
-        return color;
-      }
+
+    var emblem;
+    switch (__theme__) {
+    {% for theme, style in themes.items() %}
+      case {{ theme|tojson }}:
+        emblem = {{ style['emblem']|tojson }}
+        break;
+    {% endfor %}
     }
-    var shape = [];
-    var colors = {};
-    var horizontalDirections = ['left', 'middle', 'right'];
-    for (var i = 0; i < 3; ++i) {
-      var h = horizontalDirections[reversed() ? 2 - i : i];
-      var col = document.querySelector('.emblem-' + h);
-      var topCell = col.querySelector('.emblem-top');
-      var bottomCell = col.querySelector('.emblem-bottom');
-      colors[i + 1] = rgbOnly(getComputedStyle(topCell).backgroundColor);
-      if (bottomCell.offsetParent) {
-        shape[i] = true;
-        colors[i + 4] = rgbOnly(getComputedStyle(bottomCell).backgroundColor);
-      } else {
-        shape[i] = false;
-      }
-    }
-    var favicon = generateFavicon(shape, colors);
+
+    var favicon = generateFavicon(emblem.shape, emblem.colors);
     faviconLink.href = favicon.toDataURL('image/icon');
   } catch (err) {
     if (err == 'retry') {
@@ -112,6 +105,9 @@ function updateFavicon() {
 function selectTheme(theme) {
   __theme__ = theme;
   __themeSelected__ = true;
+
+  updateFavicon();
+
   themeLink.setAttribute('href', getThemeURL(theme));
 }
 
@@ -147,10 +143,14 @@ function initThemeSelection() {
   var $body = $(document.body);
   var $themeStyle = $('<style>').appendTo(document.head);
   // Override selectTheme() to re-draw the page.
-  selectTheme = function (theme) {
+  selectTheme = function(theme) {
     __theme__ = theme;
-    isThemeLoaded = function() { return false; };
+
+    updateFavicon();
+
     $body.hide();
+    isThemeLoaded = function() { return false; };
+
     $.get(getThemeURL(theme), function(css) {
       try {
         $themeStyle.text(css);
@@ -162,9 +162,8 @@ function initThemeSelection() {
       }
       setTimeout(function() {
         // Re-draw the page.
-        isThemeLoaded = function() {return true; };
         $body.fadeIn();
-        updateFavicon();
+        isThemeLoaded = function() { return true; };
       }, 10);
     });
     // <link> for theme is not required.
