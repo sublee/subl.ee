@@ -1,6 +1,7 @@
 {# vim: set ft=javascript: #}
 
 var __theme__ = {{ theme|tojson }};
+var __themes__ = {{ themes.keys()|list|sort|tojson }};
 var __themeSelected__ = false;
 
 var themeLink = document.querySelector('.theme');
@@ -171,3 +172,23 @@ function initThemeSelection() {
   }
   window.onhashchange = selectGuessedTheme;
 }
+
+// Traverse themes with 'j' and 'k'.
+window.onkeypress = function(e) {
+  var i = __themes__.indexOf(__theme__);
+  var theme = __theme__;
+
+  if (e.keyCode === 106) {         // 'j'
+    theme = __themes__[(__themes__.length + i + 1) % __themes__.length];
+  } else if (e.keyCode === 107) {  // 'k'
+    theme = __themes__[(__themes__.length + i - 1) % __themes__.length];
+  } else {
+    return;
+  }
+
+  if (/\?/.exec(location.href)) {
+    location.href = location.href.replace(/[\?#].+$/, '') + '#theme=' + theme;
+  } else {
+    location.hash = '#theme=' + theme;
+  }
+};

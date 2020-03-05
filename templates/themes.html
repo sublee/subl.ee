@@ -6,16 +6,14 @@
 
 {% block main %}
   <h1>Themes</h1>
+  <p>Traverse with <kbd>j</kbd> and <kbd>k</kbd>.</p>
   <ul>
-    {% for theme, info in themes.items()|sort %}
+    {% for theme, style in themes.items()|sort %}
       <li id="{{ theme }}">
         <img class="favicon" />
         <script>
-          var favicon = generateFavicon([
-            {{ info.emblem.shape is splitted_trigram_bar(0)|tojson }},
-            {{ info.emblem.shape is splitted_trigram_bar(1)|tojson }},
-            {{ info.emblem.shape is splitted_trigram_bar(2)|tojson }}
-          ], {{ info.emblem.colors|tojson }});
+          var favicon = generateFavicon({{ style.emblem.shape|tojson }},
+                                        {{ style.emblem.colors|tojson }});
           document.getElementById({{ theme|tojson }})
                   .querySelector('img.favicon')
                   .setAttribute('src', favicon.toDataURL('image/icon'));

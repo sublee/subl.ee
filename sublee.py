@@ -130,6 +130,15 @@ app.jinja_env.tests.update({
 })
 
 
+def load_themes() -> Dict[str, Dict[str, str]]:
+    """Parses theme YAML files into a single dictionary."""
+    themes: Dict[str, Dict[str, str]] = {}
+    for path in glob.glob(THEMES):
+        with open(path) as f:
+            themes.update(yaml.load(f, Loader=yaml.FullLoader))
+    return themes
+
+
 def copyright_year(year_since: Optional[int] = None,
                    dash: str = '\u2013',
                    ) -> str:
@@ -145,11 +154,13 @@ def make_context(*args: Any, **kwargs: Any) -> Dict[str, Any]:
     with open(META) as f:
         meta = yaml.load(f, Loader=yaml.FullLoader)
 
-    copyright_year_since = meta.pop('copyright_year_since')
-    c = dict(meta, copyright_year=copyright_year(copyright_year_since))
+    context: Dict[str, Any] = {}
+    context['copyright_year'] = meta['copyright_year_since']
+    context['themes'] = load_themes()
+    context.update(meta)
+    context.update(*args, **kwargs)
 
-    c.update(*args, **kwargs)
-    return c
+    return context
 
 
 def markdown(text: str) -> Tuple[str, Dict[str, str]]:
@@ -174,14 +185,6 @@ def data_uri(path: str) -> str:
         data = base64.b64encode(f.read()).decode()
 
     return f'data:{mediatype};base64,{data}'
-
-
-def load_themes() -> Dict[str, Dict[str, str]]:
-    themes: Dict[str, Dict[str, str]] = {}
-    for path in glob.glob(THEMES):
-        with open(path) as f:
-            themes.update(yaml.load(f, Loader=yaml.FullLoader))
-    return themes
 
 
 @app.route('/')
@@ -221,8 +224,7 @@ def resume_pdf() -> Response:
 @app.route('/themes/')
 def themes() -> str:
     """Theme selector."""
-    themes = load_themes()
-    ctx = make_context(themes=themes)
+    ctx = make_context(themes=load_themes())
     return render_template('themes.html', **ctx)
 
 

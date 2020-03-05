@@ -200,6 +200,17 @@ i {
   color: {{ colors.title }};
 }
 
+kbd {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 0.75em;
+  line-height: 1;
+  background: {{ rgba(colors.blur, 0.1) }};
+  border: 1px solid {{ rgba(colors.blur, 0.3) }};
+  padding: 0.2rem 0.3rem;
+  vertical-align: middle;
+}
+
 /* Emblem */
 
 {% set emblem_boundary = 90 %}
