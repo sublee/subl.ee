@@ -98,11 +98,54 @@ function updateFavicon() {
   }
 }
 
+function keepThemeOnLinks() {
+  var $anchors = document.querySelectorAll('a[href]');
+
+  if ($anchors.length === 0) {
+    window.onload = arguments.callee;
+  }
+
+  for (var i = 0; i < $anchors.length; ++i) {
+    var $a = $anchors[i];
+    var href = $a.getAttribute('href');
+
+    if (!/^\//.exec(href)) {
+      // Skip external links.
+      continue;
+    } else if (/^\/runker\/?/.exec(href)) {
+      // Skip SUBLEERUNKER.
+      continue;
+    }
+
+    // Remove existing theme in querystring and hash.
+    href = href.replace(/([?&#])theme=[^&]+/, '');
+    href = href.replace('&', '?');
+
+    // Keep querystring and hash.
+    var hash = /#.+/.exec(href) || '';
+    href = href.replace(/#.+/, '');
+
+    // Add the current theme into querystring.
+    if (/\?/.exec(href)) {
+      href += '&';
+    } else {
+      href += '?';
+    }
+    href += 'theme=' + __theme__;
+
+    // Restore hash.
+    href += hash;
+
+    $a.setAttribute('href', href);
+  }
+}
+
 function selectTheme(theme) {
   __theme__ = theme;
   __themeSelected__ = true;
 
   updateFavicon();
+  keepThemeOnLinks();
 
   themeLink.setAttribute('href', getThemeURL(theme));
 }
@@ -143,6 +186,7 @@ function initThemeSelection() {
     __theme__ = theme;
 
     updateFavicon();
+    keepThemeOnLinks();
 
     $body.hide();
     isThemeLoaded = function() { return false; };
