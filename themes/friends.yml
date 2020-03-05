@@ -1,14 +1,14 @@
 cwkim:
   emblem:
-    shape: ☳
-    colors: {0: '#e8acac', 2: '#eab45d', 4: '#ff6065', 5: '#00cef9'}
+    shape: ☷
+    colors: {0: '#e8acac', 2: '#eab45d', 4: '#ff6065', 5: '#00cef9', 6: '#45abc0'}
   colors:
     link: '#0058ff'
     vlink: '#000ec5'
   title: {weight: 600}
   css: |
     .emblem i {
-      background: url(https://chanwoong.kim/imgs/profile-001.png);
+      background: url(https://chanwoong.kim/imgs/profile-002.png);
       background-size: 86px 86px;
     }
     .emblem-left .emblem-top {
