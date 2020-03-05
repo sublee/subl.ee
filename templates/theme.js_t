@@ -7,10 +7,6 @@ var __themeSelected__ = false;
 var themeLink = document.querySelector('.theme');
 var faviconLink = document.querySelector('link[rel="icon"]');
 
-function reversed() {
-  return /reversed/.exec(document.documentElement.className);
-}
-
 function getThemeURL(theme) {
   return '/style-' + theme + '.css';
 }
