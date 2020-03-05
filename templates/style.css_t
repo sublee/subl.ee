@@ -1,10 +1,7 @@
 {# vim: set ft=css: #}
 
 {% set base_font_size = 17 %}
-{% macro rem(prop, rem) %}
-  {{ prop }}: {{ (base_font_size * rem)|round|int }}px;
-  {{ prop }}: {{ rem }}rem;
-{% endmacro %}
+
 {% macro setdefault(dict, key, value) %}
   {# NOTE: the below if-block is workaround for calling #}
   {# Python functions without the caller parameter. #}
@@ -26,6 +23,7 @@
   'generic': 'sans-serif',
   'weight': 400,
 }|update(text) %}
+
 {% set title = {}|update(text)|update(title) %}
 {% for _text in [text, title] %}
   {{ setdefault(_text, 'css', 'https://fonts.googleapis.com/css?family=' ~
@@ -57,7 +55,7 @@ html {
 body {
   position: relative;
   margin: 3em 10%;
-  {{ rem('max-width', 50) }}
+  max-width: 50rem;
   font-family: '{{ text.font }}', {{ text.generic }};
   font-weight: {{ text.weight }};
   color: {{ colors.text }};
@@ -72,18 +70,18 @@ html, body {
 }
 
 header {
-  {{ rem('margin-bottom', 1.5) }};
+  margin-bottom: 1.5rem;
   line-height: 1;
 }
 
 footer {
-  {{ rem('margin-top', 2) }};
+  margin-top: 2rem;
   font-size: 0.8em;
   color: {{ colors.blur }};
 }
 
 h1, h2, h3, h4, h5, h6, p, ul, ol, dl, hr, pre {
-  {{ rem('margin-bottom', 1) }};
+  margin-bottom: 1rem;
 }
 
 h1, h2 {
@@ -95,7 +93,7 @@ h1, h2 {
 }
 
 h1 {
-  {{ rem('margin-right', 1.5) }}
+  margin-right: 1.5rem;
   padding-right: 96px;
   white-space: nowrap;
   font-size: 2em;
@@ -124,7 +122,7 @@ a:hover {
 ul li {
   position: relative;
   list-style: none;
-  {{ rem('padding-left', 0.8) }}
+  padding-left: 0.8rem;
 }
 
 ul li:before {
@@ -142,11 +140,11 @@ ul li:before {
 }
 
 dd {
-  {{ rem('margin-left', 0.8) }}
-  {{ rem('margin-bottom', 1) }}
+  margin-left: 0.8rem;
+  margin-bottom: 1rem;
 }
 dd ul, dd ol {
-  {{ rem('margin-left', -0.8) }}
+  margin-left: -0.8rem;
 }
 
 
@@ -156,12 +154,12 @@ dd.attr, dd.note {
 }
 
 dt, dd p, dd ul, dd ol, dd dl, dd hr, dt.label {
-  {{ rem('margin-top', 0.6) }}
+  margin-top: 0.6rem;
   margin-bottom: 0;
 }
 
 dl, dt, dd {
-  {{ rem('margin-top', 1) }}
+  margin-top: 1rem;
 }
 
 dt + dt {
@@ -169,7 +167,7 @@ dt + dt {
 }
 
 dt.label {
-  {{ rem('font-size', 0.8) }}
+  font-size: 0.8rem;
   color: {{ colors.blur }};
   line-height: 1;
 }
@@ -180,18 +178,18 @@ dd.attr {
 
 dd.note {
   margin-top: 0;
-  {{ rem('font-size', 0.8) }}
+  font-size: 0.8rem;
   font-style: italic;
 }
 
 hr {
-  {{ rem('margin-top', 1.5) }}
-  {{ rem('height', 0.1) }}
+  margin-top: 1.5rem;
+  height: 0.1rem;
   background-color: {{ rgba(colors.blur, 0.1) }};
 }
 
 sup, sub {
-  {{ rem('font-size', 0.5) }}
+  font-size: 0.5rem;
 }
 
 abbr, acronym {
@@ -255,7 +253,7 @@ i {
 
 .index body {
   white-space: nowrap;
-  {{ rem('max-width', 35) }}
+  max-width: 35rem;
 }
 
 .index main {
@@ -263,7 +261,7 @@ i {
 }
 
 .index header {
-  {{ rem('margin-bottom', 2) }};
+  margin-bottom: 2rem;
 }
 
 .index h1 {
@@ -281,7 +279,7 @@ i {
 .resume .emblem-wrap {
   position: absolute;
   right: 0;
-  margin: 0 0.3em;
+  margin: 0 0.3rem;
 }
 
 /* Error */
