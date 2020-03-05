@@ -118,10 +118,6 @@
     if (__themeSelected__) {
       keepTheme();
     }
-    // avoid an animation at the first time.
-    window.onload = function() {
-      document.body.style.transition = 'margin 0.2s';
-    };
   </script>
 
   {% if google_analytics %}
