@@ -331,6 +331,11 @@ kbd {
 
 /* Responsive Layout */
 
+@media screen and (max-width: 50rem) {
+  body { margin: 3em 5%; }
+  .themes li { width: 25%; }
+}
+
 @media screen and (max-width: 550px) {
   body {
     margin: 2em 2%;
@@ -371,9 +376,4 @@ kbd {
   .themes li {
     width: 33%;
   }
-}
-
-@media screen and (max-width: 50rem) {
-  body { margin: 3em 5%; }
-  .themes li { width: 25%; }
 }
