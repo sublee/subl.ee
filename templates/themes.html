@@ -46,7 +46,7 @@
     var _selectGuessedTheme = selectGuessedTheme;
     selectGuessedTheme = function() {
       var theme = _selectGuessedTheme();
-      var a = document.querySelector('.themes a[data-theme='+theme+']');
+      var a = document.querySelector('.themes a[data-theme="'+theme+'"]');
       themeSelected(a, theme);
     };
 
