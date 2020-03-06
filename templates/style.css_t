@@ -184,6 +184,10 @@ dd.note {
   margin-top: 0;
   font-size: 0.8rem;
   font-style: italic;
+  line-height: 1;
+}
+dd.note * {
+  line-height: inherit;
 }
 
 hr {
