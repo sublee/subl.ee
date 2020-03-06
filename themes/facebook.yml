@@ -1,38 +1,40 @@
 facebook:
   emblem:
     shape: ☲
-    colors: {0: '#3b5999'}
+    colors: {0: '#0076fb'}
   colors:
-    background: '#e9eaed'
-    text: '#141823'
-    title: '#1e2d4c'
-    blur: '#9197a3'
-    link: '#3b5998'
+    background: '#f0f2f5'
+    text: '#050505'
+    blur: '#65676b'
+    link: '#1876f2'
   css: |
     main > p, main > ul, main > dl {
       margin-left: -.8rem;
       margin-right: -.8rem;
       padding: .8rem;
-      border: 1px solid;
-      border-radius: 3px;
-      border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+
       background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 1px 2px rgba(0,0,0, 0.1);
     }
-    main > dl > dt:first-child { margin-top: 0 !important; }
+    dd:last-child {
+      margin-bottom: 0;
+    }
     hr { display: none; }
     .profile main > p, .profile main > ul, .profile main > dl {
       padding-top: .5rem;
       padding-bottom: .5rem;
     }
     .resume .emblem {
-      border: 1px solid rgba(0, 0, 0, .2);
-      border-radius: 2px;
+      border: 4px solid #fff;
       margin: 0;
-      padding: 4px;
       background:
         url(//gravatar.com/avatar/c55dd7c0a68acd97963da84a3175cc66?s=90)
         no-repeat center;
+
       background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 1px 2px rgba(0,0,0, 0.1);
     }
     .resume .emblem div { display: none; }
     .resume .emblem-wrap { padding-right: 6px; }
