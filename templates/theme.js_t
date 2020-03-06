@@ -162,7 +162,9 @@ function selectGuessedTheme() {
 selectGuessedTheme();
 
 // Load jQuery and init instant theme selection when the hash changed.
-window.onhashchange = function() {
+window.addEventListener('hashchange', function() {
+  window.removeEventListener('hashchange', arguments.callee);
+
   var done = false;
   var jQueryScript = document.createElement('script');
   jQueryScript.src = '//code.jquery.com/jquery-1.11.2.min.js';
@@ -175,12 +177,14 @@ window.onhashchange = function() {
       selectGuessedTheme();
     }
   };
+
   document.head.appendChild(jQueryScript);
-};
+});
 
 function initThemeSelection() {
   var $body = $(document.body);
   var $themeStyle = $('<style>').appendTo(document.head);
+
   // Override selectTheme() to re-draw the page.
   selectTheme = function(theme) {
     __theme__ = theme;
@@ -217,11 +221,12 @@ function initThemeSelection() {
     // <link> for theme is not required.
     $(themeLink).remove();
   }
-  window.onhashchange = selectGuessedTheme;
+
+  window.addEventListener('hashchange', selectGuessedTheme);
 }
 
 // Traverse themes with 'j' and 'k'.
-window.onkeypress = function(e) {
+window.addEventListener('keypress', function(e) {
   var i = __themes__.indexOf(__theme__);
   var theme = __theme__;
 
@@ -238,4 +243,4 @@ window.onkeypress = function(e) {
   } else {
     location.hash = '#theme=' + theme;
   }
-};
+});
