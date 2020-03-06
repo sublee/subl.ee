@@ -171,16 +171,17 @@ Open Source Experience
 [profiling]: https://github.com/what-studio/profiling
 [unity-profiler]: https://docs.unity3d.com/Manual/ProfilerWindow.html
 
-Others
-:   - [Tossi][] -- A utility for Korean allomorphic particles.
-    - [Click Default Group][click-default-group] -- Implicit default subcommand
-                                                    for CLI based on [Click][].
-    - [Flask-AutoIndex][] -- mod_autoindex for [Flask][].
-    - [SUBLEERUNKER][] -- A simple parody game of SUBERUNKER. Play it in your
-                          web browser.
-    - [Me2virus][] -- An XSS attack on a social media named [Me2day][]. When a
-                      user looks at an infected post, a new infected post was
-                      written on the user's wall.
+### Others
+
+- [Tossi][] -- A utility for Korean allomorphic particles.
+- [Click Default Group][click-default-group] -- Implicit default subcommand
+                                                for CLI based on [Click][].
+- [Flask-AutoIndex][] -- mod_autoindex for [Flask][].
+- [SUBLEERUNKER][] -- A simple parody game of SUBERUNKER. Play it in your
+                      web browser.
+- [Me2virus][] -- An XSS attack on a social media named [Me2day][]. When a
+                  user looks at an infected post, a new infected post was
+                  written on the user's wall.
 
 [tossi]: https://github.com/what-studio/tossi
 [click-default-group]: https://github.com/click-contrib/click-default-group
@@ -191,18 +192,19 @@ Others
 [me2virus]: https://github.com/sublee/me2virus
 [me2day]: https://en.wikipedia.org/wiki/Me2day
 
-Contributions
-:   - For [PyTorch][],
-      fixed potential GPU memory violation ([#27371][pytorch#27371]);
-      deprecated inconsistent API ([#21006][pytorch#21006],
-      [#25985][pytorch#25985]); discussed a counterintuitive behavior
-      of the autograd engine ([#18568][pytorch#18568]).
-    - For [ZeroMQ][],
-      discussed a PUB socket crash ([#2942][zeromq#2942]).
-    - For [Flask][],
-      fixed a bug to generate URL with a subdomain ([#108][flask#108]).
-    - For [jQuery 1.4.3][jquery-143],
-      restored a missing part of the content negotiation header for Ajax.
+### Contributions
+
+- For [PyTorch][],
+  fixed potential GPU memory violation ([#27371][pytorch#27371]); deprecated
+  inconsistent API ([#21006][pytorch#21006], [#25985][pytorch#25985]);
+  discussed a counterintuitive behavior of the autograd engine
+  ([#18568][pytorch#18568]).
+- For [ZeroMQ][],
+  discussed a PUB socket crash ([#2942][zeromq#2942]).
+- For [Flask][],
+  fixed a bug to generate URL with a subdomain ([#108][flask#108]).
+- For [jQuery 1.4.3][jquery-143],
+  restored a missing part of the content negotiation header for Ajax.
 
 [pytorch]:       https://pytorch.org/
 [pytorch#27371]: https://github.com/pytorch/pytorch/pull/27371
