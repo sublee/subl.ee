@@ -23,39 +23,33 @@
     {% endfor %}
   </ul>
   <script>
-    // Build the hash to anchor map.
-    var anchors = {}
-    var as = document.querySelectorAll('.themes a');
-    for (var i = 0; i < as.length; ++i) {
-      var a = as[i];
-      var theme = a.getAttribute('data-theme');
-      anchors[theme] = a;
-    }
     // A callback function for theme selectors.
     function themeSelected(a, theme) {
       if (/selected/.exec(a.getAttribute('class'))) {
         return;
       }
+
       theme = theme || a.getAttribute('data-theme');
       document.title = {{ title|tojson }} + ': ' + theme;
+
       var prevA = arguments.callee.a;
       if (prevA) {
-        var href = '#theme=' + prevA.getAttribute('data-theme');
-        prevA.setAttribute('href', href);
         prevA.setAttribute('class', '');
       }
-      var url_root = {{ url_for('index')|tojson }};
-      a.setAttribute('href', url_root + '?theme=' + theme);
+
       a.setAttribute('class', 'selected');
       arguments.callee.a = a;
     }
+
     // selectGuessedTheme() is called at onhashchange.  It should call
     // themeSelected() also.
     var _selectGuessedTheme = selectGuessedTheme;
     selectGuessedTheme = function() {
       var theme = _selectGuessedTheme();
-      themeSelected(anchors[theme], theme);
+      var a = document.querySelector('.themes a[data-theme='+theme+']');
+      themeSelected(a, theme);
     };
+
     // If onhashchange event isn't supported, fallback to anchor click event.
     if (!('onhashchange' in window)) {
       function anchorClicked() {
@@ -68,7 +62,8 @@
         a.onclick = anchorClicked;
       }
     }
+
     // Callback of the initial theme.
-    themeSelected(anchors[__theme__], __theme__);
+    selectGuessedTheme();
   </script>
 {% endblock %}
