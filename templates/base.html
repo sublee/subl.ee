@@ -49,20 +49,26 @@
   {% block header %}
     <header>
       <div class="emblem-wrap">
-        <div class="emblem">
-          <div class="emblem-left">
-            <i class="emblem-top"></i>
-            <i class="emblem-bottom"></i>
+        {% if self.class() != 'index' %}
+        <a href="{{ url_for('index') }}">
+        {% endif %}
+          <div class="emblem">
+            <div class="emblem-left">
+              <i class="emblem-top"></i>
+              <i class="emblem-bottom"></i>
+            </div>
+            <div class="emblem-middle">
+              <i class="emblem-top"></i>
+              <i class="emblem-bottom"></i>
+            </div>
+            <div class="emblem-right">
+              <i class="emblem-top"></i>
+              <i class="emblem-bottom"></i>
+            </div>
           </div>
-          <div class="emblem-middle">
-            <i class="emblem-top"></i>
-            <i class="emblem-bottom"></i>
-          </div>
-          <div class="emblem-right">
-            <i class="emblem-top"></i>
-            <i class="emblem-bottom"></i>
-          </div>
-        </div>
+        {% if self.class() != 'index' %}
+        </a>
+        {% endif %}
       </div>
     </header>
   {% endblock %}
