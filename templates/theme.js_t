@@ -12,7 +12,7 @@ function getThemeURL(theme) {
 }
 
 function parseThemeURL(url) {
-  return /style-([^.]+)\.css$/.exec(url)[1];
+  return /style-(.+)\.css$/.exec(url)[1];
 }
 
 function isThemeLoaded() {
