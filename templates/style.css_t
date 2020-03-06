@@ -84,7 +84,7 @@ footer {
   color: {{ colors.blur }};
 }
 
-h1, h2, h3, h4, h5, h6, p, ul, ol, dl, hr, pre {
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dd, hr, pre {
   margin-bottom: 1rem;
 }
 
@@ -138,7 +138,6 @@ ul li:before {
 
 dd {
   margin-left: 0.8rem;
-  margin-bottom: 1rem;
 }
 dd ul, dd ol {
   margin-left: -0.8rem;
@@ -151,7 +150,7 @@ dd.attr, dd.note {
 }
 
 dt, dd p, dd ul, dd ol, dd dl, dd hr, dt.label {
-  margin-top: 0.5rem;
+  margin-top: 0.6rem;
   margin-bottom: 0;
 }
 
