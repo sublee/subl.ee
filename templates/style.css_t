@@ -184,7 +184,7 @@ dd.note * {
 
 hr {
   margin: 1rem 0;
-  height: 0.1rem;
+  height: 1px;
   background-color: {{ rgba(colors.blur, 0.1) }};
 }
 
