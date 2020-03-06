@@ -167,7 +167,8 @@ window.addEventListener('hashchange', function() {
 
   var done = false;
   var jQueryScript = document.createElement('script');
-  jQueryScript.src = '//code.jquery.com/jquery-1.11.2.min.js';
+  jQueryScript.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
+
   jQueryScript.onload = jQueryScript.onreadystatechange = function() {
     var state = this.readyState;
     if (!done && (!state || /loaded|complete/.exec(state))) {
