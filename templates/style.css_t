@@ -136,13 +136,6 @@ ul li:before {
   color: {{ colors.blur }};
 }
 
-/* IE7 can't handle :before pseudo-element */
-*:first-child+html ul li {
-  list-style: disc;
-  margin-left: 0.8em;
-  padding-left: 0;
-}
-
 dd {
   margin-left: 0.8rem;
   margin-bottom: 1rem;

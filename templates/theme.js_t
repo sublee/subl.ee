@@ -197,14 +197,7 @@ function initThemeSelection() {
     isThemeLoaded = function() { return false; };
 
     $.get(getThemeURL(theme), function(css) {
-      try {
-        $themeStyle.text(css);
-      } catch (e) {
-        // IE8 throws SCRIPT65535.
-        location.href = location.href;
-        location.reload();
-        return;
-      }
+      $themeStyle.text(css);
 
       // Re-draw the page after loading Web fonts.
       function redraw() {
