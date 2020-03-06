@@ -84,7 +84,7 @@ footer {
   color: {{ colors.blur }};
 }
 
-h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dd, hr, pre {
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dt, dd, hr, pre {
   margin-bottom: 1rem;
 }
 
@@ -105,10 +105,6 @@ h1, h2 {
   {% endif %}
   font-weight: {{ title.weight }};
   color: {{ colors.title }};
-}
-
-h3 {
-  font-weight: {{ text.weight }};
 }
 
 h1:target, h2:target, h3:target, h4:target, h5:target, h6:target {
@@ -140,6 +136,10 @@ ul li:before {
   color: {{ colors.blur }};
 }
 
+dt+dt, dt+dd.attr, dt+dd.note {
+  margin-top: -1rem;
+}
+
 dd {
   margin-left: 0.8rem;
 }
@@ -150,26 +150,24 @@ dd.attr, dd.note {
   margin-left: 0;
 }
 
-dt, dd.attr,
+dd.attr,
 dd p, dd ul, dd ol, dd dl, dd dd {
   margin-bottom: 0.6rem;
 }
-dt+dt, dt+dd.attr, dt+dd.note {
-  margin-top: -0.6rem;
-}
 
-dt.label {
+dt.label, dd.note {
   font-size: 0.8em;
-  color: {{ colors.blur }};
-  line-height: 1;
-}
-dd.note {
-  font-size: 0.8em;
-  font-style: italic;
   line-height: 1;
 }
 dd.label *, dd.note * {
   line-height: inherit;
+}
+
+dt.label {
+  color: {{ colors.blur }};
+}
+dd.note {
+  font-style: italic;
 }
 
 hr {
