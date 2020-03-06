@@ -55,9 +55,8 @@ Software Engineer {: .label }
 
 :   Develop an AutoML system.
 
-    Developed and maintaining [torchgpipe] reproducing [GPipe][] in PyTorch,
-    which is to focus on parallel and distributed deep learning to boost
-    training performance.
+    Reproduced [GPipe][] in PyTorch to boost training performance of large
+    deep learning models. This project was published as [torchgpipe][].
 
 [kakaobrain]: https://kakaobrain.com/
 [gpipe]: https://arxiv.org/abs/1811.06965
