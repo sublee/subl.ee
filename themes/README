@@ -12,7 +12,7 @@ Spec:
   - background (default: #fff)
   - text (default: #000)
   - title (default: colors.text)
-  - title_index_only (default: colors.text)
+  - title_index (default: colors.text)
   - blur (default: colors.text)
   - link (default: #00f)
   - vlink (default: colors.link)
@@ -51,3 +51,25 @@ Emblem plate numbers:
   |   | | 5 | |   |   | 4 | | 5 | | 6 |   | 0 | | 0 | | 0 |
   |   | |   | |   |   |   | |   | |   |   |   | |   | |   |
   +---+ +---+ +---+   +---+ +---+ +---+   +---+ +---+ +---+
+
+Template:
+
+  NAME:
+    emblem:
+      shape: ☲
+      colors: {0: '#f00', 5: '#ff0'}
+
+    colors:
+      background: '#fff'
+      text: '#000'
+      title: '#f00'
+      title_index: '#000'
+      blur: '#999'
+      link: '#00f'
+      vlink: '#f0f'
+
+    text: {font: Hind, generic: sans-serif}
+    title: {font: Hind, generic: sans-serif}
+
+    css: |
+        /* Custom CSS */
