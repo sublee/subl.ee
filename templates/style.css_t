@@ -151,7 +151,7 @@ dd.attr, dd.note {
 }
 
 dt, dd p, dd ul, dd ol, dd dl, dd hr, dt.label {
-  margin-top: 0.6rem;
+  margin-top: 0.5rem;
   margin-bottom: 0;
 }
 
@@ -184,7 +184,7 @@ dd.note * {
 }
 
 hr {
-  margin-top: 1.5rem;
+  margin: 1rem 0;
   height: 0.1rem;
   background-color: {{ rgba(colors.blur, 0.1) }};
 }
