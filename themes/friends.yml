@@ -45,7 +45,7 @@ yeonghoey:
   text: {font: Roboto Condensed}
   title: {weight: 600}
   css: |
-    h2 { border-bottom: 2px solid #212121; margin-bottom: 0.3rem !important; }
+    h2 { border-bottom: 2px solid #212121; margin-bottom: 0.6rem !important; }
     hr { display: none; }
 
 ipari:
