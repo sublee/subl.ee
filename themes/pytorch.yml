@@ -12,6 +12,6 @@ pytorch:
     #open-source-experience + dl dt {
       background: #f3f4f7;
       padding: 0.2rem 0.5rem;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.8rem;
       border-left: 3px solid #ee4c2c;
     }
