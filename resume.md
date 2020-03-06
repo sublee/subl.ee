@@ -64,14 +64,12 @@ Software Engineer {: .label }
 
 Game Server Engineer & Architect {: .label }
 [Nexon][], 2011--2018
-:   Developed and launched <cite>Durango</cite>, <cite>[KartRider][] Dash &
-    Coin Rush</cite>.
+:   Developed and launched Durango, [KartRider][] Dash & Coin Rush.
     {: .note }
 
-:   Designed and developed cloud-based distributed game servers for
-    <cite>Durango</cite> (MMORPG) and <cite>[KartRider][] Dash & Coin
-    Rush</cite> (online racing games) respectively. <cite>Durango</cite>
-    achieved up to 70k concurrent users per game world.
+:   Designed and developed cloud-based distributed game servers for Durango
+    (MMORPG) and [KartRider][] Dash & Coin Rush (online racing games)
+    respectively. Durango achieved up to 70k concurrent users per game world.
 
     Developed an internationalization and localization system focused on
     linguistic features of Korean and Indo-European languages.
@@ -87,7 +85,7 @@ Game Server Engineer & Architect {: .label }
 
 Web Developer {: .label }
 [Npine][], 2008--2011
-:   Supplies stock images for business on <cite>[Iclickart][]</cite>.
+:   Supplies stock images for business on [Iclickart][].
     {: .note }
 
 :   Developed and maintained web services from scratch.
@@ -99,10 +97,10 @@ Web Developer {: .label }
 
 Front-end Web Developer {: .label }
 [Lunant][], 2008--2011
-:   Served a social media named <cite>VLAAH</cite>.
+:   Served a social media named VLAAH.
     {: .note }
 
-:   Designed and implemented the UI/UX for <cite>VLAAH</cite>.
+:   Designed and implemented the UI/UX for VLAAH.
 
     Developed [jDoctest][] which is an open source JavaScript testing framework
     inspired by Python's doctest.
