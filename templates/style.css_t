@@ -296,6 +296,11 @@ kbd {
 
 .error h1 {
   white-space: normal;
+  margin-bottom: 0;
+}
+
+.error p {
+  font-size: 1.5em;
 }
 
 .error footer {

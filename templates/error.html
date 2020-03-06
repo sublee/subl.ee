@@ -4,5 +4,10 @@
 {% block class %}error{% endblock %}
 
 {% block main %}
-  <h1>{{ error }}</h1>
+  {% if error.code and error.name and error.description %}
+    <h1>{{ error.code }} {{ error.name }}</h1>
+    <p>{{ error.description }}</p>
+  {% else %}
+    <p>{{ error }}</p>
+  {% endif %}
 {% endblock %}
