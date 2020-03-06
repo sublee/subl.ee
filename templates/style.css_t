@@ -55,11 +55,16 @@ html {
 body {
   position: relative;
   max-width: 50rem;
+  margin: 3em 10%;
+  transition: margin 0.2s;
+
   font-family: '{{ text.font }}', {{ text.generic }};
   font-weight: {{ text.weight }};
   color: {{ colors.text }};
+
   background-color: {{ colors.background }};
   background-repeat: no-repeat;
+
   white-space: normal;
   -webkit-font-smoothing: antialiased;
 }

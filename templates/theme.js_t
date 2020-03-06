@@ -102,7 +102,7 @@ function keepThemeOnLinks() {
   var $anchors = document.querySelectorAll('a[href]');
 
   if ($anchors.length === 0) {
-    window.onload = arguments.callee;
+    window.addEventListener('load', arguments.callee);
   }
 
   for (var i = 0; i < $anchors.length; ++i) {

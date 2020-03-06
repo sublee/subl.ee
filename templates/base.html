@@ -10,7 +10,6 @@
 
   <link rel="icon" type="image/icon" sizes="16x16 32x32 48x48 128x128 256x256" href="{{ url_for('favicon') }}" />
 
-  <style media="screen"> body { margin: 3em 10%; transition: margin 0.2s; } </style>
   <link rel="stylesheet" media="screen" href="{{ url_for('css', theme=theme) }}" class="theme" />
   <link rel="stylesheet" media="print" href="{{ url_for('print_css') }}" />
 
@@ -46,6 +45,13 @@
   {% block head %}{% endblock %}
 </head>
 <body>
+  <script>
+    document.body.setAttribute('style', 'transition: none !important');
+    window.addEventListener('load', function() {
+      document.body.removeAttribute('style');
+    });
+  </script>
+
   {% block header %}
     <header>
       <div class="emblem-wrap">
