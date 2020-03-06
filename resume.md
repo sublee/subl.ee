@@ -50,10 +50,10 @@ Work Experience
 
 Software Engineer {: .label }
 [Kakao Brain][kakaobrain], 2018--
-:   A deep learning artificial intelligence laboratory in Kakao.
+:   An AI laboratory in Kakao.
     {: .note }
 
-:   Developing an AutoML system.
+:   Develop an AutoML system.
 
     Developed and maintaining [torchgpipe] reproducing [GPipe][] in PyTorch,
     which is to focus on parallel and distributed deep learning to boost
@@ -63,33 +63,24 @@ Software Engineer {: .label }
 [gpipe]: https://arxiv.org/abs/1811.06965
 [torchgpipe]: https://torchgpipe.readthedocs.io/
 
-Game Server Architect {: .label }
-What! Studio in [Nexon][], 2013--2018
-:   Developed and launched <cite>Durango</cite>, an open world MMORPG.
+Game Server Engineer & Architect {: .label }
+[Nexon][], 2011--2018
+:   Developed and launched <cite>Durango</cite>, <cite>[KartRider][] Dash &
+    Coin Rush</cite>.
     {: .note }
 
-:   Designed and implemented the architecture of a distributed MMORPG server.
-    The server achieved up to 70k concurrent users per game world.
+:   Designed and developed cloud-based distributed game servers for
+    <cite>Durango</cite> (MMORPG) and <cite>[KartRider][] Dash & Coin
+    Rush</cite> (online racing games) respectively. <cite>Durango</cite>
+    achieved up to 70k concurrent users per game world.
 
-    Built an internationalization and localization system focused on
-    linguistics features of Korean and Indo-European languages.
-
-    Led the server development team including up to 15 engineers.
-
-[nexon]: https://company.nexon.com/eng
-
-Game Development Engineer {: .label }
-Team Lupin in [Nexon][], 2011--2013
-:   Developed and launched multiplayer racing games: <cite>[KartRider][] Dash &
-    Coin Rush</cite>
-    {: .note }
-
-:   Designed and implemented a distributed game server architecture for
-    synchronous multiplayer racing games.
+    Developed an internationalization and localization system focused on
+    linguistic features of Korean and Indo-European languages.
 
     Researched rating systems such as Elo, Glicko, and
-    [TrueSkill][trueskill-tm] to develop a matchmaker for both 4v4 and
-    free-for-all games.
+    [TrueSkill][trueskill-tm] to develop a racing game matchmaker.
+
+    Led the server development team including up to 15 engineers.
 
 [nexon]: https://company.nexon.com/eng
 [kartrider]: http://kart.nexon.com/
@@ -100,25 +91,22 @@ Web Developer {: .label }
 :   Supplies stock images for business on <cite>[Iclickart][]</cite>.
     {: .note }
 
-:   Developed web services from the base framework to the application.
+:   Developed and maintained web services from scratch.
 
-    Maintained physical Linux machines in a data center.
-
-    Led the development team including three web developers.
+    Maintained on-premise Linux servers.
 
 [npine]: http://en.npine.com/
 [iclickart]: http://iclickart.co.kr/
 
 Front-end Web Developer {: .label }
 [Lunant][], 2008--2011
-:   Served <cite>VLAAH</cite>, social media for discovering, sharing, and
-    utilizing opinions.
+:   Served a social media named <cite>VLAAH</cite>.
     {: .note }
 
 :   Designed and implemented the UI/UX for <cite>VLAAH</cite>.
 
-    Developed an open source project [jDoctest][], which is a JavaScript
-    testing framework using example code in documentation comments.
+    Developed [jDoctest][] which is an open source JavaScript testing framework
+    inspired by Python's doctest.
 
 [lunant]: http://lunant.net/
 [jdoctest]: https://lunant.github.com/jdoctest
@@ -130,7 +118,7 @@ Open Source Experience
 :   A GPipe implementation in PyTorch.
     {: .note }
 
-:   Developed [GPipe][] in PyTorch. GPipe is a scalable pipeline parallelism
+:   Implemented [GPipe][] in PyTorch. GPipe is a scalable pipeline parallelism
     library for training of a giant model. The story behind this project can be
     found on [Kakao Brain Blog<sup>ko</sup>][torchgpipe-blog].
 
@@ -151,10 +139,10 @@ Open Source Experience
     productivity.
 
     Designed and implemented the web service and RESTful API. Many professional
-    Korean translators usually visit here to translate undocumented proper
-    nouns. For example, Ryu Gwang a technical translator introduced this web
-    service in [his posting<sup>ko</sup>][ryugwang]. Netflix also refers to it
-    in [the Korean timed text style guide][netflix-style].
+    Korean translators habitually visit here to translate undocumented proper
+    nouns. For example, Ryu Gwang, who is a technical translator, introduced
+    Hangulize in [his posting<sup>ko</sup>][ryugwang]. Netflix also refers to
+    it in [the Korean timed text style guide][netflix-style].
 
 [hangulize]: https://hangulize.org/
 [hangulize-idea]: http://iceager.egloos.com/2610028
@@ -166,8 +154,8 @@ Open Source Experience
     {: .note }
 
 :   Implemented [TrueSkill™][trueskill-tm], which is a rating algorithm for
-    Xbox Live, in Python with a handy interface to learn and popularize the
-    algorithm. This project was introduced in [PyData Berlin 2019][pydata2019].
+    Xbox Live, in Python with a handy interface. This project was introduced in
+    [PyData Berlin 2019][pydata2019].
 
 [trueskill]: https://trueskill.org/
 [trueskill-tm]: http://research.microsoft.com/en-us/projects/trueskill/
@@ -177,8 +165,8 @@ Open Source Experience
 :   An interactive profiler for Python inspired by the Unity3D profiler.
     {: .note }
 
-:   Developed a tracing based and statistical profiler for Python with a handy
-    interactive TUI inspired by [the Unity profiler][unity-profiler].
+:   Developed a Python profiler with an interactive TUI inspired by [the Unity
+    profiler][unity-profiler].
 
     On GitHub, this project has been starred by 2.9k people. Also, it was the
     3rd daily trending repository on Sep 22, 2014.
@@ -193,8 +181,8 @@ Others
     - [Flask-AutoIndex][] -- mod_autoindex for [Flask][].
     - [SUBLEERUNKER][] -- A simple parody game of SUBERUNKER. Play it in your
                           web browser.
-    - [Me2virus][] -- An XSS attack on [Me2day][], social media. When a user
-                      looks at an infected post, a new infected post was
+    - [Me2virus][] -- An XSS attack on a social media named [Me2day][]. When a
+                      user looks at an infected post, a new infected post was
                       written on the user's wall.
 
 [tossi]: https://github.com/what-studio/tossi
@@ -216,7 +204,7 @@ Contributions
       discussed a PUB socket crash ([#2942][zeromq#2942]).
     - For [Flask][],
       fixed a bug to generate URL with a subdomain ([#108][flask#108]).
-    - For [jQuery 1.4.3][jquery-143] --
+    - For [jQuery 1.4.3][jquery-143],
       restored a missing part of the content negotiation header for Ajax.
 
 [pytorch]:       https://pytorch.org/
