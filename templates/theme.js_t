@@ -200,11 +200,19 @@ function initThemeSelection() {
         location.reload();
         return;
       }
-      setTimeout(function() {
-        // Re-draw the page.
+
+      // Re-draw the page after loading Web fonts.
+      function redraw() {
         $body.fadeIn();
         isThemeLoaded = function() { return true; };
-      }, 10);
+      }
+
+      if (document.fonts === undefined) {
+        setTimeout(redraw, 10);
+      } else {
+        document.fonts.ready.then(redraw);
+      }
+
     });
     // <link> for theme is not required.
     $(themeLink).remove();
