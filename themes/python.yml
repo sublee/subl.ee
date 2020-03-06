@@ -9,7 +9,8 @@ python:
     vlink: '#6363bb'
   css: |
     .resume main > p, .resume main > ul {
-      background: #eeffcc;
+      background: #efc;
       border: 1px solid #ac9;
-      padding: 0.2em 0.5em;
+      border-radius: 3px;
+      padding: 0.5rem;
     }
