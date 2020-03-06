@@ -170,14 +170,24 @@ window.addEventListener('hashchange', function() {
   jQueryScript.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
 
   jQueryScript.onload = jQueryScript.onreadystatechange = function() {
-    var state = this.readyState;
-    if (!done && (!state || /loaded|complete/.exec(state))) {
-      this.onload = this.onreadystatechange = null;
-      done = true;
-      initThemeSelection();
-      selectGuessedTheme();
+    if (done) {
+      return;
     }
+    if (this.readyState && !/loaded|complete/.exec(this.readyState)) {
+      return;
+    }
+
+    done = true;
+    this.onload = this.onreadystatechange = null;
+
+    initThemeSelection();
+    selectGuessedTheme();
+
+    document.body.style.visibility = '';
+    document.body.style.background = '';
   };
+  document.body.style.visibility = 'hidden';
+  document.body.style.background = '#fff';
 
   document.head.appendChild(jQueryScript);
 });
@@ -194,6 +204,8 @@ function initThemeSelection() {
     keepThemeOnLinks();
 
     $body.hide();
+    $body.css('background', '#fff');
+
     isThemeLoaded = function() { return false; };
 
     $.get(getThemeURL(theme), function(css) {
@@ -202,6 +214,8 @@ function initThemeSelection() {
       // Re-draw the page after loading Web fonts.
       function redraw() {
         $body.fadeIn();
+        $body.css('background', '');
+
         isThemeLoaded = function() { return true; };
       }
 
