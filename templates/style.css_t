@@ -55,7 +55,7 @@ html {
 body {
   position: relative;
   max-width: 50rem;
-  margin: 3em 10%;
+  margin: 3rem 10%;
   transition: margin 0.2s;
 
   font-family: '{{ text.font }}', {{ text.generic }};
@@ -337,13 +337,14 @@ kbd {
 /* Responsive Layout */
 
 @media screen and (max-width: 50rem) {
-  body { margin: 3em 5%; }
+  /* 50rem is wider than 550px. */
+  body { margin: 3rem 5%; }
   .themes li { width: 25%; }
 }
 
 @media screen and (max-width: 550px) {
   body {
-    margin: 2em 2%;
+    margin: 2rem 10px;
     width: auto;
   }
 
@@ -356,22 +357,20 @@ kbd {
   }
 
   .index body {
-    margin-top: 2em;
+    margin-top: 2rem;
     white-space: normal;
   }
-
   .index main {
     font-size: 1em;
   }
 
   .resume body {
-    margin-top: 1em;
+    margin-top: 1rem;
   }
 
   .resume .emblem-wrap {
     width: 45px;
   }
-
   .resume .emblem {
     margin: 0;
     transform: scale(0.5);
