@@ -202,7 +202,13 @@ function initThemeSelection() {
     $body.addClass('loading');
     isThemeLoaded = function() { return false; };
 
-    $.get(getThemeURL(theme), function(css) {
+    function onCSS(css) {
+      // Load the CSS after the loading animation.
+      if (Number($('main').css('opacity')) !== 0) {
+        setTimeout(function() { onCSS(css); }, 100);
+        return;
+      }
+
       // <link> for theme is not required.
       $(themeLink).remove();
 
@@ -211,9 +217,7 @@ function initThemeSelection() {
 
       // Re-draw the page after loading Web fonts.
       function redraw() {
-        setTimeout(function() {
-          $body.removeClass('loading');
-        }, 100);
+        setTimeout(function() { $body.removeClass('loading'); }, 100);
         isThemeLoaded = function() { return true; };
       }
 
@@ -222,8 +226,9 @@ function initThemeSelection() {
       } else {
         document.fonts.ready.then(redraw);
       }
+    }
 
-    });
+    $.get(getThemeURL(theme), onCSS);
   }
 
   window.addEventListener('hashchange', selectGuessedTheme);
