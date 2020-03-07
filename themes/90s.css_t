@@ -112,12 +112,8 @@ hr {
   margin: 2rem 0;
 }
 @keyframes rainbow {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 100% 0;
-  }
+  0%   { background-position: 0 0; }
+  100% { background-position: 100% 0; }
 }
 
 footer::before {
