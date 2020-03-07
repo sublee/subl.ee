@@ -55,7 +55,6 @@ html {
 body {
   max-width: 50rem;
   margin: 3rem 10%;
-  transition: margin 0.2s;
 
   font-family: '{{ text.font }}', {{ text.generic }};
   font-weight: {{ text.weight }};
@@ -66,6 +65,8 @@ body {
 
   white-space: normal;
   -webkit-font-smoothing: antialiased;
+
+  transition: margin 0.2s, background-color 0.2s;
 }
 
 html, body {
@@ -87,7 +88,7 @@ footer {
 /* Theme Loading */
 
 main, footer {
-  transition: opacity 0.2s;
+  transition: opacity 0.3s;
 }
 
 body.loading main, body.loading footer {
