@@ -381,3 +381,9 @@ kbd {
     width: 33%;
   }
 }
+
+@media screen and (max-width: 400px) {
+  .themes li {
+    width: 50%;
+  }
+}
