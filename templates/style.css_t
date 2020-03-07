@@ -148,6 +148,36 @@ ul li:before {
   color: {{ colors.blur }};
 }
 
+hr {
+  margin: 1rem 0;
+  height: 1px;
+  background-color: {{ rgba(colors.blur, 0.1) }};
+}
+
+sup, sub {
+  font-size: 0.5em;
+}
+
+abbr, acronym {
+  cursor: help;
+}
+
+kbd {
+  display: inline-block;
+  background: {{ rgba(colors.blur, 0.1) }};
+  border-radius: 3px;
+  box-shadow: 0 1px 2px {{ colors.blur }};
+
+  font-family: inherit;
+  font-size: 0.8em;
+
+  padding: 0.2rem 0.4rem;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+/* Definitions */
+
 dt+dt, dt+dd.attr, dt+dd.note {
   margin-top: -1rem;
 }
@@ -180,38 +210,6 @@ dt.label {
 }
 dd.note {
   font-style: italic;
-}
-
-hr {
-  margin: 1rem 0;
-  height: 1px;
-  background-color: {{ rgba(colors.blur, 0.1) }};
-}
-
-sup, sub {
-  font-size: 0.5em;
-}
-
-abbr, acronym {
-  cursor: help;
-}
-
-i {
-  color: {{ colors.title }};
-}
-
-kbd {
-  display: inline-block;
-  background: {{ rgba(colors.blur, 0.1) }};
-  border-radius: 3px;
-  box-shadow: 0 1px 2px {{ colors.blur }};
-
-  font-family: inherit;
-  font-size: 0.8em;
-
-  padding: 0.2rem 0.4rem;
-  line-height: 1;
-  vertical-align: middle;
 }
 
 /* Emblem */
