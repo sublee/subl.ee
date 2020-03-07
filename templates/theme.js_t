@@ -182,14 +182,10 @@ window.addEventListener('hashchange', function() {
 
     initThemeSelection();
     selectGuessedTheme();
-
-    document.body.style.visibility = '';
-    document.body.style.background = '';
   };
-  document.body.style.visibility = 'hidden';
-  document.body.style.background = '#fff';
 
   document.head.appendChild(jQueryScript);
+  document.body.setAttribute('class', 'loading');
 });
 
 function initThemeSelection() {
@@ -203,19 +199,21 @@ function initThemeSelection() {
     updateFavicon();
     keepThemeOnLinks();
 
-    $body.hide();
-    $body.css('background', '#fff');
-
+    $body.addClass('loading');
     isThemeLoaded = function() { return false; };
 
     $.get(getThemeURL(theme), function(css) {
+      // <link> for theme is not required.
+      $(themeLink).remove();
+
+      // Apply the CSS as <style>.
       $themeStyle.text(css);
 
       // Re-draw the page after loading Web fonts.
       function redraw() {
-        $body.fadeIn();
-        $body.css('background', '');
-
+        setTimeout(function() {
+          $body.removeClass('loading');
+        }, 100);
         isThemeLoaded = function() { return true; };
       }
 
@@ -226,8 +224,6 @@ function initThemeSelection() {
       }
 
     });
-    // <link> for theme is not required.
-    $(themeLink).remove();
   }
 
   window.addEventListener('hashchange', selectGuessedTheme);

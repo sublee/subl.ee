@@ -34,11 +34,12 @@
 
   {% block head %}{% endblock %}
 </head>
-<body>
+<body style="transition: none !important">
   <script>
-    document.body.setAttribute('style', 'transition: none !important');
     window.addEventListener('load', function() {
-      document.body.removeAttribute('style');
+      setTimeout(function() {
+        document.body.style.transition = '';
+      }, 500);
     });
   </script>
 
