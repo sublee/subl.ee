@@ -219,6 +219,10 @@ dd.note {
 {% set emblem_plate_margin = 2 %}
 {% set emblem_width = emblem_boundary - 2 * emblem_plate_margin %}
 
+.emblem-wrap {
+  display: inline-block;
+}
+
 .emblem {
   position: relative;
   display: block;
