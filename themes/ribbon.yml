@@ -14,7 +14,10 @@ ribbon:
     .emblem-middle .emblem-top, .emblem-right i {
       background-image: linear-gradient(#fc0, #fb0);
     }
-    h1:before {
+    h1 {
+      position: relative;
+    }
+    h1::before {
       position: absolute;
       left: -1em;
       content: '\1f397';
