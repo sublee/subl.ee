@@ -211,13 +211,9 @@ kbd {
 {% set emblem_plate_margin = 2 %}
 {% set emblem_width = emblem_boundary - 2 * emblem_plate_margin %}
 
-.emblem-wrap a {
-  display: block;
-  width: {{ emblem_boundary }}px;
-}
-
 .emblem {
   position: relative;
+  display: block;
   width: {{ emblem_boundary }}px;
   height: {{ emblem_boundary }}px;
   margin: -3px;
