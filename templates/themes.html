@@ -50,19 +50,6 @@
       themeSelected(a, theme);
     };
 
-    // If onhashchange event isn't supported, fallback to anchor click event.
-    if (!('onhashchange' in window)) {
-      function anchorClicked() {
-        location.href = a.attr('href');
-        themeSelected(a);
-        return false;
-      }
-      for (var i = 0; i < as.length; ++i) {
-        var a = as[i];
-        a.onclick = anchorClicked;
-      }
-    }
-
     // Callback of the initial theme.
     selectGuessedTheme();
   </script>
