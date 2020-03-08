@@ -64,27 +64,19 @@ function generateFavicon(shape, colors) {
 }
 
 function updateFavicon() {
-  try {
-    var emblem;
-    switch (__theme__) {
-    {% for theme, style in themes.items() %}
-      case {{ theme|tojson }}:
-        emblem = {{ style['emblem']|tojson }}
-        break;
-    {% endfor %}
-    }
-
-    var favicon = generateFavicon(emblem.shape, emblem.colors);
-
-    var faviconLink = document.querySelector('link[rel="icon"]');
-    faviconLink.href = favicon.toDataURL('image/icon');
-  } catch (err) {
-    if (err == 'retry') {
-      setTimeout(arguments.callee, 100);
-    } else {
-      throw err;
-    }
+  var emblem;
+  switch (__theme__) {
+  {% for theme, style in themes.items() %}
+    case {{ theme|tojson }}:
+      emblem = {{ style['emblem']|tojson }}
+      break;
+  {% endfor %}
   }
+
+  var favicon = generateFavicon(emblem.shape, emblem.colors);
+
+  var faviconLink = document.querySelector('link[rel="icon"]');
+  faviconLink.href = favicon.toDataURL('image/icon');
 }
 
 // -----------------------------------------------------------------------------
