@@ -270,7 +270,7 @@ def theme_css(theme: str) -> Tuple[str, int, Dict[str, str]]:
             buf.write(render_template('theme.css_t', **dark_style))
             buf.write('}')
 
-        buf.write('.theme-name { content: "%s"; }' % theme)
+        buf.write('body::before { display: none; content: "%s"; }' % theme)
 
         css = buf.getvalue()
 
