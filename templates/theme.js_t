@@ -155,18 +155,19 @@ function initDynamicThemeLoader() {
     document.head.appendChild(themeLoaderLink);
   }
 
-  // Ensure <div class="theme-spy" /> which detects a loaded theme.
-  var themeSpy = document.querySelector('.theme-spy');
-  if (themeSpy === null) {
-    themeSpy = document.createElement('div');
-    themeSpy.classList.add('theme-spy');
-    document.body.appendChild(themeSpy);
+  // Ensure <div class="theme-name" /> which detects a loaded theme.
+  var themeName = document.querySelector('.theme-name');
+  if (themeName === null) {
+    themeName = document.createElement('div');
+    themeName.classList.add('theme-name');
+    themeName.style.display = 'none';
+    document.body.appendChild(themeName);
   }
 
   return {
     themeLink: themeLink,
     themeLoaderLink: themeLoaderLink,
-    themeSpy: themeSpy
+    themeName: themeName
   };
 }
 
@@ -181,7 +182,7 @@ function loadThemeDynamically(theme) {
 
   var $themeLink = elems.themeLink;
   var $themeLoaderLink = elems.themeLoaderLink;
-  var $themeSpy = elems.themeSpy;
+  var $themeName = elems.themeName;
 
   var $body = document.body;
   var $footer = document.querySelector('footer');
@@ -197,7 +198,7 @@ function loadThemeDynamically(theme) {
     // 2. Load CSS when contents are hidden.
     $themeLoaderLink.setAttribute('href', getThemeURL(theme));
     setTimeout(function rendered() {
-      var renderedTheme = getComputedStyle($themeSpy).content;
+      var renderedTheme = getComputedStyle($themeName).content;
       var quote = /^"|"$/g;
       renderedTheme = renderedTheme.replace(quote, '');
 

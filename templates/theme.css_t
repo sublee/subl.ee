@@ -36,11 +36,6 @@
   @import url({{ title.css }});
 {% endif %}
 
-.theme-spy {
-  display: none;
-  content: '{{ theme }}';
-}
-
 * {
   margin: 0;
   padding: 0;
