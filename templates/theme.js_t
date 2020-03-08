@@ -3,7 +3,9 @@
 var __theme__ = {{ theme|tojson }};
 var __themes__ = {{ themes.keys()|list|sort|tojson }};
 
-var faviconLink = document.querySelector('link[rel="icon"]');
+// -----------------------------------------------------------------------------
+// Theme URL
+// -----------------------------------------------------------------------------
 
 function getThemeURL(theme) {
   return '/theme:' + theme + '.css';
@@ -27,6 +29,10 @@ function guessTheme() {
   theme = events[eventKey];
   return theme || {{ theme|tojson }};
 }
+
+// -----------------------------------------------------------------------------
+// Favicon
+// -----------------------------------------------------------------------------
 
 function generateFavicon(shape, colors) {
   var favicon = document.createElement('canvas');
@@ -69,6 +75,8 @@ function updateFavicon() {
     }
 
     var favicon = generateFavicon(emblem.shape, emblem.colors);
+
+    var faviconLink = document.querySelector('link[rel="icon"]');
     faviconLink.href = favicon.toDataURL('image/icon');
   } catch (err) {
     if (err == 'retry') {
@@ -78,6 +86,10 @@ function updateFavicon() {
     }
   }
 }
+
+// -----------------------------------------------------------------------------
+// Add ?theme= to internal links.
+// -----------------------------------------------------------------------------
 
 function keepThemeOnLinks() {
   var $anchors = document.querySelectorAll('a[href]');
@@ -121,6 +133,10 @@ function keepThemeOnLinks() {
   }
 }
 
+// -----------------------------------------------------------------------------
+// Static Theme Loading
+// -----------------------------------------------------------------------------
+
 var themeSelected = false;
 function selectTheme(theme) {
   __theme__ = theme;
@@ -141,6 +157,23 @@ function selectTheme(theme) {
 
   loadThemeDynamically(theme);
 }
+
+function selectGuessedTheme() {
+  var theme = guessTheme();
+  if (theme !== __theme__) {
+    selectTheme(theme);
+  }
+  return theme;
+}
+
+// Select the initial theme.
+selectGuessedTheme();
+
+// -----------------------------------------------------------------------------
+// Dynamic Theme Loading
+// -----------------------------------------------------------------------------
+
+window.addEventListener('hashchange', selectGuessedTheme);
 
 function initDynamicThemeLoader() {
   // <link class="theme" />
@@ -230,19 +263,6 @@ function loadThemeDynamically(theme) {
     }, 100);
   });
 }
-
-function selectGuessedTheme() {
-  var theme = guessTheme();
-  if (theme !== __theme__) {
-    selectTheme(theme);
-  }
-  return theme;
-}
-
-window.addEventListener('hashchange', selectGuessedTheme);
-
-// Select the initial theme.
-selectGuessedTheme();
 
 // Traverse themes with 'j' and 'k'.
 window.addEventListener('keypress', function(e) {
