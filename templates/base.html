@@ -10,9 +10,9 @@
 
   <link rel="icon" type="image/icon" sizes="16x16 32x32 48x48 128x128 256x256" href="{{ url_for('favicon') }}" />
 
+  <link rel="stylesheet" media="print" href="{{ url_for('print_css') }}" />
   <link rel="stylesheet" media="screen" href="{{ url_for('base_css') }}" />
   <link rel="stylesheet" media="screen" href="{{ url_for('theme_css', theme=theme) }}" class="theme" />
-  <link rel="stylesheet" media="print" href="{{ url_for('print_css') }}" />
 
   <script>
     {% include 'theme.js_t' %}

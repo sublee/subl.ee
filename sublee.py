@@ -207,7 +207,7 @@ def resume() -> str:
 def resume_pdf() -> Response:
     font_config = weasyprint.fonts.FontConfiguration()
     html = weasyprint.HTML(string=resume())
-    with open(os.path.join(ROOT, 'print.css')) as f:
+    with open(os.path.join(ROOT, 'css', 'print.css')) as f:
         css = weasyprint.CSS(string=f.read(), font_config=font_config)
 
     doc = html.render(stylesheets=[css], font_config=font_config)
@@ -283,7 +283,7 @@ def base_css() -> Response:
 
 @app.route('/print.css')
 def print_css() -> Response:
-    res: Response = send_file(os.path.join(ROOT, 'print.css'))
+    res: Response = send_file(os.path.join(ROOT, 'css', 'print.css'))
     return res
 
 
