@@ -243,8 +243,8 @@ def qrcode() -> Response:
     return res
 
 
-@app.route('/style-<theme>.css')
-def css(theme: str) -> Tuple[str, int, Dict[str, str]]:
+@app.route('/theme:<theme>.css')
+def theme_css(theme: str) -> Tuple[str, int, Dict[str, str]]:
     """Generates a CSS file from the given theme."""
     themes = load_themes()
     style = themes[theme]
@@ -352,7 +352,7 @@ def prepare_freezing(app: Flask) -> Freezer:
         return render_error(NotFound())
 
     @freezer.register_generator
-    def css() -> Iterator[Dict[str, str]]:
+    def theme_css() -> Iterator[Dict[str, str]]:
         for theme in load_themes().keys():
             yield {'theme': theme}
 

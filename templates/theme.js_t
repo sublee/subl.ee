@@ -6,11 +6,11 @@ var __themes__ = {{ themes.keys()|list|sort|tojson }};
 var faviconLink = document.querySelector('link[rel="icon"]');
 
 function getThemeURL(theme) {
-  return '/style-' + theme + '.css';
+  return '/theme:' + theme + '.css';
 }
 
 function parseThemeURL(url) {
-  return /style-(.+)\.css$/.exec(url)[1];
+  return /theme:(.+)\.css$/.exec(url)[1];
 }
 
 function guessTheme() {
