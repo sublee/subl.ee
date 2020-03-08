@@ -250,7 +250,7 @@ def theme_css(theme: str) -> Tuple[str, int, Dict[str, str]]:
     style = themes[theme]
 
     with io.StringIO() as buf:
-        buf.write(render_template('style.css_t', theme=theme, **style))
+        buf.write(render_template('theme.css_t', theme=theme, **style))
 
         def _data_uri(path: str) -> str:
             return data_uri(os.path.join(ROOT, 'themes', theme, path))
@@ -267,7 +267,7 @@ def theme_css(theme: str) -> Tuple[str, int, Dict[str, str]]:
             pass
         else:
             buf.write('@media (prefers-color-scheme: dark) {')
-            buf.write(render_template('style.css_t', **dark_style))
+            buf.write(render_template('theme.css_t', **dark_style))
             buf.write('}')
 
         css = buf.getvalue()
