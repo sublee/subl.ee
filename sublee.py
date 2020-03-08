@@ -275,6 +275,12 @@ def css(theme: str) -> Tuple[str, int, Dict[str, str]]:
     return css, 200, {'Content-Type': 'text/css'}
 
 
+@app.route('/base.css')
+def base_css() -> Response:
+    res: Response = send_file(os.path.join(ROOT, 'css', 'base.css'))
+    return res
+
+
 @app.route('/print.css')
 def print_css() -> Response:
     res: Response = send_file(os.path.join(ROOT, 'print.css'))

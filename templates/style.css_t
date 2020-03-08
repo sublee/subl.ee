@@ -1,7 +1,5 @@
 {# vim: set ft=css: #}
 
-{% set base_font_size = 17 %}
-
 {% macro setdefault(dict, key, value) %}
   {# NOTE: the below if-block is workaround for calling #}
   {# Python functions without the caller parameter. #}
@@ -53,14 +51,7 @@
   clear: left;
 }
 
-html {
-  font-size: {{ base_font_size }}px;
-}
-
 body {
-  max-width: 50rem;
-  margin: 3rem 10%;
-
   font-family: '{{ text.font }}', {{ text.generic }};
   font-weight: {{ text.weight }};
   color: {{ colors.text }};
@@ -352,16 +343,10 @@ dd.note {
 
 @media screen and (max-width: 50rem) {
   /* 50rem is wider than 550px. */
-  body { margin: 3rem 5%; }
   .themes li { width: 25%; }
 }
 
 @media screen and (max-width: 550px) {
-  body {
-    margin: 2rem 10px;
-    width: auto;
-  }
-
   h1 {
     padding-right: 48px;
   }

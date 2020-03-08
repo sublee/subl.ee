@@ -1,0 +1,20 @@
+html {
+  font-size: 17px;
+}
+
+body {
+  max-width: 50rem;
+  margin: 3rem 10%;
+}
+
+@media screen and (max-width: 50rem) {
+  /* 50rem is wider than 550px. */
+  body { margin: 3rem 5%; }
+}
+
+@media screen and (max-width: 550px) {
+  body {
+    margin: 2rem 10px;
+    width: auto;
+  }
+}
