@@ -167,25 +167,6 @@ selectGuessedTheme();
 
 window.addEventListener('hashchange', selectGuessedTheme);
 
-function initDynamicThemeLoader() {
-  // <link class="theme" />
-  var themeLink = document.querySelector('.theme');
-
-  // Ensure <link class="theme-loader" />
-  var themeLoaderLink = document.querySelector('.theme-loader');
-  if (themeLoaderLink === null) {
-    themeLoaderLink = themeLink.cloneNode();
-    themeLoaderLink.classList.add('theme-loader');
-    themeLoaderLink.setAttribute('href', '');
-    document.head.appendChild(themeLoaderLink);
-  }
-
-  return {
-    themeLink: themeLink,
-    themeLoaderLink: themeLoaderLink,
-  };
-}
-
 var lock = false;
 function loadThemeDynamically(theme) {
   if (lock) {
@@ -193,46 +174,54 @@ function loadThemeDynamically(theme) {
   }
   lock = true;
 
-  var elems = initDynamicThemeLoader();
-
-  var $themeLink = elems.themeLink;
-  var $themeLoaderLink = elems.themeLoaderLink;
-
   var $body = document.body;
   var $footer = document.querySelector('footer');
+  var $link = document.querySelector('link.theme');
 
   // 1. Start to hide contents.
   $body.classList.add('loading');
-  $body.addEventListener('transitionend', function hidden(e) {
+  $body.addEventListener('transitionend', function onHidden(e) {
     if (getComputedStyle($footer).opacity !== '0') {
       return;
     }
-    $body.removeEventListener('transitionend', hidden);
+    $body.removeEventListener('transitionend', onHidden);
 
     // 2. Load CSS when contents are hidden.
-    $themeLoaderLink.setAttribute('href', getThemeURL(theme));
-    setTimeout(function rendered() {
-      var renderedTheme = getComputedStyle($body, '::before').content;
-      var quote = /^"|"$/g;
-      renderedTheme = renderedTheme.replace(quote, '');
+    $loader = $link.cloneNode();
+    $loader.setAttribute('href', getThemeURL(theme));
+    document.head.appendChild($loader);
 
-      if (renderedTheme !== theme) {
-        setTimeout(rendered, 10);
-        return;
+    var timedOut = false;
+    setTimeout(function() { timedOut = true; }, 5000);
+
+    setTimeout(function onRendered() {
+      if (!timedOut) {
+        var $detect = document.createElement('div');
+        $detect.setAttribute('data-detect-theme', theme);
+        $detect.style.display = 'none';
+        document.body.appendChild($detect);
+
+        var style = getComputedStyle($detect, '::before')
+        var rendered = (style.content === '"ready"');
+        document.body.removeChild($detect);
+
+        if (!rendered) {
+          console.log(['not rendered', theme]);
+          setTimeout(onRendered, 10);
+          return;
+        }
       }
 
-      // 3. Swap with the previous CSS when rendered.
-      $themeLink.parentNode.removeChild($themeLink);
-      $themeLoaderLink.classList.remove('theme-loader')
-      $themeLoaderLink.classList.add('theme');
+      // 3. Swap with the previous CSS when rendered or timed out.
+      document.head.removeChild($link);
 
       // 4. Start to show contents.
       $body.classList.remove('loading');
-      $body.addEventListener('transitionend', function visible() {
+      $body.addEventListener('transitionend', function onVisible() {
         if (getComputedStyle($footer).opacity !== '1') {
           return;
         }
-        $body.removeEventListener('transitionend', visible);
+        $body.removeEventListener('transitionend', onVisible);
 
         lock = false;
 
