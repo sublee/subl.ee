@@ -24,7 +24,9 @@
   </ul>
   <script>
     // A callback function for theme selectors.
-    function themeSelected(a, theme) {
+    function themeSelected(theme) {
+      var a = document.querySelector('.themes a[data-theme="'+theme+'"]');
+
       if (/selected/.exec(a.getAttribute('class'))) {
         return;
       }
@@ -41,16 +43,14 @@
       arguments.callee.a = a;
     }
 
-    // selectGuessedTheme() is called at onhashchange. It should call
-    // themeSelected() also.
-    var _selectGuessedTheme = selectGuessedTheme;
-    selectGuessedTheme = function() {
-      var theme = _selectGuessedTheme();
-      var a = document.querySelector('.themes a[data-theme="'+theme+'"]');
-      themeSelected(a, theme);
+    // selectTheme() should call themeSelected() also.
+    var _selectTheme = selectTheme;
+    selectTheme = function(theme) {
+      _selectTheme(theme);
+      themeSelected(theme);
     };
 
     // Callback of the initial theme.
-    selectGuessedTheme();
+    themeSelected(guessTheme());
   </script>
 {% endblock %}

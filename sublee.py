@@ -250,7 +250,7 @@ def css(theme: str) -> Tuple[str, int, Dict[str, str]]:
     style = themes[theme]
 
     with io.StringIO() as buf:
-        buf.write(render_template('style.css_t', **style))
+        buf.write(render_template('style.css_t', theme=theme, **style))
 
         def _data_uri(path: str) -> str:
             return data_uri(os.path.join(ROOT, 'themes', theme, path))

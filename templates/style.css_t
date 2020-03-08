@@ -38,6 +38,11 @@
   @import url({{ title.css }});
 {% endif %}
 
+.theme-spy {
+  display: none;
+  content: '{{ theme }}';
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -88,10 +93,10 @@ footer {
 /* Theme Loading */
 
 main, footer {
-  transition: opacity 0.3s;
+  transition: opacity 0.2s;
 }
 
-body.loading main, body.loading footer {
+.loading main, .loading footer {
   opacity: 0;
 }
 

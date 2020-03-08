@@ -2,9 +2,7 @@
 
 var __theme__ = {{ theme|tojson }};
 var __themes__ = {{ themes.keys()|list|sort|tojson }};
-var __themeSelected__ = false;
 
-var themeLink = document.querySelector('.theme');
 var faviconLink = document.querySelector('link[rel="icon"]');
 
 function getThemeURL(theme) {
@@ -13,19 +11,6 @@ function getThemeURL(theme) {
 
 function parseThemeURL(url) {
   return /style-(.+)\.css$/.exec(url)[1];
-}
-
-function isThemeLoaded() {
-  var css;
-
-  for (var i = 0; i < document.styleSheets.length; i++) {
-    if (document.styleSheets[i].ownerNode.className === 'theme') {
-      css = document.styleSheets[i];
-      break;
-    }
-  }
-
-  return css && (__theme__ == parseThemeURL(css.href)) && css.cssRules;
 }
 
 function guessTheme() {
@@ -74,10 +59,6 @@ function generateFavicon(shape, colors) {
 
 function updateFavicon() {
   try {
-    if (!isThemeLoaded()) {
-      throw 'retry';
-    }
-
     var emblem;
     switch (__theme__) {
     {% for theme, style in themes.items() %}
@@ -102,7 +83,7 @@ function keepThemeOnLinks() {
   var $anchors = document.querySelectorAll('a[href]');
 
   if ($anchors.length === 0) {
-    window.addEventListener('load', arguments.callee);
+    addEventListener('load', keepThemeOnLinks);
   }
 
   for (var i = 0; i < $anchors.length; ++i) {
@@ -140,99 +121,127 @@ function keepThemeOnLinks() {
   }
 }
 
+var themeSelected = false;
 function selectTheme(theme) {
   __theme__ = theme;
-  __themeSelected__ = true;
 
   updateFavicon();
   keepThemeOnLinks();
 
-  themeLink.setAttribute('href', getThemeURL(theme));
+  if (!themeSelected) {
+    // Load theme statically at the first time.
+    themeSelected = true;
+
+    // <link class="theme" />
+    var themeLink = document.querySelector('.theme');
+
+    themeLink.setAttribute('href', getThemeURL(theme));
+    return;
+  }
+
+  loadThemeDynamically(theme);
+}
+
+function initDynamicThemeLoader() {
+  // <link class="theme" />
+  var themeLink = document.querySelector('.theme');
+
+  // Ensure <link class="theme-loader" />
+  var themeLoaderLink = document.querySelector('.theme-loader');
+  if (themeLoaderLink === null) {
+    themeLoaderLink = themeLink.cloneNode();
+    themeLoaderLink.classList.add('theme-loader');
+    themeLoaderLink.setAttribute('href', '');
+    document.head.appendChild(themeLoaderLink);
+  }
+
+  // Ensure <div class="theme-spy" /> which detects a loaded theme.
+  var themeSpy = document.querySelector('.theme-spy');
+  if (themeSpy === null) {
+    themeSpy = document.createElement('div');
+    themeSpy.classList.add('theme-spy');
+    document.body.appendChild(themeSpy);
+  }
+
+  return {
+    themeLink: themeLink,
+    themeLoaderLink: themeLoaderLink,
+    themeSpy: themeSpy
+  };
+}
+
+var lock = false;
+function loadThemeDynamically(theme) {
+  if (lock) {
+    return;
+  }
+  lock = true;
+
+  var elems = initDynamicThemeLoader();
+
+  var $themeLink = elems.themeLink;
+  var $themeLoaderLink = elems.themeLoaderLink;
+  var $themeSpy = elems.themeSpy;
+
+  var $body = document.body;
+  var $footer = document.querySelector('footer');
+
+  // 1. Start to hide contents.
+  $body.classList.add('loading');
+  $body.addEventListener('transitionend', function hidden(e) {
+    if (getComputedStyle($footer).opacity !== '0') {
+      return;
+    }
+    $body.removeEventListener('transitionend', hidden);
+
+    // 2. Load CSS when contents are hidden.
+    $themeLoaderLink.setAttribute('href', getThemeURL(theme));
+    setTimeout(function rendered() {
+      var renderedTheme = getComputedStyle($themeSpy).content;
+      var quote = /^"|"$/g;
+      renderedTheme = renderedTheme.replace(quote, '');
+
+      if (renderedTheme !== theme) {
+        setTimeout(rendered, 10);
+        return;
+      }
+
+      // 3. Swap with the previous CSS when rendered.
+      $themeLink.remove();
+      $themeLoaderLink.classList.remove('theme-loader')
+      $themeLoaderLink.classList.add('theme');
+
+      // 4. Start to show contents.
+      $body.classList.remove('loading');
+      $body.addEventListener('transitionend', function visible() {
+        if (getComputedStyle($footer).opacity !== '1') {
+          return;
+        }
+        $body.removeEventListener('transitionend', visible);
+
+        lock = false;
+
+        // 5. Try again if the loaded theme is not the selected one.
+        if (theme !== __theme__) {
+          loadThemeDynamically(__theme__);
+        }
+      });
+    }, 100);
+  });
 }
 
 function selectGuessedTheme() {
   var theme = guessTheme();
-  if (theme != __theme__) {
+  if (theme !== __theme__) {
     selectTheme(theme);
   }
   return theme;
 }
 
+window.addEventListener('hashchange', selectGuessedTheme);
+
 // Select the initial theme.
 selectGuessedTheme();
-
-// Load jQuery and init instant theme selection when the hash changed.
-window.addEventListener('hashchange', function() {
-  window.removeEventListener('hashchange', arguments.callee);
-
-  var done = false;
-  var jQueryScript = document.createElement('script');
-  jQueryScript.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
-
-  jQueryScript.onload = jQueryScript.onreadystatechange = function() {
-    if (done) {
-      return;
-    }
-    if (this.readyState && !/loaded|complete/.exec(this.readyState)) {
-      return;
-    }
-
-    done = true;
-    this.onload = this.onreadystatechange = null;
-
-    initThemeSelection();
-    selectGuessedTheme();
-  };
-
-  document.head.appendChild(jQueryScript);
-  document.body.setAttribute('class', 'loading');
-});
-
-function initThemeSelection() {
-  var $body = $(document.body);
-  var $themeStyle = $('<style>').appendTo(document.head);
-
-  // Override selectTheme() to re-draw the page.
-  selectTheme = function(theme) {
-    __theme__ = theme;
-
-    updateFavicon();
-    keepThemeOnLinks();
-
-    $body.addClass('loading');
-    isThemeLoaded = function() { return false; };
-
-    function onCSS(css) {
-      // Load the CSS after the loading animation.
-      if (Number($('main').css('opacity')) !== 0) {
-        setTimeout(function() { onCSS(css); }, 100);
-        return;
-      }
-
-      // <link> for theme is not required.
-      $(themeLink).remove();
-
-      // Apply the CSS as <style>.
-      $themeStyle.text(css);
-
-      // Re-draw the page after loading Web fonts.
-      function redraw() {
-        setTimeout(function() { $body.removeClass('loading'); }, 100);
-        isThemeLoaded = function() { return true; };
-      }
-
-      if (document.fonts === undefined) {
-        setTimeout(redraw, 10);
-      } else {
-        document.fonts.ready.then(redraw);
-      }
-    }
-
-    $.get(getThemeURL(theme), onCSS);
-  }
-
-  window.addEventListener('hashchange', selectGuessedTheme);
-}
 
 // Traverse themes with 'j' and 'k'.
 window.addEventListener('keypress', function(e) {
