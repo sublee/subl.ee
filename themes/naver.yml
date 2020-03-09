@@ -22,3 +22,23 @@ naver-labs:
   title: {weight: 700}
   css: |
     h1, h2 { text-transform: uppercase; }
+
+clova:
+  emblem:
+    shape: ☲
+    colors: {0: '#05d686'}
+  colors:
+    text: '#1e1e1e'
+    title: '#05d686'
+    blur: '#b1b1b1'
+    link: '#0070c9'
+  css: |
+    .emblem-top {
+      background: linear-gradient(#12d8b5 13.5%, #10d896 50%, #0ed86c 91%);
+    }
+    .emblem-middle .emblem-top {
+      background: linear-gradient(#12d8b5 28.3%, #10d896 104.8%);
+    }
+    .emblem-middle .emblem-bottom {
+      background: linear-gradient(#10d896 -4.8%, #0ed86c 81.1%);
+    }
