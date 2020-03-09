@@ -202,11 +202,10 @@ function loadThemeDynamically(theme) {
         document.body.appendChild($detect);
 
         var style = getComputedStyle($detect, '::before')
-        var rendered = (style.content === '"ready"');
+        var rendered = (style.content.replace(/^"|"$/g, '') === 'ready');
         document.body.removeChild($detect);
 
         if (!rendered) {
-          console.log(['not rendered', theme]);
           setTimeout(onRendered, 10);
           return;
         }
