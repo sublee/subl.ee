@@ -192,7 +192,7 @@ function loadThemeDynamically(theme) {
     document.head.appendChild($loader);
 
     var timedOut = false;
-    setTimeout(function() { timedOut = true; }, 5000);
+    setTimeout(function() { timedOut = true; }, 1000);
 
     setTimeout(function onRendered() {
       if (!timedOut) {
