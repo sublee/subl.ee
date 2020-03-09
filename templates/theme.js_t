@@ -167,6 +167,28 @@ selectGuessedTheme();
 
 window.addEventListener('hashchange', selectGuessedTheme);
 
+function onTransitionEnd(elem, property, targetValue, callback) {
+  var t = null;
+
+  function redundantCallback() {
+    var value = getComputedStyle(elem).getPropertyValue(property);
+    if (value !== targetValue) {
+      // Check again later.
+      return;
+    }
+
+    clearInterval(t);
+    elem.removeEventListener('transitionend', redundantCallback);
+
+    callback();
+  }
+  elem.addEventListener('transitionend', redundantCallback);
+
+  // The transitionend event may not triggered at the expected timing in some
+  // browsers. setInterval is used to fallback.
+  t = setInterval(redundantCallback, 100);
+}
+
 var lock = false;
 function loadThemeDynamically(theme) {
   if (lock) {
@@ -180,48 +202,33 @@ function loadThemeDynamically(theme) {
 
   // 1. Start to hide contents.
   $body.classList.add('loading');
-  $body.addEventListener('transitionend', function onHidden(e) {
-    if (getComputedStyle($footer).opacity !== '0') {
-      return;
-    }
-    $body.removeEventListener('transitionend', onHidden);
-
+  onTransitionEnd($footer, 'opacity', '0', function() {
     // 2. Load CSS when contents are hidden.
     $loader = $link.cloneNode();
     $loader.setAttribute('href', getThemeURL(theme));
     document.head.appendChild($loader);
 
-    var timedOut = false;
-    setTimeout(function() { timedOut = true; }, 1000);
-
     setTimeout(function onRendered() {
-      if (!timedOut) {
-        var $detect = document.createElement('div');
-        $detect.setAttribute('data-detect-theme', theme);
-        $detect.style.display = 'none';
-        document.body.appendChild($detect);
+      var $detect = document.createElement('div');
+      $detect.setAttribute('data-detect-theme', theme);
+      $detect.style.display = 'none';
+      document.body.appendChild($detect);
 
-        var style = getComputedStyle($detect, '::before')
-        var rendered = (style.content.replace(/^"|"$/g, '') === 'ready');
-        document.body.removeChild($detect);
+      var style = getComputedStyle($detect, '::before')
+      var rendered = (style.content.replace(/^"|"$/g, '') === 'ready');
+      document.body.removeChild($detect);
 
-        if (!rendered) {
-          setTimeout(onRendered, 10);
-          return;
-        }
+      if (!rendered) {
+        setTimeout(onRendered, 10);
+        return;
       }
 
-      // 3. Swap with the previous CSS when rendered or timed out.
+      // 3. Swap with the previous CSS when rendered.
       document.head.removeChild($link);
 
       // 4. Start to show contents.
       $body.classList.remove('loading');
-      $body.addEventListener('transitionend', function onVisible() {
-        if (getComputedStyle($footer).opacity !== '1') {
-          return;
-        }
-        $body.removeEventListener('transitionend', onVisible);
-
+      onTransitionEnd($footer, 'opacity', '1', function() {
         lock = false;
 
         // 5. Try again if the loaded theme is not the selected one.
