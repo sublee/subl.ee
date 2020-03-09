@@ -22,7 +22,7 @@ Interests
 
 - Parallel and distributed deep learning
 - Developing and documenting API for engineers
-- Free and open source software
+- Free and open-source software
 
 Skills
 ------
@@ -55,7 +55,7 @@ Software Engineer {: .label }
 
 :   Develop an AutoML system.
 
-    Reproduced [GPipe][] in PyTorch to boost training performance of large
+    Reproduced [GPipe][] in PyTorch to boost the training performance of large
     deep learning models. This project was published as [torchgpipe][].
 
 [kakaobrain]: https://kakaobrain.com/
@@ -75,9 +75,9 @@ Game Server Engineer & Architect {: .label }
     linguistic features of Korean and Indo-European languages.
 
     Researched rating systems such as Elo, Glicko, and
-    [TrueSkill][trueskill-tm] to develop a racing game matchmaker.
+    [TrueSkill][trueskill-tm] to develop a matchmaker.
 
-    Led the server development team including up to 15 engineers.
+    Managed a server engineering team including 15 engineers.
 
 [nexon]: https://company.nexon.com/eng
 [kartrider]: http://kart.nexon.com/
@@ -88,9 +88,8 @@ Web Developer {: .label }
 :   Supplies stock images for business on [Iclickart][].
     {: .note }
 
-:   Developed and maintained web services from scratch.
-
-    Maintained on-premise Linux servers.
+:   Developed and maintained web services from scratch. Maintained on-premise
+    Linux servers.
 
 [npine]: http://en.npine.com/
 [iclickart]: http://iclickart.co.kr/
@@ -100,9 +99,9 @@ Front-end Web Developer {: .label }
 :   Served a social media named VLAAH.
     {: .note }
 
-:   Designed and implemented the UI/UX for VLAAH.
+:   Designed and implemented the UI/UX for a social media.
 
-    Developed [jDoctest][] which is an open source JavaScript testing framework
+    Developed [jDoctest][] which is an open-source JavaScript testing framework
     inspired by Python's doctest.
 
 [lunant]: http://lunant.net/
@@ -116,8 +115,8 @@ Open Source Experience
     {: .note }
 
 :   Implemented [GPipe][] in PyTorch. GPipe is a scalable pipeline parallelism
-    library for training of a giant model. The story behind this project can be
-    found on [Kakao Brain Blog<sup>ko</sup>][torchgpipe-blog].
+    library for the training of a giant model. The story behind this project
+    can be found on [Kakao Brain Blog<sup>ko</sup>][torchgpipe-blog].
 
     Optimized the pipeline parallelism and checkpointing for CUDA and PyTorch's
     autograd engine.
