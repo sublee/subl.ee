@@ -1,9 +1,28 @@
 twitter:
   emblem:
-    shape: ☷
+    shape: ☲
     colors: {0: '#1da1f2'}
   colors:
-    text: '#657786'
-    title: '#14171a'
+    text: '#14171a'
     blur: '#657786'
-    link: '#3b94d9'
+    link: '#1b95e0'
+  css: |
+    .emblem-left .emblem-top, .emblem-left {
+      border-radius: 16px 0 0 16px;
+    }
+    .emblem-right .emblem-top, .emblem-right {
+      border-radius: 0 16px 16px 0;
+    }
+
+    dt a::before {
+      content: '#';
+    }
+
+    main > ul {
+      margin-left: -0.4rem;
+      margin-right: -0.4rem;
+      padding: 0.8rem;
+
+      background: #f5f8fa;
+      border-radius: 16px;
+    }
