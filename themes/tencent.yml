@@ -1,0 +1,18 @@
+tencent:
+  emblem:
+    shape: ☲
+    colors: {0: '#0052d9'}
+  colors:
+    text: '#5f6464'
+    title: '#2a2e2e'
+    blur: '#919797'
+    link: '#0052d9'
+  title: {font: Roboto, weight: 500}
+  css: |
+    .emblem, h1, h2 {
+      transform: skew(-9.5deg, 0);
+    }
+    .resume h1::after {
+      content: '李興燮';
+      margin-left: 0.5rem;
+    }
