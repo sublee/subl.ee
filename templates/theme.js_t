@@ -129,20 +129,22 @@ function keepThemeOnLinks() {
 // Static Theme Loading
 // -----------------------------------------------------------------------------
 
-var themeSelected = false;
+var selectThemeCalled = false;
 function selectTheme(theme) {
-  __theme__ = theme;
+  var isFirst = !selectThemeCalled;
+  selectThemeCalled = true;
 
+  if (theme === __theme__) {
+    return;
+  }
+
+  __theme__ = theme;
   updateFavicon();
   keepThemeOnLinks();
 
-  if (!themeSelected) {
+  if (isFirst) {
     // Load theme statically at the first time.
-    themeSelected = true;
-
-    // <link class="theme" />
     var themeLink = document.querySelector('.theme');
-
     themeLink.setAttribute('href', getThemeURL(theme));
     return;
   }
@@ -152,9 +154,7 @@ function selectTheme(theme) {
 
 function selectGuessedTheme() {
   var theme = guessTheme();
-  if (theme !== __theme__) {
-    selectTheme(theme);
-  }
+  selectTheme(theme);
   return theme;
 }
 
