@@ -1,0 +1,43 @@
+php:
+  emblem:
+    shape: ☰
+    colors: {0: '#777bb3'}
+  colors:
+    background: '#f2f2f2'
+    text: '#333'
+    title: '#793862'
+    blur: '#666'
+    link: '#369'
+  title: {weight: 600}
+  css: |
+    .emblem {
+      background: linear-gradient(135deg, #aeb2d5 30%, #484c89 75%);
+      padding: 3px;
+      transform: skew(-10.8deg, 0);
+    }
+    .emblem::after {
+      content: 'sub';
+
+      font-size: 50px;
+      font-weight: 600;
+      letter-spacing: -1px;
+
+      color: #000;
+      text-shadow:
+        0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff,
+        0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff,
+        0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff,
+        0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff,
+        0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
+
+      position: absolute;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      line-height: 90px;
+    }
+
+    hr {
+      background: transparent;
+      border-bottom: 1px dotted #333;
+    }
