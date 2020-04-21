@@ -39,4 +39,4 @@ jobs:
       with:
         build_dir: .gh-pages
       env:
-        GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
+        GITHUB_PAT: ${{ secrets.GH_PAT }}
