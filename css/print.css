@@ -67,6 +67,11 @@ hr {
   border-bottom: double 3pt black;
 }
 
+em {
+  font-style: normal;
+  text-decoration: underline;
+}
+
 ul li {
   position: relative;
   list-style: none;

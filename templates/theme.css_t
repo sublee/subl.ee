@@ -146,6 +146,11 @@ hr {
   background-color: {{ rgba(colors.blur, 0.1) }};
 }
 
+em {
+  font-style: normal;
+  text-decoration: underline;
+}
+
 sup, sub {
   font-size: 0.5em;
 }
