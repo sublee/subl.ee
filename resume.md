@@ -32,15 +32,11 @@ Programming Languages {: .label }
   {: .attr }
 
 AI Research {: .label }
-: PyTorch, NVIDIA Nsight Systems, Data/model/pipeline Parallelism
+: PyTorch, NVIDIA Nsight Systems, pipeline parallelism
   {: .attr }
 
 Back-end Development {: .label }
 : Linux, AWS, Terraform, Docker, ZeroMQ, Redis, Couchbase, MySQL, etcd
-  {: .attr }
-
-Test Engineering {: .label }
-: GitHub Actions, Travis CI, GitLab CI, mypy, pytest, Testify
   {: .attr }
 
 ---
@@ -172,8 +168,6 @@ Open Source Experience
 
 Others
 :   - [Tossi][] -- A utility for Korean allomorphic particles.
-    - [Click Default Group][click-default-group] -- Implicit default subcommand
-                                                    for CLI based on [Click][].
     - [Flask-AutoIndex][] -- mod_autoindex for [Flask][].
     - [SUBLEERUNKER][] -- A simple parody game of SUBERUNKER. Play it in your
                           web browser.
@@ -182,8 +176,6 @@ Others
                       written on the user's wall.
 
 [tossi]: https://github.com/what-studio/tossi
-[click-default-group]: https://github.com/click-contrib/click-default-group
-[click]: https://click.palletsprojects.com/
 [flask-autoindex]: http://pythonhosted.org/Flask-AutoIndex
 [flask]: https://flask.palletsprojects.com/
 [subleerunker]: /runker/
@@ -226,12 +218,10 @@ Publications
 Public Speeches
 ---------------
 
-- [Remake of Hangulize<sup>ko</sup>][gokr1808] at Golang Korea Meetup Aug 2018
-  and Naver D2
+- [Remake of Hangulize<sup>ko</sup>][gokr1808] at Golang Korea 2018 and Naver D2
 - [Server architecture of Durango Vol. 3<sup>ko</sup>][ndc18] at NDC 2018
 - [Python Survival Guide<sup>ko</sup>][nxtk16] at Nexon Talk 2016
-- [Server architecture of Durango Vol. 2<sup>ko</sup>][ndc16] at NDC 2016,
-  awarded the grand prize
+- [Server architecture of Durango Vol. 2<sup>ko</sup>][ndc16] at NDC 2016
 - [Profiling<sup>ko</sup>][pycon15] at PyCon KR 2015
 - [Server architecture of Durango<sup>ko</sup>][ndc14] at NDC 2014
 
