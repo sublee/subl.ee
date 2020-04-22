@@ -214,6 +214,15 @@ Contributions
 [flask#108]:     https://github.com/pallets/flask/issues/108
 [jquery-143]:    https://blog.jquery.com/2010/10/16/jquery-143-released/
 
+Publications
+------------
+
+- C. Kim\*, _H. Lee_\*, M. Jeong, W. Baek, B. Yoon, I. Kim, S. Lim, S. Kim.
+  "torchgpipe: On-the-fly Pipeline Parallelism for Training Giant Models".
+  [arXiv preprint arXiv:2004.09910][arxiv-torchgpipe]. (2020)
+
+[arxiv-torchgpipe]: https://arxiv.org/abs/2004.09910
+
 Public Speeches
 ---------------
 
