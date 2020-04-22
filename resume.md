@@ -211,9 +211,18 @@ Publications
 
 - C. Kim\*, _H. Lee_\*, M. Jeong, W. Baek, B. Yoon, I. Kim, S. Lim, S. Kim.
   "torchgpipe: On-the-fly Pipeline Parallelism for Training Giant Models".
-  [arXiv preprint arXiv:2004.09910][arxiv-torchgpipe]. (2020)
+  [arXiv preprint arXiv:2004.09910][arxiv:torchgpipe]. (2020)
 
-[arxiv-torchgpipe]: https://arxiv.org/abs/2004.09910
+*[C. Kim]:   Chiheon Kim
+*[H. Lee]:   Heungsub Lee
+*[M. Jeong]: Myungryong Jeong
+*[W. Baek]:  Woonhyuk Baek
+*[B. Yoon]:  Boogeon Yoon
+*[I. Kim]:   Ildoo Kim
+*[S. Lim]:   Sungbin Lim
+*[S. Kim]:   Sungwoong Kim
+
+[arxiv:torchgpipe]: https://arxiv.org/abs/2004.09910
 
 Public Speeches
 ---------------
