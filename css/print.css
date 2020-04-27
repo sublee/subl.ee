@@ -67,7 +67,7 @@ hr {
   border-bottom: double 3pt black;
 }
 
-em {
+em, em * {
   font-style: normal;
   text-decoration: underline;
 }

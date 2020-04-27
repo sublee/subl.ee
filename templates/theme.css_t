@@ -146,7 +146,7 @@ hr {
   background-color: {{ rgba(colors.blur, 0.1) }};
 }
 
-em {
+em, em * {
   font-style: normal;
   text-decoration: underline;
 }
