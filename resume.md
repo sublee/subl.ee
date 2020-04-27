@@ -224,6 +224,9 @@ Publications
 
 [arxiv:torchgpipe]: https://arxiv.org/abs/2004.09910
 
+\*Contributed equally.
+{: .footnote }
+
 Public Speeches
 ---------------
 

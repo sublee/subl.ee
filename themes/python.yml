@@ -14,3 +14,9 @@ python:
       border-radius: 3px;
       padding: 0.5rem;
     }
+
+    .resume main > .footnote {
+      background: transparent;
+      border: none;
+      padding: 0;
+    }

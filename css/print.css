@@ -111,6 +111,11 @@ dd.attr {
   margin-bottom: 0;
 }
 
+.footnote {
+  margin-top: -0.5rem;
+  font-size: 0.8rem;
+}
+
 .-epic {
   font-size: 12pt;
 }
