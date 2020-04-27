@@ -93,6 +93,7 @@ dd, p {
 }
 dd.note, dd.attr, dd ul, dd ol {
   text-indent: 0;
+  page-break-before: avoid;
 }
 
 dt.label, dd.note, dd.note * {
