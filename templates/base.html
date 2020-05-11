@@ -100,18 +100,7 @@
 
   <script>
   </script>
-
-  {% if google_analytics %}
-    {% from 'ga.html' import ga %}
-    {{ ga(google_analytics) }}
-  {% endif %}
-
-  {% if naver_analytics %}
-    <script src="//wcs.naver.net/wcslog.js"></script>
-    <script>
-      var wcs_add = {wa: '{{ naver_analytics }}'};
-      wcs_do();
-    </script>
-  {% endif %}
+  {% from 'ga.html' import ga %}
+  {{ ga(google_analytics) }}
 </body>
 </html>
