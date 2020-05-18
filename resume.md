@@ -92,10 +92,10 @@ Web Developer {: .label }
 
 Front-end Web Developer {: .label }
 [Lunant][], 2008--2011
-:   Served a social media named VLAAH.
+:   Served social media named VLAAH.
     {: .note }
 
-:   Designed and implemented the UI/UX for a social media.
+:   Designed and implemented the UI/UX for social media.
 
     Developed [jDoctest][] which is an open-source JavaScript testing framework
     inspired by Python's doctest.
@@ -171,7 +171,7 @@ Others
     - [Flask-AutoIndex][] -- mod_autoindex for [Flask][].
     - [SUBLEERUNKER][] -- A simple parody game of SUBERUNKER. Play it in your
                           web browser.
-    - [Me2virus][] -- An XSS attack on a social media named [Me2day][]. When a
+    - [Me2virus][] -- An XSS attack on social media named [Me2day][]. When a
                       user looks at an infected post, a new infected post was
                       written on the user's wall.
 
