@@ -49,7 +49,7 @@ Software Engineer {: .label }
 :   An AI laboratory in Kakao.
     {: .note }
 
-:   Develop a distributed hyperparameter search framework.
+:   Develop a distributed hyperparameter search platform.
 
     Reproduced [GPipe][] in PyTorch to boost the training performance of large
     deep learning models. This project was published as [torchgpipe][].
