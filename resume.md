@@ -20,7 +20,7 @@ Web Sites {: .label }
 Interests
 ---------
 
-- Backend engineering for ML projects
+- Back-end engineering for ML projects
 - Developing and documenting API for engineers or researchers
 - Free and open-source software
 
