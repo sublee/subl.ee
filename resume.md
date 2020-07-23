@@ -20,8 +20,8 @@ Web Sites {: .label }
 Interests
 ---------
 
-- Parallel and distributed deep learning
-- Developing and documenting API for engineers
+- Backend engineering for ML projects
+- Developing and documenting API for engineers or researchers
 - Free and open-source software
 
 Skills
@@ -32,7 +32,7 @@ Programming Languages {: .label }
   {: .attr }
 
 AI Research {: .label }
-: PyTorch, NVIDIA Nsight Systems, pipeline parallelism
+: PyTorch, Triton Inference Server, NVIDIA Nsight Systems, pipeline parallelism
   {: .attr }
 
 Back-end Development {: .label }
@@ -49,7 +49,7 @@ Software Engineer {: .label }
 :   An AI laboratory in Kakao.
     {: .note }
 
-:   Develop a distributed hyperparameter search platform.
+:   Developed a distributed hyperparameter search platform for AutoML.
 
     Reproduced [GPipe][] in PyTorch to boost the training performance of large
     deep learning models. This project was published as [torchgpipe][].
@@ -264,6 +264,7 @@ Computer Software, [Kwangwoon University][kw], 2008
 <!-- abbrs -->
 *[AWS]: Amazon Web Services
 *[CLI]: Command-line interface
+*[ML]:  Machine learning
 *[MMORPG]: Massively multiplayer online role-playing game
 *[NDC]: Nexon Developers Conference
 *[TUI]: Text-based user interface
