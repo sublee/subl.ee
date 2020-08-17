@@ -49,7 +49,8 @@ Software Engineer {: .label }
 :   An AI laboratory in Kakao.
     {: .note }
 
-:   Developed a distributed hyperparameter search platform for AutoML.
+:   Developed a serverless training framework and a distributed hyperparameter
+    search platform for AutoML.
 
     Reproduced [GPipe][] in PyTorch to boost the training performance of large
     deep learning models. This project was published as [torchgpipe][].
