@@ -4,7 +4,7 @@ Heungsub Lee
 ============
 
 Contact {: .label }
-: [heungsub.lee@subl.ee](mailto:heungsub.lee@subl.ee)
+: [heungsub@subl.ee](mailto:heungsub@subl.ee)
   or
   [+82 10-3215-2380](sms:821032152380)
   {: .attr }
