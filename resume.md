@@ -46,14 +46,14 @@ Work Experience
 
 Software Engineer {: .label }
 [Kakao Brain][kakaobrain], 2018--
-:   An AI laboratory in Kakao.
+:   The AI research lab in Kakao.
     {: .note }
 
-:   Developed a serverless training framework and a distributed hyperparameter
-    search platform for AutoML.
-
-    Reproduced [GPipe][] in PyTorch to boost the training performance of large
+:   Reproduced [GPipe][] in PyTorch to boost the training performance of large
     deep learning models. This project was published as [torchgpipe][].
+
+    Developed a serverless training framework and a distributed hyperparameter
+    search platform for AutoML.
 
 [kakaobrain]: https://kakaobrain.com/
 [gpipe]: https://arxiv.org/abs/1811.06965
