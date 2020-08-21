@@ -45,7 +45,7 @@ Work Experience
 ---------------
 
 Software Engineer {: .label }
-[Kakao Brain][kakaobrain], 2018--
+[Kakao Brain][kakaobrain], 2018--2020
 :   The AI research lab in Kakao.
     {: .note }
 

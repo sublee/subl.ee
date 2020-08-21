@@ -9,7 +9,7 @@ Heungsub Lee
 I am
 ----
 
-Heungsub Lee, a [software engineer] at [Kakao Brain][].
+Heungsub Lee, a [software engineer], not employed.
 <br>
 More details are in my [résumé](/resume/).
 {: .hard-returns }
