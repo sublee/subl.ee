@@ -12,6 +12,6 @@ planetarium:
   title:
     weight: 600
   css: |
-    h2 {
+    h1, h2 {
       letter-spacing: -0.0607em;
     }

@@ -1,9 +1,0 @@
-noom:
-  emblem:
-    shape: ☲
-    colors: {0: '#fd7451'}
-  colors:
-    text: '#4d4d4d'
-    title: '#fd7451'
-    blur: '#7a8d99'
-    link: '#47b9b4'
