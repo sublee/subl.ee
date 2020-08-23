@@ -107,7 +107,7 @@ Front-end Web Developer {: .label }
 Open Source Experience
 ----------------------
 
-[torchgpipe][], 2019--
+[torchgpipe][], 2019--2020
 :   A GPipe implementation in PyTorch.
     {: .note }
 
