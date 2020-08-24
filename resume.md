@@ -161,8 +161,8 @@ Open Source Experience
 :   Developed a Python profiler with an interactive TUI inspired by [the Unity
     profiler][unity-profiler].
 
-    On GitHub, this project has been starred by 2.9k people. Also, it was the
-    3rd daily trending repository on Sep 22, 2014.
+    On GitHub, this project has been starred by 3k people. Also, it was the 3rd
+    daily trending repository on Sep 22, 2014.
 
 [profiling]: https://github.com/what-studio/profiling
 [unity-profiler]: https://docs.unity3d.com/Manual/ProfilerWindow.html
