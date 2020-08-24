@@ -45,6 +45,13 @@ Work Experience
 ---------------
 
 Software Engineer {: .label }
+[Naver][], 2020--
+:   A technology company.
+    {: .note }
+
+:   Work for [Clova][]. Just joined.
+
+Software Engineer {: .label }
 [Kakao Brain][kakaobrain], 2018--2020
 :   The AI research lab in Kakao.
     {: .note }
@@ -55,6 +62,8 @@ Software Engineer {: .label }
     Developed a serverless training framework and a distributed hyperparameter
     search platform for AutoML.
 
+[clova]: https://clova.ai/
+[naver]: https://navercorp.com/en
 [kakaobrain]: https://kakaobrain.com/
 [gpipe]: https://arxiv.org/abs/1811.06965
 [torchgpipe]: https://torchgpipe.readthedocs.io/

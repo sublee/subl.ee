@@ -9,13 +9,14 @@ Heungsub Lee
 I am
 ----
 
-Heungsub Lee, a [software engineer], not employed.
+Heungsub Lee, a [software engineer][] at [Clova][] in [Naver][].
 <br>
 More details are in my [résumé](/resume/).
 {: .hard-returns }
 
 [software engineer]: https://github.com/sublee
-[Kakao Brain]: https://kakaobrain.com/
+[clova]: https://clova.ai/
+[naver]: https://navercorp.com/en
 
 I have made
 -----------
