@@ -1,10 +1,10 @@
 naver:
   emblem:
     shape: ☲
-    colors: {0: '#00c73c'}
+    colors: {0: '#03c75a'}
   colors:
-    text: '#333'
-    title: '#00c73c'
+    text: '#1e1e1e'
+    title: '#03c75a'
     blur: '#999'
     link: '#15b'
     vlink: '#86a'
