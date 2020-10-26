@@ -145,7 +145,7 @@ main>p, main>ul, main>dl {
   box-shadow:
     0  2px  5px #00000033,
     0 10px 15px #00000022;
-  border-radius: 0 0 5px 5px;
+  border-radius: 5px;
 }
 dt {
   font-weight: 600;
@@ -157,8 +157,8 @@ dt.label, dd.note {
   font-weight: 400;
   font-size: 0.75rem;
 }
-h1+p, h1+ul, h1+dl {
-  border-radius: 5px;
+h2+p, h2+ul, h2+dl {
+  border-radius: 0 0 5px 5px;
 }
 hr {
   display: none;
