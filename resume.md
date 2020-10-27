@@ -60,11 +60,9 @@ Software Engineer {: .label }
 :   The AI research lab in Kakao.
     {: .note }
 
-:   Focused on parallel training, including a large-scale data parallelism and
-    pipeline parallelism.
-
-    Reproduced [GPipe][] in PyTorch. This project was published as
-    [torchgpipe][].
+:   Focused on parallel training, including a large-scale data parallelism,
+    pipeline parallelism. [torchgpipe][] was developed and published on this
+    interest.
 
     Developed a serverless training framework and a distributed hyperparameter
     search platform for AutoML.
@@ -99,8 +97,8 @@ Web Developer {: .label }
 :   Supplies stock images for business on [Iclickart][].
     {: .note }
 
-:   Developed and maintained web services from scratch. Maintained on-premise
-    Linux servers.
+:   Developed web services from scratch, and maintained on-premise Linux
+    servers.
 
 [npine]: http://en.npine.com/
 [iclickart]: http://iclickart.co.kr/
@@ -112,11 +110,7 @@ Front-end Web Developer {: .label }
 
 :   Designed and implemented the UI/UX for social media.
 
-    Developed [jDoctest][] which is an open-source JavaScript testing framework
-    inspired by Python's doctest.
-
-[lunant]: http://lunant.net/
-[jdoctest]: https://lunant.github.com/jdoctest
+[lunant]: https://github.com/lunant
 
 Open Source Experience
 ----------------------
