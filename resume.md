@@ -36,7 +36,8 @@ AI Research {: .label }
   {: .attr }
 
 Back-end Development {: .label }
-: Linux, AWS, Terraform, Docker, ZeroMQ, Redis, Couchbase, MySQL, etcd
+: Linux, Docker, Kubernetes, AWS, Terraform, ZeroMQ, Redis, Couchbase, MySQL,
+  etcd
   {: .attr }
 
 ---
@@ -49,24 +50,28 @@ Software Engineer {: .label }
 :   A technology company.
     {: .note }
 
-:   Work for [Clova][]. Just joined.
+:   Redesign the research platform to boost productivity in [Clova][].
+
+[clova]: https://clova.ai/
+[naver]: https://navercorp.com/en
 
 Software Engineer {: .label }
 [Kakao Brain][kakaobrain], 2018--2020
 :   The AI research lab in Kakao.
     {: .note }
 
-:   Developed [torchgpipe][] which reproduces [GPipe][] in PyTorch to boost the
-    training performance of large deep learning models.
+:   Focused on parallel training, including a large-scale data parallelism and
+    pipeline parallelism.
+
+    Reproduced [GPipe][] in PyTorch. This project was published as
+    [torchgpipe][].
 
     Developed a serverless training framework and a distributed hyperparameter
     search platform for AutoML.
 
-[clova]: https://clova.ai/
-[naver]: https://navercorp.com/en
 [kakaobrain]: https://kakaobrain.com/
-[torchgpipe]: https://torchgpipe.readthedocs.io/
 [gpipe]: https://arxiv.org/abs/1811.06965
+[torchgpipe]: https://torchgpipe.readthedocs.io/
 
 Game Server Engineer & Architect {: .label }
 [Nexon][], 2011--2018
@@ -120,25 +125,26 @@ Open Source Experience
 :   A GPipe implementation in PyTorch.
     {: .note }
 
-:   Implemented [GPipe][] in PyTorch. GPipe is a scalable pipeline parallelism
-    library for the training of a giant model. The story behind this project
-    can be found on [Kakao Brain Blog<sup>ko</sup>][torchgpipe-blog].
+:   Implemented [GPipe][] in PyTorch with optimization for CUDA, PyTorch's
+    autograd engine, and long skip connections. GPipe is a scalable pipeline
+    parallelism library for the training of a giant model.
 
-    Optimized the pipeline parallelism and checkpointing for CUDA and PyTorch's
-    autograd engine.
+    This project has become [a part of PyTorch][pytorch#44090]. The story
+    behind it can be found on [Kakao Brain Blog<sup>ko</sup>][torchgpipe-blog]
+    and [the technical report][arxiv:torchgpipe].
 
 [torchgpipe]: https://torchgpipe.readthedocs.io/
 [gpipe]: https://arxiv.org/abs/1811.06965
 [torchgpipe-blog]: https://kakaobrain.com/blog/66
+[pytorch#44090]: https://github.com/pytorch/pytorch/pull/44090
+[arxiv:torchgpipe]: https://arxiv.org/abs/2004.09910
 
 [Hangulize][], 2010--
 :   Automatically transcribes a non-Korean word into Hangul.
     {: .note }
 
 :   Implemented an automatic Hangul transcription algorithm to realize [Brian
-    Jongseong Park's idea][hangulize-idea]. By origin, it was written in
-    Python, but rewritten in Go for better features, performance, and
-    productivity.
+    Jongseong Park's idea][hangulize-idea].
 
     Designed and implemented the web service and RESTful API. Many professional
     Korean translators habitually visit here to translate undocumented proper
@@ -168,10 +174,8 @@ Open Source Experience
     {: .note }
 
 :   Developed a Python profiler with an interactive TUI inspired by [the Unity
-    profiler][unity-profiler].
-
-    On GitHub, this project has been starred by 3k people. Also, it was the 3rd
-    daily trending repository on Sep 22, 2014.
+    profiler][unity-profiler]. On GitHub, this project has been starred by 3k
+    people. Also, it was the 3rd daily trending repository on Sep 22, 2014.
 
 [profiling]: https://github.com/what-studio/profiling
 [unity-profiler]: https://docs.unity3d.com/Manual/ProfilerWindow.html
@@ -179,8 +183,7 @@ Open Source Experience
 Others
 :   - [Tossi][] -- A utility for Korean allomorphic particles.
     - [Flask-AutoIndex][] -- mod_autoindex for [Flask][].
-    - [SUBLEERUNKER][] -- A simple parody game of SUBERUNKER. Play it in your
-                          web browser.
+    - [SUBLEERUNKER][] -- A simple parody game of SUBERUNKER.
     - [Me2virus][] -- An XSS attack on social media named [Me2day][]. When a
                       user looks at an infected post, a new infected post was
                       written on the user's wall.
