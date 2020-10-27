@@ -60,16 +60,18 @@ Software Engineer {: .label }
 :   The AI research lab in Kakao.
     {: .note }
 
-:   Focused on parallel training, including a large-scale data parallelism,
-    pipeline parallelism. [torchgpipe][] was developed and published on this
-    interest.
+:   Focused on parallel training of convolutional neural networks, including
+    large-scale data parallelism and pipeline parallelism.
+
+    Developed and published [torchgpipe][], which is a [GPipe][] implementation
+    in PyTorch.
 
     Developed a serverless training framework and a distributed hyperparameter
     search platform for AutoML.
 
 [kakaobrain]: https://kakaobrain.com/
-[gpipe]: https://arxiv.org/abs/1811.06965
 [torchgpipe]: https://torchgpipe.readthedocs.io/
+[gpipe]: https://arxiv.org/abs/1811.06965
 
 Game Server Engineer & Architect {: .label }
 [Nexon][], 2011--2018
