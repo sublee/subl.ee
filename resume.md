@@ -32,7 +32,8 @@ Programming Languages {: .label }
   {: .attr }
 
 AI Research {: .label }
-: PyTorch, Triton Inference Server, NVIDIA Nsight Systems, pipeline parallelism
+: PyTorch, data or pipeline parallelism, Triton Inference Server, NVIDIA Nsight
+  Systems
   {: .attr }
 
 Back-end Development {: .label }
@@ -61,13 +62,11 @@ Software Engineer {: .label }
     {: .note }
 
 :   Focused on parallel training of convolutional neural networks, including
-    large-scale data parallelism and pipeline parallelism.
-
-    Developed and published [torchgpipe][], which is a [GPipe][] implementation
-    in PyTorch.
+    large-scale data parallelism and pipeline parallelism. Developed and
+    published a pipeline parallelism library in PyTorch named [torchgpipe][].
 
     Developed a serverless training framework and a distributed hyperparameter
-    search platform for AutoML.
+    search platform for an AutoML service.
 
 [kakaobrain]: https://kakaobrain.com/
 [torchgpipe]: https://torchgpipe.readthedocs.io/

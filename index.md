@@ -21,7 +21,7 @@ More details are in my [résumé](/resume/).
 I have made
 -----------
 
-- [torchgpipe][]: A GPipe implementation in PyTorch.
+- [torchgpipe][]: A pipeline parallelism library in PyTorch.
 - [Hangulize][]: A Korean alphabet transcriber.
 - [Tossi][]: A utility for Korean allomorphic particles.
 - [TrueSkill][]: A rating system for online games.

@@ -105,6 +105,7 @@ dd {
 }
 dd.note {
   margin-bottom: 0.5rem;
+  font-style: italic;
 }
 dd.attr {
   margin-left: 1rem;
