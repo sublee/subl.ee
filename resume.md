@@ -87,7 +87,7 @@ Game Server Engineer & Architect {: .label }
     Researched rating systems such as Elo, Glicko, and
     [TrueSkill][trueskill-tm] to develop a matchmaker.
 
-    Managed a server engineering team including 15 engineers.
+    Led a server engineering team including 15 engineers.
 
 [nexon]: https://company.nexon.com/eng
 [kartrider]: http://kart.nexon.com/
@@ -98,8 +98,7 @@ Web Developer {: .label }
 :   Supplies stock images for business on [Iclickart][].
     {: .note }
 
-:   Developed web services from scratch, and maintained on-premise Linux
-    servers.
+:   Developed web services from scratch. Maintained on-premise Linux servers.
 
 [npine]: http://en.npine.com/
 [iclickart]: http://iclickart.co.kr/
@@ -139,17 +138,15 @@ Open Source Experience
     {: .note }
 
 :   Implemented an automatic Hangul transcription algorithm to realize [Brian
-    Jongseong Park's idea][hangulize-idea].
+    Jongseong Park's idea][hangulize-idea]. Designed and implemented the web
+    service and RESTful API.
 
-    Designed and implemented the web service and RESTful API. Many professional
-    Korean translators habitually visit here to translate undocumented proper
-    nouns. For example, Ryu Gwang, who is a technical translator, introduced
-    Hangulize in [his posting<sup>ko</sup>][ryugwang]. Netflix also refers to
-    it in [the Korean timed text style guide][netflix-style].
+    Many professional Korean translators habitually use this tool to translate
+    undocumented proper nouns. Netflix refers to this tool in [the Korean timed
+    text style guide][netflix-style].
 
 [hangulize]: https://hangulize.org/
 [hangulize-idea]: http://iceager.egloos.com/2610028
-[ryugwang]: http://occamsrazr.net/tt/351
 [netflix-style]: https://partnerhelp.netflixstudios.com/hc/en-us/articles/216001127-Korean-Timed-Text-Style-Guide
 
 [TrueSkill][trueskill], 2012--
