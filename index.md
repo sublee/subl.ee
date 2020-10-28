@@ -21,13 +21,13 @@ More details are in my [résumé](/resume/).
 I have made
 -----------
 
-- [torchgpipe][]: A pipeline parallelism library in PyTorch.
-- [Hangulize][]: A Korean alphabet transcriber.
-- [Tossi][]: A utility for Korean allomorphic particles.
-- [TrueSkill][]: A rating system for online games.
-- [Profiling][]: An interactive continuous Python profiler.
-- [SUBLEERUNKER][]: A simple game with [my pixel art][DeviantArt].
-- Durango, Kartrider Dash & Coin Rush at Nexon.
+- [torchgpipe][]: A pipeline parallelism library in PyTorch
+- [Hangulize][]: A Korean alphabet transcriber
+- [Tossi][]: A utility for Korean allomorphic particles
+- [TrueSkill][]: A rating system for online games
+- [Profiling][]: An interactive continuous Python profiler
+- [SUBLEERUNKER][]: A simple game with [my pixel art][DeviantArt]
+- Durango, Kartrider Dash & Coin Rush at Nexon
 
 [torchgpipe]:   https://torchgpipe.readthedocs.io/
 [Hangulize]:    https://hangulize.org/
