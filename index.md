@@ -26,16 +26,17 @@ I have made
 - [Tossi][]: A utility for Korean allomorphic particles
 - [TrueSkill][]: A rating system for online games
 - [Profiling][]: An interactive continuous Python profiler
-- [SUBLEERUNKER][]: A simple game with [my pixel art][DeviantArt]
+- [Subway Fighter][], [SUBLEERUNKER][]: Games with [my pixel art][DeviantArt]
 - Durango, Kartrider Dash & Coin Rush at Nexon
 
-[torchgpipe]:   https://torchgpipe.readthedocs.io/
-[Hangulize]:    https://hangulize.org/
-[Tossi]:        https://github.com/what-studio/tossi
-[TrueSkill]:    https://trueskill.org/
-[Profiling]:    https://github.com/what-studio/profiling
-[SUBLEERUNKER]: /runker/
-[DeviantArt]:   https://www.deviantart.com/sublee/gallery/?catpath=/
+[torchgpipe]:     https://torchgpipe.readthedocs.io/
+[Hangulize]:      https://hangulize.org/
+[Tossi]:          https://github.com/what-studio/tossi
+[TrueSkill]:      https://trueskill.org/
+[Profiling]:      https://github.com/what-studio/profiling
+[Subway Fighter]: https://yeonghoey.itch.io/subway-fighter
+[SUBLEERUNKER]:   /runker/
+[DeviantArt]:     https://www.deviantart.com/sublee/gallery/?catpath=/
 
 I told about
 ------------
