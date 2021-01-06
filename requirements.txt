@@ -8,7 +8,7 @@ WeasyPrint==0.42.3  # https://github.com/Kozea/WeasyPrint/issues/1#issuecomment-
 
 # Derived Requirements
 cairocffi==1.0.2
-CairoSVG==2.4.0
+CairoSVG==2.5.1
 cffi==1.12.3
 cssselect2==0.2.1
 defusedxml==0.6.0
