@@ -178,7 +178,7 @@ Others
     - [SUBLEERUNKER][] -- A simple parody game of SUBERUNKER.
 
 [tossi]: https://github.com/what-studio/tossi
-[flask-autoindex]: http://pythonhosted.org/Flask-AutoIndex
+[flask-autoindex]: https://flask-autoindex.readthedocs.io/
 [flask]: https://flask.palletsprojects.com/
 [subleerunker]: /runker/
 
