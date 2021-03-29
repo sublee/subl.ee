@@ -84,16 +84,76 @@ function updateFavicon() {
   var emblem;
   switch (__theme__) {
   
+    case "openai":
+      emblem = {"colors": {"1": "#ff157e", "2": "#ff4747", "3": "#ffa30e", "4": "#00e0ff", "5": "#328cff", "6": "#873cff"}, "shape": "\u2637"}
+      break;
+  
+    case "trello":
+      emblem = {"colors": {"0": "#0079bf"}, "shape": "\u2630"}
+      break;
+  
+    case "facebook":
+      emblem = {"colors": {"0": "#0076fb"}, "shape": "\u2632"}
+      break;
+  
+    case "devsisters":
+      emblem = {"colors": {"0": "#ff6000"}, "shape": "\u2632"}
+      break;
+  
+    case "coupang":
+      emblem = {"colors": {"0": "#521110", "2": "#d73227", "3": "#e99923", "5": "#92ba3e", "6": "#50a3d9"}, "shape": "\u2636"}
+      break;
+  
+    case "twitch":
+      emblem = {"colors": {"0": "#6441a4"}, "shape": "\u2632"}
+      break;
+  
+    case "netflix":
+      emblem = {"colors": {"0": "#e50914"}, "shape": "\u2632"}
+      break;
+  
+    case "planetarium":
+      emblem = {"colors": {"0": "#3e2a8c", "5": "#98f0c0"}, "shape": "\u2632"}
+      break;
+  
+    case "microsoft":
+      emblem = {"colors": {"1": "#f25022", "2": "#7fba00", "3": "#ffb900", "5": "#00a4ef"}, "shape": "\u2632"}
+      break;
+  
+    case "sublue":
+      emblem = {"colors": {"0": "#e57", "5": "#fd8"}, "shape": "\u2632"}
+      break;
+  
+    case "sublue:dark":
+      emblem = {"colors": {"0": "#e57", "5": "#fd8"}, "shape": "\u2632"}
+      break;
+  
+    case "aws":
+      emblem = {"colors": {"0": "#f90"}, "shape": "\u2632"}
+      break;
+  
+    case "nexon":
+      emblem = {"colors": {"0": "#0b2a4a", "3": "#c3d600", "4": "#00a1e1", "5": "#00a1e1"}, "shape": "\u2633"}
+      break;
+  
+    case "blizzard":
+      emblem = {"colors": {"0": "#00adef"}, "shape": "\u2632"}
+      break;
+  
+    case "kakao":
+      emblem = {"colors": {"0": "#ffcd00"}, "shape": "\u2632"}
+      break;
+  
+    case "pytorch":
+      emblem = {"colors": {"0": "#ee4c2c"}, "shape": "\u2634"}
+      break;
+  
     case "heumtax":
       emblem = {"colors": {"0": "#1f274b"}, "shape": "\u2632"}
       break;
   
-    case "toss":
-      emblem = {"colors": {"0": "#0050ff"}, "shape": "\u2632"}
-      break;
-  
-    case "google":
-      emblem = {"colors": {"1": "#4285f4", "2": "#ea4335", "3": "#34a853", "5": "#fbbc05"}, "shape": "\u2632"}
+    case "python":
+      emblem = {"colors": {"0": "#3776ab", "3": "#ffd343", "5": "#ffd343"}, "shape": "\u2632"}
       break;
   
     case "cwkim":
@@ -112,76 +172,8 @@ function updateFavicon() {
       emblem = {"colors": {"0": "#e6b602"}, "shape": "\u2632"}
       break;
   
-    case "netmarble":
-      emblem = {"colors": {"0": "#ffde00", "3": "#5d3824", "4": "#fe605f", "6": "#5d3824"}, "shape": "\u2635"}
-      break;
-  
-    case "aws":
-      emblem = {"colors": {"0": "#f90"}, "shape": "\u2632"}
-      break;
-  
-    case "ridi":
-      emblem = {"colors": {"0": "#1f8ce6"}, "shape": "\u2632"}
-      break;
-  
-    case "netflix":
-      emblem = {"colors": {"0": "#e50914"}, "shape": "\u2632"}
-      break;
-  
-    case "devsisters":
-      emblem = {"colors": {"0": "#ff6000"}, "shape": "\u2632"}
-      break;
-  
-    case "terraform":
-      emblem = {"colors": {"0": "#5c4ee5"}, "shape": "\u2637"}
-      break;
-  
-    case "doodle":
-      emblem = {"colors": {"0": "#f49", "5": "#ef3"}, "shape": "\u2632"}
-      break;
-  
-    case "pytorch":
-      emblem = {"colors": {"0": "#ee4c2c"}, "shape": "\u2634"}
-      break;
-  
-    case "pubg":
-      emblem = {"colors": {"0": "#f2a900"}, "shape": "\u2632"}
-      break;
-  
-    case "mit":
-      emblem = {"colors": {"0": "#000", "5": "#a31f34"}, "shape": "\u2636"}
-      break;
-  
-    case "openai":
-      emblem = {"colors": {"1": "#ff157e", "2": "#ff4747", "3": "#ffa30e", "4": "#00e0ff", "5": "#328cff", "6": "#873cff"}, "shape": "\u2637"}
-      break;
-  
-    case "between":
-      emblem = {"colors": {"0": "#38dcd7"}, "shape": "\u2632"}
-      break;
-  
-    case "ycombinator":
-      emblem = {"colors": {"0": "#f26522"}, "shape": "\u2632"}
-      break;
-  
-    case "trello":
-      emblem = {"colors": {"0": "#0079bf"}, "shape": "\u2630"}
-      break;
-  
-    case "php":
-      emblem = {"colors": {"0": "#777bb3"}, "shape": "\u2630"}
-      break;
-  
-    case "woowahan":
-      emblem = {"colors": {"0": "#2ac1bc"}, "shape": "\u2632"}
-      break;
-  
-    case "lg":
-      emblem = {"colors": {"0": "#a50034"}, "shape": "\u2632"}
-      break;
-  
-    case "nexon":
-      emblem = {"colors": {"0": "#0b2a4a", "3": "#c3d600", "4": "#00a1e1", "5": "#00a1e1"}, "shape": "\u2633"}
+    case "toss":
+      emblem = {"colors": {"0": "#0050ff"}, "shape": "\u2632"}
       break;
   
     case "ribbon":
@@ -192,88 +184,32 @@ function updateFavicon() {
       emblem = {"colors": {"0": "#4c80f1"}, "shape": "\u2632"}
       break;
   
-    case "sundaytoz":
-      emblem = {"colors": {"0": "#ff003f"}, "shape": "\u2632"}
+    case "netmarble":
+      emblem = {"colors": {"0": "#ffde00", "3": "#5d3824", "4": "#fe605f", "6": "#5d3824"}, "shape": "\u2635"}
       break;
   
-    case "90s":
-      emblem = {"colors": {"0": "#e01", "5": "#ee1"}, "shape": "\u2632"}
-      break;
-  
-    case "web2.0":
-      emblem = {"colors": {"0": "#e57", "5": "#fc6"}, "shape": "\u2632"}
-      break;
-  
-    case "kakao":
-      emblem = {"colors": {"0": "#ffcd00"}, "shape": "\u2632"}
+    case "lg":
+      emblem = {"colors": {"0": "#a50034"}, "shape": "\u2632"}
       break;
   
     case "alabaster":
       emblem = {"colors": {"0": "#3e4349"}, "shape": "\u2632"}
       break;
   
-    case "coupang":
-      emblem = {"colors": {"0": "#521110", "2": "#d73227", "3": "#e99923", "5": "#92ba3e", "6": "#50a3d9"}, "shape": "\u2636"}
-      break;
-  
-    case "twitter":
-      emblem = {"colors": {"0": "#1da1f2"}, "shape": "\u2632"}
-      break;
-  
-    case "tencent":
-      emblem = {"colors": {"0": "#0052d9"}, "shape": "\u2632"}
-      break;
-  
-    case "yanolja":
-      emblem = {"colors": {"0": "#ff3478"}, "shape": "\u2632"}
-      break;
-  
-    case "sk":
-      emblem = {"colors": {"0": "#ea002c", "4": "#f58206", "6": "#f58206"}, "shape": "\u2635"}
-      break;
-  
-    case "travis":
-      emblem = {"colors": {"0": "#3fa75f", "2": "#db423c", "3": "#d2c93b"}, "shape": "\u2632"}
-      break;
-  
-    case "twitch":
-      emblem = {"colors": {"0": "#6441a4"}, "shape": "\u2632"}
-      break;
-  
-    case "blizzard":
-      emblem = {"colors": {"0": "#00adef"}, "shape": "\u2632"}
-      break;
-  
-    case "facebook":
-      emblem = {"colors": {"0": "#0076fb"}, "shape": "\u2632"}
-      break;
-  
-    case "planetarium":
-      emblem = {"colors": {"0": "#3e2a8c", "5": "#98f0c0"}, "shape": "\u2632"}
-      break;
-  
     case "slack":
       emblem = {"colors": {"1": "#36c5f0", "2": "#2eb67d", "3": "#e01e5a", "5": "#ecb22e"}, "shape": "\u2632"}
       break;
   
-    case "python":
-      emblem = {"colors": {"0": "#3776ab", "3": "#ffd343", "5": "#ffd343"}, "shape": "\u2632"}
+    case "google":
+      emblem = {"colors": {"1": "#4285f4", "2": "#ea4335", "3": "#34a853", "5": "#fbbc05"}, "shape": "\u2632"}
       break;
   
-    case "tada":
-      emblem = {"colors": {"0": "#2a2b4a"}, "shape": "\u2630"}
+    case "woowahan":
+      emblem = {"colors": {"0": "#2ac1bc"}, "shape": "\u2632"}
       break;
   
-    case "sublue":
-      emblem = {"colors": {"0": "#e57", "5": "#fd8"}, "shape": "\u2632"}
-      break;
-  
-    case "sublue:dark":
-      emblem = {"colors": {"0": "#e57", "5": "#fd8"}, "shape": "\u2632"}
-      break;
-  
-    case "microsoft":
-      emblem = {"colors": {"1": "#f25022", "2": "#7fba00", "3": "#ffb900", "5": "#00a4ef"}, "shape": "\u2632"}
+    case "sundaytoz":
+      emblem = {"colors": {"0": "#ff003f"}, "shape": "\u2632"}
       break;
   
     case "naver":
@@ -292,12 +228,76 @@ function updateFavicon() {
       emblem = {"colors": {"0": "#00a9ff", "3": "#26cd6b", "4": "#0085ff", "6": "#f8be00"}, "shape": "\u2635"}
       break;
   
-    case "golang":
-      emblem = {"colors": {"0": "#76e1fe"}, "shape": "\u2632"}
+    case "ridi":
+      emblem = {"colors": {"0": "#1f8ce6"}, "shape": "\u2632"}
+      break;
+  
+    case "90s":
+      emblem = {"colors": {"0": "#e01", "5": "#ee1"}, "shape": "\u2632"}
+      break;
+  
+    case "web2.0":
+      emblem = {"colors": {"0": "#e57", "5": "#fc6"}, "shape": "\u2632"}
+      break;
+  
+    case "pubg":
+      emblem = {"colors": {"0": "#f2a900"}, "shape": "\u2632"}
+      break;
+  
+    case "terraform":
+      emblem = {"colors": {"0": "#5c4ee5"}, "shape": "\u2637"}
+      break;
+  
+    case "twitter":
+      emblem = {"colors": {"0": "#1da1f2"}, "shape": "\u2632"}
+      break;
+  
+    case "yanolja":
+      emblem = {"colors": {"0": "#ff3478"}, "shape": "\u2632"}
+      break;
+  
+    case "travis":
+      emblem = {"colors": {"0": "#3fa75f", "2": "#db423c", "3": "#d2c93b"}, "shape": "\u2632"}
+      break;
+  
+    case "doodle":
+      emblem = {"colors": {"0": "#f49", "5": "#ef3"}, "shape": "\u2632"}
+      break;
+  
+    case "tencent":
+      emblem = {"colors": {"0": "#0052d9"}, "shape": "\u2632"}
       break;
   
     case "samsung":
       emblem = {"colors": {"0": "#2c2e87"}, "shape": "\u2632"}
+      break;
+  
+    case "mit":
+      emblem = {"colors": {"0": "#000", "5": "#a31f34"}, "shape": "\u2636"}
+      break;
+  
+    case "tada":
+      emblem = {"colors": {"0": "#2a2b4a"}, "shape": "\u2630"}
+      break;
+  
+    case "sk":
+      emblem = {"colors": {"0": "#ea002c", "4": "#f58206", "6": "#f58206"}, "shape": "\u2635"}
+      break;
+  
+    case "between":
+      emblem = {"colors": {"0": "#38dcd7"}, "shape": "\u2632"}
+      break;
+  
+    case "php":
+      emblem = {"colors": {"0": "#777bb3"}, "shape": "\u2630"}
+      break;
+  
+    case "golang":
+      emblem = {"colors": {"0": "#76e1fe"}, "shape": "\u2632"}
+      break;
+  
+    case "ycombinator":
+      emblem = {"colors": {"0": "#f26522"}, "shape": "\u2632"}
       break;
   
   }
@@ -612,9 +612,9 @@ linguistic features of Korean and Indo-European languages.</p>
 <p>Implemented <a href="https://arxiv.org/abs/1811.06965">GPipe</a> in PyTorch with optimization for CUDA, PyTorch&rsquo;s
 autograd engine, and long skip connections. GPipe is a scalable pipeline
 parallelism library for the training of a giant model.</p>
-<p>This project has become <a href="https://github.com/pytorch/pytorch/pull/44090">a part of PyTorch</a>. The story
-behind it can be found on <a href="https://kakaobrain.com/blog/66">Kakao Brain Blog<sup>ko</sup></a>
-and <a href="https://arxiv.org/abs/2004.09910">the technical report</a>.</p>
+<p>This project has become <a href="https://pytorch.org/docs/1.8.0/pipeline.html">a part of PyTorch</a>. The story behind
+it can be found on <a href="https://kakaobrain.com/blog/66">Kakao Brain Blog<sup>ko</sup></a> and
+<a href="https://arxiv.org/abs/2004.09910">the technical report</a>.</p>
 </dd>
 <dt><a href="https://hangulize.org/">Hangulize</a>, 2010&ndash;</dt>
 <dd class="note">Automatically transcribes a non-Korean word into Hangul.</dd>
@@ -640,11 +640,8 @@ people. Also, it was the 3rd daily trending repository on Sep 22, 2014.</dd>
 <dd>
 <ul>
 <li><a href="https://github.com/what-studio/tossi">Tossi</a> &ndash; A utility for Korean allomorphic particles.</li>
-<li><a href="http://pythonhosted.org/Flask-AutoIndex">Flask-AutoIndex</a> &ndash; mod_autoindex for <a href="https://flask.palletsprojects.com/">Flask</a>.</li>
+<li><a href="https://flask-autoindex.readthedocs.io/">Flask-AutoIndex</a> &ndash; mod_autoindex for <a href="https://flask.palletsprojects.com/">Flask</a>.</li>
 <li><a href="/runker/">SUBLEERUNKER</a> &ndash; A simple parody game of SUBERUNKER.</li>
-<li><a href="https://github.com/sublee/me2virus">Me2virus</a> &ndash; An <abbr title="Cross-site scripting">XSS</abbr> attack on social media named <a href="https://en.wikipedia.org/wiki/Me2day">Me2day</a>. When a
-                  user looks at an infected post, a new infected post was
-                  written on the user&rsquo;s wall.</li>
 </ul>
 </dd>
 <dt>Contributions</dt>
