@@ -176,16 +176,11 @@ Others
 :   - [Tossi][] -- A utility for Korean allomorphic particles.
     - [Flask-AutoIndex][] -- mod_autoindex for [Flask][].
     - [SUBLEERUNKER][] -- A simple parody game of SUBERUNKER.
-    - [Me2virus][] -- An XSS attack on social media named [Me2day][]. When a
-                      user looks at an infected post, a new infected post was
-                      written on the user's wall.
 
 [tossi]: https://github.com/what-studio/tossi
 [flask-autoindex]: http://pythonhosted.org/Flask-AutoIndex
 [flask]: https://flask.palletsprojects.com/
 [subleerunker]: /runker/
-[me2virus]: https://github.com/sublee/me2virus
-[me2day]: https://en.wikipedia.org/wiki/Me2day
 
 Contributions
 :   - For [PyTorch][],
