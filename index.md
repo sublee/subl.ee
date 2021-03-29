@@ -21,7 +21,7 @@ More details are in my [résumé](/resume/).
 I have made
 -----------
 
-- [torchgpipe][]: A pipeline parallelism library in PyTorch
+- [torchgpipe][]: The base code of [Pipe APIs in PyTorch][pytorch-pipe]
 - [Hangulize][]: A Korean alphabet transcriber
 - [Tossi][]: A utility for Korean allomorphic particles
 - [TrueSkill][]: A rating system for online games
@@ -30,6 +30,7 @@ I have made
 - Durango, Kartrider Dash & Coin Rush at Nexon
 
 [torchgpipe]:     https://torchgpipe.readthedocs.io/
+[pytorch-pipe]:   https://pytorch.org/docs/1.8.0/pipeline.html
 [Hangulize]:      https://hangulize.org/
 [Tossi]:          https://github.com/what-studio/tossi
 [TrueSkill]:      https://trueskill.org/
