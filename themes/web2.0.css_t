@@ -147,6 +147,12 @@ main>p, main>ul, main>dl {
     0 10px 15px #00000022;
   border-radius: 5px;
 }
+.footnote {
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+  border-radius: 0;
+}
 dt {
   font-weight: 600;
 }
