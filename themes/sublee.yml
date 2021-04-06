@@ -18,3 +18,16 @@ sublue:dark:
     blur: '#667'
     link: '#68e'
     vlink: '#679'
+
+sublette:
+  emblem:
+    shape: ☲
+    colors: {0: '#e57', 5: '#fd8'}
+  colors:
+    background: '#202535'
+    text: '#ccced0'
+    blur: '#678'
+    link: '#58f'
+    vlink: '#7bf'
+  text: {font: Ubuntu Mono}
+  title: {weight: 600}
