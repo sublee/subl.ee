@@ -42,11 +42,11 @@
 
 
 
-  @import url(https://fonts.googleapis.com/css?family=Hind:400);
+  @import url(https://fonts.googleapis.com/css?family=Poppins:400);
 
 
 
-  @import url(https://fonts.googleapis.com/css?family=Hind:600);
+  @import url(https://fonts.googleapis.com/css?family=Poppins:700);
 
 
 * {
@@ -60,9 +60,9 @@
 }
 
 body {
-  font-family: 'Hind', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  color: #555;
+  color: #101010;
 
   background-color: #fff;
   background-repeat: no-repeat;
@@ -86,7 +86,7 @@ header {
 footer {
   margin-top: 2rem;
   font-size: 0.8em;
-  color: #999;
+  color: #808080;
 }
 
 /* Theme Loading */
@@ -118,8 +118,8 @@ h2 {
 
 h1, h2 {
   
-  font-weight: 600;
-  color: #3e3835;
+  font-weight: 700;
+  color: #101010;
 }
 
 h1:target, h2:target, h3:target, h4:target, h5:target, h6:target {
@@ -127,11 +127,11 @@ h1:target, h2:target, h3:target, h4:target, h5:target, h6:target {
 }
 
 a:link {
-  color: #1f8ce6;
+  color: #0064ff;
 }
 
 a:visited {
-  color: #1f8ce6;
+  color: #0064ff;
 }
 
 a:hover {
@@ -148,13 +148,13 @@ ul li:before {
   position: absolute;
   left: 0;
   content: '-';
-  color: #999;
+  color: #808080;
 }
 
 hr {
   margin: 1rem 0;
   height: 1px;
-  background-color: rgba(153, 153, 153, 0.1);
+  background-color: rgba(128, 128, 128, 0.1);
 }
 
 em, em * {
@@ -172,9 +172,9 @@ abbr, acronym {
 
 kbd {
   display: inline-block;
-  background: rgba(153, 153, 153, 0.1);
+  background: rgba(128, 128, 128, 0.1);
   border-radius: 3px;
-  box-shadow: 0 1px 2px #999;
+  box-shadow: 0 1px 2px #808080;
 
   font-family: inherit;
   font-size: 0.8em;
@@ -214,7 +214,7 @@ dd.label *, dd.note * {
 }
 
 dt.label {
-  color: #999;
+  color: #808080;
 }
 dd.note {
   font-style: italic;
@@ -224,7 +224,7 @@ dd.note {
 
 .footnote {
   font-size: 0.8em;
-  color: #999;
+  color: #808080;
 }
 
 /* Emblem */
@@ -267,10 +267,10 @@ dd.note {
 
 
   .emblem-left .emblem-top {
-    background-color: #1f8ce6;
+    background-color: #0064ff;
   }
   .emblem-left .emblem-bottom {
-    background-color: #1f8ce6;
+    background-color: #0064ff;
   }
   
     .emblem-left .emblem-top {
@@ -282,18 +282,18 @@ dd.note {
   
 
   .emblem-middle .emblem-top {
-    background-color: #1f8ce6;
+    background-color: #0064ff;
   }
   .emblem-middle .emblem-bottom {
-    background-color: #1f8ce6;
+    background-color: #0064ff;
   }
   
 
   .emblem-right .emblem-top {
-    background-color: #1f8ce6;
+    background-color: #0064ff;
   }
   .emblem-right .emblem-bottom {
-    background-color: #1f8ce6;
+    background-color: #0064ff;
   }
   
     .emblem-right .emblem-top {
@@ -327,7 +327,7 @@ dd.note {
 .index h2 {
   margin-bottom: 0;
   font-size: 1.2em;
-  color: #3e3835;
+  color: #101010;
 }
 
 /* Resume */
@@ -372,7 +372,7 @@ dd.note {
 
 .themes a.selected {
   color: #fff;
-  background: #1f8ce6;
+  background: #0064ff;
   padding: 0 0.5em 0 0.2em;
 }
 
@@ -426,7 +426,7 @@ dd.note {
   .themes li {
     width: 50%;
   }
-}.emblem i { border-radius: 2px; }
+}h1, h2 { text-transform: uppercase; letter-spacing: -0.025rem; }
         [data-detect-theme="ridi"]::before {
             content: "ready";
         }
