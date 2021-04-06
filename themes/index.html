@@ -18,7 +18,7 @@
     
 
 var __theme__ = "sublue";
-var __themes__ = ["90s", "alabaster", "aws", "between", "blizzard", "clova", "coupang", "cwkim", "devsisters", "doodle", "facebook", "golang", "google", "heumtax", "ipari", "kakao", "lg", "microsoft", "mit", "naver", "naver-labs", "netflix", "netmarble", "nexon", "openai", "papago", "php", "planetarium", "pubg", "python", "pytorch", "ribbon", "ridi", "samsung", "sk", "slack", "spoqa", "sublue", "sublue:dark", "sundaytoz", "tada", "tencent", "terraform", "toss", "travis", "trello", "twitch", "twitter", "web2.0", "woowahan", "yanolja", "ycombinator", "yeonghoey", "yorkie"];
+var __themes__ = ["90s", "alabaster", "aws", "between", "blizzard", "clova", "coupang", "cwkim", "devsisters", "doodle", "facebook", "golang", "google", "heumtax", "ipari", "kakao", "lg", "microsoft", "mit", "naver", "naver-labs", "netflix", "netmarble", "nexon", "openai", "papago", "php", "planetarium", "pubg", "python", "pytorch", "ribbon", "ridi", "samsung", "sk", "slack", "spoqa", "sublette", "sublue", "sublue:dark", "sundaytoz", "tada", "tencent", "terraform", "toss", "travis", "trello", "twitch", "twitter", "web2.0", "woowahan", "yanolja", "ycombinator", "yeonghoey", "yorkie"];
 
 // -----------------------------------------------------------------------------
 // Theme URL
@@ -177,6 +177,10 @@ function updateFavicon() {
       break;
   
     case "sublue:dark":
+      emblem = {"colors": {"0": "#e57", "5": "#fd8"}, "shape": "\u2632"}
+      break;
+  
+    case "sublette":
       emblem = {"colors": {"0": "#e57", "5": "#fd8"}, "shape": "\u2632"}
       break;
   
@@ -980,6 +984,18 @@ window.addEventListener('keypress', function(e) {
                   .setAttribute('src', favicon.toDataURL('image/icon'));
         </script>
         <a href="#theme=spoqa" data-theme="spoqa">spoqa</a>
+      </li>
+    
+      <li id="sublette">
+        <img class="favicon" />
+        <script>
+          var favicon = generateFavicon("\u2632",
+                                        {"0": "#e57", "5": "#fd8"});
+          document.getElementById("sublette")
+                  .querySelector('img.favicon')
+                  .setAttribute('src', favicon.toDataURL('image/icon'));
+        </script>
+        <a href="#theme=sublette" data-theme="sublette">sublette</a>
       </li>
     
       <li id="sublue">
