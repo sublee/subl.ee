@@ -1,0 +1,9 @@
+sendbird:
+  emblem:
+    shape: ☲
+    colors: {0: '#742ddd'}
+  colors:
+    background: '#fff'
+    text: '#212121'
+    link: '#742ddd'
+  title: {weight: 600}
