@@ -18,7 +18,7 @@
     
 
 var __theme__ = "sublue";
-var __themes__ = ["90s", "alabaster", "aws", "between", "blizzard", "clova", "coupang", "cwkim", "devsisters", "doodle", "facebook", "golang", "google", "heumtax", "ipari", "kakao", "lg", "microsoft", "mit", "naver", "naver-labs", "netflix", "netmarble", "nexon", "openai", "papago", "php", "planetarium", "pubg", "python", "pytorch", "ribbon", "ridi", "samsung", "sk", "slack", "spoqa", "sublette", "sublue", "sublue:dark", "sundaytoz", "tada", "tencent", "terraform", "toss", "travis", "trello", "twitch", "twitter", "web2.0", "woowahan", "yanolja", "ycombinator", "yeonghoey", "yorkie"];
+var __themes__ = ["90s", "alabaster", "aws", "between", "blizzard", "clova", "coupang", "cwkim", "devsisters", "doodle", "facebook", "golang", "google", "heumtax", "ipari", "kakao", "lg", "microsoft", "mit", "naver", "naver-labs", "netflix", "netmarble", "nexon", "openai", "papago", "php", "planetarium", "pubg", "python", "pytorch", "ribbon", "ridi", "samsung", "sendbird", "sk", "slack", "spoqa", "sublette", "sublue", "sublue:dark", "sundaytoz", "tada", "tencent", "terraform", "toss", "travis", "trello", "twitch", "twitter", "web2.0", "woowahan", "yanolja", "ycombinator", "yeonghoey", "yorkie"];
 
 // -----------------------------------------------------------------------------
 // Theme URL
@@ -122,6 +122,10 @@ function updateFavicon() {
   
     case "woowahan":
       emblem = {"colors": {"0": "#2ac1bc"}, "shape": "\u2632"}
+      break;
+  
+    case "sendbird":
+      emblem = {"colors": {"0": "#742ddd"}, "shape": "\u2632"}
       break;
   
     case "php":
@@ -948,6 +952,18 @@ window.addEventListener('keypress', function(e) {
                   .setAttribute('src', favicon.toDataURL('image/icon'));
         </script>
         <a href="#theme=samsung" data-theme="samsung">samsung</a>
+      </li>
+    
+      <li id="sendbird">
+        <img class="favicon" />
+        <script>
+          var favicon = generateFavicon("\u2632",
+                                        {"0": "#742ddd"});
+          document.getElementById("sendbird")
+                  .querySelector('img.favicon')
+                  .setAttribute('src', favicon.toDataURL('image/icon'));
+        </script>
+        <a href="#theme=sendbird" data-theme="sendbird">sendbird</a>
       </li>
     
       <li id="sk">
