@@ -18,7 +18,7 @@
     
 
 var __theme__ = "sublue";
-var __themes__ = ["90s", "alabaster", "aws", "between", "blizzard", "clova", "coupang", "cwkim", "devsisters", "doodle", "facebook", "golang", "google", "heumtax", "ipari", "kakao", "lg", "microsoft", "mit", "naver", "naver-labs", "netflix", "netmarble", "nexon", "openai", "papago", "php", "planetarium", "pubg", "python", "pytorch", "ribbon", "ridi", "samsung", "sendbird", "sk", "slack", "spoqa", "sublette", "sublue", "sublue:dark", "sundaytoz", "tada", "tencent", "terraform", "toss", "travis", "trello", "twitch", "twitter", "web2.0", "woowahan", "yanolja", "ycombinator", "yeonghoey", "yorkie"];
+var __themes__ = ["90s", "alabaster", "aws", "between", "blizzard", "clova", "coupang", "cwkim", "daangn", "devsisters", "doodle", "facebook", "golang", "google", "heumtax", "ipari", "kakao", "lg", "microsoft", "mit", "naver", "naver-labs", "netflix", "netmarble", "nexon", "openai", "papago", "php", "planetarium", "pubg", "python", "pytorch", "ribbon", "ridi", "samsung", "sendbird", "sk", "slack", "spoqa", "sublette", "sublue", "sublue:dark", "sundaytoz", "tada", "tencent", "terraform", "toss", "travis", "trello", "twitch", "twitter", "web2.0", "woowahan", "yanolja", "ycombinator", "yeonghoey", "yorkie"];
 
 // -----------------------------------------------------------------------------
 // Theme URL
@@ -84,24 +84,176 @@ function updateFavicon() {
   var emblem;
   switch (__theme__) {
   
+    case "tada":
+      emblem = {"colors": {"0": "#2a2b4a"}, "shape": "\u2630"}
+      break;
+  
+    case "daangn":
+      emblem = {"colors": {"0": "#ff8a3d", "2": "#56c271"}, "shape": "\u2632"}
+      break;
+  
+    case "golang":
+      emblem = {"colors": {"0": "#76e1fe"}, "shape": "\u2632"}
+      break;
+  
+    case "travis":
+      emblem = {"colors": {"0": "#3fa75f", "2": "#db423c", "3": "#d2c93b"}, "shape": "\u2632"}
+      break;
+  
+    case "python":
+      emblem = {"colors": {"0": "#3776ab", "3": "#ffd343", "5": "#ffd343"}, "shape": "\u2632"}
+      break;
+  
+    case "nexon":
+      emblem = {"colors": {"0": "#0b2a4a", "3": "#c3d600", "4": "#00a1e1", "5": "#00a1e1"}, "shape": "\u2633"}
+      break;
+  
+    case "microsoft":
+      emblem = {"colors": {"1": "#f25022", "2": "#7fba00", "3": "#ffb900", "5": "#00a4ef"}, "shape": "\u2632"}
+      break;
+  
+    case "sendbird":
+      emblem = {"colors": {"0": "#742ddd"}, "shape": "\u2632"}
+      break;
+  
+    case "terraform":
+      emblem = {"colors": {"0": "#5c4ee5"}, "shape": "\u2637"}
+      break;
+  
+    case "slack":
+      emblem = {"colors": {"1": "#36c5f0", "2": "#2eb67d", "3": "#e01e5a", "5": "#ecb22e"}, "shape": "\u2632"}
+      break;
+  
+    case "pubg":
+      emblem = {"colors": {"0": "#f2a900"}, "shape": "\u2632"}
+      break;
+  
+    case "doodle":
+      emblem = {"colors": {"0": "#f49", "5": "#ef3"}, "shape": "\u2632"}
+      break;
+  
+    case "kakao":
+      emblem = {"colors": {"0": "#ffcd00"}, "shape": "\u2632"}
+      break;
+  
+    case "toss":
+      emblem = {"colors": {"0": "#0050ff"}, "shape": "\u2632"}
+      break;
+  
+    case "netflix":
+      emblem = {"colors": {"0": "#e50914"}, "shape": "\u2632"}
+      break;
+  
+    case "planetarium":
+      emblem = {"colors": {"0": "#3e2a8c", "5": "#98f0c0"}, "shape": "\u2632"}
+      break;
+  
+    case "google":
+      emblem = {"colors": {"1": "#4285f4", "2": "#ea4335", "3": "#34a853", "5": "#fbbc05"}, "shape": "\u2632"}
+      break;
+  
+    case "twitter":
+      emblem = {"colors": {"0": "#1da1f2"}, "shape": "\u2632"}
+      break;
+  
+    case "ycombinator":
+      emblem = {"colors": {"0": "#f26522"}, "shape": "\u2632"}
+      break;
+  
+    case "pytorch":
+      emblem = {"colors": {"0": "#ee4c2c"}, "shape": "\u2634"}
+      break;
+  
+    case "sublue":
+      emblem = {"colors": {"0": "#e57", "5": "#fd8"}, "shape": "\u2632"}
+      break;
+  
+    case "sublue:dark":
+      emblem = {"colors": {"0": "#e57", "5": "#fd8"}, "shape": "\u2632"}
+      break;
+  
+    case "sublette":
+      emblem = {"colors": {"0": "#e57", "5": "#fd8"}, "shape": "\u2632"}
+      break;
+  
+    case "between":
+      emblem = {"colors": {"0": "#38dcd7"}, "shape": "\u2632"}
+      break;
+  
     case "alabaster":
       emblem = {"colors": {"0": "#3e4349"}, "shape": "\u2632"}
+      break;
+  
+    case "heumtax":
+      emblem = {"colors": {"0": "#1f274b"}, "shape": "\u2632"}
+      break;
+  
+    case "twitch":
+      emblem = {"colors": {"0": "#6441a4"}, "shape": "\u2632"}
+      break;
+  
+    case "netmarble":
+      emblem = {"colors": {"0": "#ffde00", "3": "#5d3824", "4": "#fe605f", "6": "#5d3824"}, "shape": "\u2635"}
+      break;
+  
+    case "aws":
+      emblem = {"colors": {"0": "#f90"}, "shape": "\u2632"}
+      break;
+  
+    case "yanolja":
+      emblem = {"colors": {"0": "#ff3478"}, "shape": "\u2632"}
+      break;
+  
+    case "90s":
+      emblem = {"colors": {"0": "#e01", "5": "#ee1"}, "shape": "\u2632"}
+      break;
+  
+    case "web2.0":
+      emblem = {"colors": {"0": "#e57", "5": "#fc6"}, "shape": "\u2632"}
       break;
   
     case "mit":
       emblem = {"colors": {"0": "#000", "5": "#a31f34"}, "shape": "\u2636"}
       break;
   
-    case "sundaytoz":
-      emblem = {"colors": {"0": "#ff003f"}, "shape": "\u2632"}
+    case "lg":
+      emblem = {"colors": {"0": "#a50034"}, "shape": "\u2632"}
+      break;
+  
+    case "coupang":
+      emblem = {"colors": {"0": "#521110", "2": "#d73227", "3": "#e99923", "5": "#92ba3e", "6": "#50a3d9"}, "shape": "\u2636"}
+      break;
+  
+    case "php":
+      emblem = {"colors": {"0": "#777bb3"}, "shape": "\u2630"}
+      break;
+  
+    case "tencent":
+      emblem = {"colors": {"0": "#0052d9"}, "shape": "\u2632"}
+      break;
+  
+    case "facebook":
+      emblem = {"colors": {"0": "#0076fb"}, "shape": "\u2632"}
+      break;
+  
+    case "sk":
+      emblem = {"colors": {"0": "#ea002c", "4": "#f58206", "6": "#f58206"}, "shape": "\u2635"}
       break;
   
     case "blizzard":
       emblem = {"colors": {"0": "#00adef"}, "shape": "\u2632"}
       break;
   
-    case "sk":
-      emblem = {"colors": {"0": "#ea002c", "4": "#f58206", "6": "#f58206"}, "shape": "\u2635"}
+    case "woowahan":
+      emblem = {"colors": {"0": "#2ac1bc"}, "shape": "\u2632"}
+      break;
+  
+    case "spoqa":
+      emblem = {"colors": {"0": "#4c80f1"}, "shape": "\u2632"}
+      break;
+  
+    case "ridi":
+      emblem = {"colors": {"0": "#0064ff"}, "shape": "\u2632"}
       break;
   
     case "cwkim":
@@ -120,74 +272,6 @@ function updateFavicon() {
       emblem = {"colors": {"0": "#e6b602"}, "shape": "\u2632"}
       break;
   
-    case "woowahan":
-      emblem = {"colors": {"0": "#2ac1bc"}, "shape": "\u2632"}
-      break;
-  
-    case "sendbird":
-      emblem = {"colors": {"0": "#742ddd"}, "shape": "\u2632"}
-      break;
-  
-    case "php":
-      emblem = {"colors": {"0": "#777bb3"}, "shape": "\u2630"}
-      break;
-  
-    case "spoqa":
-      emblem = {"colors": {"0": "#4c80f1"}, "shape": "\u2632"}
-      break;
-  
-    case "samsung":
-      emblem = {"colors": {"0": "#2c2e87"}, "shape": "\u2632"}
-      break;
-  
-    case "coupang":
-      emblem = {"colors": {"0": "#521110", "2": "#d73227", "3": "#e99923", "5": "#92ba3e", "6": "#50a3d9"}, "shape": "\u2636"}
-      break;
-  
-    case "golang":
-      emblem = {"colors": {"0": "#76e1fe"}, "shape": "\u2632"}
-      break;
-  
-    case "twitter":
-      emblem = {"colors": {"0": "#1da1f2"}, "shape": "\u2632"}
-      break;
-  
-    case "between":
-      emblem = {"colors": {"0": "#38dcd7"}, "shape": "\u2632"}
-      break;
-  
-    case "pubg":
-      emblem = {"colors": {"0": "#f2a900"}, "shape": "\u2632"}
-      break;
-  
-    case "planetarium":
-      emblem = {"colors": {"0": "#3e2a8c", "5": "#98f0c0"}, "shape": "\u2632"}
-      break;
-  
-    case "tencent":
-      emblem = {"colors": {"0": "#0052d9"}, "shape": "\u2632"}
-      break;
-  
-    case "microsoft":
-      emblem = {"colors": {"1": "#f25022", "2": "#7fba00", "3": "#ffb900", "5": "#00a4ef"}, "shape": "\u2632"}
-      break;
-  
-    case "python":
-      emblem = {"colors": {"0": "#3776ab", "3": "#ffd343", "5": "#ffd343"}, "shape": "\u2632"}
-      break;
-  
-    case "sublue":
-      emblem = {"colors": {"0": "#e57", "5": "#fd8"}, "shape": "\u2632"}
-      break;
-  
-    case "sublue:dark":
-      emblem = {"colors": {"0": "#e57", "5": "#fd8"}, "shape": "\u2632"}
-      break;
-  
-    case "sublette":
-      emblem = {"colors": {"0": "#e57", "5": "#fd8"}, "shape": "\u2632"}
-      break;
-  
     case "naver":
       emblem = {"colors": {"0": "#03c75a"}, "shape": "\u2632"}
       break;
@@ -204,108 +288,28 @@ function updateFavicon() {
       emblem = {"colors": {"0": "#00a9ff", "3": "#26cd6b", "4": "#0085ff", "6": "#f8be00"}, "shape": "\u2635"}
       break;
   
-    case "kakao":
-      emblem = {"colors": {"0": "#ffcd00"}, "shape": "\u2632"}
+    case "samsung":
+      emblem = {"colors": {"0": "#2c2e87"}, "shape": "\u2632"}
       break;
   
-    case "ycombinator":
-      emblem = {"colors": {"0": "#f26522"}, "shape": "\u2632"}
-      break;
-  
-    case "aws":
-      emblem = {"colors": {"0": "#f90"}, "shape": "\u2632"}
-      break;
-  
-    case "tada":
-      emblem = {"colors": {"0": "#2a2b4a"}, "shape": "\u2630"}
-      break;
-  
-    case "travis":
-      emblem = {"colors": {"0": "#3fa75f", "2": "#db423c", "3": "#d2c93b"}, "shape": "\u2632"}
-      break;
-  
-    case "twitch":
-      emblem = {"colors": {"0": "#6441a4"}, "shape": "\u2632"}
-      break;
-  
-    case "toss":
-      emblem = {"colors": {"0": "#0050ff"}, "shape": "\u2632"}
-      break;
-  
-    case "heumtax":
-      emblem = {"colors": {"0": "#1f274b"}, "shape": "\u2632"}
-      break;
-  
-    case "90s":
-      emblem = {"colors": {"0": "#e01", "5": "#ee1"}, "shape": "\u2632"}
-      break;
-  
-    case "web2.0":
-      emblem = {"colors": {"0": "#e57", "5": "#fc6"}, "shape": "\u2632"}
+    case "sundaytoz":
+      emblem = {"colors": {"0": "#ff003f"}, "shape": "\u2632"}
       break;
   
     case "ribbon":
       emblem = {"colors": {"0": "#fc0"}, "shape": "\u2632"}
       break;
   
-    case "doodle":
-      emblem = {"colors": {"0": "#f49", "5": "#ef3"}, "shape": "\u2632"}
-      break;
-  
     case "openai":
       emblem = {"colors": {"1": "#ff157e", "2": "#ff4747", "3": "#ffa30e", "4": "#00e0ff", "5": "#328cff", "6": "#873cff"}, "shape": "\u2637"}
-      break;
-  
-    case "nexon":
-      emblem = {"colors": {"0": "#0b2a4a", "3": "#c3d600", "4": "#00a1e1", "5": "#00a1e1"}, "shape": "\u2633"}
-      break;
-  
-    case "netflix":
-      emblem = {"colors": {"0": "#e50914"}, "shape": "\u2632"}
       break;
   
     case "devsisters":
       emblem = {"colors": {"0": "#ff6000"}, "shape": "\u2632"}
       break;
   
-    case "terraform":
-      emblem = {"colors": {"0": "#5c4ee5"}, "shape": "\u2637"}
-      break;
-  
-    case "facebook":
-      emblem = {"colors": {"0": "#0076fb"}, "shape": "\u2632"}
-      break;
-  
-    case "slack":
-      emblem = {"colors": {"1": "#36c5f0", "2": "#2eb67d", "3": "#e01e5a", "5": "#ecb22e"}, "shape": "\u2632"}
-      break;
-  
-    case "yanolja":
-      emblem = {"colors": {"0": "#ff3478"}, "shape": "\u2632"}
-      break;
-  
     case "trello":
       emblem = {"colors": {"0": "#0079bf"}, "shape": "\u2630"}
-      break;
-  
-    case "google":
-      emblem = {"colors": {"1": "#4285f4", "2": "#ea4335", "3": "#34a853", "5": "#fbbc05"}, "shape": "\u2632"}
-      break;
-  
-    case "netmarble":
-      emblem = {"colors": {"0": "#ffde00", "3": "#5d3824", "4": "#fe605f", "6": "#5d3824"}, "shape": "\u2635"}
-      break;
-  
-    case "ridi":
-      emblem = {"colors": {"0": "#0064ff"}, "shape": "\u2632"}
-      break;
-  
-    case "pytorch":
-      emblem = {"colors": {"0": "#ee4c2c"}, "shape": "\u2634"}
-      break;
-  
-    case "lg":
-      emblem = {"colors": {"0": "#a50034"}, "shape": "\u2632"}
       break;
   
   }
