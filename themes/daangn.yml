@@ -1,0 +1,8 @@
+daangn:
+  emblem:
+    shape: ☲
+    colors: {0: '#ff8a3d', 2: '#56c271'}
+  colors:
+    text: '#212529'
+    blur: '#868e96'
+    link: '#ff8a3d'
