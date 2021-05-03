@@ -14,8 +14,8 @@ sublue:dark:
     colors: {0: '#e57', 5: '#fd8'}
   colors:
     background: '#151419'
-    text: '#9999a4'
-    blur: '#667'
+    text: '#999ca2'
+    blur: '#666777'
     link: '#68e'
     vlink: '#679'
 
