@@ -60,7 +60,7 @@
 body {
   font-family: 'Hind', sans-serif;
   font-weight: 400;
-  color: #9999a4;
+  color: #999ca2;
 
   background-color: #151419;
   background-repeat: no-repeat;
@@ -84,7 +84,7 @@ header {
 footer {
   margin-top: 2rem;
   font-size: 0.8em;
-  color: #667;
+  color: #666777;
 }
 
 /* Theme Loading */
@@ -117,7 +117,7 @@ h2 {
 h1, h2 {
   
   font-weight: 400;
-  color: #9999a4;
+  color: #999ca2;
 }
 
 h1:target, h2:target, h3:target, h4:target, h5:target, h6:target {
@@ -146,13 +146,13 @@ ul li:before {
   position: absolute;
   left: 0;
   content: '-';
-  color: #667;
+  color: #666777;
 }
 
 hr {
   margin: 1rem 0;
   height: 1px;
-  background-color: rgba(102, 102, 119, 0.1);
+  background-color: rgba(102, 103, 119, 0.1);
 }
 
 em, em * {
@@ -170,9 +170,9 @@ abbr, acronym {
 
 kbd {
   display: inline-block;
-  background: rgba(102, 102, 119, 0.1);
+  background: rgba(102, 103, 119, 0.1);
   border-radius: 3px;
-  box-shadow: 0 1px 2px #667;
+  box-shadow: 0 1px 2px #666777;
 
   font-family: inherit;
   font-size: 0.8em;
@@ -212,7 +212,7 @@ dd.label *, dd.note * {
 }
 
 dt.label {
-  color: #667;
+  color: #666777;
 }
 dd.note {
   font-style: italic;
@@ -222,7 +222,7 @@ dd.note {
 
 .footnote {
   font-size: 0.8em;
-  color: #667;
+  color: #666777;
 }
 
 /* Emblem */
@@ -325,7 +325,7 @@ dd.note {
 .index h2 {
   margin-bottom: 0;
   font-size: 1.2em;
-  color: #9999a4;
+  color: #999ca2;
 }
 
 /* Resume */
