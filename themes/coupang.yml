@@ -2,12 +2,12 @@ coupang:
   emblem:
     shape: ☶
     colors: {
-      0: '#521110',
-      2: '#d73227', 3: '#e99923',
-      5: '#92ba3e', 6: '#50a3d9',
+      0: '#935227',
+      2: '#f7552f', 3: '#ffc400',
+      5: '#88cc2f', 6: '#31b4dd',
     }
   colors:
-    text: '#333'
-    blur: '#888'
-    link: '#4285f4'
+    text: '#363940'
+    blur: '#818592'
+    link: '#2954cc'
   title: {weight: 600}
