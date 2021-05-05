@@ -62,7 +62,7 @@
 body {
   font-family: 'Hind', sans-serif;
   font-weight: 400;
-  color: #333;
+  color: #363940;
 
   background-color: #fff;
   background-repeat: no-repeat;
@@ -86,7 +86,7 @@ header {
 footer {
   margin-top: 2rem;
   font-size: 0.8em;
-  color: #888;
+  color: #818592;
 }
 
 /* Theme Loading */
@@ -119,7 +119,7 @@ h2 {
 h1, h2 {
   
   font-weight: 600;
-  color: #333;
+  color: #363940;
 }
 
 h1:target, h2:target, h3:target, h4:target, h5:target, h6:target {
@@ -127,11 +127,11 @@ h1:target, h2:target, h3:target, h4:target, h5:target, h6:target {
 }
 
 a:link {
-  color: #4285f4;
+  color: #2954cc;
 }
 
 a:visited {
-  color: #4285f4;
+  color: #2954cc;
 }
 
 a:hover {
@@ -148,13 +148,13 @@ ul li:before {
   position: absolute;
   left: 0;
   content: '-';
-  color: #888;
+  color: #818592;
 }
 
 hr {
   margin: 1rem 0;
   height: 1px;
-  background-color: rgba(136, 136, 136, 0.1);
+  background-color: rgba(129, 133, 146, 0.1);
 }
 
 em, em * {
@@ -172,9 +172,9 @@ abbr, acronym {
 
 kbd {
   display: inline-block;
-  background: rgba(136, 136, 136, 0.1);
+  background: rgba(129, 133, 146, 0.1);
   border-radius: 3px;
-  box-shadow: 0 1px 2px #888;
+  box-shadow: 0 1px 2px #818592;
 
   font-family: inherit;
   font-size: 0.8em;
@@ -214,7 +214,7 @@ dd.label *, dd.note * {
 }
 
 dt.label {
-  color: #888;
+  color: #818592;
 }
 dd.note {
   font-style: italic;
@@ -224,7 +224,7 @@ dd.note {
 
 .footnote {
   font-size: 0.8em;
-  color: #888;
+  color: #818592;
 }
 
 /* Emblem */
@@ -267,10 +267,10 @@ dd.note {
 
 
   .emblem-left .emblem-top {
-    background-color: #521110;
+    background-color: #935227;
   }
   .emblem-left .emblem-bottom {
-    background-color: #521110;
+    background-color: #935227;
   }
   
     .emblem-left .emblem-top {
@@ -282,18 +282,18 @@ dd.note {
   
 
   .emblem-middle .emblem-top {
-    background-color: #d73227;
+    background-color: #f7552f;
   }
   .emblem-middle .emblem-bottom {
-    background-color: #92ba3e;
+    background-color: #88cc2f;
   }
   
 
   .emblem-right .emblem-top {
-    background-color: #e99923;
+    background-color: #ffc400;
   }
   .emblem-right .emblem-bottom {
-    background-color: #50a3d9;
+    background-color: #31b4dd;
   }
   
 
@@ -320,7 +320,7 @@ dd.note {
 .index h2 {
   margin-bottom: 0;
   font-size: 1.2em;
-  color: #333;
+  color: #363940;
 }
 
 /* Resume */
@@ -365,7 +365,7 @@ dd.note {
 
 .themes a.selected {
   color: #fff;
-  background: #4285f4;
+  background: #2954cc;
   padding: 0 0.5em 0 0.2em;
 }
 
