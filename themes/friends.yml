@@ -29,9 +29,6 @@ cwkim:
     .emblem-right .emblem-bottom {
       background-position: -60px -45px;
     }
-    .copyright::after {
-      content: '⚡';
-    }
 
 yeonghoey:
   emblem:
