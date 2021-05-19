@@ -144,8 +144,8 @@ Open Source Experience
     service and RESTful API.
 
     Many professional Korean translators habitually use this tool to translate
-    undocumented proper nouns. Netflix refers to this tool in [the Korean timed
-    text style guide][netflix-style].
+    undocumented proper nouns. Netflix refers to this tool in [the Korean
+    timed-text style guide][netflix-style].
 
 [hangulize]: https://hangulize.org/
 [hangulize-idea]: http://iceager.egloos.com/2610028
@@ -193,7 +193,7 @@ Contributions
     - For [ZeroMQ][],
       discussed a PUB socket crash ([#2942][zeromq#2942]).
     - For [Flask][],
-      fixed a bug to generate URL with a subdomain ([#108][flask#108]).
+      fixed a bug to generate a URL with a subdomain ([#108][flask#108]).
     - For [jQuery 1.4.3][jquery-143],
       restored a missing part of the content negotiation header for Ajax.
 
