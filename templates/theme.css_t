@@ -41,7 +41,6 @@
   padding: 0;
   border: none;
   font-size: 1em;
-  line-height: 1.5;
   text-decoration: none;
   clear: left;
 }
@@ -50,6 +49,7 @@ body {
   font-family: '{{ text.font }}', {{ text.generic }};
   font-weight: {{ text.weight }};
   color: {{ colors.text }};
+  line-height: 1.5;
 
   background-color: {{ colors.background }};
   background-repeat: no-repeat;
