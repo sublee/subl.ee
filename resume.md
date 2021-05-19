@@ -20,25 +20,24 @@ Web Sites {: .label }
 Interests
 ---------
 
-- Back-end engineering for ML projects
-- Developing and documenting API for engineers or researchers
+- Back-end development and MLOps
+- Designing and documenting API for engineers or researchers
 - Free and open-source software
 
 Skills
 ------
 
 Programming Languages {: .label }
-: Python (expert), Go, Bash, C#, JavaScript
+: Go, Python, JavaScript, Bash
   {: .attr }
 
-AI Research {: .label }
+ML Engineering {: .label }
 : PyTorch, data or pipeline parallelism, Triton Inference Server, NVIDIA Nsight
   Systems
   {: .attr }
 
 Back-end Development {: .label }
-: Linux, Docker, Kubernetes, AWS, Terraform, ZeroMQ, Redis, Couchbase, MySQL,
-  etcd
+: Linux, K8s, AWS, Terraform, MongoDB, MySQL, Redis, etcd, ZeroMQ
   {: .attr }
 
 ---
@@ -47,11 +46,14 @@ Work Experience
 ---------------
 
 Software Engineer {: .label }
-[Naver][], 2020--
+[Clova][] in [Naver][], 2020--
 :   A technology company.
     {: .note }
 
-:   Redesign the research platform to boost productivity in [Clova][].
+:   Develop an ML research platform named NSML.
+
+    Develop an API and preprocessing tools to serve GPT-3 for Korean and
+    Japanese.
 
 [clova]: https://clova.ai/
 [naver]: https://navercorp.com/en
