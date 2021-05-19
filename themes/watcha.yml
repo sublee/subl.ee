@@ -1,0 +1,16 @@
+watcha:
+  emblem:
+    shape: ☲
+    colors: {0: '#ff0558'}
+  colors:
+    background: '#000'
+    text: '#ccc'
+    blur: '#808080'
+    title: '#f82f62'
+    link: '#fff'
+  text: {font: Roboto}
+  title: {weight: 600}
+  css: |
+    .emblem-left  { transform: skew(3deg, 2deg) translate(-2px, 0); }
+    .emblem-right { transform: skew(-5deg, -5deg) scaleY(1.1) translate(2px, -4px); }
+    .emblem-middle .emblem-bottom { transform: scaleY(0.9); }
