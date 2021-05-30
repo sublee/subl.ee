@@ -45,6 +45,19 @@ yeonghoey:
     h2 { border-bottom: 2px solid #212121; margin-bottom: 0.6rem !important; }
     hr { display: none; }
 
+hyojun:
+  emblem:
+    shape: ☲
+    colors: {1: '#dc8100', 2: '#5bb66f', 3: '#0077b5', 5: '#3db39e'}
+  colors:
+    background: '#222021'
+    text: '#d9dddc'
+    blur: '#bebdb8'
+    link: '#3db39e'
+    vlink: '#dc8100'
+  text: {font: Work Sans}
+  title: {weight: 500}
+
 ipari:
   emblem:
     shape: ☲
