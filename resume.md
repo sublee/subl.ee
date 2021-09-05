@@ -45,15 +45,17 @@ Back-end Development {: .label }
 Work Experience
 ---------------
 
-Software Engineer {: .label }
+Software Engineering Manager {: .label }
 [Clova][] in [Naver][], 2020--
 :   A technology company.
     {: .note }
 
-:   Develop an ML research platform named NSML.
+:   Design and develop an ML research platform named NSML.
 
     Develop an API and preprocessing tools to serve GPT-3 for Korean and
     Japanese.
+
+    Lead a software engineering team including 10+ engineers.
 
 [clova]: https://clova.ai/
 [naver]: https://navercorp.com/en

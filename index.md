@@ -21,7 +21,7 @@ More details are in my [résumé](/resume/).
 I have made
 -----------
 
-- [torchgpipe][]: The base code of [Pipe APIs in PyTorch][pytorch-pipe]
+- [torchgpipe][]: The origin of [Pipe APIs in PyTorch][pytorch-pipe]
 - [Hangulize][]: A Korean alphabet transcriber
 - [Tossi][]: A utility for Korean allomorphic particles
 - [TrueSkill][]: A rating system for online games
