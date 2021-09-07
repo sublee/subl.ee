@@ -47,18 +47,19 @@ Work Experience
 
 Software Engineering Manager {: .label }
 [Clova][] in [Naver][], 2020--
-:   A technology company.
+:   Commercializes AI technology by AI speekers or platforms.
     {: .note }
 
 :   Design and develop an ML research platform named NSML.
 
-    Develop an API and preprocessing tools to serve GPT-3 for Korean and
-    Japanese.
+    In [HyperCLOVA][] project, develop an inference API and preprocessing tools
+    to serve GPT-3 for Korean and Japanese.
 
     Lead a software engineering team including 10+ engineers.
 
 [clova]: https://clova.ai/
 [naver]: https://navercorp.com/en
+[hyperclova]: https://naver-ai-now.kr/
 
 Software Engineer {: .label }
 [Kakao Brain][kakaobrain], 2018--2020
