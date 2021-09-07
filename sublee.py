@@ -21,6 +21,7 @@ from urllib.parse import urlparse
 
 import click
 import jinja2
+import markupsafe
 import weasyprint
 import yaml
 from flask import (Flask, Response, make_response, render_template,
@@ -54,20 +55,20 @@ MARKDOWN_EXTENSIONS = [
 app = Flask(__name__, static_folder=None)
 
 
-def jinja_meta(content: str, **attrs: str) -> jinja2.Markup:
+def jinja_meta(content: str, **attrs: str) -> markupsafe.Markup:
     """A Jinja function generating <meta> element."""
     buf = io.StringIO()
     buf.write('<meta ')
 
     for key, attr in attrs.items():
         key = key.replace('_', '-')
-        attr = jinja2.escape(attr)
+        attr = markupsafe.escape(attr)
         buf.write('{key}="{attr}" '.format(key=key, attr=attr))
 
-    content = jinja2.escape(content)
+    content = markupsafe.escape(content)
     buf.write('content="{content}" />'.format(content=content))
 
-    return jinja2.Markup(buf.getvalue())
+    return markupsafe.Markup(buf.getvalue())
 
 
 def jinja_rgba(color: str, alpha: float = 1.0) -> str:
