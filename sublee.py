@@ -33,11 +33,6 @@ __version__ = '2.5.0'
 __all__ = ['app']
 
 
-# Disable __future__.unicode_literals warning.
-# See http://click.pocoo.org/5/python3/#unicode-literals for more details.
-click.disable_unicode_literals_warning = True
-
-
 ROOT = os.path.dirname(__file__)
 DOCS = os.path.join(ROOT, 'docs')
 META = os.path.join(ROOT, 'meta.yml')
