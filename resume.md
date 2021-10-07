@@ -214,9 +214,15 @@ Contributions
 Publications
 ------------
 
-- C. Kim\*, _H. Lee_\*, M. Jeong, W. Baek, B. Yoon, I. Kim, S. Lim, S. Kim.
-  "torchgpipe: On-the-fly Pipeline Parallelism for Training Giant Models".
-  [arXiv preprint arXiv:2004.09910][arxiv:torchgpipe]. (2020)
+- B. Kim et al., "What Changes Can Large-scale Language Models Bring? Intensive
+  Study on HyperCLOVA: Billions-scale Korean Generative Pretrained
+  Transformers," [arXiv:2109.04650][arxiv:hyperclova], Sep 2021.
+- C. Kim\*, _H. Lee_\*, M. Jeong, W. Baek, B. Yoon, I. Kim, S. Lim, S. Kim,
+  "torchgpipe: On-the-fly Pipeline Parallelism for Training Giant Models,"
+  [arXiv:2004.09910][arxiv:torchgpipe], Apr 2020.
+
+*[B. Kim]:   Boseop Kim
+[arxiv:hyperclova]: https://arxiv.org/abs/2109.04650
 
 *[C. Kim]:   Chiheon Kim
 *[H. Lee]:   Heungsub Lee
@@ -226,7 +232,6 @@ Publications
 *[I. Kim]:   Ildoo Kim
 *[S. Lim]:   Sungbin Lim
 *[S. Kim]:   Sungwoong Kim
-
 [arxiv:torchgpipe]: https://arxiv.org/abs/2004.09910
 
 \*Contributed equally.
