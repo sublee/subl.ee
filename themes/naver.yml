@@ -28,10 +28,10 @@ clova:
     shape: ☲
     colors: {0: '#05d686'}
   colors:
-    text: '#1e1e1e'
-    title: '#05d686'
-    blur: '#b1b1b1'
-    link: '#0070c9'
+    text: '#4a4a4a'
+    title: '#1e1e1e'
+    blur: '#808080'
+    link: '#05d686'
   css: |
     .emblem-top {
       background: linear-gradient(#12d8b5 13.5%, #10d896 50%, #0ed86c 91%);

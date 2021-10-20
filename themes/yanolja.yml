@@ -4,9 +4,13 @@ yanolja:
     colors: {0: '#ff3478'}
   colors:
     text: '#414141'
-    title: '#ff3478'
     blur: '#888'
     link: '#ff3478'
-  title: {weight: 600}
+  title: {weight: 600, font: YanoljaYacheR, css: null}
   css: |
-    h1, h2 { text-transform: uppercase; letter-spacing: 0.1rem; }
+    @font-face {
+      font-family: 'YanoljaYacheR';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/YanoljaYacheR.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
