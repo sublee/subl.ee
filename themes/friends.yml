@@ -84,18 +84,3 @@ ipari:
       background-color: #aaa;
       height: 1px;
     }
-
-yorkie:
-  emblem:
-    shape: ☲
-    colors: {0: '#e6b602'}
-  colors:
-    background: '#ecedf1'
-    text: '#1d2d35'
-    link: '#00e'
-    vlink: '#551a8b'
-  title:
-    font: Signika Negative
-    weight: 700
-  text:
-    font: Roboto Slab

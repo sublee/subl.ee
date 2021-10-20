@@ -8,5 +8,4 @@ google_analytics: UA-1078484-1
 
 theme: sublue
 events:
-  4/1:  90s     # April Fools' Day
-  4/16: ribbon  # Sinking of MV Sewol
+  4/1: 90s  # April Fools' Day
