@@ -21,8 +21,13 @@ function guessTheme() {
   var href = location.href;
   var theme = (regex.exec(hash) || regex.exec(href) || [])[1];
   if (theme) {
-    return theme;
+    for (var i = 0; i < __themes__.length; i++) {
+      if (theme == __themes__[i]) {
+        return theme;
+      }
+    }
   }
+
   var date = new Date();
   var eventKey = (date.getMonth() + 1) + '/' + date.getDate();
   var events = {{ events|tojson }};
