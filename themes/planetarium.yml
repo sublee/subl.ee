@@ -16,7 +16,9 @@ planetarium:
       letter-spacing: -0.0607em;
     }
     a:link, a:visited {
-      text-decoration: 2px #98f0c0 underline;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-decoration-color: #98f0c0;
     }
     a:hover {
       text-decoration-color: inherit;
