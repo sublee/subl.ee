@@ -261,7 +261,7 @@ Languages
 ---------
 
 - Korean -- native
-- English -- conversational
+- English -- conversant in reading and writing
 
 Education
 ---------
