@@ -1,9 +1,11 @@
 sendbird:
   emblem:
     shape: ☲
-    colors: {0: '#742ddd'}
+    colors: {0: '#6210cc'}
   colors:
     background: '#fff'
-    text: '#212121'
-    link: '#742ddd'
-  title: {weight: 600}
+    text: '#424242'
+    title: '#0d0d0d'
+    link: '#6210cc'
+    blur: '#9e9e9e'
+  title: {font: Gellix, weight: 700, css: http://fonts.cdnfonts.com/css/gellix}
