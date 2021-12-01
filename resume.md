@@ -45,12 +45,13 @@ Back-end Development {: .label }
 Work Experience
 ---------------
 
-Software Engineering Manager {: .label }
+Software Engineer & Product Manager {: .label }
 [Clova][] in [Naver][], 2020--
 :   Commercializes AI technology by AI speekers or platforms.
     {: .note }
 
-:   Design and develop an ML research platform named NSML.
+:   Design and develop NSML which is an ML research cloud platform for
+    large-scale models.
 
     In [HyperCLOVA][] project, develop an inference API and preprocessing tools
     to serve GPT-3 for Korean and Japanese.
@@ -267,7 +268,7 @@ Education
 ---------
 
 Computer Software, [Kwangwoon University][kw], 2008
--- Completed the first year only.
+-- completed the first year only
 
 [kw]: http://www.kw.ac.kr/
 

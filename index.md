@@ -21,6 +21,7 @@ More details are in my [résumé](/resume/).
 I have made
 -----------
 
+- [NSML][]: An ML research cloud platform for large-scale models in [Clova][].
 - [torchgpipe][]: The origin of [Pipe APIs in PyTorch][pytorch-pipe]
 - [Hangulize][]: A Korean alphabet transcriber
 - [Tossi][]: A utility for Korean allomorphic particles
@@ -29,15 +30,17 @@ I have made
 - [Subway Fighter][], [SUBLEERUNKER][]: Games with [my pixel art][DeviantArt]
 - Durango, Kartrider Dash & Coin Rush at Nexon
 
+[nsml]:           https://ai.nsml.navercorp.com/
+[clova]:          https://clova.ai/
 [torchgpipe]:     https://torchgpipe.readthedocs.io/
 [pytorch-pipe]:   https://pytorch.org/docs/1.8.0/pipeline.html
-[Hangulize]:      https://hangulize.org/
-[Tossi]:          https://github.com/what-studio/tossi
-[TrueSkill]:      https://trueskill.org/
-[Profiling]:      https://github.com/what-studio/profiling
-[Subway Fighter]: https://yeonghoey.itch.io/subway-fighter
-[SUBLEERUNKER]:   /runker/
-[DeviantArt]:     https://www.deviantart.com/sublee/gallery/?catpath=/
+[hangulize]:      https://hangulize.org/
+[tossi]:          https://github.com/what-studio/tossi
+[trueskill]:      https://trueskill.org/
+[profiling]:      https://github.com/what-studio/profiling
+[subway fighter]: https://yeonghoey.itch.io/subway-fighter
+[subleerunker]:   /runker/
+[deviantart]:     https://www.deviantart.com/sublee/gallery/?catpath=/
 
 I told about
 ------------
