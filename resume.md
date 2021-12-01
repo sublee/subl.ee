@@ -50,7 +50,7 @@ Software Engineer & Product Manager {: .label }
 :   Commercializes AI technology by AI speekers or platforms.
     {: .note }
 
-:   Design and develop NSML which is an ML research cloud platform for
+:   Design and develop NSML which is a cloud ML research platform for
     large-scale models.
 
     In [HyperCLOVA][] project, develop an inference API and preprocessing tools
