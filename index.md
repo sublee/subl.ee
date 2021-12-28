@@ -21,7 +21,8 @@ More details are in my [résumé](/resume/).
 I have made
 -----------
 
-- [NSML][]: A cloud ML research platform for large-scale models in [Clova][].
+- [NSML][]: A cloud ML research platform for large-scale models
+- [HyperCLOVA][]: a Korean variant of 82B GPT-3
 - [torchgpipe][]: The origin of [Pipe APIs in PyTorch][pytorch-pipe]
 - [Hangulize][]: A Korean alphabet transcriber
 - [Tossi][]: A utility for Korean allomorphic particles
@@ -31,7 +32,7 @@ I have made
 - Durango, Kartrider Dash & Coin Rush at Nexon
 
 [nsml]:           https://ai.nsml.navercorp.com/
-[clova]:          https://clova.ai/
+[hyperclova]:     https://arxiv.org/abs/2109.04650
 [torchgpipe]:     https://torchgpipe.readthedocs.io/
 [pytorch-pipe]:   https://pytorch.org/docs/1.8.0/pipeline.html
 [hangulize]:      https://hangulize.org/

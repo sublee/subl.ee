@@ -45,7 +45,7 @@ Back-end Development {: .label }
 Work Experience
 ---------------
 
-Software Engineer & Product Manager {: .label }
+Software Engineer & Project Manager {: .label }
 [Clova][] in [Naver][], 2020--
 :   Commercializes AI technology by AI speekers or platforms.
     {: .note }
@@ -53,14 +53,14 @@ Software Engineer & Product Manager {: .label }
 :   Design and develop NSML which is a cloud ML research platform for
     large-scale models.
 
-    In [HyperCLOVA][] project, develop an inference API and preprocessing tools
-    to serve GPT-3 for Korean and Japanese.
+    Develop an inference API and a checkpoint preprocessing tools for
+    [HyperCLOVA][], which is a Korean variant of 82B GPT-3.
 
     Lead a software engineering team including 10+ engineers.
 
 [clova]: https://clova.ai/
 [naver]: https://navercorp.com/en
-[hyperclova]: https://naver-ai-now.kr/
+[hyperclova]: https://arxiv.org/abs/2109.04650
 
 Software Engineer {: .label }
 [Kakao Brain][kakaobrain], 2018--2020
