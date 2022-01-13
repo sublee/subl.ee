@@ -17,7 +17,7 @@ itsdangerous==2.0.1
 Jinja2==3.0.1
 MarkupSafe==2.0.1
 pdfrw==0.4
-Pillow==7.1.0
+Pillow==9.0.0
 pycparser==2.19
 Pyphen==0.9.5
 six==1.12.0
