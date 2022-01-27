@@ -1,0 +1,18 @@
+zigbang:
+  emblem:
+    shape: ☲
+    colors: {0: '#ffa300', 1: '#fff'}
+  colors:
+    text: '#222'
+    blur: '#a6a6a6'
+    link: '#2d60a3'
+  css: |
+    .emblem-left .emblem-top, .emblem-left {
+      border-radius: 16px 0 0 16px;
+    }
+    .emblem-right .emblem-top, .emblem-right {
+      border-radius: 0 16px 16px 0;
+    }
+    .emblem i {
+      outline: 6px solid #000;
+    }
