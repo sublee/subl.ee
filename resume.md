@@ -20,9 +20,9 @@ Web Sites {: .label }
 Interests
 ---------
 
-- Back-end development and MLOps
-- Designing and documenting API for engineers or researchers
-- Free and open-source software
+- Designing engineer-oriented modules or services
+- MLOps and back-end development
+- Optimizing software development culture
 
 Skills
 ------
