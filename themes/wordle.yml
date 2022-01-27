@@ -1,0 +1,13 @@
+wordle:
+  emblem:
+    shape: ☷
+    colors: {0: '#787c7e', 2: '#6aaa64', 3: '#c9b458', 4: '#c9b458'}
+  colors:
+    text: '#1a1a1b'
+    blur: '#878a8c'
+    link: '#c9b458'
+    vlink: '#6aaa64'
+  title:
+    weight: 600
+  css: |
+    h1, h2 { text-transform: uppercase; }
