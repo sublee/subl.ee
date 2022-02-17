@@ -1,13 +1,36 @@
 wordle:
   emblem:
     shape: ☷
-    colors: {0: '#787c7e', 2: '#6aaa64', 3: '#c9b458', 4: '#c9b458'}
+    colors: {0: '#787c7e', 3: '#c9b458', 4: '#c9b458', 5: '#6aaa64'}
   colors:
-    text: '#1a1a1b'
-    blur: '#878a8c'
-    link: '#c9b458'
-    vlink: '#6aaa64'
+    text: '#000'
+    blur: '#7c787e'
+    link: '#000'
+    vlink: '#7c787e'
   title:
     weight: 600
   css: |
     h1, h2 { text-transform: uppercase; }
+
+    a {
+      font-weight: 600;
+    }
+
+    .emblem i::before {
+      display: block;
+      text-align: center;
+      line-height: 45px;
+
+      color: #fff;
+      font-size: 26px;
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    .emblem-left .emblem-top::before      { content: 'S'; }
+    .emblem-middle .emblem-top::before    { content: 'U'; }
+    .emblem-right .emblem-top::before     { content: 'B'; }
+
+    .emblem-left .emblem-bottom::before   { content: 'L'; }
+    .emblem-middle .emblem-bottom::before { content: 'E'; }
+    .emblem-right .emblem-bottom::before  { content: 'E'; }
