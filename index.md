@@ -25,9 +25,7 @@ I have made
 - [HyperCLOVA][]: a Korean variant of 82B GPT-3
 - [torchgpipe][]: The origin of [Pipe APIs in PyTorch][pytorch-pipe]
 - [Hangulize][]: A Korean alphabet transcriber
-- [Tossi][]: A utility for Korean allomorphic particles
 - [TrueSkill][]: A rating system for online games
-- [Profiling][]: An interactive continuous Python profiler
 - [Subway Fighter][], [SUBLEERUNKER][]: Games with [my pixel art][DeviantArt]
 - Durango, Kartrider Dash & Coin Rush at Nexon
 
@@ -36,9 +34,7 @@ I have made
 [torchgpipe]:     https://torchgpipe.readthedocs.io/
 [pytorch-pipe]:   https://pytorch.org/docs/1.8.0/pipeline.html
 [hangulize]:      https://hangulize.org/
-[tossi]:          https://github.com/what-studio/tossi
 [trueskill]:      https://trueskill.org/
-[profiling]:      https://github.com/what-studio/profiling
 [subway fighter]: https://yeonghoey.itch.io/subway-fighter
 [subleerunker]:   /runker/
 [deviantart]:     https://www.deviantart.com/sublee/gallery/?catpath=/
