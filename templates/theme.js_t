@@ -254,6 +254,9 @@ window.addEventListener('keypress', function(e) {
     theme = __themes__[(__themes__.length + i + 1) % __themes__.length];
   } else if (e.keyCode === 107) {  // 'k'
     theme = __themes__[(__themes__.length + i - 1) % __themes__.length];
+  } else if (e.keyCode === 116) {  // 't'
+    location.href = '/themes?theme=' + theme;
+    return;
   } else {
     return;
   }
