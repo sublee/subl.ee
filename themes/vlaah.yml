@@ -16,13 +16,13 @@ vlaah:
     }
 
     .emblem-left .emblem-top {
-      background: linear-gradient(#ce0 0%, #6c0 75%);
+      background: linear-gradient(#ce0 0, #6c0 64px);
     }
     .emblem-middle .emblem-top {
-      background: linear-gradient(#ce0 0%, #6c0 100%);
+      background: linear-gradient(#ce0 0, #6c0 41px);
     }
     .emblem-right .emblem-top {
-      background: linear-gradient(#fa5 0%, #f45 75%);
+      background: linear-gradient(#fa5 0, #f45 64px);
     }
 
     .emblem i {
@@ -60,7 +60,39 @@ vlaah:
     }
 
     .emblem-middle .emblem-bottom::before {
-      margin: 28px 6px;
+      bottom: 0;
+      margin: 8px 6px;
       width: 14px;
-      height: 5px;
+      height: 4px;
+    }
+
+    .emblem-middle .emblem-top {
+      animation: emblem-top 10s ease infinite;
+    }
+    .emblem-middle .emblem-bottom {
+      animation: emblem-bottom 10s ease infinite;
+    }
+
+    @keyframes emblem-top {
+       30% { height: 41px; }
+       31% { height: 61px; }
+       33% { height: 57px; }
+       63% { height: 57px; }
+       64% { height: 24px; }
+       66% { height: 30px; }
+       96% { height: 30px; }
+       97% { height: 44px; }
+       99% { height: 41px; }
+    }
+
+    @keyframes emblem-bottom {
+       30% { height: 41px; }
+       31% { height: 21px; }
+       33% { height: 25px; }
+       63% { height: 25px; }
+       64% { height: 58px; }
+       66% { height: 52px; }
+       96% { height: 52px; }
+       97% { height: 38px; }
+       99% { height: 41px; }
     }
