@@ -233,9 +233,9 @@ def favicon() -> Response:
     return res
 
 
-@app.route('/qrcode.png')
-def qrcode() -> Response:
-    res: Response = send_file(os.path.join(ROOT, 'qrcode.png'))
+@app.route('/og.png')
+def og() -> Response:
+    res: Response = send_file(os.path.join(ROOT, 'og.png'))
     return res
 
 
