@@ -15,12 +15,21 @@ function parseThemeURL(url) {
   return /theme:(.+)\.css$/.exec(url)[1];
 }
 
-function guessTheme() {
+function selectThemeByURL(theme) {
+  if (/\?/.exec(location.href)) {
+    location.href = location.href.replace(/[\?#].+$/, '') + '#theme=' + theme;
+  } else {
+    location.hash = '#theme=' + theme;
+  }
+}
+
+function selectedTheme() {
   var regex = /[?&#]theme=([^&#]+)/;
   var hash = location.hash;
   var href = location.href;
   var theme = (regex.exec(hash) || regex.exec(href) || [])[1];
-  if (theme) {
+
+  if (theme !== undefined) {
     for (var i = 0; i < __themes__.length; i++) {
       if (theme == __themes__[i]) {
         return theme;
@@ -28,11 +37,26 @@ function guessTheme() {
     }
   }
 
-  var date = new Date();
-  var eventKey = (date.getMonth() + 1) + '/' + date.getDate();
-  var events = {{ events|tojson }};
-  theme = events[eventKey];
+  return null;
+}
+
+function guessTheme() {
+  var theme = selectedTheme();
   return theme || {{ theme|tojson }};
+}
+
+function getEventTheme() {
+  var events = {{ events|tojson }};
+
+  var date = new Date();
+  var eventKey1 = (date.getMonth() + 1) + '/' + date.getDate();
+  var eventKey2 = (date.getMonth() + 1) + '/*';
+
+  return events[eventKey1] || events[eventKey2] || null;
+}
+
+if (!selectedTheme() && getEventTheme()) {
+  selectThemeByURL(getEventTheme());
 }
 
 // -----------------------------------------------------------------------------
@@ -261,9 +285,5 @@ window.addEventListener('keypress', function(e) {
     return;
   }
 
-  if (/\?/.exec(location.href)) {
-    location.href = location.href.replace(/[\?#].+$/, '') + '#theme=' + theme;
-  } else {
-    location.hash = '#theme=' + theme;
-  }
+  selectThemeByURL(theme);
 });

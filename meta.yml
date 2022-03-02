@@ -1,4 +1,4 @@
-url_root: https://subl.ee
+url_root: http://tina.subl.ee:8080
 
 author: Heungsub Lee
 email:  heungsub@subl.ee
@@ -8,4 +8,5 @@ google_analytics: UA-1078484-1
 
 theme: sublue
 events:
-  4/1: 90s  # April Fools' Day
+  3/*: ukraine
+  4/1: 90s
