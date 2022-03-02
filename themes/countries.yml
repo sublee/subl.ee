@@ -1,0 +1,9 @@
+ukraine:
+  emblem:
+    shape: ☷
+    colors: {0: '#005bbb', 4: '#ffd500', 5: '#ffd500', 6: '#ffd500'}
+  colors:
+    text: '#335'
+    blur: '#779'
+    link: '#005bbb'
+    vlink: '#765bbb'
