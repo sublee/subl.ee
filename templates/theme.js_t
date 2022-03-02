@@ -27,7 +27,11 @@ function selectedTheme() {
   var regex = /[?&#]theme=([^&#]+)/;
   var hash = location.hash;
   var href = location.href;
-  var theme = (regex.exec(hash) || regex.exec(href) || [])[1];
+  return (regex.exec(hash) || regex.exec(href) || [])[1] || null;
+}
+
+function guessTheme() {
+  var theme = selectedTheme();
 
   if (theme !== undefined) {
     for (var i = 0; i < __themes__.length; i++) {
@@ -37,12 +41,7 @@ function selectedTheme() {
     }
   }
 
-  return null;
-}
-
-function guessTheme() {
-  var theme = selectedTheme();
-  return theme || {{ theme|tojson }};
+  return {{ theme|tojson }};
 }
 
 function getEventTheme() {
