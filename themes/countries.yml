@@ -7,3 +7,13 @@ ukraine:
     blur: '#779'
     link: '#005bbb'
     vlink: '#765bbb'
+  css: |
+    .emblem-top {
+      background: linear-gradient(#005bbb 0, #38d 100%);
+    }
+    .emblem-middle .emblem-top {
+      background: radial-gradient(circle at 50% 100%, #59e 10%, #38d 35%, #005bbb 100%);
+    }
+    .emblem-bottom {
+      background: linear-gradient(#ffd500 50%, #eb3 100%);
+    }
