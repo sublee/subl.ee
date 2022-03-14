@@ -47,7 +47,7 @@ Work Experience
 
 Software Engineer & Project Manager {: .label }
 [Clova][] in [Naver][], 2020--
-:   Focuses on industrial AI technology.
+:   Industrializes AI.
     {: .note }
 
 :   Design and develop NSML which is a cloud ML research platform for
