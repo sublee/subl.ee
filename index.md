@@ -48,7 +48,7 @@ I told about
 - [Profiling<sup>ko</sup>][pycon15] at PyCon KR 2015
 - Server architecture of Durango<sup>ko</sup>, at [NDC 2014][ndc14], [2016][ndc16], and [2018][ndc18]
 
-[torchgpipe-blog]: https://kakaobrain.com/blog/66
+[torchgpipe-blog]: https://web.archive.org/web/20211020112459/https://kakaobrain.com/blog/66
 [gokr1808]: https://subl.ee/~gokr1808
 [nxtk16]:   https://subl.ee/~nxtk16
 [pycon15]:  https://subl.ee/~pycon15

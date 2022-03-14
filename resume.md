@@ -135,7 +135,7 @@ Open Source Experience
 
 [torchgpipe]: https://torchgpipe.readthedocs.io/
 [gpipe]: https://arxiv.org/abs/1811.06965
-[torchgpipe-blog]: https://kakaobrain.com/blog/66
+[torchgpipe-blog]: https://web.archive.org/web/20211020112459/https://kakaobrain.com/blog/66
 [pytorch-pipe]: https://pytorch.org/docs/1.8.0/pipeline.html
 [arxiv:torchgpipe]: https://arxiv.org/abs/2004.09910
 
