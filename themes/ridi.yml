@@ -1,11 +1,11 @@
 ridi:
   emblem:
     shape: ☲
-    colors: {0: '#0064ff'}
+    colors: {0: '#1e9eff'}
   colors:
     text: '#101010'
     blur: '#808080'
-    link: '#0064ff'
+    link: '#1e9eff'
   title: {weight: 700}
   text: {font: Poppins}
   css: |
