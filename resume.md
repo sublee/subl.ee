@@ -53,10 +53,10 @@ Software Engineer & Project Manager {: .label }
 :   Design and develop NSML which is a cloud ML research platform for
     large-scale models.
 
-    Develop an inference API and a checkpoint preprocessing tools for
-    [HyperCLOVA][], which is a Korean variant of 82B GPT-3.
-
     Lead a software engineering team including 10+ engineers.
+
+    Developed an inference API and a checkpoint preprocessing tools for
+    [HyperCLOVA][], which is a Korean variant of 82B GPT-3.
 
 [clova]: https://clova.ai/
 [naver]: https://navercorp.com/en
