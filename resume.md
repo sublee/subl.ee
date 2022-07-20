@@ -48,13 +48,12 @@ Project Manager & Software Engineer {: .label }
 :   Industrializes AI.
     {: .note }
 
-:   Lead a software engineering team including 25+ engineers for developing
-    MLOps platforms.
+:   Lead 25 software engineers developing MLOps platforms.
 
-    Designed and developed NSML which is a cloud ML research platform for
-    large-scale models on HPC infrastructures.
+    Designed and developed NSML an ML research platform on HPC infrastructures,
+    focused on large-scale AI models.
 
-    Developed an inference API and a checkpoint preprocessing tools for
+    Developed an inference API and checkpoint preprocessing tools for
     [HyperCLOVA][], which is a Korean variant of 82B GPT-3.
 
 [clova]: https://clova.ai/
