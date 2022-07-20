@@ -43,15 +43,16 @@ Back-end Development {: .label }
 Work Experience
 ---------------
 
-Software Engineer & Project Manager {: .label }
+Project Manager & Software Engineer {: .label }
 [Clova][] in [Naver][], 2020--
 :   Industrializes AI.
     {: .note }
 
-:   Design and develop NSML which is a cloud ML research platform for
-    large-scale models.
+:   Lead a software engineering team including 25+ engineers for developing
+    MLOps platforms.
 
-    Lead a software engineering team including 10+ engineers.
+    Designed and developed NSML which is a cloud ML research platform for
+    large-scale models on HPC infrastructures.
 
     Developed an inference API and a checkpoint preprocessing tools for
     [HyperCLOVA][], which is a Korean variant of 82B GPT-3.
