@@ -43,7 +43,7 @@ Back-end Development {: .label }
 Work Experience
 ---------------
 
-Project Manager & Software Engineer {: .label }
+Software Engineering Manager {: .label }
 [Clova][] in [Naver][], 2020--
 :   Industrializes AI.
     {: .note }
