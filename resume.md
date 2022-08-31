@@ -45,7 +45,7 @@ Work Experience
 
 Software Engineering Manager {: .label }
 [Clova][] in [Naver][], 2020--
-:   Industrializes AI.
+:   Develops AI-based products and services.
     {: .note }
 
 :   Lead 25 software engineers developing MLOps platforms.
@@ -62,7 +62,7 @@ Software Engineering Manager {: .label }
 
 Software Engineer {: .label }
 [Kakao Brain][kakaobrain], 2018--2020
-:   The AI research lab in Kakao.
+:   An AI research subsidiary of Kakao.
     {: .note }
 
 :   Focused on parallel training of convolutional neural networks, including
@@ -76,22 +76,22 @@ Software Engineer {: .label }
 [torchgpipe]: https://torchgpipe.readthedocs.io/
 [gpipe]: https://arxiv.org/abs/1811.06965
 
-Game Server Engineer & Architect {: .label }
+Game Server Engineer {: .label }
 [Nexon][], 2011--2018
-:   Developed and launched Durango, [KartRider][] Dash & Coin Rush.
+:   Develops and publishes online video games.
     {: .note }
 
-:   Designed and developed cloud-based distributed game servers for Durango
-    (MMORPG) and [KartRider][] Dash & Coin Rush (online racing games)
-    respectively. Durango achieved up to 70k concurrent users per game world.
+:   Developed cloud-based distributed game servers for Durango (MMORPG) that
+    communicate with each other by pub/sub over the spatial grid system.
+    This game achieved up to 70k concurrent users per game world.
 
-    Developed an internationalization and localization system focused on
-    linguistic features of Korean and Indo-European languages.
+    Developed game servers for [KartRider][] Dash & Coin Rush (online racing
+    games) which synchronize racing game players in real-time.
 
     Researched rating systems such as Elo, Glicko, and
     [TrueSkill][trueskill-tm] to develop a matchmaker.
 
-    Led a server engineering team including 15 engineers.
+    Led 15 game server engineers.
 
 [nexon]: https://company.nexon.com/eng
 [kartrider]: http://kart.nexon.com/
