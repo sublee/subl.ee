@@ -239,6 +239,7 @@ Publications
 Public Speeches
 ---------------
 
+- NSML the hyper-scale ML training platform at [KRnet 2022][krnet]
 - [Remake of Hangulize<sup>ko</sup>][gokr1808] at Golang Korea 2018 and Naver D2
 - [Server architecture of Durango Vol. 3<sup>ko</sup>][ndc18] at NDC 2018
 - [Python Survival Guide<sup>ko</sup>][nxtk16] at Nexon Talk 2016
@@ -246,13 +247,15 @@ Public Speeches
 - [Profiling<sup>ko</sup>][pycon15] at PyCon KR 2015
 - [Server architecture of Durango<sup>ko</sup>][ndc14] at NDC 2014
 
-[ndc18]: https://subl.ee/~ndc18
-[ndc16]: https://subl.ee/~ndc16
-[ndc14]: https://subl.ee/~ndc14
+[krnet]: https://www.kca.kr/boardView.do?boardId=NOTICE&seq=4600077
 
 [gokr1808]: https://subl.ee/~gokr1808
 [nxtk16]:   https://subl.ee/~nxtk16
 [pycon15]:  https://subl.ee/~pycon15
+
+[ndc18]: https://subl.ee/~ndc18
+[ndc16]: https://subl.ee/~ndc16
+[ndc14]: https://subl.ee/~ndc14
 
 ---
 
