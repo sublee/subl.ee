@@ -1,2 +1,13 @@
 {% extends 'base.html' %}
+
 {% block class %}index{% endblock %}
+
+{% block header %}
+<header>
+  <div class="emblem">
+    <object data="{{ url_for('emblem') }}" width="98" height="112" type="image/svg+xml">
+      <img src="{{ url_for('emblem_raster', height=112) }}" width="98" height="112" alt="Heungsub Lee's emblem">
+    </object>
+  </div>
+</header>
+{% endblock %}

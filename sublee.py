@@ -4,43 +4,35 @@
 
    https://subl.ee/
 
-   :copyright: (c) 2013-2019 by Heungsub Lee
+   :copyright: (c) 2013-2022 by Heungsub Lee
    :license: Public Domain
 
 """
-import base64
-import glob
 import io
-import itertools
-import mimetypes
-import os
-import re
+from pathlib import Path
 from datetime import date
-from typing import Any, Dict, Iterator, Optional, Tuple, Union
-from urllib.parse import urlparse
+from typing import Any, Dict, Optional, Tuple, Union
+import uuid
 
+import cairosvg
 import click
-import jinja2
-import markupsafe
 import weasyprint
-import yaml
 from flask import (Flask, Response, make_response, render_template,
-                   render_template_string, send_file, url_for)
+                   render_template_string, request, send_file, url_for)
 from flask_frozen import Freezer
 from markdown import Markdown
-from werkzeug.exceptions import NotFound
+from PIL import Image
+from werkzeug.exceptions import HTTPException, NotFound
 
-__version__ = '2.5.0'
+__version__ = '3.0.0'
 __all__ = ['app']
 
 
-ROOT = os.path.dirname(__file__)
-DOCS = os.path.join(ROOT, 'docs')
-META = os.path.join(ROOT, 'meta.yml')
-THEMES = os.path.join(ROOT, 'themes/*.yml')
-
-
-DEFAULT_THEME = 'sublee'
+ROOT = Path(__file__).parent
+AUTHOR = 'Heungsub Lee'
+EMAIL = 'heungsub@subl.ee'
+COPYRIGHT_YEAR_SINCE = 2012
+GOOGLE_ANALYTICS = 'G-YY0SXHSEV5'
 MARKDOWN_EXTENSIONS = [
     'markdown.extensions.abbr',
     'markdown.extensions.attr_list',
@@ -53,86 +45,7 @@ MARKDOWN_EXTENSIONS = [
 
 # The Flask application.
 app = Flask(__name__, static_folder=None)
-
-
-def jinja_meta(content: str, **attrs: str) -> markupsafe.Markup:
-    """A Jinja function generating <meta> element."""
-    buf = io.StringIO()
-    buf.write('<meta ')
-
-    for key, attr in attrs.items():
-        key = key.replace('_', '-')
-        attr = markupsafe.escape(attr)
-        buf.write('{key}="{attr}" '.format(key=key, attr=attr))
-
-    content = markupsafe.escape(content)
-    buf.write('content="{content}" />'.format(content=content))
-
-    return markupsafe.Markup(buf.getvalue())
-
-
-def jinja_rgba(color: str, alpha: float = 1.0) -> str:
-    """Converts RGB hex string to CSS RGBA expression."""
-    if color.startswith('#'):
-        rgb_hex = color[1:]
-        if len(rgb_hex) == 3:
-            rgb_hex = '{0}{0}{1}{1}{2}{2}'.format(*rgb_hex)
-        r = int(rgb_hex[0:2], 16)
-        g = int(rgb_hex[2:4], 16)
-        b = int(rgb_hex[4:6], 16)
-    elif color.startswith('rgb('):
-        r, g, b = re.findall(r'\d+', color)
-    elif color.startswith('rgba('):
-        return color
-    return 'rgba({0}, {1}, {2}, {3})'.format(r, g, b, alpha)
-
-
-def jinja_cdnjs(path: str) -> str:
-    """A Jinja function generating a URL at cdnjs."""
-    return 'https://cdnjs.cloudflare.com/ajax/libs/%s' % path
-
-
-def jinja_update(d1: Dict[Any, Any],
-                 d2: Union[Dict[Any, Any], jinja2.Undefined],
-                 ) -> Dict[Any, Any]:
-    """A Jinja filter updating the target dictionary with the given
-    dictionary.
-    """
-    if not isinstance(d2, jinja2.Undefined):
-        d1.update(d2)
-    return d1
-
-
-def jinja_splitted_trigram_bar(trigram: str, offset: int) -> bool:
-    """A Jinja test checking whether a tiagram has a splitted bar at the
-    offset. For example, (☲, 1) is true while (☲, 0) and (☲, 2) is false.
-    """
-    # 9776 is unicode number of ☰ (u'\u2630', TRIGRAM_FOR_HEAVEN).
-    # The unicode distance of a trigram from the trigram for heaven is a 3-bit
-    # digit.  Splitted bars are at non-negative bits.
-    return bool((ord(trigram) - 9776) & (1 << offset))
-
-
-app.jinja_env.globals.update({
-    'meta': jinja_meta,
-    'rgba': jinja_rgba,
-    'cdnjs': (lambda path: '//cdnjs.cloudflare.com/ajax/libs/' + path),
-})
-app.jinja_env.filters.update({
-    'update': jinja_update,
-})
-app.jinja_env.tests.update({
-    'splitted_trigram_bar': jinja_splitted_trigram_bar,
-})
-
-
-def load_themes() -> Dict[str, Dict[str, str]]:
-    """Parses theme YAML files into a single dictionary."""
-    themes: Dict[str, Dict[str, str]] = {}
-    for path in glob.glob(THEMES):
-        with open(path) as f:
-            themes.update(yaml.load(f, Loader=yaml.FullLoader))
-    return themes
+app.jinja_env.globals['dummy'] = str(uuid.uuid4())
 
 
 def copyright_year(year_since: Optional[int] = None,
@@ -145,17 +58,23 @@ def copyright_year(year_since: Optional[int] = None,
     return '{0}{1}{2}'.format(year_since, dash, this_year)
 
 
-def make_context(*args: Any, **kwargs: Any) -> Dict[str, Any]:
+def make_context(**kwargs: Any) -> Dict[str, Any]:
     """Makes a template context with defaults."""
-    with open(META) as f:
-        meta = yaml.load(f, Loader=yaml.FullLoader)
+    if 'FREEZER_DESTINATION' in app.config:
+        url_root = '%(PREFERRED_URL_SCHEME)s://%(SERVER_NAME)s' % app.config
+    else:
+        url_root = request.url_root.rstrip('/')
 
-    context: Dict[str, Any] = {}
-    context['copyright_year'] = meta['copyright_year_since']
-    context['themes'] = load_themes()
-    context.update(meta)
-    context.update(*args, **kwargs)
+    context: Dict[str, Any] = {
+        'author': AUTHOR,
+        'email': EMAIL,
+        'google_analytics': GOOGLE_ANALYTICS,
+        'copyright_year': copyright_year(COPYRIGHT_YEAR_SINCE),
+        'url_root': url_root,
+        'url_path': request.path,
+    }
 
+    context.update(**kwargs)
     return context
 
 
@@ -167,25 +86,34 @@ def markdown(text: str) -> Tuple[str, Dict[str, str]]:
     return html, meta
 
 
-def data_uri(path: str) -> str:
-    """Encodes a file as a data URI."""
-    mimetype, charset = mimetypes.guess_type(path, strict=False)
-    if mimetype is None:
-        mimetype = 'application/octet-stream'
-    if charset is None:
-        mediatype = mimetype
+def send_raster(svg_path: Path, height: Optional[int]) -> Response:
+    """Sends a reheightd raster image in PNG from a SVG file."""
+    with svg_path.open('r') as f:
+        png = cairosvg.svg2png(file_obj=f, output_height=height)
+    return Response(png, mimetype='image/png')
+
+
+def render_icon(size: Union[int, Tuple[int, int]], radius: int = 0) -> str:
+    """Renders :file:`artwork/icon.svg_t` with the given size and radius."""
+    with (ROOT/'artwork'/'icon.svg_t').open('r') as f:
+        svg_t = f.read()
+
+    if isinstance(size, int):
+        width = height = size
     else:
-        mediatype = f'{mimetype};charset={charset}'
+        width, height = size
 
-    with open(path, 'rb') as f:
-        data = base64.b64encode(f.read()).decode()
-
-    return f'data:{mediatype};base64,{data}'
+    context = {
+        'width': width,
+        'height': height,
+        'radius': radius,
+    }
+    return render_template_string(svg_t, **context)
 
 
 @app.route('/')
 def index() -> str:
-    with open(os.path.join(ROOT, 'index.md'), encoding='utf-8') as f:
+    with (ROOT/'index.md').open(encoding='utf-8') as f:
         html, meta = markdown(f.read())
     ctx = make_context(html=html, **meta)
     return render_template('index.html', **ctx)
@@ -193,7 +121,7 @@ def index() -> str:
 
 @app.route('/resume/')
 def resume() -> str:
-    with open(os.path.join(ROOT, 'resume.md'), encoding='utf-8') as f:
+    with (ROOT/'resume.md').open(encoding='utf-8') as f:
         html, meta = markdown(f.read())
     ctx = make_context(html=html, **meta)
     return render_template('resume.html', **ctx)
@@ -201,9 +129,9 @@ def resume() -> str:
 
 @app.route('/resume.pdf')
 def resume_pdf() -> Response:
-    font_config = weasyprint.fonts.FontConfiguration()
+    font_config = weasyprint.text.fonts.FontConfiguration()
     html = weasyprint.HTML(string=resume())
-    with open(os.path.join(ROOT, 'css', 'print.css')) as f:
+    with (ROOT/'css'/'resume-pdf.css').open() as f:
         css = weasyprint.CSS(string=f.read(), font_config=font_config)
 
     doc = html.render(stylesheets=[css], font_config=font_config)
@@ -220,73 +148,70 @@ def resume_pdf() -> Response:
     return res
 
 
-@app.route('/themes/')
-def themes() -> str:
-    """Theme selector."""
-    ctx = make_context(themes=load_themes())
-    return render_template('themes.html', **ctx)
+@app.route('/style.css')
+def style() -> Response:
+    return send_file(ROOT/'css'/'style.css')
+
+
+@app.route('/emblem.svg')
+def emblem() -> Response:
+    return send_file(ROOT/'artwork'/'emblem.svg')
+
+
+@app.route('/emblem.png', defaults={'height': None})
+@app.route('/emblem-<int:height>.png')
+def emblem_raster(height: Optional[int]) -> Response:
+    return send_raster(ROOT/'artwork'/'emblem.svg', height)
+
+
+@app.route('/icon.svg')
+def icon() -> Response:
+    svg = render_icon(240)
+    return Response(svg, mimetype='image/svg+xml')
+
+
+@app.route('/icon.png', defaults={'height': None})
+@app.route('/icon-<int:height>.png')
+def icon_raster(height: Optional[int]) -> Response:
+    svg = render_icon(240)
+    png = cairosvg.svg2png(file_obj=io.StringIO(svg), output_height=height)
+    return Response(png, mimetype='image/png')
+
+
+@app.route('/social.svg')
+def social() -> Response:
+    svg = render_icon((600, 315))
+    return Response(svg, mimetype='image/svg+xml')
+
+
+@app.route('/social.png')
+def social_raster() -> Response:
+    svg = render_icon((600, 315))
+    png = cairosvg.svg2png(file_obj=io.StringIO(svg), output_height=630)
+    return Response(png, mimetype='image/png')
+
+
+@app.route('/favicon.svg')
+def favicon() -> Response:
+    svg = render_icon(240, 40)
+    return Response(svg, mimetype='image/svg+xml')
 
 
 @app.route('/favicon.ico')
-def favicon() -> Response:
-    res: Response = send_file(os.path.join(ROOT, 'favicon.ico'))
-    return res
+def favicon_raster() -> Response:
+    svg = render_icon(240, 40)
+    png = cairosvg.svg2png(file_obj=io.StringIO(svg), output_height=256)
+    img = Image.open(io.BytesIO(png))
+
+    buf = io.BytesIO()
+    img.save(buf, format='ICO')
+    return Response(buf.getvalue(), mimetype='image/x-icon')
 
 
-@app.route('/og.png')
-def og() -> Response:
-    res: Response = send_file(os.path.join(ROOT, 'og.png'))
-    return res
-
-
-@app.route('/theme:<theme>.css')
-def theme_css(theme: str) -> Tuple[str, int, Dict[str, str]]:
-    """Generates a CSS file from the given theme."""
-    themes = load_themes()
-    style = themes[theme]
-
-    with io.StringIO() as buf:
-        buf.write(render_template('theme.css_t', theme=theme, **style))
-
-        def _data_uri(path: str) -> str:
-            return data_uri(os.path.join(ROOT, 'themes', theme, path))
-
-        if 'css' in style:
-            buf.write(render_template_string(style['css'], data_uri=_data_uri))
-        if 'css_file' in style:
-            with open(os.path.join(ROOT, 'themes', style['css_file'])) as f:
-                buf.write(render_template_string(f.read(), data_uri=_data_uri))
-
-        try:
-            dark_style = themes[theme + ':dark']
-        except KeyError:
-            pass
-        else:
-            buf.write('@media (prefers-color-scheme: dark) {')
-            buf.write(render_template('theme.css_t', **dark_style))
-            buf.write('}')
-
-        buf.write('''
-        [data-detect-theme="%s"]::before {
-            content: "ready";
-        }
-        ''' % theme)
-
-        css = buf.getvalue()
-
-    return css, 200, {'Content-Type': 'text/css'}
-
-
-@app.route('/base.css')
-def base_css() -> Response:
-    res: Response = send_file(os.path.join(ROOT, 'css', 'base.css'))
-    return res
-
-
-@app.route('/print.css')
-def print_css() -> Response:
-    res: Response = send_file(os.path.join(ROOT, 'css', 'print.css'))
-    return res
+@app.route('/manifest.webmanifest')
+def manifest() -> Response:
+    manifest = render_template('manifest.webmanifest')
+    return Response(manifest, mimetype='application/manifest+json')
 
 
 @app.route('/runker/')
@@ -297,10 +222,10 @@ def subleerunker() -> str:
 
 
 @app.route('/robots.txt')
-def robots_txt() -> Response:
+def robots() -> Response:
     buf = io.StringIO()
 
-    sitemap_url = url_for('sitemap_txt', _external=True)
+    sitemap_url = url_for('sitemap', _external=True)
     print('Sitemap: %s' % sitemap_url, file=buf)
 
     res: Response = make_response(buf.getvalue())
@@ -309,7 +234,7 @@ def robots_txt() -> Response:
 
 
 @app.route('/sitemap.txt')
-def sitemap_txt() -> Response:
+def sitemap() -> Response:
     buf = io.StringIO()
 
     print(url_for('index', _external=True), file=buf)
@@ -320,24 +245,17 @@ def sitemap_txt() -> Response:
     return res
 
 
-def render_error(error: Exception) -> str:
+@app.errorhandler(HTTPException)
+def render_error(error: HTTPException) -> Tuple[str, int]:
     """The HTTP error page."""
     ctx = make_context(error=error)
-    return render_template('error.html', **ctx)
 
+    if error.code is None:
+        status_code = 500
+    else:
+        status_code = error.code
 
-for status in itertools.chain(range(400, 420), range(500, 506)):
-    def _error(error: Exception, status: int = status) -> Tuple[str, int]:
-        return render_error(error), status
-
-    try:
-        app.errorhandler(status)(_error)
-    except KeyError:
-        # Ignore errors during registering an error handler.
-        # KeyError occurs when handling status code 402.
-        pass
-
-    del _error
+    return render_template('error.html', **ctx), status_code
 
 
 def prepare_freezing(app: Flask) -> Freezer:
@@ -351,12 +269,8 @@ def prepare_freezing(app: Flask) -> Freezer:
 
     @app.route('/404.html')
     def not_found() -> str:
-        return render_error(NotFound())
-
-    @freezer.register_generator
-    def theme_css() -> Iterator[Dict[str, str]]:
-        for theme in load_themes().keys():
-            yield {'theme': theme}
+        page, _ = render_error(NotFound())
+        return page
 
     return freezer
 
@@ -382,11 +296,8 @@ def run(host: str, port: int) -> None:
 def freeze(dest: str) -> None:
     """Freeze the website as static files."""
     # Config URL scheme and server name.
-    with open(META) as f:
-        meta = yaml.load(f, Loader=yaml.FullLoader)
-    url_root = urlparse(meta['url_root'])
-    app.config['PREFERRED_URL_SCHEME'] = url_root.scheme
-    app.config['SERVER_NAME'] = url_root.hostname
+    app.config['PREFERRED_URL_SCHEME'] = 'https'
+    app.config['SERVER_NAME'] = 'subl.ee'
 
     # Freeze the website.
     app.config['FREEZER_DESTINATION'] = dest

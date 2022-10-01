@@ -3,10 +3,13 @@
 {% block class %}resume{% endblock %}
 
 {% block head %}
-  <link rel="alternate" type="application/pdf" href="{{ url_for('resume_pdf') }}" />
+  <link rel="alternate" type="application/pdf" href="{{ url_for('resume_pdf') }}">
 {% endblock %}
 
-{% block inner_footer %}
+{% block header %}
+{% endblock %}
+
+{% block copyright %}
   {{ super() }}
   &middot;
   <a href="{{ url_for('resume_pdf') }}" target="_blank">PDF</a>

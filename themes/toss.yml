@@ -1,9 +1,0 @@
-toss:
-  emblem:
-    shape: ☲
-    colors: {0: '#0050ff'}
-  colors:
-    background: '#fff'
-    text: '#454f5d'
-    title: '#4c6ed5'
-    link: '#4c6ed5'

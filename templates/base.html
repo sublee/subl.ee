@@ -1,72 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" prefix="og: https://ogp.me/ns#" class="{% block class %}{% endblock %}">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, minimum-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, minimum-scale=1">
 
   <title>{% block title %}{{ title }}{% endblock %}</title>
-  {{ meta(keywords, name='keywords') if keywords }}
 
-  <link rel="icon" type="image/icon" sizes="16x16 32x32 48x48 128x128 256x256" href="{{ url_for('favicon') }}" />
+  <meta property="author" content="{{ author }}">
+  <meta property="contact" content="{{ email }}">
+  <meta property="copyright" content="&copy; {{ copyright_year }} {{ author }}">
+  <meta property="keywords" content="{{ keywords }}">
 
-  <link rel="stylesheet" media="print" href="{{ url_for('print_css') }}" />
-  <link rel="stylesheet" media="screen" href="{{ url_for('base_css') }}" />
-  <link rel="stylesheet" media="screen" href="{{ url_for('theme_css', theme=theme) }}" class="theme" />
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:url" content="{{ url_root ~ url_path }}">
+  <meta property="og:image" content="{{ url_root ~ url_for('social_raster') }}?dummy={{ dummy }}">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
-  <script>
-    {% include 'theme.js_t' %}
-  </script>
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ title }}">
+  <meta name="twitter:description" content="{{ description }}">
+  <meta name="twitter:image" content="{{ url_root ~ url_for('social_raster') }}?dummy={{ dummy }}">
 
-  {# open graph #}
-  {{ meta(type or 'website', property='og:type')
-   ~ meta(title, property='og:title')
-   ~(meta(description, property='og:description') if description)
-   ~ meta(url_root ~ url_path, property='og:url')
-   ~ meta(url_root ~ url_for('og') ~ '?1', property='og:image')
-   ~ meta('image/png', property='og:image:type')
-  }}
+  <link rel="icon" href="{{ url_for('favicon_raster') }}?dummy={{ dummy }}" sizes="any">
+  <link rel="icon" href="{{ url_for('favicon') }}?dummy={{ dummy }}" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{{ url_for('icon_raster', height=180) }}?dummy={{ dummy }}">
+  <link rel="manifest" href="{{ url_for('manifest') }}">
 
-  {# html meta #}
-  {{ meta(author, name='author')
-   ~ meta(email, name='contact')
-   ~ meta('&copy; '|safe ~ copyright_year ~ ' ' ~ author, name='copyright')
-  }}
+  <link rel="stylesheet" href="{{ url_for('style') }}">
 
   {% block head %}{% endblock %}
 </head>
-<body style="transition: none !important">
-  <script>
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        document.body.style.transition = '';
-      }, 500);
-    });
-  </script>
-
+<body>
   {% block header %}
-    <header>
-      <div class="emblem-wrap">
-        <a class="emblem"
-          {% if self.class() != 'index' %}
-          href="{{ url_for('index') }}"
-          {% endif %}
-        >
-          <div class="emblem-left">
-            <i class="emblem-top"></i>
-            <i class="emblem-bottom"></i>
-          </div>
-          <div class="emblem-middle">
-            <i class="emblem-top"></i>
-            <i class="emblem-bottom"></i>
-          </div>
-          <div class="emblem-right">
-            <i class="emblem-top"></i>
-            <i class="emblem-bottom"></i>
-          </div>
-        </a>
-      </div>
-    </header>
   {% endblock %}
 
   <main>
@@ -75,31 +45,35 @@
     {% endblock %}
   </main>
 
-  {% block footer %}
-    <footer>
-      {% block inner_footer %}
-        <span class="copyright">
-          &copy; <span class="year">{{ copyright_year }}</span> {{ author }}
-        </span>
-        <script>
-          // auto-renew the year range of the copyright.
-          var yearSpan = document.querySelector('.year');
-          var since = Number(/^[0-9]+/.exec(yearSpan.innerText)[0]);
-          var until = Number(/[0-9]+$/.exec(yearSpan.innerText)[0]);
-          var thisYear = (new Date()).getFullYear();
-          until = Math.max(until, thisYear);
-          if (since < until) {
-            yearSpan.innerHTML = since + '&ndash;' + until;
-          } else {
-            yearSpan.innerHTML = until;
-          }
-        </script>
+  <footer>
+    <p class="copyright">
+      {% block copyright %}
+        &copy;
+        <span class="year">{{ copyright_year }}</span>
+        <a href="{{ url_for('index') }}">{{ author }}</a>
       {% endblock %}
-    </footer>
-  {% endblock %}
+    </p>
+    <script>
+      // Automatically renew the year range of the copyright.
+      var yearSpan = document.querySelector('.copyright .year');
+      var since = Number(/^[0-9]+/.exec(yearSpan.innerText)[0]);
+      var until = Number(/[0-9]+$/.exec(yearSpan.innerText)[0]);
+      var thisYear = (new Date()).getFullYear();
+      until = Math.max(until, thisYear);
+      if (since < until) {
+        yearSpan.innerHTML = since + '&ndash;' + until;
+      } else {
+        yearSpan.innerHTML = until;
+      }
+    </script>
+  </footer>
 
   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.head.parentNode.classList.add('loaded');
+    });
   </script>
+
   {% from 'ga.html' import ga %}
   {{ ga(google_analytics) }}
 </body>

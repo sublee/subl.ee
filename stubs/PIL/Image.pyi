@@ -1,0 +1,6 @@
+from typing import IO
+
+def open(f: IO[bytes]) -> Image: ...
+
+class Image:
+    def save(self, f: IO[bytes], format: str) -> None: ...

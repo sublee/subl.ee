@@ -1,6 +1,6 @@
 from typing import BinaryIO, List
 
-from weasyprint.fonts import FontConfiguration
+from weasyprint.text.fonts import FontConfiguration
 
 class HTML:
     def __init__(self, string: str) -> None: ...

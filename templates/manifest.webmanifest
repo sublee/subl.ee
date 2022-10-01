@@ -1,0 +1,6 @@
+{
+  "icons": [
+    {"src": "{{ url_for('icon_raster', height=192) }}", "sizes": "192x192", "type": "image/png"},
+    {"src": "{{ url_for('icon_raster', height=512) }}", "sizes": "512x512", "type": "image/png"}
+  ]
+}
