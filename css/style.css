@@ -9,7 +9,7 @@
 
   --gradient0-color: var(--link-color);
   --gradient1-color: #b7b;
-  --gradient2-color: #f45;
+  --gradient2-color: #e57;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -6,9 +6,10 @@
   version="1.1"
   xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="base" x1="30%" y1="-5%" x2="70%" y2="105%">
-      <stop offset="25%"  stop-color="#58f" />
+    <linearGradient id="base" x1="35%" y1="0%" x2="65%" y2="100%">
+      <stop offset="15%"  stop-color="#58f" />
       <stop offset="60%"  stop-color="#b7b" />
+      <stop offset="90%"  stop-color="#e57" />
       <stop offset="100%" stop-color="#f45" />
     </linearGradient>
 
