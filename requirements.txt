@@ -20,7 +20,7 @@ fonttools==4.37.3
 html5lib==1.1
 importlib-metadata==4.12.0
 itsdangerous==2.1.2
-pillow==9.2.0
+pillow==9.3.0
 pycparser==2.21
 pydyf==0.3.0
 six==1.16.0
