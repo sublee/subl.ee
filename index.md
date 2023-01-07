@@ -9,14 +9,13 @@ Heungsub Lee
 I am
 ----
 
-Heungsub Lee, a [software engineering][] manager at [Clova][] in [Naver][].
+Heungsub Lee, a [software engineering][] manager at [NAVER Cloud][].
 <br>
 More details are in my [résumé](/resume/).
 {: .hard-returns }
 
 [software engineering]: https://github.com/sublee
-[clova]: https://clova.ai/
-[naver]: https://navercorp.com/en
+[naver cloud]: https://navercloudcorp.com/lang/en
 
 I have made
 -----------

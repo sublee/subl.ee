@@ -44,8 +44,8 @@ Work Experience
 ---------------
 
 Software Engineering Manager {: .label }
-[Clova][] in [Naver][], 2020--
-:   Develops AI-based products and services.
+[CLOVA][] in [NAVER][] and [NAVER Cloud][], 2020--
+:   Develops AI-based products, services, and platforms.
     {: .note }
 
 :   Lead 25 software engineers developing MLOps platforms.
@@ -59,10 +59,11 @@ Software Engineering Manager {: .label }
 [clova]: https://clova.ai/
 [naver]: https://navercorp.com/en
 [hyperclova]: https://arxiv.org/abs/2109.04650
+[naver cloud]: https://navercloudcorp.com/lang/en
 
 Software Engineer {: .label }
 [Kakao Brain][kakaobrain], 2018--2020
-:   An AI research subsidiary of Kakao.
+:   An AI research subsidiary of Kakao
     {: .note }
 
 :   Focused on parallel training of convolutional neural networks, including
@@ -77,7 +78,7 @@ Software Engineer {: .label }
 [gpipe]: https://arxiv.org/abs/1811.06965
 
 Game Server Engineer {: .label }
-[Nexon][], 2011--2018
+[NEXON][], 2011--2018
 :   Develops and publishes online video games.
     {: .note }
 
@@ -120,7 +121,7 @@ Open Source Experience
 ----------------------
 
 [torchgpipe][], 2019--2020
-:   A GPipe implementation in PyTorch.
+:   A GPipe implementation in PyTorch
     {: .note }
 
 :   Implemented [GPipe][] in PyTorch with optimization for CUDA, PyTorch's
@@ -138,7 +139,7 @@ Open Source Experience
 [arxiv:torchgpipe]: https://arxiv.org/abs/2004.09910
 
 [Hangulize][], 2010--
-:   Automatically transcribes a non-Korean word into Hangul.
+:   Transcribes a non-Korean word into Hangul.
     {: .note }
 
 :   Implemented an automatic Hangul transcription algorithm to realize [Brian
@@ -154,7 +155,7 @@ Open Source Experience
 [netflix-style]: https://partnerhelp.netflixstudios.com/hc/en-us/articles/216001127-Korean-Timed-Text-Style-Guide
 
 [TrueSkill][trueskill], 2012--
-:   A TrueSkill™ implementation in Python.
+:   A TrueSkill™ implementation in Python
     {: .note }
 
 :   Implemented [TrueSkill™][trueskill-tm], which is a rating algorithm for
@@ -166,7 +167,7 @@ Open Source Experience
 [pydata2019]: https://docs.google.com/presentation/d/1S5v9D31vpsr22efMSSCO6hmN2SQNCIqKG7JyGzUSzeI/edit?usp=sharing
 
 [Profiling][], 2014--2018
-:   An interactive profiler for Python inspired by the Unity3D profiler.
+:   An interactive profiler for Python inspired by the Unity3D profiler
     {: .note }
 
 :   Developed a Python profiler with an interactive TUI inspired by [the Unity
