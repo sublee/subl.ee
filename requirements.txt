@@ -10,7 +10,7 @@ WeasyPrint==56.1
 Jinja2==3.1.2
 MarkupSafe==2.1.1
 Pyphen==0.13.0
-Werkzeug==2.2.2
+Werkzeug==2.2.3
 brotli==1.0.9
 cairocffi==1.4.0
 cffi==1.15.1
