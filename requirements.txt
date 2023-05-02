@@ -1,7 +1,7 @@
 # Imported Modules
 CairoSVG==2.5.2
 Click==8.1.3
-Flask==2.2.2
+Flask==2.3.2
 Frozen-Flask==0.18
 Markdown==3.4.1
 WeasyPrint==56.1
