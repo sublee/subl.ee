@@ -13,6 +13,7 @@ from pathlib import Path
 from datetime import date
 from typing import Any, Dict, Optional, Tuple, Union
 import uuid
+from xml.etree import ElementTree
 
 import cairosvg
 import click
@@ -21,6 +22,7 @@ from flask import (Flask, Response, make_response, render_template,
                    render_template_string, request, send_file, url_for)
 from flask_frozen import Freezer
 from markdown import Markdown
+from markupsafe import Markup
 from PIL import Image
 from werkzeug.exceptions import HTTPException, NotFound
 
@@ -46,6 +48,19 @@ MARKDOWN_EXTENSIONS = [
 # The Flask application.
 app = Flask(__name__, static_folder=None)
 app.jinja_env.globals['dummy'] = str(uuid.uuid4())
+
+
+def include_xml_elem(filename: str, xpath: str) -> Markup:
+    """A function for templates to include an XML element from the given
+    file.
+    """
+    tree = ElementTree.parse(filename)
+    elem = tree.find(xpath)
+    assert elem is not None
+    return Markup(ElementTree.tostring(elem, 'unicode'))
+
+
+app.jinja_env.globals['include_xml_elem'] = include_xml_elem
 
 
 def copyright_year(year_since: Optional[int] = None,
@@ -173,7 +188,7 @@ def icon() -> Response:
 @app.route('/icon.png', defaults={'height': None})
 @app.route('/icon-<int:height>.png')
 def icon_raster(height: Optional[int]) -> Response:
-    svg = render_icon(240)
+    svg = icon().data.decode('utf-8')
     png = cairosvg.svg2png(file_obj=io.StringIO(svg), output_height=height)
     return Response(png, mimetype='image/png')
 
@@ -186,20 +201,20 @@ def social() -> Response:
 
 @app.route('/social.png')
 def social_raster() -> Response:
-    svg = render_icon((600, 315))
+    svg = social().data.decode('utf-8')
     png = cairosvg.svg2png(file_obj=io.StringIO(svg), output_height=630)
     return Response(png, mimetype='image/png')
 
 
 @app.route('/favicon.svg')
 def favicon() -> Response:
-    svg = render_icon(240, 40)
+    svg = render_icon(208, 34)
     return Response(svg, mimetype='image/svg+xml')
 
 
 @app.route('/favicon.ico')
 def favicon_raster() -> Response:
-    svg = render_icon(240, 40)
+    svg = favicon().data.decode('utf-8')
     png = cairosvg.svg2png(file_obj=io.StringIO(svg), output_height=256)
     img = Image.open(io.BytesIO(png))
 

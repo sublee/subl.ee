@@ -8,7 +8,7 @@
   --vlink-color: #97b;
 
   --gradient0-color: var(--link-color);
-  --gradient1-color: #b7b;
+  --gradient1-color: var(--blur-color);
   --gradient2-color: #e57;
 }
 
@@ -127,12 +127,13 @@ footer::before {
 }
 
 @media screen and (max-width: 32rem) {
-  html { padding-left: 0.75rem; padding-right: 0.75rem; font-size: 16px; }
-  header .emblem { transform: scale(0.9); }
+  html { padding: 1rem 0.75rem; font-size: 16px; }
+  header { margin-bottom: 0; }
+  header .emblem { transform: scale(0.8); }
 }
 
 html.loaded { transition: padding 0.2s, font-size 0.2s; }
-html.loaded header .emblem { transition: transform 0.2s; }
+html.loaded header, html.loaded header .emblem { transition: transform 0.2s; }
 
 /* Specialization */
 
