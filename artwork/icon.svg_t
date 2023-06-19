@@ -41,8 +41,8 @@
       <stop offset="100%" stop-color="#335" stop-opacity="0"   />
     </radialGradient>
 
-    <symbol id="shadow" x="-56" y="-76">
-      <rect fill="url(#layer4)" width="112" height="152" />
+    <symbol id="shadow" x="-88" y="-88">
+      <rect fill="url(#layer4)" width="176" height="176" />
     </symbol>
 
     <!-- Emblem -->
@@ -52,8 +52,8 @@
       <stop offset="90%" stop-color="#fff" stop-opacity="0.9" />
     </radialGradient>
 
-    <symbol id="emblem" x="-56" y="-76">
-      <rect fill="url(#layer5)" width="112" height="152" />
+    <symbol id="emblem" x="-88" y="-88">
+      <rect fill="url(#layer5)" width="176" height="176" />
     </symbol>
 
     <!-- Frame -->
