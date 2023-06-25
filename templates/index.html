@@ -3,10 +3,12 @@
 {% block class %}index{% endblock %}
 
 {% block header %}
+{% set width  = 190 %}
+{% set height = 120 %}
 <header>
   <div class="emblem">
-    <object data="{{ url_for('emblem') }}" width="176" height="176" type="image/svg+xml">
-      <img src="{{ url_for('emblem_raster', height=176) }}" width="176" height="176" alt="Heungsub Lee's emblem">
+    <object data="{{ url_for('emblem') }}" width="{{ width }}" height="{{ height }}" type="image/svg+xml">
+      <img src="{{ url_for('emblem_raster', height=height*2) }}" width="{{ width }}" height="{{ height }}" alt="Heungsub Lee's emblem">
     </object>
   </div>
 </header>
