@@ -44,17 +44,16 @@ Work Experience
 ---------------
 
 Software Engineering Manager {: .label }
-[CLOVA][] in [NAVER][] and [NAVER Cloud][], 2020--
-:   Develops AI-based products, services, and platforms.
+[CLOVA][] in [NAVER][] and [NAVER Cloud][], 2020--2023
+:   Develops hyperscale AI-based products, services, and platforms.
     {: .note }
 
-:   Lead 25 software engineers developing MLOps platforms.
+:   Led 25 MLOps software engineers focusing on data pipelining, model
+    training, model serving, GPU resource management, and inference
+    optimization for [HyperCLOVA][], an LLM specialized in Korea.
 
-    Designed and developed NSML an ML research platform on HPC infrastructures,
-    focused on large-scale AI models.
-
-    Developed an inference API and checkpoint preprocessing tools for
-    [HyperCLOVA][], which is a Korean variant of 82B GPT-3.
+    Designed and developed NSML, an ML research platform on HPC
+    infrastructures focused on large-scale AI models.
 
 [clova]: https://clova.ai/
 [naver]: https://navercorp.com/en

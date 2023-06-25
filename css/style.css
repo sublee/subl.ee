@@ -36,6 +36,12 @@ html {
   text-align: center;
 }
 
+@media print {
+  html {
+    padding: 0;
+  }
+}
+
 body {
   display: inline-block;
   text-align: left;
