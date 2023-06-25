@@ -20,7 +20,6 @@ Interests
 
 - Designing engineer-oriented modules or services
 - MLOps and back-end development
-- Optimizing software development culture
 
 Skills
 ------
@@ -30,8 +29,7 @@ Programming Languages {: .label }
   {: .attr }
 
 ML Engineering {: .label }
-: PyTorch, data or pipeline parallelism, Triton Inference Server, NVIDIA Nsight
-  Systems
+: PyTorch, pipeline parallelism, NVIDIA Nsight Systems
   {: .attr }
 
 Back-end Development {: .label }
@@ -49,8 +47,8 @@ Software Engineering Manager {: .label }
     {: .note }
 
 :   Led 25 MLOps software engineers focusing on data pipelining, model
-    training, model serving, GPU resource management, and inference
-    optimization for [HyperCLOVA][], an LLM specialized in Korea.
+    training platform, model serving platform, GPU resource management, and
+    inference optimization for [HyperCLOVA][], an LLM specialized in Korea.
 
     Designed and developed NSML, an ML research platform on HPC
     infrastructures focused on large-scale AI models.
