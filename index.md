@@ -9,13 +9,12 @@ Heungsub Lee
 I am
 ----
 
-Heungsub Lee, a [software engineering][] manager at [NAVER Cloud][].
-<br>
+Heungsub Lee, a [software engineer][] without a job.
+<br />
 More details are in my [résumé](/resume/).
 {: .hard-returns }
 
-[software engineering]: https://github.com/sublee
-[naver cloud]: https://navercloudcorp.com/lang/en
+[software engineer]: https://github.com/sublee
 
 I have made
 -----------

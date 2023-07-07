@@ -19,6 +19,7 @@ Interests
 ---------
 
 - Designing engineer-oriented modules or services
+- Optimizing and managing cost for ML-based services
 - MLOps and back-end development
 
 Skills
