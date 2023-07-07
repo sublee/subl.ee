@@ -8,7 +8,15 @@
 <header>
   <div class="emblem">
     <object data="{{ url_for('emblem') }}" width="{{ width }}" height="{{ height }}" type="image/svg+xml">
-      <img src="{{ url_for('emblem_raster', height=height*2) }}" width="{{ width }}" height="{{ height }}" alt="Heungsub Lee's emblem">
+      <picture>
+        <source type="image/png" srcset="
+          {{ url_for('emblem_raster', height=height)   }} 1x,
+          {{ url_for('emblem_raster', height=height*2) }} 2x,
+          {{ url_for('emblem_raster', height=height*4) }} 4x,
+          {{ url_for('emblem_raster', height=height*8) }} 8x,
+        " />
+        <img src="{{ url_for('emblem_raster', height=height) }}" alt="Heungsub Lee's emblem" />
+      </picture>
     </object>
   </div>
 </header>
