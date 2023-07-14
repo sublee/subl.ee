@@ -18,9 +18,9 @@ Web Sites {: .label }
 Interests
 ---------
 
-- Designing engineer-oriented modules or services
-- Optimizing and managing cost for ML-based services
-- MLOps and back-end development
+- Developing software libraries or engineering tools
+- Back-end development on cloud platforms
+- Optimizing and managing the cost of systems top on GPUs
 
 Skills
 ------
@@ -49,7 +49,8 @@ Software Engineering Manager {: .label }
 
 :   Led 25 MLOps software engineers focusing on data pipelining, model
     training platform, model serving platform, GPU resource management, and
-    inference optimization for [HyperCLOVA][], an LLM specialized in Korea.
+    inference optimization for [HyperCLOVA][], an LLM specialized in Korean
+    culture.
 
     Designed and developed NSML, an ML research platform on HPC
     infrastructures focused on large-scale AI models.
