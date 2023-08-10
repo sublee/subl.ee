@@ -142,8 +142,8 @@ Open Source Experience
     {: .note }
 
 :   Implemented an automatic Hangul transcription algorithm to realize [Brian
-    Jongseong Park's idea][hangulize-idea]. Designed and implemented the web
-    service and RESTful API.
+    Jongseong Park's idea][hangulize-idea]. Developed the algorithm and the web
+    service.
 
     Many professional Korean translators habitually use this tool to translate
     undocumented proper nouns. Netflix refers to this tool in [the Korean
