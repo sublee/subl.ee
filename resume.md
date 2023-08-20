@@ -95,18 +95,17 @@ Game Server Engineer {: .label }
     Led 15 game server engineers.
 
 [nexon]: https://company.nexon.com/en/
-[kartrider]: http://kart.nexon.com/
-[trueskill-tm]: http://research.microsoft.com/en-us/projects/trueskill/
+[kartrider]: https://kart.nexon.com/
+[trueskill-tm]: https://www.microsoft.com/en-us/research/project/trueskill-ranking-system/
 
 Web Developer {: .label }
-[Npine][], 2008--2011
+Npine, 2008--2011
 :   Supplies stock images for business on [Iclickart][].
     {: .note }
 
 :   Developed web services from scratch. Maintained on-premise Linux servers.
 
-[npine]: http://en.npine.com/
-[iclickart]: http://iclickart.co.kr/
+[iclickart]: https://iclickart.co.kr/
 
 Front-end Web Developer {: .label }
 [Lunant][], 2008--2011
@@ -151,7 +150,7 @@ Open Source Experience
     timed-text style guide][netflix-style].
 
 [hangulize]: https://hangulize.org/
-[hangulize-idea]: http://iceager.egloos.com/2610028
+[hangulize-idea]: https://iceager.egloos.com/2610028
 [netflix-style]: https://partnerhelp.netflixstudios.com/hc/en-us/articles/216001127-Korean-Timed-Text-Style-Guide
 
 [TrueSkill][trueskill], 2012--
@@ -163,7 +162,7 @@ Open Source Experience
     [PyData Berlin 2019][pydata2019].
 
 [trueskill]: https://trueskill.org/
-[trueskill-tm]: http://research.microsoft.com/en-us/projects/trueskill/
+[trueskill-tm]: https://www.microsoft.com/en-us/research/project/trueskill-ranking-system/
 [pydata2019]: https://docs.google.com/presentation/d/1S5v9D31vpsr22efMSSCO6hmN2SQNCIqKG7JyGzUSzeI/edit?usp=sharing
 
 [Profiling][], 2014--2018
@@ -205,7 +204,7 @@ Contributions
 [pytorch#21006]: https://github.com/pytorch/pytorch/pull/21006
 [pytorch#25985]: https://github.com/pytorch/pytorch/pull/25985
 [pytorch#18568]: https://github.com/pytorch/pytorch/pull/18568
-[zeromq]:        http://zeromq.org/
+[zeromq]:        https://zeromq.org/
 [zeromq#2942]:   https://github.com/zeromq/libzmq/issues/2942
 [flask]:         https://flask.palletsprojects.com/
 [flask#108]:     https://github.com/pallets/flask/issues/108
@@ -274,7 +273,7 @@ Education
 Computer Software, [Kwangwoon University][kw], 2008
 -- completed the first year only
 
-[kw]: http://www.kw.ac.kr/
+[kw]: https://www.kw.ac.kr/
 
 <!-- abbrs -->
 *[AWS]: Amazon Web Services
