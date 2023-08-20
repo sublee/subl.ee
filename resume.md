@@ -18,15 +18,15 @@ Web Sites {: .label }
 Interests
 ---------
 
-- Developing software libraries or engineering tools
-- Back-end development on cloud platforms
-- Optimizing and managing the cost of systems top on GPUs
+- Software for software engineers
+- Distributed system and cloud-native back-end development
+- Cost optimization and management for systems top on GPUs
 
 Skills
 ------
 
 Programming Languages {: .label }
-: Go, Python, JavaScript, Bash
+: Go, Python, TypeScript, JavaScript, Bash
   {: .attr }
 
 ML Engineering {: .label }
@@ -44,7 +44,7 @@ Work Experience
 
 Software Engineering Manager {: .label }
 [CLOVA][] in [NAVER][] and [NAVER Cloud][], 2020--2023
-:   Develops hyperscale AI-based products, services, and platforms.
+:   Develops hyperscale AI-based products.
     {: .note }
 
 :   Led 25 MLOps software engineers focusing on data pipelining, model
@@ -52,13 +52,14 @@ Software Engineering Manager {: .label }
     inference optimization for [HyperCLOVA][], an LLM specialized in Korean
     culture.
 
-    Designed and developed NSML, an ML research platform on HPC
-    infrastructures focused on large-scale AI models.
+    Designed and developed the second version of [NSML][], an ML research
+    platform on HPC infrastructures focused on large-scale AI models.
 
 [clova]: https://clova.ai/
 [naver]: https://navercorp.com/en
-[hyperclova]: https://arxiv.org/abs/2109.04650
 [naver cloud]: https://navercloudcorp.com/lang/en
+[hyperclova]: https://arxiv.org/abs/2109.04650
+[nsml]: https://arxiv.org/abs/1712.05902
 
 Software Engineer {: .label }
 [Kakao Brain][kakaobrain], 2018--2020
@@ -93,7 +94,7 @@ Game Server Engineer {: .label }
 
     Led 15 game server engineers.
 
-[nexon]: https://company.nexon.com/eng
+[nexon]: https://company.nexon.com/en/
 [kartrider]: http://kart.nexon.com/
 [trueskill-tm]: http://research.microsoft.com/en-us/projects/trueskill/
 
