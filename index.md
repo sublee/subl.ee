@@ -35,7 +35,7 @@ I have made
 [trueskill]:      https://trueskill.org/
 [subway fighter]: https://yeonghoey.itch.io/subway-fighter
 [subleerunker]:   /runker/
-[deviantart]:     https://www.deviantart.com/sublee/gallery/?catpath=/
+[deviantart]:     https://www.deviantart.com/sublee
 
 I told about
 ------------

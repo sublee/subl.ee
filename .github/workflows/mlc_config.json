@@ -3,5 +3,6 @@
         {
             "pattern": "^/"
         }
-    ]
+    ],
+    "aliveStatusCodes": [200, 999, 0]
 }
