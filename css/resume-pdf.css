@@ -9,7 +9,7 @@
   padding: 0;
   border: none;
   font-size: 1em;
-  line-height: 1.2;
+  line-height: 1.2; /* will be overridden by resume_pdf() */
   text-decoration: none;
   clear: left;
   color: black;
