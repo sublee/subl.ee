@@ -52,8 +52,8 @@ Software Engineering Manager {: .label }
     inference optimization for [HyperCLOVA][], an LLM specialized in Korean
     culture.
 
-    Designed and developed the second version of [NSML][], an ML research
-    platform on HPC infrastructures focused on large-scale AI models.
+    Developed the second version of [NSML][], an ML research platform on HPC
+    infrastructures focused on large-scale AI models.
 
 [clova]: https://clova.ai/
 [naver]: https://navercorp.com/en
