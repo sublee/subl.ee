@@ -7,17 +7,35 @@
   <link rel="icon" type="image/icon" href="{{ url }}/favicon.ico">
   {% from 'ga.html' import ga %}
   {{ ga('UA-1078484-7') }}
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      line-height: 0;
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
   <script>
   document.addEventListener('DOMContentLoaded', function() {
     if (location.search || location.hash) {
       var frameElem = document.getElementsByTagName('frame')[0];
       frameElem.src += location.search + location.hash;
     }
-    window.frames[0].focus();
+
+    var iframe = document.querySelector('iframe');
+    iframe.focus();
+    setInterval(function() {
+      iframe.contentWindow.focus();
+    }, 250);
   });
   </script>
 </head>
-<frameset>
-  <frame src="{{ url }}">
-</frameset>
+<body>
+  <iframe src="{{ url }}" />
+</body>
 </html>
