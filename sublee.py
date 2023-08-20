@@ -156,32 +156,32 @@ def resume_pdf() -> Response:
     with (ROOT/'css'/'resume-pdf.css').open() as f:
         css = weasyprint.CSS(string=f.read(), font_config=font_config)
 
-    def render(line_height: float = 0) -> weasyprint.Document:
+    def render(line_height: Optional[float] = None) -> weasyprint.Document:
         stylesheets = [css]
-        if line_height > 1:
+
+        if line_height is not None:
             line_height_rule = f'*{{line-height:{line_height}}}'
             stylesheets.append(weasyprint.CSS(string=line_height_rule))
+
         doc = html.render(stylesheets=stylesheets, font_config=font_config)
         return doc
-
-    line_height = 0
 
     if 'FREEZER_DESTINATION' in app.config:
         # Maximize line-height unless 2 or more pages are rendered.
         line_heights = [x/100 for x in range(110, 141)]
-
         expected_pages = 1
-        i = bisect.bisect_right(line_heights, expected_pages,
-                                key=lambda x: len(render(x).pages))
+        i = bisect.bisect_right(line_heights,
+                                expected_pages,
+                                key=lambda h: len(render(h).pages))
 
-        i = i-1 if i else 0
+        i = 0 if i == 0 else i-1
         line_height = line_heights[i]
+        doc = render(line_height)
 
-    doc = render(line_height)
-
-    if 'FREEZER_DESTINATION' in app.config:
-        if len(doc.pages) != 1:
-            raise AssertionError(f'resume.pdf contains {len(doc.pages)} pages')
+        if len(doc.pages) != expected_pages:
+            raise AssertionError(f'resume.pdf has {len(doc.pages)} pages')
+    else:
+        doc = render()
 
     pdf = io.BytesIO()
     doc.write_pdf(pdf)
