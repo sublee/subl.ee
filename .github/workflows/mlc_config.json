@@ -2,6 +2,9 @@
     "ignorePatterns": [
         {
             "pattern": "^/"
+        },
+        {
+            "pattern": "^https://www.deviantart.com/"
         }
     ],
     "aliveStatusCodes": [200, 999, 0]
