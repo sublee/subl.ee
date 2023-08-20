@@ -3,24 +3,29 @@ name: subl.ee
 on:
   push:
     branches:
-    - master
+    - main
 
 jobs:
-  gh-pages:
-    runs-on: ubuntu-20.04
+  link-check:
+    runs-on: ubuntu-22.04
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v3
+    - uses: gaurav-nelson/github-action-markdown-link-check@v1
+      with:
+        config-file: .github/workflows/mlc_config.json
 
-    - name: Python
-      uses: actions/setup-python@v2
+  lint:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+
+    - uses: actions/setup-python@v4
       with:
         python-version: 3.11
 
-    - name: Install
+    - name: Install requirements
       run: |
-        sudo apt-get install -y libcairo2-dev libjpeg-dev libpango1.0-dev
-        pip install -r requirements.txt
+        pip install -r requirements.txt # required for mypy
         pip install -r lint-requirements.txt
 
     - name: Lint
@@ -28,16 +33,42 @@ jobs:
         flake8 sublee.py
         mypy sublee.py
 
+  build:
+    needs: [link-check, lint]
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+
+    - uses: actions/setup-python@v4
+      with:
+        python-version: 3.11
+
+    - name: Install requirements
+      run: |
+        sudo apt-get install -y libcairo2-dev libjpeg-dev libpango1.0-dev
+        pip install -r requirements.txt
+
     - name: Freeze
       run: |
-        rm -rf .gh-pages && mkdir .gh-pages
-        python sublee.py freeze .gh-pages
-        echo subl.ee > .gh-pages/CNAME
-        echo "$GITHUB_SHA" > .gh-pages/version.txt
+        python sublee.py freeze _site
+        echo subl.ee > _site/CNAME
+        echo "$GITHUB_SHA" > _site/version.txt
 
-    - name: GitHub Pages
-      if: success()
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: .gh-pages
+    - uses: actions/upload-pages-artifact@v2
+
+
+  github-pages:
+    needs: [build]
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-22.04
+    steps:
+    - id: deployment
+      uses: actions/deploy-pages@v2
