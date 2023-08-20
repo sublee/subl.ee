@@ -49,7 +49,6 @@ jobs:
     - name: Freeze
       run: |
         python sublee.py freeze _site
-        echo subl.ee > _site/CNAME
         echo "$GITHUB_SHA" > _site/version.txt
 
     - uses: actions/upload-pages-artifact@v2
