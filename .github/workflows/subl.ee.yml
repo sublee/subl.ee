@@ -32,7 +32,6 @@ jobs:
         mypy sublee.py
 
   build:
-    needs: [link-check, lint]
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v3
@@ -55,7 +54,7 @@ jobs:
 
 
   github-pages:
-    needs: [build]
+    needs: [link-check, lint, build]
 
     permissions:
       pages: write
