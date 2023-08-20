@@ -18,8 +18,9 @@ Web Sites {: .label }
 Interests
 ---------
 
-- Software for software engineers
+- Software for software engineers or researchers
 - Distributed system and cloud-native back-end development
+- Parallelism in machine learning
 - Cost optimization and management for systems top on GPUs
 
 Skills
