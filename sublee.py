@@ -11,7 +11,7 @@
 import bisect
 import io
 from pathlib import Path
-from datetime import date
+from datetime import date, datetime
 from typing import Any, Dict, Optional, Tuple, Union
 import uuid
 from xml.etree import ElementTree
@@ -139,7 +139,13 @@ def index() -> str:
 def resume() -> str:
     with (ROOT/'resume.md').open(encoding='utf-8') as f:
         html, meta = markdown(f.read())
-    ctx = make_context(html=html, **meta)
+
+    if 'FREEZER_DESTINATION' in app.config:
+        updated = datetime.utcnow()
+    else:
+        updated = datetime.utcfromtimestamp((ROOT/'resume.md').stat().st_mtime)
+
+    ctx = make_context(html=html, updated=updated, **meta)
     return render_template('resume.html', **ctx)
 
 

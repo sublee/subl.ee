@@ -11,6 +11,17 @@
 
 {% block copyright %}
   {{ super() }}
+
   &middot;
+
+  {% set updated_iso   = updated.isoformat(timespec='seconds') + 'Z' %}
+  {% set updated_long  = updated.strftime('%Y-%m-%d %H:%M (UTC)') %}
+  {% set updated_short = updated.strftime('%b %d, %Y') %}
+
+  Last updated on
+  <time datetime="{{ updated_iso }}" title="{{ updated_long }}">{{ updated_short }}</time>
+
+  &middot;
+
   <a href="{{ url_for('resume_pdf') }}" target="_blank">PDF</a>
 {% endblock %}
