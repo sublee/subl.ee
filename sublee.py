@@ -156,26 +156,26 @@ def resume_pdf() -> Response:
     with (ROOT/'css'/'resume-pdf.css').open() as f:
         css = weasyprint.CSS(string=f.read(), font_config=font_config)
 
-    def render(line_height: float) -> weasyprint.Document:
-        line_height_rule = f'*{{line-height:{line_height}}}'
-        stylesheets = [css, weasyprint.CSS(string=line_height_rule)]
+    def render(line_height: float = 0) -> weasyprint.Document:
+        stylesheets = [css]
+        if line_height > 1:
+            line_height_rule = f'*{{line-height:{line_height}}}'
+            stylesheets.append(weasyprint.CSS(string=line_height_rule))
         doc = html.render(stylesheets=stylesheets, font_config=font_config)
         return doc
 
-    line_height = 1.2
+    line_height = 0
 
     if 'FREEZER_DESTINATION' in app.config:
         # Maximize line-height unless 2 or more pages are rendered.
-        line_heights = [x/100 for x in range(120, 160)]
+        line_heights = [x/100 for x in range(110, 141)]
 
         expected_pages = 1
         i = bisect.bisect_right(line_heights, expected_pages,
                                 key=lambda x: len(render(x).pages))
 
-        if i == 0:
-            line_height = line_heights[0]
-        else:
-            line_height = line_heights[i-1]
+        i = i-1 if i else 0
+        line_height = line_heights[i]
 
     doc = render(line_height)
 

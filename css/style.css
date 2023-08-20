@@ -232,4 +232,5 @@ dd.note {
 .footnote {
   font-size: 0.8em;
   color: var(--blur-color);
+  margin-top: -1rem;
 }
