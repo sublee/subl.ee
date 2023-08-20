@@ -26,10 +26,11 @@ jobs:
         pip install -r requirements.txt # required for mypy
         pip install -r lint-requirements.txt
 
-    - name: Lint
-      run: |
-        flake8 sublee.py
-        mypy sublee.py
+    - name: flake8
+      run: flake8 sublee.py
+
+    - name: mypy
+      run: mypy sublee.py
 
   build:
     runs-on: ubuntu-22.04
