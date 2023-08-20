@@ -35,7 +35,7 @@ ML Engineering {: .label }
   {: .attr }
 
 Back-end Development {: .label }
-: Linux, K8s, AWS, Terraform, MongoDB, MySQL, Redis, etcd, ZeroMQ
+: Linux, K8s, AWS, Terraform, MySQL, MongoDB, Couchbase, Redis, etcd, ZeroMQ
   {: .attr }
 
 ---
@@ -87,11 +87,9 @@ Game Server Engineer {: .label }
     communicate with each other by pub/sub over the spatial grid system.
     This game achieved up to 70k concurrent users per game world.
 
-    Developed game servers for [KartRider][] Dash & Coin Rush (online racing
-    games) which synchronize racing game players in real-time.
-
-    Researched rating systems such as Elo, Glicko, and
-    [TrueSkill][trueskill-tm] to develop a matchmaker.
+    Developed game servers for [KartRider][] Dash & Coin Rush, online racing
+    games. Researched rating systems such as Elo, Glicko, and
+    [TrueSkill][trueskill-tm] for matchmaking in those games.
 
     Led 15 game server engineers.
 
@@ -198,7 +196,7 @@ Contributions
     - For [Flask][],
       fixed a bug to generate a URL with a subdomain ([#108][flask#108]).
     - For [jQuery 1.4.3][jquery-143],
-      restored a missing part of the content negotiation header for Ajax.
+      fixed content negotiation in Ajax requests.
 
 [pytorch]:       https://pytorch.org/
 [pytorch#27371]: https://github.com/pytorch/pytorch/pull/27371
@@ -236,7 +234,7 @@ Publications
 *[S. Kim]:   Sungwoong Kim
 [arxiv:torchgpipe]: https://arxiv.org/abs/2004.09910
 
-\*Contributed equally.
+\*Contributed equally
 {: .footnote }
 
 Public Speeches
@@ -277,10 +275,13 @@ Computer Software, [Kwangwoon University][kw], 2008
 [kw]: https://www.kw.ac.kr/
 
 <!-- abbrs -->
-*[AWS]: Amazon Web Services
-*[CLI]: Command-line interface
-*[ML]:  Machine learning
+*[K8s]:    Kubernetes
+*[AWS]:    Amazon Web Services
+*[AI]:     Artificial intelligence
+*[ML]:     Machine learning
+*[HPC]:    High-performance computing
+*[LLM]:    Large language model
 *[MMORPG]: Massively multiplayer online role-playing game
-*[NDC]: NEXON Developers Conference
-*[TUI]: Text-based user interface
-*[XSS]: Cross-site scripting
+*[NDC]:    NEXON Developers Conference
+*[TUI]:    Text-based user interface
+*[Ajax]:   Asynchronous JavaScript and XML
