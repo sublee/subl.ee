@@ -211,6 +211,8 @@ Contributions
 [flask#108]:     https://github.com/pallets/flask/issues/108
 [jquery-143]:    https://blog.jquery.com/2010/10/16/jquery-143-released/
 
+---
+
 Publications
 ------------
 
@@ -241,9 +243,9 @@ Public Speeches
 ---------------
 
 - NSML the hyper-scale ML training platform at [KRnet 2022][krnet]
-- [Remake of Hangulize<sup>ko</sup>][gokr1808] at Golang Korea 2018 and Naver D2
+- [Remake of Hangulize<sup>ko</sup>][gokr1808] at Golang Korea 2018 and NAVER D2
 - [Server architecture of Durango Vol. 3<sup>ko</sup>][ndc18] at NDC 2018
-- [Python Survival Guide<sup>ko</sup>][nxtk16] at Nexon Talk 2016
+- [Python Survival Guide<sup>ko</sup>][nxtk16] at NEXON Talk 2016
 - [Server architecture of Durango Vol. 2<sup>ko</sup>][ndc16] at NDC 2016
 - [Profiling<sup>ko</sup>][pycon15] at PyCon KR 2015
 - [Server architecture of Durango<sup>ko</sup>][ndc14] at NDC 2014
@@ -279,6 +281,6 @@ Computer Software, [Kwangwoon University][kw], 2008
 *[CLI]: Command-line interface
 *[ML]:  Machine learning
 *[MMORPG]: Massively multiplayer online role-playing game
-*[NDC]: Nexon Developers Conference
+*[NDC]: NEXON Developers Conference
 *[TUI]: Text-based user interface
 *[XSS]: Cross-site scripting
