@@ -28,7 +28,7 @@ from markupsafe import Markup
 from PIL import Image
 from werkzeug.exceptions import HTTPException, NotFound
 
-__version__ = '3.0.0'
+__version__ = '3.1.0'
 __all__ = ['app']
 
 
