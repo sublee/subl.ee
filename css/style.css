@@ -45,7 +45,7 @@ html {
 body {
   display: inline-block;
   text-align: left;
-  max-width: 50rem;
+  max-width: 45rem;
 }
 
 header, footer {
@@ -128,8 +128,8 @@ footer::before {
 
 /* Responsive */
 
-@media screen and (max-width: 54rem) {
-  /* 54rem = [max-width of body 50rem] + 2 * [margin of html 2rem] */
+@media screen and (max-width: 49rem) {
+  /* 49rem = [max-width of body 45rem] + 2 * [margin of html 2rem] */
   html { padding-left: 1rem; padding-right: 1rem; }
 }
 
