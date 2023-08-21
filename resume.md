@@ -178,9 +178,9 @@ Open Source Experience
 [unity-profiler]: https://docs.unity3d.com/Manual/ProfilerWindow.html
 
 Others
-:   - [Tossi][] -- A utility for Korean allomorphic particles.
-    - [Flask-AutoIndex][] -- mod_autoindex for [Flask][].
-    - [SUBLEERUNKER][] -- A simple parody game of SUBERUNKER.
+:   - [Tossi][] -- A utility for Korean allomorphic particles
+    - [Flask-AutoIndex][] -- mod_autoindex for [Flask][]
+    - [SUBLEERUNKER][] -- A simple parody game of SUBERUNKER
 
 [tossi]: https://github.com/what-studio/tossi
 [flask-autoindex]: https://flask-autoindex.readthedocs.io/
