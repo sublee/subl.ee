@@ -46,7 +46,8 @@ Work Experience
 Software Engineering Manager {: .label }
 [CLOVA][] in [NAVER][] and [NAVER Cloud][], 2020--2023
 :   Supervised MLOps platforms by leading 25 software engineers to optimize the
-    inference performance and productivity of [HyperCLOVA][].
+    inference performance and productivity of [HyperCLOVA][], an LLM
+    specializing in Korean culture.
 
     Developed the second version of [NSML][], an ML research platform for
     large-scale AI models on HPC infrastructures.
@@ -81,7 +82,7 @@ Game Server Engineer {: .label }
 [nexon]: https://company.nexon.com/en/
 [kartrider]: https://kart.nexon.com/
 
-Web Developer {: .label }
+Back-end Web Developer {: .label }
 [nPine][iclickart], 2008--2011
 :   Developed and maintained web services.
 [iclickart]: https://iclickart.co.kr/
@@ -162,31 +163,24 @@ Publications
 - B. Kim et al., "What Changes Can Large-scale Language Models Bring? Intensive
   Study on HyperCLOVA: Billions-scale Korean Generative Pretrained
   Transformers," [arXiv:2109.04650][arxiv:hyperclova], Sep 2021.
-- C. Kim\*, _H. Lee_\*, M. Jeong, W. Baek, B. Yoon, I. Kim, S. Lim, S. Kim,
-  "torchgpipe: On-the-fly Pipeline Parallelism for Training Giant Models,"
-  [arXiv:2004.09910][arxiv:torchgpipe], Apr 2020.
-
-*[B. Kim]:   Boseop Kim
-[arxiv:hyperclova]: https://arxiv.org/abs/2109.04650
-
-*[C. Kim]:   Chiheon Kim
-*[H. Lee]:   Heungsub Lee
-*[M. Jeong]: Myungryong Jeong
-*[W. Baek]:  Woonhyuk Baek
-*[B. Yoon]:  Boogeon Yoon
-*[I. Kim]:   Ildoo Kim
-*[S. Lim]:   Sungbin Lim
-*[S. Kim]:   Sungwoong Kim
-[arxiv:torchgpipe]: https://arxiv.org/abs/2004.09910
+- C. Kim\*, _H. Lee_\* et al., "torchgpipe: On-the-fly Pipeline Parallelism for Training
+  Giant Models," [arXiv:2004.09910][arxiv:torchgpipe], Apr 2020.
 
 \*Contributed equally
 {: .footnote }
+
+*[B. Kim]: Boseop Kim
+*[C. Kim]: Chiheon Kim
+*[H. Lee]: Heungsub Lee
+
+[arxiv:hyperclova]: https://arxiv.org/abs/2109.04650
+[arxiv:torchgpipe]: https://arxiv.org/abs/2004.09910
 
 Public Speeches
 ---------------
 
 - "NSML, the hyper-scale ML training platform" at [KRnet 2022][krnet]
-- "[Remake of Hangulize][gokr1808]" at Golang Korea 2018 and NAVER D2
+- "[Remake of Hangulize][gokr1808]" at Golang Korea Meetup 2018 and NAVER D2
 - "[Profiling][pycon15]" at PyCon KR 2015
 - "The server architecture of Durango" at [NDC 2014][ndc14],
   [2016][ndc16], and [2018][ndc18]
