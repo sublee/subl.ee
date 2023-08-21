@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Zilla+Slab:400,400i,600&display=swap);
 
 @page {
-  margin: 0.75cm 1cm;
+  margin: 1cm;
 }
 
 * {
@@ -32,10 +32,9 @@ body {
 
 /* Append a spacer at the end to reserve space for <footer> */
 body::after {
-  display: block;
   content: '';
-  width: 1cm;
-  height: 0.5cm;
+  height: 1rem;
+  display: block;
 }
 
 footer {
