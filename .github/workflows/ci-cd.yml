@@ -1,4 +1,4 @@
-name: subl.ee
+name: CI/CD
 
 on:
   push:
