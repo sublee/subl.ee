@@ -151,7 +151,7 @@ html.loaded header, html.loaded header .emblem { transition: transform 0.2s; }
 
 /* Typography */
 
-h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dt, dd, hr, pre {
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dt.label, dd, hr, pre {
   margin-bottom: 1rem;
 }
 
@@ -208,33 +208,29 @@ abbr, acronym {
   cursor: help;
 }
 
-dt+dt, dt+dd.attr, dt+dd.note {
+dt+dt, dt+dd.attr {
   margin-top: -1rem;
 }
 
 dd { margin-left: 1.2rem; }
 dd ul, dd ol { margin-left: -1.2rem; }
-dd.attr, dd.note { margin-left: 0; }
+dd.attr { margin-left: 0; }
 
-dd.attr, dd p, dd ul, dd ol, dd dl, dd dd {
-  margin-bottom: 0.6rem;
+dt, dd.attr, dd p, dd ul, dd ol, dd dl, dd dd {
+  margin-bottom: 0.5rem;
 }
 
-dt.label, dd.note {
+dt.label {
   font-size: 0.8em;
   line-height: 1;
 }
 
-dd.label *, dd.note * {
+dd.label * {
   line-height: inherit;
 }
 
 dt.label {
   color: var(--blur-color);
-}
-
-dd.note {
-  font-style: italic;
 }
 
 .footnote {
