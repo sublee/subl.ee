@@ -154,7 +154,7 @@ Open Source Experience
 [hangulize-idea]: https://web.archive.org/web/20230616001454/https://iceager.egloos.com/2610028
 [netflix-style]: https://partnerhelp.netflixstudios.com/hc/en-us/articles/216001127-Korean-Timed-Text-Style-Guide
 
-[TrueSkill][trueskill], 2012--
+[TrueSkill][trueskill], 2012--2015
 :   A TrueSkill™ implementation in Python
     {: .note }
 
