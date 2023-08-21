@@ -25,7 +25,7 @@ I have made or been involved
 - [Hangulize][]: A Korean alphabet transcriber
 - [TrueSkill][]: A Python implementation of the [TrueSkill&trade;][trueskill-tm] rating algorithm
 - [Subway Fighter][], [SUBLEERUNKER][]: Games with [my pixel art][DeviantArt]
-- Durango, Kartrider Dash & Coin Rush at Nexon
+- Durango, KartRider Dash & Coin Rush at Nexon
 
 [nsml]:           https://arxiv.org/abs/1712.05902
 [hyperclova]:     https://arxiv.org/abs/2109.04650
