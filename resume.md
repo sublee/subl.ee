@@ -1,4 +1,5 @@
 title: Résumé: Heungsub Lee
+description: A résumé of Heungsub Lee, a software engineer
 
 Heungsub Lee
 ============

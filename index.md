@@ -1,5 +1,5 @@
 title: Heungsub Lee
-description: Homepage of Heungsub Lee
+description: The homepage of Heungsub Lee
 keywords: Heungsub Lee, Heungsub, sublee, 이흥섭, 흥섭
 layout: epic
 
