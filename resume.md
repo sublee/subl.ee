@@ -49,7 +49,7 @@ Software Engineering Manager {: .label }
     {: .note }
 
 :   Led 25 MLOps software engineers focusing on data pipelining, model
-    training platform, model serving platform, GPU resource management, and
+    training platforms, model serving platforms, GPU resource management, and
     inference optimization for [HyperCLOVA][], an LLM specializing in Korean
     culture.
 
@@ -98,7 +98,7 @@ Game Server Engineer {: .label }
 [trueskill-tm]: https://www.microsoft.com/en-us/research/project/trueskill-ranking-system/
 
 Web Developer {: .label }
-Npine, 2008--2011
+nPine, 2008--2011
 :   Supplies stock images for business on [Iclickart][].
     {: .note }
 
