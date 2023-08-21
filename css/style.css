@@ -173,6 +173,9 @@ h1:target, h2:target, h3:target, h4:target, h5:target, h6:target {
   text-decoration: underline;
 }
 
+ul {
+  list-style: disc;
+}
 
 ul li {
   position: relative;
@@ -204,8 +207,8 @@ dt+dt, dt+dd.attr, dt+dd.note {
   margin-top: -1rem;
 }
 
-dd { margin-left: 0.8rem; }
-dd ul, dd ol { margin-left: -0.8rem; }
+dd { margin-left: 1.2rem; }
+dd ul, dd ol { margin-left: -1.2rem; }
 dd.attr, dd.note { margin-left: 0; }
 
 dd.attr, dd p, dd ul, dd ol, dd dl, dd dd {
