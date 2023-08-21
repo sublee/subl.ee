@@ -126,14 +126,15 @@ Open Source Experience
     autograd engine, and long skip connections. GPipe is a scalable pipeline
     parallelism library for the training of a giant model.
 
-    This project has become [a part of PyTorch][pytorch-pipe]. The story behind
-    it can be found on [Kakao Brain Blog<sup>ko</sup>][torchgpipe-blog] and
-    [the technical report][arxiv:torchgpipe].
+    This project has become a part of PyTorch as [Pipe APIs][pytorch-pipe]. The
+    story behind it can be found on [Kakao Brain
+    Blog<sup>ko</sup>][torchgpipe-blog] and [the technical
+    report][arxiv:torchgpipe].
 
 [torchgpipe]: https://torchgpipe.readthedocs.io/
 [gpipe]: https://arxiv.org/abs/1811.06965
 [torchgpipe-blog]: https://web.archive.org/web/20211020112459/https://kakaobrain.com/blog/66
-[pytorch-pipe]: https://pytorch.org/docs/1.8.0/pipeline.html
+[pytorch-pipe]: https://pytorch.org/docs/2.0/pipeline.html
 [arxiv:torchgpipe]: https://arxiv.org/abs/2004.09910
 
 [Hangulize][], 2010--
