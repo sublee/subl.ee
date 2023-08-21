@@ -75,6 +75,7 @@ h1, h2, h3, h4, h5, h6, dt {
 
 h1 {
   font-size: 24pt;
+  line-height: 1;
 }
 
 h2 {
@@ -122,6 +123,7 @@ dd.attr, dd ul, dd ol {
 dt.label {
   font-size: 9pt;
   line-height: 1;
+  font-weight: 400;
 }
 
 dd.attr {
