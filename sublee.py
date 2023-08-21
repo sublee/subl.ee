@@ -159,11 +159,13 @@ def resume() -> str:
 def resume_pdf() -> Response:
     html_string, _, updated = render_resume()
 
-    # Append <footer> for print
-    updated_short = updated.strftime("%b %d, %Y")
-    html_string += f'<footer>(Last updated on {updated_short})</footer>'
-
-    html = weasyprint.HTML(string=html_string)
+    # Set lang="en" for hyphenation and append last updated date.
+    html = weasyprint.HTML(string=f'''
+    <html lang="en"><body>
+      {html_string}
+      <footer>(Last updated on {updated.strftime("%b %d, %Y")})</footer>
+    </body></html>
+    ''')
 
     font_config = weasyprint.text.fonts.FontConfiguration()
     with (ROOT/'css'/'resume-pdf.css').open() as f:
