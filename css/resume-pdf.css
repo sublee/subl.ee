@@ -38,7 +38,6 @@ body::after {
 }
 
 footer {
-  font-size: 9pt;
   font-style: italic;
   position: absolute;
   bottom: 0;
@@ -82,6 +81,10 @@ h2 {
   font-size: 12pt;
 }
 
+footer, dt.label, .footnote {
+  font-size: 9pt;
+}
+
 hr {
   height: 1pt;
   border-top: solid 0.5pt black;
@@ -121,7 +124,6 @@ dd.attr, dd ul, dd ol {
 }
 
 dt.label {
-  font-size: 9pt;
   line-height: 1;
   font-weight: 400;
 }
@@ -133,5 +135,4 @@ dd.attr {
 
 .footnote {
   margin-top: -0.5rem;
-  font-size: 9pt;
 }
