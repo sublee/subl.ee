@@ -16,23 +16,24 @@ More details are in my [résumé](/resume/).
 
 [software engineer]: https://github.com/sublee
 
-I have made
------------
+I have made or been involved
+----------------------------
 
-- [NSML][]: A cloud ML research platform for large-scale models
-- [HyperCLOVA][]: a Korean variant of 82B GPT-3
-- [torchgpipe][]: The origin of [Pipe APIs in PyTorch][pytorch-pipe]
+- [NSML][]: An ML research platform for large-scale models
+- [HyperCLOVA][]: An LLM specializing in Korean culture
+- [torchgpipe][]: A GPipe in PyTorch, and the origin of [Pipe APIs in PyTorch][pytorch-pipe]
 - [Hangulize][]: A Korean alphabet transcriber
-- [TrueSkill][]: A rating system for online games
+- [TrueSkill][]: A Python implementation of the [TrueSkill&trade;][trueskill-tm] rating algorithm
 - [Subway Fighter][], [SUBLEERUNKER][]: Games with [my pixel art][DeviantArt]
 - Durango, Kartrider Dash & Coin Rush at Nexon
 
-[nsml]:           https://ai.nsml.navercorp.com/
+[nsml]:           https://arxiv.org/abs/1712.05902
 [hyperclova]:     https://arxiv.org/abs/2109.04650
 [torchgpipe]:     https://torchgpipe.readthedocs.io/
-[pytorch-pipe]:   https://pytorch.org/docs/1.8.0/pipeline.html
+[pytorch-pipe]:   https://pytorch.org/docs/2.0/pipeline.html
 [hangulize]:      https://hangulize.org/
 [trueskill]:      https://trueskill.org/
+[trueskill-tm]:   https://www.microsoft.com/en-us/research/project/trueskill-ranking-system/
 [subway fighter]: https://yeonghoey.itch.io/subway-fighter
 [subleerunker]:   /runker/
 [deviantart]:     https://www.deviantart.com/sublee

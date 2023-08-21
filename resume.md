@@ -50,7 +50,7 @@ Software Engineering Manager {: .label }
 
 :   Led 25 MLOps software engineers focusing on data pipelining, model
     training platform, model serving platform, GPU resource management, and
-    inference optimization for [HyperCLOVA][], an LLM specialized in Korean
+    inference optimization for [HyperCLOVA][], an LLM specializing in Korean
     culture.
 
     Developed the second version of [NSML][], an ML research platform on HPC
@@ -88,8 +88,8 @@ Game Server Engineer {: .label }
     This game achieved up to 70k concurrent users per game world.
 
     Developed game servers for [KartRider][] Dash & Coin Rush, online racing
-    games. Researched rating systems such as Elo, Glicko, and
-    [TrueSkill][trueskill-tm] for matchmaking in those games.
+    games. Researched rating algorithms such as Elo, Glicko, and
+    [TrueSkill&trade;][trueskill-tm] for matchmaking in those games.
 
     Led 15 game server engineers.
 
