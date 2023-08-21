@@ -173,13 +173,10 @@ h1:target, h2:target, h3:target, h4:target, h5:target, h6:target {
   text-decoration: underline;
 }
 
-ul {
-  list-style: none;
-}
-
 ul li {
   position: relative;
   margin-left: 1.2rem;
+  list-style: none;
 }
 
 ul li::before {

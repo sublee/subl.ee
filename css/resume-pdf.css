@@ -91,8 +91,17 @@ dd {
 }
 
 ul li {
-  margin-left: 0.75rem; /* the half of dd{text-indent} */
-  list-style: disc;
+  position: relative;
+  margin-left: 1.5rem;
+  list-style: none;
+}
+
+ul li::before {
+  content: '•';
+  font-size: 1.5rem;
+  line-height: 0.75;
+  position: absolute;
+  left: -1rem;
 }
 
 p {
