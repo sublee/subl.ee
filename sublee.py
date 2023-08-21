@@ -18,6 +18,7 @@ from xml.etree import ElementTree
 
 import cairosvg
 import click
+import fitz  # Its package name is PyMuPDF.
 import weasyprint
 from flask import (Flask, Response, make_response, render_template,
                    render_template_string, request, send_file, url_for)
@@ -189,6 +190,28 @@ def resume_pdf() -> Response:
 
     res: Response = send_file(pdf, mimetype='application/pdf')
     return res
+
+
+@app.route('/resume-social.png')
+def resume_social() -> Response:
+    # Use PyMuPDF (fitz) to rasterize resume.pdf
+    pdf_res = resume_pdf()
+    pdf_res.direct_passthrough = False
+
+    pdf = fitz.open('pdf', pdf_res.data)
+    first_page = pdf[0]
+
+    pix = first_page.get_pixmap(dpi=300)
+
+    # Crop 1200x630 on the top by PIL because it is easier
+    img = Image.open(io.BytesIO(pix.tobytes()))
+    assert img.width >= 1200
+    img = img.resize((1200, int(1200/img.width*img.height)))
+    img = img.crop((0, 0, 1200, 630))
+
+    buf = io.BytesIO()
+    img.save(buf, format='PNG')
+    return Response(buf.getvalue(), mimetype='image/png')
 
 
 @app.route('/style.css')

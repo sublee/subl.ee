@@ -1,6 +1,13 @@
-from typing import IO
+from typing import IO, Tuple
 
 def open(f: IO[bytes]) -> Image: ...
 
 class Image:
+    width: int
+    height: int
+
     def save(self, f: IO[bytes], format: str) -> None: ...
+
+    def resize(self, size: Tuple[int, int]) -> Image: ...
+
+    def crop(self, box: Tuple[int, int, int, int]) -> Image: ...

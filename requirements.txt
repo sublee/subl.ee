@@ -4,6 +4,7 @@ Click==8.1.3
 Flask==2.2.2
 Frozen-Flask==0.18
 Markdown==3.4.1
+PyMuPDF==1.22.5
 WeasyPrint==56.1
 
 # Derived Requirements
