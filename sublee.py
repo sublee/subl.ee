@@ -169,7 +169,7 @@ def resume_pdf() -> Response:
     with (ROOT/'css'/'resume-pdf.css').open() as f:
         css = weasyprint.CSS(string=f.read(), font_config=font_config)
 
-    def render_pdf(line_height: Optional[float] = None) -> weasyprint.Document:
+    def render_pdf(line_height: Optional[float]) -> weasyprint.Document:
         stylesheets = [css]
 
         if line_height is not None:
