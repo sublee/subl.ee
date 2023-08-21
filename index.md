@@ -25,7 +25,7 @@ I have made or been involved
 - [Hangulize][]: A Korean alphabet transcriber
 - [TrueSkill][]: A Python implementation of the [TrueSkill&trade;][trueskill-tm] rating algorithm
 - [Subway Fighter][], [SUBLEERUNKER][]: Games with [my pixel art][DeviantArt]
-- Durango, KartRider Dash & Coin Rush at Nexon
+- KartRider Dash, KartRider Coin Rush, and Durango at [NEXON][]
 
 [nsml]:           https://arxiv.org/abs/1712.05902
 [hyperclova]:     https://arxiv.org/abs/2109.04650
@@ -37,6 +37,7 @@ I have made or been involved
 [subway fighter]: https://yeonghoey.itch.io/subway-fighter
 [subleerunker]:   /runker/
 [deviantart]:     https://www.deviantart.com/sublee
+[nexon]:          https://company.nexon.com/en/
 
 I told about
 ------------

@@ -87,8 +87,8 @@ Game Server Engineer {: .label }
     communicate with each other by pub/sub over the spatial grid system.
     This game achieved up to 70k concurrent users per game world.
 
-    Developed game servers for [KartRider][] Dash & Coin Rush, online racing
-    games. Researched rating algorithms such as Elo, Glicko, and
+    Developed online racing game servers for [KartRider][] Dash and KartRider
+    Coin Rush. Researched rating algorithms such as Elo, Glicko, and
     [TrueSkill&trade;][trueskill-tm] for matchmaking in those games.
 
     Led 15 game server engineers.
