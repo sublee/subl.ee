@@ -136,8 +136,7 @@ def index() -> str:
     return render_template('index.html', **ctx)
 
 
-@app.route('/resume/')
-def resume() -> str:
+def render_resume() -> Tuple[str, Dict[str, str], datetime]:
     with (ROOT/'resume.md').open(encoding='utf-8') as f:
         html, meta = markdown(f.read())
 
@@ -146,18 +145,31 @@ def resume() -> str:
     else:
         updated = datetime.utcfromtimestamp((ROOT/'resume.md').stat().st_mtime)
 
+    return html, meta, updated
+
+
+@app.route('/resume/')
+def resume() -> str:
+    html, meta, updated = render_resume()
     ctx = make_context(html=html, updated=updated, **meta)
     return render_template('resume.html', **ctx)
 
 
 @app.route('/resume.pdf')
 def resume_pdf() -> Response:
+    html_string, _, updated = render_resume()
+
+    # Append <footer> for print
+    updated_short = updated.strftime("%b %d, %Y")
+    html_string += f'<footer>(Last updated on {updated_short})</footer>'
+
+    html = weasyprint.HTML(string=html_string)
+
     font_config = weasyprint.text.fonts.FontConfiguration()
-    html = weasyprint.HTML(string=resume())
     with (ROOT/'css'/'resume-pdf.css').open() as f:
         css = weasyprint.CSS(string=f.read(), font_config=font_config)
 
-    def render(line_height: Optional[float] = None) -> weasyprint.Document:
+    def render_pdf(line_height: Optional[float] = None) -> weasyprint.Document:
         stylesheets = [css]
 
         if line_height is not None:
@@ -167,22 +179,25 @@ def resume_pdf() -> Response:
         doc = html.render(stylesheets=stylesheets, font_config=font_config)
         return doc
 
-    if 'FREEZER_DESTINATION' in app.config:
+    def optimize_line_height() -> Optional[float]:
+        if 'FREEZER_DESTINATION' not in app.config:
+            return None
+
         # Maximize line-height unless 2 or more pages are rendered.
         line_heights = [x/100 for x in range(110, 141)]
         expected_pages = 1
         i = bisect.bisect_right(line_heights,
                                 expected_pages,
-                                key=lambda h: len(render(h).pages))
+                                key=lambda h: len(render_pdf(h).pages))
 
         i = 0 if i == 0 else i-1
-        line_height = line_heights[i]
-        doc = render(line_height)
+        return line_heights[i]
 
-        if len(doc.pages) != expected_pages:
-            raise AssertionError(f'resume.pdf has {len(doc.pages)} pages')
-    else:
-        doc = render()
+    line_height = optimize_line_height()
+    doc = render_pdf(line_height)
+
+    if 'FREEZER_DESTINATION' in app.config and len(doc.pages) != 1:
+        raise AssertionError(f'resume.pdf has {len(doc.pages)} pages')
 
     pdf = io.BytesIO()
     doc.write_pdf(pdf)

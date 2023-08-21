@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Zilla+Slab:400,400i,600&display=swap);
 
 @page {
-  margin: 1cm;
+  margin: 0.75cm 1cm 1cm;
 }
 
 * {
@@ -15,14 +15,12 @@
   color: black;
 }
 
-footer, .emblem {
-  display: none;
-}
-
 html {
   font-size: 9pt;
   font-family: 'Zilla Slab', serif;
   font-weight: 400;
+  column-count: 2;
+  column-gap: 1cm;
 }
 
 body {
@@ -30,6 +28,14 @@ body {
   max-width: none;
   color: black;
   background: white;
+}
+
+footer {
+  font-size: 0.8rem;
+  font-style: italic;
+  position: absolute;
+  bottom: -0.25cm;
+  right: 0;
 }
 
 a:link, a:visited {
@@ -107,13 +113,4 @@ dd.attr {
 .footnote {
   margin-top: -0.5rem;
   font-size: 0.8rem;
-}
-
-.-epic {
-  font-size: 12pt;
-}
-
-.resume {
-  column-count: 2;
-  column-gap: 1cm;
 }
