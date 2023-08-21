@@ -44,7 +44,7 @@ Work Experience
 ---------------
 
 Software Engineering Manager {: .label }
-[CLOVA][] in [NAVER][] and [NAVER Cloud][], 2020--2023
+[CLOVA][] in [NAVER][], 2020--2023
 :   Supervised MLOps platforms by leading 25 software engineers to optimize the
     inference performance and productivity of [HyperCLOVA][], an LLM
     specializing in Korean culture.
@@ -54,7 +54,6 @@ Software Engineering Manager {: .label }
 
 [clova]: https://clova.ai/
 [naver]: https://navercorp.com/en
-[naver cloud]: https://navercloudcorp.com/lang/en
 [hyperclova]: https://arxiv.org/abs/2109.04650
 [nsml]: https://arxiv.org/abs/1712.05902
 
