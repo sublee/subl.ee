@@ -36,6 +36,8 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
 
     - uses: actions/setup-python@v4
       with:
@@ -52,7 +54,6 @@ jobs:
         echo "$GITHUB_SHA" > _site/version.txt
 
     - uses: actions/upload-pages-artifact@v2
-
 
   github-pages:
     needs: [link-check, lint, build]
