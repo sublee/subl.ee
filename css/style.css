@@ -151,6 +151,10 @@ html.loaded header, html.loaded header .emblem { transition: transform 0.2s; }
 
 /* Typography */
 
+p, ul, ol, dl {
+  hyphens: auto;
+}
+
 h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dt.label, dd, hr, pre {
   margin-bottom: 1rem;
 }
