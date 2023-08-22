@@ -16,16 +16,16 @@ More details are in my [résumé](/resume/).
 
 [software engineer]: https://github.com/sublee
 
-I have made or been involved
-----------------------------
+I've been involved in
+---------------------
 
 - [NSML][]: An ML research platform for large-scale models
 - [HyperCLOVA][]: An LLM specializing in Korean culture
-- [torchgpipe][]: A GPipe in PyTorch, and the origin of [Pipe APIs in PyTorch][pytorch-pipe]
-- [Hangulize][]: A Korean alphabet transcriber
-- [TrueSkill][]: A Python implementation of the [TrueSkill&trade;][trueskill-tm] rating algorithm
+- [torchgpipe][]: A GPipe library, also the origin of [Pipe APIs in PyTorch][pytorch-pipe]
+- [Hangulize][]: A Hangul transcription tool
+- [TrueSkill][]: A TrueSkill&trade; implementation in Python
 - [Subway Fighter][], [SUBLEERUNKER][]: Games with [my pixel art][DeviantArt]
-- KartRider Dash, KartRider Coin Rush, and Durango at [NEXON][]
+- KartRider Dash, KartRider Coin Rush, and Durango
 
 [nsml]:           https://arxiv.org/abs/1712.05902
 [hyperclova]:     https://arxiv.org/abs/2109.04650
@@ -33,7 +33,6 @@ I have made or been involved
 [pytorch-pipe]:   https://pytorch.org/docs/2.0/pipeline.html
 [hangulize]:      https://hangulize.org/
 [trueskill]:      https://trueskill.org/
-[trueskill-tm]:   https://www.microsoft.com/en-us/research/project/trueskill-ranking-system/
 [subway fighter]: https://yeonghoey.itch.io/subway-fighter
 [subleerunker]:   /runker/
 [deviantart]:     https://www.deviantart.com/sublee

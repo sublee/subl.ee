@@ -63,7 +63,7 @@ Software Engineer {: .label }
     search platform for an AutoML service.
 
     Developed and published a pipeline parallelism library named
-    [torchgpipe][].
+    [torchgpipe][] in open source.
 
 [kakaobrain]: https://kakaobrain.com/
 [torchgpipe]: https://torchgpipe.readthedocs.io/
@@ -88,11 +88,20 @@ Back-end Web Developer {: .label }
 
 Front-end Web Developer {: .label }
 [Lunant][], 2008--2011
-:   Designed and implemented the UI/UX for social media.
+:   Designed and implemented UI/UX for social media.
 [lunant]: https://github.com/lunant
 
 Open Source Experience
 ----------------------
+
+[Hangulize][], 2010--
+:   Invented a Hangul transcription algorithm and served as a web tool at zero
+    cost. Many professional Korean translators use this tool to translate
+    undocumented proper nouns. Netflix refers to this tool in [the Korean
+    timed-text style guide][netflix-style].
+
+[hangulize]: https://hangulize.org/
+[netflix-style]: https://partnerhelp.netflixstudios.com/hc/en-us/articles/216001127-Korean-Timed-Text-Style-Guide
 
 [torchgpipe][], 2019--2020
 :   Implemented [GPipe][], a multi-GPU pipeline parallelism technique for
@@ -103,15 +112,6 @@ Open Source Experience
 [torchgpipe]: https://torchgpipe.readthedocs.io/
 [gpipe]: https://arxiv.org/abs/1811.06965
 [pytorch-pipe]: https://pytorch.org/docs/2.0/pipeline.html
-
-[Hangulize][], 2010--
-:   Invented a Hangul transcription algorithm and served as a web tool at zero
-    cost. Many professional Korean translators use this tool to translate
-    undocumented proper nouns. Netflix refers to this tool in [the Korean
-    timed-text style guide][netflix-style].
-
-[hangulize]: https://hangulize.org/
-[netflix-style]: https://partnerhelp.netflixstudios.com/hc/en-us/articles/216001127-Korean-Timed-Text-Style-Guide
 
 [TrueSkill][trueskill], 2012--2015
 :   Implemented [TrueSkill™][trueskill-tm], the rating algorithm for Xbox Live,
@@ -124,8 +124,8 @@ Open Source Experience
 
 [Profiling][], 2014--2018
 :   Developed a Python profiler with an interactive TUI inspired by [the Unity
-    profiler][unity-profiler]. On GitHub, this project has been starred by 3k
-    people. Also, it was the 3rd daily trending repository on Sep 22, 2014.
+    profiler][unity-profiler]. It was the 3rd daily trending repository in
+    GitHub on Sep 22, 2014.
 
 [profiling]: https://github.com/what-studio/profiling
 [unity-profiler]: https://docs.unity3d.com/Manual/ProfilerWindow.html
