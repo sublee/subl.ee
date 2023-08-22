@@ -157,15 +157,23 @@ def resume() -> str:
 
 @app.route('/resume.pdf')
 def resume_pdf() -> Response:
+    """Renders the resume as a PDF document.
+
+    Querystring options:
+
+        mode=debug  Render as HTML rather than PDF.
+        mode=prod   Optimize line-height
+
+    """
     html_str, _, updated = render_resume()
     with (ROOT/'css'/'resume-pdf.css').open() as f:
         css_str = f.read()
     updated_short = updated.strftime("%b %d, %Y")
     footer = f'<footer>(Last updated on {updated_short})</footer>'
 
-    # "?html" querystring for debugging resume-pdf.css
-    # directly in a web browser.
-    if 'html' in request.args:
+    # "mode=debug" querystring switches to render as HTML rather than PDF for
+    # debugging directly in a web browser.
+    if request.args.get('mode') == 'debug':
         return make_response(f'''
         <html lang="en">
           <head><style>{css_str}</style></head>
@@ -206,9 +214,8 @@ def resume_pdf() -> Response:
 
         return line_height
 
-    if 'optimize-line-height' in request.args:
-        # "?optimize-line-height" querystring enables the line-height
-        # optimization.
+    if request.args.get('mode') == 'prod':
+        # "mode=prod" querystring enables the line-height optimization.
         line_height = optimize_line_height()
     elif 'FREEZER_DESTINATION' in app.config:
         # Always enable the optimization in the freezing mode.
