@@ -9,18 +9,20 @@
   padding: 0;
   border: none;
   font-size: 1em;
-  line-height: 1.2; /* will be overridden by resume_pdf() between 1.1-1.4 */
   text-decoration: none;
   clear: left;
-  color: black;
+  color: inherit;
 }
 
 html {
   font-size: 10pt;
   font-family: 'Zilla Slab', serif;
   font-weight: 400;
+
   column-count: 2;
   column-gap: 1cm;
+
+  line-height: 1.2; /* will be overridden by resume_pdf() between 1.1-1.4 */
 }
 
 body {

@@ -175,14 +175,16 @@ def resume_pdf() -> Response:
         stylesheets = [css]
 
         if line_height is not None:
-            line_height_rule = f'*{{line-height:{line_height}}}'
+            line_height_rule = f'body{{line-height:{line_height}}}'
             stylesheets.append(weasyprint.CSS(string=line_height_rule))
 
         doc = html.render(stylesheets=stylesheets, font_config=font_config)
         return doc
 
     def optimize_line_height() -> Optional[float]:
-        if 'FREEZER_DESTINATION' not in app.config:
+        if 'optimize-line-height' in request.args:
+            pass
+        elif 'FREEZER_DESTINATION' not in app.config:
             return None
 
         # Maximize line-height unless 2 or more pages are rendered.
@@ -193,7 +195,11 @@ def resume_pdf() -> Response:
                                 key=lambda h: len(render_pdf(h).pages))
 
         i = 0 if i == 0 else i-1
-        return line_heights[i]
+        line_height = line_heights[i]
+
+        app.logger.info(f'Optimized line-height: {line_height}')
+
+        return line_height
 
     line_height = optimize_line_height()
     doc = render_pdf(line_height)
