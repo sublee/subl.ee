@@ -43,7 +43,7 @@ I told about
 
 - [The story behind torchgpipe<sup>ko</sup>][torchgpipe-blog] on Kakao Brain Blog
 - [Remake of Hangulize<sup>ko</sup>][gokr1808] at Golang Korea Meetup 2018 and NAVER D2
-- [Profiling<sup>ko</sup>][pycon15] at PyCon KR 2015
+- [Profiling<sup>ko</sup>][pycon15] at PyCon Korea 2015
 - The server architecture of Durango<sup>ko</sup> at [NDC 2014][ndc14], [2016][ndc16], and [2018][ndc18]
 
 [torchgpipe-blog]: https://web.archive.org/web/20211020112459/https://kakaobrain.com/blog/66

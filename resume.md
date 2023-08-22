@@ -181,7 +181,7 @@ Public Speeches
 <!-- IEEE style -->
 - "NSML, the hyper-scale ML training platform," [KRnet, Jun 2022][krnet22].
 - "[Remake of Hangulize][gokr1808]," Golang Korea Meetup, Aug 2018.
-- "[Profiling][pycon15]," PyCon KR, Aug 2015.
+- "[Profiling][pycon15]," PyCon Korea, Aug 2015.
 - "The server architecture of Durango," NDC, [2014][ndc14], [2016][ndc16], and
   [2018][ndc18].
 
