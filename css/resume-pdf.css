@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Zilla+Slab:400,400i,600&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Zilla+Slab:400,400i,500,600&display=swap);
 
 @page {
   margin: 1cm;
@@ -83,7 +83,7 @@ h2 {
   font-size: 12pt;
 }
 
-footer, dt.label, .footnote {
+footer, .footnote {
   font-size: 9pt;
 }
 
@@ -126,13 +126,14 @@ dd.attr, dd ul, dd ol {
 }
 
 dt.label {
+  font-size: 8pt;
+  font-weight: 500;
   line-height: 1;
-  font-weight: 400;
 }
 
 dd.attr {
   margin-left: 1.5rem; /* same with dd{text-indent} */
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .footnote {
