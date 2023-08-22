@@ -77,6 +77,11 @@ a:hover { text-decoration: underline; }
   display: inline-block;
 }
 
+.emblem picture {
+  position: absolute;
+  z-index: -1;
+}
+
 .emblem object {
   pointer-events: none;
 }
