@@ -159,18 +159,18 @@ Contributions
 Publications
 ------------
 
+<!-- IEEE style -->
 - B. Kim et al., "What Changes Can Large-scale Language Models Bring? Intensive
   Study on HyperCLOVA: Billions-scale Korean Generative Pretrained
   Transformers," [arXiv:2109.04650][arxiv:hyperclova], Sep 2021.
-- C. Kim\*, _H. Lee_\* et al., "torchgpipe: On-the-fly Pipeline Parallelism for Training
-  Giant Models," [arXiv:2004.09910][arxiv:torchgpipe], Apr 2020.
+- C. Kim\*, Heungsub Lee\* et al., "torchgpipe: On-the-fly Pipeline Parallelism
+  for Training Giant Models," [arXiv:2004.09910][arxiv:torchgpipe], Apr 2020.
 
 \*Contributed equally
 {: .footnote }
 
 *[B. Kim]: Boseop Kim
 *[C. Kim]: Chiheon Kim
-*[H. Lee]: Heungsub Lee
 
 [arxiv:hyperclova]: https://arxiv.org/abs/2109.04650
 [arxiv:torchgpipe]: https://arxiv.org/abs/2004.09910
@@ -178,13 +178,14 @@ Publications
 Public Speeches
 ---------------
 
-- "NSML, the hyper-scale ML training platform" at [KRnet 2022][krnet]
-- "[Remake of Hangulize][gokr1808]" at Golang Korea Meetup 2018 and NAVER D2
-- "[Profiling][pycon15]" at PyCon KR 2015
-- "The server architecture of Durango" at [NDC 2014][ndc14],
-  [2016][ndc16], and [2018][ndc18]
+<!-- IEEE style -->
+- "NSML, the hyper-scale ML training platform," [KRnet, Jun 2022][krnet22].
+- "[Remake of Hangulize][gokr1808]," Golang Korea Meetup, Aug 2018.
+- "[Profiling][pycon15]," PyCon KR, Aug 2015.
+- "The server architecture of Durango," NDC, [2014][ndc14], [2016][ndc16], and
+  [2018][ndc18].
 
-[krnet]: https://www.kca.kr/boardView.do?boardId=NOTICE&seq=4600077
+[krnet22]: https://www.kca.kr/boardView.do?boardId=NOTICE&seq=4600077
 
 [gokr1808]: https://subl.ee/~gokr1808
 [pycon15]:  https://subl.ee/~pycon15
