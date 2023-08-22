@@ -157,21 +157,31 @@ def resume() -> str:
 
 @app.route('/resume.pdf')
 def resume_pdf() -> Response:
-    html_string, _, updated = render_resume()
+    html_str, _, updated = render_resume()
+    with (ROOT/'css'/'resume-pdf.css').open() as f:
+        css_str = f.read()
+    updated_short = updated.strftime("%b %d, %Y")
+    footer = f'<footer>(Last updated on {updated_short})</footer>'
+
+    # "?html" querystring for debugging resume-pdf.css
+    # directly in a web browser.
+    if 'html' in request.args:
+        return make_response(f'''
+        <html lang="en">
+          <head><style>{css_str}</style></head>
+          <body>{html_str}{footer}</body>
+        </html>
+        ''')
+
+    font_config = weasyprint.text.fonts.FontConfiguration()
+    css = weasyprint.CSS(string=css_str, font_config=font_config)
 
     # Set lang="en" for hyphenation and append last updated date.
     html = weasyprint.HTML(string=f'''
-    <html lang="en"><body>
-      {html_string}
-      <footer>(Last updated on {updated.strftime("%b %d, %Y")})</footer>
-    </body></html>
+    <html lang="en"><body>{html_str}{footer}</body></html>
     ''')
 
-    font_config = weasyprint.text.fonts.FontConfiguration()
-    with (ROOT/'css'/'resume-pdf.css').open() as f:
-        css = weasyprint.CSS(string=f.read(), font_config=font_config)
-
-    def render_pdf(line_height: Optional[float]) -> weasyprint.Document:
+    def render(line_height: Optional[float]) -> weasyprint.Document:
         stylesheets = [css]
 
         if line_height is not None:
@@ -182,17 +192,12 @@ def resume_pdf() -> Response:
         return doc
 
     def optimize_line_height() -> Optional[float]:
-        if 'optimize-line-height' in request.args:
-            pass
-        elif 'FREEZER_DESTINATION' not in app.config:
-            return None
-
         # Maximize line-height unless 2 or more pages are rendered.
         line_heights = [x/100 for x in range(110, 141)]
         expected_pages = 1
         i = bisect.bisect_right(line_heights,
                                 expected_pages,
-                                key=lambda h: len(render_pdf(h).pages))
+                                key=lambda h: len(render(h).pages))
 
         i = 0 if i == 0 else i-1
         line_height = line_heights[i]
@@ -201,8 +206,17 @@ def resume_pdf() -> Response:
 
         return line_height
 
-    line_height = optimize_line_height()
-    doc = render_pdf(line_height)
+    if 'optimize-line-height' in request.args:
+        # "?optimize-line-height" querystring enables the line-height
+        # optimization.
+        line_height = optimize_line_height()
+    elif 'FREEZER_DESTINATION' in app.config:
+        # Always enable the optimization in the freezing mode.
+        line_height = optimize_line_height()
+    else:
+        line_height = None
+
+    doc = render(line_height)
 
     if 'FREEZER_DESTINATION' in app.config and len(doc.pages) != 1:
         raise AssertionError(f'resume.pdf has {len(doc.pages)} pages')
@@ -352,7 +366,7 @@ def prepare_freezing(app: Flask) -> Freezer:
     freezer = Freezer(app, with_static_files=False)
 
     app.config.update({
-        'FREEZER_DESTINATION_IGNORE': ['.git*', 'CNAME'],
+        'FREEZER_DESTINATION_IGNORE': ['.git*'],
         'FREEZER_IGNORE_MIMETYPE_WARNINGS': True,
     })
 
