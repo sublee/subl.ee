@@ -12,7 +12,8 @@ import bisect
 import io
 from pathlib import Path
 from datetime import date, datetime
-from typing import Any, Dict, Optional, Tuple, Union
+import subprocess
+from typing import Any, Dict, List, Optional, Tuple, Union
 import uuid
 from xml.etree import ElementTree
 
@@ -128,24 +129,42 @@ def render_icon(size: Union[int, Tuple[int, int]], radius: int = 0) -> str:
     return render_template_string(svg_t, **context)
 
 
+def guess_mtime(path: Path) -> datetime:
+    """Guesses the last updated time of the given file."""
+    mtime = datetime.utcfromtimestamp(path.stat().st_mtime)
+
+    def run(cmd: List[str]) -> str:
+        r = subprocess.run(cmd, capture_output=True, text=True)
+        return r.stdout.strip()
+
+    try:
+        run(['git'])
+    except FileNotFoundError:
+        # git command not available.
+        return mtime
+
+    if run(['git', 'diff', '--name-only', str(path)]):
+        # The file has been modified from its last commit.
+        return mtime
+
+    git_time_str = run('git log -1 --pretty=%cI'.split() + [str(path)])
+    git_time = datetime.fromisoformat(git_time_str)
+    return git_time
+
+
+def render_resume() -> Tuple[str, Dict[str, str], datetime]:
+    with (ROOT/'resume.md').open(encoding='utf-8') as f:
+        html, meta = markdown(f.read())
+    updated = guess_mtime(ROOT/'resume.md')
+    return html, meta, updated
+
+
 @app.route('/')
 def index() -> str:
     with (ROOT/'index.md').open(encoding='utf-8') as f:
         html, meta = markdown(f.read())
     ctx = make_context(html=html, **meta)
     return render_template('index.html', **ctx)
-
-
-def render_resume() -> Tuple[str, Dict[str, str], datetime]:
-    with (ROOT/'resume.md').open(encoding='utf-8') as f:
-        html, meta = markdown(f.read())
-
-    if 'FREEZER_DESTINATION' in app.config:
-        updated = datetime.utcnow()
-    else:
-        updated = datetime.utcfromtimestamp((ROOT/'resume.md').stat().st_mtime)
-
-    return html, meta, updated
 
 
 @app.route('/resume/')
