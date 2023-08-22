@@ -4,14 +4,14 @@
 
    https://subl.ee/
 
-   :copyright: (c) 2013-2022 by Heungsub Lee
+   :copyright: (c) 2013-2023 by Heungsub Lee
    :license: Public Domain
 
 """
 import bisect
 import io
 from pathlib import Path
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 import subprocess
 from typing import Any, Dict, List, Optional, Tuple, Union
 import uuid
@@ -148,7 +148,7 @@ def guess_mtime(path: Path) -> datetime:
         return mtime
 
     git_time_str = run('git log -1 --pretty=%cI'.split() + [str(path)])
-    git_time = datetime.fromisoformat(git_time_str)
+    git_time = datetime.fromisoformat(git_time_str).astimezone(timezone.utc)
     return git_time
 
 
