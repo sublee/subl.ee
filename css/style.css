@@ -137,6 +137,7 @@ footer::before {
   html { padding: 1rem 0.75rem 2rem; font-size: 16px; }
   header { margin-bottom: 0; }
   header .emblem { transform: scale(0.8); }
+  .nonessential { display: none; }
 }
 
 html.loaded { transition: padding 0.2s, font-size 0.2s; }

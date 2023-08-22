@@ -25,7 +25,7 @@
   {% set updated_long  = updated.strftime('%Y-%m-%d %H:%M (UTC)') %}
   {% set updated_short = updated.strftime('%b %d, %Y') %}
 
-  Last updated on
+  <span class="nonessential">Last updated on</span>
   <time datetime="{{ updated_iso }}" title="{{ updated_long }}">{{ updated_short }}</time>
 
   &middot;
