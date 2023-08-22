@@ -159,12 +159,12 @@ Contributions
 Publications
 ------------
 
-<!-- IEEE style -->
-- B. Kim et al., "What Changes Can Large-scale Language Models Bring? Intensive
-  Study on HyperCLOVA: Billions-scale Korean Generative Pretrained
+<!-- IEEE style: https://libguides.nps.edu/citation/ieee -->
+- B. Kim et al., "What changes can large-scale language models bring? Intensive
+  study on HyperCLOVA: Billions-scale Korean generative pretrained
   Transformers," [arXiv:2109.04650][arxiv:hyperclova], Sep 2021.
-- C. Kim\*, Heungsub Lee\* et al., "torchgpipe: On-the-fly Pipeline Parallelism
-  for Training Giant Models," [arXiv:2004.09910][arxiv:torchgpipe], Apr 2020.
+- C. Kim\*, Heungsub Lee\* et al., "torchgpipe: On-the-fly pipeline parallelism
+  for training giant models," [arXiv:2004.09910][arxiv:torchgpipe], Apr 2020.
 
 \*Contributed equally
 {: .footnote }
@@ -178,7 +178,7 @@ Publications
 Public Speeches
 ---------------
 
-<!-- IEEE style -->
+<!-- Also, IEEE style -->
 - "NSML, the hyper-scale ML training platform," [KRnet, Jun 2022][krnet22].
 - "[Remake of Hangulize][gokr1808]," Golang Korea Meetup, Aug 2018.
 - "[Profiling][pycon15]," PyCon Korea, Aug 2015.
