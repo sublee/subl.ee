@@ -87,7 +87,7 @@ Back-end Web Developer {: .label }
 [iclickart]: https://iclickart.co.kr/
 
 Front-end Web Developer {: .label }
-[Lunant][], Nov 2007 -- Jan 2011
+[Lunant][], Dec 2007 -- Jan 2011
 :   Designed and developed UI/UX for social media.
 [lunant]: https://github.com/lunant
 
