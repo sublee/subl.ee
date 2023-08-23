@@ -94,7 +94,7 @@ Front-end Web Developer {: .label }
 Open Source Experience
 ----------------------
 
-[torchgpipe][], 2019 -- 2020
+[torchgpipe][], Feb 2019 -- Apr 2020
 :   Implemented [GPipe][], a multi-GPU pipeline parallelism technique for
     training giant models, as a PyTorch library with optimization for CUDA, the
     autograd engine, and long skip connections. This project has become a part
@@ -104,7 +104,7 @@ Open Source Experience
 [gpipe]: https://arxiv.org/abs/1811.06965
 [pytorch-pipe]: https://pytorch.org/docs/2.0/pipeline.html
 
-[Hangulize][], 2010 -- Present
+[Hangulize][], Oct 2010 -- Present
 :   Invented a Hangul transcription algorithm and served as a web tool at zero
     cost.
 
@@ -115,7 +115,7 @@ Open Source Experience
 [hangulize]: https://hangulize.org/
 [netflix-style]: https://partnerhelp.netflixstudios.com/hc/en-us/articles/216001127-Korean-Timed-Text-Style-Guide
 
-[TrueSkill][trueskill], 2012 -- 2015
+[TrueSkill][trueskill], Jan 2012 -- Dec 2015
 :   Implemented [TrueSkill™][trueskill-tm], the rating algorithm for Xbox Live,
     as a Python library. This project was introduced in [PyData Berlin
     2019][pydata2019].
@@ -124,7 +124,7 @@ Open Source Experience
 [trueskill-tm]: https://www.microsoft.com/en-us/research/project/trueskill-ranking-system/
 [pydata2019]: https://docs.google.com/presentation/d/1S5v9D31vpsr22efMSSCO6hmN2SQNCIqKG7JyGzUSzeI/edit?usp=sharing
 
-[Profiling][], 2014 -- 2018
+[Profiling][], Aug 2014 -- Nov 2017
 :   Developed a Python profiler with an interactive TUI inspired by [the Unity
     profiler][unity-profiler]. It was the 3rd daily trending repository in
     GitHub on Sep 22, 2014.

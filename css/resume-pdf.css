@@ -93,11 +93,6 @@ hr {
   border-bottom: solid 0.5pt black;
 }
 
-em, em * {
-  font-style: normal;
-  text-decoration: underline;
-}
-
 dd {
   text-indent: 1.5rem;
 }
