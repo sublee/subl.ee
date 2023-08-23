@@ -72,8 +72,8 @@ Software Engineer {: .label }
 Game Server Engineer {: .label }
 [NEXON][], 2011--2018
 :   Developed cloud-based distributed MMORPG servers for Durango using pub/sub
-    communication over the spatial grid system. This game achieved up to 70k
-    concurrent users per game world.
+    communication over the spatial grid system. Achieved up to 70k concurrent
+    users per game world.
 
     Developed online racing game servers and matchmaking for [KartRider][] Dash
     and KartRider Coin Rush.
