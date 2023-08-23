@@ -96,7 +96,9 @@ Open Source Experience
 
 [Hangulize][], 2010--
 :   Invented a Hangul transcription algorithm and served as a web tool at zero
-    cost. Many professional Korean translators use this tool to translate
+    cost.
+
+    Many professional Korean translators use this tool to translate
     undocumented proper nouns. Netflix refers to this tool in [the Korean
     timed-text style guide][netflix-style].
 
@@ -105,9 +107,9 @@ Open Source Experience
 
 [torchgpipe][], 2019--2020
 :   Implemented [GPipe][], a multi-GPU pipeline parallelism technique for
-    training giant models, in PyTorch with optimization for CUDA, the autograd
-    engine, and long skip connections. This project has become a part of
-    PyTorch as [Pipe APIs][pytorch-pipe]
+    training giant models, as a PyTorch library with optimization for CUDA, the
+    autograd engine, and long skip connections. This project has become a part
+    of PyTorch as [Pipe APIs][pytorch-pipe]
 
 [torchgpipe]: https://torchgpipe.readthedocs.io/
 [gpipe]: https://arxiv.org/abs/1811.06965
@@ -115,7 +117,7 @@ Open Source Experience
 
 [TrueSkill][trueskill], 2012--2015
 :   Implemented [TrueSkill™][trueskill-tm], the rating algorithm for Xbox Live,
-    in Python. This project was introduced in [PyData Berlin
+    as a Python library. This project was introduced in [PyData Berlin
     2019][pydata2019].
 
 [trueskill]: https://trueskill.org/
@@ -199,14 +201,14 @@ Public Speeches
 Languages
 ---------
 
-- Korean -- native
-- English -- conversant in reading and writing
+- Korean -- Native
+- English -- Conversant in reading and writing
 
 Education
 ---------
 
-Computer Software, [Kwangwoon University][kw], 2008
--- completed the first year only
+Computer Software, [Kwangwoon University][kw], 2008, Completed the first year
+only.
 
 [kw]: https://www.kw.ac.kr/
 
