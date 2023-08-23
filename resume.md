@@ -44,7 +44,7 @@ Work Experience
 ---------------
 
 Software Engineering Manager {: .label }
-[CLOVA][] in [NAVER][], 2020--2023
+[CLOVA][] in [NAVER][], Aug 2020 -- Jul 2023
 :   Supervised MLOps platforms by leading 25 software engineers to optimize the
     inference performance and productivity of [HyperCLOVA][], an LLM
     specializing in Korean culture.
@@ -58,7 +58,7 @@ Software Engineering Manager {: .label }
 [nsml]: https://arxiv.org/abs/1712.05902
 
 Software Engineer {: .label }
-[Kakao Brain][kakaobrain], 2018--2020
+[Kakao Brain][kakaobrain], Dec 2018 -- Aug 2020
 :   Developed a serverless training framework and a distributed hyperparameter
     search platform for an AutoML service.
 
@@ -70,7 +70,7 @@ Software Engineer {: .label }
 [gpipe]: https://arxiv.org/abs/1811.06965
 
 Game Server Engineer {: .label }
-[NEXON][], 2011--2018
+[NEXON][], Mar 2011 -- Dec 2018
 :   Developed cloud-based distributed MMORPG servers for Durango using pub/sub
     communication over the spatial grid system. Achieved up to 70k concurrent
     users per game world.
@@ -82,19 +82,29 @@ Game Server Engineer {: .label }
 [kartrider]: https://kart.nexon.com/
 
 Back-end Web Developer {: .label }
-[nPine][iclickart], 2008--2011
-:   Developed and maintained web services.
+[nPine][iclickart], Dec 2008 -- Feb 2011
+:   Developed and maintained web services selling stock images.
 [iclickart]: https://iclickart.co.kr/
 
 Front-end Web Developer {: .label }
-[Lunant][], 2008--2011
-:   Designed and implemented UI/UX for social media.
+[Lunant][], Nov 2007 -- Jan 2011
+:   Designed and developed UI/UX for social media.
 [lunant]: https://github.com/lunant
 
 Open Source Experience
 ----------------------
 
-[Hangulize][], 2010--
+[torchgpipe][], 2019 -- 2020
+:   Implemented [GPipe][], a multi-GPU pipeline parallelism technique for
+    training giant models, as a PyTorch library with optimization for CUDA, the
+    autograd engine, and long skip connections. This project has become a part
+    of PyTorch as [Pipe APIs][pytorch-pipe]
+
+[torchgpipe]: https://torchgpipe.readthedocs.io/
+[gpipe]: https://arxiv.org/abs/1811.06965
+[pytorch-pipe]: https://pytorch.org/docs/2.0/pipeline.html
+
+[Hangulize][], 2010 -- Present
 :   Invented a Hangul transcription algorithm and served as a web tool at zero
     cost.
 
@@ -105,17 +115,7 @@ Open Source Experience
 [hangulize]: https://hangulize.org/
 [netflix-style]: https://partnerhelp.netflixstudios.com/hc/en-us/articles/216001127-Korean-Timed-Text-Style-Guide
 
-[torchgpipe][], 2019--2020
-:   Implemented [GPipe][], a multi-GPU pipeline parallelism technique for
-    training giant models, as a PyTorch library with optimization for CUDA, the
-    autograd engine, and long skip connections. This project has become a part
-    of PyTorch as [Pipe APIs][pytorch-pipe]
-
-[torchgpipe]: https://torchgpipe.readthedocs.io/
-[gpipe]: https://arxiv.org/abs/1811.06965
-[pytorch-pipe]: https://pytorch.org/docs/2.0/pipeline.html
-
-[TrueSkill][trueskill], 2012--2015
+[TrueSkill][trueskill], 2012 -- 2015
 :   Implemented [TrueSkill™][trueskill-tm], the rating algorithm for Xbox Live,
     as a Python library. This project was introduced in [PyData Berlin
     2019][pydata2019].
@@ -124,7 +124,7 @@ Open Source Experience
 [trueskill-tm]: https://www.microsoft.com/en-us/research/project/trueskill-ranking-system/
 [pydata2019]: https://docs.google.com/presentation/d/1S5v9D31vpsr22efMSSCO6hmN2SQNCIqKG7JyGzUSzeI/edit?usp=sharing
 
-[Profiling][], 2014--2018
+[Profiling][], 2014 -- 2018
 :   Developed a Python profiler with an interactive TUI inspired by [the Unity
     profiler][unity-profiler]. It was the 3rd daily trending repository in
     GitHub on Sep 22, 2014.
@@ -201,8 +201,8 @@ Public Speeches
 Languages
 ---------
 
-- Korean -- Native
-- English -- Conversant in reading and writing
+- Korean --- Native
+- English --- Conversant in reading and writing
 
 Education
 ---------
