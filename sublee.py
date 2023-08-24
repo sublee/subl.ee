@@ -176,7 +176,7 @@ def resume() -> str:
 
 
 @app.route('/resume.pdf')
-def resume_pdf() -> Union[Response, str]:
+def resume_pdf() -> Response:
     """Renders the resume as a PDF document.
 
     Querystring options:
@@ -194,7 +194,7 @@ def resume_pdf() -> Union[Response, str]:
     # "mode=debug" querystring switches to render as HTML rather than PDF for
     # debugging directly in a web browser.
     if request.args.get('mode') == 'debug':
-        return html
+        return make_response(html)
 
     wp_html = weasyprint.HTML(string=html)
     wp_font_config = weasyprint.text.fonts.FontConfiguration()
