@@ -41,6 +41,7 @@ body::after {
 
 footer {
   font-style: italic;
+  line-height: 1;
   position: absolute;
   bottom: 0;
   right: 0;

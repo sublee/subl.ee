@@ -199,24 +199,22 @@ def resume_pdf() -> Response:
     wp_html = weasyprint.HTML(string=html)
     wp_font_config = weasyprint.text.fonts.FontConfiguration()
 
-    def render(line_height: Optional[float]) -> weasyprint.Document:
+    def render_pdf(line_height: Optional[float]) -> weasyprint.Document:
         if line_height is None:
             ss = []
         else:
             ss = [weasyprint.CSS(string=f'body{{line-height:{line_height}}}')]
 
-        doc = wp_html.render(stylesheets=ss, font_config=wp_font_config)
-        return doc
+        return wp_html.render(stylesheets=ss, font_config=wp_font_config)
 
     def optimize_line_height() -> Optional[float]:
         # Maximize line-height unless 2 or more pages are rendered.
-        line_heights = [x/100 for x in range(110, 141)]
+        line_heights = [x/1000 for x in range(1100, 1401)]
         expected_pages = 1
 
         started = time.monotonic()
-        i = bisect.bisect_right(line_heights,
-                                expected_pages,
-                                key=lambda h: len(render(h).pages))
+        i = bisect.bisect_right(line_heights, expected_pages,
+                                key=lambda h: len(render_pdf(h).pages))
         elapsed = time.monotonic() - started
 
         i = 0 if i == 0 else i-1
@@ -236,7 +234,7 @@ def resume_pdf() -> Response:
     else:
         line_height = None
 
-    doc = render(line_height)
+    doc = render_pdf(line_height)
 
     if 'FREEZER_DESTINATION' in app.config and len(doc.pages) != 1:
         raise AssertionError(f'resume.pdf has {len(doc.pages)} pages')
