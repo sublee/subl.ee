@@ -13,6 +13,7 @@ import io
 from pathlib import Path
 from datetime import date, datetime, timezone
 import subprocess
+import time
 from typing import Any, Dict, List, Optional, Tuple, Union
 import uuid
 from xml.etree import ElementTree
@@ -175,7 +176,7 @@ def resume() -> str:
 
 
 @app.route('/resume.pdf')
-def resume_pdf() -> Response:
+def resume_pdf() -> Union[Response, str]:
     """Renders the resume as a PDF document.
 
     Querystring options:
@@ -184,52 +185,45 @@ def resume_pdf() -> Response:
         mode=prod   Optimize line-height
 
     """
-    html_str, _, updated = render_resume()
+    resume, _, updated = render_resume()
     with (ROOT/'css'/'resume-pdf.css').open() as f:
-        css_str = f.read()
-    updated_short = updated.strftime("%b %d, %Y")
-    footer = f'<footer>(Last updated on {updated_short})</footer>'
+        css = f.read()
+    html = render_template('resume-pdf.html',
+                           html=resume, css=css, updated=updated)
 
     # "mode=debug" querystring switches to render as HTML rather than PDF for
     # debugging directly in a web browser.
     if request.args.get('mode') == 'debug':
-        return make_response(f'''
-        <html lang="en">
-          <head><style>{css_str}</style></head>
-          <body>{html_str}{footer}</body>
-        </html>
-        ''')
+        return html
 
-    font_config = weasyprint.text.fonts.FontConfiguration()
-    css = weasyprint.CSS(string=css_str, font_config=font_config)
-
-    # Set lang="en" for hyphenation and append last updated date.
-    html = weasyprint.HTML(string=f'''
-    <html lang="en"><body>{html_str}{footer}</body></html>
-    ''')
+    wp_html = weasyprint.HTML(string=html)
+    wp_font_config = weasyprint.text.fonts.FontConfiguration()
 
     def render(line_height: Optional[float]) -> weasyprint.Document:
-        stylesheets = [css]
+        if line_height is None:
+            ss = []
+        else:
+            ss = [weasyprint.CSS(string=f'body{{line-height:{line_height}}}')]
 
-        if line_height is not None:
-            line_height_rule = f'body{{line-height:{line_height}}}'
-            stylesheets.append(weasyprint.CSS(string=line_height_rule))
-
-        doc = html.render(stylesheets=stylesheets, font_config=font_config)
+        doc = wp_html.render(stylesheets=ss, font_config=wp_font_config)
         return doc
 
     def optimize_line_height() -> Optional[float]:
         # Maximize line-height unless 2 or more pages are rendered.
         line_heights = [x/100 for x in range(110, 141)]
         expected_pages = 1
+
+        started = time.monotonic()
         i = bisect.bisect_right(line_heights,
                                 expected_pages,
                                 key=lambda h: len(render(h).pages))
+        elapsed = time.monotonic() - started
 
         i = 0 if i == 0 else i-1
         line_height = line_heights[i]
 
-        app.logger.info(f'Optimized line-height: {line_height}')
+        app.logger.info(f'Optimized line-height: {line_height} '
+                        f'({elapsed:.2f} sec elapsed)')
 
         return line_height
 

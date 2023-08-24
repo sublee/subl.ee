@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>{{ css|safe }}</style>
+</head>
+<body>
+  {{ html|safe }}
+  {% set updated_short = updated.strftime('%b %d, %Y') %}
+  <footer>(Last updated on {{updated_short}})</footer>
+</body>
+</html>
