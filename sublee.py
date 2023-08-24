@@ -175,6 +175,11 @@ def resume() -> str:
     return render_template('resume.html', **ctx)
 
 
+# Share the font config among multiple GET /resume.pdf requests for getting
+# speed up.
+wp_font_config = weasyprint.text.fonts.FontConfiguration()
+
+
 @app.route('/resume.pdf')
 def resume_pdf() -> Response:
     """Renders the resume as a PDF document.
@@ -197,7 +202,6 @@ def resume_pdf() -> Response:
         return make_response(html)
 
     wp_html = weasyprint.HTML(string=html)
-    wp_font_config = weasyprint.text.fonts.FontConfiguration()
 
     def render_pdf(line_height: Optional[float]) -> weasyprint.Document:
         if line_height is None:
