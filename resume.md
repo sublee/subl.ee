@@ -83,7 +83,7 @@ Game Server Engineer {: .label }
 
 Back-end Web Developer {: .label }
 [nPine][iclickart], Dec 2008 -- Feb 2011
-:   Developed and maintained web services selling stock images.
+:   Developed web services selling stock images.
 [iclickart]: https://iclickart.co.kr/
 
 Front-end Web Developer {: .label }
