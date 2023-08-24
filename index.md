@@ -28,7 +28,7 @@ I've been involved in
 - KartRider Dash, KartRider Coin Rush, and Durango
 
 [nsml]:           https://arxiv.org/abs/1712.05902
-[hyperclova]:     https://arxiv.org/abs/2109.04650
+[hyperclova]:     https://clova.ai/hyperclova
 [torchgpipe]:     https://torchgpipe.readthedocs.io/
 [pytorch-pipe]:   https://pytorch.org/docs/2.0/pipeline.html
 [hangulize]:      https://hangulize.org/

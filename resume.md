@@ -54,7 +54,7 @@ Software Engineering Manager {: .label }
 
 [clova]: https://clova.ai/
 [naver]: https://navercorp.com/en
-[hyperclova]: https://arxiv.org/abs/2109.04650
+[hyperclova]: https://clova.ai/hyperclova
 [nsml]: https://arxiv.org/abs/1712.05902
 
 Software Engineer {: .label }
