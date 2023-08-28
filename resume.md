@@ -44,18 +44,19 @@ Work Experience
 ---------------
 
 Software Engineering Manager {: .label }
-[CLOVA][] in [NAVER][], Aug 2020 -- Jul 2023
+[NAVER][], Aug 2020 -- Jul 2023
 :   Supervised MLOps platforms by leading 25 software engineers to optimize the
     inference performance and productivity of [HyperCLOVA][], an LLM
     specializing in Korean culture.
 
-    Developed the second version of [NSML][], an ML research platform, to
-    extend its capability for large-scale AI models on HPC infrastructures.
+    Developed the second version of [NSML][], an ML research platform in
+    [CLOVA][], to extend its capability for large-scale AI models on HPC
+    infrastructures.
 
-[clova]: https://clova.ai/
 [naver]: https://navercorp.com/en
 [hyperclova]: https://clova.ai/hyperclova
 [nsml]: https://arxiv.org/abs/1712.05902
+[clova]: https://clova.ai/
 
 Software Engineer {: .label }
 [Kakao Brain][kakaobrain], Dec 2018 -- Aug 2020
