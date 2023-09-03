@@ -104,9 +104,9 @@
     </radialGradient>
 
     <radialGradient id="layer2" cx="100%" cy="100%" r="100%">
-      <stop offset="40%" stop-color="#f7c" stop-opacity="0.25" />
+      <stop offset="40%" stop-color="#f7c" stop-opacity="0.30" />
       <stop offset="80%" stop-color="#a8f" stop-opacity="0.15" />
-      <stop offset="100%" stop-color="#4ee" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#4ee" stop-opacity="0" />
     </radialGradient>
 
     <radialGradient id="layer3" fx="35%" fy="80%" cy="50%" r="50%">
