@@ -9,12 +9,14 @@ Heungsub Lee
 I am
 ----
 
-Heungsub Lee, a [software engineer][] without a job.
+Heungsub Lee, a [software engineer][] at [Global AI Platform
+Corporation][gapco].
 <br />
 More details are in my [résumé](/resume/).
 {: .hard-returns }
 
 [software engineer]: https://github.com/sublee
+[gapco]: https://www.linkedin.com/company/global-ai-platform/
 
 I've been involved in
 ---------------------

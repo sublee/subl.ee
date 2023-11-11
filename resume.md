@@ -43,6 +43,12 @@ ML Engineering {: .label }
 Work Experience
 ---------------
 
+Software Engineer {: .label }
+[Global AI Platform Corporation][gapco], Sep 2023 -- Present
+:   Developing LLM based applications.
+
+[gapco]: https://www.linkedin.com/company/global-ai-platform/
+
 Software Engineering Manager {: .label }
 [NAVER][], Aug 2020 -- Jul 2023
 :   Supervised MLOps platforms by leading 25 software engineers to optimize the
