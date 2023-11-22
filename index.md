@@ -21,6 +21,7 @@ More details are in my [résumé](/resume/).
 I've been involved in
 ---------------------
 
+- [Gistty][]: A Chrome extension summarizing Amazon reviews
 - [NSML][]: An ML research platform for large-scale models
 - [HyperCLOVA][]: An LLM specializing in Korean culture
 - [torchgpipe][]: A GPipe library, also the origin of [Pipe APIs in PyTorch][pytorch-pipe]
@@ -29,6 +30,7 @@ I've been involved in
 - [Subway Fighter][], [SUBLEERUNKER][]: Games with [my pixel art][DeviantArt]
 - KartRider Dash, KartRider Coin Rush, and Durango
 
+[gistty]:         https://gistty.ai/
 [nsml]:           https://arxiv.org/abs/1712.05902
 [hyperclova]:     https://clova.ai/hyperclova
 [torchgpipe]:     https://torchgpipe.readthedocs.io/
