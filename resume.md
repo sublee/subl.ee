@@ -44,7 +44,7 @@ Work Experience
 ---------------
 
 Software Engineer {: .label }
-[Global AI Platform Corporation][gapco], Sep 2023 -- Present
+[Global AI Platform][gapco], Sep 2023 -- Present
 :   Developing and maintaining LLM-based services such as [Gistty][], a Chrome
     extension summarizing Amazon reviews.
 

@@ -9,8 +9,7 @@ Heungsub Lee
 I am
 ----
 
-Heungsub Lee, a [software engineer][] at [Global AI Platform
-Corporation][gapco].
+Heungsub Lee, a [software engineer][] at [Global AI Platform][gapco].
 <br />
 More details are in my [résumé](/resume/).
 {: .hard-returns }
