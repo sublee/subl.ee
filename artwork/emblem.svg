@@ -1,132 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<svg width="152px" height="96px" viewBox="-76 -48 152 96" version="1.1" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <!-- wing: 36*80 -->
-    <path id="wing" d="
-      M -18,0
-      a 34,40 0 0 1 +34,-40
-      a 2,2   0 0 1 +2,+2
-      V +38
-      a 2,2   0 0 1 -2,+2
-      a 34,40 0 0 1 -34,-40
-      z
-    " />
-
-    <!-- spine: 36*58 -->
-    <path id="spine" d="
-      M -18,-27
-      a 2,2   0 0 1 +2,-2
-      a 34,40 0 0 1 +34,+40
-      V +27
-      a 2,2   0 0 1 -2,+2
-      H -16
-      a 2,2   0 0 1 -2,-2
-      V -27
-      z
-    " />
-
-    <!-- Silhouette -->
-    <clipPath id="silhouette" transform="rotate(-45)">
-      <use href="#wing"  x="-44" y="-22" />
-      <use href="#spine" y="-33" />
-      <use href="#spine" y="-33" transform="rotate(180)" />
-      <use href="#wing"  x="-44" y="-22" transform="rotate(180)" />
-    </clipPath>
-
-    <!-- scale: 4*8, curve: 0.5*0.5 -->
-    <path id="scale" d="
-      M 0,0
-      h 0.5
-      c 0,0.5 1,2.5 1.5,2.5
-      c 0.5,0 1.5,-2 1.5,-2.5
-      h 0.5
-      v 1.5
-      c -0.5,0 -1.5,2 -1.5,2.5
-      c 0,0.5 1,2.5 1.5,2.5
-      v 1.5
-      h -0.5
-      c 0,-0.5 -1,-2.5 -1.5,-2.5
-      c -0.5,0 -1.5,2 -1.5,2.5
-      h -0.5
-      v -1.5
-      c 0.5, 0 1.5,-2 1.5,-2.5
-      c 0,-0.5 -1,-2.5 -1.5,-2.5
-      v -1.5
-      z
-    " />
-
-    <!-- Skin: 37*11 scales -->
-    <!-- NOTE: <pattern> doesn't work in this <clipPath> -->
-    <clipPath id="skin">
-      <use href="#scale" x="0" y="0" /><use href="#scale" x="0" y="8" /><use href="#scale" x="0" y="16" /><use href="#scale" x="0" y="24" /><use href="#scale" x="0" y="32" /><use href="#scale" x="0" y="40" /><use href="#scale" x="0" y="48" /><use href="#scale" x="0" y="56" /><use href="#scale" x="0" y="64" /><use href="#scale" x="0" y="72" /><use href="#scale" x="0" y="80" />
-      <use href="#scale" x="4" y="0" /><use href="#scale" x="4" y="8" /><use href="#scale" x="4" y="16" /><use href="#scale" x="4" y="24" /><use href="#scale" x="4" y="32" /><use href="#scale" x="4" y="40" /><use href="#scale" x="4" y="48" /><use href="#scale" x="4" y="56" /><use href="#scale" x="4" y="64" /><use href="#scale" x="4" y="72" /><use href="#scale" x="4" y="80" />
-      <use href="#scale" x="8" y="0" /><use href="#scale" x="8" y="8" /><use href="#scale" x="8" y="16" /><use href="#scale" x="8" y="24" /><use href="#scale" x="8" y="32" /><use href="#scale" x="8" y="40" /><use href="#scale" x="8" y="48" /><use href="#scale" x="8" y="56" /><use href="#scale" x="8" y="64" /><use href="#scale" x="8" y="72" /><use href="#scale" x="8" y="80" />
-      <use href="#scale" x="12" y="0" /><use href="#scale" x="12" y="8" /><use href="#scale" x="12" y="16" /><use href="#scale" x="12" y="24" /><use href="#scale" x="12" y="32" /><use href="#scale" x="12" y="40" /><use href="#scale" x="12" y="48" /><use href="#scale" x="12" y="56" /><use href="#scale" x="12" y="64" /><use href="#scale" x="12" y="72" /><use href="#scale" x="12" y="80" />
-      <use href="#scale" x="16" y="0" /><use href="#scale" x="16" y="8" /><use href="#scale" x="16" y="16" /><use href="#scale" x="16" y="24" /><use href="#scale" x="16" y="32" /><use href="#scale" x="16" y="40" /><use href="#scale" x="16" y="48" /><use href="#scale" x="16" y="56" /><use href="#scale" x="16" y="64" /><use href="#scale" x="16" y="72" /><use href="#scale" x="16" y="80" />
-      <use href="#scale" x="20" y="0" /><use href="#scale" x="20" y="8" /><use href="#scale" x="20" y="16" /><use href="#scale" x="20" y="24" /><use href="#scale" x="20" y="32" /><use href="#scale" x="20" y="40" /><use href="#scale" x="20" y="48" /><use href="#scale" x="20" y="56" /><use href="#scale" x="20" y="64" /><use href="#scale" x="20" y="72" /><use href="#scale" x="20" y="80" />
-      <use href="#scale" x="24" y="0" /><use href="#scale" x="24" y="8" /><use href="#scale" x="24" y="16" /><use href="#scale" x="24" y="24" /><use href="#scale" x="24" y="32" /><use href="#scale" x="24" y="40" /><use href="#scale" x="24" y="48" /><use href="#scale" x="24" y="56" /><use href="#scale" x="24" y="64" /><use href="#scale" x="24" y="72" /><use href="#scale" x="24" y="80" />
-      <use href="#scale" x="28" y="0" /><use href="#scale" x="28" y="8" /><use href="#scale" x="28" y="16" /><use href="#scale" x="28" y="24" /><use href="#scale" x="28" y="32" /><use href="#scale" x="28" y="40" /><use href="#scale" x="28" y="48" /><use href="#scale" x="28" y="56" /><use href="#scale" x="28" y="64" /><use href="#scale" x="28" y="72" /><use href="#scale" x="28" y="80" />
-      <use href="#scale" x="32" y="0" /><use href="#scale" x="32" y="8" /><use href="#scale" x="32" y="16" /><use href="#scale" x="32" y="24" /><use href="#scale" x="32" y="32" /><use href="#scale" x="32" y="40" /><use href="#scale" x="32" y="48" /><use href="#scale" x="32" y="56" /><use href="#scale" x="32" y="64" /><use href="#scale" x="32" y="72" /><use href="#scale" x="32" y="80" />
-      <use href="#scale" x="36" y="0" /><use href="#scale" x="36" y="8" /><use href="#scale" x="36" y="16" /><use href="#scale" x="36" y="24" /><use href="#scale" x="36" y="32" /><use href="#scale" x="36" y="40" /><use href="#scale" x="36" y="48" /><use href="#scale" x="36" y="56" /><use href="#scale" x="36" y="64" /><use href="#scale" x="36" y="72" /><use href="#scale" x="36" y="80" />
-      <use href="#scale" x="40" y="0" /><use href="#scale" x="40" y="8" /><use href="#scale" x="40" y="16" /><use href="#scale" x="40" y="24" /><use href="#scale" x="40" y="32" /><use href="#scale" x="40" y="40" /><use href="#scale" x="40" y="48" /><use href="#scale" x="40" y="56" /><use href="#scale" x="40" y="64" /><use href="#scale" x="40" y="72" /><use href="#scale" x="40" y="80" />
-      <use href="#scale" x="44" y="0" /><use href="#scale" x="44" y="8" /><use href="#scale" x="44" y="16" /><use href="#scale" x="44" y="24" /><use href="#scale" x="44" y="32" /><use href="#scale" x="44" y="40" /><use href="#scale" x="44" y="48" /><use href="#scale" x="44" y="56" /><use href="#scale" x="44" y="64" /><use href="#scale" x="44" y="72" /><use href="#scale" x="44" y="80" />
-      <use href="#scale" x="48" y="0" /><use href="#scale" x="48" y="8" /><use href="#scale" x="48" y="16" /><use href="#scale" x="48" y="24" /><use href="#scale" x="48" y="32" /><use href="#scale" x="48" y="40" /><use href="#scale" x="48" y="48" /><use href="#scale" x="48" y="56" /><use href="#scale" x="48" y="64" /><use href="#scale" x="48" y="72" /><use href="#scale" x="48" y="80" />
-      <use href="#scale" x="52" y="0" /><use href="#scale" x="52" y="8" /><use href="#scale" x="52" y="16" /><use href="#scale" x="52" y="24" /><use href="#scale" x="52" y="32" /><use href="#scale" x="52" y="40" /><use href="#scale" x="52" y="48" /><use href="#scale" x="52" y="56" /><use href="#scale" x="52" y="64" /><use href="#scale" x="52" y="72" /><use href="#scale" x="52" y="80" />
-      <use href="#scale" x="56" y="0" /><use href="#scale" x="56" y="8" /><use href="#scale" x="56" y="16" /><use href="#scale" x="56" y="24" /><use href="#scale" x="56" y="32" /><use href="#scale" x="56" y="40" /><use href="#scale" x="56" y="48" /><use href="#scale" x="56" y="56" /><use href="#scale" x="56" y="64" /><use href="#scale" x="56" y="72" /><use href="#scale" x="56" y="80" />
-      <use href="#scale" x="60" y="0" /><use href="#scale" x="60" y="8" /><use href="#scale" x="60" y="16" /><use href="#scale" x="60" y="24" /><use href="#scale" x="60" y="32" /><use href="#scale" x="60" y="40" /><use href="#scale" x="60" y="48" /><use href="#scale" x="60" y="56" /><use href="#scale" x="60" y="64" /><use href="#scale" x="60" y="72" /><use href="#scale" x="60" y="80" />
-      <use href="#scale" x="64" y="0" /><use href="#scale" x="64" y="8" /><use href="#scale" x="64" y="16" /><use href="#scale" x="64" y="24" /><use href="#scale" x="64" y="32" /><use href="#scale" x="64" y="40" /><use href="#scale" x="64" y="48" /><use href="#scale" x="64" y="56" /><use href="#scale" x="64" y="64" /><use href="#scale" x="64" y="72" /><use href="#scale" x="64" y="80" />
-      <use href="#scale" x="68" y="0" /><use href="#scale" x="68" y="8" /><use href="#scale" x="68" y="16" /><use href="#scale" x="68" y="24" /><use href="#scale" x="68" y="32" /><use href="#scale" x="68" y="40" /><use href="#scale" x="68" y="48" /><use href="#scale" x="68" y="56" /><use href="#scale" x="68" y="64" /><use href="#scale" x="68" y="72" /><use href="#scale" x="68" y="80" />
-      <use href="#scale" x="72" y="0" /><use href="#scale" x="72" y="8" /><use href="#scale" x="72" y="16" /><use href="#scale" x="72" y="24" /><use href="#scale" x="72" y="32" /><use href="#scale" x="72" y="40" /><use href="#scale" x="72" y="48" /><use href="#scale" x="72" y="56" /><use href="#scale" x="72" y="64" /><use href="#scale" x="72" y="72" /><use href="#scale" x="72" y="80" />
-      <use href="#scale" x="76" y="0" /><use href="#scale" x="76" y="8" /><use href="#scale" x="76" y="16" /><use href="#scale" x="76" y="24" /><use href="#scale" x="76" y="32" /><use href="#scale" x="76" y="40" /><use href="#scale" x="76" y="48" /><use href="#scale" x="76" y="56" /><use href="#scale" x="76" y="64" /><use href="#scale" x="76" y="72" /><use href="#scale" x="76" y="80" />
-      <use href="#scale" x="80" y="0" /><use href="#scale" x="80" y="8" /><use href="#scale" x="80" y="16" /><use href="#scale" x="80" y="24" /><use href="#scale" x="80" y="32" /><use href="#scale" x="80" y="40" /><use href="#scale" x="80" y="48" /><use href="#scale" x="80" y="56" /><use href="#scale" x="80" y="64" /><use href="#scale" x="80" y="72" /><use href="#scale" x="80" y="80" />
-      <use href="#scale" x="84" y="0" /><use href="#scale" x="84" y="8" /><use href="#scale" x="84" y="16" /><use href="#scale" x="84" y="24" /><use href="#scale" x="84" y="32" /><use href="#scale" x="84" y="40" /><use href="#scale" x="84" y="48" /><use href="#scale" x="84" y="56" /><use href="#scale" x="84" y="64" /><use href="#scale" x="84" y="72" /><use href="#scale" x="84" y="80" />
-      <use href="#scale" x="88" y="0" /><use href="#scale" x="88" y="8" /><use href="#scale" x="88" y="16" /><use href="#scale" x="88" y="24" /><use href="#scale" x="88" y="32" /><use href="#scale" x="88" y="40" /><use href="#scale" x="88" y="48" /><use href="#scale" x="88" y="56" /><use href="#scale" x="88" y="64" /><use href="#scale" x="88" y="72" /><use href="#scale" x="88" y="80" />
-      <use href="#scale" x="92" y="0" /><use href="#scale" x="92" y="8" /><use href="#scale" x="92" y="16" /><use href="#scale" x="92" y="24" /><use href="#scale" x="92" y="32" /><use href="#scale" x="92" y="40" /><use href="#scale" x="92" y="48" /><use href="#scale" x="92" y="56" /><use href="#scale" x="92" y="64" /><use href="#scale" x="92" y="72" /><use href="#scale" x="92" y="80" />
-      <use href="#scale" x="96" y="0" /><use href="#scale" x="96" y="8" /><use href="#scale" x="96" y="16" /><use href="#scale" x="96" y="24" /><use href="#scale" x="96" y="32" /><use href="#scale" x="96" y="40" /><use href="#scale" x="96" y="48" /><use href="#scale" x="96" y="56" /><use href="#scale" x="96" y="64" /><use href="#scale" x="96" y="72" /><use href="#scale" x="96" y="80" />
-      <use href="#scale" x="100" y="0" /><use href="#scale" x="100" y="8" /><use href="#scale" x="100" y="16" /><use href="#scale" x="100" y="24" /><use href="#scale" x="100" y="32" /><use href="#scale" x="100" y="40" /><use href="#scale" x="100" y="48" /><use href="#scale" x="100" y="56" /><use href="#scale" x="100" y="64" /><use href="#scale" x="100" y="72" /><use href="#scale" x="100" y="80" />
-      <use href="#scale" x="104" y="0" /><use href="#scale" x="104" y="8" /><use href="#scale" x="104" y="16" /><use href="#scale" x="104" y="24" /><use href="#scale" x="104" y="32" /><use href="#scale" x="104" y="40" /><use href="#scale" x="104" y="48" /><use href="#scale" x="104" y="56" /><use href="#scale" x="104" y="64" /><use href="#scale" x="104" y="72" /><use href="#scale" x="104" y="80" />
-      <use href="#scale" x="108" y="0" /><use href="#scale" x="108" y="8" /><use href="#scale" x="108" y="16" /><use href="#scale" x="108" y="24" /><use href="#scale" x="108" y="32" /><use href="#scale" x="108" y="40" /><use href="#scale" x="108" y="48" /><use href="#scale" x="108" y="56" /><use href="#scale" x="108" y="64" /><use href="#scale" x="108" y="72" /><use href="#scale" x="108" y="80" />
-      <use href="#scale" x="112" y="0" /><use href="#scale" x="112" y="8" /><use href="#scale" x="112" y="16" /><use href="#scale" x="112" y="24" /><use href="#scale" x="112" y="32" /><use href="#scale" x="112" y="40" /><use href="#scale" x="112" y="48" /><use href="#scale" x="112" y="56" /><use href="#scale" x="112" y="64" /><use href="#scale" x="112" y="72" /><use href="#scale" x="112" y="80" />
-      <use href="#scale" x="116" y="0" /><use href="#scale" x="116" y="8" /><use href="#scale" x="116" y="16" /><use href="#scale" x="116" y="24" /><use href="#scale" x="116" y="32" /><use href="#scale" x="116" y="40" /><use href="#scale" x="116" y="48" /><use href="#scale" x="116" y="56" /><use href="#scale" x="116" y="64" /><use href="#scale" x="116" y="72" /><use href="#scale" x="116" y="80" />
-      <use href="#scale" x="120" y="0" /><use href="#scale" x="120" y="8" /><use href="#scale" x="120" y="16" /><use href="#scale" x="120" y="24" /><use href="#scale" x="120" y="32" /><use href="#scale" x="120" y="40" /><use href="#scale" x="120" y="48" /><use href="#scale" x="120" y="56" /><use href="#scale" x="120" y="64" /><use href="#scale" x="120" y="72" /><use href="#scale" x="120" y="80" />
-      <use href="#scale" x="124" y="0" /><use href="#scale" x="124" y="8" /><use href="#scale" x="124" y="16" /><use href="#scale" x="124" y="24" /><use href="#scale" x="124" y="32" /><use href="#scale" x="124" y="40" /><use href="#scale" x="124" y="48" /><use href="#scale" x="124" y="56" /><use href="#scale" x="124" y="64" /><use href="#scale" x="124" y="72" /><use href="#scale" x="124" y="80" />
-      <use href="#scale" x="128" y="0" /><use href="#scale" x="128" y="8" /><use href="#scale" x="128" y="16" /><use href="#scale" x="128" y="24" /><use href="#scale" x="128" y="32" /><use href="#scale" x="128" y="40" /><use href="#scale" x="128" y="48" /><use href="#scale" x="128" y="56" /><use href="#scale" x="128" y="64" /><use href="#scale" x="128" y="72" /><use href="#scale" x="128" y="80" />
-      <use href="#scale" x="132" y="0" /><use href="#scale" x="132" y="8" /><use href="#scale" x="132" y="16" /><use href="#scale" x="132" y="24" /><use href="#scale" x="132" y="32" /><use href="#scale" x="132" y="40" /><use href="#scale" x="132" y="48" /><use href="#scale" x="132" y="56" /><use href="#scale" x="132" y="64" /><use href="#scale" x="132" y="72" /><use href="#scale" x="132" y="80" />
-      <use href="#scale" x="136" y="0" /><use href="#scale" x="136" y="8" /><use href="#scale" x="136" y="16" /><use href="#scale" x="136" y="24" /><use href="#scale" x="136" y="32" /><use href="#scale" x="136" y="40" /><use href="#scale" x="136" y="48" /><use href="#scale" x="136" y="56" /><use href="#scale" x="136" y="64" /><use href="#scale" x="136" y="72" /><use href="#scale" x="136" y="80" />
-      <use href="#scale" x="140" y="0" /><use href="#scale" x="140" y="8" /><use href="#scale" x="140" y="16" /><use href="#scale" x="140" y="24" /><use href="#scale" x="140" y="32" /><use href="#scale" x="140" y="40" /><use href="#scale" x="140" y="48" /><use href="#scale" x="140" y="56" /><use href="#scale" x="140" y="64" /><use href="#scale" x="140" y="72" /><use href="#scale" x="140" y="80" />
-      <use href="#scale" x="144" y="0" /><use href="#scale" x="144" y="8" /><use href="#scale" x="144" y="16" /><use href="#scale" x="144" y="24" /><use href="#scale" x="144" y="32" /><use href="#scale" x="144" y="40" /><use href="#scale" x="144" y="48" /><use href="#scale" x="144" y="56" /><use href="#scale" x="144" y="64" /><use href="#scale" x="144" y="72" /><use href="#scale" x="144" y="80" />
-    </clipPath>
-
-    <!-- Texture -->
-    <radialGradient id="layer1" cx="100%" cy="90%" r="85%">
-      <stop offset="25%"  stop-color="#e57" />
-      <stop offset="100%" stop-color="#e57" stop-opacity="0" />
-    </radialGradient>
-
-    <radialGradient id="layer2" cx="100%" cy="100%" r="100%">
-      <stop offset="40%" stop-color="#f7c" stop-opacity="0.3" />
-      <stop offset="80%" stop-color="#a8f" stop-opacity="0.1" />
-      <stop offset="100%" stop-color="#4ee" stop-opacity="0" />
-    </radialGradient>
-
-    <radialGradient id="layer3" fx="35%" fy="80%" cy="50%" r="50%">
-      <stop offset="20%"  stop-color="#e57" stop-opacity="0.5" />
-      <stop offset="100%" stop-color="#e57" stop-opacity="0"   />
-    </radialGradient>
-
-    <radialGradient id="layer4" fx="15%" fy="20%" cx="40%" r="100%">
-      <stop offset="0%"  stop-color="#335" stop-opacity="0.5" />
-      <stop offset="35%" stop-color="#335" stop-opacity="0"   />
-    </radialGradient>
-
-    <symbol id="texture" width="146" height="84" x="-73" y="-42">
-      <rect width="100%" height="100%" fill="#58f" />
-      <rect width="100%" height="100%" fill="url(#layer1)" />
-      <rect width="100%" height="100%" fill="url(#layer2)" clip-path="url(#skin)" />
-      <rect width="100%" height="100%" fill="url(#layer3)" />
-      <rect width="100%" height="100%" fill="url(#layer4)" />
-    </symbol>
-  </defs>
-
-  <use href="#texture" clip-path="url(#silhouette)" />
+<svg width="144" height="64" viewBox="0 0 144 64" xmlns="http://www.w3.org/2000/svg">
+<path fill="#45f" d="
+  M 0 10
+    c 0 -4.75 0 -7 +1.5 -8.5 s +3.75 -1.5 +8.5 -1.5
+    h +10
+    c +4.75 0 +7 0 +8.5 +1.5 s +1.5 +3.75 +1.5 +8.5
+    v +44
+    c 0 +4.75 0 +7 -1.5 +8.5 s -2.75 +1.5 -8.5 +1.5
+    h -10
+    c -4.75 0 -7 0 -8.5 -1.5 s -1.5 -3.75 -1.5 -8.5
+  z
+  M 40 10
+    c 0 -4.75 0 -7 +1.5 -8.5 s +3.75 -1.5 +8.5 -1.5
+    h +10
+    c +4.75 0 +7 0 +8.5 +1.5 s +1.5 +3.75 +1.5 +8.5
+    v +14
+    c 0 +2 0 +3 -0.5 +3.5 s -1.5 +0.5 -3.5 +0.5
+    h -22
+    c -2 0 -3 0 -3.5 -0.5 s -0.5 -1.5 -0.5 -3.5
+  z
+  M 40 40
+    c 0 -2 0 -3 +0.5 -3.5 s +1.5 -0.5 +3.5 -0.5
+    h +22
+    c +2 0 +3 0 +3.5 +0.5 s +0.5 +1.5 +0.5 +3.5
+    v +14
+    c 0 +4.75 0 +7 -1.5 +8.5 s -3.75 +1.5 -8.5 +1.5
+    h -10
+    c -4.75 0 -7 0 -8.5 -1.5 s -1.5 -3.75 -1.5 -8.5
+  z
+  M 80 10
+    c 0 -4.75 0 -7 +1.5 -8.5 s +3.75 -1.5 +8.5 -1.5
+    h +44
+    c +4.75 0 +7 0 +8.5 +1.5 s +1.5 +3.75 +1.5 +8.5
+    v +44
+    c 0 +4.75 0 +7 -1.5 +8.5 s -3.75 +1.5 -8.5 +1.5
+    h -44
+    c -4.75 0 -7 0 -8.5 -1.5 s -1.5 -3.75 -1.5 -8.5
+  z
+" />
 </svg>
