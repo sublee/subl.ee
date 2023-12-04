@@ -26,7 +26,6 @@ from flask import (Flask, Response, make_response, render_template,
                    render_template_string, request, send_file, url_for)
 from flask_frozen import Freezer
 from markdown import Markdown
-from markupsafe import Markup
 from PIL import Image
 from werkzeug.exceptions import HTTPException, NotFound
 
