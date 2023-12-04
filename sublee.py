@@ -54,19 +54,6 @@ app = Flask(__name__, static_folder=None)
 app.jinja_env.globals['dummy'] = str(uuid.uuid4())
 
 
-def include_xml_elem(filename: str, xpath: str) -> Markup:
-    """A function for templates to include an XML element from the given
-    file.
-    """
-    tree = ElementTree.parse(filename)
-    elem = tree.find(xpath)
-    assert elem is not None
-    return Markup(ElementTree.tostring(elem, 'unicode'))
-
-
-app.jinja_env.globals['include_xml_elem'] = include_xml_elem
-
-
 def copyright_year(year_since: Optional[int] = None,
                    dash: str = '\u2013',
                    ) -> str:
@@ -122,10 +109,14 @@ def render_icon(size: Union[int, Tuple[int, int]], radius: int = 0) -> str:
     else:
         width, height = size
 
+    emblem = ElementTree.parse(ROOT/'artwork'/'emblem.svg')
+    emblem_path_commands = emblem.find('/{*}path').get('d')
+
     context = {
         'width': width,
         'height': height,
         'radius': radius,
+        'emblem_path_commands': emblem_path_commands,
     }
     return render_template_string(svg_t, **context)
 
