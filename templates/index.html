@@ -3,27 +3,23 @@
 {% block class %}index{% endblock %}
 
 {% block header %}
-{% set width  = 190 %}
-{% set height = 120 %}
 <header>
   <div class="emblem">
     <picture>
       <source type="image/png" srcset="
-        {{ url_for('emblem_raster', height=height)   }} 1x,
-        {{ url_for('emblem_raster', height=height*2) }} 2x,
-        {{ url_for('emblem_raster', height=height*4) }} 4x,
-        {{ url_for('emblem_raster', height=height*8) }} 8x,
+        {{ url_for('emblem_raster', height=64)  }} 1x,
+        {{ url_for('emblem_raster', height=128) }} 2x,
+        {{ url_for('emblem_raster', height=256) }} 4x,
+        {{ url_for('emblem_raster', height=512) }} 8x,
       ">
       <img
-        src="{{ url_for('emblem_raster', height=height) }}"
-        width="{{ width }}" height="{{ height }}"
-        alt="Heungsub Lee's emblem">
+        src="{{ url_for('emblem_raster', height=64) }}"
+        width="144" height="64" alt="Heungsub Lee's emblem">
     </picture>
 
     <object
       data="{{ url_for('emblem') }}"
-      width="{{ width }}" height="{{ height }}"
-      type="image/svg+xml" role="none"
+      width="144" height="64" type="image/svg+xml" role="none"
       onload="document.querySelector('.emblem picture').style.display='none'">
     </object>
   </div>
