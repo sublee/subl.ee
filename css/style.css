@@ -3,9 +3,9 @@
 :root {
   --bg-color: #fff;
   --text-color: #335;
-  --blur-color: #779;
-  --link-color: #58f;
-  --vlink-color: #97b;
+  --blur-color: #335a;
+  --link-color: #45f;
+  --vlink-color: #87b;
 
   --gradient0-color: var(--link-color);
   --gradient1-color: var(--blur-color);
@@ -14,9 +14,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-color: #1e1d27;
-    --text-color: #999ca9;
-    --blur-color: #666777;
+    --bg-color: #05040c;
+    --text-color: #778099;
+    --blur-color: #778099aa;
   }
 }
 
@@ -75,6 +75,7 @@ a:hover { text-decoration: underline; }
 
 .emblem {
   display: inline-block;
+  margin: 32px;
 }
 
 .emblem picture {
@@ -87,8 +88,8 @@ a:hover { text-decoration: underline; }
 }
 
 header {
+  margin-top: 1rem;
   margin-bottom: 2rem;
-  padding: 1rem;
   line-height: 1;
   font-size: 0;
 }
@@ -111,22 +112,14 @@ footer a:link, footer a:visited {
 }
 
 footer a:hover {
-  color: var(--text-color);
-}
-
-@supports (-webkit-background-clip: text) {
-  footer a:hover {
-    background: linear-gradient(to right, var(--gradient0-color), var(--gradient1-color), var(--gradient2-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+  color: var(--link-color);
 }
 
 footer::before {
   content: '';
   display: block;
   height: 2px;
-  background: linear-gradient(to right, var(--gradient0-color), var(--gradient1-color), var(--gradient2-color));
+  background: var(--link-color);
   border-radius: 1px;
   margin-bottom: 0.5rem;
 }
@@ -151,7 +144,6 @@ html.loaded header, html.loaded header .emblem { transition: transform 0.2s; }
 /* Specialization */
 
 .index h1 { display: none; }
-.index h2 { margin-bottom: 0; }
 
 .error body { max-width: 30rem; }
 
