@@ -4,9 +4,31 @@
   viewBox="{{ -width/2 }} {{ -height/2 }} {{ width }} {{ height }}"
   xmlns="http://www.w3.org/2000/svg">
 
-<rect
-  width="100%" height="100%" x="-50%" y="-50%"
-  fill="#45f" rx="{{ radius }}" />
+{% if radius == 0 %}
+  <rect fill="#45f" width="100%" height="100%" x="-50%" y="-50%" />
+{% else %}
+  {# Squircle #}
+  {% set w, h, r = width, height, radius %}
+  {% set c = (2*(r**2))**0.5 - r %}
+  {% set a = (c**2 / 2)**0.5 %}
+  {{ s }}
+  <path fill="#45f" d="
+  M {{ -w/2 }} {{ -h/2 + 2*r }}
+  c 0 {{ -r }} 0 {{ 2*a - 2*r }} {{ a }} {{ a - 2*r }}
+  s {{ r-a }} {{ -a }} {{ 2*r - a }} {{ -a }}
+  h {{ w - 4*r }}
+  c {{ r }} 0 {{ 2*r - 2*a }} 0 {{ 2*r - a }} {{ a }}
+  s {{ a }} {{ r-a }} {{ a }} {{ 2*r - a }}
+  v {{ h - 4*r }}
+  c 0 {{ r }} 0 {{ 2*r - 2*a }} {{ -a }} {{ 2*r - a }}
+  s {{ a-r }} {{ a }} {{ a - 2*r }} {{ a }}
+  h {{ 4*r - w }}
+  c {{ -r }} 0 {{ 2*a - 2*r }} 0 {{ a - 2*r }} {{ -a }}
+  s {{ -a }} {{ a-r }} {{ -a }} {{ a - 2*r }}
+  v {{ 4*r - h }}
+  z
+  " />
+{% endif %}
 
 <radialGradient id="white" r="55%">
   <stop offset="50%"  stop-color="#fff" stop-opacity="0.8" />

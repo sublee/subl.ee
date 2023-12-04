@@ -282,7 +282,8 @@ def emblem_raster(height: Optional[int]) -> Response:
 
 @app.route('/icon.svg')
 def icon() -> Response:
-    svg = render_icon(226)
+    r = float(request.args.get('r', 0))
+    svg = render_icon(226, r)
     return Response(svg, mimetype='image/svg+xml')
 
 
