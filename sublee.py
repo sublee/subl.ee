@@ -281,8 +281,7 @@ def emblem_raster(height: Optional[int]) -> Response:
 
 @app.route('/icon.svg')
 def icon() -> Response:
-    r = float(request.args.get('r', 0))
-    svg = render_icon(226, r)
+    svg = render_icon(192)
     return Response(svg, mimetype='image/svg+xml')
 
 
@@ -309,7 +308,7 @@ def social_raster() -> Response:
 
 @app.route('/favicon.svg')
 def favicon() -> Response:
-    svg = render_icon(226, 41)
+    svg = render_icon(192, 32)
     return Response(svg, mimetype='image/svg+xml')
 
 
