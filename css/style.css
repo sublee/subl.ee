@@ -5,18 +5,16 @@
   --text-color: #335;
   --blur-color: #335a;
   --link-color: #45f;
-  --vlink-color: #87b;
-
-  --gradient0-color: var(--link-color);
-  --gradient1-color: var(--blur-color);
-  --gradient2-color: #e57;
+  --vlink-color: #97d;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-color: #05040c;
-    --text-color: #778099;
-    --blur-color: #778099aa;
+    --bg-color: #1d1b27;
+    --text-color: #999ca9;
+    --blur-color: #999ca9aa;
+    --link-color: #67f;
+    --vlink-color: #86b;
   }
 }
 
