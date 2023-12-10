@@ -3,22 +3,8 @@ description: The homepage of Heungsub Lee
 keywords: Heungsub Lee, Heungsub, sublee, 이흥섭, 흥섭
 layout: epic
 
-Heungsub Lee
-============
-
-I am
-----
-
-Heungsub Lee, a [software engineer][] at [Global AI Platform][gapco].
-<br />
-More details are in my [résumé](/resume/).
-{: .hard-returns }
-
-[software engineer]: https://github.com/sublee
-[gapco]: https://www.linkedin.com/company/global-ai-platform/
-
-I've been involved in
----------------------
+Been involved in
+----------------
 
 - [Gistty][]: A Chrome extension summarizing Amazon reviews
 - [NSML][]: An ML research platform for large-scale models
@@ -41,8 +27,8 @@ I've been involved in
 [deviantart]:     https://www.deviantart.com/sublee
 [nexon]:          https://company.nexon.com/en/
 
-I told about
-------------
+Told about
+----------
 
 - [The story behind torchgpipe<sup>ko</sup>][torchgpipe-blog] on Kakao Brain Blog
 - [Remake of Hangulize<sup>ko</sup>][gokr1808] at Golang Korea Meetup 2018 and NAVER D2

@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Hind:wght@400;600&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Hind:wght@400;700&display=swap);
 
 :root {
   --bg-color: #fff;
@@ -27,30 +27,7 @@
   clear: left;
 }
 
-/* Layout */
-
-html {
-  padding: 2rem;
-  text-align: center;
-}
-
-@media print {
-  html {
-    padding: 0;
-  }
-}
-
-body {
-  display: inline-block;
-  text-align: left;
-  max-width: 45rem;
-}
-
-header, footer {
-  text-align: center;
-}
-
-/* Design */
+/* Typography */
 
 html {
   font-size: 18px;
@@ -71,82 +48,6 @@ a:link { color: var(--link-color); }
 a:visited { color: var(--vlink-color); }
 a:hover { text-decoration: underline; }
 
-.emblem {
-  display: inline-block;
-  margin: 32px;
-}
-
-.emblem picture {
-  position: absolute;
-  z-index: -1;
-}
-
-.emblem object {
-  pointer-events: none;
-}
-
-header {
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  line-height: 1;
-  font-size: 0;
-}
-
-main {
-  margin-bottom: 2rem;
-}
-
-footer {
-  font-size: 0.8em;
-  color: var(--blur-color);
-}
-
-footer p {
-  margin: 0;
-}
-
-footer a:link, footer a:visited {
-  color: var(--blur-color);
-}
-
-footer a:hover {
-  color: var(--link-color);
-}
-
-footer::before {
-  content: '';
-  display: block;
-  height: 2px;
-  background: var(--link-color);
-  border-radius: 1px;
-  margin-bottom: 0.5rem;
-}
-
-/* Responsive */
-
-@media screen and (max-width: 49rem) {
-  /* 49rem = [max-width of body 45rem] + 2 * [margin of html 2rem] */
-  html { padding-left: 1rem; padding-right: 1rem; }
-}
-
-@media screen and (max-width: 32rem) {
-  html { padding: 1rem 0.75rem 2rem; font-size: 16px; }
-  header { margin-bottom: 0; }
-  header .emblem { transform: scale(0.8); }
-  .nonessential { display: none; }
-}
-
-html.loaded { transition: padding 0.2s, font-size 0.2s; }
-html.loaded header, html.loaded header .emblem { transition: transform 0.2s; }
-
-/* Specialization */
-
-.index h1 { display: none; }
-
-.error body { max-width: 30rem; }
-
-/* Typography */
-
 p, ul, ol, dl {
   hyphens: auto;
 }
@@ -166,7 +67,7 @@ h2 {
 }
 
 h1, h2 {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 h1:target, h2:target, h3:target, h4:target, h5:target, h6:target {
@@ -238,3 +139,120 @@ dt.label {
   color: var(--blur-color);
   margin-top: -1rem;
 }
+
+/* Layout */
+
+html {
+  padding: 2rem;
+  text-align: center;
+}
+
+@media print {
+  html {
+    padding: 0;
+  }
+}
+
+body {
+  display: inline-block;
+  text-align: left;
+  max-width: 45rem;
+}
+
+/* Design */
+
+.emblem {
+  display: inline-block;
+  font-size: 0;
+}
+
+.emblem picture {
+  position: absolute;
+  z-index: -1;
+}
+
+.emblem object {
+  pointer-events: none;
+}
+
+header {
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+header .profile {
+  flex: auto;
+  text-align: left;
+  line-height: 1.5rem;
+}
+
+header .profile h1 {
+  font-size: 1.35em;
+  margin-bottom: 0;
+}
+
+header .profile p {
+  margin-bottom: 0;
+}
+
+header::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: var(--link-color);
+  border-radius: 1px;
+  margin-bottom: 0.5rem;
+}
+
+main {
+  margin-bottom: 2rem;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8em;
+  color: var(--blur-color);
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a:link, footer a:visited {
+  color: var(--blur-color);
+}
+
+footer a:hover {
+  color: var(--link-color);
+}
+
+footer::before {
+  content: '';
+  display: block;
+  height: 2px;
+  background: var(--link-color);
+  border-radius: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.index h2 { margin-top: 1.5rem; }
+
+.error body { max-width: 30rem; }
+
+/* Responsive */
+
+@media screen and (max-width: 49rem) {
+  /* 49rem = [max-width of body 45rem] + 2 * [margin of html 2rem] */
+  html { padding-left: 1rem; padding-right: 1rem; }
+}
+
+@media screen and (max-width: 32rem) {
+  html { padding: 1rem 0.75rem 2rem; font-size: 16px; }
+  header { margin-bottom: 0; }
+  header .emblem { transform: scale(0.8); }
+  .nonessential { display: none; }
+}
+
+html.loaded { transition: padding 0.2s, font-size 0.2s; }
+html.loaded header, html.loaded header .emblem { transition: transform 0.2s; }
