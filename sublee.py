@@ -154,7 +154,11 @@ def render_resume() -> Tuple[str, Dict[str, str], datetime]:
 def index() -> str:
     with (ROOT/'index.md').open(encoding='utf-8') as f:
         html, meta = markdown(f.read())
-    ctx = make_context(html=html, **meta)
+
+    with (ROOT/'profile.md').open(encoding='utf-8') as f:
+        profile_html, _ = markdown(f.read())
+
+    ctx = make_context(html=html, profile_html=profile_html, **meta)
     return render_template('index.html', **ctx)
 
 

@@ -25,15 +25,7 @@
   </div>
 
   <div class="profile">
-    <h1>Heungsub Lee</h1>
-	<p>Software Engineer at <a href="#">Global AI Platform</a></p>
-    <p>
-      <a href="{{ url_for('resume') }}">Résumé</a>
-      &centerdot;
-      <a href="https://github.com/sublee">GitHub</a>
-      &centerdot;
-      <a href="https://linkedin.com/in/sublee">LinkedIn</a>
-    </p>
+    {{ profile_html|safe }}
   </div>
 </header>
 {% endblock %}
