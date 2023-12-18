@@ -30,14 +30,9 @@
   " />
 {% endif %}
 
-<radialGradient id="white" r="55%">
-  <stop offset="50%"  stop-color="#fff" stop-opacity="0.8" />
-  <stop offset="100%" stop-color="#fff" stop-opacity="0.9" />
-</radialGradient>
-
 <path
   d="{{ emblem_path_commands }}"
-  fill="url(#white)"
+  fill="#fff" fill-opacity="0.9"
   transform="translate(-72 -32)" />
 
 </svg>
