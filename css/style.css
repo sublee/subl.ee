@@ -209,6 +209,7 @@ header .emblem * {
   height: auto;
   max-width: 144px;
   min-width: 96px;
+  aspect-ratio: 9 / 4;
 }
 
 main {
