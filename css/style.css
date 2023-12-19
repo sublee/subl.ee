@@ -277,7 +277,6 @@ footer::before {
   header .emblem { width: 128px; padding: 1rem 0; }
 }
 
-html.loaded { transition: padding 250ms, font-size 250ms; }
 html { transition: font-size 250ms; }
 body { transition: margin 250ms; }
 .index h2 { transition: margin-top 75ms; }
