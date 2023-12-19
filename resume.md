@@ -48,7 +48,7 @@ Software Engineer {: .label }
 :   Developing and maintaining LLM-based services such as [Gistty][], a Chrome
     extension summarizing Amazon reviews.
 
-[gapco]: https://www.linkedin.com/company/global-ai-platform/
+[gapco]: https://www.globalaiplatform.com/
 [gistty]: https://gistty.ai/
 
 Software Engineering Manager {: .label }
