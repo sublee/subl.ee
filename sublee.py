@@ -111,7 +111,7 @@ def render_icon(size: Union[int, Tuple[int, int]], radius: int = 0) -> str:
         width, height = size
 
     emblem = ElementTree.parse(ROOT/'artwork'/'emblem.svg')
-    emblem_path_commands = emblem.find('/{*}path').get('d')
+    emblem_path_commands = emblem.find('./{*}path').get('d')
 
     context = {
         'width': width,
