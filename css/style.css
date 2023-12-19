@@ -191,7 +191,11 @@ header .emblem {
 
 header .emblem picture {
   position: absolute;
-  z-index: -1;
+  z-index: 1;
+}
+
+header .emblem.object-ready picture {
+  opacity: 0;
 }
 
 header .emblem object {
@@ -280,3 +284,4 @@ html { transition: font-size 250ms; }
 body { transition: margin 250ms; }
 .index h2 { transition: margin-top 75ms; }
 header .emblem { transition: width 250ms; }
+header .emblem picture { transition: opacity 50ms; }

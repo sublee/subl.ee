@@ -20,7 +20,7 @@
     <object
       data="{{ url_for('emblem') }}"
       width="144" height="64" type="image/svg+xml" role="none"
-      onload="document.querySelector('.emblem picture').style.display='none'">
+      onload="this.parentElement.className += ' object-ready'">
     </object>
   </div>
 
