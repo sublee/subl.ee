@@ -143,19 +143,13 @@ dt.label {
 /* Layout */
 
 html {
-  text-align: center;
-  padding: 2rem 1rem;
-}
-
-@media print {
-  html {
-    padding: 0;
-  }
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
 }
 
 body {
-  display: inline-block;
-  text-align: left;
+  margin: 2rem 1rem;
   max-width: 45rem;
 }
 
@@ -207,7 +201,6 @@ header .emblem object {
 header .emblem * {
   width: 100%;
   height: auto;
-  max-width: 144px;
   min-width: 96px;
   aspect-ratio: 9 / 4;
 }
@@ -249,30 +242,43 @@ footer::before {
 
 /* Responsive */
 
+@media screen and (min-width: 1600px) {
+  .index, .error {
+    font-size: 22px;
+    align-items: center;
+    min-height: 95%;
+  }
+  header .emblem { width: 176px; }
+}
+
 @media screen and (max-width: 600px) {
-  html { padding: 1rem 0.75rem 1.5rem; font-size: 17px; }
+  html { font-size: 17px; }
+  body { margin: 1rem 0.75rem 1.5rem; }
   header .emblem { width: 128px; }
   .index h2 { margin-top: 1rem; }
 }
 
 @media screen and (max-width: 400px) {
+  html { justify-content: flex-start; }
   header { display: block; }
   header .emblem {
-    width: 144px;
+    width: 176px;
     margin: -1rem auto 1rem;
     padding: 2rem 0;
   }
-  header .emblem * { max-width: 100%; }
 
   /* Hide nonessential text in narrow views. */
   .nonessential { display: none; }
 }
 
 @media screen and (max-width: 300px) {
-  html { padding: 1rem 0.5rem 1.5rem; font-size: 15px; }
-  header .emblem { width: 112px; padding: 1rem 0; }
+  html { font-size: 15px; }
+  body { margin: 1rem 0.5rem 1.5rem; }
+  header .emblem { width: 128px; padding: 1rem 0; }
 }
 
 html.loaded { transition: padding 250ms, font-size 250ms; }
+html { transition: font-size 250ms; }
+body { transition: margin 250ms; }
 .index h2 { transition: margin-top 75ms; }
 header .emblem { transition: width 250ms; }
