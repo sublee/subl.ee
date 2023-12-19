@@ -263,6 +263,9 @@ footer::before {
     padding: 2rem 0;
   }
   header .emblem * { max-width: 100%; }
+
+  /* Hide nonessential text in narrow views. */
+  .nonessential { display: none; }
 }
 
 @media screen and (max-width: 300px) {
