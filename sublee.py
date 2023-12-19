@@ -95,7 +95,9 @@ def send_raster(svg_path: Path, height: Optional[int]) -> Response:
     """Sends a reheightd raster image in PNG from a SVG file."""
     with svg_path.open('r') as f:
         png = cairosvg.svg2png(file_obj=f, output_height=height)
-    return Response(png, mimetype='image/png')
+    res = Response(png, mimetype='image/png')
+    res.headers['cache-control'] = 'max-age=60'
+    return res
 
 
 def render_icon(size: Union[int, Tuple[int, int]], radius: int = 0) -> str:
