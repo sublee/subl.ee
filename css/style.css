@@ -253,7 +253,7 @@ footer::before {
 
 @media screen and (max-width: 600px) {
   html { font-size: 17px; }
-  body { margin: 1rem 0.75rem 1.5rem; }
+  body { margin: 1rem 0.5rem 1.5rem; }
   header .emblem { width: 128px; }
   .index h2 { margin-top: 1rem; }
 }
@@ -273,7 +273,6 @@ footer::before {
 
 @media screen and (max-width: 300px) {
   html { font-size: 15px; }
-  body { margin: 1rem 0.5rem 1.5rem; }
   header .emblem { width: 128px; padding: 1rem 0; }
 }
 
