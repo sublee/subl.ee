@@ -215,7 +215,7 @@ main {
 
 footer {
   text-align: center;
-  font-size: 0.8em;
+  font-size: min(0.8em, 14px);
   color: var(--blur-color);
 }
 
