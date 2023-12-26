@@ -6,14 +6,12 @@ layout: epic
 Been involved in
 ----------------
 
+- [torchgpipe][]: A GPipe library, also the origin of [Pipe APIs in PyTorch][pytorch-pipe]
+- [Hangulize][]: A Hangul transcription tool
 - [Gistty][]: A Chrome extension summarizing Amazon reviews
 - [NSML][]: An ML research platform for large-scale models
 - [HyperCLOVA][]: An LLM specializing in Korean culture
-- [torchgpipe][]: A GPipe library, also the origin of [Pipe APIs in PyTorch][pytorch-pipe]
-- [Hangulize][]: A Hangul transcription tool
-- [TrueSkill][]: A TrueSkill&trade; implementation in Python
-- [Subway Fighter][], [SUBLEERUNKER][]: Games with [my pixel art][DeviantArt]
-- KartRider Dash, KartRider Coin Rush, and Durango
+- [Subway Fighter][], [SUBLEERUNKER][], KartRider Dash, and Durango
 
 [gistty]:         https://gistty.ai/
 [nsml]:           https://arxiv.org/abs/1712.05902
