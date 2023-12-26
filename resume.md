@@ -115,14 +115,10 @@ Open Source Experience
 
 [Hangulize][], Oct 2010 -- Present
 :   Invented a Hangul transcription algorithm and served as a web tool at zero
-    cost.
-
-    Many professional Korean translators use this tool to translate
-    undocumented proper nouns. Netflix refers to this tool in [the Korean
-    timed-text style guide][netflix-style].
+    cost. Many professional Korean translators use this tool to translate
+    undocumented proper nouns.
 
 [hangulize]: https://hangulize.org/
-[netflix-style]: https://partnerhelp.netflixstudios.com/hc/en-us/articles/216001127-Korean-Timed-Text-Style-Guide
 
 [TrueSkill][trueskill], Jan 2012 -- Dec 2015
 :   Implemented [TrueSkill™][trueskill-tm], the rating algorithm for Xbox Live,
@@ -132,14 +128,6 @@ Open Source Experience
 [trueskill]: https://trueskill.org/
 [trueskill-tm]: https://www.microsoft.com/en-us/research/project/trueskill-ranking-system/
 [pydata2019]: https://docs.google.com/presentation/d/1S5v9D31vpsr22efMSSCO6hmN2SQNCIqKG7JyGzUSzeI/edit?usp=sharing
-
-[Profiling][], Aug 2014 -- Nov 2017
-:   Developed a Python profiler with an interactive TUI inspired by [the Unity
-    profiler][unity-profiler]. It was the 3rd daily trending repository in
-    GitHub on Sep 22, 2014.
-
-[profiling]: https://github.com/what-studio/profiling
-[unity-profiler]: https://docs.unity3d.com/Manual/ProfilerWindow.html
 
 Contributions
 :   - For [PyTorch][],
