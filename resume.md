@@ -16,26 +16,19 @@ Web Sites {: .label }
 
 ---
 
-Interests
----------
-
-- Software for software engineers or researchers
-- Parallelism and distributed systems
-- Cost optimization and management, especially for GPU-intensive systems
-
 Skills
 ------
 
 Programming Languages {: .label }
-: Go, Python, TypeScript, JavaScript, Bash
+: Go, Python, TypeScript, Bash
   {: .attr }
 
-Back-end Development {: .label }
-: Linux, K8s, AWS, Terraform, ZeroMQ, NoSQL
+Service Development {: .label }
+: Linux, AWS, K8s, React, ZeroMQ, NoSQL, Concurrent programming, Testing, CI/CD
   {: .attr }
 
 ML Engineering {: .label }
-: PyTorch, pipeline parallelism, NVIDIA Nsight Systems
+: PyTorch, NVIDIA Nsight Systems, NCCL
   {: .attr }
 
 ---
@@ -45,7 +38,8 @@ Work Experience
 
 Software Engineer {: .label }
 [Global AI Platform][gapco], Sep 2023 -- Present
-:   Developing and maintaining LLM-based services such as [Gistty][], a Chrome
+:   Focusing on making everyone utilize AI for their daily productivity.
+    Developed and maintained the client and server of [Gistty][], a Chrome
     extension summarizing Amazon reviews.
 
 [gapco]: https://www.globalaiplatform.com/
@@ -68,11 +62,11 @@ Software Engineering Manager {: .label }
 
 Software Engineer {: .label }
 [Kakao Brain][kakaobrain], Dec 2018 -- Aug 2020
-:   Developed a serverless training framework and a distributed hyperparameter
-    search platform for an AutoML service.
-
-    Developed and published a pipeline parallelism library named
+:   Developed and published a pipeline parallelism library named
     [torchgpipe][] in open source.
+
+    Developed a serverless training framework and a distributed hyperparameter
+    search platform for an AutoML service.
 
 [kakaobrain]: https://kakaobrain.com/
 [torchgpipe]: https://torchgpipe.readthedocs.io/
@@ -210,12 +204,13 @@ only.
 [kw]: https://www.kw.ac.kr/
 
 <!-- abbrs -->
-*[K8s]:    Kubernetes
 *[AWS]:    Amazon Web Services
+*[K8s]:    Kubernetes
+*[NCCL]:   NVIDIA Collective Communications Library
+*[CI/CD]:  Continuous integration and continuous delivery
 *[AI]:     Artificial intelligence
 *[ML]:     Machine learning
 *[HPC]:    High-performance computing
 *[MMORPG]: Massively multiplayer online role-playing game
 *[NDC]:    NEXON Developers Conference
-*[TUI]:    Text-based user interface
 *[Ajax]:   Asynchronous JavaScript and XML
