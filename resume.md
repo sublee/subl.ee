@@ -96,11 +96,6 @@ Back-end Web Developer {: .label }
 :   Developed web services selling stock images.
 [iclickart]: https://iclickart.co.kr/
 
-Front-end Web Developer {: .label }
-[Lunant][], Dec 2007 -- Jan 2011
-:   Designed and developed UI/UX for social media.
-[lunant]: https://github.com/lunant
-
 Open Source Experience
 ----------------------
 
