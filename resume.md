@@ -16,6 +16,12 @@ Web Sites {: .label }
 
 ---
 
+Interest
+--------
+
+Software architectures, distributed systems, cost optimization, developer
+experience, and the open source culture.
+
 Skills
 ------
 
