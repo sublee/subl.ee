@@ -57,14 +57,14 @@ Software Engineering Manager {: .label }
     inference performance and productivity of [HyperCLOVA][], an LLM
     specializing in Korean culture.
 
-    Developed the second version of [NSML][], a large-scale ML research
-    platform in [CLOVA][]. Designed its multitenant architecture based on
-    economics to share GPU clusters for HPC among diverse organizations with
-    complex desires while utilizing GPU resources efficiently.
+    Developed [NSMLv2][], a large-scale ML research platform in [CLOVA][].
+    Designed its multitenant architecture based on economics to share GPU
+    clusters for HPC among diverse organizations with complex desires while
+    utilizing GPU resources efficiently.
 
-[naver]: https://navercorp.com/en
+[naver]: https://navercorp.com/
 [hyperclova]: https://clova.ai/hyperclova
-[nsml]: https://arxiv.org/abs/1712.05902
+[nsmlv2]: https://deview.kr/2023/sessions/550
 [clova]: https://clova.ai/
 
 Software Engineer {: .label }
