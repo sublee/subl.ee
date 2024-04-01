@@ -30,7 +30,8 @@ Programming Languages {: .label }
   {: .attr }
 
 Service Development {: .label }
-: Linux, AWS, K8s, React, ZeroMQ, NoSQL, Concurrent programming, Testing, CI/CD
+: Linux, AWS, K8s, Pulumi, React, ZeroMQ, NoSQL, Concurrent programming,
+  Testing
   {: .attr }
 
 ML Engineering {: .label }
