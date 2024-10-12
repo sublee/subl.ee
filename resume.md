@@ -45,12 +45,9 @@ Work Experience
 
 Software Engineer {: .label }
 [Global AI Platform][gapco], Sep 2023 -- Present
-:   Focusing on making everyone utilize AI for their daily productivity.
-    Developed and maintained the client and server of [Gistty][], a Chrome
-    extension summarizing Amazon reviews.
+:   Developing a personal AI assistant service.
 
 [gapco]: https://www.globalaiplatform.com/
-[gistty]: https://gistty.ai/
 
 Software Engineering Manager {: .label }
 [NAVER][], Aug 2020 -- Jul 2023
