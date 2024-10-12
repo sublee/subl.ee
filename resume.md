@@ -30,7 +30,7 @@ Programming Languages {: .label }
   {: .attr }
 
 Service Development {: .label }
-: Linux, AWS, K8s, Pulumi, React, ZeroMQ, NoSQL, Concurrent programming,
+: Linux, AWS, K8s, Pulumi, React, gRPC, ZeroMQ, NoSQL, Concurrent programming,
   Testing
   {: .attr }
 
