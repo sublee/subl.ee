@@ -74,7 +74,7 @@ Software Engineer {: .label }
     Developed a serverless training framework and a distributed hyperparameter
     search platform for an AutoML service.
 
-[kakaobrain]: https://kakaobrain.com/
+[kakaobrain]: https://github.com/kakaobrain
 [torchgpipe]: https://torchgpipe.readthedocs.io/
 [gpipe]: https://arxiv.org/abs/1811.06965
 
