@@ -45,9 +45,10 @@ Work Experience
 
 Software Engineer {: .label }
 [Global AI Platform][gapco], Sep 2023 -- Present
-:   Developing a personal AI assistant service.
+:   Developing [Aster][], a planning-oriented AI agent service.
 
-[gapco]: https://www.globalaiplatform.com/
+[gapco]: https://globalaiplatform.com/
+[aster]: https://asterapp.ai/
 
 Software Engineering Manager {: .label }
 [NAVER][], Aug 2020 -- Jul 2023
