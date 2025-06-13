@@ -5,23 +5,10 @@
 {% block header %}
 <header>
   <div class="emblem">
-    <picture>
-      <source type="image/png" srcset="
-        {{ url_for('emblem_raster', height=64)  }} 1x,
-        {{ url_for('emblem_raster', height=128) }} 2x,
-        {{ url_for('emblem_raster', height=256) }} 4x,
-        {{ url_for('emblem_raster', height=512) }} 8x,
-      ">
-      <img
-        src="{{ url_for('emblem_raster', height=64) }}"
-        width="144" height="64" alt="Heungsub Lee's emblem">
-    </picture>
-
-    <object
-      data="{{ url_for('emblem') }}"
-      width="144" height="64" type="image/svg+xml" role="none"
-      onload="this.parentElement.className += ' object-ready'">
-    </object>
+    <img
+      src="{{ url_for('emblem_raster', height=144) }}"
+      srcset="{{ url_for('emblem') }}"
+      width="176" height="144" alt="Heungsub Lee's emblem">
   </div>
 
   <div class="profile">

@@ -100,7 +100,7 @@ def send_raster(svg_path: Path, height: Optional[int]) -> Response:
     return res
 
 
-def render_icon(size: Union[int, Tuple[int, int]], radius: int = 0) -> str:
+def render_icon(size: Union[int, Tuple[int, int]], radius: int = 0, container: bool = True) -> str:
     """Renders :file:`artwork/icon.svg_t` with the given size and radius."""
     with (ROOT/'artwork'/'icon.svg_t').open('r') as f:
         svg_t = f.read()
@@ -111,6 +111,15 @@ def render_icon(size: Union[int, Tuple[int, int]], radius: int = 0) -> str:
         width, height = size
 
     emblem = ElementTree.parse(ROOT/'artwork'/'emblem.svg')
+
+    view_box = emblem.getroot().attrib['viewBox']
+    _, _, emblem_width, emblem_height = list(map(int, view_box.split()))
+
+    if container:
+        emblem_scale = min(width*0.8/emblem_width, height*0.5/emblem_height)
+    else:
+        emblem_scale = min(width/emblem_width, height/emblem_height)
+
     emblem_path = emblem.find('./{*}path')
     assert emblem_path is not None
 
@@ -120,7 +129,9 @@ def render_icon(size: Union[int, Tuple[int, int]], radius: int = 0) -> str:
     context = {
         'width': width,
         'height': height,
+        'container': container,
         'radius': radius,
+        'emblem_scale': emblem_scale,
         'emblem_path_commands': emblem_path_commands,
     }
     return render_template_string(svg_t, **context)
@@ -318,7 +329,7 @@ def social_raster() -> Response:
 
 @app.route('/favicon.svg')
 def favicon() -> Response:
-    svg = render_icon(192, 32)
+    svg = render_icon(192, container=False)
     return Response(svg, mimetype='image/svg+xml')
 
 

@@ -158,8 +158,8 @@ body {
 header {
   padding-top: 1rem;
   display: flex;
-  flex-flow: row-reverse;
-  align-items: flex-start;
+  flex-flow: row;
+  align-items: center;
 }
 
 header .profile {
@@ -183,10 +183,9 @@ header .profile a {
 
 header .emblem {
   flex: 0 0 auto;
-  margin: 0.25rem 1rem;
-  width: 144px;
+  margin: 0.25rem 1.25rem 0.25rem 1rem;
+  height: 5rem;
   font-size: 0;
-  position: relative;
 }
 
 header .emblem picture {
@@ -203,10 +202,9 @@ header .emblem object {
 }
 
 header .emblem * {
-  width: 100%;
-  height: auto;
-  min-width: 96px;
-  aspect-ratio: 9 / 4;
+  width: auto;
+  height: 100%;
+  aspect-ratio: 11 / 9;
 }
 
 main {
@@ -246,19 +244,17 @@ footer::before {
 
 /* Responsive */
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1200px) {
   .index, .error {
     font-size: 22px;
     align-items: center;
     min-height: 95%;
   }
-  header .emblem { width: 176px; }
 }
 
 @media screen and (max-width: 600px) {
   html { font-size: 17px; }
   body { margin: 1rem 0.5rem 1.5rem; }
-  header .emblem { width: 128px; }
   .index h2 { margin-top: 1rem; }
 }
 
@@ -266,9 +262,10 @@ footer::before {
   html { justify-content: flex-start; }
   header { display: block; }
   header .emblem {
-    width: 176px;
+    width: 154px;
+    height: auto;
     margin: -1rem auto 1rem;
-    padding: 2rem 0;
+    padding: 1rem 0;
   }
 
   /* Hide nonessential text in narrow views. */
@@ -277,11 +274,11 @@ footer::before {
 
 @media screen and (max-width: 300px) {
   html { font-size: 15px; }
-  header .emblem { width: 128px; padding: 1rem 0; }
+  header .emblem { width: 110px; height: auto; padding: 1rem 0; }
 }
 
-html { transition: font-size 250ms; }
-body { transition: margin 250ms; }
+html { transition: font-size 75ms; }
+body { transition: margin 75ms; }
 .index h2 { transition: margin-top 75ms; }
-header .emblem { transition: width 250ms; }
-header .emblem picture { transition: opacity 50ms; }
+header .emblem { transition: width 75ms, height 75ms; }
+header .emblem picture { transition: opacity 75ms; }

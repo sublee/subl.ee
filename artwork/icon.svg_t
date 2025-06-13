@@ -4,36 +4,47 @@
   viewBox="{{ -width/2 }} {{ -height/2 }} {{ width }} {{ height }}"
   xmlns="http://www.w3.org/2000/svg">
 
-{% if radius == 0 %}
-  <rect fill="#45f" width="100%" height="100%" x="-50%" y="-50%" />
-{% else %}
-  {# Squircle #}
-  {% set w, h, r = width, height, radius %}
-  {% set c = (2*(r**2))**0.5 - r %}
-  {% set a = (c**2 / 2)**0.5 %}
-  {{ s }}
-  <path fill="#45f" d="
-  M {{ -w/2 }} {{ -h/2 + 2*r }}
-  c 0 {{ -r }} 0 {{ 2*a - 2*r }} {{ a }} {{ a - 2*r }}
-  s {{ r-a }} {{ -a }} {{ 2*r - a }} {{ -a }}
-  h {{ w - 4*r }}
-  c {{ r }} 0 {{ 2*r - 2*a }} 0 {{ 2*r - a }} {{ a }}
-  s {{ a }} {{ r-a }} {{ a }} {{ 2*r - a }}
-  v {{ h - 4*r }}
-  c 0 {{ r }} 0 {{ 2*r - 2*a }} {{ -a }} {{ 2*r - a }}
-  s {{ a-r }} {{ a }} {{ a - 2*r }} {{ a }}
-  h {{ 4*r - w }}
-  c {{ -r }} 0 {{ 2*a - 2*r }} 0 {{ a - 2*r }} {{ -a }}
-  s {{ -a }} {{ a-r }} {{ -a }} {{ a - 2*r }}
-  v {{ 4*r - h }}
-  z
-  " />
+{% if container %}
+  {% if radius == 0 %}
+    <rect fill="#45f" width="100%" height="100%" x="-50%" y="-50%" />
+  {% elif width == height and radius == width/2 %}
+    <circle fill="#45f" width="100%" height="100%" x="-50%" y="-50%" />
+  {% else %}
+    {# Squircle #}
+    {% set w, h, r = width, height, radius %}
+    {% set c = (2*(r**2))**0.5 - r %}
+    {% set a = (c**2 / 2)**0.5 %}
+    {{ s }}
+    <path fill="#45f" d="
+      M {{ -w/2 }} {{ -h/2 + 2*r }}
+      c 0 {{ -r }} 0 {{ 2*a - 2*r }} {{ a }} {{ a - 2*r }}
+      s {{ r-a }} {{ -a }} {{ 2*r - a }} {{ -a }}
+      h {{ w - 4*r }}
+      c {{ r }} 0 {{ 2*r - 2*a }} 0 {{ 2*r - a }} {{ a }}
+      s {{ a }} {{ r-a }} {{ a }} {{ 2*r - a }}
+      v {{ h - 4*r }}
+      c 0 {{ r }} 0 {{ 2*r - 2*a }} {{ -a }} {{ 2*r - a }}
+      s {{ a-r }} {{ a }} {{ a - 2*r }} {{ a }}
+      h {{ 4*r - w }}
+      c {{ -r }} 0 {{ 2*a - 2*r }} 0 {{ a - 2*r }} {{ -a }}
+      s {{ -a }} {{ a-r }} {{ -a }} {{ a - 2*r }}
+      v {{ 4*r - h }}
+      z
+    " />
+  {% endif %}
 {% endif %}
 
-<path
-  d="{{ emblem_path_commands }}"
-  fill="#fff" fill-opacity="0.9"
-  transform="translate(-72 -32)" />
+<g transform="scale({{ emblem_scale }})">
+  <path
+    d="{{ emblem_path_commands }}"
+    transform="translate(-11 -9)"
+    {% if container %}
+      fill="#fff" fill-opacity="0.9"
+    {% else %}
+      fill="#45f"
+    {% endif %}
+  />
+</g>
 
 </svg>
 <!--vim: set ft=svg :-->
