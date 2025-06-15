@@ -258,12 +258,12 @@ footer::before {
   .index h2 { margin-top: 1rem; }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   html { justify-content: flex-start; }
   header { display: block; }
   header .emblem {
-    width: 154px;
-    height: auto;
+    width: 132px;
+    height: 108px;
     margin: -1rem auto 1rem;
     padding: 1rem 0;
   }
@@ -272,9 +272,13 @@ footer::before {
   .nonessential { display: none; }
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 320px) {
   html { font-size: 15px; }
-  header .emblem { width: 110px; height: auto; padding: 1rem 0; }
+  header .emblem {
+    width: 88px;
+    height: 72px;
+    padding: 1rem 0;
+  }
 }
 
 html { transition: font-size 75ms; }

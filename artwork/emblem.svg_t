@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<svg xmlns="http://www.w3.org/2000/svg"
+  width="352px" height="288px" viewBox="0 0 352 288">
+  <svg width="352" height="288">
+    <g color="#45f">
+      {{ symbol_svg }}
+    </g>
+  </svg>
+</svg>
+<!--vim: set ft=svg :-->

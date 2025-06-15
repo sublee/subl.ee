@@ -1,6 +1,10 @@
 {
+  "name": "Heungsub Lee",
+  "short_name": "Heungsub",
+  "background_color": "#fff",
+  "theme_color": "#45f",
   "icons": [
-    {"src": "{{ url_for('icon_raster', height=192) }}", "sizes": "192x192", "type": "image/png"},
-    {"src": "{{ url_for('icon_raster', height=512) }}", "sizes": "512x512", "type": "image/png"}
+    {"src": "{{ url_for('artwork_raster', name='icon', height=192) }}", "sizes": "192x192", "type": "image/png"},
+    {"src": "{{ url_for('artwork_raster', name='icon', height=512) }}", "sizes": "512x512", "type": "image/png"}
   ]
 }

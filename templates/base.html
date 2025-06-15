@@ -19,7 +19,7 @@
   <meta property="og:url" content="{{ url_root ~ url_path }}">
 
   {% block og_image %}
-  <meta property="og:image" content="{{ url_root ~ url_for('social_raster') }}?dummy={{ dummy }}">
+  <meta property="og:image" content="{{ url_root ~ url_for('artwork_raster', name='social') }}?dummy={{ dummy }}">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -28,11 +28,17 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{{ title }}">
   <meta name="twitter:description" content="{{ description }}">
-  <meta name="twitter:image" content="{{ url_root ~ url_for('social_raster') }}?dummy={{ dummy }}">
+  <meta name="twitter:image" content="{{ url_root ~ url_for('artwork_raster', name='social') }}?dummy={{ dummy }}">
 
-  <link rel="icon" href="{{ url_for('favicon_raster') }}?dummy={{ dummy }}" sizes="any">
-  <link rel="icon" href="{{ url_for('favicon') }}?dummy={{ dummy }}" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="{{ url_for('icon_raster', height=180) }}?dummy={{ dummy }}">
+  {# Favicon #}
+  <link rel="icon" href="{{ url_for('favicon') }}?dummy={{ dummy }}" sizes="any">
+  <link rel="icon" href="{{ url_for('artwork', name='favicon') }}?dummy={{ dummy }}" type="image/svg+xml">
+
+  {# iOS #}
+  <link rel="apple-touch-icon" href="{{ url_for('artwork_raster', name='icon', height=1024) }}?dummy={{ dummy }}">
+  <meta name="apple-mobile-web-app-title" content="Heungsub">
+
+  {# Android #}
   <link rel="manifest" href="{{ url_for('manifest') }}">
 
   <link rel="stylesheet" href="{{ url_for('style') }}">

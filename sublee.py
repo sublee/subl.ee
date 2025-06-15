@@ -12,6 +12,7 @@ import bisect
 import io
 from pathlib import Path
 from datetime import date, datetime, timezone
+import re
 import subprocess
 import time
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -26,6 +27,7 @@ from flask import (Flask, Response, make_response, render_template,
                    render_template_string, request, send_file, url_for)
 from flask_frozen import Freezer
 from markdown import Markdown
+from markupsafe import Markup
 from PIL import Image
 from werkzeug.exceptions import HTTPException, NotFound
 
@@ -289,57 +291,32 @@ def style() -> Response:
     return send_file(ROOT/'css'/'style.css')
 
 
-@app.route('/emblem.svg')
-def emblem() -> Response:
-    return send_file(ROOT/'artwork'/'emblem.svg')
+@app.route('/<name>.svg')
+def artwork(name: str) -> Response:
+    with (ROOT/'artwork/symbol.svg').open('r') as f:
+        symbol_svg = f.read()
+    symbol_svg = re.sub(r'<\?.+?\?>', '', symbol_svg)
 
+    with (ROOT/f'artwork/{name}.svg_t').open('r') as f:
+        svg_t = f.read()
 
-@app.route('/emblem.png', defaults={'height': None})
-@app.route('/emblem-<int:height>.png')
-def emblem_raster(height: Optional[int]) -> Response:
-    return send_raster(ROOT/'artwork'/'emblem.svg', height)
-
-
-@app.route('/icon.svg')
-def icon() -> Response:
-    svg = render_icon(192)
+    svg = render_template_string(svg_t, symbol_svg=Markup(symbol_svg))
     return Response(svg, mimetype='image/svg+xml')
 
 
-@app.route('/icon.png', defaults={'height': None})
-@app.route('/icon-<int:height>.png')
-def icon_raster(height: Optional[int]) -> Response:
-    svg = icon().data.decode('utf-8')
-    png = cairosvg.svg2png(file_obj=io.StringIO(svg), output_height=height)
+@app.route('/<name>.png', defaults={'height': None})
+@app.route('/<name>-<int:height>.png')
+def artwork_raster(name: str, height: Optional[int]) -> Response:
+    res = artwork(name)
+    png = cairosvg.svg2png(file_obj=io.BytesIO(res.data), output_height=height)
     return Response(png, mimetype='image/png')
-
-
-@app.route('/social.svg')
-def social() -> Response:
-    svg = render_icon((600, 315))
-    return Response(svg, mimetype='image/svg+xml')
-
-
-@app.route('/social.png')
-def social_raster() -> Response:
-    svg = social().data.decode('utf-8')
-    png = cairosvg.svg2png(file_obj=io.StringIO(svg), output_height=630)
-    return Response(png, mimetype='image/png')
-
-
-@app.route('/favicon.svg')
-def favicon() -> Response:
-    svg = render_icon(192, container=False)
-    return Response(svg, mimetype='image/svg+xml')
 
 
 @app.route('/favicon.ico')
-def favicon_raster() -> Response:
-    svg = favicon().data.decode('utf-8')
-    png = cairosvg.svg2png(file_obj=io.StringIO(svg), output_height=256)
-    img = Image.open(io.BytesIO(png))
-
+def favicon() -> Response:
+    res = artwork_raster('favicon', height=196)
     buf = io.BytesIO()
+    img = Image.open(io.BytesIO(res.data))
     img.save(buf, format='ICO')
     return Response(buf.getvalue(), mimetype='image/x-icon')
 
