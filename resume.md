@@ -127,11 +127,8 @@ Open Source Experience
 Contributions
 :   - For [PyTorch][],
       fixed potential GPU memory violation ([#27371][pytorch#27371]);
-      deprecated inconsistent API ([#21006][pytorch#21006],
-      [#25985][pytorch#25985]); discussed a counterintuitive behavior
-      of the autograd engine ([#18568][pytorch#18568]).
-    - For [ZeroMQ][],
-      discussed a PUB socket crash ([#2942][zeromq#2942]).
+      deprecated an inconsistent API ([#21006][pytorch#21006],
+      [#25985][pytorch#25985]).
     - For [Flask][],
       fixed a bug to generate a URL with a subdomain ([#108][flask#108]).
     - For [jQuery 1.4.3][jquery-143],
@@ -142,8 +139,6 @@ Contributions
 [pytorch#21006]: https://github.com/pytorch/pytorch/pull/21006
 [pytorch#25985]: https://github.com/pytorch/pytorch/pull/25985
 [pytorch#18568]: https://github.com/pytorch/pytorch/pull/18568
-[zeromq]:        https://zeromq.org/
-[zeromq#2942]:   https://github.com/zeromq/libzmq/issues/2942
 [flask]:         https://flask.palletsprojects.com/
 [flask#108]:     https://github.com/pallets/flask/issues/108
 [jquery-143]:    https://blog.jquery.com/2010/10/16/jquery-143-released/
