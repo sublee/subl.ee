@@ -15,9 +15,8 @@ from datetime import date, datetime, timezone
 import re
 import subprocess
 import time
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import Any, Dict, List, Optional, Tuple
 import uuid
-from xml.etree import ElementTree
 
 import cairosvg
 import click
@@ -91,52 +90,6 @@ def markdown(text: str) -> Tuple[str, Dict[str, str]]:
     html = markdown.convert(text)
     meta = {k: '\n'.join(v) for k, v in markdown.Meta.items()}
     return html, meta
-
-
-def send_raster(svg_path: Path, height: Optional[int]) -> Response:
-    """Sends a reheightd raster image in PNG from a SVG file."""
-    with svg_path.open('r') as f:
-        png = cairosvg.svg2png(file_obj=f, output_height=height)
-    res = Response(png, mimetype='image/png')
-    res.headers['cache-control'] = 'max-age=60'
-    return res
-
-
-def render_icon(size: Union[int, Tuple[int, int]], radius: int = 0, container: bool = True) -> str:
-    """Renders :file:`artwork/icon.svg_t` with the given size and radius."""
-    with (ROOT/'artwork'/'icon.svg_t').open('r') as f:
-        svg_t = f.read()
-
-    if isinstance(size, int):
-        width = height = size
-    else:
-        width, height = size
-
-    emblem = ElementTree.parse(ROOT/'artwork'/'emblem.svg')
-
-    view_box = emblem.getroot().attrib['viewBox']
-    _, _, emblem_width, emblem_height = list(map(int, view_box.split()))
-
-    if container:
-        emblem_scale = min(width*0.8/emblem_width, height*0.5/emblem_height)
-    else:
-        emblem_scale = min(width/emblem_width, height/emblem_height)
-
-    emblem_path = emblem.find('./{*}path')
-    assert emblem_path is not None
-
-    emblem_path_commands = emblem_path.get('d')
-    assert emblem_path_commands is not None
-
-    context = {
-        'width': width,
-        'height': height,
-        'container': container,
-        'radius': radius,
-        'emblem_scale': emblem_scale,
-        'emblem_path_commands': emblem_path_commands,
-    }
-    return render_template_string(svg_t, **context)
 
 
 def guess_mtime(path: Path) -> datetime:
