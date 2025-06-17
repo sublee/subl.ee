@@ -352,6 +352,12 @@ def prepare_freezing(app: Flask) -> Freezer:
         return page
 
     @freezer.register_generator
+    def artwork_urls() -> Iterator[tuple[str, dict[str, Any]]]:
+        for name in (ROOT/'artwork').glob('*.svg_t'):
+            yield 'artwork', {'name': name.stem}
+            yield 'artwork_raster', {'name': name.stem}
+
+    @freezer.register_generator
     def apple_touch_icon_urls() -> Iterator[tuple[str, dict[str, Any]]]:
         yield 'apple_touch_icon', {'width': 1024, 'height': 1024}
         yield 'apple_touch_icon', {}
