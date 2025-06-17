@@ -16,21 +16,13 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v4
-
-    - uses: actions/setup-python@v5
-      with:
-        python-version: 3.11
-
-    - name: Install requirements
-      run: |
-        pip install -r requirements.txt # required for mypy
-        pip install -r lint-requirements.txt
+    - uses: astral-sh/setup-uv@v6
 
     - name: flake8
-      run: flake8 sublee.py
+      run: uv run --frozen flake8 sublee.py
 
     - name: mypy
-      run: mypy sublee.py
+      run: uv run --frozen mypy sublee.py
 
   build:
     needs: [link-check, lint]
@@ -38,21 +30,11 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-
-    - uses: actions/setup-python@v5
-      with:
-        python-version: 3.11
-
-    - name: Install requirements
-      run: |
-        sudo apt-get install -y libcairo2-dev libjpeg-dev libpango1.0-dev
-        pip install -r requirements.txt
+    - uses: astral-sh/setup-uv@v6
 
     - name: Freeze
       run: |
-        python sublee.py freeze _site
+        uv run sublee.py freeze _site
         echo "$GITHUB_SHA" > _site/version.txt
 
     - uses: actions/upload-pages-artifact@v3

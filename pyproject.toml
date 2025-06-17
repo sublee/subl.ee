@@ -1,0 +1,21 @@
+[project]
+name = "sublee"
+version = "4.1.0"
+description = "The homepage of Heungsub Lee"
+readme = "README.md"
+requires-python = ">=3.13.5"
+dependencies = [
+    "cairosvg>=2.8.2",
+    "click>=8.2.1",
+    "flask>=3.1.1",
+    "frozen-flask>=1.0.2",
+    "markdown>=3.8",
+    "pymupdf>=1.26.1",
+    "weasyprint>=65.1",
+]
+
+[dependency-groups]
+dev = [
+    "flake8>=7.2.0",
+    "mypy>=1.16.1",
+]
