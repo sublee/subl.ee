@@ -4,18 +4,18 @@
 
    https://subl.ee/
 
-   :copyright: (c) 2013-2023 by Heungsub Lee
+   :copyright: (c) 2013-2025 by Heungsub Lee
    :license: Public Domain
 
 """
 import bisect
 import io
 from pathlib import Path
-from datetime import date, datetime, timezone
+from datetime import UTC, date, datetime, timezone
 import re
 import subprocess
 import time
-from typing import Any, Dict, Generator, List, Optional, Tuple
+from typing import Any, Iterator, Optional
 import uuid
 
 import cairosvg
@@ -29,9 +29,9 @@ from flask_frozen import Freezer
 from markdown import Markdown
 from markupsafe import Markup
 from PIL import Image
+import werkzeug
 from werkzeug.exceptions import HTTPException, NotFound
 
-__version__ = '4.0.0'
 __all__ = ['app']
 
 
@@ -65,14 +65,14 @@ def copyright_year(year_since: Optional[int] = None,
     return '{0}{1}{2}'.format(year_since, dash, this_year)
 
 
-def make_context(**kwargs: Any) -> Dict[str, Any]:
+def make_context(**kwargs: Any) -> dict[str, Any]:
     """Makes a template context with defaults."""
     if 'FREEZER_DESTINATION' in app.config:
         url_root = '%(PREFERRED_URL_SCHEME)s://%(SERVER_NAME)s' % app.config
     else:
         url_root = request.url_root.rstrip('/')
 
-    context: Dict[str, Any] = {
+    context: dict[str, Any] = {
         'author': AUTHOR,
         'email': EMAIL,
         'google_analytics': GOOGLE_ANALYTICS,
@@ -85,7 +85,7 @@ def make_context(**kwargs: Any) -> Dict[str, Any]:
     return context
 
 
-def markdown(text: str) -> Tuple[str, Dict[str, str]]:
+def markdown(text: str) -> tuple[str, dict[str, str]]:
     """Renders a Markdown document."""
     markdown = Markdown(extensions=MARKDOWN_EXTENSIONS)
     html = markdown.convert(text)
@@ -95,9 +95,9 @@ def markdown(text: str) -> Tuple[str, Dict[str, str]]:
 
 def guess_mtime(path: Path) -> datetime:
     """Guesses the last updated time of the given file."""
-    mtime = datetime.utcfromtimestamp(path.stat().st_mtime)
+    mtime = datetime.fromtimestamp(path.stat().st_mtime, UTC)
 
-    def run(cmd: List[str]) -> str:
+    def run(cmd: list[str]) -> str:
         r = subprocess.run(cmd, capture_output=True, text=True)
         return r.stdout.strip()
 
@@ -116,7 +116,7 @@ def guess_mtime(path: Path) -> datetime:
     return git_time
 
 
-def render_resume() -> Tuple[str, Dict[str, str], datetime]:
+def render_resume() -> tuple[str, dict[str, str], datetime]:
     with (ROOT/'resume.md').open(encoding='utf-8') as f:
         html, meta = markdown(f.read())
     updated = guess_mtime(ROOT/'resume.md')
@@ -230,9 +230,10 @@ def resume_social() -> Response:
     pix = first_page.get_pixmap(dpi=300)
 
     # Crop 1200x630 on the top by PIL because it is easier
-    img = Image.open(io.BytesIO(pix.tobytes()))
-    assert img.width >= 1200
-    img = img.resize((1200, int(1200/img.width*img.height)))
+    imgf = Image.open(io.BytesIO(pix.tobytes()))
+    assert imgf.width >= 1200
+
+    img = imgf.resize((1200, int(1200/imgf.width*imgf.height)))
     img = img.crop((0, 0, 1200, 630))
 
     buf = io.BytesIO()
@@ -282,7 +283,7 @@ def favicon() -> Response:
 # apple-touch-icon.png and apple-touch-icon-1024x1024.png.
 @app.route('/apple-touch-icon.png', defaults={'width': 0, 'height': 1024})
 @app.route('/apple-touch-icon-<int:width>x<int:height>.png')
-def apple_touch_icon(width: int, height: int) -> Response:
+def apple_touch_icon(width: int, height: int) -> werkzeug.Response:
     return redirect(url_for('artwork_raster', name='icon', height=height))
 
 
@@ -324,7 +325,7 @@ def sitemap() -> Response:
 
 
 @app.errorhandler(HTTPException)
-def render_error(error: HTTPException) -> Tuple[str, int]:
+def render_error(error: HTTPException) -> tuple[str, int]:
     """The HTTP error page."""
     ctx = make_context(error=error)
 
@@ -346,12 +347,12 @@ def prepare_freezing(app: Flask) -> Freezer:
     })
 
     @app.route('/404.html')
-    def not_found() -> str:
+    def not_found() -> Any:
         page, _ = render_error(NotFound())
         return page
 
     @freezer.register_generator
-    def apple_touch_icon_urls() -> Generator[tuple[str, dict[str, any]], None, None]:
+    def apple_touch_icon_urls() -> Iterator[tuple[str, dict[str, Any]]]:
         yield 'apple_touch_icon', {'width': 1024, 'height': 1024}
         yield 'apple_touch_icon', {}
 
