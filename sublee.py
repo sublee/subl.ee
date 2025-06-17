@@ -15,15 +15,16 @@ from datetime import date, datetime, timezone
 import re
 import subprocess
 import time
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, Generator, List, Optional, Tuple
 import uuid
 
 import cairosvg
 import click
 import fitz  # Its package name is PyMuPDF.
 import weasyprint
-from flask import (Flask, Response, make_response, render_template,
-                   render_template_string, request, send_file, url_for)
+from flask import (Flask, Response, abort, make_response, redirect,
+                   render_template, render_template_string, request, send_file,
+                   url_for)
 from flask_frozen import Freezer
 from markdown import Markdown
 from markupsafe import Markup
@@ -250,8 +251,11 @@ def artwork(name: str) -> Response:
         symbol_svg = f.read()
     symbol_svg = re.sub(r'<\?.+?\?>', '', symbol_svg)
 
-    with (ROOT/f'artwork/{name}.svg_t').open('r') as f:
-        svg_t = f.read()
+    try:
+        with (ROOT/f'artwork/{name}.svg_t').open('r') as f:
+            svg_t = f.read()
+    except FileNotFoundError:
+        abort(404)
 
     svg = render_template_string(svg_t, symbol_svg=Markup(symbol_svg))
     return Response(svg, mimetype='image/svg+xml')
@@ -267,11 +271,19 @@ def artwork_raster(name: str, height: Optional[int]) -> Response:
 
 @app.route('/favicon.ico')
 def favicon() -> Response:
-    res = artwork_raster('favicon', height=196)
+    res = artwork_raster('square', height=48)
     buf = io.BytesIO()
     img = Image.open(io.BytesIO(res.data))
-    img.save(buf, format='ICO')
+    img.save(buf, format='ICO', sizes=[(16, 16), (32, 32), (48, 48)])
     return Response(buf.getvalue(), mimetype='image/x-icon')
+
+
+# NOTE: width=0 is a trick to make Frozen-Flask to generate the both
+# apple-touch-icon.png and apple-touch-icon-1024x1024.png.
+@app.route('/apple-touch-icon.png', defaults={'width': 0, 'height': 1024})
+@app.route('/apple-touch-icon-<int:width>x<int:height>.png')
+def apple_touch_icon(width: int, height: int) -> Response:
+    return redirect(url_for('artwork_raster', name='icon', height=height))
 
 
 @app.route('/manifest.webmanifest')
@@ -337,6 +349,11 @@ def prepare_freezing(app: Flask) -> Freezer:
     def not_found() -> str:
         page, _ = render_error(NotFound())
         return page
+
+    @freezer.register_generator
+    def apple_touch_icon_urls() -> Generator[tuple[str, dict[str, any]], None, None]:
+        yield 'apple_touch_icon', {'width': 1024, 'height': 1024}
+        yield 'apple_touch_icon', {}
 
     return freezer
 

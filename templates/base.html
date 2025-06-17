@@ -7,6 +7,7 @@
   <meta name="color-scheme" content="light dark">
 
   <title>{% block title %}{{ title }}{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('style') }}">
 
   <meta property="author" content="{{ author }}">
   <meta property="contact" content="{{ email }}">
@@ -30,18 +31,15 @@
   <meta name="twitter:description" content="{{ description }}">
   <meta name="twitter:image" content="{{ url_root ~ url_for('artwork_raster', name='social') }}?dummy={{ dummy }}">
 
-  {# Favicon #}
-  <link rel="icon" href="{{ url_for('favicon') }}?dummy={{ dummy }}" sizes="any">
-  <link rel="icon" href="{{ url_for('artwork', name='favicon') }}?dummy={{ dummy }}" type="image/svg+xml">
+  <link rel="icon" href="{{ url_for('favicon') }}?dummy={{ dummy }}" type="image/x-icon" sizes="any">
+  <link rel="icon" href="{{ url_for('artwork', name='square') }}?dummy={{ dummy }}" type="image/svg+xml" sizes="any">
+  <link rel="icon" href="{{ url_for('artwork_raster', name='square', height=96) }}?dummy={{ dummy }}" type="image/png" sizes="96x96">
+  <link rel="icon" href="{{ url_for('artwork_raster', name='square', height=192) }}?dummy={{ dummy }}" type="image/png" sizes="192x192">
 
-  {# iOS #}
   <link rel="apple-touch-icon" href="{{ url_for('artwork_raster', name='icon', height=1024) }}?dummy={{ dummy }}">
   <meta name="apple-mobile-web-app-title" content="Heungsub">
 
-  {# Android #}
   <link rel="manifest" href="{{ url_for('manifest') }}">
-
-  <link rel="stylesheet" href="{{ url_for('style') }}">
 
   {% block head %}{% endblock %}
 </head>
