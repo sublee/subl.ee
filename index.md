@@ -6,12 +6,14 @@ layout: epic
 Been involved in
 ----------------
 
-- [torchgpipe][]: A GPipe library, also the origin of [Pipe APIs in PyTorch][pytorch-pipe]
+- [LangDiff][]: An efficient streaming structured LLM output processor
+- [torchgpipe][]: The original implementation of [PyTorch Pipe APIs][pytorch-pipe]
 - [Hangulize][]: A Hangul transcription tool
 - [NSML][]: An ML research platform for large-scale models
 - [HyperCLOVA][]: An LLM specializing in Korean culture
 - [Subway Fighter][], [SUBLEERUNKER][], KartRider Dash, and Durango
 
+[langdiff]:       https://github.com/globalaiplatform/langdiff
 [nsml]:           https://arxiv.org/abs/1712.05902
 [hyperclova]:     https://clova.ai/hyperclova
 [torchgpipe]:     https://torchgpipe.readthedocs.io/
