@@ -47,7 +47,7 @@ Software Engineer {: .label }
 [Global AI Platform][gapco], Sep 2023 -- Present
 :   Developing [Aster][], a planning-oriented AI agent service.
 
-    Supervised and published [LangDiff][], an open source probject which helps
+    Directed and published [LangDiff][], an open source probject which helps
     to build progressive UIs based on streaming structured LLM outputs.
 
 [gapco]: https://globalaiplatform.com/
