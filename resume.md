@@ -19,8 +19,8 @@ Web Sites {: .label }
 Interest
 --------
 
-Software architectures, distributed systems, cost optimization, developer
-experience, and the open source culture.
+Software architectures, developer experience, cost or performance optimization,
+distributed systems, and the open source culture.
 
 Skills
 ------
@@ -45,10 +45,12 @@ Work Experience
 
 Software Engineer {: .label }
 [Global AI Platform][gapco], Sep 2023 -- Present
-:   Developing [Aster][], a planning-oriented AI agent service.
+:   Developing [Aster][], a personal AI agent service that aggregates
+    information and functionality from multiple MCP servers and presents them
+    through a generative UI.
 
-    Directed and published [LangDiff][], an open source probject which helps
-    to build progressive UIs based on streaming structured LLM outputs.
+    Directed and published [LangDiff][], an open-source project that enables
+    progressive UIs powered by streaming structured LLM outputs.
 
 [gapco]: https://globalaiplatform.com/
 [aster]: https://asterapp.ai/
@@ -56,14 +58,14 @@ Software Engineer {: .label }
 
 Software Engineering Manager {: .label }
 [NAVER][], Aug 2020 -- Jul 2023
-:   Supervised MLOps platforms by leading 25 software engineers to optimize the
-    inference performance and productivity of [HyperCLOVA][], an LLM
-    specializing in Korean culture.
+:   Supervised MLOps platforms, leading a team of 25 software engineers to
+    optimize inference performance and productivity for [HyperCLOVA][], an LLM
+    specialized in Korean language and culture.
 
-    Developed [NSMLv2][], a large-scale ML research platform in [CLOVA][].
-    Designed its multitenant architecture based on economics to share GPU
-    clusters for HPC among diverse organizations with complex desires while
-    utilizing GPU resources efficiently.
+    Developed [NSMLv2][], a large-scale ML research platform at [CLOVA][].
+    Designed its multi-tenant architecture with an economics-driven approach
+    to enable diverse organizations with complex requirements to share GPU
+    clusters for HPC, while maximizing GPU resource efficiency.
 
 [naver]: https://navercorp.com/
 [hyperclova]: https://clova.ai/hyperclova
@@ -72,8 +74,8 @@ Software Engineering Manager {: .label }
 
 Software Engineer {: .label }
 [Kakao Brain][kakaobrain], Dec 2018 -- Aug 2020
-:   Developed and published a pipeline parallelism library named
-    [torchgpipe][] in open source.
+:   Developed and published [torchgpipe][], an open-source pipeline parallelism
+    library.
 
     Developed a serverless training framework and a distributed hyperparameter
     search platform for an AutoML service.
@@ -84,19 +86,20 @@ Software Engineer {: .label }
 
 Game Server Engineer {: .label }
 [NEXON][], Mar 2011 -- Dec 2018
-:   Developed cloud-based distributed MMORPG servers for Durango using pub/sub
-    communication over the spatial grid system. Achieved up to 70k concurrent
-    users per game world.
+:   Developed cloud-based distributed MMORPG servers for Durango, leveraging
+    pub/sub communication over a spatial grid system; supported up to 70k
+    concurrent users per game world.
 
-    Developed online racing game servers and matchmaking for [KartRider][] Dash
-    and KartRider Coin Rush.
+    Developed online racing game servers and matchmaking systems for
+    [KartRider][] Dash and KartRider Coin Rush.
 
 [nexon]: https://company.nexon.com/en/
 [kartrider]: https://kart.nexon.com/
 
 Back-end Web Developer {: .label }
 [nPine][iclickart], Dec 2008 -- Feb 2011
-:   Developed web services selling stock images.
+:   Developed stock image e-commerce web services.
+
 [iclickart]: https://iclickart.co.kr/
 
 Open Source Experience
@@ -104,24 +107,24 @@ Open Source Experience
 
 [torchgpipe][], Feb 2019 -- Apr 2020
 :   Implemented [GPipe][], a multi-GPU pipeline parallelism technique for
-    training giant models, as a PyTorch library with optimization for CUDA, the
-    autograd engine, and long skip connections. This project has become a part
-    of PyTorch as [Pipe APIs][pytorch-pipe]
+    training large-scale models, as a PyTorch library with optimizations for
+    CUDA, the autograd engine, and long skip connections. This project was
+    later integrated into PyTorch as the [Pipe APIs][pytorch-pipe]
 
 [torchgpipe]: https://torchgpipe.readthedocs.io/
 [gpipe]: https://arxiv.org/abs/1811.06965
 [pytorch-pipe]: https://pytorch.org/docs/2.0/pipeline.html
 
 [Hangulize][], Oct 2010 -- Present
-:   Invented a Hangul transcription algorithm and served as a web tool at zero
-    cost. Many professional Korean translators use this tool to translate
+:   Invented a Hangul transcription algorithm and released it as a free web
+    tool, widely used by professional Korean translators to transcribe
     undocumented proper nouns.
 
 [hangulize]: https://hangulize.org/
 
 [TrueSkill][trueskill], Jan 2012 -- Dec 2015
-:   Implemented [TrueSkill™][trueskill-tm], the rating algorithm for Xbox Live,
-    as a Python library. This project was introduced in [PyData Berlin
+:   Implemented [TrueSkill™][trueskill-tm], the rating algorithm behind Xbox
+    Live, as a Python library. This project was presented at [PyData Berlin
     2019][pydata2019].
 
 [trueskill]: https://trueskill.org/
@@ -153,6 +156,9 @@ Publications
 ------------
 
 <!-- IEEE style: https://libguides.nps.edu/citation/ieee -->
+- H. Park et al., "HPCClusterScape: Increasing Transparency and Efficiency of
+  Shared High-Performance Computing Clusters for Large-scale AI Models,"
+  [arXiv:2310.02120][arxiv:hpcclusterscape], Oct 2024.
 - B. Kim et al., "What changes can large-scale language models bring? Intensive
   study on HyperCLOVA: Billions-scale Korean generative pretrained
   Transformers," [arXiv:2109.04650][arxiv:hyperclova], Sep 2021.
@@ -165,6 +171,7 @@ Publications
 *[B. Kim]: Boseop Kim
 *[C. Kim]: Chiheon Kim
 
+[arxiv:hpcclusterscape]: https://arxiv.org/abs/2310.02120
 [arxiv:hyperclova]: https://arxiv.org/abs/2109.04650
 [arxiv:torchgpipe]: https://arxiv.org/abs/2004.09910
 
