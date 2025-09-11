@@ -6,11 +6,11 @@ layout: epic
 Been involved in
 ----------------
 
-- [LangDiff][]: An efficient streaming structured LLM output processor
-- [torchgpipe][]: The original implementation of [PyTorch Pipe APIs][pytorch-pipe]
-- [Hangulize][]: A Hangul transcription tool
-- [NSML][]: An ML research platform for large-scale models
-- [HyperCLOVA][]: An LLM specializing in Korean culture
+- [LangDiff][]: Bridge from structured LLM outputs to progressive UI
+- [torchgpipe][]: Original implementation of [PyTorch Pipe APIs][pytorch-pipe]
+- [Hangulize][]: Hangul transcription tool for foreign words
+- [NSML][]: Large-scale ML research platform
+- [HyperCLOVA][]: Korean-centric large language model
 - [Subway Fighter][], [SUBLEERUNKER][], KartRider Dash, and Durango
 
 [langdiff]:       https://github.com/globalaiplatform/langdiff
@@ -19,11 +19,8 @@ Been involved in
 [torchgpipe]:     https://torchgpipe.readthedocs.io/
 [pytorch-pipe]:   https://pytorch.org/docs/2.0/pipeline.html
 [hangulize]:      https://hangulize.org/
-[trueskill]:      https://trueskill.org/
 [subway fighter]: https://yeonghoey.itch.io/subway-fighter
 [subleerunker]:   /runker/
-[deviantart]:     https://www.deviantart.com/sublee
-[nexon]:          https://company.nexon.com/en/
 
 Told about
 ----------

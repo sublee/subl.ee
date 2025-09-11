@@ -142,6 +142,11 @@ def resume() -> str:
     return render_template('resume.html', **ctx)
 
 
+@app.route('/resume.md')
+def resume_md() -> str:
+    return send_file('resume.md')
+
+
 # Share the font config among multiple GET /resume.pdf requests for getting
 # speed up.
 wp_font_config = weasyprint.text.fonts.FontConfiguration()

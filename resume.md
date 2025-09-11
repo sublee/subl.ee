@@ -19,23 +19,23 @@ Web Sites {: .label }
 Interest
 --------
 
-Software architectures, developer experience, cost or performance optimization,
-distributed systems, and the open source culture.
+AI services and platforms, real-time communication in distributed systems,
+cost and performance optimization, and developer experience.
 
 Skills
 ------
 
 Programming Languages {: .label }
-: Go, Python, TypeScript, Bash
+: Go, Python, TypeScript
   {: .attr }
 
 Service Development {: .label }
-: Linux, AWS, K8s, Pulumi, React, gRPC, ZeroMQ, NoSQL, Concurrent programming,
-  Testing
+: Linux, AWS, gRPC, React, Pulumi, Kubernetes, Redis, ZeroMQ, Concurrent
+  programming, Testing
   {: .attr }
 
-ML Engineering {: .label }
-: PyTorch, NVIDIA Nsight Systems, NCCL
+AI Engineering {: .label }
+: MCP, PyTorch, NCCL, NVIDIA Nsight Systems
   {: .attr }
 
 ---
@@ -43,14 +43,14 @@ ML Engineering {: .label }
 Work Experience
 ---------------
 
-Software Engineer {: .label }
+Lead Software Engineer {: .label }
 [Global AI Platform][gapco], Sep 2023 -- Present
-:   Developing [Aster][], a personal AI agent service that aggregates
-    information and functionality from multiple MCP servers and presents them
-    through a generative UI.
+:   Leading the development of [Aster][], a personal AI agent service that
+    applies planning to solve user problems by integrating data and
+    functionalities from multiple MCP servers.
 
-    Directed and published [LangDiff][], an open-source project that enables
-    progressive UIs powered by streaming structured LLM outputs.
+    Directed [LangDiff][], an open-source library that bridges structured LLM
+    outputs with progressive UI rendering.
 
 [gapco]: https://globalaiplatform.com/
 [aster]: https://asterapp.ai/
@@ -58,14 +58,13 @@ Software Engineer {: .label }
 
 Software Engineering Manager {: .label }
 [NAVER][], Aug 2020 -- Jul 2023
-:   Supervised MLOps platforms, leading a team of 25 software engineers to
-    optimize inference performance and productivity for [HyperCLOVA][], an LLM
-    specialized in Korean language and culture.
+:   Supervised 25 engineers on MLOps platforms to optimize inference
+    performance and productivity for [HyperCLOVA][], a Korean-focused LLM.
 
-    Developed [NSMLv2][], a large-scale ML research platform at [CLOVA][].
-    Designed its multi-tenant architecture with an economics-driven approach
-    to enable diverse organizations with complex requirements to share GPU
-    clusters for HPC, while maximizing GPU resource efficiency.
+    Developed [NSMLv2][], a large-scale ML research platform at CLOVA. Designed
+    a multi-tenant architecture with an economics-driven approach, enabling
+    diverse organizations to share GPU clusters for HPC while maximizing
+    resource efficiency.
 
 [naver]: https://navercorp.com/
 [hyperclova]: https://clova.ai/hyperclova
@@ -74,31 +73,30 @@ Software Engineering Manager {: .label }
 
 Software Engineer {: .label }
 [Kakao Brain][kakaobrain], Dec 2018 -- Aug 2020
-:   Developed and published [torchgpipe][], an open-source pipeline parallelism
-    library.
+:   Developed [torchgpipe][], an open-source pipeline parallelism library for
+    PyTorch.
 
-    Developed a serverless training framework and a distributed hyperparameter
-    search platform for an AutoML service.
+    Developed a serverless training framework and distributed hyperparameter
+    search pipelines for an AutoML service.
 
 [kakaobrain]: https://github.com/kakaobrain
 [torchgpipe]: https://torchgpipe.readthedocs.io/
-[gpipe]: https://arxiv.org/abs/1811.06965
 
 Game Server Engineer {: .label }
 [NEXON][], Mar 2011 -- Dec 2018
-:   Developed cloud-based distributed MMORPG servers for Durango, leveraging
-    pub/sub communication over a spatial grid system; supported up to 70k
-    concurrent users per game world.
+:   Developed cloud-native distributed MMORPG servers for Durango using
+    pub/sub over a spatial grid system, supporting up to 70k concurrent users
+    per game world.
 
-    Developed online racing game servers and matchmaking systems for
-    [KartRider][] Dash and KartRider Coin Rush.
+    Developed online racing game servers and matchmaking for KartRider Dash and
+    KartRider Coin Rush.
 
 [nexon]: https://company.nexon.com/en/
 [kartrider]: https://kart.nexon.com/
 
 Back-end Web Developer {: .label }
 [nPine][iclickart], Dec 2008 -- Feb 2011
-:   Developed stock image e-commerce web services.
+:   Developed e-commerce web services for stock image platforms.
 
 [iclickart]: https://iclickart.co.kr/
 
@@ -107,39 +105,32 @@ Open Source Experience
 
 [torchgpipe][], Feb 2019 -- Apr 2020
 :   Implemented [GPipe][], a multi-GPU pipeline parallelism technique for
-    training large-scale models, as a PyTorch library with optimizations for
-    CUDA, the autograd engine, and long skip connections. This project was
-    later integrated into PyTorch as the [Pipe APIs][pytorch-pipe]
+    large-scale model training, as a PyTorch library with CUDA, autograd, and
+    long skip connection optimizations; later upstreamed into PyTorch as the
+    official [Pipe APIs][pytorch-pipe].
 
 [torchgpipe]: https://torchgpipe.readthedocs.io/
 [gpipe]: https://arxiv.org/abs/1811.06965
 [pytorch-pipe]: https://pytorch.org/docs/2.0/pipeline.html
 
 [Hangulize][], Oct 2010 -- Present
-:   Invented a Hangul transcription algorithm and released it as a free web
-    tool, widely used by professional Korean translators to transcribe
-    undocumented proper nouns.
+:   Designed a Hangul transcription algorithm and released it as a free web
+    tool widely used by professional Korean translators.
 
 [hangulize]: https://hangulize.org/
 
 [TrueSkill][trueskill], Jan 2012 -- Dec 2015
 :   Implemented [TrueSkill™][trueskill-tm], the rating algorithm behind Xbox
-    Live, as a Python library. This project was presented at [PyData Berlin
-    2019][pydata2019].
+    Live, as a Python library; presented at [PyData Berlin 2019][pydata2019].
 
 [trueskill]: https://trueskill.org/
 [trueskill-tm]: https://www.microsoft.com/en-us/research/project/trueskill-ranking-system/
 [pydata2019]: https://docs.google.com/presentation/d/1S5v9D31vpsr22efMSSCO6hmN2SQNCIqKG7JyGzUSzeI/edit?usp=sharing
 
 Contributions
-:   - For [PyTorch][],
-      fixed potential GPU memory violation ([#27371][pytorch#27371]);
-      deprecated an inconsistent API ([#21006][pytorch#21006],
-      [#25985][pytorch#25985]).
-    - For [Flask][],
-      fixed a bug to generate a URL with a subdomain ([#108][flask#108]).
-    - For [jQuery 1.4.3][jquery-143],
-      fixed a bug on content negotiation in Ajax requests.
+:   Contributed upstream patches improving GPU safety ([#27371][pytorch#27371])
+    and API consistency ([#21006][pytorch#21006], [#25985][pytorch#25985]) in
+    [PyTorch][]. Fixed subdomain URL bug ([#108][flask#108]) in [Flask][].
 
 [pytorch]:       https://pytorch.org/
 [pytorch#27371]: https://github.com/pytorch/pytorch/pull/27371
@@ -148,7 +139,6 @@ Contributions
 [pytorch#18568]: https://github.com/pytorch/pytorch/pull/18568
 [flask]:         https://flask.palletsprojects.com/
 [flask#108]:     https://github.com/pallets/flask/issues/108
-[jquery-143]:    https://blog.jquery.com/2010/10/16/jquery-143-released/
 
 ---
 
@@ -212,12 +202,11 @@ only.
 
 <!-- abbrs -->
 *[AWS]:    Amazon Web Services
-*[K8s]:    Kubernetes
 *[NCCL]:   NVIDIA Collective Communications Library
-*[CI/CD]:  Continuous integration and continuous delivery
 *[AI]:     Artificial intelligence
 *[ML]:     Machine learning
 *[HPC]:    High-performance computing
 *[MMORPG]: Massively multiplayer online role-playing game
 *[NDC]:    NEXON Developers Conference
 *[Ajax]:   Asynchronous JavaScript and XML
+*[MCP]:    Model Context Protocol
