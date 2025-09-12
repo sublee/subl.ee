@@ -143,7 +143,7 @@ def resume() -> str:
 
 
 @app.route('/resume.md')
-def resume_md() -> str:
+def resume_md() -> Response:
     return send_file('resume.md')
 
 
