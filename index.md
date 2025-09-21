@@ -9,7 +9,7 @@ Been involved in
 - [LangDiff][]: Bridge from structured LLM outputs to progressive UI
 - [torchgpipe][]: Original implementation of [PyTorch Pipe APIs][pytorch-pipe]
 - [Hangulize][]: Hangul transcription tool for foreign words
-- [NSML][]: Large-scale ML research platform
+- [NSML][]: Large-scale ML research platform used at NAVER
 - [HyperCLOVA][]: Korean-centric large language model
 - [Subway Fighter][], [SUBLEERUNKER][], KartRider Dash, and Durango
 

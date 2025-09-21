@@ -45,12 +45,13 @@ Work Experience
 
 Lead Software Engineer {: .label }
 [Global AI Platform][gapco], Sep 2023 -- Present
-:   Leading the development of [Aster][], a personal AI agent service that
-    applies planning to solve user problems by integrating data and
-    functionalities from multiple MCP servers.
+:   Leading the development of [Aster][], a personal AI agent service that helps
+    users solve problems by planning task sequences and suggesting alternatives,
+    integrating data and functions from multiple MCP servers.
 
-    Directed [LangDiff][], an open-source library that bridges structured LLM
-    outputs with progressive UI rendering.
+    Directed [LangDiff][], an open-source library bridging structured LLM
+    outputs with progressive UI rendering, which hid model latency and improved
+    responsiveness, enabling a smoother Aster experience.
 
 [gapco]: https://globalaiplatform.com/
 [aster]: https://asterapp.ai/
@@ -58,13 +59,15 @@ Lead Software Engineer {: .label }
 
 Software Engineering Manager {: .label }
 [NAVER][], Aug 2020 -- Jul 2023
-:   Supervised 25 engineers on MLOps platforms to optimize inference
-    performance and productivity for [HyperCLOVA][], a Korean-focused LLM.
+:   Supervised 25 engineers on MLOps platforms to boost inference performance by
+    2-3x and improve developer productivity for [HyperCLOVA][], a Korean-focused
+    LLM.
 
     Developed [NSMLv2][], a large-scale ML research platform at CLOVA. Designed
-    a multi-tenant architecture with an economics-driven approach, enabling
-    diverse organizations to share GPU clusters for HPC while maximizing
-    resource efficiency.
+    a multi-tenant, economics-driven architecture that enabled diverse
+    organizations to share GPU clusters efficiently, reducing idle time and
+    maximizing utilization. This platform institutionalized distributed training
+    to address growing demand for scalable training workflows.
 
 [naver]: https://navercorp.com/
 [hyperclova]: https://clova.ai/hyperclova
@@ -74,10 +77,12 @@ Software Engineering Manager {: .label }
 Software Engineer {: .label }
 [Kakao Brain][kakaobrain], Dec 2018 -- Aug 2020
 :   Developed [torchgpipe][], an open-source pipeline parallelism library for
-    PyTorch.
+    PyTorch that scaled large AI models across multiple GPUs with minimal code
+    changes and low overhead.
 
     Developed a serverless training framework and distributed hyperparameter
-    search pipelines for an AutoML service.
+    search pipelines on an on-premise GPU cluster, improving resource
+    utilization and automation for model training.
 
 [kakaobrain]: https://github.com/kakaobrain
 [torchgpipe]: https://torchgpipe.readthedocs.io/
