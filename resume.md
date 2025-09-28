@@ -31,8 +31,8 @@ Programming Languages {: .label }
   {: .attr }
 
 Service Development {: .label }
-: Linux, AWS, gRPC, React, Pulumi, Kubernetes, Redis, PostgreSQL, ZeroMQ, OAuth,
-  Concurrent programming, Testing
+: Linux, AWS, Kubernetes, Pulumi, gRPC, React, Redis, PostgreSQL, ZeroMQ,
+  OAuth, OpenTelemetry, Concurrency, API design & documentation
   {: .attr }
 
 AI Engineering {: .label }
