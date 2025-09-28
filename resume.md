@@ -19,8 +19,9 @@ Web Sites {: .label }
 Interest
 --------
 
-AI services and platforms, real-time communication in distributed systems,
-cost and performance optimization, and developer experience.
+Problem solving, AI services and platforms, real-time communication in
+distributed systems, cost and performance optimization, and developer
+experience.
 
 Skills
 ------
@@ -30,8 +31,8 @@ Programming Languages {: .label }
   {: .attr }
 
 Service Development {: .label }
-: Linux, AWS, gRPC, React, Pulumi, Kubernetes, Redis, ZeroMQ, Concurrent
-  programming, Testing
+: Linux, AWS, gRPC, React, Pulumi, Kubernetes, Redis, PostgreSQL, ZeroMQ, OAuth,
+  Concurrent programming, Testing
   {: .attr }
 
 AI Engineering {: .label }
