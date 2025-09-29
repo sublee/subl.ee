@@ -36,7 +36,7 @@ Service Development {: .label }
   {: .attr }
 
 AI Engineering {: .label }
-: MCP, PyTorch, NCCL, NVIDIA Nsight Systems
+: MCP, PyTorch, Gradio, NCCL, NVIDIA Nsight Systems
   {: .attr }
 
 ---
@@ -48,7 +48,8 @@ Lead Software Engineer {: .label }
 [Global AI Platform][gapco], Sep 2023 -- Present
 :   Leading the development of [Aster][], a personal AI agent service that helps
     users solve problems by planning task sequences and suggesting alternatives,
-    integrating data and functions from multiple MCP servers.
+    integrating data and functions from multiple MCP servers. Prototyped
+    telephony integration to enable voice-based assistant experience.
 
     Directed [LangDiff][], an open-source library bridging structured LLM
     outputs with progressive UI rendering, which hid model latency and improved
