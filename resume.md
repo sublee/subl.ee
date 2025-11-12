@@ -46,17 +46,15 @@ Work Experience
 
 Lead Software Engineer {: .label }
 [Global AI Platform][gapco], Sep 2023 -- Present
-:   Led the development of [Aster][], a personal AI agent service that helps
-    users solve problems by planning task sequences and suggesting alternatives,
-    integrating data and functions from multiple MCP servers. Prototyped
-    telephony integration to enable voice-based assistant experience.
+:   Led backend development of a personal AI agent service (beta-tested with
+    1.6k US users) that plans multi-step task sequences and suggests
+    alternative solutions by integrating data across multiple MCP servers.
 
     Directed [LangDiff][], an open-source library bridging structured LLM
     outputs with progressive UI rendering, which hid model latency and improved
     responsiveness, enabling a smoother Aster experience.
 
 [gapco]: https://globalaiplatform.com/
-[aster]: https://asterapp.ai/
 [langdiff]: https://github.com/globalaiplatform/langdiff
 
 Software Engineering Manager {: .label }
