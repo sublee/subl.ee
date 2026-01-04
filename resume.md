@@ -45,14 +45,14 @@ Work Experience
 ---------------
 
 Lead Software Engineer {: .label }
-[Global AI Platform][gapco], Sep 2023 -- Present
+[Global AI Platform][gapco], Sep 2023 -- Dec 2025
 :   Led backend development of a personal AI agent service (beta-tested with
-    1.6k US users) that plans multi-step task sequences and suggests
-    alternative solutions by integrating data across multiple MCP servers.
+    1.6k US users) that plans multi-step task sequences and suggests solutions
+    by integrating data across multiple MCP servers.
 
     Directed [LangDiff][], an open-source library bridging structured LLM
     outputs with progressive UI rendering, which hid model latency and improved
-    responsiveness, enabling a smoother Aster experience.
+    responsiveness, enabling a smoother user experience.
 
 [gapco]: https://globalaiplatform.com/
 [langdiff]: https://github.com/globalaiplatform/langdiff

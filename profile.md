@@ -1,10 +1,10 @@
 # Heungsub Lee
 
-Software Engineer at [Global AI Platform][gapco]
+Software Engineer at [Toss][toss]
 
 [Résumé][resume] · [GitHub][] · [LinkedIn][]
 
-[gapco]:    https://globalaiplatform.com/
+[toss]:     https://toss.im/en
 [resume]:   /resume
 [github]:   https://github.com/sublee
 [linkedin]: https://linkedin.com/in/sublee
