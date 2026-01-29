@@ -1,6 +1,6 @@
 # Heungsub Lee
 
-Software Engineer at [Toss][toss]
+Backend Software Engineer at [Toss][toss]
 
 [Résumé][resume] · [GitHub][] · [LinkedIn][]
 

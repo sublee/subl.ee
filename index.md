@@ -6,21 +6,23 @@ layout: epic
 Been involved in
 ----------------
 
+- [Toss Shopping][]: Online shopping marketplace within Toss
 - [LangDiff][]: Bridge from structured LLM outputs to progressive UI
 - [torchgpipe][]: Original implementation of [PyTorch Pipe APIs][pytorch-pipe]
 - [Hangulize][]: Hangul transcription tool for foreign words
 - [NSML][]: Large-scale ML research platform used at NAVER
-- [HyperCLOVA][]: Korean-centric large language model
-- [Subway Fighter][], [SUBLEERUNKER][], KartRider Dash, and Durango
+- [Subway Fighter][], [SUBLEERUNKER][], [KartRider Dash][], and [Durango]
 
+[toss shopping]:  https://toss.im/shopping-seller
 [langdiff]:       https://github.com/globalaiplatform/langdiff
 [nsml]:           https://arxiv.org/abs/1712.05902
-[hyperclova]:     https://clova.ai/hyperclova
 [torchgpipe]:     https://torchgpipe.readthedocs.io/
 [pytorch-pipe]:   https://pytorch.org/docs/2.0/pipeline.html
 [hangulize]:      https://hangulize.org/
 [subway fighter]: https://yeonghoey.itch.io/subway-fighter
 [subleerunker]:   /runker/
+[kartrider dash]: https://www.igdb.com/games/kartrider-dash
+[durango]:        https://www.igdb.com/games/durango-wild-lands
 
 Told about
 ----------
