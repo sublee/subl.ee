@@ -21,8 +21,11 @@ Been involved in
 [hangulize]:      https://hangulize.org/
 [subway fighter]: https://yeonghoey.itch.io/subway-fighter
 [subleerunker]:   /runker/
+
+<!-- markdown-link-check-disable -->
 [kartrider dash]: https://www.igdb.com/games/kartrider-dash
 [durango]:        https://www.igdb.com/games/durango-wild-lands
+<!-- markdown-link-check-enable -->
 
 Told about
 ----------
